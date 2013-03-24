@@ -84,7 +84,7 @@ class MySqlDb
      * @access public
      * @return results
      */
-    public function query($sql, $inputParams)
+    public function query($sql, $inputParams = array())
     {
         if ($statement = $this->_mysqli->prepare($sql))
         {
@@ -115,27 +115,35 @@ class MySqlDb
                 call_user_func_array(array($statement, 'bind_result'), $results);
             }
 
-            $statement->execute();
+            $r = $statement->execute();
             $allResults = array();
 
             /*fetch the results*/
             while($tmp = $statement->fetch())
             {
-                $tmp = array_map($this->_copy, $results);
-                $allResults[] = $tmp;
+                if (is_array($results))
+                {
+                    $tmp = array_map($this->_copy, $results);
+                    $allResults[] = $tmp;
+                }
             }
             $statement->close();
+            /*if no results array, just return*/
+            if (!$allResults || empty($allResults))
+            {
+                return $r;    
+            }
         }
         return $allResults;
     }
 }
 
-$inputParams = array('testaccount7', 'cc03e747a6afbbcbf8be7668acfebe', 'Kaeson Ho', '0925083472', 'test@yahoo.com', 1);
-$sql = 'INSERT INTO users VALUE(?, ?, ?, ?, ?, ?)';
-$r = MySqlDb::getInstance()->query($sql, $inputParams);
-var_dump($r);
-$sql = 'SELECT * FROM users';
-$inputParams = array();
-$r = MySqlDb::getInstance()->query($sql, $inputParams);
-var_dump($r);
+//$inputParams = array('testaccount7', 'cc03e747a6afbbcbf8be7668acfebe', 'Kaeson Ho', '0925083472', 'test@yahoo.com', 1);
+//$sql = 'INSERT INTO users VALUE(?, ?, ?, ?, ?, ?)';
+//$r = MySqlDb::getInstance()->query($sql, $inputParams);
+//var_dump($r);
+//$sql = 'SELECT * FROM users';
+//$inputParams = array();
+//$r = MySqlDb::getInstance()->query($sql, $inputParams);
+//var_dump($r);
 ?>
