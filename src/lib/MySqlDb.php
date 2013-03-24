@@ -127,13 +127,18 @@ class MySqlDb
                     $allResults[] = $tmp;
                 }
             }
-            $statement->close();
             /*if no results array, just return*/
             if (!$allResults || empty($allResults))
             {
-                return $r;    
+                if ($statement->error)
+                {
+                    //return ($statement->error);
+                    return false;
+                }
+                return $r;
             }
         }
+        $statement->close();
         return $allResults;
     }
 }

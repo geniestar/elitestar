@@ -3,7 +3,7 @@ include ('./MySqlDb.php');
 /**
  * elite users
  */
-class eliteUsers
+class EliteUsers
 {
     private static $_instance;
 
@@ -37,7 +37,7 @@ class eliteUsers
     {
         if (!self::$_instance)
         {
-            self::$_instance = new eliteUsers();
+            self::$_instance = new EliteUsers();
         }
         return self::$_instance;
     }
@@ -55,7 +55,7 @@ class eliteUsers
      */
     public static function createUser($id, $password, $name, $mail, $phone, $role)
     {
-        $sql = 'INSERT INTO users VALUE(?, ?, ?, ?, ?, ?, ?, ?)';
+        $sql = 'INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
         $inputParams = array($id, md5($password), $name, $mail, $phone, $role, time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
@@ -152,7 +152,7 @@ class eliteUsers
     }
 }
 
-//eliteUsers::getInstance()->createUser('testaccount1', 'test123', 'test user', 'test@yahoo.com', '0922', 'role');
-//var_dump(eliteUsers::updateUserInfo('testaccount1', null, 'testuser3', 'no mail'));
-//var_dump(eliteUsers::getInstance()->queryUser('testaccount1', 'test123'));
+EliteUsers::getInstance()->createUser('testaccount2', 'test123', 'test user', 'test@yahoo.com', '0922', 'role');
+//var_dump(EliteUsers::updateUserInfo('testaccount1', null, 'testuser3', 'no mail'));
+var_dump(EliteUsers::getInstance()->queryUser('testaccount2', 'test123'));
 ?>
