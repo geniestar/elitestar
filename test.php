@@ -1,8 +1,8 @@
 <?php
 $mysqli = new mysqli('localhost', 'root', 'elitestar', 'elitestar');
 
-//$sql = 'SELECT * FROM users WHERE id =? AND phone=?';
-$sql = 'INSERT INTO users VALUE(?, ?, ?, ?, ?, ?)';
+$sql = 'SELECT * FROM users WHERE id =? AND phone=?';
+//$sql = 'INSERT INTO users VALUE(?, ?, ?, ?, ?, ?)';
 $id = 'testaccount4';
 $phone = '0925083472';
 $pw = 'cc03e747a6afbbcbf8be7668acfebe';
@@ -10,7 +10,8 @@ $name = 'Kaeson Ho';
 $mail = 'test@yahoo.com';
 $role = '1';
 
-$inputParams = array('testaccount5', 'cc03e747a6afbbcbf8be7668acfebe', 'Kaeson Ho', '0925083472', 'test@yahoo.com', 1);
+//$inputParams = array('testaccount5', 'cc03e747a6afbbcbf8be7668acfebe', 'Kaeson Ho', '0925083472', 'test@yahoo.com', 1);
+$inputParams = array();
 
 function refValues($arr)
 {
