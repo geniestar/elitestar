@@ -132,14 +132,18 @@ class MySqlDb
             {
                 if ($statement->error)
                 {
-                    //return ($statement->error);
+                    error_log($statement->error);
                     return false;
                 }
                 return $r;
             }
+            $statement->close();
+            return $allResults;
         }
-        $statement->close();
-        return $allResults;
+        else
+        {
+            return false;
+        }
     }
 }
 

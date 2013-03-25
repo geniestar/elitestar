@@ -46,7 +46,7 @@ class HouseObjects
      * create houseobject
      *
      */
-    public static function createHouseObject($ownerId, $state, $city, $houseName, $duration, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $facilities, $rent, $mainPhoto, $photos, $description)
+    public function createHouseObject($ownerId, $state, $city, $houseName, $duration, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $facilities, $rent, $mainPhoto, $photos, $description)
     {
         $sql = 'INSERT INTO houseobjects (owner_id, state, city, house_name, duration, rooms, beds_single, beds_double, toilets, parking_space, facilities, rent, main_photo, photos, description, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         $inputParams = array($ownerId, $state, $city, $houseName, $duration, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, json_encode($facilities), $rent, $mainPhoto, json_encode($photos), $description, time(), time());
@@ -54,7 +54,7 @@ class HouseObjects
         return $r;
     }
 
-    public static function updateHouseObjectInfo($ownerId, $state = null, $city = null, $houseName = null, $duration = null, $rooms = null, $bedsSingle = null, $bedsDouble = null, $toilets = null, $parkingSpace = null, $facilities = null, $rent = null, $mainPhoto = null, $photos = null, $description = null)
+    public function updateHouseObjectInfo($ownerId, $state = null, $city = null, $houseName = null, $duration = null, $rooms = null, $bedsSingle = null, $bedsDouble = null, $toilets = null, $parkingSpace = null, $facilities = null, $rent = null, $mainPhoto = null, $photos = null, $description = null)
     
     {
         $updateArray = array();

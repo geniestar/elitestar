@@ -53,7 +53,7 @@ class EliteUsers
      * @param integer $role     role for user 0:landlord 1:packager
      *
      */
-    public static function createUser($id, $password, $name, $mail, $phone, $role)
+    public function createUser($id, $password, $name, $mail, $phone, $role)
     {
         $sql = 'INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
         $inputParams = array($id, md5($password), $name, $mail, $phone, $role, time(), time());
@@ -69,7 +69,7 @@ class EliteUsers
      * @param boolean $isAdmin  isAdmin
      *
      */
-    public static function queryUser($id, $password, $isAdmin = false)
+    public function queryUser($id, $password, $isAdmin = false)
     {
         $sql = 'SELECT * FROM users WHERE id=?';
         $inputParams = array($id);
@@ -102,7 +102,7 @@ class EliteUsers
      * @param integer $role     role for user 0:landlord 1:packager
      *
      */
-    public static function updateUserInfo($id, $password = null, $name = null, $mail = null, $phone = null, $role = null)
+    public function updateUserInfo($id, $password = null, $name = null, $mail = null, $phone = null, $role = null)
     {
         $updateArray = array();
 

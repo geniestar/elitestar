@@ -46,21 +46,33 @@ class LandLords
      * create landlord
      *
      */
-    public static function createLandLord($userId, $additionalHelp)
+    public function createLandLord($userId, $additionalHelp, $favorates)
     {
-        $sql = 'INSERT INTO landlords (user_id, additional_help, created_time, updated_time) VALUES(?, ?, ?, ?)';
-        $inputParams = array($userId, json_encode($additionalHelp), time(), time());
+        $sql = 'INSERT INTO landlords (user_id, additional_help, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?)';
+        $inputParams = array($userId, json_encode($additionalHelp), json_encode($favorates), time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
 
-    public static function updateLandLordInfo($userId, $additionalHelp = null)
+    public function queryLandLord($userId)
+    {
+        $sql = 'SELECT * FROM landlords WHERE user_id=?';
+        $inputParams = array($userId);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        return $r;
+    }
+
+    public function updateLandLordInfo($userId, $additionalHelp = null, $favorates)
     {
         $updateArray = array();
 
         if ($additionalHelp)
         {
             $updateArray['additional_help'] = json_encode($additionalHelp);
+        }
+        if ($favorates)
+        {
+            $updateArray['favorates'] = json_encode($favorates);
         }
         
         if (!$updateArray)
@@ -89,7 +101,8 @@ class LandLords
 
 }
 
-//var_dump(LandLords::getInstance()->createLandLord('testaccount1', array('ccc'=>'asb')));
-//var_dump(LandLords::getInstance()->updateLandLordInfo('testaccount1', array('cc'=>'asb')));
+var_dump(LandLords::getInstance()->createLandLord('testaccount2', array('ccc'=>'asb'), array(1,2,3)));
+//var_dump(LandLords::getInstance()->updateLandLordInfo('testaccount1', array('cc'=>'asb'), array(1,2,3,4)));
+var_dump(LandLords::getInstance()->queryLandLord('testaccount2'));
 
 ?>

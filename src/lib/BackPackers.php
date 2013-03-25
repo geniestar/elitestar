@@ -46,15 +46,15 @@ class BackPackers
      * create backpacker
      *
      */
-    public static function createBackPacker($userId, $city, $duration, $bedsSingle, $bedsDouble, $facilities, $additionalHelp)
+    public function createBackPacker($userId, $city, $duration, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $favorates)
     {
-        $sql = 'INSERT INTO backpackers (user_id, city, duration, beds_single, beds_double, facilities, additional_help, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($userId, $city, $duration, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), time(), time());
+        $sql = 'INSERT INTO backpackers (user_id, city, duration, beds_single, beds_double, facilities, additional_help, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $inputParams = array($userId, $city, $duration, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), json_encode($favorates), time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
 
-    public static function updateBackPackerInfo($userId, $city = null, $duration = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null)
+    public function updateBackPackerInfo($userId, $city = null, $duration = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $favorates = null)
     {
         $updateArray = array();
 
@@ -82,7 +82,11 @@ class BackPackers
         {
             $updateArray['additional_help'] = json_encode($additionalHelp);
         }
-        
+        if ($favorates)
+        {
+            $updateArray['favorates'] = json_encode($favorates);
+        }
+
         if (!$updateArray)
         {
             return;
@@ -109,7 +113,7 @@ class BackPackers
 
 }
 
-//BackPackers::getInstance()->createBackPacker('testaccount4', 2, '2013-05-03 12:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'));
-//BackPackers::getInstance()->updateBackPackerInfo('testaccount2', 5, '2013-05-03 13:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'));
+BackPackers::getInstance()->createBackPacker('testaccount5', 2, '2013-05-03 12:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'), array(123,124));
+BackPackers::getInstance()->updateBackPackerInfo('testaccount4', 5, '2013-05-03 13:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'), array(1234,123));
 
 ?>
