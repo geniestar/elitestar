@@ -1,4 +1,4 @@
 value1:
-    - sub_value: 123
-    - sub_value2: 123
+  sub_value: 123
+  sub_value2: 123
 value2: [123,123,123]
