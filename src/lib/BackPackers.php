@@ -6,6 +6,10 @@ include ('./MySqlDb.php');
 class BackPackers
 {
     private static $_instance;
+    const SORT_BY_PRICE = 'rent_low';
+    const SORT_BY_PRICE_DESC = 'rent_low DESC';
+    const SORT_BY_TIME = 'created_time';
+    const SORT_BY_TIME_DESC = 'created_time DESC';
 
     /**
      * __construct 
@@ -46,10 +50,47 @@ class BackPackers
      * create backpacker
      *
      */
-    public function createBackPacker($userId, $city, $duration, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $favorates)
+    public function createBackPacker($userId, $state, $city, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $favorates)
     {
-        $sql = 'INSERT INTO backpackers (user_id, city, duration, beds_single, beds_double, facilities, additional_help, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($userId, $city, $duration, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), json_encode($favorates), time(), time());
+        $sql = 'INSERT INTO backpackers (user_id, state, city, duration_start, duration_end, rent_low, rent_high, beds_single, beds_double, facilities, additional_help, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $inputParams = array($userId, $state, $city, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), json_encode($favorates), time(), time());
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        return $r;
+    }
+
+    public function findBackPackers($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null)
+    {
+        $conditions = array();
+        $conditions['state'] = array('op' => '=', 'value' => $state);
+        $conditions['city'] = array('op' => '=', 'value' => $city);
+    
+        if ($durationStart)
+        {
+            $conditions['duration_start'] = array('op' => '<=', 'value' => $durationStart);
+        }
+        if ($durationEnd)
+        {
+            $conditions['duration_end'] = array('op' => '>=', 'value' => $durationEnd);
+        }
+        if ($rentLow)
+        {
+            $conditions['rent_low'] = array('op' => '<=', 'value' => $rentLow);
+        }
+        if ($rentHigh)
+        {
+            $conditions['rent_high'] = array('op' => '>=', 'value' => $rentHigh);
+        }
+        $conditionColumns = array();
+        $inputParams = array();
+        foreach ($conditions as $key => $value)
+        {
+            $conditionColumns[] = $key . $value['op']  . '?';
+            $inputParams[] = $value['value'];
+        }
+        $inputParams[] = $start;
+        $inputParams[] = $count;
+        $sql = 'SELECT * FROM backpackers WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
+        echo $sql;
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
@@ -58,13 +99,21 @@ class BackPackers
     {
         $updateArray = array();
 
+        if ($state)        
+        {
+            $updateArray['state'] = $state;
+        }
         if ($city)
         {
             $updateArray['city'] = $city;
         }
-        if ($duration)
+        if ($durationStart)
         {
-            $updateArray['duration'] = $duration; 
+            $updateArray['duration_start'] = $durationStart; 
+        }
+        if ($durationEnd)
+        {
+            $updateArray['duration_end'] = $durationEnd; 
         }
         if ($bedsSingle)
         {
@@ -110,10 +159,10 @@ class BackPackers
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
-
 }
 
-BackPackers::getInstance()->createBackPacker('testaccount5', 2, '2013-05-03 12:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'), array(123,124));
-BackPackers::getInstance()->updateBackPackerInfo('testaccount4', 5, '2013-05-03 13:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'), array(1234,123));
+//BackPackers::getInstance()->createBackPacker('testaccount5', 1, 2, '2013-05-03 12:00:00', '2013-10-03 12:00:00', 180, 200, 1, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'), array(123,124));
+//BackPackers::getInstance()->updateBackPackerInfo('testaccount4', 5, '2013-05-03 13:00:00', 2, 2, array('bbb'=>'aaa'), array('ccc'=>'asb'), array(1234,123));
 
+//var_dump(BackPackers::getInstance()->findBackPackers($state = 1, $city = 2, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, 170, 200));
 ?>
