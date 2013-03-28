@@ -80,5 +80,6 @@ class ConfigReader
         }
     }
 }
-var_dump(ConfigReader::getInstance()->readConfig('common', 'value1.sub_value'));
+var_dump(ConfigReader::getInstance()->readConfig('states', 'states'));
+var_dump(ConfigReader::getInstance()->readConfig('common', 'rents'));
 ?>
