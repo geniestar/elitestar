@@ -1,11 +1,14 @@
 <?php
-include ('./MySqlDb.php');
+include ('MySqlDb.php');
+
 /**
  * elite users
  */
 class EliteUsers
 {
     private static $_instance;
+    const ROLE_LANDLORD = 0;
+    const ROLE_BACKPACKER = 1;
 
     /**
      * __construct 
@@ -66,11 +69,16 @@ class EliteUsers
      *
      * @param string  $id       id for user
      * @param string  $password password
+     * @param boolean $isMd5    is md5
      * @param boolean $isAdmin  isAdmin
      *
      */
-    public function queryUser($id, $password, $isAdmin = false)
+    public function queryUser($id, $password, $isMd5 = false, $isAdmin = false)
     {
+        if (!$isMd5)
+        {
+            $password = md5($password); 
+        }
         $sql = 'SELECT * FROM users WHERE id=?';
         $inputParams = array($id);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
@@ -80,7 +88,7 @@ class EliteUsers
         }
         else
         {
-            if ($r && isset($r[0]) && $r[0]['password'] === md5($password))
+            if ($r && isset($r[0]) && $r[0]['password'] === $password)
             {
                 return $r;
             }
@@ -150,9 +158,51 @@ class EliteUsers
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
+
+    public function login($id, $password, $isRemember)
+    {
+        $user = $this->queryUser($id, $password);
+        /* set id and password in cookie*/
+        if ($user && isset($user[0]))
+        {
+            $user = $user[0];
+            if ($isRemember)
+            {
+                setcookie('u', $id, time()+60*60*24*365);
+                setcookie('p', md5($password), time()+60*60*24*365);
+            }
+            else
+            {
+                /* expire when iser close broswer*/
+                setcookie('u', $id, false);
+                setcookie('p', md5($password), false);
+            }
+            return $user;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public function getCurrentUser()
+    {
+        if (isset($_COOKIE['u']) && isset($_COOKIE['p']))
+        {
+            $user = $this->queryUser($_COOKIE['u'], $_COOKIE['p'], true);
+        }
+        if ($user && $user[0])
+        {
+            return $user[0];
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
-EliteUsers::getInstance()->createUser('testaccount2', 'test123', 'test user', 'test@yahoo.com', '0922', 'role');
+//EliteUsers::getInstance()->createUser('testaccount2', 'test123', 'test user', 'test@yahoo.com', '0922', 'role');
 //var_dump(EliteUsers::updateUserInfo('testaccount1', null, 'testuser3', 'no mail'));
-var_dump(EliteUsers::getInstance()->queryUser('testaccount2', 'test123'));
+//var_dump(EliteUsers::getInstance()->queryUser('testaccount2', 'test123'));
 ?>

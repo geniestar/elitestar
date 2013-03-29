@@ -1,16 +1,16 @@
 <?php
-include_once ('./mustache.php/src/Mustache/Engine.php');
-include_once ('./mustache.php/src/Mustache/Loader.php');
-include_once ('./mustache.php/src/Mustache/Loader/FilesystemLoader.php');
-include_once ('./mustache.php/src/Mustache/Parser.php');
-include_once ('./mustache.php/src/Mustache/Tokenizer.php');
-include_once ('./mustache.php/src/Mustache/Compiler.php');
-include_once ('./mustache.php/src/Mustache/Template.php');
-include_once ('./mustache.php/src/Mustache/Context.php');
-include_once ('./mustache.php/src/Mustache/HelperCollection.php');
-include_once ('./mustache.php/src/Mustache/LambdaHelper.php');
-include_once ('./mustache.php/src/Mustache/Autoloader.php');
-include_once ('./mustache.php/src/Mustache/Logger.php');
+include_once ('mustache.php/src/Mustache/Engine.php');
+include_once ('mustache.php/src/Mustache/Loader.php');
+include_once ('mustache.php/src/Mustache/Loader/FilesystemLoader.php');
+include_once ('mustache.php/src/Mustache/Parser.php');
+include_once ('mustache.php/src/Mustache/Tokenizer.php');
+include_once ('mustache.php/src/Mustache/Compiler.php');
+include_once ('mustache.php/src/Mustache/Template.php');
+include_once ('mustache.php/src/Mustache/Context.php');
+include_once ('mustache.php/src/Mustache/HelperCollection.php');
+include_once ('mustache.php/src/Mustache/LambdaHelper.php');
+include_once ('mustache.php/src/Mustache/Autoloader.php');
+include_once ('mustache.php/src/Mustache/Logger.php');
 
 /**
  * mustacheRenderer use mustache framework to generate html content

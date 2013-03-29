@@ -6,8 +6,8 @@ include_once ('MustacheRenderer.php');
  */
 class ContentGenerator extends MustacheRenderer
 {
-    const TEMPLATE_FILES_ROOT_PATH = '../frontend/templates';
-    const DATA_PROCESS_FILES_ROOT_PATH = '../frontend/dataProcess';
+    const TEMPLATE_FILES_ROOT_PATH = '../templates';
+    const DATA_PROCESS_FILES_ROOT_PATH = '../dataProcess';
 
     static private $instances = array();
 
@@ -89,6 +89,6 @@ class ContentGenerator extends MustacheRenderer
     }
 }
 
-var_dump(ContentGenerator::getContent('head', array('who' => 'mustache')));
+//var_dump(ContentGenerator::getContent('head', array('who' => 'mustache')));
 
 ?>

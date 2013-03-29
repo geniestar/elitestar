@@ -1,5 +1,5 @@
 <?php
-include ('./MySqlDb.php');
+include ('MySqlDb.php');
 /**
  * land lords
  */
