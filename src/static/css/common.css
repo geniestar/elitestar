@@ -1,0 +1,27 @@
+/* line 4, ../scss/common.scss */
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2ca2af;
+}
+
+/* line 10, ../scss/common.scss */
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}
+
+/* line 50, icons/*.png */
+.icons-sprite, .icons-car, .icons-computer {
+  background: url('/img/icons-se00d843b06.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-car {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-computer {
+  background-position: 0 -39px;
+}
