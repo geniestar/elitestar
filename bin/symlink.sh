@@ -14,3 +14,4 @@ ln -s /home/ec2-user/git/elitestar/src/frontend/html/ /var/www/html/elitestar;
 ln -s /home/ec2-user/git/elitestar/src/static/css /var/www/html/elitestar/css;
 ln -s /home/ec2-user/git/elitestar/src/static/js /var/www/html/elitestar/js;
 ln -s /home/ec2-user/git/elitestar/src/static/img /var/www/html/elitestar/img;
+ln -s /home/ec2-user/git/elitestar/conf/apache/zzz_elitestar.conf /etc/httpd/conf.d/zzz_elitestar.conf

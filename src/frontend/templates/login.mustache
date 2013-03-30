@@ -1,6 +1,13 @@
-<form name="login" method="post" action="login.php">
-   {{i18n.LOGIN_USERID}} <input type="text" name="id"><br>
-   {{i18n.LOGIN_PW}} <input type="password" name="password"><br>
-   {{i18n.LOGIN_REMEMBERME}} <input type="checkbox" name="isremember" value="1"><br>
-   <input type="submit" name="submit" value="{{i18n.LOGIN_BTN}}">
-</form>
+<div id="login" class="house">
+    <form name="login" method="post" action="login.php">
+        {{i18n.LOGIN_USERID}} <input type="text" name="id"><br>
+        {{i18n.LOGIN_PW}} <input type="password" name="password"><br>
+        {{i18n.LOGIN_REMEMBERME}} <input type="checkbox" name="isremember" value="1"><br>
+        <input type="submit" name="submit" value="{{i18n.LOGIN_BTN}}">
+    </form>
+    <div id="login-switcher">
+        <div id="find-house">{{i18n.LOGIN_FIND_HOUSE}}</div>
+        <div id="find-customer">{{i18n.LOGIN_FIND_CUSTOMER}}</div>
+        <div id="find-register-now">{{i18n.LOGIN_REGISTER_NOW}}</div>
+    </div>
+</div>

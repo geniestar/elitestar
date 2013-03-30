@@ -1,4 +1,5 @@
 languages:
+    COMMON_TITLE: 'Elite Star'
     LOGIN_USERID: 'Username'
     LOGIN_PW: 'Password'
     LOGIN_REMEMBERME: 'Remember Me'
@@ -6,3 +7,8 @@ languages:
     LOGIN_BTN: 'Login'
     LOGIN_CHINESE: '中文'
     LOGIN_ENGLISH: 'English'
+    LOGIN_COPYRIGHT1: 'Copyright©2013 EliteStar.com All Rights Reserved. 本網站內容享有著作權，禁止侵害，違者必究。'
+    LOGIN_COPYRIGHT2: '建議瀏覽器版本為IE7.0以上。 2001- 2013 104 Corporation All Rights Reserved'
+    LOGIN_FIND_HOUSE: 'Find a House'
+    LOGIN_FIND_CUSTOMER: 'Find Customers'
+    LOGIN_REGISTER_NOW: 'Register now'
