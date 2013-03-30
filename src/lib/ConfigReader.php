@@ -6,9 +6,10 @@ include ('./MySqlDb.php');
  */
 class ConfigReader
 {
-    const CONFIG_ROOT_PATH = '../../conf/';
+    const CONFIG_ROOT_PATH = '/usr/share/pear/elitestar/conf/';
     private static $_instance;
     private $_configs = array();
+    private $_env = 'dev';
 
     /**
      * __construct 
@@ -49,14 +50,17 @@ class ConfigReader
     public function readConfig($fileName, $indexes)
     {
         $indexArray = explode('.', $indexes);
-        if (apc_fetch('CONFIG' . $fileName))
+        if (apc_fetch('CONFIG' . $fileName) && 'dev' !== $this->_env)
         {
             $config = apc_fetch('CONFIG' . $fileName);
         }
         else
         {
             $config = yaml_parse_file(self::CONFIG_ROOT_PATH . $fileName . '.yaml');
-            apc_store('CONFIG' . $fileName, $config);
+            if ($config)
+            {
+                apc_store('CONFIG' . $fileName, $config);
+            }
         }
         $currentReturnValue = $config;
         foreach ($indexArray as $index)
@@ -80,6 +84,6 @@ class ConfigReader
         }
     }
 }
-var_dump(ConfigReader::getInstance()->readConfig('states', 'states'));
-var_dump(ConfigReader::getInstance()->readConfig('common', 'rents'));
+//var_dump(ConfigReader::getInstance()->readConfig('states', 'states'));
+//var_dump(ConfigReader::getInstance()->readConfig('common', 'rents'));
 ?>

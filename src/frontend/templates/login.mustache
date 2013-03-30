@@ -1,6 +1,6 @@
 <form name="login" method="post" action="login.php">
-   Username: <input type="text" name="id"><br>
-   Password: <input type="password" name="password"><br>
-   Remember Me: <input type="checkbox" name="isremember" value="1"><br>
-   <input type="submit" name="submit" value="Login!">
+   {{i18n.LOGIN_USERID}} <input type="text" name="id"><br>
+   {{i18n.LOGIN_PW}} <input type="password" name="password"><br>
+   {{i18n.LOGIN_REMEMBERME}} <input type="checkbox" name="isremember" value="1"><br>
+   <input type="submit" name="submit" value="{{i18n.LOGIN_BTN}}">
 </form>

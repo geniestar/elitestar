@@ -1,0 +1,8 @@
+languages:
+    LOGIN_USERID: 'Username'
+    LOGIN_PW: 'Password'
+    LOGIN_REMEMBERME: 'Remember Me'
+    LOGIN_FORGET_PW: 'Forget Password?'
+    LOGIN_BTN: 'Login'
+    LOGIN_CHINESE: '中文'
+    LOGIN_ENGLISH: 'English'

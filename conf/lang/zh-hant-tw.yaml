@@ -1,0 +1,8 @@
+﻿languages:
+    LOGIN_USERID: '使用者名稱'
+    LOGIN_PW: '密碼'
+    LOGIN_REMEMBERME: '記住登入資訊'
+    LOGIN_FORGET_PW: '忘記密碼?'
+    LOGIN_BTN: '登入'
+    LOGIN_CHINESE: '中文'
+    LOGIN_ENGLISH: 'English'
