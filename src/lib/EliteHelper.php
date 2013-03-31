@@ -89,13 +89,13 @@ class EliteHelper
     static public function getLanguage()
     {
         $language = 'en-us';
-        if ('en-us' === $_GET['lang'] || 'zh-hant-tw' === $_GET['lang'])
+        if (isset($_GET['lang']) && ('en-us' === $_GET['lang'] || 'zh-hant-tw' === $_GET['lang']))
         {
             /*set lang by url param*/
             $language = $_GET['lang'];
             setcookie('l', $language, time()+60*60*24*365);
         }
-        else if ('en-us' === $_COOKIE['l'] || 'zh-hant-tw' === $_COOKIE['l'])
+        else if (isset($_COOKIE['l']) && ('en-us' === $_COOKIE['l'] || 'zh-hant-tw' === $_COOKIE['l']))
         {
             /* by cookie*/
             $language = $_COOKIE['l'];

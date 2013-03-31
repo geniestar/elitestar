@@ -1,0 +1,254 @@
+/* line 4, ../scss/login.scss */
+#login #welcome-board {
+  background: url("../img/login_bg_fc.jpg");
+  width: 1024px;
+  height: 580px;
+  margin: 0 auto;
+  position: relative;
+}
+/* line 10, ../scss/login.scss */
+#login #welcome-board form {
+  position: absolute;
+}
+/* line 12, ../scss/login.scss */
+#login #welcome-board form .option-set {
+  margin: 5px 0;
+}
+/* line 14, ../scss/login.scss */
+#login #welcome-board form .option-set .title {
+  margin: 0 5px 5px 5px;
+  font-weight: bold;
+  color: #333333;
+}
+/* line 19, ../scss/login.scss */
+#login #welcome-board form .option-set .sub-title {
+  font-size: 12px;
+  color: #333333;
+}
+/* line 23, ../scss/login.scss */
+#login #welcome-board form .option-set input {
+  color: #666666;
+}
+/* line 26, ../scss/login.scss */
+#login #welcome-board form .option-set input[type=text], #login #welcome-board form .option-set input[type=password] {
+  border: 1px solid #333333;
+  width: 200px;
+}
+/* line 30, ../scss/login.scss */
+#login #welcome-board form .option-set input[type=submit] {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border: 1px solid #333333;
+  background-color: #ffffff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEBA028');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMyUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjQlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(4%, #eba028), color-stop(100%, #eba028));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+}
+/* line 42, ../scss/login.scss */
+#login #welcome-board form .option-set input[type=submit]:active {
+  background-color: #eba028;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFEBA028', endColorstr='#FFFFFFFF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eba028), color-stop(95%, #eba028), color-stop(96%, #ffffff), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+  background-image: linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+}
+/* line 49, ../scss/login.scss */
+#login #welcome-board form .option-set:nth-child(2) {
+  margin-top: 10px;
+}
+/* line 54, ../scss/login.scss */
+#login #welcome-board .seperator {
+  margin: 0 10px;
+  width: 1px;
+  background: #333333;
+  padding-left: 1px;
+}
+/* line 61, ../scss/login.scss */
+#login #welcome-board .language-switcher {
+  margin-top: 20px;
+  font-size: 18px;
+}
+/* line 66, ../scss/login.scss */
+#login #welcome-board.find-house {
+  background: url("../img/login_bg_fh.jpg");
+}
+/* line 68, ../scss/login.scss */
+#login #welcome-board.find-house form {
+  left: 0px;
+  bottom: 30px;
+}
+/* line 73, ../scss/login.scss */
+#login #welcome-board.find-customer {
+  background: url("../img/login_bg_fc.jpg");
+}
+/* line 75, ../scss/login.scss */
+#login #welcome-board.find-customer form {
+  left: 0px;
+  bottom: 30px;
+}
+/* line 80, ../scss/login.scss */
+#login #welcome-board.register-now {
+  background: url("../img/login_bg_r.jpg");
+}
+/* line 82, ../scss/login.scss */
+#login #welcome-board.register-now form {
+  right: 10px;
+  bottom: 30px;
+}
+/* line 88, ../scss/login.scss */
+#login footer {
+  background-color: #00A99D;
+  height: 230px;
+  border-top-width: 2px;
+  border-top-style: solid;
+}
+/* line 93, ../scss/login.scss */
+#login footer #login-switcher {
+  position: relative;
+  top: -2px;
+  width: 1024px;
+  margin: 0 auto;
+}
+/* line 98, ../scss/login.scss */
+#login footer #login-switcher .switcher-item {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+  width: 329px;
+  height: 87px;
+  margin: 0 3px;
+  line-height: 87px;
+  -webkit-border-radius: 0px;
+  -webkit-border-bottom-right-radius: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  -moz-border-radius: 0px;
+  -moz-border-radius-bottomright: 25px;
+  -moz-border-radius-bottomleft: 25px;
+  border-radius: 0px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-style: solid;
+  border-width: 2px;
+  color: #FFF;
+  vartical-align: middle;
+  text-align: center;
+}
+/* line 122, ../scss/login.scss */
+#login footer #login-switcher #find-house-btn.switcher-item {
+  border-color: #1B1464;
+  background-color: #ffffff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFFFFFFF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjNTRhNmRlIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #54a6de), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+}
+/* line 129, ../scss/login.scss */
+#login footer #login-switcher #find-customer-btn.switcher-item {
+  border-color: #1B6336;
+  background-color: #ffffff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFFFFFFF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjMzNjM2I4Ii8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #33c3b8), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+}
+/* line 136, ../scss/login.scss */
+#login footer #login-switcher #register-now-btn.switcher-item {
+  border-color: #605E24;
+  background-color: #ffffff;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFFFFFFF');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTIlIiBzdG9wLWNvbG9yPSIjYTZjZjZkIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(52%, #a6cf6d), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 1%, #a6cf6d 52%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #ffffff 1%, #a6cf6d 52%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #ffffff 1%, #a6cf6d 52%, #ffffff 99%);
+  background-image: linear-gradient(top, #ffffff 1%, #a6cf6d 52%, #ffffff 99%);
+}
+/* line 145, ../scss/login.scss */
+#login footer .copy-right {
+  margin-top: 30px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+/* line 150, ../scss/login.scss */
+#login footer .copy-right div {
+  margin: 5px;
+}
+/* line 155, ../scss/login.scss */
+#login footer.find-house {
+  border-top-color: #1B1464;
+}
+/* line 157, ../scss/login.scss */
+#login footer.find-house #login-switcher #find-house-btn.switcher-item {
+  color: #1B1464;
+  border-top-color: #FFF;
+}
+/* line 161, ../scss/login.scss */
+#login footer.find-house #login-switcher #find-customer-btn.switcher-item {
+  border-top-color: #1B1464;
+}
+/* line 164, ../scss/login.scss */
+#login footer.find-house #login-switcher #register-now-btn.switcher-item {
+  border-top-color: #1B1464;
+}
+/* line 170, ../scss/login.scss */
+#login footer.find-customer {
+  border-top-color: #1B6336;
+}
+/* line 172, ../scss/login.scss */
+#login footer.find-customer #login-switcher #find-house-btn.switcher-item {
+  border-top-color: #1B6336;
+}
+/* line 175, ../scss/login.scss */
+#login footer.find-customer #login-switcher #find-customer-btn.switcher-item {
+  color: #1B6336;
+  border-top-color: #FFF;
+}
+/* line 179, ../scss/login.scss */
+#login footer.find-customer #login-switcher #register-now-btn.switcher-item {
+  border-top-color: #1B6336;
+}
+/* line 185, ../scss/login.scss */
+#login footer.register-now {
+  border-top-color: #605E24;
+}
+/* line 187, ../scss/login.scss */
+#login footer.register-now #login-switcher #find-house-btn.switcher-item {
+  border-top-color: #605E24;
+}
+/* line 190, ../scss/login.scss */
+#login footer.register-now #login-switcher #find-customer-btn.switcher-item {
+  border-top-color: #605E24;
+}
+/* line 193, ../scss/login.scss */
+#login footer.register-now #login-switcher #register-now-btn.switcher-item {
+  color: #605E24;
+  border-top-color: #FFF;
+}

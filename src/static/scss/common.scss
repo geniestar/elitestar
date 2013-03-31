@@ -1,17 +1,24 @@
-$blue: #3bbfce;
-$margin: 16px;
-
-.content-navigation {
-  border-color: $blue;
-  color:
-    darken($blue, 9%);
-}
-
-.border {
-  padding: $margin / 2;
-  margin: $margin / 2;
-  border-color: $blue;
-}
-
+@import "_common_define";
 @import "icons/*.png";
 @include all-icons-sprites;
+
+body {
+    font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
+    margin: 0;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input {
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}

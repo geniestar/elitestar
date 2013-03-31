@@ -1,0 +1,200 @@
+@import "_common_define";
+
+#login {
+    #welcome-board {
+        background: url('../img/login_bg_fc.jpg');
+        width: 1024px;
+        height: 580px;
+        margin: 0 auto;
+        position: relative;
+        form {
+            position: absolute;
+            .option-set {
+                margin: 5px 0;
+                .title {
+                    margin: 0 5px 5px 5px;
+                    font-weight: bold;
+                    color: $black;
+                }
+                .sub-title {
+                    font-size: 12px;
+                    color: $black;
+                }
+                input {
+                    color: $gray;
+                }
+                input[type=text], input[type=password] {
+                    border: 1px solid $black;
+                    width: 200px;
+                }
+                input[type=submit] {
+                    color: $white;
+                    font-weight: bold;
+                    font-size: 14px;
+                    cursor: pointer;
+                    padding: 5px 15px;
+                    border: 1px solid $black;
+                    background-color: #ffffff; // Old browsers
+                    @include filter-gradient(#ffffff, #eba028, vertical); // IE6-8
+                    $experimental-support-for-svg: true;
+                    @include background-image(linear-gradient(top,  #ffffff 0%,#ffffff 3%,#eba028 4%,#eba028 100%));
+                }
+                input[type=submit]:active {
+                    background-color: #eba028; // Old browsers
+                    @include filter-gradient(#eba028, #ffffff, vertical); // IE6-8
+                    $experimental-support-for-svg: true;
+                    @include background-image(linear-gradient(top,  #eba028 0%,#eba028 95%,#ffffff 96%,#ffffff 99%));
+                }
+            }
+            .option-set:nth-child(2) {
+                margin-top:10px;
+            }
+        }
+
+        .seperator {
+            margin: 0 10px;
+            width: 1px;
+            background: $black;
+            padding-left: 1px;
+        }
+
+        .language-switcher {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    }
+    #welcome-board.find-house {
+        background: url('../img/login_bg_fh.jpg');
+        form {
+            left: 0px;
+            bottom : 30px;
+        }
+    }
+    #welcome-board.find-customer {
+        background: url('../img/login_bg_fc.jpg');
+        form {
+            left: 0px;
+            bottom : 30px;
+        }
+    }
+    #welcome-board.register-now {
+        background: url('../img/login_bg_r.jpg');
+        form {
+            right: 10px;
+            bottom : 30px;
+        }
+    }
+
+    footer {
+        background-color: #00A99D;
+        height: 230px;
+        border-top-width: 2px;
+        border-top-style: solid;
+        #login-switcher {
+            position: relative;
+            top: -2px;
+            width: 1024px;
+            margin: 0 auto;
+            .switcher-item {
+                cursor: pointer;
+                font-size: 24px;
+                font-weight: bold;
+                display: inline-block;
+                width: 329px;
+                height: 87px;
+                margin: 0 3px;
+                line-height: 87px;
+                -webkit-border-radius: 0px;
+                -webkit-border-bottom-right-radius: 25px;
+                -webkit-border-bottom-left-radius: 25px;
+                -moz-border-radius: 0px;
+                -moz-border-radius-bottomright: 25px;
+                -moz-border-radius-bottomleft: 25px;
+                border-radius: 0px;
+                border-bottom-right-radius: 25px;
+                border-bottom-left-radius: 25px;
+                border-style:solid;
+                border-width:2px;
+                color: #FFF;
+                vartical-align: middle;
+                text-align: center;
+            }
+            #find-house-btn.switcher-item {
+                border-color: #1B1464;
+                background-color: #ffffff; // Old browsers
+                @include filter-gradient(#ffffff, #ffffff, vertical); // IE6-8
+                $experimental-support-for-svg: true;
+                @include background-image(linear-gradient(top,  #ffffff 1%,#54a6de 51%,#ffffff 99%));
+            }
+            #find-customer-btn.switcher-item {
+                border-color: #1B6336;
+                background-color: #ffffff; // Old browsers
+                @include filter-gradient(#ffffff, #ffffff, vertical); // IE6-8
+                $experimental-support-for-svg: true;
+                @include background-image(linear-gradient(top,  #ffffff 1%,#33c3b8 51%,#ffffff 99%));
+            }
+            #register-now-btn.switcher-item {
+                border-color: #605E24;
+                background-color: #ffffff; // Old browsers
+                @include filter-gradient(#ffffff, #ffffff, vertical); // IE6-8
+                $experimental-support-for-svg: true;
+                @include background-image(linear-gradient(top,  #ffffff 1%,#a6cf6d 52%,#ffffff 99%));
+            }
+        }
+
+        .copy-right {
+            margin-top: 30px;
+            font-size: 14px;
+            color: $white;
+            text-align: center;
+            div {
+                margin: 5px;
+            }
+        }
+    }
+    footer.find-house {
+        #login-switcher {
+            #find-house-btn.switcher-item {
+                color: #1B1464;
+                border-top-color: #FFF;
+            }
+            #find-customer-btn.switcher-item {
+                border-top-color: #1B1464;
+            }
+            #register-now-btn.switcher-item {
+                border-top-color: #1B1464;
+            }
+        }
+        border-top-color: #1B1464;
+    }
+    footer.find-customer {
+        #login-switcher {
+            #find-house-btn.switcher-item {
+                border-top-color: #1B6336;
+            }
+            #find-customer-btn.switcher-item {
+                color: #1B6336;
+                border-top-color: #FFF;
+            }
+            #register-now-btn.switcher-item {
+                border-top-color: #1B6336;
+            }
+        }
+        border-top-color: #1B6336;
+    }
+    footer.register-now {
+        #login-switcher {
+            #find-house-btn.switcher-item {
+                border-top-color: #605E24;
+            }
+            #find-customer-btn.switcher-item {
+                border-top-color: #605E24;
+            }
+            #register-now-btn.switcher-item {
+                color: #605E24;
+                border-top-color: #FFF;
+            }
+        }
+        border-top-color: #605E24;
+    }
+}

@@ -3,7 +3,8 @@ include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_TITLE'),
     'css' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css')
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/login.css')
     )
 );
 

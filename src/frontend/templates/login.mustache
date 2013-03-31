@@ -1,13 +1,37 @@
-<div id="login" class="house">
-    <form name="login" method="post" action="login.php">
-        {{i18n.LOGIN_USERID}} <input type="text" name="id"><br>
-        {{i18n.LOGIN_PW}} <input type="password" name="password"><br>
-        {{i18n.LOGIN_REMEMBERME}} <input type="checkbox" name="isremember" value="1"><br>
-        <input type="submit" name="submit" value="{{i18n.LOGIN_BTN}}">
-    </form>
-    <div id="login-switcher">
-        <div id="find-house">{{i18n.LOGIN_FIND_HOUSE}}</div>
-        <div id="find-customer">{{i18n.LOGIN_FIND_CUSTOMER}}</div>
-        <div id="find-register-now">{{i18n.LOGIN_REGISTER_NOW}}</div>
+<div id="login">
+    <div id="welcome-board" class="find-house">
+        <form name="login" method="post" action="login.php">
+            <div class="option-set"><div class="title">{{i18n.LOGIN_USERID}}</div> <input type="text" name="id"></div>
+            <div class="option-set"><div class="title">{{i18n.LOGIN_PW}}</div> <input type="password" name="password"></div>
+            <div class="option-set">
+                <input type="checkbox" name="isremember" value="1"><span class="sub-title">{{i18n.LOGIN_REMEMBERME}}</span>
+                <span class="sub-title seperator"></span>
+                <span class="sub-title"><a href="forget_pw.php">{{i18n.LOGIN_FORGET_PW}}</a></span>
+            </div>
+            <div class="option-set"><input type="submit" name="submit" value="{{i18n.LOGIN_BTN}}"></div>
+            <div class="language-switcher">
+                {{#isEng}}
+                    <span class="sub-title"><a href="/?lang=zh-hant-tw">{{i18n.LOGIN_CHINESE}}</a></span>
+                    <span class="sub-title seperator"></span>
+                    <span class="sub-title">{{i18n.LOGIN_ENGLISH}}</span>
+                {{/isEng}}
+                {{#isTw}}
+                    <span class="sub-title">{{i18n.LOGIN_CHINESE}}</span>
+                    <span class="sub-title seperator"></span>
+                    <span class="sub-title"><a href="/?lang=en-us">{{i18n.LOGIN_ENGLISH}}</a></span>
+                {{/isTw}}
+            </div>
+        </form>
     </div>
+    <footer class="find-house">
+        <div id="login-switcher">
+            <div id="find-house-btn" class="switcher-item">{{i18n.LOGIN_FIND_HOUSE}}</div>
+            <div id="find-customer-btn" class="switcher-item">{{i18n.LOGIN_FIND_CUSTOMER}}</div>
+            <div id="register-now-btn" class="switcher-item">{{i18n.LOGIN_REGISTER_NOW}}</div>
+        </div>
+        <div class="copy-right">
+            <div>{{i18n.LOGIN_COPYRIGHT1}}</div>
+            <div>{{i18n.LOGIN_COPYRIGHT2}}</div>
+        </div>
+    </footer>
 </div>
