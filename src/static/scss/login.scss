@@ -27,6 +27,9 @@
                     border: 1px solid $black;
                     width: 200px;
                 }
+                input[type=checkbox] {
+                    vertical-align: middle; 
+                }
                 input[type=submit] {
                     color: $white;
                     font-weight: bold;
@@ -34,14 +37,12 @@
                     cursor: pointer;
                     padding: 5px 15px;
                     border: 1px solid $black;
-                    background-color: #ffffff; // Old browsers
-                    @include filter-gradient(#ffffff, #eba028, vertical); // IE6-8
+                    background-color: #eba028; // Old browsers
                     $experimental-support-for-svg: true;
                     @include background-image(linear-gradient(top,  #ffffff 0%,#ffffff 3%,#eba028 4%,#eba028 100%));
                 }
                 input[type=submit]:active {
                     background-color: #eba028; // Old browsers
-                    @include filter-gradient(#eba028, #ffffff, vertical); // IE6-8
                     $experimental-support-for-svg: true;
                     @include background-image(linear-gradient(top,  #eba028 0%,#eba028 95%,#ffffff 96%,#ffffff 99%));
                 }
@@ -85,7 +86,7 @@
         }
     }
 
-    footer {
+    #footer {
         background-color: #00A99D;
         height: 230px;
         border-top-width: 2px;
@@ -121,22 +122,19 @@
             }
             #find-house-btn.switcher-item {
                 border-color: #1B1464;
-                background-color: #ffffff; // Old browsers
-                @include filter-gradient(#ffffff, #ffffff, vertical); // IE6-8
+                background-color: #54a6de; // Old browsers
                 $experimental-support-for-svg: true;
                 @include background-image(linear-gradient(top,  #ffffff 1%,#54a6de 51%,#ffffff 99%));
             }
             #find-customer-btn.switcher-item {
                 border-color: #1B6336;
-                background-color: #ffffff; // Old browsers
-                @include filter-gradient(#ffffff, #ffffff, vertical); // IE6-8
+                background-color: #33c3b8; // Old browsers
                 $experimental-support-for-svg: true;
                 @include background-image(linear-gradient(top,  #ffffff 1%,#33c3b8 51%,#ffffff 99%));
             }
             #register-now-btn.switcher-item {
                 border-color: #605E24;
-                background-color: #ffffff; // Old browsers
-                @include filter-gradient(#ffffff, #ffffff, vertical); // IE6-8
+                background-color: #a6cf6d; // Old browsers
                 $experimental-support-for-svg: true;
                 @include background-image(linear-gradient(top,  #ffffff 1%,#a6cf6d 52%,#ffffff 99%));
             }
@@ -152,7 +150,7 @@
             }
         }
     }
-    footer.find-house {
+    #footer.find-house {
         #login-switcher {
             #find-house-btn.switcher-item {
                 color: #1B1464;
@@ -167,7 +165,7 @@
         }
         border-top-color: #1B1464;
     }
-    footer.find-customer {
+    #footer.find-customer {
         #login-switcher {
             #find-house-btn.switcher-item {
                 border-top-color: #1B6336;
@@ -182,7 +180,7 @@
         }
         border-top-color: #1B6336;
     }
-    footer.register-now {
+    #footer.register-now {
         #login-switcher {
             #find-house-btn.switcher-item {
                 border-top-color: #605E24;
