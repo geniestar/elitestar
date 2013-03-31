@@ -119,11 +119,15 @@
 /* line 94, ../scss/login.scss */
 #login #footer #login-switcher {
   position: relative;
-  top: -2px;
+  top: -3px;
   width: 1024px;
   margin: 0 auto;
 }
-/* line 99, ../scss/login.scss */
+/* line 100, ../scss/login.scss */
+#login #footer #login-switcher table {
+  border-spacing: 0;
+}
+/* line 104, ../scss/login.scss */
 #login #footer #login-switcher .switcher-item {
   cursor: pointer;
   font-size: 24px;
@@ -148,7 +152,7 @@
   vartical-align: middle;
   text-align: center;
 }
-/* line 123, ../scss/login.scss */
+/* line 128, ../scss/login.scss */
 #login #footer #login-switcher #find-house-btn.switcher-item {
   border-color: #1B1464;
   background-color: #54a6de;
@@ -160,7 +164,7 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
 }
-/* line 129, ../scss/login.scss */
+/* line 134, ../scss/login.scss */
 #login #footer #login-switcher #find-customer-btn.switcher-item {
   border-color: #1B6336;
   background-color: #33c3b8;
@@ -172,7 +176,7 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
 }
-/* line 135, ../scss/login.scss */
+/* line 140, ../scss/login.scss */
 #login #footer #login-switcher #register-now-btn.switcher-item {
   border-color: #605E24;
   background-color: #a6cf6d;
@@ -184,64 +188,64 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #a6cf6d 52%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #a6cf6d 52%, #ffffff 99%);
 }
-/* line 143, ../scss/login.scss */
+/* line 148, ../scss/login.scss */
 #login #footer .copy-right {
   margin-top: 30px;
   font-size: 14px;
   color: white;
   text-align: center;
 }
-/* line 148, ../scss/login.scss */
+/* line 153, ../scss/login.scss */
 #login #footer .copy-right div {
   margin: 5px;
 }
-/* line 153, ../scss/login.scss */
+/* line 158, ../scss/login.scss */
 #login #footer.find-house {
   border-top-color: #1B1464;
 }
-/* line 155, ../scss/login.scss */
+/* line 160, ../scss/login.scss */
 #login #footer.find-house #login-switcher #find-house-btn.switcher-item {
   color: #1B1464;
   border-top-color: #FFF;
 }
-/* line 159, ../scss/login.scss */
+/* line 164, ../scss/login.scss */
 #login #footer.find-house #login-switcher #find-customer-btn.switcher-item {
   border-top-color: #1B1464;
 }
-/* line 162, ../scss/login.scss */
+/* line 167, ../scss/login.scss */
 #login #footer.find-house #login-switcher #register-now-btn.switcher-item {
   border-top-color: #1B1464;
 }
-/* line 168, ../scss/login.scss */
+/* line 173, ../scss/login.scss */
 #login #footer.find-customer {
   border-top-color: #1B6336;
 }
-/* line 170, ../scss/login.scss */
+/* line 175, ../scss/login.scss */
 #login #footer.find-customer #login-switcher #find-house-btn.switcher-item {
   border-top-color: #1B6336;
 }
-/* line 173, ../scss/login.scss */
+/* line 178, ../scss/login.scss */
 #login #footer.find-customer #login-switcher #find-customer-btn.switcher-item {
   color: #1B6336;
   border-top-color: #FFF;
 }
-/* line 177, ../scss/login.scss */
+/* line 182, ../scss/login.scss */
 #login #footer.find-customer #login-switcher #register-now-btn.switcher-item {
   border-top-color: #1B6336;
 }
-/* line 183, ../scss/login.scss */
+/* line 188, ../scss/login.scss */
 #login #footer.register-now {
   border-top-color: #605E24;
 }
-/* line 185, ../scss/login.scss */
+/* line 190, ../scss/login.scss */
 #login #footer.register-now #login-switcher #find-house-btn.switcher-item {
   border-top-color: #605E24;
 }
-/* line 188, ../scss/login.scss */
+/* line 193, ../scss/login.scss */
 #login #footer.register-now #login-switcher #find-customer-btn.switcher-item {
   border-top-color: #605E24;
 }
-/* line 191, ../scss/login.scss */
+/* line 196, ../scss/login.scss */
 #login #footer.register-now #login-switcher #register-now-btn.switcher-item {
   color: #605E24;
   border-top-color: #FFF;
