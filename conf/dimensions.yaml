@@ -1,0 +1,17 @@
+countries:
+    1: Taiwan
+    2: US
+states: 
+    1:
+        id: 'WA'
+        name: 'Western Australia'
+        suburbs: 
+            1: 'Abba River'
+            2: 'Abbey'
+        id: 'NT'
+    2:
+        id: 'NT'
+        name: 'Northern Territory'
+        suburbs: 
+            1: 'Adelaide River'
+            2: 'Acacia Hills'

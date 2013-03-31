@@ -1,7 +1,0 @@
-states: 
-    1:
-        id: WA
-        name: Western Australia
-        suburbs: 
-            1: 'Abba River'
-            2: 'Abbey'

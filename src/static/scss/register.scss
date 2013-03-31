@@ -1,0 +1,75 @@
+@import "registerform/*.png";
+@include all-registerform-sprites;
+@import "compass";
+@import "_common_define";
+
+
+.registerform-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#header {
+    height: 48px;
+    line-height: 48px;
+    margin-top: 100px;
+    border-top: 3px solid #0071BC;
+    border-bottom: 2px solid #0071BC;
+    background-color: #3685ff;
+    @include filter-gradient(#3685ff, #59a3f7, vertical);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #3685ff 16%,#59a3f7 76%));
+
+    .header-container {
+        width: 1024px;
+        margin: 0 auto;
+        position: relative;
+
+        div.desc {
+            position: absolute;
+            right: 160px;
+            color: $white;
+            vertical-align: middle;
+            font-size: 14px;
+        }
+        .registerform-login {
+            width: 87px;
+            height: 64px;
+            line-height: 64px;
+            color: #8C6239;
+            font-style: italic;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            top: -10px;
+            right: 50px;
+        }
+    }
+}
+
+#register-form {
+    width: 720px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #DBF0FF; 
+
+    #user-form {
+        width: 540px;
+        padding: 10px;
+        border: 1px solid $form-border;
+        background-color: $form-bg;
+        margin: 50px auto;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+
+        .title {
+            width: 200px;
+            padding: 5px;
+        }
+    }
+}
+
+
