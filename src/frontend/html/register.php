@@ -27,6 +27,7 @@ $tailData = array(
             <div id="user-form">
                 <?php echo ContentGenerator::getContent('register_user', array());?>
             </div>
+            <?php echo ContentGenerator::getContent('register_role_switcher', array());?>
             <div id="role-form">
                 <?php echo ContentGenerator::getContent('register_backpacker', array());?>
                 <?php echo ContentGenerator::getContent('register_landlord', array());?>

@@ -1,0 +1,135 @@
+<div id="backpacker-form" class="form">
+    <div id="go-to-title" class="big-title">{{i18n.REG_GO_TO}}</div>
+    <div class="map-all">
+    </div>
+    <div class="input-set">
+        <div class="title">{{i18n.REG_CITY}}</div>
+        <select name="city">
+            {{#cities}}
+                <option value="{{id}}">{{name}}</option>
+            {{/cities}}
+        </select>
+    </div>
+    <div class="input-set">
+        <div class="title">{{i18n.REG_DURATION}}</div>
+        <input type="text" name="duration_start" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-start"></div>
+        <div class="title sec-title">{{i18n.REG_TO}}</div>
+        <input type="text" name="duration_end" size="16" placeholder="{{nextYearText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-end"></div>
+    </div>
+    
+    <div class="input-set">
+        <div class="title">{{i18n.REG_BEDS}}</div>
+        <div class="title sec-title">{{i18n.REG_SINGLE}}</div>
+        <select name="bed_single">
+            {{#houseDimemsions.beds.single}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.beds.single}}
+        </select>
+        <div class="title sec-title">{{i18n.REG_DOUBLE}}</div>
+        <select name="bed_double">
+            {{#houseDimemsions.beds.double}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.beds.double}}
+        </select>
+    </div>
+
+    <div class="big-title">{{i18n.REG_FACILITIES}}</div>
+
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_INTERNET}}</div>
+        <div class="registerform-fa registerform-icon facility-icon"></div>
+        <input type="radio" name="fa" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fa" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_KITCHEN}}</div>
+        <div class="registerform-fb registerform-icon facility-icon"></div>
+        <input type="radio" name="fb" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fb" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_TV}}</div>
+        <div class="registerform-fc registerform-icon facility-icon"></div>
+        <input type="radio" name="fc" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fc" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_REFRIGERATOR}}</div>
+        <div class="registerform-fd registerform-icon facility-icon"></div>
+        <input type="radio" name="fd" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fd" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_WASHER}}</div>
+        <div class="registerform-fe registerform-icon facility-icon"></div>
+        <input type="radio" name="fe" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fe" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_HEATER}}</div>
+        <div class="registerform-ff registerform-icon facility-icon"></div>
+        <input type="radio" name="ff" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="ff" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_AC}}</div>
+        <div class="registerform-fg registerform-icon facility-icon"></div>
+        <input type="radio" name="fg" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fg" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_PARKING_SPACE}}</div>
+        <div class="registerform-ud registerform-icon facility-icon"></div>
+        <input type="radio" name="fh" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="fh" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+
+    <div class="big-title">{{i18n.REG_NEED_HELP}}</div>
+    <div class="input-set">
+        <div class="title help-title">{{i18n.REG_TAKE_YOU_FROM_AIRPORT}}</div>
+        <input type="radio" name="ha" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="ha" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title help-title">{{i18n.REG_OPEN_BANK_ACCOUNT}}</div>
+        <input type="radio" name="hb" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="hb" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <input type="text" name="hba" placeholder="{{i18n.REG_OPEN_BANK_ACCOUNT_PLACEHOLDER}}">
+    </div>
+    <div class="input-set">
+        <div class="title help-title">{{i18n.REG_APPLY_FOR_TFN}}</div>
+        <input type="radio" name="hc" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="hc" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title help-title">{{i18n.REG_APPLY_FOR_SIM_CARD}}</div>
+        <input type="radio" name="hd" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="hd" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set big-input-set">
+        <span class="big-title">{{i18n.REG_ACCEPTABLE_RENT}}</span>
+        <select name="bed_single">
+            {{#houseDimemsions.acceptable_rent}}
+                <option value="{{.}}">{{.}} {{i18n.REG_AUD}}</option>
+            {{/houseDimemsions.acceptable_rent}}
+        </select>
+    </div>
+
+    <div class="big-title">{{i18n.REG_HOW_TO_CONTACT_ME}}</div>
+    <div class="input-set">
+        <div class="title contact-title">{{i18n.REG_NAME}}</div>
+        <input type="text" size="45" name="name" placeholder="{{i18n.REG_NAME_PLACEHOLDER}}">
+    </div>
+    <div class="input-set">
+        <div class="title contact-title">{{i18n.REG_EMAIL}}</div>
+        <input type="text" size="45" name="email" placeholder="{{i18n.REG_EMAIL_PLACEHOLDER}}">
+    </div>
+    <div class="input-set">
+        <div class="title contact-title">{{i18n.REG_PHONE}}</div>
+        <input type="text" size="45" name="email" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">
+    </div>
+</div>
+<div class="pp-field">
+    <input type="checkbox" name="agree" value="1"><span class="sub-title">{{i18n.REG_VIEW_PP}}<a href="">{{i18n.REG_PP}}</a></span>
+</div>
+<input type="submit" value="{{i18n.REG_PUBLISH_NOW}}">

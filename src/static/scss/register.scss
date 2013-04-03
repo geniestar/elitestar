@@ -3,17 +3,18 @@
 @import "compass";
 @import "_common_define";
 
-
 .registerform-icon {
     width: 30px;
     height: 30px;
+    display: inline-block;
+    float: left;
 }
 
 #header {
     height: 48px;
     line-height: 48px;
     margin-top: 100px;
-    border-top: 3px solid #0071BC;
+    border-top: 2px solid #0071BC;
     border-bottom: 2px solid #0071BC;
     background-color: #3685ff;
     @include filter-gradient(#3685ff, #59a3f7, vertical);
@@ -55,21 +56,166 @@
     padding: 10px;
     background-color: #DBF0FF; 
 
-    #user-form {
+    #user-form, #backpacker-form {
         width: 540px;
-        padding: 10px;
+        padding: 15px;
         border: 1px solid $form-border;
         background-color: $form-bg;
         margin: 50px auto;
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         border-radius: 3px;
-
+        overflow: hidden;
+    }
+    #backpacker-form {
+        margin: 10px auto;
+    }
+    #role-switcher {
+        width: 562px;
+        margin: 0 auto;
+        font-size: 20px;
+        overflow: hidden;
+        .container {
+            float: right;
+            height: 48px;
+            line-height: 48px;
+        }
         .title {
-            width: 200px;
-            padding: 5px;
+            display: inline-block;
+        }
+        .switcher-btn {
+            padding: 5px 20px;
+            color: $white;
+            display: inline;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            border-style:solid;
+            border-width:1px;
+            cursor: pointer;
+        }
+        #backpacker-btn {
+            border-color: #1B6336;
+            background-color: #33c3b8; // Old browsers
+            $experimental-support-for-svg: true;
+            @include background-image(linear-gradient(top,  #ffffff 1%,#33c3b8 51%,#ffffff 99%));
+            margin: 0 10px;
+        }
+        #backpacker-btn:hover {
+            color: #1B6336;
+        }
+        #backpacker-btn.selected {
+            color: #1B6336;
+        }
+        #houseowner-btn {
+            border-color: #1B1464;
+            background-color: #54a6de; // Old browsers
+            $experimental-support-for-svg: true;
+            @include background-image(linear-gradient(top,  #ffffff 1%,#54a6de 51%,#ffffff 99%));
+        }
+        #houseowner-btn:hover {
+            color: #1B1464;
+        }
+        #houseowner-btn.selected {
+            color: #1B1464;
+        }
+    }
+    
+    #backpacker-form {
+        position: relative;
+        #go-to-title {
+            position: absolute;
+            top: 80px;
+            left: 30px;
+        }
+        .map-all {
+            background: url('/img/map_all.png');
+            width: 181px;
+            height: 169px;
+            margin: 0 auto;
         }
     }
 }
 
-
+.form {
+    .big-title {
+        color: $blue;
+        font-size: 20px;
+    }
+    .input-set {
+        clear: both;
+        overflow: hidden;
+        margin: 5px 0;
+        line-height: 30px;
+        height: 30px;
+        .title {
+            float: left;
+            width: 110px;
+            padding: 3px;
+            vertical-align: middle;
+            line-height: 20px;
+        }
+        .title.sec-title {
+            display: inline;
+            width: auto;
+        }
+        input {
+            float: left;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            padding: 3px;
+            font-size: 12px;
+            color: $gray;
+            vertical-align: middle;
+        }
+        input[type="radio"] {
+            margin-top:7px;
+            float: left;
+        }
+        select {
+            padding: 3px;
+            float: left;
+        }
+        .registerform-calendar {
+            cursor: pointer;
+        }
+        .facility-title, .help-title, .contact-title {
+            text-align: right;
+        }
+        .help-title {
+            width: 182px;
+        }
+        .cotact-title {
+            width: 100px;
+        }
+        .facility-icon {
+            margin: 0 20px;
+        }
+    }
+    .input-set.big-input-set {
+        margin: 10px 0;
+        .big-title {
+            padding: 0 20px 0 0;
+            width: 150px;
+        }
+    }
+    .big-title {
+        padding: 20px 0;
+        float: left;
+    }
+}
+#role-form {
+    input[type=submit] {
+        display: block;
+        margin: 0 auto 50px auto;
+        padding: 5px 15px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    .pp-field {
+        margin: 20px auto;
+        text-align: center;
+    }
+}

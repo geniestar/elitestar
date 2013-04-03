@@ -17,20 +17,21 @@
 body {
   font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
   margin: 0;
+  font-size: 14px;
 }
 
-/* line 10, ../scss/common.scss */
+/* line 11, ../scss/common.scss */
 a {
-  color: #333333;
+  color: #3b91d9;
   text-decoration: none;
 }
 
-/* line 15, ../scss/common.scss */
+/* line 16, ../scss/common.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 19, ../scss/common.scss */
+/* line 20, ../scss/common.scss */
 input {
   padding: 5px;
   -webkit-border-radius: 5px;

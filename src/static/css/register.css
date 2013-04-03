@@ -68,18 +68,20 @@
   background-position: 0 -214px;
 }
 
-/* line 7, ../scss/register.scss */
+/* line 6, ../scss/register.scss */
 .registerform-icon {
   width: 30px;
   height: 30px;
+  display: inline-block;
+  float: left;
 }
 
-/* line 12, ../scss/register.scss */
+/* line 13, ../scss/register.scss */
 #header {
   height: 48px;
   line-height: 48px;
   margin-top: 100px;
-  border-top: 3px solid #0071BC;
+  border-top: 2px solid #0071BC;
   border-bottom: 2px solid #0071BC;
   background-color: #3685ff;
   *zoom: 1;
@@ -92,13 +94,13 @@
   background-image: -o-linear-gradient(top, #3685ff 16%, #59a3f7 76%);
   background-image: linear-gradient(top, #3685ff 16%, #59a3f7 76%);
 }
-/* line 23, ../scss/register.scss */
+/* line 24, ../scss/register.scss */
 #header .header-container {
   width: 1024px;
   margin: 0 auto;
   position: relative;
 }
-/* line 28, ../scss/register.scss */
+/* line 29, ../scss/register.scss */
 #header .header-container div.desc {
   position: absolute;
   right: 160px;
@@ -106,7 +108,7 @@
   vertical-align: middle;
   font-size: 14px;
 }
-/* line 35, ../scss/register.scss */
+/* line 36, ../scss/register.scss */
 #header .header-container .registerform-login {
   width: 87px;
   height: 64px;
@@ -122,26 +124,210 @@
   right: 50px;
 }
 
-/* line 52, ../scss/register.scss */
+/* line 53, ../scss/register.scss */
 #register-form {
   width: 720px;
   margin: 0 auto;
   padding: 10px;
   background-color: #DBF0FF;
 }
-/* line 58, ../scss/register.scss */
-#register-form #user-form {
+/* line 59, ../scss/register.scss */
+#register-form #user-form, #register-form #backpacker-form {
   width: 540px;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #656565;
   background-color: white;
   margin: 50px auto;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  overflow: hidden;
 }
-/* line 68, ../scss/register.scss */
-#register-form #user-form .title {
-  width: 200px;
-  padding: 5px;
+/* line 70, ../scss/register.scss */
+#register-form #backpacker-form {
+  margin: 10px auto;
+}
+/* line 73, ../scss/register.scss */
+#register-form #role-switcher {
+  width: 562px;
+  margin: 0 auto;
+  font-size: 20px;
+  overflow: hidden;
+}
+/* line 78, ../scss/register.scss */
+#register-form #role-switcher .container {
+  float: right;
+  height: 48px;
+  line-height: 48px;
+}
+/* line 83, ../scss/register.scss */
+#register-form #role-switcher .title {
+  display: inline-block;
+}
+/* line 86, ../scss/register.scss */
+#register-form #role-switcher .switcher-btn {
+  padding: 5px 20px;
+  color: white;
+  display: inline;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+}
+/* line 97, ../scss/register.scss */
+#register-form #role-switcher #backpacker-btn {
+  border-color: #1B6336;
+  background-color: #33c3b8;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjMzNjM2I4Ii8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #33c3b8), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  margin: 0 10px;
+}
+/* line 104, ../scss/register.scss */
+#register-form #role-switcher #backpacker-btn:hover {
+  color: #1B6336;
+}
+/* line 107, ../scss/register.scss */
+#register-form #role-switcher #backpacker-btn.selected {
+  color: #1B6336;
+}
+/* line 110, ../scss/register.scss */
+#register-form #role-switcher #houseowner-btn {
+  border-color: #1B1464;
+  background-color: #54a6de;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjNTRhNmRlIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #54a6de), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+}
+/* line 116, ../scss/register.scss */
+#register-form #role-switcher #houseowner-btn:hover {
+  color: #1B1464;
+}
+/* line 119, ../scss/register.scss */
+#register-form #role-switcher #houseowner-btn.selected {
+  color: #1B1464;
+}
+/* line 124, ../scss/register.scss */
+#register-form #backpacker-form {
+  position: relative;
+}
+/* line 126, ../scss/register.scss */
+#register-form #backpacker-form #go-to-title {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+}
+/* line 131, ../scss/register.scss */
+#register-form #backpacker-form .map-all {
+  background: url("/img/map_all.png");
+  width: 181px;
+  height: 169px;
+  margin: 0 auto;
+}
+
+/* line 141, ../scss/register.scss */
+.form .big-title {
+  color: #3b91d9;
+  font-size: 20px;
+}
+/* line 145, ../scss/register.scss */
+.form .input-set {
+  clear: both;
+  overflow: hidden;
+  margin: 5px 0;
+  line-height: 30px;
+  height: 30px;
+}
+/* line 151, ../scss/register.scss */
+.form .input-set .title {
+  float: left;
+  width: 110px;
+  padding: 3px;
+  vertical-align: middle;
+  line-height: 20px;
+}
+/* line 158, ../scss/register.scss */
+.form .input-set .title.sec-title {
+  display: inline;
+  width: auto;
+}
+/* line 162, ../scss/register.scss */
+.form .input-set input {
+  float: left;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 3px;
+  font-size: 12px;
+  color: #666666;
+  vertical-align: middle;
+}
+/* line 172, ../scss/register.scss */
+.form .input-set input[type="radio"] {
+  margin-top: 7px;
+  float: left;
+}
+/* line 176, ../scss/register.scss */
+.form .input-set select {
+  padding: 3px;
+  float: left;
+}
+/* line 180, ../scss/register.scss */
+.form .input-set .registerform-calendar {
+  cursor: pointer;
+}
+/* line 183, ../scss/register.scss */
+.form .input-set .facility-title, .form .input-set .help-title, .form .input-set .contact-title {
+  text-align: right;
+}
+/* line 186, ../scss/register.scss */
+.form .input-set .help-title {
+  width: 182px;
+}
+/* line 189, ../scss/register.scss */
+.form .input-set .cotact-title {
+  width: 100px;
+}
+/* line 192, ../scss/register.scss */
+.form .input-set .facility-icon {
+  margin: 0 20px;
+}
+/* line 196, ../scss/register.scss */
+.form .input-set.big-input-set {
+  margin: 10px 0;
+}
+/* line 198, ../scss/register.scss */
+.form .input-set.big-input-set .big-title {
+  padding: 0 20px 0 0;
+  width: 150px;
+}
+/* line 203, ../scss/register.scss */
+.form .big-title {
+  padding: 20px 0;
+  float: left;
+}
+
+/* line 209, ../scss/register.scss */
+#role-form input[type=submit] {
+  display: block;
+  margin: 0 auto 50px auto;
+  padding: 5px 15px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+/* line 217, ../scss/register.scss */
+#role-form .pp-field {
+  margin: 20px auto;
+  text-align: center;
 }

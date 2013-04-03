@@ -1,0 +1,16 @@
+<div class="form">
+    <div class="input-set"><div class="title">{{i18n.REG_USERNAME}}</div><input type="text" name="id" size="16" placeholder="{{i18n.REG_USERNAME_PLACEHOLDER}}"></div>
+    <div class="input-set">
+        <div class="title">{{i18n.REG_STATE}}</div>
+        <select name="country">
+            {{#countries}}
+                <option value="{{id}}">{{name}}</option>
+            {{/countries}}
+        </select>
+    </div>
+    <div class="input-set"><div class="title">{{i18n.REG_ID_ACCOUNT}}</div><input type="text" name="email" size="40" placeholder="{{i18n.REG_ID_ACCOUNT_PLACEHOLDER}}"></div>
+    <div class="input-set">
+        <div class="title">{{i18n.REG_PW}}</div><input type="password" name="password" size="23" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_RETYPE_PW}}</div><input type="password" name="retype_password" size="23" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
+    </div>
+</div>
