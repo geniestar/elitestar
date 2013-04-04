@@ -5,16 +5,46 @@ states:
     1:
         id: 'WA'
         name: 'Western Australia'
+        class: 'wa'
         suburbs: 
             1: 'Abba River'
             2: 'Abbey'
-        id: 'NT'
     2:
         id: 'NT'
+        class: 'nt'
         name: 'Northern Territory'
         suburbs: 
             1: 'Adelaide River'
             2: 'Acacia Hills'
+    3:
+        id: 'SA'
+        class: 'sa'
+        name: 'South Australia'
+        suburbs: 
+            1: 'Aberfoyle Park'
+            2: 'Adelaide'
+    4:
+        id: 'Qld'
+        class: 'qld'
+        name: 'Queensland'
+        suburbs: 
+            1: '4380'
+            2: 'Abbeywood'
+    5:
+        id: 'Vic'
+        class: 'vic'
+        name: 'Victoria'
+        suburbs: 
+            1: 'Abbeyard'
+            2: 'Abbotsford'
+    6:
+        id: 'Tas'
+        class: 'tas'
+        name: 'Tasmania'
+        suburbs: 
+            1: 'Abbotsham'
+            2: 'Abels Bay'
+
 
 house_dimemsions:
     beds:

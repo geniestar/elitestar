@@ -56,7 +56,7 @@
     padding: 10px;
     background-color: #DBF0FF; 
 
-    #user-form, #backpacker-form {
+    #user-form, #backpacker-form, #houseowner-form {
         width: 540px;
         padding: 15px;
         border: 1px solid $form-border;
@@ -67,7 +67,7 @@
         border-radius: 3px;
         overflow: hidden;
     }
-    #backpacker-form {
+    #backpacker-form, #houseowner-form {
         margin: 10px auto;
     }
     #role-switcher {
@@ -127,12 +127,6 @@
             position: absolute;
             top: 80px;
             left: 30px;
-        }
-        .map-all {
-            background: url('/img/map_all.png');
-            width: 181px;
-            height: 169px;
-            margin: 0 auto;
         }
     }
 }

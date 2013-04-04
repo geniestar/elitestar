@@ -30,11 +30,11 @@ $tailData = array(
             <?php echo ContentGenerator::getContent('register_role_switcher', array());?>
             <div id="role-form">
                 <?php echo ContentGenerator::getContent('register_backpacker', array());?>
-                <?php echo ContentGenerator::getContent('register_landlord', array());?>
+                <?php echo ContentGenerator::getContent('register_houseowner', array());?>
             </div>
         </div>
+        <?php EliteHelper::passParamsAndStringsToJs();?>
         <?php echo ContentGenerator::getContent('tail', $tailData);?>
-        <?php EliteHelper::passStringsToJs();?>
     </body>
 </html>
 

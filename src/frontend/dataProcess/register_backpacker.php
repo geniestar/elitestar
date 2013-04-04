@@ -16,5 +16,16 @@ $data['nextYearText'] = date('Y/M/d', time() + 60*60*24*365);
 
 $data['houseDimemsions'] = ConfigReader::getInstance()->readConfig('dimensions', 'house_dimemsions');
 
+$states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
+
+$data['states'] = array();
+foreach($states as $key => $state)
+{
+    $data['states'][] = array(
+        'class' => $state['class'],
+        'id' => $key,
+    );
+}
+EliteHelper::setParamsToJs('states', $states);
 
 ?>

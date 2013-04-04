@@ -23,7 +23,7 @@ $tailData = array(
     </head>
     <body>
         <?php echo ContentGenerator::getContent('login', array());?>
+        <?php EliteHelper::passParamsAndStringsToJs();?>
         <?php echo ContentGenerator::getContent('tail', $tailData);?>
-        <?php EliteHelper::passStringsToJs();?>
     </body>
 </html>

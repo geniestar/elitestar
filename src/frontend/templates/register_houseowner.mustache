@@ -1,19 +1,6 @@
-<form id="backpacker-form-all" action="account_action.php" class="hidden" method="POST">
-<div id="backpacker-form" class="form">
+<form id="houseowner-form-all" action="account_action.php" class="hidden" method="POST">
+<div id="houseowner-form" class="form">
     <div id="go-to-title" class="big-title">{{i18n.REG_GO_TO}}</div>
-    <div id="map-all" class="big">
-        {{#states}}
-            <div class="map-{{class}} map-item unselected" data-id="{{id}}"></div>
-        {{/states}}
-    </div>
-    <div class="input-set">
-        <div class="title">{{i18n.REG_CITY}}</div>
-        <select name="city">
-            {{#cities}}
-                <option value="{{id}}">{{name}}</option>
-            {{/cities}}
-        </select>
-    </div>
     <div class="input-set">
         <div class="title">{{i18n.REG_DURATION}}</div>
         <input type="text" name="duration_start" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-start"></div>

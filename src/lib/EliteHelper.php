@@ -9,6 +9,7 @@ class EliteHelper
     static private $langs = array();
     static private $errors = array();
     static private $stringToJs = array();
+    static private $paramsToJs = array();
 
     /**
      * getLangString
@@ -59,9 +60,10 @@ class EliteHelper
     static public function initJsObject()
     {
         echo '<script type="text/javascript">';
-        echo 'var YAHOO = {ImageUploader: {}};';
+        echo 'var YAHOO = {EliteStar: {}};';
         echo '</script>';
     }
+
     /**
      * setStringToJs
      *
@@ -75,14 +77,27 @@ class EliteHelper
     }
 
     /**
-     * passStringsToJs
+     * setParamsToJs
+     *
+     * @param string $index string index
      *
      * @return void
      */
-    static public function passStringsToJs()
+    static public function setParamsToJs($index, $value)
+    {
+        self::$paramsToJs[$index] = $value;
+    }
+
+    /**
+     * passParamsAndStringsToJs
+     *
+     * @return void
+     */
+    static public function passParamsAndStringsToJs()
     {
         echo '<script type="text/javascript">';
-        echo 'YAHOO.ImageUploader.lang=' . json_encode(self::$stringToJs);
+        echo 'YAHOO.EliteStar.lang=' . json_encode(self::$stringToJs) . ';';
+        echo 'YAHOO.EliteStar.params=' . json_encode(self::$paramsToJs) . ';';
         echo '</script>';
     }
     

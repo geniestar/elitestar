@@ -23,3 +23,79 @@ input {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+#map-all {
+    .map-item {
+        cursor: pointer;
+    }
+    .unselected {
+        background: url('/img/tranparent.png');
+    }
+}
+
+#map-all.big {
+    background: url('/img/map_all_big.png');
+    width: 181px;
+    height: 169px;
+    margin: 0 auto;
+    position: relative;
+    .map-wa {
+        position: absolute;
+        background: url('/img/map_wa_big.png');
+        width: 70px;
+        height: 110px;
+        top: 19px;
+    }
+    .map-nt {
+        position: absolute;
+        background: url('/img/map_nt_big.png');
+        width: 41px;
+        height: 75px;
+        top: 6px;
+        left: 70px;
+    }
+    .map-sa {
+        position: absolute;
+        background: url('/img/map_sa_big.png');
+        width: 53px;
+        height: 62px;
+        top: 80px;
+        left: 70px;
+    }
+    .map-qld {
+        position: absolute;
+        background: url('/img/map_qld_big.png');
+        width: 71px;
+        height: 95px;
+        top: 0;
+        right: 1px;
+    }
+    .map-vic {
+        position: absolute;
+        background: url('/img/map_vic_big.png');
+        width: 41px;
+        height: 28px;
+        top: 119px;
+        right: 18px;
+    }
+    .map-tas {
+        position: absolute;
+        background: url('/img/map_tas_big.png');
+        width: 23px;
+        height: 23px;
+        top: 146px;
+        right: 23px;
+    }
+
+    .unselected {
+        background: url('/img/tranparent.png');
+    }
+}
