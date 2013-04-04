@@ -123,3 +123,23 @@ input {
 #map-all.big .unselected {
   background: url("/img/tranparent.png");
 }
+
+/* line 103, ../scss/common.scss */
+.calendar {
+  width: 220px;
+  position: absolute;
+}
+
+/* line 108, ../scss/common.scss */
+.panel {
+  z-index: 100;
+  padding: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #656565;
+  -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  background-color: white;
+}

@@ -26,6 +26,7 @@ foreach($states as $key => $state)
         'id' => $key,
     );
 }
+$data['states'][0]['default'] = true;
 EliteHelper::setParamsToJs('states', $states);
 
 ?>
