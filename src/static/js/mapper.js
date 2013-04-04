@@ -17,13 +17,15 @@ YUI.add("mapper", function(Y)
             var clickCallback = cfg.clickCallback;
             var currentSelection = null;
             items.each(function (item) {
-                item.on('click', function(){
-                    this.removeClass('unselected');
-                    if (currentSelection) {
-                        currentSelection.addClass('unselected');
+                item.on('click', function() {
+                    if (this !== currentSelection) {
+                        this.removeClass('unselected');
+                        if (currentSelection) {
+                            currentSelection.addClass('unselected');
+                        }
+                        currentSelection = this;
+                        clickCallback(this.getAttribute('data-id'));
                     }
-                    currentSelection = this;
-                    clickCallback(this.getAttribute('data-id'));
                 });
             });
         }
