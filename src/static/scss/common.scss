@@ -1,6 +1,10 @@
 @import "_common_define";
 @import "icons/*.png";
 @include all-icons-sprites;
+@import "map/*.png";
+@import "map_big/*.png";
+@include all-map-sprites;
+@include all-map_big-sprites;
 
 body {
     font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
@@ -24,6 +28,10 @@ input {
     border-radius: 5px;
 }
 
+input[type="text"], input[type="password"] {
+    border: 1px solid $gray;
+}
+
 .hidden {
     display: none;
 }
@@ -37,58 +45,51 @@ input {
         cursor: pointer;
     }
     .unselected {
-        background: url('/img/tranparent.png');
+        background: url('/img/transparent.png');
     }
 }
 
-#map-all.big {
-    background: url('/img/map_all_big.png');
+#map-all.map_big-map_all_big {
     width: 181px;
     height: 169px;
     margin: 0 auto;
     position: relative;
-    .map-wa {
+    .map_big-map_wa_big {
         position: absolute;
-        background: url('/img/map_wa_big.png');
         width: 70px;
         height: 110px;
         top: 19px;
     }
-    .map-nt {
+    .map_big-map_nt_big {
         position: absolute;
-        background: url('/img/map_nt_big.png');
         width: 41px;
         height: 75px;
         top: 6px;
         left: 70px;
     }
-    .map-sa {
+    .map_big-map_sa_big {
         position: absolute;
-        background: url('/img/map_sa_big.png');
         width: 53px;
         height: 62px;
         top: 80px;
         left: 70px;
     }
-    .map-qld {
+    .map_big-map_qld_big {
         position: absolute;
-        background: url('/img/map_qld_big.png');
         width: 71px;
         height: 95px;
         top: 0;
         right: 1px;
     }
-    .map-vic {
+    .map_big-map_vic_big {
         position: absolute;
-        background: url('/img/map_vic_big.png');
         width: 41px;
         height: 28px;
         top: 119px;
         right: 18px;
     }
-    .map-tas {
+    .map_big-map_tas_big {
         position: absolute;
-        background: url('/img/map_tas_big.png');
         width: 23px;
         height: 23px;
         top: 146px;
@@ -96,13 +97,12 @@ input {
     }
 
     .unselected {
-        background: url('/img/tranparent.png');
+        background: url('/img/transparent.png');
     }
 }
 
 .calendar {
     width: 220px;
-    position: absolute;
 }
 
 .panel {
@@ -116,4 +116,5 @@ input {
     -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
     box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
     background-color: $white;
+    position: absolute;
 }

@@ -1,9 +1,10 @@
 <form id="backpacker-form-all" action="account_action.php" class="hidden" method="POST">
 <div id="backpacker-form" class="form">
+    <input type="hidden" name="state" value="1">
     <div id="go-to-title" class="big-title">{{i18n.REG_GO_TO}}</div>
-    <div id="map-all" class="big">
+    <div id="map-all" class="map_big-map_all_big">
         {{#states}}
-            <div class="map-{{class}} map-item {{^default}}unselected{{/default}}" data-id="{{id}}"></div>
+            <div class="map_big-map_{{class}}_big map-item {{^default}}unselected{{/default}}" data-id="{{id}}"></div>
         {{/states}}
     </div>
     <div class="input-set">

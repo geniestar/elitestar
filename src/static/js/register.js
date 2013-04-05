@@ -31,9 +31,7 @@ YUI({
         });
         var stateInfo = YAHOO.EliteStar.params.states[id];
         for (var i in stateInfo.suburbs) {
-            var newOption = document.createElement('option');
-            newOption.text = stateInfo.suburbs[i];
-            newOption.value = i;
+            var newOption = Y.Node.create('<option value=' + i + '>' + stateInfo.suburbs[i] + '</option>');
             select.append(newOption);
         }
     }
@@ -44,6 +42,7 @@ YUI({
         selector: '#map-all',
         itemsSelector: '.map-item',
         clickCallback: function(id) {
+            Y.one('#backpacker-form input[name="state"]').set('value', id);
             var stateInfo = YAHOO.EliteStar.params.states[id];
             replaceAllSuburbs('#backpacker-form .city-selection', id);
         }

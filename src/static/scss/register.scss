@@ -80,7 +80,7 @@
             line-height: 48px;
         }
         .title {
-            display: inline-block;
+            display: inline;
         }
         .switcher-btn {
             padding: 5px 20px;
@@ -137,7 +137,6 @@
     }
     .input-set {
         clear: both;
-        overflow: hidden;
         margin: 5px 0;
         line-height: 30px;
         height: 30px;
@@ -210,5 +209,11 @@
     .pp-field {
         margin: 20px auto;
         text-align: center;
+    }
+    #cal-btn-start-cal {
+        right: 47px;
+    }
+    #cal-btn-end-cal {
+        right: -125px;
     }
 }
