@@ -213,6 +213,17 @@
         padding: 20px 0;
         float: left;
     }
+    #more-description {
+        position: relative;
+        .registerform-add {
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
 }
 #role-form {
     input[type=submit] {

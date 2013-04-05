@@ -70,4 +70,16 @@ YUI({
         var id = e.target.get('value');
         replaceAllSuburbs('#houseowner-form .city-selection', id);
     });
+    var moreDescriptionCount = 1;
+    Y.one('.registerform-add').on('click', function(e){
+        var tmpNode = Y.one('.des-template').cloneNode(10);
+        Y.one('#more-description').append(tmpNode.set('id','more-des-' + moreDescriptionCount));
+        tmpNode = Y.one('#more-des-' + moreDescriptionCount);
+        tmpNode.one('select[name="position-tmpl"]').set('name', 'position-' + moreDescriptionCount);
+        tmpNode.one('select[name="vehicle-tmpl"]').set('name', 'vehicle-' + moreDescriptionCount);
+        tmpNode.one('input[name="km-tmpl"]').set('name', 'km-' + moreDescriptionCount);
+        tmpNode.one('input[name="mins-tmpl"]').set('name', 'mins-' + moreDescriptionCount);
+        tmpNode.removeClass('hidden');
+        moreDescriptionCount++;
+    });
 });

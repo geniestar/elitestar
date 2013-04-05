@@ -1,11 +1,16 @@
-/* line 138, registerform/*.png */
-.registerform-sprite, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud {
-  background: url('/img/registerform-sa557961582.png') no-repeat;
+/* line 146, registerform/*.png */
+.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud {
+  background: url('/img/registerform-s99d1d93d70.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-add {
+  background-position: 0 -124px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-calendar {
-  background-position: 0 -304px;
+  background-position: 0 -330px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -15,22 +20,22 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fb {
-  background-position: 0 -154px;
+  background-position: 0 -180px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fc {
-  background-position: 0 -274px;
+  background-position: 0 -300px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fd {
-  background-position: 0 -334px;
+  background-position: 0 -360px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fe {
-  background-position: 0 -124px;
+  background-position: 0 -150px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -40,7 +45,7 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fg {
-  background-position: 0 -184px;
+  background-position: 0 -210px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -50,22 +55,22 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ua {
-  background-position: 0 -394px;
+  background-position: 0 -420px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ub {
-  background-position: 0 -364px;
+  background-position: 0 -390px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-uc {
-  background-position: 0 -244px;
+  background-position: 0 -270px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ud {
-  background-position: 0 -214px;
+  background-position: 0 -240px;
 }
 
 /* line 6, ../scss/register.scss */
@@ -329,8 +334,21 @@
   padding: 20px 0;
   float: left;
 }
-
+/* line 216, ../scss/register.scss */
+.form #more-description {
+  position: relative;
+}
 /* line 218, ../scss/register.scss */
+.form #more-description .registerform-add {
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 229, ../scss/register.scss */
 #role-form input[type=submit] {
   display: block;
   margin: 0 auto 50px auto;
@@ -339,20 +357,20 @@
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 226, ../scss/register.scss */
+/* line 237, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 230, ../scss/register.scss */
+/* line 241, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 47px;
 }
-/* line 233, ../scss/register.scss */
+/* line 244, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -125px;
 }
-/* line 236, ../scss/register.scss */
+/* line 247, ../scss/register.scss */
 #role-form #cal-btn-house-cal {
   right: -192px;
 }

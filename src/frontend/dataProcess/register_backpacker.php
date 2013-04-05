@@ -3,7 +3,7 @@
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 
 // just defult value;
-foreach ($states[1]['suburbs'] as $key => $value)
+foreach ($states[0]['suburbs'] as $key => $value)
 {
     $data['cities'][] = array(
         'id' => $key,

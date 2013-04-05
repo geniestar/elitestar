@@ -12,7 +12,7 @@ foreach($states as $key => $state)
 }
 
 // just defult value;
-foreach ($states[1]['suburbs'] as $key => $value)
+foreach ($states[0]['suburbs'] as $key => $value)
 {
     $data['cities'][] = array(
         'id' => $state['id'],

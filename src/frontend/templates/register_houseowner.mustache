@@ -1,7 +1,8 @@
-<form id="houseowner-form-all" action="account_action.php" class="hidden" method="POST">
+<form id="houseowner-form-all" action="account_action.php" class="hidden" method="POST" enctype="multipart/form-data">
 <div id="houseowner-form" class="form">
+    <input type="hidden" name="role" value="h">
     <div class="big-title">{{i18n.REG_DES_OF_HOUSE}}</div>
-
+    
     <div class="input-set">
         <div class="title">{{i18n.REG_STATE}}</div>
         <select name="state">
@@ -158,7 +159,7 @@
     {{#photos}}
         <div class="input-set big-input-set">
             <div class="title photo-title">{{i18n.REG_PHOTO}}{{.}}</div>
-            <input name="photo{{1}}" type="file" size="40">
+            <input name="photo-{{.}}" type="file" size="40">
         </div>
     {{/photos}}
 
@@ -177,50 +178,51 @@
     </div>
 
     <div class="big-title">{{i18n.REG_MORE_DESCRIPTION}}</div>
-    <div id="des-template" class="input-set input-set-two-line hidden">
+    <div id="more-description">
+    <div class="des-template input-set input-set-two-line hidden">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
-        <select name="position">
+        <select name="position-tmpl">
             {{#positions}}
                 <option value="{{value}}">{{name}}</option>
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km" placeholder="{{i18n.REG_KM_PLACEHOLDER}}">
+        <input type="text" size="1" name="km-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins" placeholder="{{i18n.REG_MINS_PLACEHOLDER}}">
+        <input type="text" size="1" name="mins-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
         <div style="clear:both">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
-        <select name="vehicle">
+        <select name="vehicle-tmpl">
             {{#vehicle}}
                 <option value="{{value}}">{{name}}</option>
             {{/vehicle}}
         </select>
         </div>
     </div>
-    <div class="input-set input-set-two-line">
+    <div id="more-des-0" class="input-set input-set-two-line">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
-        <select name="position">
+        <select name="position-0">
             {{#positions}}
                 <option value="{{value}}">{{name}}</option>
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km" placeholder="{{i18n.REG_KM_PLACEHOLDER}}">
+        <input type="text" size="1" name="km-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins" placeholder="{{i18n.REG_MINS_PLACEHOLDER}}">
+        <input type="text" size="1" name="mins-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
         <div style="clear:both">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
-        <select name="vehicle">
+        <select name="vehicle-0">
             {{#vehicle}}
                 <option value="{{value}}">{{name}}</option>
             {{/vehicle}}
         </select>
         </div>
     </div>
-
-
+    <div class="registerform-add"></div>
+    </div>
 </div>
 <div class="pp-field">
     <input type="checkbox" name="agree" value="1"><span class="sub-title">{{i18n.REG_VIEW_PP}}<a href="">{{i18n.REG_PP}}</a></span>

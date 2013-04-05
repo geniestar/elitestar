@@ -1,49 +1,49 @@
 countries:
-    1: Taiwan
-    2: US
+    0: Taiwan
+    1: US
 states: 
-    1:
-        id: 1
+    0:
+        id: 0
         name: 'Western Australia'
         class: 'wa'
         suburbs: 
-            1: 'Abba River'
-            2: 'Abbey'
-    2:
-        id: 2
+            0: 'Abba River'
+            1: 'Abbey'
+    1:
+        id: 1
         class: 'nt'
         name: 'Northern Territory'
         suburbs: 
-            1: 'Adelaide River'
-            2: 'Acacia Hills'
-    3:
-        id: 3
+            0: 'Adelaide River'
+            1: 'Acacia Hills'
+    2:
+        id: 2
         class: 'sa'
         name: 'South Australia'
         suburbs: 
-            1: 'Aberfoyle Park'
-            2: 'Adelaide'
-    4:
-        id: 4
+            0: 'Aberfoyle Park'
+            1: 'Adelaide'
+    3:
+        id: 3
         class: 'qld'
         name: 'Queensland'
         suburbs: 
-            1: '4380'
-            2: 'Abbeywood'
-    5:
-        id: 5
+            0: '4380'
+            1: 'Abbeywood'
+    4:
+        id: 4
         class: 'vic'
         name: 'Victoria'
         suburbs: 
-            1: 'Abbeyard'
-            2: 'Abbotsford'
-    6:
-        id: 6
+            0: 'Abbeyard'
+            1: 'Abbotsford'
+    5:
+        id: 5
         class: 'tas'
         name: 'Tasmania'
         suburbs: 
-            1: 'Abbotsham'
-            2: 'Abels Bay'
+            0: 'Abbotsham'
+            1: 'Abels Bay'
 
 
 house_dimemsions:
