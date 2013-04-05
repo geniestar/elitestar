@@ -1,15 +1,50 @@
 <form id="houseowner-form-all" action="account_action.php" class="hidden" method="POST">
 <div id="houseowner-form" class="form">
-    <div id="go-to-title" class="big-title">{{i18n.REG_GO_TO}}</div>
+    <div class="big-title">{{i18n.REG_DES_OF_HOUSE}}</div>
+
     <div class="input-set">
-        <div class="title">{{i18n.REG_DURATION}}</div>
-        <input type="text" name="duration_start" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-start"></div>
-        <div class="title sec-title">{{i18n.REG_TO}}</div>
-        <input type="text" name="duration_end" size="16" placeholder="{{nextYearText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-end"></div>
+        <div class="title">{{i18n.REG_STATE}}</div>
+        <select name="state">
+            {{#states}}
+                <option value="{{id}}">{{name}}</option>
+            {{/states}}
+        </select>
     </div>
     
     <div class="input-set">
-        <div class="title">{{i18n.REG_BEDS}}</div>
+        <div class="title">{{i18n.REG_CITY}}</div>
+        <select class="city-selection" name="city">
+            {{#cities}}
+                <option value="{{id}}">{{name}}</option>
+            {{/cities}}
+        </select>
+        <input name="address" placeholder="{{i18n.REG_ADDRESS_PLACEHOLDER}}" type="text" size="40">
+    </div>
+
+    <div class="input-set">
+        <div class="title">{{i18n.REG_HOUSENAME}}</div>
+        <input name="housename" placeholder="{{i18n.REG_HOUSENAME_PLACEHOLDER}}" type="text" size="40">
+    </div>
+
+    <div class="input-set">
+        <div class="title">{{i18n.REG_DURATION}}</div>
+        <input type="radio" name="duration" value="0" checked><div class="title sec-title">{{i18n.REG_DURATION_SIX_MONTHS}}</div>
+        <input type="radio" name="duration" value="1"><div class="title sec-title">{{i18n.REG_DURATION_ONE_YEAR}}</div>
+        <input type="radio" name="duration" value="2"><div class="title sec-title">{{i18n.REG_DURATION_TWO_YEAR}}</div>
+        <input type="radio" name="duration" value="3"><div class="title sec-title"></div>
+        <input type="text" name="duration_custom_define" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-house"></div>
+    </div>
+    
+    <div class="input-set">
+        <div class="title padding-title-one">{{i18n.REG_ROOMS}}</div>
+        <div class="registerform-ua registerform-icon utility-icon"></div>
+        <select name="bed_single">
+            {{#houseDimemsions.rooms}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.rooms}}
+        </select>
+        <div class="title padding-title-two">{{i18n.REG_BEDS}}</div>
+        <div class="registerform-ub registerform-icon utility-icon"></div>
         <div class="title sec-title">{{i18n.REG_SINGLE}}</div>
         <select name="bed_single">
             {{#houseDimemsions.beds.single}}
@@ -24,7 +59,24 @@
         </select>
     </div>
 
-    <div class="big-title">{{i18n.REG_FACILITIES}}</div>
+    <div class="input-set">
+        <div class="title padding-title-one">{{i18n.REG_TOILETS}}</div>
+        <div class="registerform-uc registerform-icon utility-icon"></div>
+        <select name="toilets">
+            {{#houseDimemsions.toilets}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.toilets}}
+        </select>
+        <div class="title padding-title-two">{{i18n.REG_PARKING_SPACE}}</div>
+        <div class="registerform-ud registerform-icon utility-icon"></div>
+        <select name="parking_space">
+            {{#houseDimemsions.parking_spaces}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.parking_spaces}}
+        </select>
+    </div>
+
+    <div class="big-title">{{i18n.REG_HOUSE_FACILITIES}}</div>
 
     <div class="input-set">
         <div class="title facility-title">{{i18n.REG_INTERNET}}</div>
@@ -75,17 +127,17 @@
         <input type="radio" name="fh" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
     </div>
 
-    <div class="big-title">{{i18n.REG_NEED_HELP}}</div>
+    <div class="big-title">{{i18n.REG_SERVICES}}</div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_TAKE_YOU_FROM_AIRPORT}}</div>
         <input type="radio" name="ha" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
         <input type="radio" name="ha" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <input type="text" name="haa" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="6">
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_OPEN_BANK_ACCOUNT}}</div>
         <input type="radio" name="hb" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
         <input type="radio" name="hb" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
-        <input type="text" name="hba" placeholder="{{i18n.REG_OPEN_BANK_ACCOUNT_PLACEHOLDER}}">
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_APPLY_FOR_TFN}}</div>
@@ -98,13 +150,17 @@
         <input type="radio" name="hd" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
     </div>
     <div class="input-set big-input-set">
-        <span class="big-title">{{i18n.REG_ACCEPTABLE_RENT}}</span>
-        <select name="bed_single">
-            {{#houseDimemsions.acceptable_rent}}
-                <option value="{{.}}">{{.}} {{i18n.REG_AUD}}</option>
-            {{/houseDimemsions.acceptable_rent}}
-        </select>
+        <span class="big-title">{{i18n.REG_RENT}}</span>
+        <input type="text" size="6" name="rent" placeholder="{{i18n.REG_RENT_PLACEHOLDER}}">
     </div>
+
+    <div class="big-title">{{i18n.REG_UPLOAD_PHOTOS}}</div>
+    {{#photos}}
+        <div class="input-set big-input-set">
+            <div class="title photo-title">{{i18n.REG_PHOTO}}{{.}}</div>
+            <input name="photo{{1}}" type="file" size="40">
+        </div>
+    {{/photos}}
 
     <div class="big-title">{{i18n.REG_HOW_TO_CONTACT_ME}}</div>
     <div class="input-set">
@@ -117,8 +173,54 @@
     </div>
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_PHONE}}</div>
-        <input type="text" size="45" name="email" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">
+        <input type="text" size="45" name="phone" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">
     </div>
+
+    <div class="big-title">{{i18n.REG_MORE_DESCRIPTION}}</div>
+    <div id="des-template" class="input-set input-set-two-line hidden">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
+        <select name="position">
+            {{#positions}}
+                <option value="{{value}}">{{name}}</option>
+            {{/positions}}
+        </select>
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
+        <input type="text" size="1" name="km" placeholder="{{i18n.REG_KM_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
+        <input type="text" size="1" name="mins" placeholder="{{i18n.REG_MINS_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
+        <div style="clear:both">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
+        <select name="vehicle">
+            {{#vehicle}}
+                <option value="{{value}}">{{name}}</option>
+            {{/vehicle}}
+        </select>
+        </div>
+    </div>
+    <div class="input-set input-set-two-line">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
+        <select name="position">
+            {{#positions}}
+                <option value="{{value}}">{{name}}</option>
+            {{/positions}}
+        </select>
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
+        <input type="text" size="1" name="km" placeholder="{{i18n.REG_KM_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
+        <input type="text" size="1" name="mins" placeholder="{{i18n.REG_MINS_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
+        <div style="clear:both">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
+        <select name="vehicle">
+            {{#vehicle}}
+                <option value="{{value}}">{{name}}</option>
+            {{/vehicle}}
+        </select>
+        </div>
+    </div>
+
+
 </div>
 <div class="pp-field">
     <input type="checkbox" name="agree" value="1"><span class="sub-title">{{i18n.REG_VIEW_PP}}<a href="">{{i18n.REG_PP}}</a></span>

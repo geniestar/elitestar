@@ -128,6 +128,9 @@
             left: 30px;
         }
     }
+    #houseowner-form {
+        position: relative;
+    }
 }
 
 .form {
@@ -156,7 +159,7 @@
             -webkit-border-radius: 0;
             -moz-border-radius: 0;
             border-radius: 0;
-            padding: 3px;
+            padding: 4px;
             font-size: 12px;
             color: $gray;
             vertical-align: middle;
@@ -172,7 +175,7 @@
         .registerform-calendar {
             cursor: pointer;
         }
-        .facility-title, .help-title, .contact-title {
+        .facility-title, .help-title, .contact-title, .photo-title{
             text-align: right;
         }
         .help-title {
@@ -184,13 +187,27 @@
         .facility-icon {
             margin: 0 20px;
         }
+        .utility-icon {
+            margin: 0 5px;
+        }
+        .padding-title-one {
+            text-align: left;
+            width: 50px;
+        }
+        .padding-title-two {
+            text-align: right;
+            width: 100px;
+        }
     }
     .input-set.big-input-set {
         margin: 10px 0;
         .big-title {
             padding: 0 20px 0 0;
-            width: 150px;
         }
+    }
+    .input-set.input-set-two-line {
+        line-height: 60px;
+        height: 60px;
     }
     .big-title {
         padding: 20px 0;
@@ -215,5 +232,8 @@
     }
     #cal-btn-end-cal {
         right: -125px;
+    }
+    #cal-btn-house-cal {
+       right: -192px;
     }
 }

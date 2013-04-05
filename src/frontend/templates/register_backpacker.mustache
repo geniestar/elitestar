@@ -99,7 +99,7 @@
         <div class="title help-title">{{i18n.REG_OPEN_BANK_ACCOUNT}}</div>
         <input type="radio" name="hb" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
         <input type="radio" name="hb" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
-        <input type="text" name="hba" placeholder="{{i18n.REG_OPEN_BANK_ACCOUNT_PLACEHOLDER}}">
+        <input type="text" name="hba" placeholder="{{i18n.REG_OPEN_BANK_ACCOUNT_PLACEHOLDER}}" size="6">
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_APPLY_FOR_TFN}}</div>
@@ -113,7 +113,7 @@
     </div>
     <div class="input-set big-input-set">
         <span class="big-title">{{i18n.REG_ACCEPTABLE_RENT}}</span>
-        <select name="bed_single">
+        <select name="acceptable_rent">
             {{#houseDimemsions.acceptable_rent}}
                 <option value="{{.}}">{{.}} {{i18n.REG_AUD}}</option>
             {{/houseDimemsions.acceptable_rent}}
@@ -131,7 +131,7 @@
     </div>
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_PHONE}}</div>
-        <input type="text" size="45" name="email" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">
+        <input type="text" size="45" name="phone" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">
     </div>
 </div>
 <div class="pp-field">

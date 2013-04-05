@@ -42,8 +42,8 @@ YUI({
         selector: '#map-all',
         itemsSelector: '.map-item',
         clickCallback: function(id) {
-            Y.one('#backpacker-form input[name="state"]').set('value', id);
             var stateInfo = YAHOO.EliteStar.params.states[id];
+            Y.one('#backpacker-form input[name="state"]').set('value', stateInfo.id);
             replaceAllSuburbs('#backpacker-form .city-selection', id);
         }
     });
@@ -58,5 +58,16 @@ YUI({
         textSelector: '#backpacker-form input[name="duration_end"]',
         id: 'cal-btn-end-cal',
         dateFormat: '%Y/%b/%d'
+    });
+    var hCalendar = new Y.EliteStar.ECalendar({
+        selector: '#houseowner-form #cal-btn-house',
+        textSelector: '#houseowner-form input[name="duration_custom_define"]',
+        id: 'cal-btn-house-cal',
+        dateFormat: '%Y/%b/%d'
+    });
+    
+    Y.one('#houseowner-form').one('select[name="state"]').on('change', function(e) {
+        var id = e.target.get('value');
+        replaceAllSuburbs('#houseowner-form .city-selection', id);
     });
 });

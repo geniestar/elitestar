@@ -3,42 +3,42 @@ countries:
     2: US
 states: 
     1:
-        id: 'WA'
+        id: 1
         name: 'Western Australia'
         class: 'wa'
         suburbs: 
             1: 'Abba River'
             2: 'Abbey'
     2:
-        id: 'NT'
+        id: 2
         class: 'nt'
         name: 'Northern Territory'
         suburbs: 
             1: 'Adelaide River'
             2: 'Acacia Hills'
     3:
-        id: 'SA'
+        id: 3
         class: 'sa'
         name: 'South Australia'
         suburbs: 
             1: 'Aberfoyle Park'
             2: 'Adelaide'
     4:
-        id: 'Qld'
+        id: 4
         class: 'qld'
         name: 'Queensland'
         suburbs: 
             1: '4380'
             2: 'Abbeywood'
     5:
-        id: 'Vic'
+        id: 5
         class: 'vic'
         name: 'Victoria'
         suburbs: 
             1: 'Abbeyard'
             2: 'Abbotsford'
     6:
-        id: 'Tas'
+        id: 6
         class: 'tas'
         name: 'Tasmania'
         suburbs: 
@@ -56,3 +56,4 @@ house_dimemsions:
     acceptable_rent: [50-100, 101-150, 151-200, 201-250, 251-300, 300↑]
     description_posiiton: ['BUS_STOP', 'SCHOOL', 'LIBRARY', 'SHOPPING_MALL', 'RESTAURANTS', 'GYM', 'GAS_STATION', 'HOSPITAL']
     description_vehicle: ['CAR', 'MOTOCYCLE', 'BIKE', 'WALKING']
+    
