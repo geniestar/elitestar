@@ -82,4 +82,36 @@ YUI({
         tmpNode.removeClass('hidden');
         moreDescriptionCount++;
     });
+
+    var houseownerSubmit = function() {
+        var inputs = Y.one('#backpacker-form').all('input');
+        inputs.each(function(input) {
+            input.remove();
+        });
+        var selects = Y.one('#backpacker-form').all('select');
+        selects.each(function(select) {
+            select.remove();
+        });
+    };
+
+    var backpackerSubmit = function() {
+        var inputs = Y.one('#houseowner-form').all('input');
+        inputs.each(function(input) {
+            input.remove();
+        });
+        var selects = Y.one('#houseowner-form').all('select');
+        selects.each(function(select) {
+            select.remove();
+        });
+    };
+    Y.one('#register-form form input[type=submit]').on('click', function(e) {
+        e.preventDefault();
+        if ('b-submit' === e.target.get('id')) {
+            backpackerSubmit();
+        } else {
+            houseownerSubmit();
+        }
+        e.target.get('form').submit();
+        return false;
+    });
 });

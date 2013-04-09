@@ -1,4 +1,4 @@
-<form id="houseowner-form-all" action="account_action.php" class="hidden" method="POST" enctype="multipart/form-data">
+<div id="houseowner-form-all" class="hidden"> 
 <div id="houseowner-form" class="form">
     <input type="hidden" name="role" value="h">
     <div class="big-title">{{i18n.REG_DES_OF_HOUSE}}</div>
@@ -164,6 +164,7 @@
     {{/photos}}
 
     <div class="big-title">{{i18n.REG_HOW_TO_CONTACT_ME}}</div>
+    <!--
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_NAME}}</div>
         <input type="text" size="45" name="name" placeholder="{{i18n.REG_NAME_PLACEHOLDER}}">
@@ -172,6 +173,7 @@
         <div class="title contact-title">{{i18n.REG_EMAIL}}</div>
         <input type="text" size="45" name="email" placeholder="{{i18n.REG_EMAIL_PLACEHOLDER}}">
     </div>
+    -->
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_PHONE}}</div>
         <input type="text" size="45" name="phone" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">
@@ -227,5 +229,5 @@
 <div class="pp-field">
     <input type="checkbox" name="agree" value="1"><span class="sub-title">{{i18n.REG_VIEW_PP}}<a href="">{{i18n.REG_PP}}</a></span>
 </div>
-<input type="submit" value="{{i18n.REG_PUBLISH_NOW}}">
-</form>
+<input id="h-submit" type="submit" value="{{i18n.REG_PUBLISH_NOW}}">
+</div>

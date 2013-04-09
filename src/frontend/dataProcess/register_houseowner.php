@@ -15,7 +15,7 @@ foreach($states as $key => $state)
 foreach ($states[0]['suburbs'] as $key => $value)
 {
     $data['cities'][] = array(
-        'id' => $state['id'],
+        'id' => $key,
         'name' => $value
     );
 }

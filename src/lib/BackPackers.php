@@ -1,5 +1,5 @@
 <?php
-include ('MySqlDb.php');
+
 /**
  * back packers
  */

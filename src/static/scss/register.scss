@@ -34,6 +34,7 @@
             font-size: 14px;
         }
         .registerform-login {
+            cursor: pointer;
             width: 87px;
             height: 64px;
             line-height: 64px;
@@ -53,7 +54,7 @@
 #register-form {
     width: 720px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 50px 10px;
     background-color: #DBF0FF; 
 
     #user-form, #backpacker-form, #houseowner-form {
@@ -84,6 +85,9 @@
         }
         .switcher-btn {
             padding: 5px 20px;
+            _padding: 7px 20px 3px 20px;
+            *padding: 7px 20px 3px 20px;
+            padding: 7px 20px 3px 20px\9;
             color: $white;
             display: inline;
             -webkit-border-radius: 10px;
@@ -147,6 +151,9 @@
             float: left;
             width: 110px;
             padding: 3px;
+            _padding: 5px 3px 1px 3px;
+            *padding: 5px 3px 1px 3px;
+            padding: 5px 3px 1px 3px\9;
             vertical-align: middle;
             line-height: 20px;
         }
@@ -228,7 +235,7 @@
 #role-form {
     input[type=submit] {
         display: block;
-        margin: 0 auto 50px auto;
+        margin: 0 auto 10px auto;
         padding: 5px 15px;
         -webkit-border-radius: 0;
         -moz-border-radius: 0;

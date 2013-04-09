@@ -56,10 +56,10 @@ class EliteUsers
      * @param integer $role     role for user 0:landlord 1:packager
      *
      */
-    public function createUser($id, $password, $name, $mail, $phone, $role)
+    public function createUser($id, $password, $name, $mail, $phone, $role, $country, $photo)
     {
-        $sql = 'INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($id, md5($password), $name, $mail, $phone, $role, time(), time());
+        $sql = 'INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $inputParams = array($id, md5($password), $name, $mail, $phone, $role, $country, $photo, time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
@@ -110,7 +110,7 @@ class EliteUsers
      * @param integer $role     role for user 0:landlord 1:packager
      *
      */
-    public function updateUserInfo($id, $password = null, $name = null, $mail = null, $phone = null, $role = null)
+    public function updateUserInfo($id, $password = null, $name = null, $mail = null, $phone = null, $role = null, $country = null, $photo = null)
     {
         $updateArray = array();
 
@@ -133,6 +133,14 @@ class EliteUsers
         if ($role)
         {
             $updateArray['role'] = $role;
+        }
+        if ($country)
+        {
+            $updateArray['country'] = $country;
+        }
+        if ($photo)
+        {
+            $updateArray['photo'] = $photo;
         }
         
         if (!$updateArray)

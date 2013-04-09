@@ -1,5 +1,4 @@
 <?php
-include ('./MySqlDb.php');
 /**
  * config reader
  *

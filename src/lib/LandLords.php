@@ -1,5 +1,5 @@
 <?php
-include ('MySqlDb.php');
+
 /**
  * land lords
  */
@@ -101,8 +101,8 @@ class LandLords
 
 }
 
-var_dump(LandLords::getInstance()->createLandLord('testaccount2', array('ccc'=>'asb'), array(1,2,3)));
+//var_dump(LandLords::getInstance()->createLandLord('testaccount2', array('ccc'=>'asb'), array(1,2,3)));
 //var_dump(LandLords::getInstance()->updateLandLordInfo('testaccount1', array('cc'=>'asb'), array(1,2,3,4)));
-var_dump(LandLords::getInstance()->queryLandLord('testaccount2'));
+//var_dump(LandLords::getInstance()->queryLandLord('testaccount2'));
 
 ?>
