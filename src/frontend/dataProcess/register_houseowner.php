@@ -26,6 +26,7 @@ for ($i = 0; $i < 3; $i++)
 }
 
 $data['todayText'] = date('Y/M/d');
+$data['nextYearText'] = date('Y/M/d', time() + 60*60*24*365);
 $data['houseDimemsions'] = ConfigReader::getInstance()->readConfig('dimensions', 'house_dimemsions');
 $data['positions'] = array();
 foreach($data['houseDimemsions']['description_posiiton'] as $position)

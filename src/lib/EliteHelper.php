@@ -490,9 +490,9 @@ class EliteHelper
     {
         foreach ($checkArray as $checkIndex)
         {
-            if (!isset($data[$checkIndex]) && !$data[$checkIndex])
+            if (!isset($data[$checkIndex]) || '' === $data[$checkIndex])
             {
-                echo $checkIndex . '!!!!';
+                echo $checkIndex . ' is empty';
                 return false;
             }
         }

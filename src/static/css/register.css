@@ -378,6 +378,10 @@
   right: -125px;
 }
 /* line 254, ../scss/register.scss */
-#role-form #cal-btn-house-cal {
-  right: -192px;
+#role-form #cal-btn-house-start-cal {
+  right: 47px;
+}
+/* line 257, ../scss/register.scss */
+#role-form #cal-btn-house-end-cal {
+  right: -125px;
 }

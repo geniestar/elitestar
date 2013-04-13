@@ -59,10 +59,18 @@ YUI({
         id: 'cal-btn-end-cal',
         dateFormat: '%Y/%b/%d'
     });
-    var hCalendar = new Y.EliteStar.ECalendar({
-        selector: '#houseowner-form #cal-btn-house',
-        textSelector: '#houseowner-form input[name="duration_custom_define"]',
-        id: 'cal-btn-house-cal',
+    
+    var hStartCalendar = new Y.EliteStar.ECalendar({
+        selector: '#houseowner-form #cal-btn-house-start',
+        textSelector: '#houseowner-form input[name="duration_start"]',
+        id: 'cal-btn-house-start-cal',
+        dateFormat: '%Y/%b/%d'
+    });
+    
+    var hEndCalendar = new Y.EliteStar.ECalendar({
+        selector: '#houseowner-form #cal-btn-house-end',
+        textSelector: '#houseowner-form input[name="duration_end"]',
+        id: 'cal-btn-house-end-cal',
         dateFormat: '%Y/%b/%d'
     });
     
@@ -104,14 +112,18 @@ YUI({
             select.remove();
         });
     };
-    Y.one('#register-form form input[type=submit]').on('click', function(e) {
-        e.preventDefault();
-        if ('b-submit' === e.target.get('id')) {
-            backpackerSubmit();
-        } else {
-            houseownerSubmit();
-        }
-        e.target.get('form').submit();
-        return false;
+
+    var btns = Y.all('#register-form form input[type=submit]')
+    btns.each(function(btn) {
+        btn.on('click', function(e)  {
+            e.preventDefault();
+            if ('b-submit' === e.target.get('id')) {
+                backpackerSubmit();
+            } else {
+                houseownerSubmit();
+            }
+            e.target.get('form').submit();
+            return false;
+        });
     });
 });

@@ -29,17 +29,15 @@
 
     <div class="input-set">
         <div class="title">{{i18n.REG_DURATION}}</div>
-        <input type="radio" name="duration" value="0" checked><div class="title sec-title">{{i18n.REG_DURATION_SIX_MONTHS}}</div>
-        <input type="radio" name="duration" value="1"><div class="title sec-title">{{i18n.REG_DURATION_ONE_YEAR}}</div>
-        <input type="radio" name="duration" value="2"><div class="title sec-title">{{i18n.REG_DURATION_TWO_YEAR}}</div>
-        <input type="radio" name="duration" value="3"><div class="title sec-title"></div>
-        <input type="text" name="duration_custom_define" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-house"></div>
+        <input type="text" name="duration_start" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-house-start"></div>
+        <div class="title sec-title">{{i18n.REG_TO}}</div>
+        <input type="text" name="duration_end" size="16" placeholder="{{nextYearText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-house-end"></div>
     </div>
-    
+
     <div class="input-set">
         <div class="title padding-title-one">{{i18n.REG_ROOMS}}</div>
         <div class="registerform-ua registerform-icon utility-icon"></div>
-        <select name="bed_single">
+        <select name="rooms">
             {{#houseDimemsions.rooms}}
                 <option value="{{.}}">{{.}}</option>
             {{/houseDimemsions.rooms}}

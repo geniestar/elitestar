@@ -58,11 +58,17 @@ class BackPackers
         return $r;
     }
 
-    public function findBackPackers($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null)
+    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $userId = null)
     {
         $conditions = array();
-        $conditions['state'] = array('op' => '=', 'value' => $state);
-        $conditions['city'] = array('op' => '=', 'value' => $city);
+        if ($state)
+        {
+            $conditions['state'] = array('op' => '=', 'value' => $state);
+        }
+        if ($ciry)
+        {
+            $conditions['city'] = array('op' => '=', 'value' => $city);
+        }
     
         if ($durationStart)
         {
@@ -80,6 +86,10 @@ class BackPackers
         {
             $conditions['rent_high'] = array('op' => '>=', 'value' => $rentHigh);
         }
+        if ($userId)
+        {
+            $conditions['user_id'] = array('op' => '=', 'value' => $userId);
+        }
         $conditionColumns = array();
         $inputParams = array();
         foreach ($conditions as $key => $value)
@@ -89,8 +99,13 @@ class BackPackers
         }
         $inputParams[] = $start;
         $inputParams[] = $count;
+        if (empty($conditionColumns))
+        {
+            $conditionColumns[] = true;
+        }
         $sql = 'SELECT * FROM backpackers WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
         echo $sql;
+        var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
