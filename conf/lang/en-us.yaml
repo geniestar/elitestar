@@ -1,5 +1,10 @@
 languages:
     COMMON_TITLE: 'Elite Star'
+    COMMON_B_TITLE: 'Easy backpacker'
+    COMMON_MENU_FIND_HOUSES: 'Find Houses'
+    COMMON_MENU_FIND_CUSTOMERS: 'Find Customers'
+    COMMON_MENU_SETTINGS_LOGIN: 'Login'
+    COMMON_MENU_SETTINGS: 'Hi, '
     LOGIN_USERID: 'Username'
     LOGIN_PW: 'Password'
     LOGIN_REMEMBERME: 'Remember Me'

@@ -125,7 +125,7 @@ foreach ($results as $result)
 //var_dump($backpackers);
 
 $headData = array(
-    'title' => EliteHelper::getLangString('COMMON_TITLE'),
+    'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/find_backpacker.css'),
@@ -146,7 +146,7 @@ $tailData = array(
         <?php echo ContentGenerator::getContent('head', $headData);?>
     </head>
     <body>
-        <?php echo ContentGenerator::getContent('common_banner', array());?>
+        <?php echo ContentGenerator::getContent('common_banner', array('title' => EliteHelper::getLangString('COMMON_B_TITLE')));?>
         <?php echo ContentGenerator::getContent('common_menu', array());?>
         <div class="main-container">
             <div class="col-left col">
@@ -154,7 +154,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_searchmenu', array());?>
                 </div>
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_favorate', array());?>
+                    <?php echo ContentGenerator::getContent('common_favorite', array());?>
                 </div>
             </div>
             <div class="col-right col">
@@ -162,7 +162,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_sortbar', array());?>
                 </div>
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('backpacker_searchresult', array());?>
+                    <?php echo ContentGenerator::getContent('searchresult_backpacker', array());?>
                 </div>
             </div>
         </div>

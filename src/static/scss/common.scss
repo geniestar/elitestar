@@ -5,6 +5,8 @@
 @import "map_big/*.png";
 @include all-map-sprites;
 @include all-map_big-sprites;
+@import "menu/*.png";
+@include all-menu-sprites;
 
 body {
     font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
@@ -134,4 +136,37 @@ input[type="text"], input[type="password"] {
 
 .col-right {
     width: 560px;
+}
+
+#banner {
+    width: 100%;
+    background-color: #CFED3F;
+    .container {
+        width: 720px;
+        height: 110px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        .title {
+            font-size: 36px;
+            position: absolute;
+            left: 100px;
+            bottom: 10px;
+        }
+        .banner-pic {
+            background: url(../img/banner_pic.png);
+            width: 173px;
+            height: 80px;
+            position: absolute;
+            right: 10px;
+            bottom: 0px;
+        }
+    }
+}
+
+#menu {
+    .menu-icon {
+        width: 23px;
+        height: 23px;
+    }
 }
