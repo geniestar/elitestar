@@ -23,7 +23,7 @@ $tailData = array(
     </head>
     <body>
         <?php echo ContentGenerator::getContent('register_header', array());?>
-        <div id="register-form">
+        <div id="register-form" class="main-container">
             <form action="account_action.php" method="POST" enctype="multipart/form-data">
                 <div id="user-form">
                     <?php echo ContentGenerator::getContent('register_user', array());?>

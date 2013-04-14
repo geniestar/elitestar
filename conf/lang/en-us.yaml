@@ -27,6 +27,7 @@ languages:
     REG_HOUSEOWNER: 'house owner'
     REG_GO_TO: 'Going to...'
     REG_CITY: 'City'
+    REG_ARRIVAL_TIME: 'Arrival Time'
     REG_DURATION: 'Duration'
     REG_TO: 'To'
     REG_BEDS: 'Beds'

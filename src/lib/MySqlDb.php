@@ -133,9 +133,8 @@ class MySqlDb
                 if ($statement->error)
                 {
                     error_log($statement->error);
-                    return false;
                 }
-                return $r;
+                return false;
             }
             $statement->close();
             return $allResults;

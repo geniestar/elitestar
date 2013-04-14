@@ -118,3 +118,20 @@ input[type="text"], input[type="password"] {
     background-color: $white;
     position: absolute;
 }
+
+.main-container {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.col {
+    float: left;
+}
+
+.col-left {
+    width: 160px;
+}
+
+.col-right {
+    width: 560px;
+}

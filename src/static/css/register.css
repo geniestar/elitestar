@@ -370,18 +370,22 @@
   text-align: center;
 }
 /* line 248, ../scss/register.scss */
-#role-form #cal-btn-start-cal {
+#role-form #cal-btn-arrival-cal {
   right: 47px;
 }
 /* line 251, ../scss/register.scss */
+#role-form #cal-btn-start-cal {
+  right: 47px;
+}
+/* line 254, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -125px;
 }
-/* line 254, ../scss/register.scss */
+/* line 257, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 47px;
 }
-/* line 257, ../scss/register.scss */
+/* line 260, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -125px;
 }

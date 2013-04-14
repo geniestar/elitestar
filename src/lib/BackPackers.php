@@ -8,8 +8,10 @@ class BackPackers
     private static $_instance;
     const SORT_BY_PRICE = 'rent_low';
     const SORT_BY_PRICE_DESC = 'rent_low DESC';
-    const SORT_BY_TIME = 'created_time';
-    const SORT_BY_TIME_DESC = 'created_time DESC';
+    const SORT_BY_TIME = 'updated_time';
+    const SORT_BY_TIME_DESC = 'updated_time DESC';
+    const SORT_BY_DURATION = '(duration_end - duration_start)';
+    const SORT_BY_DURATION_DESC = '(duration_end - duration_start) DESC';
 
     /**
      * __construct 
@@ -50,26 +52,32 @@ class BackPackers
      * create backpacker
      *
      */
-    public function createBackPacker($userId, $state, $city, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $favorates)
+    public function createBackPacker($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $name, $favorates)
     {
-        $sql = 'INSERT INTO backpackers (user_id, state, city, duration_start, duration_end, rent_low, rent_high, beds_single, beds_double, facilities, additional_help, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($userId, $state, $city, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), json_encode($favorates), time(), time());
+        $sql = 'INSERT INTO backpackers (user_id, state, city, arrival_time, duration_start, duration_end, rent_low, rent_high, beds_single, beds_double, facilities, additional_help, name, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $inputParams = array($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), $name, json_encode($favorates), time(), time());
+        var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        var_dump($r);
         return $r;
     }
 
-    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $userId = null)
+    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $arrivalTime, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $name = null, $userId = null)
     {
         $conditions = array();
         if ($state)
         {
             $conditions['state'] = array('op' => '=', 'value' => $state);
         }
-        if ($ciry)
+        if ($city)
         {
             $conditions['city'] = array('op' => '=', 'value' => $city);
         }
     
+        if ($arrivalTime)
+        {
+            $conditions['arrival_time'] = array('op' => '=', 'value' => $arrivalTime);
+        }
         if ($durationStart)
         {
             $conditions['duration_start'] = array('op' => '<=', 'value' => $durationStart);
@@ -80,15 +88,27 @@ class BackPackers
         }
         if ($rentLow)
         {
-            $conditions['rent_low'] = array('op' => '<=', 'value' => $rentLow);
+            $conditions['rent_low'] = array('op' => '>=', 'value' => $rentLow);
         }
         if ($rentHigh)
         {
-            $conditions['rent_high'] = array('op' => '>=', 'value' => $rentHigh);
+            $conditions['rent_high'] = array('op' => '<=', 'value' => $rentHigh);
+        }
+        if ($bedsSingle)
+        {
+            $conditions['beds_single'] = array('op' => '=', 'value' => $bedsSingle);
+        }
+        if ($bedsDouble)
+        {
+            $conditions['beds_double'] = array('op' => '=', 'value' => $bedsDouble);
         }
         if ($userId)
         {
             $conditions['user_id'] = array('op' => '=', 'value' => $userId);
+        }
+        if ($name)
+        {
+            $conditions['name'] = array('op' => ' like ', 'value' => '%' . $name . '%');
         }
         $conditionColumns = array();
         $inputParams = array();
@@ -104,23 +124,25 @@ class BackPackers
             $conditionColumns[] = true;
         }
         $sql = 'SELECT * FROM backpackers WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
-        echo $sql;
-        var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
 
-    public function updateBackPackerInfo($userId, $city = null, $duration = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $favorates = null)
+    public function updateBackPackerInfo($userId, $city = null, $arrivalTime = null, $durationStart = null, $durationEnd = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $name, $favorates = null)
     {
         $updateArray = array();
 
-        if ($state)        
+        if ($state)
         {
             $updateArray['state'] = $state;
         }
         if ($city)
         {
             $updateArray['city'] = $city;
+        }
+        if ($arrivalTime)
+        {
+            $updateArray['arrivalTime'] = $arrivalTime;
         }
         if ($durationStart)
         {
@@ -149,6 +171,10 @@ class BackPackers
         if ($favorates)
         {
             $updateArray['favorates'] = json_encode($favorates);
+        }
+        if ($name)
+        {
+            $updateArray['name'] = $name;
         }
 
         if (!$updateArray)

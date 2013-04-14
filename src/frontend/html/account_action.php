@@ -8,30 +8,30 @@ define('USER_PHOTO_PATH', '/var/www/html/elitestar/ugc/');
 define('USER_PHOTO_PREFIX', 'uphoto');
 define('OBJECT_PHOTO_PREFIX', 'ophoto');
 
-if (EliteHelper::checkEmpty(array('email', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))
+if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))
 {
     /* user exist */
-    if (is_array(EliteUsers::getInstance()->queryUser($_POST['email'], $_POST['password'], false, true)))
+    if (is_array(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password'], false, true)))
     {
          exit;
     }
     $photoFilename = '';
     if (isset($_FILES['user-photo']) && $_FILES['user-photo']['tmp_name'] && EliteHelper::checkIsImage($_FILES['user-photo']['name']))
     {
-        $photoFilename = md5(USER_PHOTO_PREFIX . $_POST['email']) . '.' . EliteHelper::getExtensionName($_FILES['user-photo']['name']);
+        $photoFilename = md5(USER_PHOTO_PREFIX . $_POST['id']) . '.' . EliteHelper::getExtensionName($_FILES['user-photo']['name']);
         system('cp ' . $_FILES['user-photo']['tmp_name'] . ' ' . USER_PHOTO_PATH . $photoFilename);
         system('convert ' . USER_PHOTO_PATH . $photoFilename . ' -resize \'120x120\' -gravity Center -crop \'80x80+0+0\' -quality \'100%\' ' . USER_PHOTO_PATH . $photoFilename);
     }
-    EliteUsers::getInstance()->createUser($_POST['email'], $_POST['password'], $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['role'], $_POST['country'], $photoFilename);
+    EliteUsers::getInstance()->createUser($_POST['id'], $_POST['password'], $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['role'], $_POST['country'], $photoFilename);
 
     /* start to update role table*/
     if ('b' === $_POST['role'])
     {
-        if(EliteHelper::checkEmpty(array('state', 'city', 'duration_start', 'duration_end', 'bed_single', 'bed_double', 'acceptable_rent'), $_POST))
+        if(EliteHelper::checkEmpty(array('state', 'city', 'arrival_time', 'duration_start', 'duration_end', 'bed_single', 'bed_double', 'acceptable_rent', 'name'), $_POST))
         {
-            BackPackers::getInstance()->createBackPacker($_POST['email'], $_POST['state'], $_POST['city'], getTime($_POST['duration_start']), getTime($_POST['duration_end']), getLowRent($_POST['acceptable_rent']), getHighRent($_POST['acceptable_rent']), $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), null);
-            var_dump(EliteUsers::getInstance()->queryUser($_POST['email'], $_POST['password']));
-            var_dump(BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, null, null, $_POST['email']));
+            BackPackers::getInstance()->createBackPacker($_POST['id'], $_POST['state'], $_POST['city'], EliteHelper::getTime($_POST['arrival_time']), EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), EliteHelper::getLowRent($_POST['acceptable_rent']), EliteHelper::getHighRent($_POST['acceptable_rent']), $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), $_POST['name'], null);
+            var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
+            var_dump(BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
         }
         else
         {
@@ -42,13 +42,13 @@ if (EliteHelper::checkEmpty(array('email', 'password', 'name', 'email', 'phone',
     {
         if(EliteHelper::checkEmpty(array('state', 'city', 'address', 'housename', 'duration_start', 'duration_end', 'rooms', 'bed_single', 'bed_double', 'toilets', 'parking_space', 'rent'), $_POST))
         {
-            LandLords::getInstance()->createLandLord($_POST['email'], getServices($_POST, 'h'), null);
+            LandLords::getInstance()->createLandLord($_POST['id'], getServices($_POST, 'h'), null);
             $photos = getHousePhotos($_POST);
-            HouseObjects::getInstance()->createHouseObject($_POST['email'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], getTime($_POST['duration_start']), getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
+            HouseObjects::getInstance()->createHouseObject($_POST['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], $_POST['wecharge'], getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
 
-            var_dump(EliteUsers::getInstance()->queryUser($_POST['email'], $_POST['password']));
-            var_dump(LandLords::getInstance()->queryLandLord($_POST['email']));  
-            var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, $_POST['email']));
+            var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
+            var_dump(LandLords::getInstance()->queryLandLord($_POST['id']));  
+            var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, $_POST['id']));
         }
     }
 }
@@ -82,63 +82,6 @@ function getServices($data, $prefix)
     $services['hc'] = isset($data[$prefix . '-hc'])?$data[$prefix . '-hc']:0;
     $services['hd'] = isset($data[$prefix . '-hd'])?$data[$prefix . '-hd']:0;
     return json_encode($services);
-}
-
-function getTime($timeString)
-{
-    $timeRule = '/(\w+)\/(\w+)\/(\w+)/';
-    $matchArray = array();
-    preg_match($timeRule, $timeString, $matchArray);
-    if ($matchArray)
-    {
-        return date("Y-m-d H:i:s", strtotime($matchArray[3] . ' ' . $matchArray[2] . ' ' . $matchArray[1]));
-    }
-    else
-    {
-        return date("Y-m-d H:i:s", time());
-    }
-}
-
-function getLowRent($rentString)
-{
-    $rentRule = '/(\w+)-(\w+)/';
-    $highestRule = '/(\w+)↑/';
-
-    $matchArray = array();
-    preg_match($rentRule, $rentString, $matchArray);
-    if ($matchArray)
-    {
-        return $matchArray[1];
-    }
-    else
-    {
-        preg_match($highestRule, $rentString, $matchArray);
-        if ($matchArray)
-        {
-            return $matchArray[1];
-        }
-    }
-}
-
-function getHighRent($rentString)
-{
-    $rentRule = '/(\w+)-(\w+)/';
-    $highestRule = '/(\w+)↑/';
-
-    $matchArray = array();
-    preg_match($rentRule, $rentString, $matchArray);
-    if ($matchArray)
-    {
-        return $matchArray[2];
-    }
-    else
-    {
-        preg_match($highestRule, $rentString, $matchArray);
-        if ($matchArray)
-        {
-            return 9999;
-        }
-    }
 }
 
 function getHousePhotos()

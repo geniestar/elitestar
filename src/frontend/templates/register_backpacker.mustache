@@ -17,6 +17,10 @@
         </select>
     </div>
     <div class="input-set">
+        <div class="title">{{i18n.REG_ARRIVAL_TIME}}</div>
+        <input type="text" name="arrival_time" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-arrival"></div>
+    </div>
+    <div class="input-set">
         <div class="title">{{i18n.REG_DURATION}}</div>
         <input type="text" name="duration_start" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-start"></div>
         <div class="title sec-title">{{i18n.REG_TO}}</div>
@@ -95,12 +99,16 @@
         <div class="title help-title">{{i18n.REG_TAKE_YOU_FROM_AIRPORT}}</div>
         <input type="radio" name="b-ha" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
         <input type="radio" name="b-ha" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <select name="b-haa">
+            {{#houseDimemsions.times}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.times}}
+        </select>
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_OPEN_BANK_ACCOUNT}}</div>
         <input type="radio" name="b-hb" value="1" checked><div class="title sec-title">{{i18n.REG_YES}}</div>
         <input type="radio" name="b-hb" value="0"><div class="title sec-title">{{i18n.REG_NO}}</div>
-        <input type="text" name="hba" placeholder="{{i18n.REG_OPEN_BANK_ACCOUNT_PLACEHOLDER}}" size="6">
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_APPLY_FOR_TFN}}</div>
@@ -127,11 +135,11 @@
         <div class="title contact-title">{{i18n.REG_NAME}}</div>
         <input type="text" size="45" name="name" placeholder="{{i18n.REG_NAME_PLACEHOLDER}}">
     </div>
+    -->
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_EMAIL}}</div>
         <input type="text" size="45" name="email" placeholder="{{i18n.REG_EMAIL_PLACEHOLDER}}">
     </div>
-    -->
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_PHONE}}</div>
         <input type="text" size="45" name="phone" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}">

@@ -73,14 +73,22 @@ class EliteUsers
      * @param boolean $isAdmin  isAdmin
      *
      */
-    public function queryUser($id, $password, $isMd5 = false, $isAdmin = false)
+    public function queryUser($id, $password = null, $isMd5 = false, $isAdmin = false)
     {
         if (!$isMd5)
         {
             $password = md5($password); 
         }
-        $sql = 'SELECT * FROM users WHERE id=?';
-        $inputParams = array($id);
+        if ($isAdmin && is_array($id))
+        {
+            $sql = 'SELECT * FROM users WHERE id IN (?)';
+            $inputParams = array(implode($id, ','));
+        }
+        else
+        {
+            $sql = 'SELECT * FROM users WHERE id=?';
+            $inputParams = array($id);
+        }
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         if ($isAdmin)
         {

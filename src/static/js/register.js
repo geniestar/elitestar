@@ -47,6 +47,12 @@ YUI({
             replaceAllSuburbs('#backpacker-form .city-selection', id);
         }
     });
+    var bArrivalCalendar = new Y.EliteStar.ECalendar({
+        selector: '#backpacker-form #cal-btn-arrival',
+        textSelector: '#backpacker-form input[name="arrival_time"]',
+        id: 'cal-btn-arrival-cal',
+        dateFormat: '%Y/%b/%d'
+    });
     var bStartCalendar = new Y.EliteStar.ECalendar({
         selector: '#backpacker-form #cal-btn-start',
         textSelector: '#backpacker-form input[name="duration_start"]',

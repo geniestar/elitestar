@@ -221,3 +221,24 @@ input[type="text"], input[type="password"] {
   background-color: white;
   position: absolute;
 }
+
+/* line 122, ../scss/common.scss */
+.main-container {
+  width: 720px;
+  margin: 0 auto;
+}
+
+/* line 127, ../scss/common.scss */
+.col {
+  float: left;
+}
+
+/* line 131, ../scss/common.scss */
+.col-left {
+  width: 160px;
+}
+
+/* line 135, ../scss/common.scss */
+.col-right {
+  width: 560px;
+}

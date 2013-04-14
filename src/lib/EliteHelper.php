@@ -547,5 +547,86 @@ class EliteHelper
         }
         return false;
     }
+    
+    static public function getTime($timeString, $hour = null, $min = null)
+    {
+        $time = '';
+        if ($hour && $min)
+        {
+            $time = $hour . ':' . $min . ':00';
+        }
+
+        $timeRule = '/(\w+)\/(\w+)\/(\w+)/';
+        $matchArray = array();
+        preg_match($timeRule, $timeString, $matchArray);
+        if ($matchArray)
+        {
+            return date("Y-m-d H:i:s", strtotime($matchArray[3] . ' ' . $matchArray[2] . ' ' . $matchArray[1] . $time));
+        }
+        else
+        {
+            return date("Y-m-d H:i:s", time());
+        }
+    }
+
+    static public function getLowRent($rentString)
+    {
+        $rentRule = '/(\w+)-(\w+)AUD/';
+        $highRule = '/(\w+)AUD↑/';
+        $lowRule = '/(\w+)AUD↓/';
+
+        $matchArray1 = array();
+        $matchArray2 = array();
+        $matchArray3 = array();
+        preg_match($rentRule, $rentString, $matchArray1);
+        preg_match($highRule, $rentString, $matchArray2);
+        preg_match($lowRule, $rentString, $matchArray3);
+        if ($matchArray1)
+        {
+            return $matchArray1[1];
+        }
+        else if ($matchArray2)
+        {
+            return $matchArray2[1];
+        }
+        else if ($matchArray3)
+        {
+            return 0;
+        }
+        else
+        {
+            return $rentString;
+        }
+    }
+
+    static public function getHighRent($rentString)
+    {
+        $rentRule = '/(\w+)-(\w+)AUD/';
+        $highRule = '/(\w+)AUD↑/';
+        $lowRule = '/(\w+)AUD↓/';
+
+        $matchArray1 = array();
+        $matchArray2 = array();
+        $matchArray3 = array();
+        preg_match($rentRule, $rentString, $matchArray1);
+        preg_match($highRule, $rentString, $matchArray2);
+        preg_match($lowRule, $rentString, $matchArray3);
+        if ($matchArray1)
+        {
+            return $matchArray1[2];
+        }
+        else if ($matchArray2)
+        {
+            return 9999;
+        }
+        else if ($matchArray3)
+        {
+            return $matchArray3[1];
+        }
+        else
+        {
+            return $rentString;
+        }
+    }
 }
 ?>
