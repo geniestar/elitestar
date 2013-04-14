@@ -370,20 +370,30 @@
 /* line 246, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 47px;
+  font-size: 10px;
+  line-height: 15px;
 }
-/* line 249, ../scss/register.scss */
+/* line 251, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 47px;
+  font-size: 10px;
+  line-height: 15px;
 }
-/* line 252, ../scss/register.scss */
+/* line 256, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -125px;
+  font-size: 10px;
+  line-height: 15px;
 }
-/* line 255, ../scss/register.scss */
+/* line 261, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 47px;
+  font-size: 10px;
+  line-height: 15px;
 }
-/* line 258, ../scss/register.scss */
+/* line 266, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -125px;
+  font-size: 10px;
+  line-height: 15px;
 }

@@ -134,6 +134,7 @@ $headData = array(
 );
 $tailData = array(
     'js' => array(
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/common.js'),
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_backpacker.js')
     )
 );
@@ -147,7 +148,7 @@ $tailData = array(
     </head>
     <body>
         <?php echo ContentGenerator::getContent('common_banner', array('title' => EliteHelper::getLangString('COMMON_B_TITLE')));?>
-        <?php echo ContentGenerator::getContent('common_menu', array());?>
+        <?php echo ContentGenerator::getContent('common_menu', array('user' => $user));?>
         <div class="main-container">
             <div class="col-left col">
                 <div class="row">

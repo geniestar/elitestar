@@ -1,0 +1,44 @@
+<div id="menu-container">
+    <div id="menu">
+        <div class="btn">
+            <div class="btn-container">
+                <div class="menu-icon menu-sprite menu-find_houses"></div>
+                <div class="title">{{i18n.COMMON_MENU_FIND_HOUSES}}</div>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="btn-container">
+                <div class="menu-icon menu-sprite menu-find_customers"></div>
+                <div class="title">{{i18n.COMMON_MENU_FIND_CUSTOMERS}}</div>
+            </div>
+        </div>
+        <div class="btn btn-right">
+            {{#isLogin}}
+                <div class="btn-container">
+                    <div class="title">{{settingsText}}</div>
+                    <div class="menu-icon menu-sprite menu-settings"></div>
+                </div>
+                <div class="extension-link hidden">
+                    <div class="extension-item"><a href="./admin?action=info">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>
+                    <div class="extension-item"><a href="./admin?action=role-info">{{i18n.COMMON_MENU_SETTINGS}}</a></div>
+                    {{#showProfit}}
+                    <div class="extension-item"><a href="./admin?action=profits">{{i18n.COMMON_MENU_PROFITS}}</a></div>
+                    {{/showProfit}}
+                    <div class="extension-item"><a href="./admin?action=messasges">{{i18n.COMMON_MENU_MESSAGES}}</a></div>
+                    <div class="extension-item"><a id="suggest-btn" href="#">{{i18n.COMMON_MENU_SUGGEST}}</a></div>
+                    <div class="extension-item"><a href="./admin?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
+                </div>
+            {{/isLogin}}
+            {{^isLogin}}
+                <a href="/">
+                    <div class="btn-container">
+                        <div class="title">{{settingsText}}</div>
+                        <div class="menu-icon menu-sprite menu-settings"></div>
+                    </div>
+                </a>
+            {{/isLogin}}
+        </div>
+
+        <div class="clean"></div>
+    </div>
+</div>

@@ -25,7 +25,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
     EliteUsers::getInstance()->createUser($_POST['id'], $_POST['password'], $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['role'], $_POST['country'], $photoFilename);
 
     /* start to update role table*/
-    if ('b' === $_POST['role'])
+    if (1 == $_POST['role'])
     {
         if(EliteHelper::checkEmpty(array('state', 'city', 'arrival_time', 'duration_start', 'duration_end', 'bed_single', 'bed_double', 'acceptable_rent', 'name'), $_POST))
         {
@@ -38,7 +38,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
             exit;
         }
     }
-    else if('h' === $_POST['role'])
+    else if(0 == $_POST['role'])
     {
         if(EliteHelper::checkEmpty(array('state', 'city', 'address', 'housename', 'duration_start', 'duration_end', 'rooms', 'bed_single', 'bed_double', 'toilets', 'parking_space', 'rent'), $_POST))
         {
