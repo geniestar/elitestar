@@ -1,18 +1,3 @@
-/* line 50, icons/*.png */
-.icons-sprite, .icons-car, .icons-computer {
-  background: url('/img/icons-se00d843b06.png') no-repeat;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icons-car {
-  background-position: 0 0;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.icons-computer {
-  background-position: 0 -39px;
-}
-
 /* line 90, map/*.png */
 .map-sprite, .map-map_all, .map-map_nt, .map-map_qld, .map-map_sa, .map-map_tas, .map-map_vic, .map-map_wa {
   background: url('/img/map-sb8043e9d36.png') no-repeat;
@@ -143,9 +128,9 @@
   background-position: 0 0;
 }
 
-/* line 122, listing/*.png */
-.listing-sprite, .listing-airport, .listing-bank, .listing-calendar, .listing-delete, .listing-favorite, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sim, .listing-tfn {
-  background: url('/img/listing-s7882f0dbca.png') no-repeat;
+/* line 170, listing/*.png */
+.listing-sprite, .listing-airport, .listing-bank, .listing-beds, .listing-calendar, .listing-delete, .listing-favorite, .listing-parking, .listing-rooms, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sim, .listing-sort, .listing-sort_d, .listing-tfn, .listing-toilet {
+  background: url('/img/listing-scae320d014.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -159,18 +144,33 @@
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-beds {
+  background-position: 0 -263px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-calendar {
-  background-position: 0 -258px;
+  background-position: 0 -447px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-delete {
-  background-position: 0 -156px;
+  background-position: 0 -229px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-favorite {
-  background-position: 0 -242px;
+  background-position: 0 -431px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-parking {
+  background-position: 0 -302px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-rooms {
+  background-position: 0 -392px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -180,12 +180,12 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-search {
-  background-position: 0 -170px;
+  background-position: 0 -243px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-search_btn {
-  background-position: 0 -228px;
+  background-position: 0 -378px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -195,7 +195,17 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-sim {
-  background-position: 0 -190px;
+  background-position: 0 -340px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-sort {
+  background-position: 0 -156px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-sort_d {
+  background-position: 0 -212px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -203,25 +213,30 @@
   background-position: 0 -118px;
 }
 
-/* line 13, ../scss/common.scss */
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-toilet {
+  background-position: 0 -173px;
+}
+
+/* line 11, ../scss/common.scss */
 body {
   font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
   margin: 0;
   font-size: 14px;
 }
 
-/* line 19, ../scss/common.scss */
+/* line 17, ../scss/common.scss */
 a {
   color: #3b91d9;
   text-decoration: none;
 }
 
-/* line 24, ../scss/common.scss */
+/* line 22, ../scss/common.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 28, ../scss/common.scss */
+/* line 26, ../scss/common.scss */
 input {
   padding: 5px;
   -webkit-border-radius: 5px;
@@ -229,40 +244,40 @@ input {
   border-radius: 5px;
 }
 
-/* line 35, ../scss/common.scss */
+/* line 33, ../scss/common.scss */
 input[type="text"], input[type="password"] {
   border: 1px solid #666666;
 }
 
-/* line 39, ../scss/common.scss */
+/* line 37, ../scss/common.scss */
 .hidden {
   display: none;
 }
 
-/* line 43, ../scss/common.scss */
+/* line 41, ../scss/common.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 47, ../scss/common.scss */
+/* line 45, ../scss/common.scss */
 #map-all {
   width: 147px;
   height: 138px;
   margin: 0 auto;
   position: relative;
 }
-/* line 52, ../scss/common.scss */
+/* line 50, ../scss/common.scss */
 #map-all .map-item {
   cursor: pointer;
 }
-/* line 55, ../scss/common.scss */
+/* line 53, ../scss/common.scss */
 #map-all .map-map_wa {
   position: absolute;
   width: 58px;
   height: 89px;
   top: 16px;
 }
-/* line 61, ../scss/common.scss */
+/* line 59, ../scss/common.scss */
 #map-all .map-map_nt {
   position: absolute;
   width: 34px;
@@ -270,7 +285,7 @@ input[type="text"], input[type="password"] {
   top: 5px;
   left: 56px;
 }
-/* line 68, ../scss/common.scss */
+/* line 66, ../scss/common.scss */
 #map-all .map-map_sa {
   position: absolute;
   width: 44px;
@@ -278,7 +293,7 @@ input[type="text"], input[type="password"] {
   top: 65px;
   left: 56px;
 }
-/* line 75, ../scss/common.scss */
+/* line 73, ../scss/common.scss */
 #map-all .map-map_qld {
   position: absolute;
   width: 58px;
@@ -286,7 +301,7 @@ input[type="text"], input[type="password"] {
   top: 0;
   right: 0px;
 }
-/* line 82, ../scss/common.scss */
+/* line 80, ../scss/common.scss */
 #map-all .map-map_vic {
   position: absolute;
   width: 33px;
@@ -294,7 +309,7 @@ input[type="text"], input[type="password"] {
   top: 97px;
   right: 15px;
 }
-/* line 89, ../scss/common.scss */
+/* line 87, ../scss/common.scss */
 #map-all .map-map_tas {
   position: absolute;
   width: 19px;
@@ -302,26 +317,26 @@ input[type="text"], input[type="password"] {
   top: 119px;
   right: 18px;
 }
-/* line 97, ../scss/common.scss */
+/* line 95, ../scss/common.scss */
 #map-all .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 102, ../scss/common.scss */
+/* line 100, ../scss/common.scss */
 #map-all.map_big-map_all_big {
   width: 181px;
   height: 169px;
   margin: 0 auto;
   position: relative;
 }
-/* line 107, ../scss/common.scss */
+/* line 105, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_wa_big {
   position: absolute;
   width: 70px;
   height: 110px;
   top: 19px;
 }
-/* line 113, ../scss/common.scss */
+/* line 111, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nt_big {
   position: absolute;
   width: 41px;
@@ -329,7 +344,7 @@ input[type="text"], input[type="password"] {
   top: 6px;
   left: 70px;
 }
-/* line 120, ../scss/common.scss */
+/* line 118, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_sa_big {
   position: absolute;
   width: 53px;
@@ -337,7 +352,7 @@ input[type="text"], input[type="password"] {
   top: 80px;
   left: 70px;
 }
-/* line 127, ../scss/common.scss */
+/* line 125, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_qld_big {
   position: absolute;
   width: 71px;
@@ -345,7 +360,7 @@ input[type="text"], input[type="password"] {
   top: 0;
   right: 1px;
 }
-/* line 134, ../scss/common.scss */
+/* line 132, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_vic_big {
   position: absolute;
   width: 41px;
@@ -353,7 +368,7 @@ input[type="text"], input[type="password"] {
   top: 119px;
   right: 18px;
 }
-/* line 141, ../scss/common.scss */
+/* line 139, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_tas_big {
   position: absolute;
   width: 23px;
@@ -361,17 +376,17 @@ input[type="text"], input[type="password"] {
   top: 146px;
   right: 23px;
 }
-/* line 149, ../scss/common.scss */
+/* line 147, ../scss/common.scss */
 #map-all.map_big-map_all_big .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 154, ../scss/common.scss */
+/* line 152, ../scss/common.scss */
 .calendar {
   width: 220px;
 }
 
-/* line 158, ../scss/common.scss */
+/* line 156, ../scss/common.scss */
 .panel {
   z-index: 100;
   padding: 10px;
@@ -386,33 +401,33 @@ input[type="text"], input[type="password"] {
   position: absolute;
 }
 
-/* line 172, ../scss/common.scss */
+/* line 170, ../scss/common.scss */
 .main-container {
   width: 720px;
   margin: 0 auto;
 }
 
-/* line 177, ../scss/common.scss */
+/* line 175, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 181, ../scss/common.scss */
+/* line 179, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 185, ../scss/common.scss */
+/* line 183, ../scss/common.scss */
 .col-right {
   width: 560px;
 }
 
-/* line 189, ../scss/common.scss */
+/* line 187, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
 }
-/* line 192, ../scss/common.scss */
+/* line 190, ../scss/common.scss */
 #banner .container {
   width: 720px;
   height: 110px;
@@ -420,14 +435,14 @@ input[type="text"], input[type="password"] {
   position: relative;
   overflow: hidden;
 }
-/* line 198, ../scss/common.scss */
+/* line 196, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 204, ../scss/common.scss */
+/* line 202, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -437,16 +452,16 @@ input[type="text"], input[type="password"] {
   bottom: 0px;
 }
 
-/* line 215, ../scss/common.scss */
+/* line 213, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 219, ../scss/common.scss */
+/* line 217, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
 }
-/* line 221, ../scss/common.scss */
+/* line 219, ../scss/common.scss */
 #menu-container #menu {
   width: 720px;
   margin: 0 auto;
@@ -463,7 +478,7 @@ input[type="text"], input[type="password"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 230, ../scss/common.scss */
+/* line 228, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -471,14 +486,14 @@ input[type="text"], input[type="password"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 236, ../scss/common.scss */
+/* line 234, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 241, ../scss/common.scss */
+/* line 239, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -486,21 +501,21 @@ input[type="text"], input[type="password"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 248, ../scss/common.scss */
+/* line 246, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   vertical-align: middle;
 }
-/* line 254, ../scss/common.scss */
+/* line 252, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 258, ../scss/common.scss */
+/* line 256, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 263, ../scss/common.scss */
+/* line 261, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -511,30 +526,30 @@ input[type="text"], input[type="password"] {
   right: 2px;
   text-align: left;
 }
-/* line 272, ../scss/common.scss */
+/* line 270, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 277, ../scss/common.scss */
+/* line 275, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 284, ../scss/common.scss */
+/* line 282, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 287, ../scss/common.scss */
+/* line 285, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }
 
-/* line 293, ../scss/common.scss */
+/* line 291, ../scss/common.scss */
 #search-menu {
   padding-bottom: 10px;
   background-color: #e1f7f2;
@@ -559,7 +574,7 @@ input[type="text"], input[type="password"] {
   border: 1px solid #232323;
   margin-top: 1px;
 }
-/* line 310, ../scss/common.scss */
+/* line 308, ../scss/common.scss */
 #search-menu .search-title {
   height: 25px;
   line-height: 25px;
@@ -577,27 +592,27 @@ input[type="text"], input[type="password"] {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
-/* line 326, ../scss/common.scss */
+/* line 324, ../scss/common.scss */
 #search-menu .search-title .listing-search {
   width: 19px;
   height: 20px;
   float: left;
   margin: 3px 3px 3px 10px;
 }
-/* line 332, ../scss/common.scss */
+/* line 330, ../scss/common.scss */
 #search-menu .search-title .title {
   color: #232323;
   float: left;
   vertival-align: middle;
 }
-/* line 338, ../scss/common.scss */
+/* line 336, ../scss/common.scss */
 #search-menu .input-set {
   clear: both;
   font-size: 10px;
   padding: 2px 10px;
   position: relative;
 }
-/* line 343, ../scss/common.scss */
+/* line 341, ../scss/common.scss */
 #search-menu .input-set .listing-calendar {
   cursor: pointer;
   width: 17px;
@@ -605,7 +620,7 @@ input[type="text"], input[type="password"] {
   float: left;
   margin: 4px 2px;
 }
-/* line 350, ../scss/common.scss */
+/* line 348, ../scss/common.scss */
 #search-menu .input-set .title {
   padding: 1px;
   _padding: 3px 1px 0px 1px;
@@ -613,17 +628,17 @@ input[type="text"], input[type="password"] {
   padding: 3px 1px 0px 1px\9;
   vertical-align: middle;
 }
-/* line 357, ../scss/common.scss */
+/* line 355, ../scss/common.scss */
 #search-menu .input-set .title.sec-title {
   display: inline;
   width: auto;
 }
-/* line 361, ../scss/common.scss */
+/* line 359, ../scss/common.scss */
 #search-menu .input-set .desc {
   color: #666666;
   font-size: 9px;
 }
-/* line 365, ../scss/common.scss */
+/* line 363, ../scss/common.scss */
 #search-menu .input-set input {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -634,29 +649,29 @@ input[type="text"], input[type="password"] {
   vertical-align: middle;
   float: left;
 }
-/* line 375, ../scss/common.scss */
+/* line 373, ../scss/common.scss */
 #search-menu .input-set select {
   font-size: 10px;
   padding: 1px;
   width: 140px;
 }
-/* line 380, ../scss/common.scss */
+/* line 378, ../scss/common.scss */
 #search-menu .input-set select.short {
   width: 40px;
 }
-/* line 383, ../scss/common.scss */
+/* line 381, ../scss/common.scss */
 #search-menu .input-set #cal-btn-start-cal {
   position: absolute;
   left: 150px;
   top: 20px;
 }
-/* line 388, ../scss/common.scss */
+/* line 386, ../scss/common.scss */
 #search-menu .input-set #cal-btn-end-cal {
   position: absolute;
   left: 150px;
   top: 60px;
 }
-/* line 394, ../scss/common.scss */
+/* line 392, ../scss/common.scss */
 #search-menu #search-btn {
   width: 73px;
   height: 23px;
@@ -679,7 +694,7 @@ input[type="text"], input[type="password"] {
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   cursor: pointer;
 }
-/* line 410, ../scss/common.scss */
+/* line 408, ../scss/common.scss */
 #search-menu #search-btn .listing-search_btn {
   width: 14px;
   height: 14px;
@@ -687,8 +702,97 @@ input[type="text"], input[type="password"] {
   vertical-align: middle;
   margin: 5px 3px 0 5px;
 }
-/* line 417, ../scss/common.scss */
+/* line 415, ../scss/common.scss */
 #search-menu #search-btn .title {
   float: left;
   vertical-align: middle;
+}
+
+/* line 422, ../scss/common.scss */
+#sort-bar {
+  height: 16px;
+  line-height: 16px;
+  background-color: #656565;
+  font-size: 12px;
+  color: white;
+  padding: 10px;
+}
+/* line 429, ../scss/common.scss */
+#sort-bar .title {
+  margin-right: 10px;
+  float: left;
+}
+/* line 433, ../scss/common.scss */
+#sort-bar .sort-item {
+  vertical-align: middle;
+  float: left;
+}
+/* line 436, ../scss/common.scss */
+#sort-bar .sort-item .listing-sort {
+  width: 16px;
+  height: 17px;
+  margin-right: 15px;
+  float: left;
+}
+/* line 442, ../scss/common.scss */
+#sort-bar .sort-item .desc {
+  margin: 0 5px;
+  float: left;
+}
+
+/* line 450, ../scss/common.scss */
+.search-result .bar {
+  height: 31px;
+  line-height: 31px;
+  border-bottom: 3px solid;
+}
+/* line 454, ../scss/common.scss */
+.search-result .bar .left {
+  width: 525px;
+  height: 30px;
+  border: 1px solid;
+  border-bottom: 0;
+  float: left;
+  margin-right: 1px;
+}
+/* line 462, ../scss/common.scss */
+.search-result .bar .right {
+  height: 30px;
+  width: 30px;
+  border: 1px solid;
+  border-bottom: 0;
+  float: left;
+}
+/* line 470, ../scss/common.scss */
+.search-result .content {
+  padding: 5px 10px;
+  border: 1px solid;
+  border-top: 0;
+  margin-bottom: 1px;
+}
+/* line 475, ../scss/common.scss */
+.search-result .content .left-content {
+  float: left;
+}
+/* line 477, ../scss/common.scss */
+.search-result .content .left-content img {
+  width: 76px;
+  height: 93px;
+}
+/* line 482, ../scss/common.scss */
+.search-result .content .right-content {
+  float: left;
+}
+/* line 485, ../scss/common.scss */
+.search-result .content .right-content .info-set .title {
+  width: 150px;
+  text-align: right;
+  float: left;
+}
+/* line 490, ../scss/common.scss */
+.search-result .content .right-content .info-set .desc {
+  width: 100px;
+  text-align: left;
+  color: #232323;
+  float: left;
 }

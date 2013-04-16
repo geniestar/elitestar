@@ -44,6 +44,13 @@ states:
         suburbs: 
             0: 'Abbotsham'
             1: 'Abels Bay'
+    6:
+        id: 6
+        class: 'nsw'
+        name: 'New South Wales'
+        suburbs: 
+            0: 'Aarons Pass'
+            1: 'Abbotsbury'
 
 
 house_dimemsions:

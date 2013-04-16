@@ -20,7 +20,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
     {
         $photoFilename = md5(USER_PHOTO_PREFIX . $_POST['id']) . '.' . EliteHelper::getExtensionName($_FILES['user-photo']['name']);
         system('cp ' . $_FILES['user-photo']['tmp_name'] . ' ' . USER_PHOTO_PATH . $photoFilename);
-        system('convert ' . USER_PHOTO_PATH . $photoFilename . ' -resize \'120x120\' -gravity Center -crop \'80x80+0+0\' -quality \'100%\' ' . USER_PHOTO_PATH . $photoFilename);
+        system('convert ' . USER_PHOTO_PATH . $photoFilename . ' -resize \'114x140\' -gravity Center -crop \'76x93+0+0\' -quality \'100%\' ' . USER_PHOTO_PATH . $photoFilename);
     }
     EliteUsers::getInstance()->createUser($_POST['id'], $_POST['password'], $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['role'], $_POST['country'], $photoFilename);
 

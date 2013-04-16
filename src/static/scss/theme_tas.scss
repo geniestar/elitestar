@@ -1,0 +1,22 @@
+.search-result {
+    color: #A82124;
+    .bar {
+        border-bottom-color: #A82124;
+        .left {
+            background-color: #F9C9BA;
+        }
+        .right {
+            background-color: #F9C9BA;
+        }
+    }
+    .content {
+        border-color: #A82124;
+        right-content {
+            .info-set {
+                .title {
+                    color: #A82124;
+                }
+            }
+        }
+    }
+}

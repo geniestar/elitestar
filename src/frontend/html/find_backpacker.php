@@ -124,12 +124,14 @@ foreach ($results as $result)
 
 //var_dump($backpackers);
 
+$states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
+$state = 5;
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/find_backpacker.css'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme' . $state . '.css')
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_' . $states[$state]['class'] . '.css')
     )
 );
 $tailData = array(
@@ -160,10 +162,12 @@ $tailData = array(
             </div>
             <div class="col-right col">
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_sortbar', array());?>
+                    <?php echo ContentGenerator::getContent('common_sortbar', array('sort' => $sort, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('searchresult_backpacker', array());?>
+                    <?php foreach ($backpackers as $backpacker):?>              
+                        <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker));?>
+                    <?php endforeach?>
                 </div>
             </div>
         </div>

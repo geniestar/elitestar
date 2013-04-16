@@ -1,0 +1,24 @@
+/* line 1, ../scss/theme_tas.scss */
+.search-result {
+  color: #A82124;
+}
+/* line 3, ../scss/theme_tas.scss */
+.search-result .bar {
+  border-bottom-color: #A82124;
+}
+/* line 5, ../scss/theme_tas.scss */
+.search-result .bar .left {
+  background-color: #F9C9BA;
+}
+/* line 8, ../scss/theme_tas.scss */
+.search-result .bar .right {
+  background-color: #F9C9BA;
+}
+/* line 12, ../scss/theme_tas.scss */
+.search-result .content {
+  border-color: #A82124;
+}
+/* line 16, ../scss/theme_tas.scss */
+.search-result .content right-content .info-set .title {
+  color: #A82124;
+}
