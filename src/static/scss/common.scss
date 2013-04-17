@@ -481,18 +481,34 @@ background-color: #B2B2B2;
         }
         .right-content {
             float: left;
+            posiiton: relative;
             .info-set {
+                overflow: hidden;
                 .title {
-                    width: 150px;
+                    width: 135px;
+                    height: 17px;
                     text-align: right;
                     float: left;
                 }
+                .title.two-column {
+                    width: 60px;
+                }
                 .desc {
-                    width: 100px;
+                    width: 120px;
                     text-align: left;
                     color: $black;
                     float: left;
+                    margin-left: 5px;
                 }
+                .one-line-desc {
+                    width: auto;
+                }
+            }
+            .listing-icon {
+                width: 20px;
+                height: 21px;
+                float: left;
+                margin: 2px 3px;
             }
         }
     }

@@ -129,18 +129,8 @@
 }
 
 /* line 170, listing/*.png */
-.listing-sprite, .listing-airport, .listing-bank, .listing-beds, .listing-calendar, .listing-delete, .listing-favorite, .listing-parking, .listing-rooms, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sim, .listing-sort, .listing-sort_d, .listing-tfn, .listing-toilet {
-  background: url('/img/listing-scae320d014.png') no-repeat;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.listing-airport {
-  background-position: 0 -80px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.listing-bank {
-  background-position: 0 -42px;
+.listing-sprite, .listing-beds, .listing-calendar, .listing-delete, .listing-favorite, .listing-ha, .listing-hb, .listing-hc, .listing-hd, .listing-parking, .listing-rooms, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sort, .listing-sort_d, .listing-toilet {
+  background: url('/img/listing-s88b28bbd8e.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -161,6 +151,26 @@
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-favorite {
   background-position: 0 -431px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-ha {
+  background-position: 0 -80px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hb {
+  background-position: 0 -42px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hc {
+  background-position: 0 -118px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hd {
+  background-position: 0 -340px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -194,11 +204,6 @@
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.listing-sim {
-  background-position: 0 -340px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-sort {
   background-position: 0 -156px;
 }
@@ -206,11 +211,6 @@
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-sort_d {
   background-position: 0 -212px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.listing-tfn {
-  background-position: 0 -118px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -782,17 +782,39 @@ input[type="text"], input[type="password"] {
 /* line 482, ../scss/common.scss */
 .search-result .content .right-content {
   float: left;
+  posiiton: relative;
 }
 /* line 485, ../scss/common.scss */
+.search-result .content .right-content .info-set {
+  overflow: hidden;
+}
+/* line 487, ../scss/common.scss */
 .search-result .content .right-content .info-set .title {
-  width: 150px;
+  width: 135px;
+  height: 17px;
   text-align: right;
   float: left;
 }
-/* line 490, ../scss/common.scss */
+/* line 493, ../scss/common.scss */
+.search-result .content .right-content .info-set .title.two-column {
+  width: 60px;
+}
+/* line 496, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc {
-  width: 100px;
+  width: 120px;
   text-align: left;
   color: #232323;
   float: left;
+  margin-left: 5px;
+}
+/* line 503, ../scss/common.scss */
+.search-result .content .right-content .info-set .one-line-desc {
+  width: auto;
+}
+/* line 507, ../scss/common.scss */
+.search-result .content .right-content .listing-icon {
+  width: 20px;
+  height: 21px;
+  float: left;
+  margin: 2px 3px;
 }

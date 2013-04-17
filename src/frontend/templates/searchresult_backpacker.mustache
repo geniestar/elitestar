@@ -12,8 +12,37 @@
         <div class="right-content">
             <div class="info-set">
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_WANTED_SPACE}}</div>
-                <div class="desc">{{place}}</div>
-                
+                <div class="desc one-line-desc">{{place}}</div>
+            </div>
+            <div class="clean"></div>
+            <div class="info-set">
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_ARRIVAL}}</div>
+                <div class="desc">{{arrivalTime}}</div>
+                <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_DURATION}}</div>
+                <div class="desc two-column">{{durationText}}</div>
+            </div>
+            <div class="info-set">
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_ACCEPTABLE_RENT}}</div>
+                <div class="desc">{{backpacker.rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div>
+                <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_BED}}</div>
+                <div class="desc two-column">{{bedText}}</div>
+            </div>
+            <div class="clean"></div>
+            <div class="info-set">
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_EXPECTABLE}}</div>
+                <div class="desc one-line-desc">
+                    {{#additionalHelpArray}} 
+                        <div class="listing-sprite listing-icon listing-{{class}}" data-additional="{{additional}}"></div>
+                    {{/additionalHelpArray}}
+                </div>
+            </div>
+            <div class="info-set">
+                <div class="title"> </div>
+                <div class="desc one-line-desc">
+                    {{#facilitiesArray}} 
+                        <div class="theme-sprite listing-icon theme-icon-{{class}}" data-additional="{{additional}}"></div>
+                    {{/facilitiesArray}}
+                </div>
             </div>
         </div>
         <div class="clean"></div>

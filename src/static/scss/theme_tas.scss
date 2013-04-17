@@ -1,3 +1,5 @@
+@import "theme_tas/*.png";
+@include all-theme_tas-sprites;
 .search-result {
     color: #A82124;
     .bar {
@@ -19,4 +21,47 @@
             }
         }
     }
+    .theme-sprite {
+        @extend .theme_tas-sprite;
+    }
+    .theme-icon-fa {
+        @extend .theme_tas-fa;
+    }
+    .theme-icon-fb {
+        @extend .theme_tas-fb;
+    }
+    .theme-icon-fc {
+        @extend .theme_tas-fc;
+    }
+    .theme-icon-fd {
+        @extend .theme_tas-fd;
+    }
+    .theme-icon-fe {
+        @extend .theme_tas-fe;
+    }
+    .theme-icon-ff {
+        @extend .theme_tas-ff;
+    }
+    .theme-icon-fg {
+        @extend .theme_tas-fg;
+    }
+    .theme-icon-contact {
+        @extend .theme_tas-contact;
+    }
+    .theme-icon-detail {
+        @extend .theme_tas-detail
+    }
+    .theme-icon-house {
+        @extend .theme_tas-house;
+    }
+    .theme-icon-map {
+        @extend .theme_tas-map;
+    }
+    .theme-icon-packer {
+        @extend .theme_tas-packer;
+    }
+    .theme-icon-pic {
+        @extend .theme_tas-pic;
+    }
+
 }
