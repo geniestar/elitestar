@@ -741,12 +741,26 @@ input[type="text"], input[type="password"] {
 }
 
 /* line 450, ../scss/common.scss */
+.search-result .theme-icon-house {
+  width: 19px;
+  height: 22px;
+  margin: 3px 5px;
+  float: left;
+}
+/* line 456, ../scss/common.scss */
+.search-result .theme-icon-packer {
+  width: 21px;
+  height: 21px;
+  margin: 3px 5px;
+  float: left;
+}
+/* line 462, ../scss/common.scss */
 .search-result .bar {
   height: 31px;
   line-height: 31px;
   border-bottom: 3px solid;
 }
-/* line 454, ../scss/common.scss */
+/* line 466, ../scss/common.scss */
 .search-result .bar .left {
   width: 525px;
   height: 30px;
@@ -755,51 +769,78 @@ input[type="text"], input[type="password"] {
   float: left;
   margin-right: 1px;
 }
-/* line 462, ../scss/common.scss */
-.search-result .bar .right {
+/* line 473, ../scss/common.scss */
+.search-result .bar .left .title {
+  color: #232323;
+  font-size: 16px;
+  float: left;
+}
+/* line 478, ../scss/common.scss */
+.search-result .bar .left img {
+  width: 22px;
+  height: 15px;
+  float: left;
+  margin: 8px 10px;
+}
+/* line 484, ../scss/common.scss */
+.search-result .bar .left .updated-time {
+  font-size: 10px;
+  float: right;
+  margin-right: 15px;
+}
+/* line 490, ../scss/common.scss */
+.search-result .bar .right-item {
   height: 30px;
   width: 30px;
   border: 1px solid;
   border-bottom: 0;
   float: left;
+  cursor: pointer;
 }
-/* line 470, ../scss/common.scss */
+/* line 497, ../scss/common.scss */
+.search-result .bar .right-item .theme-icon-contact {
+  width: 15px;
+  height: 18px;
+  margin: 6px 7px;
+}
+/* line 504, ../scss/common.scss */
 .search-result .content {
   padding: 5px 10px;
   border: 1px solid;
   border-top: 0;
   margin-bottom: 1px;
 }
-/* line 475, ../scss/common.scss */
+/* line 509, ../scss/common.scss */
 .search-result .content .left-content {
   float: left;
 }
-/* line 477, ../scss/common.scss */
+/* line 511, ../scss/common.scss */
 .search-result .content .left-content img {
   width: 76px;
   height: 93px;
+  margin-top: 4px;
 }
-/* line 482, ../scss/common.scss */
+/* line 517, ../scss/common.scss */
 .search-result .content .right-content {
   float: left;
   posiiton: relative;
 }
-/* line 485, ../scss/common.scss */
+/* line 520, ../scss/common.scss */
 .search-result .content .right-content .info-set {
   overflow: hidden;
 }
-/* line 487, ../scss/common.scss */
+/* line 522, ../scss/common.scss */
 .search-result .content .right-content .info-set .title {
   width: 135px;
   height: 17px;
   text-align: right;
   float: left;
 }
-/* line 493, ../scss/common.scss */
+/* line 528, ../scss/common.scss */
 .search-result .content .right-content .info-set .title.two-column {
   width: 60px;
 }
-/* line 496, ../scss/common.scss */
+/* line 531, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc {
   width: 120px;
   text-align: left;
@@ -807,11 +848,11 @@ input[type="text"], input[type="password"] {
   float: left;
   margin-left: 5px;
 }
-/* line 503, ../scss/common.scss */
+/* line 538, ../scss/common.scss */
 .search-result .content .right-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 507, ../scss/common.scss */
+/* line 542, ../scss/common.scss */
 .search-result .content .right-content .listing-icon {
   width: 20px;
   height: 21px;

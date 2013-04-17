@@ -80,15 +80,19 @@
 .search-result .bar .left {
   background-color: #F9C9BA;
 }
-/* line 10, ../scss/theme_tas.scss */
-.search-result .bar .right {
+/* line 9, ../scss/theme_tas.scss */
+.search-result .bar .left .updated-time {
+  color: #A82124;
+}
+/* line 13, ../scss/theme_tas.scss */
+.search-result .bar .right-item {
   background-color: #F9C9BA;
 }
-/* line 14, ../scss/theme_tas.scss */
+/* line 17, ../scss/theme_tas.scss */
 .search-result .content {
   border-color: #A82124;
 }
-/* line 18, ../scss/theme_tas.scss */
+/* line 21, ../scss/theme_tas.scss */
 .search-result .content right-content .info-set .title {
   color: #A82124;
 }

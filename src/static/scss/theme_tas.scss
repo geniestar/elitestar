@@ -6,8 +6,11 @@
         border-bottom-color: #A82124;
         .left {
             background-color: #F9C9BA;
+            .updated-time {
+                color: #A82124;
+            }
         }
-        .right {
+        .right-item {
             background-color: #F9C9BA;
         }
     }
