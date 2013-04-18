@@ -135,6 +135,16 @@
     }
 }
 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .form {
+        .input-set {
+            input {
+                border: 1px solid #666;
+            }
+        }
+    }
+}
+
 .form {
     .big-title {
         color: $blue;
@@ -142,7 +152,7 @@
     }
     .input-set {
         clear: both;
-        margin: 5px 0;
+        padding: 5px 0;
         line-height: 30px;
         height: 30px;
         .title {
@@ -197,7 +207,7 @@
         }
         .padding-title-one {
             text-align: left;
-            width: 50px;
+            width: 65px;
         }
         .padding-title-two {
             text-align: right;
@@ -214,6 +224,23 @@
         line-height: 60px;
         height: 60px;
     }
+    .input-set.graybg {
+        background-color: #F2F2F2;
+    }
+
+    .input-set.two-rows {
+        height: 65px;
+        .two-rows-left {
+            float: left;
+            width: 110px;
+        }
+        .two-rows-right {
+            .row {
+                height: 30px;
+            }
+        }
+    }
+
     .big-title {
         padding: 20px 0;
         float: left;

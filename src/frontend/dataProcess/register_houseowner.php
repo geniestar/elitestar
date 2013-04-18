@@ -20,7 +20,7 @@ foreach ($states[0]['suburbs'] as $key => $value)
     );
 }
 $data['photos'] = array();
-for ($i = 0; $i < 3; $i++)
+for ($i = 0; $i < 6; $i++)
 {
     $data['photos'][] = $i+1;
 }

@@ -1,51 +1,51 @@
-/* line 146, registerform/*.png */
-.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud {
-  background: url('/img/registerform-s99d1d93d70.png') no-repeat;
+/* line 154, registerform/*.png */
+.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud, .registerform-ue {
+  background: url('/img/registerform-sab0a04b7a1.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-add {
-  background-position: 0 -124px;
+  background-position: 0 -154px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-calendar {
-  background-position: 0 -330px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.registerform-fa {
-  background-position: 0 -94px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.registerform-fb {
-  background-position: 0 -180px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.registerform-fc {
-  background-position: 0 -300px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.registerform-fd {
   background-position: 0 -360px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-fa {
+  background-position: 0 -124px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-fb {
+  background-position: 0 -210px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-fc {
+  background-position: 0 -330px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-fd {
+  background-position: 0 -390px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fe {
-  background-position: 0 -150px;
+  background-position: 0 -180px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ff {
-  background-position: 0 -64px;
+  background-position: 0 -94px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fg {
-  background-position: 0 -210px;
+  background-position: 0 -240px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -55,22 +55,27 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ua {
-  background-position: 0 -420px;
+  background-position: 0 -450px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ub {
-  background-position: 0 -390px;
+  background-position: 0 -420px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-uc {
-  background-position: 0 -270px;
+  background-position: 0 -300px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ud {
-  background-position: 0 -240px;
+  background-position: 0 -270px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-ue {
+  background-position: 0 -64px;
 }
 
 /* line 6, ../scss/register.scss */
@@ -238,19 +243,25 @@
   position: relative;
 }
 
-/* line 139, ../scss/register.scss */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 141, ../scss/register.scss */
+  .form .input-set input {
+    border: 1px solid #666;
+  }
+}
+/* line 149, ../scss/register.scss */
 .form .big-title {
   color: #3b91d9;
   font-size: 20px;
 }
-/* line 143, ../scss/register.scss */
+/* line 153, ../scss/register.scss */
 .form .input-set {
   clear: both;
-  margin: 5px 0;
+  padding: 5px 0;
   line-height: 30px;
   height: 30px;
 }
-/* line 148, ../scss/register.scss */
+/* line 158, ../scss/register.scss */
 .form .input-set .title {
   float: left;
   width: 110px;
@@ -261,12 +272,12 @@
   vertical-align: middle;
   line-height: 20px;
 }
-/* line 158, ../scss/register.scss */
+/* line 168, ../scss/register.scss */
 .form .input-set .title.sec-title {
   display: inline;
   width: auto;
 }
-/* line 162, ../scss/register.scss */
+/* line 172, ../scss/register.scss */
 .form .input-set input {
   float: left;
   -webkit-border-radius: 0;
@@ -277,73 +288,90 @@
   color: #666666;
   vertical-align: middle;
 }
-/* line 172, ../scss/register.scss */
+/* line 182, ../scss/register.scss */
 .form .input-set input[type="radio"] {
   margin-top: 7px;
   float: left;
 }
-/* line 176, ../scss/register.scss */
+/* line 186, ../scss/register.scss */
 .form .input-set select {
   padding: 3px;
   float: left;
 }
-/* line 180, ../scss/register.scss */
+/* line 190, ../scss/register.scss */
 .form .input-set .registerform-calendar {
   cursor: pointer;
 }
-/* line 183, ../scss/register.scss */
+/* line 193, ../scss/register.scss */
 .form .input-set .facility-title, .form .input-set .help-title, .form .input-set .contact-title, .form .input-set .photo-title {
   text-align: right;
 }
-/* line 186, ../scss/register.scss */
+/* line 196, ../scss/register.scss */
 .form .input-set .help-title {
   width: 182px;
 }
-/* line 189, ../scss/register.scss */
+/* line 199, ../scss/register.scss */
 .form .input-set .cotact-title {
   width: 100px;
 }
-/* line 192, ../scss/register.scss */
+/* line 202, ../scss/register.scss */
 .form .input-set .facility-icon {
   margin: 0 20px;
 }
-/* line 195, ../scss/register.scss */
+/* line 205, ../scss/register.scss */
 .form .input-set .utility-icon {
   margin: 0 5px;
 }
-/* line 198, ../scss/register.scss */
+/* line 208, ../scss/register.scss */
 .form .input-set .padding-title-one {
   text-align: left;
-  width: 50px;
+  width: 65px;
 }
-/* line 202, ../scss/register.scss */
+/* line 212, ../scss/register.scss */
 .form .input-set .padding-title-two {
   text-align: right;
   width: 100px;
 }
-/* line 207, ../scss/register.scss */
+/* line 217, ../scss/register.scss */
 .form .input-set.big-input-set {
   margin: 10px 0;
 }
-/* line 209, ../scss/register.scss */
+/* line 219, ../scss/register.scss */
 .form .input-set.big-input-set .big-title {
   padding: 0 20px 0 0;
 }
-/* line 213, ../scss/register.scss */
+/* line 223, ../scss/register.scss */
 .form .input-set.input-set-two-line {
   line-height: 60px;
   height: 60px;
 }
-/* line 217, ../scss/register.scss */
+/* line 227, ../scss/register.scss */
+.form .input-set.graybg {
+  background-color: #F2F2F2;
+}
+/* line 231, ../scss/register.scss */
+.form .input-set.two-rows {
+  height: 65px;
+}
+/* line 233, ../scss/register.scss */
+.form .input-set.two-rows .two-rows-left {
+  float: left;
+  width: 110px;
+}
+/* line 238, ../scss/register.scss */
+.form .input-set.two-rows .two-rows-right .row {
+  height: 30px;
+}
+/* line 244, ../scss/register.scss */
 .form .big-title {
   padding: 20px 0;
   float: left;
 }
-/* line 221, ../scss/register.scss */
+/* line 248, ../scss/register.scss */
 .form #more-description {
   position: relative;
 }
-/* line 223, ../scss/register.scss */
+/* line 250, ../scss/register.scss */
 .form #more-description .registerform-add {
   cursor: pointer;
   width: 26px;
@@ -353,7 +381,7 @@
   bottom: 0;
 }
 
-/* line 234, ../scss/register.scss */
+/* line 261, ../scss/register.scss */
 #role-form input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;
@@ -362,36 +390,36 @@
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 242, ../scss/register.scss */
+/* line 269, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 246, ../scss/register.scss */
+/* line 273, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 47px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 251, ../scss/register.scss */
+/* line 278, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 47px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 256, ../scss/register.scss */
+/* line 283, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -125px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 261, ../scss/register.scss */
+/* line 288, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 47px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 266, ../scss/register.scss */
+/* line 293, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -125px;
   font-size: 10px;
