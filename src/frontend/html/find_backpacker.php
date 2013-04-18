@@ -125,7 +125,7 @@ foreach ($results as $result)
 //var_dump($backpackers);
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
-$state = 5;
+$state = 6;
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(

@@ -1,0 +1,70 @@
+@import "theme_qld/*.png";
+@include all-theme_qld-sprites;
+.search-result {
+    color: #66AD24;
+    .bar {
+        border-bottom-color: #66AD24;
+        .left {
+            background-color: #EBFF96;
+            .updated-time {
+                color: #66AD24;
+            }
+        }
+        .right-item {
+            background-color: #EBFF96;
+        }
+    }
+    .content {
+        border-color: #66AD24;
+        right-content {
+            .info-set {
+                .title {
+                    color: #66AD24;
+                }
+            }
+        }
+    }
+    .theme-sprite {
+        @extend .theme_qld-sprite;
+    }
+    .theme-icon-fa {
+        @extend .theme_qld-fa;
+    }
+    .theme-icon-fb {
+        @extend .theme_qld-fb;
+    }
+    .theme-icon-fc {
+        @extend .theme_qld-fc;
+    }
+    .theme-icon-fd {
+        @extend .theme_qld-fd;
+    }
+    .theme-icon-fe {
+        @extend .theme_qld-fe;
+    }
+    .theme-icon-ff {
+        @extend .theme_qld-ff;
+    }
+    .theme-icon-fg {
+        @extend .theme_qld-fg;
+    }
+    .theme-icon-contact {
+        @extend .theme_qld-contact;
+    }
+    .theme-icon-detail {
+        @extend .theme_qld-detail
+    }
+    .theme-icon-house {
+        @extend .theme_qld-house;
+    }
+    .theme-icon-map {
+        @extend .theme_qld-map;
+    }
+    .theme-icon-packer {
+        @extend .theme_qld-packer;
+    }
+    .theme-icon-pic {
+        @extend .theme_qld-pic;
+    }
+
+}

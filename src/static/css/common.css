@@ -1,11 +1,11 @@
-/* line 90, map/*.png */
-.map-sprite, .map-map_all, .map-map_nt, .map-map_qld, .map-map_sa, .map-map_tas, .map-map_vic, .map-map_wa {
-  background: url('/img/map-sb8043e9d36.png') no-repeat;
+/* line 98, map/*.png */
+.map-sprite, .map-map_all, .map-map_nsw, .map-map_nt, .map-map_qld, .map-map_sa, .map-map_tas, .map-map_vic, .map-map_wa {
+  background: url('/img/map-sdcd3ed85fc.png') no-repeat;
 }
 
-/* line 90, map_big/*.png */
-.map_big-sprite, .map_big-map_all_big, .map_big-map_nt_big, .map_big-map_qld_big, .map_big-map_sa_big, .map_big-map_tas_big, .map_big-map_vic_big, .map_big-map_wa_big {
-  background: url('/img/map_big-scda1909a71.png') no-repeat;
+/* line 98, map_big/*.png */
+.map_big-sprite, .map_big-map_all_big, .map_big-map_nsw_big, .map_big-map_nt_big, .map_big-map_qld_big, .map_big-map_sa_big, .map_big-map_tas_big, .map_big-map_vic_big, .map_big-map_wa_big {
+  background: url('/img/map_big-s3c95f1b504.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -14,8 +14,13 @@
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.map-map_nsw {
+  background-position: 0 -305px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map-map_nt {
-  background-position: 0 -356px;
+  background-position: 0 -397px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -25,17 +30,17 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map-map_sa {
-  background-position: 0 -305px;
+  background-position: 0 -346px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map-map_tas {
-  background-position: 0 -441px;
+  background-position: 0 -482px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map-map_vic {
-  background-position: 0 -418px;
+  background-position: 0 -459px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -49,8 +54,13 @@
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.map_big-map_nsw_big {
+  background-position: 0 -374px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map_big-map_nt_big {
-  background-position: 0 -436px;
+  background-position: 0 -486px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -60,17 +70,17 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map_big-map_sa_big {
-  background-position: 0 -374px;
+  background-position: 0 -424px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map_big-map_tas_big {
-  background-position: 0 -539px;
+  background-position: 0 -589px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .map_big-map_vic_big {
-  background-position: 0 -511px;
+  background-position: 0 -561px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -308,8 +318,9 @@ input[type="text"], input[type="password"] {
   height: 23px;
   top: 97px;
   right: 15px;
+  z-index: 1;
 }
-/* line 87, ../scss/common.scss */
+/* line 88, ../scss/common.scss */
 #map-all .map-map_tas {
   position: absolute;
   width: 19px;
@@ -318,25 +329,33 @@ input[type="text"], input[type="password"] {
   right: 18px;
 }
 /* line 95, ../scss/common.scss */
+#map-all .map-map_nsw {
+  position: absolute;
+  width: 48px;
+  height: 41px;
+  top: 73px;
+  right: 0px;
+}
+/* line 103, ../scss/common.scss */
 #map-all .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 100, ../scss/common.scss */
+/* line 108, ../scss/common.scss */
 #map-all.map_big-map_all_big {
   width: 181px;
   height: 169px;
   margin: 0 auto;
   position: relative;
 }
-/* line 105, ../scss/common.scss */
+/* line 113, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_wa_big {
   position: absolute;
   width: 70px;
   height: 110px;
   top: 19px;
 }
-/* line 111, ../scss/common.scss */
+/* line 119, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nt_big {
   position: absolute;
   width: 41px;
@@ -344,7 +363,7 @@ input[type="text"], input[type="password"] {
   top: 6px;
   left: 70px;
 }
-/* line 118, ../scss/common.scss */
+/* line 126, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_sa_big {
   position: absolute;
   width: 53px;
@@ -352,7 +371,7 @@ input[type="text"], input[type="password"] {
   top: 80px;
   left: 70px;
 }
-/* line 125, ../scss/common.scss */
+/* line 133, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_qld_big {
   position: absolute;
   width: 71px;
@@ -360,15 +379,16 @@ input[type="text"], input[type="password"] {
   top: 0;
   right: 1px;
 }
-/* line 132, ../scss/common.scss */
+/* line 140, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_vic_big {
   position: absolute;
   width: 41px;
   height: 28px;
   top: 119px;
   right: 18px;
+  z-index: 1;
 }
-/* line 139, ../scss/common.scss */
+/* line 148, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_tas_big {
   position: absolute;
   width: 23px;
@@ -376,17 +396,25 @@ input[type="text"], input[type="password"] {
   top: 146px;
   right: 23px;
 }
-/* line 147, ../scss/common.scss */
+/* line 155, ../scss/common.scss */
+#map-all.map_big-map_all_big .map_big-map_nsw_big {
+  position: absolute;
+  width: 59px;
+  height: 50px;
+  top: 90px;
+  right: 0px;
+}
+/* line 163, ../scss/common.scss */
 #map-all.map_big-map_all_big .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 152, ../scss/common.scss */
+/* line 168, ../scss/common.scss */
 .calendar {
   width: 220px;
 }
 
-/* line 156, ../scss/common.scss */
+/* line 172, ../scss/common.scss */
 .panel {
   z-index: 100;
   padding: 10px;
@@ -401,33 +429,34 @@ input[type="text"], input[type="password"] {
   position: absolute;
 }
 
-/* line 170, ../scss/common.scss */
+/* line 186, ../scss/common.scss */
 .main-container {
   width: 720px;
   margin: 0 auto;
 }
 
-/* line 175, ../scss/common.scss */
+/* line 191, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 179, ../scss/common.scss */
+/* line 195, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 183, ../scss/common.scss */
+/* line 199, ../scss/common.scss */
 .col-right {
-  width: 560px;
+  width: 558px;
+  margin-left: 2px;
 }
 
-/* line 187, ../scss/common.scss */
+/* line 204, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
 }
-/* line 190, ../scss/common.scss */
+/* line 207, ../scss/common.scss */
 #banner .container {
   width: 720px;
   height: 110px;
@@ -435,14 +464,14 @@ input[type="text"], input[type="password"] {
   position: relative;
   overflow: hidden;
 }
-/* line 196, ../scss/common.scss */
+/* line 213, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 202, ../scss/common.scss */
+/* line 219, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -452,16 +481,16 @@ input[type="text"], input[type="password"] {
   bottom: 0px;
 }
 
-/* line 213, ../scss/common.scss */
+/* line 230, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 217, ../scss/common.scss */
+/* line 234, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
 }
-/* line 219, ../scss/common.scss */
+/* line 236, ../scss/common.scss */
 #menu-container #menu {
   width: 720px;
   margin: 0 auto;
@@ -478,7 +507,7 @@ input[type="text"], input[type="password"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 228, ../scss/common.scss */
+/* line 245, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -486,14 +515,14 @@ input[type="text"], input[type="password"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 234, ../scss/common.scss */
+/* line 251, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 239, ../scss/common.scss */
+/* line 256, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -501,21 +530,21 @@ input[type="text"], input[type="password"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 246, ../scss/common.scss */
+/* line 263, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   vertical-align: middle;
 }
-/* line 252, ../scss/common.scss */
+/* line 269, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 256, ../scss/common.scss */
+/* line 273, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 261, ../scss/common.scss */
+/* line 278, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -526,30 +555,30 @@ input[type="text"], input[type="password"] {
   right: 2px;
   text-align: left;
 }
-/* line 270, ../scss/common.scss */
+/* line 287, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 275, ../scss/common.scss */
+/* line 292, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 282, ../scss/common.scss */
+/* line 299, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 285, ../scss/common.scss */
+/* line 302, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }
 
-/* line 291, ../scss/common.scss */
+/* line 308, ../scss/common.scss */
 #search-menu {
   padding-bottom: 10px;
   background-color: #e1f7f2;
@@ -574,7 +603,7 @@ input[type="text"], input[type="password"] {
   border: 1px solid #232323;
   margin-top: 1px;
 }
-/* line 308, ../scss/common.scss */
+/* line 325, ../scss/common.scss */
 #search-menu .search-title {
   height: 25px;
   line-height: 25px;
@@ -592,27 +621,27 @@ input[type="text"], input[type="password"] {
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
-/* line 324, ../scss/common.scss */
+/* line 341, ../scss/common.scss */
 #search-menu .search-title .listing-search {
   width: 19px;
   height: 20px;
   float: left;
   margin: 3px 3px 3px 10px;
 }
-/* line 330, ../scss/common.scss */
+/* line 347, ../scss/common.scss */
 #search-menu .search-title .title {
   color: #232323;
   float: left;
   vertival-align: middle;
 }
-/* line 336, ../scss/common.scss */
+/* line 353, ../scss/common.scss */
 #search-menu .input-set {
   clear: both;
   font-size: 10px;
   padding: 2px 10px;
   position: relative;
 }
-/* line 341, ../scss/common.scss */
+/* line 358, ../scss/common.scss */
 #search-menu .input-set .listing-calendar {
   cursor: pointer;
   width: 17px;
@@ -620,7 +649,7 @@ input[type="text"], input[type="password"] {
   float: left;
   margin: 4px 2px;
 }
-/* line 348, ../scss/common.scss */
+/* line 365, ../scss/common.scss */
 #search-menu .input-set .title {
   padding: 1px;
   _padding: 3px 1px 0px 1px;
@@ -628,17 +657,17 @@ input[type="text"], input[type="password"] {
   padding: 3px 1px 0px 1px\9;
   vertical-align: middle;
 }
-/* line 355, ../scss/common.scss */
+/* line 372, ../scss/common.scss */
 #search-menu .input-set .title.sec-title {
   display: inline;
   width: auto;
 }
-/* line 359, ../scss/common.scss */
+/* line 376, ../scss/common.scss */
 #search-menu .input-set .desc {
   color: #666666;
   font-size: 9px;
 }
-/* line 363, ../scss/common.scss */
+/* line 380, ../scss/common.scss */
 #search-menu .input-set input {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -649,29 +678,29 @@ input[type="text"], input[type="password"] {
   vertical-align: middle;
   float: left;
 }
-/* line 373, ../scss/common.scss */
+/* line 390, ../scss/common.scss */
 #search-menu .input-set select {
   font-size: 10px;
   padding: 1px;
   width: 140px;
 }
-/* line 378, ../scss/common.scss */
+/* line 395, ../scss/common.scss */
 #search-menu .input-set select.short {
   width: 40px;
 }
-/* line 381, ../scss/common.scss */
+/* line 398, ../scss/common.scss */
 #search-menu .input-set #cal-btn-start-cal {
   position: absolute;
   left: 150px;
   top: 20px;
 }
-/* line 386, ../scss/common.scss */
+/* line 403, ../scss/common.scss */
 #search-menu .input-set #cal-btn-end-cal {
   position: absolute;
   left: 150px;
   top: 60px;
 }
-/* line 392, ../scss/common.scss */
+/* line 409, ../scss/common.scss */
 #search-menu #search-btn {
   width: 73px;
   height: 23px;
@@ -694,7 +723,7 @@ input[type="text"], input[type="password"] {
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   cursor: pointer;
 }
-/* line 408, ../scss/common.scss */
+/* line 425, ../scss/common.scss */
 #search-menu #search-btn .listing-search_btn {
   width: 14px;
   height: 14px;
@@ -702,13 +731,13 @@ input[type="text"], input[type="password"] {
   vertical-align: middle;
   margin: 5px 3px 0 5px;
 }
-/* line 415, ../scss/common.scss */
+/* line 432, ../scss/common.scss */
 #search-menu #search-btn .title {
   float: left;
   vertical-align: middle;
 }
 
-/* line 422, ../scss/common.scss */
+/* line 439, ../scss/common.scss */
 #sort-bar {
   height: 16px;
   line-height: 16px;
@@ -716,79 +745,80 @@ input[type="text"], input[type="password"] {
   font-size: 12px;
   color: white;
   padding: 10px;
+  margin: 2px 0;
 }
-/* line 429, ../scss/common.scss */
+/* line 447, ../scss/common.scss */
 #sort-bar .title {
   margin-right: 10px;
   float: left;
 }
-/* line 433, ../scss/common.scss */
+/* line 451, ../scss/common.scss */
 #sort-bar .sort-item {
   vertical-align: middle;
   float: left;
 }
-/* line 436, ../scss/common.scss */
+/* line 454, ../scss/common.scss */
 #sort-bar .sort-item .listing-sort {
   width: 16px;
   height: 17px;
   margin-right: 15px;
   float: left;
 }
-/* line 442, ../scss/common.scss */
+/* line 460, ../scss/common.scss */
 #sort-bar .sort-item .desc {
   margin: 0 5px;
   float: left;
 }
 
-/* line 450, ../scss/common.scss */
+/* line 468, ../scss/common.scss */
 .search-result .theme-icon-house {
   width: 19px;
   height: 22px;
   margin: 3px 5px;
   float: left;
 }
-/* line 456, ../scss/common.scss */
+/* line 474, ../scss/common.scss */
 .search-result .theme-icon-packer {
   width: 21px;
   height: 21px;
   margin: 3px 5px;
   float: left;
 }
-/* line 462, ../scss/common.scss */
+/* line 480, ../scss/common.scss */
 .search-result .bar {
   height: 31px;
   line-height: 31px;
   border-bottom: 3px solid;
 }
-/* line 466, ../scss/common.scss */
+/* line 484, ../scss/common.scss */
 .search-result .bar .left {
-  width: 525px;
+  width: 523px;
   height: 30px;
   border: 1px solid;
   border-bottom: 0;
   float: left;
   margin-right: 1px;
 }
-/* line 473, ../scss/common.scss */
+/* line 491, ../scss/common.scss */
 .search-result .bar .left .title {
   color: #232323;
   font-size: 16px;
   float: left;
 }
-/* line 478, ../scss/common.scss */
+/* line 496, ../scss/common.scss */
 .search-result .bar .left img {
   width: 22px;
   height: 15px;
   float: left;
   margin: 8px 10px;
 }
-/* line 484, ../scss/common.scss */
+/* line 502, ../scss/common.scss */
 .search-result .bar .left .updated-time {
   font-size: 10px;
   float: right;
   margin-right: 15px;
 }
-/* line 490, ../scss/common.scss */
+/* line 508, ../scss/common.scss */
 .search-result .bar .right-item {
   height: 30px;
   width: 30px;
@@ -796,51 +826,63 @@ input[type="text"], input[type="password"] {
   border-bottom: 0;
   float: left;
   cursor: pointer;
+  position: relative;
 }
-/* line 497, ../scss/common.scss */
+/* line 516, ../scss/common.scss */
 .search-result .bar .right-item .theme-icon-contact {
   width: 15px;
   height: 18px;
   margin: 6px 7px;
 }
-/* line 504, ../scss/common.scss */
+/* line 522, ../scss/common.scss */
+.search-result .bar .right-item.selected {
+  background-color: white;
+}
+/* line 524, ../scss/common.scss */
+.search-result .bar .right-item.selected .white-bar {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+}
+/* line 532, ../scss/common.scss */
 .search-result .content {
   padding: 5px 10px;
   border: 1px solid;
   border-top: 0;
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
-/* line 509, ../scss/common.scss */
+/* line 537, ../scss/common.scss */
 .search-result .content .left-content {
   float: left;
 }
-/* line 511, ../scss/common.scss */
+/* line 539, ../scss/common.scss */
 .search-result .content .left-content img {
   width: 76px;
   height: 93px;
   margin-top: 4px;
 }
-/* line 517, ../scss/common.scss */
+/* line 545, ../scss/common.scss */
 .search-result .content .right-content {
   float: left;
   posiiton: relative;
 }
-/* line 520, ../scss/common.scss */
+/* line 548, ../scss/common.scss */
 .search-result .content .right-content .info-set {
   overflow: hidden;
 }
-/* line 522, ../scss/common.scss */
+/* line 550, ../scss/common.scss */
 .search-result .content .right-content .info-set .title {
   width: 135px;
   height: 17px;
   text-align: right;
   float: left;
 }
-/* line 528, ../scss/common.scss */
+/* line 556, ../scss/common.scss */
 .search-result .content .right-content .info-set .title.two-column {
   width: 60px;
 }
-/* line 531, ../scss/common.scss */
+/* line 559, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc {
   width: 120px;
   text-align: left;
@@ -848,11 +890,11 @@ input[type="text"], input[type="password"] {
   float: left;
   margin-left: 5px;
 }
-/* line 538, ../scss/common.scss */
+/* line 566, ../scss/common.scss */
 .search-result .content .right-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 542, ../scss/common.scss */
+/* line 570, ../scss/common.scss */
 .search-result .content .right-content .listing-icon {
   width: 20px;
   height: 21px;

@@ -1,0 +1,70 @@
+@import "theme_nsw/*.png";
+@include all-theme_nsw-sprites;
+.search-result {
+    color: #E66996;
+    .bar {
+        border-bottom-color: #E66996;
+        .left {
+            background-color: #FFD4E8;
+            .updated-time {
+                color: #E66996;
+            }
+        }
+        .right-item {
+            background-color: #FFD4E8;
+        }
+    }
+    .content {
+        border-color: #E66996;
+        right-content {
+            .info-set {
+                .title {
+                    color: #E66996;
+                }
+            }
+        }
+    }
+    .theme-sprite {
+        @extend .theme_nsw-sprite;
+    }
+    .theme-icon-fa {
+        @extend .theme_nsw-fa;
+    }
+    .theme-icon-fb {
+        @extend .theme_nsw-fb;
+    }
+    .theme-icon-fc {
+        @extend .theme_nsw-fc;
+    }
+    .theme-icon-fd {
+        @extend .theme_nsw-fd;
+    }
+    .theme-icon-fe {
+        @extend .theme_nsw-fe;
+    }
+    .theme-icon-ff {
+        @extend .theme_nsw-ff;
+    }
+    .theme-icon-fg {
+        @extend .theme_nsw-fg;
+    }
+    .theme-icon-contact {
+        @extend .theme_nsw-contact;
+    }
+    .theme-icon-detail {
+        @extend .theme_nsw-detail
+    }
+    .theme-icon-house {
+        @extend .theme_nsw-house;
+    }
+    .theme-icon-map {
+        @extend .theme_nsw-map;
+    }
+    .theme-icon-packer {
+        @extend .theme_nsw-packer;
+    }
+    .theme-icon-pic {
+        @extend .theme_nsw-pic;
+    }
+
+}

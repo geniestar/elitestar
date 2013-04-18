@@ -83,6 +83,7 @@ input[type="text"], input[type="password"] {
         height: 23px;
         top: 97px;
         right: 15px;
+        z-index: 1;
     }
     .map-map_tas {
         position: absolute;
@@ -90,6 +91,13 @@ input[type="text"], input[type="password"] {
         height: 19px;
         top: 119px;
         right: 18px;
+    }
+    .map-map_nsw {
+        position: absolute;
+        width: 48px;
+        height: 41px;
+        top: 73px;
+        right: 0px;
     }
 
     .unselected {
@@ -135,6 +143,7 @@ input[type="text"], input[type="password"] {
         height: 28px;
         top: 119px;
         right: 18px;
+        z-index: 1;
     }
     .map_big-map_tas_big {
         position: absolute;
@@ -142,6 +151,13 @@ input[type="text"], input[type="password"] {
         height: 23px;
         top: 146px;
         right: 23px;
+    }
+    .map_big-map_nsw_big {
+        position: absolute;
+        width: 59px;
+        height: 50px;
+        top: 90px;
+        right: 0px;
     }
 
     .unselected {
@@ -181,7 +197,8 @@ input[type="text"], input[type="password"] {
 }
 
 .col-right {
-    width: 560px;
+    width: 558px;
+    margin-left: 2px;
 }
 
 #banner {
@@ -426,6 +443,7 @@ background-color: #B2B2B2;
     font-size: 12px;
     color: $white;
     padding: 10px;
+    margin: 2px 0;
     .title {
         margin-right: 10px;
         float: left;
@@ -464,7 +482,7 @@ background-color: #B2B2B2;
         line-height: 31px;
         border-bottom: 3px solid;
         .left {
-            width: 525px;
+            width: 523px;
             height: 30px;
             border: 1px solid;
             border-bottom: 0;
@@ -494,10 +512,20 @@ background-color: #B2B2B2;
             border-bottom: 0;
             float: left;
             cursor: pointer;
+            position: relative;
             .theme-icon-contact {
                 width: 15px;
                 height: 18px;
                 margin: 6px 7px;
+            }
+        }
+        .right-item.selected {
+            background-color: $white;
+            .white-bar {
+                position: absolute;
+                height: 3px;
+                width: 100%;
+                background-color: $white;
             }
         }
     }
@@ -505,7 +533,7 @@ background-color: #B2B2B2;
         padding: 5px 10px;;
         border: 1px solid;
         border-top: 0;
-        margin-bottom: 1px;
+        margin-bottom: 2px;
         .left-content {
             float: left;
             img {

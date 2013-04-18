@@ -1,0 +1,70 @@
+@import "theme_vic/*.png";
+@include all-theme_vic-sprites;
+.search-result {
+    color: #5F41A0;
+    .bar {
+        border-bottom-color: #5F41A0;
+        .left {
+            background-color: #E0E6FF;
+            .updated-time {
+                color: #5F41A0;
+            }
+        }
+        .right-item {
+            background-color: #E0E6FF;
+        }
+    }
+    .content {
+        border-color: #5F41A0;
+        right-content {
+            .info-set {
+                .title {
+                    color: #5F41A0;
+                }
+            }
+        }
+    }
+    .theme-sprite {
+        @extend .theme_vic-sprite;
+    }
+    .theme-icon-fa {
+        @extend .theme_vic-fa;
+    }
+    .theme-icon-fb {
+        @extend .theme_vic-fb;
+    }
+    .theme-icon-fc {
+        @extend .theme_vic-fc;
+    }
+    .theme-icon-fd {
+        @extend .theme_vic-fd;
+    }
+    .theme-icon-fe {
+        @extend .theme_vic-fe;
+    }
+    .theme-icon-ff {
+        @extend .theme_vic-ff;
+    }
+    .theme-icon-fg {
+        @extend .theme_vic-fg;
+    }
+    .theme-icon-contact {
+        @extend .theme_vic-contact;
+    }
+    .theme-icon-detail {
+        @extend .theme_vic-detail
+    }
+    .theme-icon-house {
+        @extend .theme_vic-house;
+    }
+    .theme-icon-map {
+        @extend .theme_vic-map;
+    }
+    .theme-icon-packer {
+        @extend .theme_vic-packer;
+    }
+    .theme-icon-pic {
+        @extend .theme_vic-pic;
+    }
+
+}

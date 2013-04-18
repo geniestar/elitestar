@@ -80,11 +80,11 @@ class BackPackers
         }
         if ($durationStart)
         {
-            $conditions['duration_start'] = array('op' => '<=', 'value' => $durationStart);
+            $conditions['duration_start'] = array('op' => '>=', 'value' => $durationStart);
         }
         if ($durationEnd)
         {
-            $conditions['duration_end'] = array('op' => '>=', 'value' => $durationEnd);
+            $conditions['duration_end'] = array('op' => '<=', 'value' => $durationEnd);
         }
         if ($rentLow)
         {
