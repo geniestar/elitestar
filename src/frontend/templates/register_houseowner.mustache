@@ -198,6 +198,7 @@
     <div class="input-set big-input-set">
         <span class="big-title">{{i18n.REG_RENT}}</span>
         <input type="text" size="6" name="rent" placeholder="{{i18n.REG_RENT_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_AUD}}</div>
     </div>
 
     <div class="big-title">{{i18n.REG_UPLOAD_PHOTOS}}</div>
@@ -226,47 +227,51 @@
 
     <div class="big-title">{{i18n.REG_MORE_DESCRIPTION}}</div>
     <div id="more-description">
-    <div class="des-template input-set input-set-two-line hidden">
+    <div class="des-template input-set hidden">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
-        <select name="position-tmpl">
+        <select name="position-tmpl" onchange="YAHOO.EliteStar.onPositionChange(this);">
             {{#positions}}
                 <option value="{{value}}">{{name}}</option>
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}">
+        <input type="text" size="1" name="km-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}">
+        <input type="text" size="1" name="mins-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
-        <div style="clear:both">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
         <select name="vehicle-tmpl">
             {{#vehicle}}
                 <option value="{{value}}">{{name}}</option>
             {{/vehicle}}
         </select>
+        <div id="more-des-tmpl-desc" class="hidden">
+            <div class="title sec-title"></div><input type="text" name="desc-tmpl">
         </div>
+        <div class="clean"></div>
     </div>
-    <div id="more-des-0" class="input-set input-set-two-line">
+    <div id="more-des-0" class="input-set">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
-        <select name="position-0">
+        <select name="position-0" onchange="YAHOO.EliteStar.onPositionChange(this);">
             {{#positions}}
                 <option value="{{value}}">{{name}}</option>
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}">
+        <input type="text" size="1" name="km-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}">
+        <input type="text" size="1" name="mins-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
-        <div style="clear:both">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
         <select name="vehicle-0">
             {{#vehicle}}
                 <option value="{{value}}">{{name}}</option>
             {{/vehicle}}
         </select>
+        <div id="more-des-0-desc" class="hidden">
+            <div class="title sec-title"></div><input type="text" name="desc-0">
         </div>
+        <div class="clean"></div>
     </div>
     <div class="registerform-add"></div>
     </div>

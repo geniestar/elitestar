@@ -236,6 +236,9 @@
                 height: 24px;
             }
         }
+        .short-input {
+            width: 20px;
+        }
     }
     .input-set.big-input-set {
         margin: 10px 0;
@@ -280,6 +283,9 @@
             position: absolute;
             right: 0;
             bottom: 0;
+        }
+        .input-set {
+            height: auto;
         }
     }
 }

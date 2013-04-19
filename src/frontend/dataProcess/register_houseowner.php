@@ -28,14 +28,17 @@ for ($i = 0; $i < 6; $i++)
 $data['todayText'] = date('Y/M/d');
 $data['nextYearText'] = date('Y/M/d', time() + 60*60*24*365);
 $data['houseDimemsions'] = ConfigReader::getInstance()->readConfig('dimensions', 'house_dimemsions');
-$data['positions'] = array();
+$data['positions'] = array(array('value' => '', 'name' => ''));
+$positionDesc = array();
 foreach($data['houseDimemsions']['description_posiiton'] as $position)
 {
     $data['positions'][] = array(
         'value' => $position,
         'name' => EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position)
     );
+    $positionDesc[$position] = EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position . '_DESC');
 }
+$data['vehicle'] = array(array('value' => '', 'name' => ''));
 foreach($data['houseDimemsions']['description_vehicle'] as $vehicle)
 {
     $data['vehicle'][] = array(
@@ -43,4 +46,8 @@ foreach($data['houseDimemsions']['description_vehicle'] as $vehicle)
         'name' => EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $vehicle)
     );
 }
+
+EliteHelper::setParamsToJs('positionDesc', $positionDesc);
+
+
 ?>

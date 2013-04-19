@@ -84,6 +84,20 @@ YUI({
         var id = e.target.get('value');
         replaceAllSuburbs('#houseowner-form .city-selection', id);
     });
+
+    YAHOO.EliteStar.onPositionChange = function(e) {
+        console.log(e.value);
+        if (YAHOO.EliteStar.params['positionDesc'][e.value]) {
+            var inputSet = e.parentNode;
+            document.getElementById(inputSet.id + '-desc').setAttribute('class', '');
+            var moreDesc = document.getElementById(inputSet.id + '-desc');
+            var titleDiv = moreDesc.getElementsByTagName('div')[0];
+            titleDiv.innerHTML = YAHOO.EliteStar.params['positionDesc'][e.value];
+        } else {
+            var inputSet = e.parentNode;
+            document.getElementById(inputSet.id + '-desc').setAttribute('class', 'hidden');
+        }
+    }
     var moreDescriptionCount = 1;
     Y.one('.registerform-add').on('click', function(e){
         var tmpNode = Y.one('.des-template').cloneNode(10);
@@ -93,6 +107,8 @@ YUI({
         tmpNode.one('select[name="vehicle-tmpl"]').set('name', 'vehicle-' + moreDescriptionCount);
         tmpNode.one('input[name="km-tmpl"]').set('name', 'km-' + moreDescriptionCount);
         tmpNode.one('input[name="mins-tmpl"]').set('name', 'mins-' + moreDescriptionCount);
+        tmpNode.one('input[name="desc-tmpl"]').set('name', 'desc-' + moreDescriptionCount);
+        tmpNode.one('#more-des-tmpl-desc').set('id', 'more-des-' + moreDescriptionCount + '-desc');
         tmpNode.removeClass('hidden');
         moreDescriptionCount++;
     });
