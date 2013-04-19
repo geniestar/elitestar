@@ -56,7 +56,7 @@
     background-color: #DBF0FF; 
 
     #user-form, #backpacker-form, #houseowner-form {
-        width: 540px;
+        width: 560px;
         padding: 15px;
         border: 1px solid $form-border;
         background-color: $form-bg;
@@ -152,7 +152,7 @@
     }
     .input-set {
         clear: both;
-        padding: 5px 0;
+        padding: 5px 5px;
         line-height: 30px;
         height: 30px;
         .title {
@@ -168,6 +168,9 @@
         .title.sec-title {
             display: inline;
             width: auto;
+        }
+        .title-gray {
+            color: $gray;
         }
         input {
             float: left;
@@ -213,6 +216,26 @@
             text-align: right;
             width: 100px;
         }
+        .padding-title-three {
+            text-align: right;
+            width: 58px;
+        }
+        .padding-title-four {
+            text-align: right;
+            width: 63px;
+        }
+        .extra-info {
+            display: block;
+            clear: both;
+            margin:5px 0 0 200px;   
+            padding: 10px;
+            .registerform-people {
+                margin-bottom: 10px;
+                float: left;
+                width: 9px;
+                height: 24px;
+            }
+        }
     }
     .input-set.big-input-set {
         margin: 10px 0;
@@ -224,15 +247,18 @@
         line-height: 60px;
         height: 60px;
     }
-    .input-set.graybg {
+    .graybg {
         background-color: #F2F2F2;
     }
-
     .input-set.two-rows {
-        height: 65px;
+        height: 60px;
+        .small-text {
+            font-size: 10px;
+        }
         .two-rows-left {
             float: left;
-            width: 110px;
+            width: 120px;
+            padding-top: 18px;
         }
         .two-rows-right {
             .row {

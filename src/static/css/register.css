@@ -1,6 +1,6 @@
-/* line 154, registerform/*.png */
-.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud, .registerform-ue {
-  background: url('/img/registerform-sab0a04b7a1.png') no-repeat;
+/* line 162, registerform/*.png */
+.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-people, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud, .registerform-ue {
+  background: url('/img/registerform-s5c8e28ee41.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -54,8 +54,13 @@
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.registerform-ua {
+.registerform-people {
   background-position: 0 -450px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-ua {
+  background-position: 0 -474px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -142,7 +147,7 @@
 }
 /* line 58, ../scss/register.scss */
 #register-form #user-form, #register-form #backpacker-form, #register-form #houseowner-form {
-  width: 540px;
+  width: 560px;
   padding: 15px;
   border: 1px solid #656565;
   background-color: white;
@@ -257,7 +262,7 @@
 /* line 153, ../scss/register.scss */
 .form .input-set {
   clear: both;
-  padding: 5px 0;
+  padding: 5px 5px;
   line-height: 30px;
   height: 30px;
 }
@@ -278,6 +283,10 @@
   width: auto;
 }
 /* line 172, ../scss/register.scss */
+.form .input-set .title-gray {
+  color: #666666;
+}
+/* line 175, ../scss/register.scss */
 .form .input-set input {
   float: left;
   -webkit-border-radius: 0;
@@ -288,90 +297,119 @@
   color: #666666;
   vertical-align: middle;
 }
-/* line 182, ../scss/register.scss */
+/* line 185, ../scss/register.scss */
 .form .input-set input[type="radio"] {
   margin-top: 7px;
   float: left;
 }
-/* line 186, ../scss/register.scss */
+/* line 189, ../scss/register.scss */
 .form .input-set select {
   padding: 3px;
   float: left;
 }
-/* line 190, ../scss/register.scss */
+/* line 193, ../scss/register.scss */
 .form .input-set .registerform-calendar {
   cursor: pointer;
 }
-/* line 193, ../scss/register.scss */
+/* line 196, ../scss/register.scss */
 .form .input-set .facility-title, .form .input-set .help-title, .form .input-set .contact-title, .form .input-set .photo-title {
   text-align: right;
 }
-/* line 196, ../scss/register.scss */
+/* line 199, ../scss/register.scss */
 .form .input-set .help-title {
   width: 182px;
 }
-/* line 199, ../scss/register.scss */
+/* line 202, ../scss/register.scss */
 .form .input-set .cotact-title {
   width: 100px;
 }
-/* line 202, ../scss/register.scss */
+/* line 205, ../scss/register.scss */
 .form .input-set .facility-icon {
   margin: 0 20px;
 }
-/* line 205, ../scss/register.scss */
+/* line 208, ../scss/register.scss */
 .form .input-set .utility-icon {
   margin: 0 5px;
 }
-/* line 208, ../scss/register.scss */
+/* line 211, ../scss/register.scss */
 .form .input-set .padding-title-one {
   text-align: left;
   width: 65px;
 }
-/* line 212, ../scss/register.scss */
+/* line 215, ../scss/register.scss */
 .form .input-set .padding-title-two {
   text-align: right;
   width: 100px;
 }
-/* line 217, ../scss/register.scss */
+/* line 219, ../scss/register.scss */
+.form .input-set .padding-title-three {
+  text-align: right;
+  width: 58px;
+}
+/* line 223, ../scss/register.scss */
+.form .input-set .padding-title-four {
+  text-align: right;
+  width: 63px;
+}
+/* line 227, ../scss/register.scss */
+.form .input-set .extra-info {
+  display: block;
+  clear: both;
+  margin: 5px 0 0 200px;
+  padding: 10px;
+}
+/* line 232, ../scss/register.scss */
+.form .input-set .extra-info .registerform-people {
+  margin-bottom: 10px;
+  float: left;
+  width: 9px;
+  height: 24px;
+}
+/* line 240, ../scss/register.scss */
 .form .input-set.big-input-set {
   margin: 10px 0;
 }
-/* line 219, ../scss/register.scss */
+/* line 242, ../scss/register.scss */
 .form .input-set.big-input-set .big-title {
   padding: 0 20px 0 0;
 }
-/* line 223, ../scss/register.scss */
+/* line 246, ../scss/register.scss */
 .form .input-set.input-set-two-line {
   line-height: 60px;
   height: 60px;
 }
-/* line 227, ../scss/register.scss */
-.form .input-set.graybg {
+/* line 250, ../scss/register.scss */
+.form .graybg {
   background-color: #F2F2F2;
 }
-/* line 231, ../scss/register.scss */
+/* line 253, ../scss/register.scss */
 .form .input-set.two-rows {
-  height: 65px;
+  height: 60px;
 }
-/* line 233, ../scss/register.scss */
+/* line 255, ../scss/register.scss */
+.form .input-set.two-rows .small-text {
+  font-size: 10px;
+}
+/* line 258, ../scss/register.scss */
 .form .input-set.two-rows .two-rows-left {
   float: left;
-  width: 110px;
+  width: 120px;
+  padding-top: 18px;
 }
-/* line 238, ../scss/register.scss */
+/* line 264, ../scss/register.scss */
 .form .input-set.two-rows .two-rows-right .row {
   height: 30px;
 }
-/* line 244, ../scss/register.scss */
+/* line 270, ../scss/register.scss */
 .form .big-title {
   padding: 20px 0;
   float: left;
 }
-/* line 248, ../scss/register.scss */
+/* line 274, ../scss/register.scss */
 .form #more-description {
   position: relative;
 }
-/* line 250, ../scss/register.scss */
+/* line 276, ../scss/register.scss */
 .form #more-description .registerform-add {
   cursor: pointer;
   width: 26px;
@@ -381,7 +419,7 @@
   bottom: 0;
 }
 
-/* line 261, ../scss/register.scss */
+/* line 287, ../scss/register.scss */
 #role-form input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;
@@ -390,36 +428,36 @@
   -moz-border-radius: 0;
   border-radius: 0;
 }
-/* line 269, ../scss/register.scss */
+/* line 295, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 273, ../scss/register.scss */
+/* line 299, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 47px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 278, ../scss/register.scss */
+/* line 304, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 47px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 283, ../scss/register.scss */
+/* line 309, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -125px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 288, ../scss/register.scss */
+/* line 314, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 47px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 293, ../scss/register.scss */
+/* line 319, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -125px;
   font-size: 10px;

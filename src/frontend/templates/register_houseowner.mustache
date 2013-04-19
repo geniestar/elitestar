@@ -42,7 +42,7 @@
                 <option value="{{.}}">{{.}}</option>
             {{/houseDimemsions.rooms}}
         </select>
-        <div class="title padding-title-two">{{i18n.REG_BEDS}}</div>
+        <div class="title padding-title-three">{{i18n.REG_BEDS}}</div>
         <div class="registerform-ub registerform-icon utility-icon"></div>
         <div class="title sec-title">{{i18n.REG_SINGLE}}</div>
         <select name="bed_single">
@@ -74,12 +74,6 @@
             {{/houseDimemsions.parking_spaces}}
         </select>
     </div>
- 71     REG_BILLS: 'Utility bills'
-  72     REG_WATER: 'Water'
-   73     REG_ELECTRCITY: 'Electricity'
-    74     REG_INCLUDED: 'Included'
-     75     REG_CHARGE: 'Charge'
-      76     REG_AUD_PW: 'AUD/pw'
 
     <div class="input-set graybg two-rows">
         <div class="two-rows-left">
@@ -88,10 +82,18 @@
         </div>
         <div class="two-rows-right">
             <div class="row">
-                ccc
+                <div class="title padding-title-four">{{i18n.REG_WATER}}</div>
+                <input type="radio" name="uew" value="0" checked><div class="title sec-title small-text">{{i18n.REG_INCLUDED}}</div>
+                <input type="radio" name="uew" value="1" checked><div class="title sec-title small-text">{{i18n.REG_CHARGE}}</div>
+                <input type="text" name="uew-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1">
+                <div class="title sec-title small-text">{{i18n.REG_AUD_PW}}</div>
             </div>
             <div class="row">
-                ccc
+                <div class="title padding-title-four">{{i18n.REG_ELECTRCITY}}</div>
+                <input type="radio" name="uee" value="0" checked><div class="title sec-title small-text">{{i18n.REG_INCLUDED}}</div>
+                <input type="radio" name="uee" value="1" checked><div class="title sec-title small-text">{{i18n.REG_CHARGE}}</div>
+                <input type="text" name="uee-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1">
+                <div class="title sec-title small-text">{{i18n.REG_AUD_PW}}</div>
             </div>
         </div>
     </div>
@@ -147,12 +149,37 @@
     </div>
 
     <div class="big-title">{{i18n.REG_SERVICES}}</div>
-    <div class="input-set">
+    <div class="input-set" style="height:auto;">
         <div class="title help-title">{{i18n.REG_TAKE_YOU_FROM_AIRPORT}}</div>
         <input type="radio" name="h-ha" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
         <input type="radio" name="h-ha" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
-        <input type="text" name="h-haa" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="6">
+        <div class="extra-info graybg">
+            <div class="registerform-sprite registerform-people"></div>
+            <div class="title sec-title">x1</div>
+            <input type="text" name="h-haa-1" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <div class="title sec-title">{{i18n.REG_AUD}}</div>
+            <div class="title sec-title title-gray">{{i18n.REG_TAKE_YOU_FROM_AIRPORT_HINT}}</div>
+            <div class="clean"></div>
+            <div class="registerform-sprite registerform-people"></div>
+            <div class="title sec-title">x2</div>
+            <input type="text" name="h-haa-2" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <div class="title sec-title">{{i18n.REG_AUD}}</div>
+            <div class="clean"></div>
+            <div class="registerform-sprite registerform-people"></div>
+            <div class="title sec-title">x3</div>
+            <input type="text" name="h-haa-3" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <div class="title sec-title">{{i18n.REG_AUD}}</div>
+            <div class="clean"></div>
+            <div class="registerform-sprite registerform-people"></div>
+            <div class="title sec-title">x4</div>
+            <input type="text" name="h-haa-4" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <div class="title sec-title">{{i18n.REG_AUD}}</div>
+            <div class="clean"></div>
+            <input type="text" name="h-haa-o" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_OTHER}}" size="26">
+            <div class="clean"></div>
+        </div>
     </div>
+    <div class="clean"></div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_OPEN_BANK_ACCOUNT}}</div>
         <input type="radio" name="h-hb" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
