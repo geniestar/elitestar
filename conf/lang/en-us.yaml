@@ -20,6 +20,7 @@ languages:
     COMMON_SEARCH_BEDS_DESC: 'S:Single/D:Double'
     COMMON_SEARCH_BEDS_S: 'S:'
     COMMON_SEARCH_BEDS_D: 'D:'
+    COMMON_SEARCH_ENTER_KEYWORD: 'Enter Keyword'
     COMMON_SEARCH_SEARCH_BTN: 'Search'
     SEARCH_RESULT_VIEW_AS: 'View as'
     SEARCH_RESULT_UPDATED_TIME: 'Updated Time'

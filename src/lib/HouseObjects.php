@@ -60,7 +60,7 @@ class HouseObjects
         return $r;
     }
 
-    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $userId = null)
+    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null)
     {
         $conditions = array();
         if ($state)
@@ -71,13 +71,12 @@ class HouseObjects
         {
             $conditions['city'] = array('op' => '=', 'value' => $city);
         }
-        if ($address)
+        if ($address && $houseName)
         {
-            $conditions['address'] = array('op' => ' like ', 'value' => '%' . $address . '%');
-        }
-        if ($houseName)
-        {
-            $conditions['houseName'] = array('op' => ' like ', 'value' => '%' . $houseName . '%');
+            $conditions['keyword_search'] = array(
+                'address' => array('op' => ' like ', 'value' => '%' . $address . '%'),
+                'house_name' => array('op' => ' like ', 'value' => '%' . $houseName . '%'),
+            );
         }
         if ($durationStart)
         {
@@ -95,6 +94,14 @@ class HouseObjects
         {
             $conditions['rent_high'] = array('op' => '<=', 'value' => $rentHigh);
         }
+        if ($bedsSingle)
+        {
+            $conditions['beds_single'] = array('op' => '=', 'value' => $bedsSingle);
+        }
+        if ($bedsDouble)
+        {
+            $conditions['beds_double'] = array('op' => '=', 'value' => $bedsDouble);
+        }
         if ($userId)
         {
             $conditions['owner_id'] = array('op' => '=', 'value' => $userId);
@@ -104,8 +111,21 @@ class HouseObjects
         $inputParams = array();
         foreach ($conditions as $key => $value)
         {
-            $conditionColumns[] = $key . $value['op']  . '?';
-            $inputParams[] = $value['value'];
+            if ('keyword_search' !== $key)
+            {
+                $conditionColumns[] = $key . $value['op']  . '?';
+                $inputParams[] = $value['value'];
+            }
+            else
+            {
+                $tmp = array();
+                foreach ($value as $key => $orCondition)
+                {
+                    $tmp[] = $key . $orCondition['op'] . '?';
+                    $inputParams[] = $orCondition['value'];
+                }
+                $conditionColumns[] = '(' . implode($tmp, ' OR ') .')';
+            }
         }
         $inputParams[] = $start;
         $inputParams[] = $count;

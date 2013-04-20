@@ -601,7 +601,7 @@ input[type="text"], input[type="password"] {
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   border: 1px solid #232323;
-  margin-top: 1px;
+  margin-top: 2px;
 }
 /* line 325, ../scss/common.scss */
 #search-menu .search-title {

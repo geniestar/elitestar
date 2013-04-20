@@ -17,7 +17,6 @@ foreach($states as $key => $state)
         'id' => $key,
     );
 }
-$data['states'][0]['default'] = true;
 EliteHelper::setParamsToJs('states', $states);
 $data['todayText'] = date('Y/M/d');
 $data['nextYearText'] = date('Y/M/d', time() + 60*60*24*365);

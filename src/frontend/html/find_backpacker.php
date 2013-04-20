@@ -20,22 +20,22 @@ $rentLow = null;
 $rentHigh = null;
 $name = null;
 
-if (isset($_GET['state']))
+if (isset($_GET['state']) && '' !== $_GET['state'])
 {
     $state = intval($_GET['state']);
 }
 
-if (isset($_GET['city']))
+if (isset($_GET['city']) && '' !== $_GET['city'])
 {
     $city = intval($_GET['city']);
 }
 
-if (isset($_GET['start']))
+if (isset($_GET['start']) && '' !== $_GET['start'])
 {
     $start = intval($_GET['start']);
 }
 
-if (isset($_GET['sort']))
+if (isset($_GET['sort']) && '' !== $_GET['sort'])
 {
     switch ($_GET['sort'])
     {
@@ -60,44 +60,42 @@ if (isset($_GET['sort']))
     }
 }
 
-if (isset($_GET['bs']))
+if (isset($_GET['bs']) && '' !== $_GET['bs'])
 {
     $bedsSingle = intval($_GET['bs']);
 }
 
-if (isset($_GET['bd']))
+if (isset($_GET['bd']) && '' !== $_GET['bd'])
 {
     $bedsDouble = intval($_GET['bd']);
 }
 
-if (isset($_GET['arrival']))
+if (isset($_GET['arrival']) && '' !== $_GET['arrival'])
 {
     $arrivalTime = EliteHelper::getTime($_GET['arrival']);
 }
 
-if (isset($_GET['ds']))
+if (isset($_GET['ds']) && '' !== $_GET['ds'])
 {
     $durationStart = EliteHelper::getTime($_GET['ds']);
 }
 
-if (isset($_GET['de']))
+if (isset($_GET['de']) && '' !== $_GET['de'])
 {
     $durationEnd = EliteHelper::getTime($_GET['de']);
 }
 
-if (isset($_GET['keyword']))
+if (isset($_GET['keyword']) && '' !== $_GET['keyword'])
 {
     $name = $_GET['keyword']; 
 }
 
-if (isset($_GET['rent']))
+if (isset($_GET['rent']) && '' !== $_GET['rent'])
 {
     $rentLow = EliteHelper::getLowRent($_GET['rent']); 
     $rentHigh = EliteHelper::getHighRent($_GET['rent']); 
 
 }
-
-
 /* query */
 $results = BackPackers::getInstance()->findBackPackers($state, $city, $start, $count, $sort, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $name);
 
@@ -125,19 +123,16 @@ foreach ($results as $result)
 //var_dump($backpackers);
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
-$state = 0;
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/find_backpacker.css'),
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_' . $states[$state]['class'] . '.css')
     )
 );
 $tailData = array(
     'js' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/common.js'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_backpacker.js')
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),
     )
 );
 ?>
@@ -154,7 +149,7 @@ $tailData = array(
         <div class="main-container">
             <div class="col-left col">
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_searchmenu', array());?>
+                    <?php echo ContentGenerator::getContent('common_searchmenu', array('action' => './find_backpacker.php'));?>
                 </div>
                 <div class="row">
                     <?php echo ContentGenerator::getContent('common_favorite', array());?>

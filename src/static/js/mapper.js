@@ -15,7 +15,7 @@ YUI.add("mapper", function(Y)
         initializer: function(cfg) {
             var items = Y.one(cfg.selector).all(cfg.itemsSelector);
             var clickCallback = cfg.clickCallback;
-            var currentSelection = Y.one(cfg.itemsSelector); // first one is the default
+            var currentSelection = null// Y.one(cfg.itemsSelector); // first one is the default
             items.each(function (item) {
                 item.on('click', function() {
                     if (this !== currentSelection) {
