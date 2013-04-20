@@ -114,7 +114,7 @@ foreach ($results as $result)
     $houseObjects[] = $result;
 }
 
-//var_dump($houseObjects);
+var_dump($houseObjects);
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
