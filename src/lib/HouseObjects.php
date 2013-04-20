@@ -55,7 +55,7 @@ class HouseObjects
     public function createHouseObject($ownerId, $state, $city, $address, $houseName, $durationStart, $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $weCharge, $facilities, $rentLow, $rentHigh, $mainPhoto, $photos, $description)
     {
         $sql = 'INSERT INTO houseobjects (owner_id, state, city, address, house_name, duration_start, duration_end, rooms, beds_single, beds_double, toilets, parking_space, wecharge, facilities, rent_low, rent_high, main_photo, photos, description, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($ownerId, $state, $city, $address, $houseName, $durationStart,  $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $wecharge, json_encode($facilities), $rentLow, $rentHigh, $mainPhoto, json_encode($photos), $description, time(), time());
+        $inputParams = array($ownerId, $state, $city, $address, $houseName, $durationStart,  $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $weCharge, json_encode($facilities), $rentLow, $rentHigh, $mainPhoto, json_encode($photos), $description, time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

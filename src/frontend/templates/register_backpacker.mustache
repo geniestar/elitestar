@@ -122,11 +122,8 @@
     </div>
     <div class="input-set big-input-set">
         <span class="big-title">{{i18n.REG_ACCEPTABLE_RENT}}</span>
-        <select name="acceptable_rent">
-            {{#houseDimemsions.acceptable_rent}}
-                <option value="{{.}}">{{.}} {{i18n.REG_AUD}}</option>
-            {{/houseDimemsions.acceptable_rent}}
-        </select>
+        <input type="text" size="6" name="rent" placeholder="{{i18n.REG_RENT_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_AUD}}</div>
     </div>
 
     <div class="big-title">{{i18n.REG_HOW_TO_CONTACT_ME}}</div>
