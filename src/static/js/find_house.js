@@ -7,7 +7,7 @@ YUI({
     var results = Y.all('.search-result');
     results.each(function(result) {
         var houseObject = new Y.EliteStar.houseObject({
-            selector: '#' + result.get('id')
+            resultId: result.get('id')
         });
     result});
 

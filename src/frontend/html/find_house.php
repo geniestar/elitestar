@@ -127,7 +127,8 @@ $headData = array(
 $tailData = array(
     'js' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_house.js')
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_house.js'),
+        array('url' => 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCPlYEN0gsTKKNZSV2XWQqJVrqer0ho_fk&sensor=false'),
     )
 );
 

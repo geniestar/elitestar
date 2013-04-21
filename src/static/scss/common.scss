@@ -612,7 +612,7 @@ background-color: #B2B2B2;
             posiiton: relative;
             .info-set {
                 .title {
-                    width: 135px;
+                    width: 70px;
                 }
                 .title.two-column {
                     width: 60px;
@@ -648,21 +648,19 @@ background-color: #B2B2B2;
                 float: left;
                 overflow: hidden;
                 height: 111px;
-                line-height: 111px;
+                width: 492px;
+                overflow: hidden;
+                white-space: nowrap;
                 ul {
-                    list-style: none;
-                    list-style-image: none;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    width: 492px;
-                    height: 103px;
                     padding: 0;
                     margin: 0;
-                    margin-top: 4px;
+                    height: 111px;
                     li {
-                        display: inline;
+                        display: inline-block;
                         margin: 0px;
+                        margin-top: 4px;
                         overflow: hidden;
+                        height: 103px;
                         white-space: nowrap;
                         img {
                             width: 144px;

@@ -5,15 +5,15 @@
             <div class="title">{{houseObject.house_name}}</div>
             <div class="updated-time">{{updatedText}}</div>
        </div> 
-       <div class="right-item selected" data-tab="detail">
+       <div class="right-item selected detail-btn">
            <div class="theme-sprite theme-icon-detail"></div> 
            <div class="white-bar"></div>
        </div>
-       <div class="right-item" data-tab="pic">
+       <div class="right-item pic-btn">
            <div class="theme-sprite theme-icon-pic"></div> 
            <div class="white-bar"></div>
        </div>
-       <div class="right-item" data-tab="map">
+       <div class="right-item map-btn">
            <div class="theme-sprite theme-icon-map"></div> 
            <div class="white-bar"></div>
        </div>
@@ -25,7 +25,7 @@
     <div class="content">
         <div class="right-content combined-content">
             <div class="info-set">
-                <div class="title">{{i18n.SEARCH_RESULT_TITLE_WANTED_SPACE}}</div>
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_LOCATION}}</div>
                 <div class="desc one-line-desc">{{place}}</div>
             </div>
             <div class="clean"></div>
@@ -71,17 +71,14 @@
             </div>
         </div>
         <div class="clean"></div>
-        <div class="pic-content {{#isScroll}}is-scroll{{/isScroll}}">
+        <div class="pic-content {{#isScroll}}is-scroll{{/isScroll}} hidden">
             <div class="arrow-area">
                 {{#isScroll}}
                     <div class="theme-sprite theme-arrow theme-icon-arrow_left"></div>
                 {{/isScroll}}
             </div>
-            <div class="pics">
+            <div class="pics yui3-scrollview-loading">
                 <ul>
-                    {{#photos}}
-                        <li><img src="/ugc/c_{{.}}"></li>
-                    {{/photos}}
                     {{#photos}}
                         <li><img src="/ugc/c_{{.}}"></li>
                     {{/photos}}
@@ -94,8 +91,8 @@
             </div>
         </div>
         <div class="clean"></div>
-        <div class="right-content map-content">
-            <div class="map" data-address="{{houseObject.address}}"></div>
+        <div class="right-content map-content hidden">
+            <div id="result-{{houseObject.id}}-map" data-address="{{houseObject.address}}" class="map"></div>
             <div class="location-info">
                 <div class="title">{{i18n.SEARCH_RESULT_MAP_TITLE}}</div>
                 <div class="clean"></div>

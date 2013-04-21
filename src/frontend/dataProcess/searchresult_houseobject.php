@@ -2,7 +2,7 @@
 $data['updatedText'] = EliteHelper::getLangString('SEARCH_RESULT_UPDATED_TIME') . '-' . date('d/M/Y', $data['houseObject']['updated_time']);
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
-$data['place'] = $states[$data['houseObject']['state']]['name'] . ' , ' . $states[$data['houseObject']['state']]['suburbs'][$data['houseObject']['city']];
+$data['place'] = $states[$data['houseObject']['state']]['name'] . ', ' . $states[$data['houseObject']['state']]['suburbs'][$data['houseObject']['city']] . ', ' . $data['houseObject']['address'];
 $duration = date('d/M/Y', strtotime($data['houseObject']['duration_start'])) . ' - ' . date('d/M/Y', strtotime($data['houseObject']['duration_end']));
 $data['durationText'] = $duration;
 
@@ -62,7 +62,7 @@ if ($weChargeRaw)
 }
 $data['weChargeText'] = implode($weChargeArray, ' / ');
 $data['photos'] = json_decode(json_decode($data['houseObject']['photos']), true);
-if (count($data['photos']) > 2 )
+if (count($data['photos']) > 3 )
 {
     $data['isScroll'] = true;
 }
