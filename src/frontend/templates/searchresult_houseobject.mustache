@@ -69,6 +69,12 @@
                     <div class="listing-icon listing-wecharge listing-sprite"></div><div class="inline-desc">{{weChargeText}}</div>
                 </div>
             </div>
+            {{#showActionBtns}}
+                <div class="action-btns">
+                    <div class="listing-send_message listing-sprite" data-id="{{houseObject.id}}"></div>
+                    <div class="listing-save_favorite listing-sprite" data-id="{{houseObject.id}}"></div>
+                </div>
+            {{/showActionBtns}}
         </div>
         <div class="clean"></div>
         <div class="pic-content {{#isScroll}}is-scroll{{/isScroll}} hidden">

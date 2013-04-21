@@ -164,7 +164,7 @@ $tailData = array(
                 </div>
                 <div class="row">
                     <?php foreach ($houseObjects as $houseObject):?>              
-                        <?php echo ContentGenerator::getContent('searchresult_houseobject', array('houseObject' => $houseObject));?>
+                        <?php echo ContentGenerator::getContent('searchresult_houseobject', array('houseObject' => $houseObject, 'user' => $user));?>
                     <?php endforeach?>
                 </div>
             </div>

@@ -47,6 +47,20 @@ YUI.add("houseobject", function(Y)
                     thisObject.initedGoogleMap = true;
                 }
             });
+            result.one('.listing-save_favorite').on('click', this._saveFavorite);
+        },
+        
+        _saveFavorite: function(e) {
+            e.target.getAttribute('data-id');
+            var cfg = {
+                method: 'POST',
+                sync: true,
+                data: {
+                    id: e.target.getAttribute('data-id'),
+                    role: 'h',
+                }
+            };
+            request = Y.io('/ajax/favorite.php', cfg);
         },
 
         _initScrollView: function(resultId) {
@@ -107,4 +121,4 @@ YUI.add("houseobject", function(Y)
     Y.namespace("EliteStar");
     Y.EliteStar.houseObject = houseObject;
 
-}, '0.0.1', {requires: ['base', 'node', 'scrollview']});
+}, '0.0.1', {requires: ['base', 'node', 'scrollview', 'io-base']});

@@ -164,7 +164,7 @@ $tailData = array(
                 </div>
                 <div class="row">
                     <?php foreach ($backpackers as $backpacker):?>              
-                        <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker));?>
+                        <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));?>
                     <?php endforeach?>
                 </div>
             </div>

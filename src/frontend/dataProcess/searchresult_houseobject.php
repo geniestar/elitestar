@@ -83,4 +83,8 @@ if ($descriptions)
         $data['descriptions'][] = $descriptionText;
     }
 }
+if ($data['user'] && 1 === $data['user']['role'])
+{
+    $data['showActionBtns'] = true;
+}
 ?>

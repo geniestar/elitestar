@@ -558,6 +558,7 @@ background-color: #B2B2B2;
         border: 1px solid;
         border-top: 0;
         margin-bottom: 2px;
+        position: relative;
         .left-content {
             float: left;
             img {
@@ -699,6 +700,23 @@ background-color: #B2B2B2;
                         margin: 0; 
                     }
                 }
+            }
+        }
+        .action-btns {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            .listing-save_favorite {
+                width: 52px;
+                height: 21px;
+                margin: 5px;
+                cursor: pointer;
+            }
+            .listing-send_message {
+                width: 52px;
+                height: 21px;
+                margin: 5px;
+                cursor: pointer;
             }
         }
     }

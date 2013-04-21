@@ -46,10 +46,10 @@ class LandLords
      * create landlord
      *
      */
-    public function createLandLord($userId, $additionalHelp, $favorates)
+    public function createLandLord($userId, $additionalHelp, $favorites)
     {
-        $sql = 'INSERT INTO landlords (user_id, additional_help, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?)';
-        $inputParams = array($userId, json_encode($additionalHelp), json_encode($favorates), time(), time());
+        $sql = 'INSERT INTO landlords (user_id, additional_help, favorites, created_time, updated_time) VALUES(?, ?, ?, ?, ?)';
+        $inputParams = array($userId, json_encode($additionalHelp), json_encode($favorites), time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
@@ -62,7 +62,7 @@ class LandLords
         return $r;
     }
 
-    public function updateLandLordInfo($userId, $additionalHelp = null, $favorates)
+    public function updateLandLordInfo($userId, $additionalHelp = null, $favorites)
     {
         $updateArray = array();
 
@@ -70,9 +70,9 @@ class LandLords
         {
             $updateArray['additional_help'] = json_encode($additionalHelp);
         }
-        if ($favorates)
+        if ($favorites)
         {
-            $updateArray['favorates'] = json_encode($favorates);
+            $updateArray['favorites'] = json_encode($favorites);
         }
         
         if (!$updateArray)

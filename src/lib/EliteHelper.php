@@ -380,8 +380,10 @@ class EliteHelper
     {
         if (empty(self::$errors))
         {
-            self::$errors = configBundle::getConfig('errors', getenv('country'), getenv('env'));
+            $language = self::getLanguage();
+            self::$errors = ConfigReader::getInstance()->readConfig('lang/' . $language, 'errors');
         }
+        
         if (isset(self::$errors[$index]))
         {
             return self::$errors[$index];
@@ -627,6 +629,22 @@ class EliteHelper
         {
             return $rentString;
         }
+    }
+
+    static function ajaxReturnSuccess($data)
+    {
+        echo json_encode(array(
+            'status' => 'SUCCESS',
+            'data' => $data
+        ));
+    }
+
+    static function ajaxReturnFailure($errorCode)
+    {
+        echo json_encode(array(
+            'status' => 'FAILURE',
+            'message' => EliteHelper::getErrorString($errorCode)
+        ));
     }
 }
 ?>

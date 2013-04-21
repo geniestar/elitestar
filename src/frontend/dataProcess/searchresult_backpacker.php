@@ -77,5 +77,8 @@ foreach ($checkArray as $checkIndex)
 }
 
 $data['facilitiesArray'] = $facilitiesArray;
-
+if ($data['user'] && 0 === $data['user']['role'])
+{
+    $data['showActionBtns'] = true;
+}
 ?>

@@ -162,3 +162,5 @@ languages:
     REG_MORE_DESCRIPTION_RESTAURANTS_DESC: 'Type'
     REG_MORE_DESCRIPTION_GYM_DESC: 'Gym Name'
     REG_MORE_DESCRIPTION_HOSPITAL_DESC: 'Hospital Name'
+errors:
+    FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full'

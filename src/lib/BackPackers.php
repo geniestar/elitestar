@@ -52,10 +52,10 @@ class BackPackers
      * create backpacker
      *
      */
-    public function createBackPacker($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $name, $favorates)
+    public function createBackPacker($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $facilities, $additionalHelp, $name, $favorites)
     {
-        $sql = 'INSERT INTO backpackers (user_id, state, city, arrival_time, duration_start, duration_end, rent_low, rent_high, beds_single, beds_double, facilities, additional_help, name, favorates, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), $name, json_encode($favorates), time(), time());
+        $sql = 'INSERT INTO backpackers (user_id, state, city, arrival_time, duration_start, duration_end, rent_low, rent_high, beds_single, beds_double, facilities, additional_help, name, favorites, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $inputParams = array($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), $name, json_encode($favorites), time(), time());
         var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         var_dump($r);
@@ -128,7 +128,7 @@ class BackPackers
         return $r;
     }
 
-    public function updateBackPackerInfo($userId, $city = null, $arrivalTime = null, $durationStart = null, $durationEnd = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $name, $favorates = null)
+    public function updateBackPackerInfo($userId, $city = null, $arrivalTime = null, $durationStart = null, $durationEnd = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $name, $favorites = null)
     {
         $updateArray = array();
 
@@ -168,9 +168,9 @@ class BackPackers
         {
             $updateArray['additional_help'] = json_encode($additionalHelp);
         }
-        if ($favorates)
+        if ($favorites)
         {
-            $updateArray['favorates'] = json_encode($favorates);
+            $updateArray['favorites'] = json_encode($favorites);
         }
         if ($name)
         {
