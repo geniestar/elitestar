@@ -1,19 +1,19 @@
-<div class="search-result">
+<div class="search-result" id="result-{{houseObject.id}}">
     <div class="bar">
        <div class="left left-house">
             <div class="theme-sprite theme-icon-house"></div>
             <div class="title">{{houseObject.house_name}}</div>
             <div class="updated-time">{{updatedText}}</div>
        </div> 
-       <div class="right-item">
+       <div class="right-item selected" data-tab="detail">
            <div class="theme-sprite theme-icon-detail"></div> 
            <div class="white-bar"></div>
        </div>
-       <div class="right-item">
+       <div class="right-item" data-tab="pic">
            <div class="theme-sprite theme-icon-pic"></div> 
            <div class="white-bar"></div>
        </div>
-       <div class="right-item">
+       <div class="right-item" data-tab="map">
            <div class="theme-sprite theme-icon-map"></div> 
            <div class="white-bar"></div>
        </div>
@@ -79,6 +79,9 @@
             </div>
             <div class="pics">
                 <ul>
+                    {{#photos}}
+                        <li><img src="/ugc/c_{{.}}"></li>
+                    {{/photos}}
                     {{#photos}}
                         <li><img src="/ugc/c_{{.}}"></li>
                     {{/photos}}

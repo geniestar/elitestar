@@ -992,57 +992,68 @@ input[type="text"], input[type="password"] {
 }
 /* line 647, ../scss/common.scss */
 .search-result .content .pic-content .pics {
-  width: 492px;
   float: left;
   overflow: hidden;
+  height: 111px;
+  line-height: 111px;
 }
-/* line 651, ../scss/common.scss */
+/* line 652, ../scss/common.scss */
 .search-result .content .pic-content .pics ul {
   list-style: none;
   list-style-image: none;
   overflow: hidden;
   white-space: nowrap;
+  width: 492px;
+  height: 103px;
   padding: 0;
   margin: 0;
-}
-/* line 658, ../scss/common.scss */
-.search-result .content .pic-content .pics ul li {
-  float: left;
-  margin: 10px;
-  white-space: nowrap;
+  margin-top: 4px;
 }
 /* line 662, ../scss/common.scss */
+.search-result .content .pic-content .pics ul li {
+  display: inline;
+  margin: 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* line 667, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li img {
   width: 144px;
   height: 93px;
+  border: 5px solid white;
+  cursor: pointer;
 }
-/* line 670, ../scss/common.scss */
+/* line 673, ../scss/common.scss */
+.search-result .content .pic-content .pics ul li img.selected {
+  border: 5px solid #B2B2B2;
+}
+/* line 680, ../scss/common.scss */
 .search-result .content .map-content {
   width: 535px;
   height: 111px;
 }
-/* line 673, ../scss/common.scss */
+/* line 683, ../scss/common.scss */
 .search-result .content .map-content .map {
   width: 142px;
   height: 90px;
   margin: 10px 5px;
   float: left;
 }
-/* line 679, ../scss/common.scss */
+/* line 689, ../scss/common.scss */
 .search-result .content .map-content .location-info {
   width: 370px;
   height: 111px;
   float: left;
   margin-left: 10px;
 }
-/* line 684, ../scss/common.scss */
+/* line 694, ../scss/common.scss */
 .search-result .content .map-content .location-info ul {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-image: none;
 }
-/* line 689, ../scss/common.scss */
+/* line 699, ../scss/common.scss */
 .search-result .content .map-content .location-info ul .desc {
   color: #232323;
   margin: 0;

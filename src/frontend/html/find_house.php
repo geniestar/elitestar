@@ -127,6 +127,7 @@ $headData = array(
 $tailData = array(
     'js' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_house.js')
     )
 );
 
