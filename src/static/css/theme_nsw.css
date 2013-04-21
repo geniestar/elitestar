@@ -1,15 +1,15 @@
 /* line 154, theme_nsw/*.png */
-.theme_nsw-sprite, .theme_nsw-arrow_left, .theme_nsw-arrow_right, .theme_nsw-contact, .search-result .theme-icon-contact, .theme_nsw-detail, .search-result .theme-icon-detail, .theme_nsw-fa, .search-result .theme-icon-fa, .theme_nsw-fb, .search-result .theme-icon-fb, .theme_nsw-fc, .search-result .theme-icon-fc, .theme_nsw-fd, .search-result .theme-icon-fd, .theme_nsw-fe, .search-result .theme-icon-fe, .theme_nsw-ff, .search-result .theme-icon-ff, .theme_nsw-fg, .search-result .theme-icon-fg, .theme_nsw-house, .search-result .theme-icon-house, .theme_nsw-map, .search-result .theme-icon-map, .theme_nsw-packer, .search-result .theme-icon-packer, .theme_nsw-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
+.theme_nsw-sprite, .theme_nsw-arrow_left, .search-result .theme-icon-arrow_left, .theme_nsw-arrow_right, .search-result .theme-icon-arrow_right, .theme_nsw-contact, .search-result .theme-icon-contact, .theme_nsw-detail, .search-result .theme-icon-detail, .theme_nsw-fa, .search-result .theme-icon-fa, .theme_nsw-fb, .search-result .theme-icon-fb, .theme_nsw-fc, .search-result .theme-icon-fc, .theme_nsw-fd, .search-result .theme-icon-fd, .theme_nsw-fe, .search-result .theme-icon-fe, .theme_nsw-ff, .search-result .theme-icon-ff, .theme_nsw-fg, .search-result .theme-icon-fg, .theme_nsw-house, .search-result .theme-icon-house, .theme_nsw-map, .search-result .theme-icon-map, .theme_nsw-packer, .search-result .theme-icon-packer, .theme_nsw-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
   background: url('/img/theme_nsw-sc685f1ac14.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_nsw-arrow_left {
+.theme_nsw-arrow_left, .search-result .theme-icon-arrow_left {
   background-position: 0 -359px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_nsw-arrow_right {
+.theme_nsw-arrow_right, .search-result .theme-icon-arrow_right {
   background-position: 0 -405px;
 }
 

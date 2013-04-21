@@ -66,5 +66,11 @@
     .theme-icon-pic {
         @extend .theme_tas-pic;
     }
+    .theme-icon-arrow_left {
+        @extend .theme_tas-arrow_left;
+    }
+    .theme-icon-arrow_right {
+        @extend .theme_tas-arrow_right;
+    }
 
 }

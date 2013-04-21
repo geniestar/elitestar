@@ -1,54 +1,106 @@
 <div class="search-result">
     <div class="bar">
-       <div class="left">
-            <div class="theme-sprite theme-icon-packer"></div>
-            <div class="title">{{backpacker.name}}</div>
-            <img src="/img/flags/{{countryFlag}}.jpg">
+       <div class="left left-house">
+            <div class="theme-sprite theme-icon-house"></div>
+            <div class="title">{{houseObject.house_name}}</div>
             <div class="updated-time">{{updatedText}}</div>
        </div> 
+       <div class="right-item">
+           <div class="theme-sprite theme-icon-detail"></div> 
+           <div class="white-bar"></div>
+       </div>
+       <div class="right-item">
+           <div class="theme-sprite theme-icon-pic"></div> 
+           <div class="white-bar"></div>
+       </div>
+       <div class="right-item">
+           <div class="theme-sprite theme-icon-map"></div> 
+           <div class="white-bar"></div>
+       </div>
        <div class="right-item">
            <div class="theme-sprite theme-icon-contact"></div> 
            <div class="white-bar"></div>
        </div>
     </div>
     <div class="content">
-        <div class="left-content"> 
-            <img src="{{photoUrl}}">
-        </div>
-        <div class="right-content">
+        <div class="right-content combined-content">
             <div class="info-set">
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_WANTED_SPACE}}</div>
                 <div class="desc one-line-desc">{{place}}</div>
             </div>
             <div class="clean"></div>
             <div class="info-set">
-                <div class="title">{{i18n.SEARCH_RESULT_TITLE_ARRIVAL}}</div>
-                <div class="desc">{{arrivalTime}}</div>
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_RENT}}</div>
+                <div class="desc">{{houseObject.rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div>
                 <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_DURATION}}</div>
                 <div class="desc two-column">{{durationText}}</div>
             </div>
-            <div class="info-set">
-                <div class="title">{{i18n.SEARCH_RESULT_TITLE_ACCEPTABLE_RENT}}</div>
-                <div class="desc">{{backpacker.rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div>
-                <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_BED}}</div>
-                <div class="desc two-column">{{bedText}}</div>
-            </div>
             <div class="clean"></div>
             <div class="info-set">
-                <div class="title">{{i18n.SEARCH_RESULT_TITLE_EXPECTABLE}}</div>
-                <div class="desc one-line-desc">
-                    {{#additionalHelpArray}} 
-                        <div class="listing-sprite listing-icon listing-{{class}}" data-additional="{{additional}}"></div>
-                    {{/additionalHelpArray}}
-                </div>
-            </div>
-            <div class="info-set">
-                <div class="title"> </div>
-                <div class="desc one-line-desc">
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_DEVICE}}</div>
+                <div class="desc">
                     {{#facilitiesArray}} 
                         <div class="theme-sprite listing-icon theme-icon-{{class}}" data-additional="{{additional}}"></div>
                     {{/facilitiesArray}}
+                    {{^facilitiesArray}}
+                        {{i18n.SEARCH_RESULT_NONE}}
+                    {{/facilitiesArray}}
                 </div>
+                <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_SERVICE}}</div>
+                <div class="desc">
+                    {{#additionalHelpArray}} 
+                        <div class="listing-sprite listing-icon listing-{{class}}" data-additional="{{additional}}"></div>
+                    {{/additionalHelpArray}}
+                    {{^additionalHelpArray}}
+                        {{i18n.SEARCH_RESULT_NONE}}
+                    {{/additionalHelpArray}}
+                </div>
+            </div>
+            <div class="clean"></div>
+            <div class="info-set">
+                <div class="title">{{i18n.SEARCH_RESULT_TITLE_HOUSE}}</div>
+                <div class="desc one-line-desc">
+                    <div class="listing-icon listing-rooms listing-sprite"></div><div class="inline-desc">{{houseObject.rooms}}</div>
+                    <div class="listing-icon listing-beds listing-sprite"></div><div class="inline-desc">
+                        {{i18n.COMMON_SEARCH_BEDS_S}}{{houseObject.beds_single}} / {{i18n.COMMON_SEARCH_BEDS_D}}{{houseObject.beds_double}}
+                    </div>
+                    <div class="listing-icon listing-toilet listing-sprite"></div><div class="inline-desc">{{houseObject.toilets}}</div>
+                    <div class="listing-icon listing-parking listing-sprite"></div><div class="inline-desc">{{houseObject.parking_space}}</div>
+                    <div class="listing-icon listing-wecharge listing-sprite"></div><div class="inline-desc">{{weChargeText}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="clean"></div>
+        <div class="pic-content {{#isScroll}}is-scroll{{/isScroll}}">
+            <div class="arrow-area">
+                {{#isScroll}}
+                    <div class="theme-sprite theme-arrow theme-icon-arrow_left"></div>
+                {{/isScroll}}
+            </div>
+            <div class="pics">
+                <ul>
+                    {{#photos}}
+                        <li><img src="/ugc/c_{{.}}"></li>
+                    {{/photos}}
+                </ul>
+            </div>
+            <div class="arrow-area">
+                {{#isScroll}}
+                    <div class="theme-sprite theme-arrow theme-icon-arrow_right"></div>
+                {{/isScroll}}
+            </div>
+        </div>
+        <div class="clean"></div>
+        <div class="right-content map-content">
+            <div class="map" data-address="{{houseObject.address}}"></div>
+            <div class="location-info">
+                <div class="title">{{i18n.SEARCH_RESULT_MAP_TITLE}}</div>
+                <div class="clean"></div>
+                <ul>
+                    {{#descriptions}}
+                        <li><div class="desc">{{.}}</div></liv>
+                    {{/descriptions}}
+                </ul>
             </div>
         </div>
         <div class="clean"></div>

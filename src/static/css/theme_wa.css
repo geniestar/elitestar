@@ -1,15 +1,15 @@
 /* line 154, theme_wa/*.png */
-.theme_wa-sprite, .theme_wa-arrow_left, .theme_wa-arrow_right, .theme_wa-contact, .search-result .theme-icon-contact, .theme_wa-detail, .search-result .theme-icon-detail, .theme_wa-fa, .search-result .theme-icon-fa, .theme_wa-fb, .search-result .theme-icon-fb, .theme_wa-fc, .search-result .theme-icon-fc, .theme_wa-fd, .search-result .theme-icon-fd, .theme_wa-fe, .search-result .theme-icon-fe, .theme_wa-ff, .search-result .theme-icon-ff, .theme_wa-fg, .search-result .theme-icon-fg, .theme_wa-house, .search-result .theme-icon-house, .theme_wa-map, .search-result .theme-icon-map, .theme_wa-packer, .search-result .theme-icon-packer, .theme_wa-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
+.theme_wa-sprite, .theme_wa-arrow_left, .search-result .theme-icon-arrow_left, .theme_wa-arrow_right, .search-result .theme-icon-arrow_right, .theme_wa-contact, .search-result .theme-icon-contact, .theme_wa-detail, .search-result .theme-icon-detail, .theme_wa-fa, .search-result .theme-icon-fa, .theme_wa-fb, .search-result .theme-icon-fb, .theme_wa-fc, .search-result .theme-icon-fc, .theme_wa-fd, .search-result .theme-icon-fd, .theme_wa-fe, .search-result .theme-icon-fe, .theme_wa-ff, .search-result .theme-icon-ff, .theme_wa-fg, .search-result .theme-icon-fg, .theme_wa-house, .search-result .theme-icon-house, .theme_wa-map, .search-result .theme-icon-map, .theme_wa-packer, .search-result .theme-icon-packer, .theme_wa-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
   background: url('/img/theme_wa-s43bb25280e.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_wa-arrow_left {
+.theme_wa-arrow_left, .search-result .theme-icon-arrow_left {
   background-position: 0 -366px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_wa-arrow_right {
+.theme_wa-arrow_right, .search-result .theme-icon-arrow_right {
   background-position: 0 -412px;
 }
 

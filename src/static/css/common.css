@@ -138,59 +138,59 @@
   background-position: 0 0;
 }
 
-/* line 170, listing/*.png */
-.listing-sprite, .listing-beds, .listing-calendar, .listing-delete, .listing-favorite, .listing-ha, .listing-hb, .listing-hc, .listing-hd, .listing-parking, .listing-rooms, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sort, .listing-sort_d, .listing-toilet {
-  background: url('/img/listing-s88b28bbd8e.png') no-repeat;
+/* line 178, listing/*.png */
+.listing-sprite, .listing-beds, .listing-calendar, .listing-delete, .listing-favorite, .listing-ha, .listing-hb, .listing-hc, .listing-hd, .listing-parking, .listing-rooms, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sort, .listing-sort_d, .listing-toilet, .listing-wecharge {
+  background: url('/img/listing-s4bb0fb453f.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-beds {
-  background-position: 0 -263px;
+  background-position: 0 -301px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-calendar {
-  background-position: 0 -447px;
+  background-position: 0 -485px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-delete {
-  background-position: 0 -229px;
+  background-position: 0 -267px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-favorite {
-  background-position: 0 -431px;
+  background-position: 0 -469px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-ha {
-  background-position: 0 -80px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.listing-hb {
-  background-position: 0 -42px;
-}
-
-/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.listing-hc {
   background-position: 0 -118px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hb {
+  background-position: 0 -80px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hc {
+  background-position: 0 -156px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-hd {
-  background-position: 0 -340px;
+  background-position: 0 -378px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-parking {
-  background-position: 0 -302px;
+  background-position: 0 -340px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-rooms {
-  background-position: 0 -392px;
+  background-position: 0 -430px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -200,12 +200,12 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-search {
-  background-position: 0 -243px;
+  background-position: 0 -281px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-search_btn {
-  background-position: 0 -378px;
+  background-position: 0 -416px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -215,17 +215,22 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-sort {
-  background-position: 0 -156px;
+  background-position: 0 -194px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-sort_d {
-  background-position: 0 -212px;
+  background-position: 0 -250px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .listing-toilet {
-  background-position: 0 -173px;
+  background-position: 0 -211px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-wecharge {
+  background-position: 0 -42px;
 }
 
 /* line 11, ../scss/common.scss */
@@ -771,55 +776,66 @@ input[type="text"], input[type="password"] {
 }
 
 /* line 468, ../scss/common.scss */
-.search-result .theme-icon-house {
+.search-result .listing-icon {
   width: 19px;
   height: 22px;
   margin: 3px 5px;
   float: left;
 }
 /* line 474, ../scss/common.scss */
+.search-result .theme-icon-house {
+  width: 19px;
+  height: 22px;
+  margin: 3px 5px;
+  float: left;
+}
+/* line 480, ../scss/common.scss */
 .search-result .theme-icon-packer {
   width: 21px;
   height: 21px;
   margin: 3px 5px;
   float: left;
 }
-/* line 480, ../scss/common.scss */
+/* line 486, ../scss/common.scss */
 .search-result .bar {
   height: 31px;
   line-height: 31px;
   border-bottom: 3px solid;
 }
-/* line 484, ../scss/common.scss */
+/* line 490, ../scss/common.scss */
 .search-result .bar .left {
   width: 523px;
   height: 30px;
   border: 1px solid;
   border-bottom: 0;
   float: left;
-  margin-right: 1px;
 }
-/* line 491, ../scss/common.scss */
+/* line 496, ../scss/common.scss */
 .search-result .bar .left .title {
   color: #232323;
   font-size: 16px;
   float: left;
 }
-/* line 496, ../scss/common.scss */
+/* line 501, ../scss/common.scss */
 .search-result .bar .left img {
   width: 22px;
   height: 15px;
   float: left;
   margin: 8px 10px;
 }
-/* line 502, ../scss/common.scss */
+/* line 507, ../scss/common.scss */
 .search-result .bar .left .updated-time {
   font-size: 10px;
   float: right;
   margin-right: 15px;
 }
-/* line 508, ../scss/common.scss */
+/* line 513, ../scss/common.scss */
+.search-result .bar .left-house {
+  width: 424px;
+}
+/* line 516, ../scss/common.scss */
 .search-result .bar .right-item {
+  margin-left: 1px;
   height: 30px;
   width: 30px;
   border: 1px solid;
@@ -828,61 +844,80 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   position: relative;
 }
-/* line 516, ../scss/common.scss */
+/* line 525, ../scss/common.scss */
+.search-result .bar .right-item .theme-icon-detail {
+  width: 18px;
+  height: 18px;
+  margin: 6px 6px;
+}
+/* line 530, ../scss/common.scss */
+.search-result .bar .right-item .theme-icon-pic {
+  width: 20px;
+  height: 16px;
+  margin: 7px 5px;
+}
+/* line 535, ../scss/common.scss */
+.search-result .bar .right-item .theme-icon-map {
+  width: 12px;
+  height: 18px;
+  margin: 6px 9px;
+}
+/* line 540, ../scss/common.scss */
 .search-result .bar .right-item .theme-icon-contact {
   width: 15px;
   height: 18px;
   margin: 6px 7px;
 }
-/* line 522, ../scss/common.scss */
+/* line 546, ../scss/common.scss */
 .search-result .bar .right-item.selected {
   background-color: white;
 }
-/* line 524, ../scss/common.scss */
+/* line 548, ../scss/common.scss */
 .search-result .bar .right-item.selected .white-bar {
   position: absolute;
   height: 3px;
   width: 100%;
   background-color: white;
 }
-/* line 532, ../scss/common.scss */
+/* line 556, ../scss/common.scss */
 .search-result .content {
   padding: 5px 10px;
   border: 1px solid;
   border-top: 0;
   margin-bottom: 2px;
 }
-/* line 537, ../scss/common.scss */
+/* line 561, ../scss/common.scss */
 .search-result .content .left-content {
   float: left;
 }
-/* line 539, ../scss/common.scss */
+/* line 563, ../scss/common.scss */
 .search-result .content .left-content img {
   width: 76px;
   height: 93px;
-  margin-top: 4px;
+  margin-top: 15px;
 }
-/* line 545, ../scss/common.scss */
+/* line 569, ../scss/common.scss */
 .search-result .content .right-content {
   float: left;
   posiiton: relative;
 }
-/* line 548, ../scss/common.scss */
+/* line 572, ../scss/common.scss */
 .search-result .content .right-content .info-set {
+  height: 25px;
   overflow: hidden;
 }
-/* line 550, ../scss/common.scss */
+/* line 575, ../scss/common.scss */
 .search-result .content .right-content .info-set .title {
   width: 135px;
   height: 17px;
   text-align: right;
   float: left;
 }
-/* line 556, ../scss/common.scss */
+/* line 581, ../scss/common.scss */
 .search-result .content .right-content .info-set .title.two-column {
   width: 60px;
 }
-/* line 559, ../scss/common.scss */
+/* line 584, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc {
   width: 120px;
   text-align: left;
@@ -890,14 +925,125 @@ input[type="text"], input[type="password"] {
   float: left;
   margin-left: 5px;
 }
-/* line 566, ../scss/common.scss */
+/* line 590, ../scss/common.scss */
+.search-result .content .right-content .info-set .desc .inline-desc {
+  width: auto;
+  padding: 2px 4px;
+  margin: 0;
+  float: left;
+}
+/* line 597, ../scss/common.scss */
 .search-result .content .right-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 570, ../scss/common.scss */
+/* line 601, ../scss/common.scss */
 .search-result .content .right-content .listing-icon {
   width: 20px;
   height: 21px;
   float: left;
   margin: 2px 3px;
+}
+/* line 608, ../scss/common.scss */
+.search-result .content .combined-content {
+  float: left;
+  width: 535px;
+  height: 111px;
+  posiiton: relative;
+}
+/* line 614, ../scss/common.scss */
+.search-result .content .combined-content .info-set .title {
+  width: 135px;
+}
+/* line 617, ../scss/common.scss */
+.search-result .content .combined-content .info-set .title.two-column {
+  width: 60px;
+}
+/* line 620, ../scss/common.scss */
+.search-result .content .combined-content .info-set .desc {
+  width: 160px;
+}
+/* line 622, ../scss/common.scss */
+.search-result .content .combined-content .info-set .desc .inline-desc {
+  width: auto;
+}
+/* line 626, ../scss/common.scss */
+.search-result .content .combined-content .info-set .one-line-desc {
+  width: auto;
+}
+/* line 631, ../scss/common.scss */
+.search-result .content .pic-content {
+  float: left;
+  width: 535px;
+  height: 111px;
+  position: relative;
+}
+/* line 636, ../scss/common.scss */
+.search-result .content .pic-content .arrow-area {
+  float: left;
+  width: 20px;
+  height: 111px;
+}
+/* line 640, ../scss/common.scss */
+.search-result .content .pic-content .arrow-area .theme-arrow {
+  cursor: pointer;
+  width: 11px;
+  height: 28px;
+  margin: 40px 5px;
+}
+/* line 647, ../scss/common.scss */
+.search-result .content .pic-content .pics {
+  width: 492px;
+  float: left;
+  overflow: hidden;
+}
+/* line 651, ../scss/common.scss */
+.search-result .content .pic-content .pics ul {
+  list-style: none;
+  list-style-image: none;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+}
+/* line 658, ../scss/common.scss */
+.search-result .content .pic-content .pics ul li {
+  float: left;
+  margin: 10px;
+  white-space: nowrap;
+}
+/* line 662, ../scss/common.scss */
+.search-result .content .pic-content .pics ul li img {
+  width: 144px;
+  height: 93px;
+}
+/* line 670, ../scss/common.scss */
+.search-result .content .map-content {
+  width: 535px;
+  height: 111px;
+}
+/* line 673, ../scss/common.scss */
+.search-result .content .map-content .map {
+  width: 142px;
+  height: 90px;
+  margin: 10px 5px;
+  float: left;
+}
+/* line 679, ../scss/common.scss */
+.search-result .content .map-content .location-info {
+  width: 370px;
+  height: 111px;
+  float: left;
+  margin-left: 10px;
+}
+/* line 684, ../scss/common.scss */
+.search-result .content .map-content .location-info ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+}
+/* line 689, ../scss/common.scss */
+.search-result .content .map-content .location-info ul .desc {
+  color: #232323;
+  margin: 0;
 }

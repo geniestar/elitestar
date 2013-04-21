@@ -1,15 +1,15 @@
 /* line 154, theme_vic/*.png */
-.theme_vic-sprite, .theme_vic-arrow_left, .theme_vic-arrow_right, .theme_vic-contact, .search-result .theme-icon-contact, .theme_vic-detail, .search-result .theme-icon-detail, .theme_vic-fa, .search-result .theme-icon-fa, .theme_vic-fb, .search-result .theme-icon-fb, .theme_vic-fc, .search-result .theme-icon-fc, .theme_vic-fd, .search-result .theme-icon-fd, .theme_vic-fe, .search-result .theme-icon-fe, .theme_vic-ff, .search-result .theme-icon-ff, .theme_vic-fg, .search-result .theme-icon-fg, .theme_vic-house, .search-result .theme-icon-house, .theme_vic-map, .search-result .theme-icon-map, .theme_vic-packer, .search-result .theme-icon-packer, .theme_vic-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
+.theme_vic-sprite, .theme_vic-arrow_left, .search-result .theme-icon-arrow_left, .theme_vic-arrow_right, .search-result .theme-icon-arrow_right, .theme_vic-contact, .search-result .theme-icon-contact, .theme_vic-detail, .search-result .theme-icon-detail, .theme_vic-fa, .search-result .theme-icon-fa, .theme_vic-fb, .search-result .theme-icon-fb, .theme_vic-fc, .search-result .theme-icon-fc, .theme_vic-fd, .search-result .theme-icon-fd, .theme_vic-fe, .search-result .theme-icon-fe, .theme_vic-ff, .search-result .theme-icon-ff, .theme_vic-fg, .search-result .theme-icon-fg, .theme_vic-house, .search-result .theme-icon-house, .theme_vic-map, .search-result .theme-icon-map, .theme_vic-packer, .search-result .theme-icon-packer, .theme_vic-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
   background: url('/img/theme_vic-sabe138140a.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_vic-arrow_left {
+.theme_vic-arrow_left, .search-result .theme-icon-arrow_left {
   background-position: 0 -359px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_vic-arrow_right {
+.theme_vic-arrow_right, .search-result .theme-icon-arrow_right {
   background-position: 0 -405px;
 }
 

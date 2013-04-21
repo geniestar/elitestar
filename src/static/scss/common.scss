@@ -465,6 +465,12 @@ background-color: #B2B2B2;
 }
 
 .search-result {
+    .listing-icon {
+        width: 19px;
+        height: 22px;
+        margin: 3px 5px;
+        float: left;
+    }
     .theme-icon-house {
         width: 19px;
         height: 22px;
@@ -487,7 +493,6 @@ background-color: #B2B2B2;
             border: 1px solid;
             border-bottom: 0;
             float: left;
-            margin-right: 1px;
             .title {
                 color: $black;
                 font-size: 16px;
@@ -505,7 +510,11 @@ background-color: #B2B2B2;
                 margin-right: 15px;
             }
         }
+        .left-house {
+            width: 424px;
+        }
         .right-item {
+            margin-left: 1px;
             height: 30px;
             width: 30px;
             border: 1px solid;
@@ -513,6 +522,21 @@ background-color: #B2B2B2;
             float: left;
             cursor: pointer;
             position: relative;
+            .theme-icon-detail {
+                width: 18px;
+                height: 18px;
+                margin: 6px 6px;
+            }
+            .theme-icon-pic {
+                width: 20px;
+                height: 16px;
+                margin: 7px 5px;
+            }
+            .theme-icon-map {
+                width: 12px;
+                height: 18px;
+                margin: 6px 9px;
+            }
             .theme-icon-contact {
                 width: 15px;
                 height: 18px;
@@ -539,13 +563,14 @@ background-color: #B2B2B2;
             img {
                 width: 76px;
                 height: 93px;
-                margin-top: 4px;
+                margin-top: 15px;
             }    
         }
         .right-content {
             float: left;
             posiiton: relative;
             .info-set {
+                height: 25px;
                 overflow: hidden;
                 .title {
                     width: 135px;
@@ -562,6 +587,12 @@ background-color: #B2B2B2;
                     color: $black;
                     float: left;
                     margin-left: 5px;
+                    .inline-desc {
+                        width: auto;
+                        padding: 2px 4px;
+                        margin: 0;
+                        float: left;
+                    }
                 }
                 .one-line-desc {
                     width: auto;
@@ -572,6 +603,94 @@ background-color: #B2B2B2;
                 height: 21px;
                 float: left;
                 margin: 2px 3px;
+            }
+        }
+        .combined-content {
+            float: left;
+            width: 535px;
+            height: 111px;
+            posiiton: relative;
+            .info-set {
+                .title {
+                    width: 135px;
+                }
+                .title.two-column {
+                    width: 60px;
+                }
+                .desc {
+                    width: 160px;
+                    .inline-desc {
+                        width: auto;
+                    }
+                }
+                .one-line-desc {
+                    width: auto;
+                }
+            }
+        }
+        .pic-content {
+            float: left;
+            width: 535px;
+            height: 111px;
+            position: relative;
+            .arrow-area {
+                float: left;
+                width: 20px;
+                height: 111px;
+                .theme-arrow {
+                    cursor: pointer;
+                    width: 11px;
+                    height: 28px;
+                    margin: 40px 5px;
+                }
+            }
+            .pics {
+                width: 492px;
+                float: left;
+                overflow: hidden;
+                ul {
+                    list-style: none;
+                    list-style-image: none;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        float: left;
+                        margin: 10px;
+                        white-space: nowrap;
+                        img {
+                            width: 144px;
+                            height: 93px;
+                        }
+                    }
+                }
+            }
+        }
+        .map-content {
+            width: 535px;
+            height: 111px;
+            .map {
+                width: 142px;
+                height: 90px;
+                margin: 10px 5px;
+                float: left;
+            }
+            .location-info {
+                width: 370px;
+                height: 111px;
+                float: left;
+                margin-left: 10px;
+                ul {
+                    margin: 0; 
+                    padding: 0;
+                    list-style: none;
+                    list-style-image: none;
+                    .desc {
+                        color: $black;
+                        margin: 0; 
+                    }
+                }
             }
         }
     }

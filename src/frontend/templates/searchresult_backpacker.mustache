@@ -40,6 +40,9 @@
                     {{#additionalHelpArray}} 
                         <div class="listing-sprite listing-icon listing-{{class}}" data-additional="{{additional}}"></div>
                     {{/additionalHelpArray}}
+                    {{^additionalHelpArray}}
+                        {{i18n.SEARCH_RESULT_NONE}}
+                    {{/additionalHelpArray}}
                 </div>
             </div>
             <div class="info-set">
@@ -47,6 +50,9 @@
                 <div class="desc one-line-desc">
                     {{#facilitiesArray}} 
                         <div class="theme-sprite listing-icon theme-icon-{{class}}" data-additional="{{additional}}"></div>
+                    {{/facilitiesArray}}
+                    {{^facilitiesArray}}
+                        {{i18n.SEARCH_RESULT_NONE}}
                     {{/facilitiesArray}}
                 </div>
             </div>

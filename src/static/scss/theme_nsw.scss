@@ -66,5 +66,11 @@
     .theme-icon-pic {
         @extend .theme_nsw-pic;
     }
+    .theme-icon-arrow_left {
+        @extend .theme_nsw-arrow_left;
+    }
+    .theme-icon-arrow_right {
+        @extend .theme_nsw-arrow_right;
+    }
 
 }

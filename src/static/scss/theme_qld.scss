@@ -66,5 +66,11 @@
     .theme-icon-pic {
         @extend .theme_qld-pic;
     }
+    .theme-icon-arrow_left {
+        @extend .theme_qld-arrow_left;
+    }
+    .theme-icon-arrow_right {
+        @extend .theme_qld-arrow_right;
+    }
 
 }

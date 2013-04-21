@@ -1,15 +1,15 @@
 /* line 154, theme_tas/*.png */
-.theme_tas-sprite, .theme_tas-arrow_left, .theme_tas-arrow_right, .theme_tas-contact, .search-result .theme-icon-contact, .theme_tas-detail, .search-result .theme-icon-detail, .theme_tas-fa, .search-result .theme-icon-fa, .theme_tas-fb, .search-result .theme-icon-fb, .theme_tas-fc, .search-result .theme-icon-fc, .theme_tas-fd, .search-result .theme-icon-fd, .theme_tas-fe, .search-result .theme-icon-fe, .theme_tas-ff, .search-result .theme-icon-ff, .theme_tas-fg, .search-result .theme-icon-fg, .theme_tas-house, .search-result .theme-icon-house, .theme_tas-map, .search-result .theme-icon-map, .theme_tas-packer, .search-result .theme-icon-packer, .theme_tas-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
+.theme_tas-sprite, .theme_tas-arrow_left, .search-result .theme-icon-arrow_left, .theme_tas-arrow_right, .search-result .theme-icon-arrow_right, .theme_tas-contact, .search-result .theme-icon-contact, .theme_tas-detail, .search-result .theme-icon-detail, .theme_tas-fa, .search-result .theme-icon-fa, .theme_tas-fb, .search-result .theme-icon-fb, .theme_tas-fc, .search-result .theme-icon-fc, .theme_tas-fd, .search-result .theme-icon-fd, .theme_tas-fe, .search-result .theme-icon-fe, .theme_tas-ff, .search-result .theme-icon-ff, .theme_tas-fg, .search-result .theme-icon-fg, .theme_tas-house, .search-result .theme-icon-house, .theme_tas-map, .search-result .theme-icon-map, .theme_tas-packer, .search-result .theme-icon-packer, .theme_tas-pic, .search-result .theme-icon-pic, .search-result .theme-sprite {
   background: url('/img/theme_tas-se888cec671.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_tas-arrow_left {
+.theme_tas-arrow_left, .search-result .theme-icon-arrow_left {
   background-position: 0 -368px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
-.theme_tas-arrow_right {
+.theme_tas-arrow_right, .search-result .theme-icon-arrow_right {
   background-position: 0 -414px;
 }
 

@@ -114,14 +114,14 @@ foreach ($results as $result)
     $houseObjects[] = $result;
 }
 
-var_dump($houseObjects);
+//var_dump($houseObjects);
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_' . $states[$state]['class'] . '.css')
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_tas.css')// . $states[$state]['class'] . '.css')
     )
 );
 $tailData = array(

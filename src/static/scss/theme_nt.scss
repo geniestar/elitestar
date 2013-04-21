@@ -66,5 +66,11 @@
     .theme-icon-pic {
         @extend .theme_nt-pic;
     }
+    .theme-icon-arrow_left {
+        @extend .theme_nt-arrow_left;
+    }
+    .theme-icon-arrow_right {
+        @extend .theme_nt-arrow_right;
+    }
 
 }

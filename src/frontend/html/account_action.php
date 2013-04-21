@@ -48,7 +48,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
 
             var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
             var_dump(LandLords::getInstance()->queryLandLord($_POST['id']));  
-            var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, $_POST['id']));
+            var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
         }
     }
 }
@@ -60,25 +60,16 @@ else
 
 function getWECharge($data, $prefix)
 {
-    $charge = '';
+    $charge = array();
     if ($data['uew'])
     {
-        $charge .= 'Water:Charge ' . $data['uew-c'] . 'AUD';
+        $charge['w'] = $data['uew-c'];
     }
-    else
-    {
-        $charge .= 'Water:' . 'Included';
-    }
-    $charge .= ',';
     if ($data['uee'])
     {
-        $charge .= 'Electricity:Charge ' . $data['uee-c'] . 'AUD';
+        $charge['e'] = $data['uee-c'];
     }
-    else
-    {
-        $charge .= 'Electricity:' . 'Included';
-    }
-    return $charge;
+    return json_encode($charge);
 }
 
 function getfacilities($data, $prefix)

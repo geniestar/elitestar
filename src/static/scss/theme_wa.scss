@@ -66,5 +66,11 @@
     .theme-icon-pic {
         @extend .theme_wa-pic;
     }
+    .theme-icon-arrow_left {
+        @extend .theme_wa-arrow_left;
+    }
+    .theme-icon-arrow_right {
+        @extend .theme_wa-arrow_right;
+    }
 
 }
