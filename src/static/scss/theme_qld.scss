@@ -1,6 +1,7 @@
+@import "_common_define";
 @import "theme_qld/*.png";
 @include all-theme_qld-sprites;
-.search-result {
+.search-result.theme_qld {
     color: #66AD24;
     .bar {
         border-bottom-color: #66AD24;
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #EBFF96;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {

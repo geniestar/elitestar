@@ -2,6 +2,7 @@
 $data['updatedText'] = EliteHelper::getLangString('SEARCH_RESULT_UPDATED_TIME') . '-' . date('d/M/Y', $data['houseObject']['updated_time']);
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
+$data['class'] = $states[$data['houseObject']['state']]['class'];
 $data['place'] = $states[$data['houseObject']['state']]['name'] . ', ' . $states[$data['houseObject']['state']]['suburbs'][$data['houseObject']['city']] . ', ' . $data['houseObject']['address'];
 $duration = date('d/M/Y', strtotime($data['houseObject']['duration_start'])) . ' - ' . date('d/M/Y', strtotime($data['houseObject']['duration_end']));
 $data['durationText'] = $duration;

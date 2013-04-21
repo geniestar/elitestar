@@ -78,31 +78,35 @@
   background-position: 0 -293px;
 }
 
-/* line 3, ../scss/theme_sa.scss */
+/* line 4, ../scss/theme_sa.scss */
 .search-result {
   color: #C78F00;
 }
-/* line 5, ../scss/theme_sa.scss */
+/* line 6, ../scss/theme_sa.scss */
 .search-result .bar {
   border-bottom-color: #C78F00;
 }
-/* line 7, ../scss/theme_sa.scss */
+/* line 8, ../scss/theme_sa.scss */
 .search-result .bar .left {
   background-color: #FFFFD4;
 }
-/* line 9, ../scss/theme_sa.scss */
+/* line 10, ../scss/theme_sa.scss */
 .search-result .bar .left .updated-time {
   color: #C78F00;
 }
-/* line 13, ../scss/theme_sa.scss */
+/* line 14, ../scss/theme_sa.scss */
 .search-result .bar .right-item {
   background-color: #FFFFD4;
 }
 /* line 17, ../scss/theme_sa.scss */
+.search-result .bar .right-item.selected {
+  background-color: white;
+}
+/* line 21, ../scss/theme_sa.scss */
 .search-result .content {
   border-color: #C78F00;
 }
-/* line 21, ../scss/theme_sa.scss */
+/* line 25, ../scss/theme_sa.scss */
 .search-result .content right-content .info-set .title {
   color: #C78F00;
 }

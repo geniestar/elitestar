@@ -63,11 +63,11 @@ class HouseObjects
     public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null)
     {
         $conditions = array();
-        if ($state)
+        if (null !== $state)
         {
             $conditions['state'] = array('op' => '=', 'value' => $state);
         }
-        if ($city)
+        if (null !== $city)
         {
             $conditions['city'] = array('op' => '=', 'value' => $city);
         }

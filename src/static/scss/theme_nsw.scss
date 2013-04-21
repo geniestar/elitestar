@@ -1,6 +1,7 @@
+@import "_common_define";
 @import "theme_nsw/*.png";
 @include all-theme_nsw-sprites;
-.search-result {
+.search-result.theme_nsw {
     color: #E66996;
     .bar {
         border-bottom-color: #E66996;
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #FFD4E8;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {

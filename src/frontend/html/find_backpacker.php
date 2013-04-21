@@ -127,9 +127,12 @@ $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_' . $states[$state]['class'] . '.css')
     )
 );
+foreach ($states as $state)
+{
+    $headData['css'][] = array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_' . $state['class'] . '.css');
+}
 $tailData = array(
     'js' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),

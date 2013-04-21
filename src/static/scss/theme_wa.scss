@@ -1,6 +1,7 @@
+@import "_common_define";
 @import "theme_wa/*.png";
 @include all-theme_wa-sprites;
-.search-result {
+.search-result.theme_wa {
     color: #F15A24;
     .bar {
         border-bottom-color: #F15A24;
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #FDE7C2;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {

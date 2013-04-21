@@ -1,3 +1,4 @@
+@import "_common_define";
 @import "theme_sa/*.png";
 @include all-theme_sa-sprites;
 .search-result {
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #FFFFD4;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {

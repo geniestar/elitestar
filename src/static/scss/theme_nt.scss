@@ -1,6 +1,7 @@
+@import "_common_define";
 @import "theme_nt/*.png";
 @include all-theme_nt-sprites;
-.search-result {
+.search-result.theme_nt {
     color: #007DB9;
     .bar {
         border-bottom-color: #007DB9;
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #C2E7FF;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {

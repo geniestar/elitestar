@@ -1,6 +1,7 @@
+@import "_common_define";
 @import "theme_tas/*.png";
 @include all-theme_tas-sprites;
-.search-result {
+.search-result.theme_tas {
     color: #A82124;
     .bar {
         border-bottom-color: #A82124;
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #F9C9BA;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {

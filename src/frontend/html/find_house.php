@@ -120,14 +120,21 @@ $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_tas.css')// . $states[$state]['class'] . '.css')
+        array('url' => '/css/common.css'),
     )
 );
+
+foreach ($states as $state)
+{
+    $headData['css'][] = array('url' => '/css/theme_' . $state['class'] . '.css');
+}
+
+$headData['css'][] = '/css/common.css';
+
 $tailData = array(
     'js' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_house.js'),
+        array('url' => '/js/search_common.js'),
+        array('url' => '/js/find_house.js'),
         array('url' => 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCPlYEN0gsTKKNZSV2XWQqJVrqer0ho_fk&sensor=false'),
     )
 );

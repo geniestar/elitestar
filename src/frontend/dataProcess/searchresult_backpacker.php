@@ -10,6 +10,7 @@ else
 }
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
+$data['class'] = $states[$data['backpacker']['state']]['class'];
 $data['place'] = $states[$data['backpacker']['state']]['name'] . ' , ' . $states[$data['backpacker']['state']]['suburbs'][$data['backpacker']['city']];
 $data['arrivalTime'] = date('d/M/Y', strtotime($data['backpacker']['arrival_time']));
 $countries = ConfigReader::getInstance()->readConfig('dimensions', 'countries');

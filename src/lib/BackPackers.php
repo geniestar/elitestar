@@ -65,11 +65,11 @@ class BackPackers
     public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $arrivalTime, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $name = null, $userId = null)
     {
         $conditions = array();
-        if ($state)
+        if (null !== $state)
         {
             $conditions['state'] = array('op' => '=', 'value' => $state);
         }
-        if ($city)
+        if (null !== $city)
         {
             $conditions['city'] = array('op' => '=', 'value' => $city);
         }

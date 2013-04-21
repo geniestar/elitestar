@@ -1,6 +1,7 @@
+@import "_common_define";
 @import "theme_vic/*.png";
 @include all-theme_vic-sprites;
-.search-result {
+.search-result.theme_vic {
     color: #5F41A0;
     .bar {
         border-bottom-color: #5F41A0;
@@ -12,6 +13,9 @@
         }
         .right-item {
             background-color: #E0E6FF;
+        }
+        .right-item.selected {
+            background-color: $white;
         }
     }
     .content {
