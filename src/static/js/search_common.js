@@ -11,6 +11,9 @@ YUI({
             option.remove();
         });
         var stateInfo = YAHOO.EliteStar.params.states[id];
+        /*default*/
+        var newOption = Y.Node.create('<option value=""></option>');
+        select.append(newOption);
         for (var i in stateInfo.suburbs) {
             var newOption = Y.Node.create('<option value=' + i + '>' + stateInfo.suburbs[i] + '</option>');
             select.append(newOption);

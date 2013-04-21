@@ -8,14 +8,19 @@ YUI.add("mapper", function(Y)
     Mapper.ATTRS = {
         clickCallback: null,
         selector: null,
-        itemsSelector: null
+        itemsSelector: null,
+        defaultSelected: null
     };
 
     Y.extend(Mapper, Y.Base, {
         initializer: function(cfg) {
             var items = Y.one(cfg.selector).all(cfg.itemsSelector);
             var clickCallback = cfg.clickCallback;
-            var currentSelection = null// Y.one(cfg.itemsSelector); // first one is the default
+            if (cfg.defaultSelected) {
+                var currentSelection = Y.one(cfg.itemsSelector);
+            } else {
+                var currentSelection = null;
+            }
             items.each(function (item) {
                 item.on('click', function() {
                     if (this !== currentSelection) {

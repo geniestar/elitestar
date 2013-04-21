@@ -45,7 +45,8 @@ YUI({
             var stateInfo = YAHOO.EliteStar.params.states[id];
             Y.one('#backpacker-form input[name="state"]').set('value', stateInfo.id);
             replaceAllSuburbs('#backpacker-form .city-selection', id);
-        }
+        },
+        defaultSelected: true
     });
     var bArrivalCalendar = new Y.EliteStar.ECalendar({
         selector: '#backpacker-form #cal-btn-arrival',
@@ -86,7 +87,6 @@ YUI({
     });
 
     YAHOO.EliteStar.onPositionChange = function(e) {
-        console.log(e.value);
         if (YAHOO.EliteStar.params['positionDesc'][e.value]) {
             var inputSet = e.parentNode;
             document.getElementById(inputSet.id + '-desc').setAttribute('class', '');
