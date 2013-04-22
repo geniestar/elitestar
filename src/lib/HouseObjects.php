@@ -60,7 +60,7 @@ class HouseObjects
         return $r;
     }
 
-    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null)
+    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $id = null)
     {
         $conditions = array();
         if (null !== $state)
@@ -106,7 +106,10 @@ class HouseObjects
         {
             $conditions['owner_id'] = array('op' => '=', 'value' => $userId);
         }
-        
+        if ($id)
+        {
+            $conditions['id'] = array('op' => '=', 'value' => $id);
+        }
         $conditionColumns = array();
         $inputParams = array();
         foreach ($conditions as $key => $value)

@@ -163,4 +163,5 @@ languages:
     REG_MORE_DESCRIPTION_GYM_DESC: 'Gym Name'
     REG_MORE_DESCRIPTION_HOSPITAL_DESC: 'Hospital Name'
 errors:
-    FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full'
+    FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
+    FAVORIITE_ROLE_WRONG: 'Role wrong.'

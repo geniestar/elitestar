@@ -584,7 +584,7 @@ input[type="text"], input[type="password"] {
 }
 
 /* line 308, ../scss/common.scss */
-#search-menu {
+#search-menu, #favorites {
   padding-bottom: 10px;
   background-color: #e1f7f2;
   *zoom: 1;
@@ -609,7 +609,7 @@ input[type="text"], input[type="password"] {
   margin-top: 2px;
 }
 /* line 325, ../scss/common.scss */
-#search-menu .search-title {
+#search-menu .green-title, #favorites .green-title {
   height: 25px;
   line-height: 25px;
   color: #232323;
@@ -627,53 +627,76 @@ input[type="text"], input[type="password"] {
   border-top-left-radius: 5px;
 }
 /* line 341, ../scss/common.scss */
-#search-menu .search-title .listing-search {
+#search-menu .green-title .listing-search, #favorites .green-title .listing-search {
   width: 19px;
   height: 20px;
   float: left;
   margin: 3px 3px 3px 10px;
 }
 /* line 347, ../scss/common.scss */
-#search-menu .search-title .title {
+#search-menu .green-title .listing-favorite, #favorites .green-title .listing-favorite {
+  width: 17px;
+  height: 16px;
+  float: left;
+  margin: 4px 3px 3px 10px;
+}
+/* line 353, ../scss/common.scss */
+#search-menu .green-title .title, #favorites .green-title .title {
   color: #232323;
   float: left;
   vertival-align: middle;
 }
-/* line 353, ../scss/common.scss */
-#search-menu .input-set {
+/* line 359, ../scss/common.scss */
+#search-menu .favorite-set, #favorites .favorite-set {
+  margin: 2px 0;
+}
+/* line 361, ../scss/common.scss */
+#search-menu .favorite-set .title, #favorites .favorite-set .title {
+  float: left;
+}
+/* line 364, ../scss/common.scss */
+#search-menu .favorite-set .listing-delete, #favorites .favorite-set .listing-delete {
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin: 4px;
+  cursor: pointer;
+}
+/* line 372, ../scss/common.scss */
+#search-menu .input-set, #favorites .input-set {
   clear: both;
   font-size: 10px;
   padding: 2px 10px;
   position: relative;
 }
-/* line 358, ../scss/common.scss */
-#search-menu .input-set .listing-calendar {
+/* line 377, ../scss/common.scss */
+#search-menu .input-set .listing-calendar, #favorites .input-set .listing-calendar {
   cursor: pointer;
   width: 17px;
   height: 16px;
   float: left;
   margin: 4px 2px;
 }
-/* line 365, ../scss/common.scss */
-#search-menu .input-set .title {
+/* line 384, ../scss/common.scss */
+#search-menu .input-set .title, #favorites .input-set .title {
   padding: 1px;
   _padding: 3px 1px 0px 1px;
   *padding: 3px 1px 0px 1px;
   padding: 3px 1px 0px 1px\9;
   vertical-align: middle;
 }
-/* line 372, ../scss/common.scss */
-#search-menu .input-set .title.sec-title {
+/* line 391, ../scss/common.scss */
+#search-menu .input-set .title.sec-title, #favorites .input-set .title.sec-title {
   display: inline;
   width: auto;
 }
-/* line 376, ../scss/common.scss */
-#search-menu .input-set .desc {
+/* line 395, ../scss/common.scss */
+#search-menu .input-set .desc, #favorites .input-set .desc {
   color: #666666;
   font-size: 9px;
 }
-/* line 380, ../scss/common.scss */
-#search-menu .input-set input {
+/* line 399, ../scss/common.scss */
+#search-menu .input-set input, #favorites .input-set input {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -683,30 +706,30 @@ input[type="text"], input[type="password"] {
   vertical-align: middle;
   float: left;
 }
-/* line 390, ../scss/common.scss */
-#search-menu .input-set select {
+/* line 409, ../scss/common.scss */
+#search-menu .input-set select, #favorites .input-set select {
   font-size: 10px;
   padding: 1px;
   width: 140px;
 }
-/* line 395, ../scss/common.scss */
-#search-menu .input-set select.short {
+/* line 414, ../scss/common.scss */
+#search-menu .input-set select.short, #favorites .input-set select.short {
   width: 40px;
 }
-/* line 398, ../scss/common.scss */
-#search-menu .input-set #cal-btn-start-cal {
+/* line 417, ../scss/common.scss */
+#search-menu .input-set #cal-btn-start-cal, #favorites .input-set #cal-btn-start-cal {
   position: absolute;
   left: 150px;
   top: 20px;
 }
-/* line 403, ../scss/common.scss */
-#search-menu .input-set #cal-btn-end-cal {
+/* line 422, ../scss/common.scss */
+#search-menu .input-set #cal-btn-end-cal, #favorites .input-set #cal-btn-end-cal {
   position: absolute;
   left: 150px;
   top: 60px;
 }
-/* line 409, ../scss/common.scss */
-#search-menu #search-btn {
+/* line 428, ../scss/common.scss */
+#search-menu #search-btn, #favorites #search-btn {
   width: 73px;
   height: 23px;
   line-height: 23px;
@@ -728,21 +751,21 @@ input[type="text"], input[type="password"] {
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   cursor: pointer;
 }
-/* line 425, ../scss/common.scss */
-#search-menu #search-btn .listing-search_btn {
+/* line 444, ../scss/common.scss */
+#search-menu #search-btn .listing-search_btn, #favorites #search-btn .listing-search_btn {
   width: 14px;
   height: 14px;
   float: left;
   vertical-align: middle;
   margin: 5px 3px 0 5px;
 }
-/* line 432, ../scss/common.scss */
-#search-menu #search-btn .title {
+/* line 451, ../scss/common.scss */
+#search-menu #search-btn .title, #favorites #search-btn .title {
   float: left;
   vertical-align: middle;
 }
 
-/* line 439, ../scss/common.scss */
+/* line 458, ../scss/common.scss */
 #sort-bar {
   height: 16px;
   line-height: 16px;
@@ -752,57 +775,57 @@ input[type="text"], input[type="password"] {
   padding: 10px;
   margin: 2px 0;
 }
-/* line 447, ../scss/common.scss */
+/* line 466, ../scss/common.scss */
 #sort-bar .title {
   margin-right: 10px;
   float: left;
 }
-/* line 451, ../scss/common.scss */
+/* line 470, ../scss/common.scss */
 #sort-bar .sort-item {
   vertical-align: middle;
   float: left;
 }
-/* line 454, ../scss/common.scss */
+/* line 473, ../scss/common.scss */
 #sort-bar .sort-item .listing-sort {
   width: 16px;
   height: 17px;
   margin-right: 15px;
   float: left;
 }
-/* line 460, ../scss/common.scss */
+/* line 479, ../scss/common.scss */
 #sort-bar .sort-item .desc {
   margin: 0 5px;
   float: left;
 }
 
-/* line 468, ../scss/common.scss */
+/* line 487, ../scss/common.scss */
 .search-result .listing-icon {
   width: 19px;
   height: 22px;
   margin: 3px 5px;
   float: left;
 }
-/* line 474, ../scss/common.scss */
+/* line 493, ../scss/common.scss */
 .search-result .theme-icon-house {
   width: 19px;
   height: 22px;
   margin: 3px 5px;
   float: left;
 }
-/* line 480, ../scss/common.scss */
+/* line 499, ../scss/common.scss */
 .search-result .theme-icon-packer {
   width: 21px;
   height: 21px;
   margin: 3px 5px;
   float: left;
 }
-/* line 486, ../scss/common.scss */
+/* line 505, ../scss/common.scss */
 .search-result .bar {
   height: 31px;
   line-height: 31px;
   border-bottom: 3px solid;
 }
-/* line 490, ../scss/common.scss */
+/* line 509, ../scss/common.scss */
 .search-result .bar .left {
   width: 523px;
   height: 30px;
@@ -810,30 +833,30 @@ input[type="text"], input[type="password"] {
   border-bottom: 0;
   float: left;
 }
-/* line 496, ../scss/common.scss */
+/* line 515, ../scss/common.scss */
 .search-result .bar .left .title {
   color: #232323;
   font-size: 16px;
   float: left;
 }
-/* line 501, ../scss/common.scss */
+/* line 520, ../scss/common.scss */
 .search-result .bar .left img {
   width: 22px;
   height: 15px;
   float: left;
   margin: 8px 10px;
 }
-/* line 507, ../scss/common.scss */
+/* line 526, ../scss/common.scss */
 .search-result .bar .left .updated-time {
   font-size: 10px;
   float: right;
   margin-right: 15px;
 }
-/* line 513, ../scss/common.scss */
+/* line 532, ../scss/common.scss */
 .search-result .bar .left-house {
   width: 424px;
 }
-/* line 516, ../scss/common.scss */
+/* line 535, ../scss/common.scss */
 .search-result .bar .right-item {
   margin-left: 1px;
   height: 30px;
@@ -844,42 +867,42 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   position: relative;
 }
-/* line 525, ../scss/common.scss */
+/* line 544, ../scss/common.scss */
 .search-result .bar .right-item .theme-icon-detail {
   width: 18px;
   height: 18px;
   margin: 6px 6px;
 }
-/* line 530, ../scss/common.scss */
+/* line 549, ../scss/common.scss */
 .search-result .bar .right-item .theme-icon-pic {
   width: 20px;
   height: 16px;
   margin: 7px 5px;
 }
-/* line 535, ../scss/common.scss */
+/* line 554, ../scss/common.scss */
 .search-result .bar .right-item .theme-icon-map {
   width: 12px;
   height: 18px;
   margin: 6px 9px;
 }
-/* line 540, ../scss/common.scss */
+/* line 559, ../scss/common.scss */
 .search-result .bar .right-item .theme-icon-contact {
   width: 15px;
   height: 18px;
   margin: 6px 7px;
 }
-/* line 546, ../scss/common.scss */
+/* line 565, ../scss/common.scss */
 .search-result .bar .right-item.selected {
   background-color: white;
 }
-/* line 548, ../scss/common.scss */
+/* line 567, ../scss/common.scss */
 .search-result .bar .right-item.selected .white-bar {
   position: absolute;
   height: 3px;
   width: 100%;
   background-color: white;
 }
-/* line 556, ../scss/common.scss */
+/* line 575, ../scss/common.scss */
 .search-result .content {
   padding: 5px 10px;
   border: 1px solid;
@@ -887,38 +910,38 @@ input[type="text"], input[type="password"] {
   margin-bottom: 2px;
   position: relative;
 }
-/* line 562, ../scss/common.scss */
+/* line 581, ../scss/common.scss */
 .search-result .content .left-content {
   float: left;
 }
-/* line 564, ../scss/common.scss */
+/* line 583, ../scss/common.scss */
 .search-result .content .left-content img {
   width: 76px;
   height: 93px;
   margin-top: 15px;
 }
-/* line 570, ../scss/common.scss */
+/* line 589, ../scss/common.scss */
 .search-result .content .right-content {
   float: left;
   posiiton: relative;
 }
-/* line 573, ../scss/common.scss */
+/* line 592, ../scss/common.scss */
 .search-result .content .right-content .info-set {
   height: 25px;
   overflow: hidden;
 }
-/* line 576, ../scss/common.scss */
+/* line 595, ../scss/common.scss */
 .search-result .content .right-content .info-set .title {
   width: 135px;
   height: 17px;
   text-align: right;
   float: left;
 }
-/* line 582, ../scss/common.scss */
+/* line 601, ../scss/common.scss */
 .search-result .content .right-content .info-set .title.two-column {
   width: 60px;
 }
-/* line 585, ../scss/common.scss */
+/* line 604, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc {
   width: 120px;
   text-align: left;
@@ -926,72 +949,72 @@ input[type="text"], input[type="password"] {
   float: left;
   margin-left: 5px;
 }
-/* line 591, ../scss/common.scss */
+/* line 610, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc .inline-desc {
   width: auto;
   padding: 2px 4px;
   margin: 0;
   float: left;
 }
-/* line 598, ../scss/common.scss */
+/* line 617, ../scss/common.scss */
 .search-result .content .right-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 602, ../scss/common.scss */
+/* line 621, ../scss/common.scss */
 .search-result .content .right-content .listing-icon {
   width: 20px;
   height: 21px;
   float: left;
   margin: 2px 3px;
 }
-/* line 609, ../scss/common.scss */
+/* line 628, ../scss/common.scss */
 .search-result .content .combined-content {
   float: left;
   width: 535px;
   height: 111px;
   posiiton: relative;
 }
-/* line 615, ../scss/common.scss */
+/* line 634, ../scss/common.scss */
 .search-result .content .combined-content .info-set .title {
   width: 70px;
 }
-/* line 618, ../scss/common.scss */
+/* line 637, ../scss/common.scss */
 .search-result .content .combined-content .info-set .title.two-column {
   width: 60px;
 }
-/* line 621, ../scss/common.scss */
+/* line 640, ../scss/common.scss */
 .search-result .content .combined-content .info-set .desc {
   width: 160px;
 }
-/* line 623, ../scss/common.scss */
+/* line 642, ../scss/common.scss */
 .search-result .content .combined-content .info-set .desc .inline-desc {
   width: auto;
 }
-/* line 627, ../scss/common.scss */
+/* line 646, ../scss/common.scss */
 .search-result .content .combined-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 632, ../scss/common.scss */
+/* line 651, ../scss/common.scss */
 .search-result .content .pic-content {
   float: left;
   width: 535px;
   height: 111px;
   position: relative;
 }
-/* line 637, ../scss/common.scss */
+/* line 656, ../scss/common.scss */
 .search-result .content .pic-content .arrow-area {
   float: left;
   width: 20px;
   height: 111px;
 }
-/* line 641, ../scss/common.scss */
+/* line 660, ../scss/common.scss */
 .search-result .content .pic-content .arrow-area .theme-arrow {
   cursor: pointer;
   width: 11px;
   height: 28px;
   margin: 40px 5px;
 }
-/* line 648, ../scss/common.scss */
+/* line 667, ../scss/common.scss */
 .search-result .content .pic-content .pics {
   float: left;
   overflow: hidden;
@@ -1000,13 +1023,13 @@ input[type="text"], input[type="password"] {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 655, ../scss/common.scss */
+/* line 674, ../scss/common.scss */
 .search-result .content .pic-content .pics ul {
   padding: 0;
   margin: 0;
   height: 111px;
 }
-/* line 659, ../scss/common.scss */
+/* line 678, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li {
   display: inline-block;
   margin: 0px;
@@ -1015,62 +1038,62 @@ input[type="text"], input[type="password"] {
   height: 103px;
   white-space: nowrap;
 }
-/* line 666, ../scss/common.scss */
+/* line 685, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li img {
   width: 144px;
   height: 93px;
   border: 5px solid white;
   cursor: pointer;
 }
-/* line 672, ../scss/common.scss */
+/* line 691, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li img.selected {
   border: 5px solid #B2B2B2;
 }
-/* line 679, ../scss/common.scss */
+/* line 698, ../scss/common.scss */
 .search-result .content .map-content {
   width: 535px;
   height: 111px;
 }
-/* line 682, ../scss/common.scss */
+/* line 701, ../scss/common.scss */
 .search-result .content .map-content .map {
   width: 142px;
   height: 90px;
   margin: 10px 5px;
   float: left;
 }
-/* line 688, ../scss/common.scss */
+/* line 707, ../scss/common.scss */
 .search-result .content .map-content .location-info {
   width: 370px;
   height: 111px;
   float: left;
   margin-left: 10px;
 }
-/* line 693, ../scss/common.scss */
+/* line 712, ../scss/common.scss */
 .search-result .content .map-content .location-info ul {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-image: none;
 }
-/* line 698, ../scss/common.scss */
+/* line 717, ../scss/common.scss */
 .search-result .content .map-content .location-info ul .desc {
   color: #232323;
   margin: 0;
 }
-/* line 705, ../scss/common.scss */
+/* line 724, ../scss/common.scss */
 .search-result .content .action-btns {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
-/* line 709, ../scss/common.scss */
+/* line 728, ../scss/common.scss */
 .search-result .content .action-btns .listing-save_favorite {
   width: 52px;
   height: 21px;
   margin: 5px;
   cursor: pointer;
 }
-/* line 715, ../scss/common.scss */
+/* line 734, ../scss/common.scss */
 .search-result .content .action-btns .listing-send_message {
   width: 52px;
   height: 21px;

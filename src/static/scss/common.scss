@@ -305,7 +305,7 @@ background-color: #B2B2B2;
     }
 }}
 
-#search-menu {
+#search-menu, #favorites {
     padding-bottom: 10px;
     background-color: #e1f7f2;
     @include filter-gradient(#e1f7f2, #e1f7f2, vertical);
@@ -322,7 +322,7 @@ background-color: #B2B2B2;
     border-top-left-radius: 6px;
     border: 1px solid $black;
     margin-top: 2px;
-    .search-title {
+    .green-title {
         height: 25px;
         line-height: 25px;
         color: $black;
@@ -344,10 +344,29 @@ background-color: #B2B2B2;
             float: left;
             margin: 3px 3px 3px 10px;
         }
+        .listing-favorite {
+            width: 17px;
+            height: 16px;
+            float: left;
+            margin: 4px 3px 3px 10px;
+        }
         .title {
             color: $black;
             float: left;
             vertival-align: middle;
+        }
+    }
+    .favorite-set {
+        margin: 2px 0;
+        .title {
+            float: left;
+        }
+        .listing-delete {
+            width: 14px;
+            height: 14px;
+            float: left;
+            margin: 4px;
+            cursor: pointer;
         }
     }
     .input-set {

@@ -57,10 +57,14 @@ YUI.add("houseobject", function(Y)
                 sync: true,
                 data: {
                     id: e.target.getAttribute('data-id'),
-                    role: 'h',
+                    role: 0,
+                    action: 'add'
                 }
             };
             request = Y.io('/ajax/favorite.php', cfg);
+            Y.on('io:success', function(transactionid, response, arguments) {
+                console.log(response);
+            });
         },
 
         _initScrollView: function(resultId) {

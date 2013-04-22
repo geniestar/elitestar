@@ -4,6 +4,7 @@ include('/usr/share/pear/elitestar/lib/EliteUsers.php');
 include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
+include('/usr/share/pear/elitestar/lib/BackPackers.php');
 $user = EliteUsers::getInstance()->getCurrentUser();
 //var_dump($user);
 
@@ -114,8 +115,26 @@ foreach ($results as $result)
     $houseObjects[] = $result;
 }
 
+$favorites = array();
 //var_dump($houseObjects);
-
+if ($user)
+{
+    $backpacker = BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id']);
+    $favorites = json_decode(json_decode($backpacker[0]['favorites']), true);
+    
+    if (count($favorites) > 0)
+    {
+        $favoritesInfo = array();
+        foreach ($favorites as $key => $favorite)
+        {
+            $infos = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $key);
+            $favoritesInfo[] = array(
+                'id' => $key,
+                'name' => $infos[0]['house_name']
+            );
+        }
+    }
+}
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
@@ -155,7 +174,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_searchmenu', array('action' => './find_house.php'));?>
                 </div>
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_favorite', array());?>
+                    <?php echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));?>
                 </div>
             </div>
             <div class="col-right col">
