@@ -60,7 +60,7 @@ class HouseObjects
         return $r;
     }
 
-    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $id = null)
+    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $id = null, $getTotal)
     {
         $conditions = array();
         if (null !== $state)
@@ -136,7 +136,14 @@ class HouseObjects
         {
             $conditionColumns[] = true;
         }
-        $sql = 'SELECT * FROM houseobjects WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
+        if (!$getTotal)
+        {
+            $sql = 'SELECT * FROM houseobjects WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
+        }
+        else
+        {
+            $sql = 'SELECT count(*) as total FROM houseobjects WHERE ' . implode($conditionColumns, ' AND ');
+        }
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

@@ -13,7 +13,9 @@ YUI.add("backpacker", function(Y)
         initializer: function(cfg) {
             var thisObject = this;
             var result = Y.one('#' + cfg.resultId);
-            result.one('.listing-save_favorite').on('click', this._saveFavorite);
+            if (result.one('.listing-save_favorite')) {
+                result.one('.listing-save_favorite').on('click', this._saveFavorite);
+            }
         },
         
         _saveFavorite: function(e) {

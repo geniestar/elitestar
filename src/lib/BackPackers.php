@@ -62,7 +62,7 @@ class BackPackers
         return $r;
     }
 
-    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $arrivalTime, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $name = null, $userId = null, $id)
+    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $arrivalTime, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $name = null, $userId = null, $id = null, $getTotal = false)
     {
         $conditions = array();
         if (null !== $state)
@@ -127,7 +127,14 @@ class BackPackers
         {
             $conditionColumns[] = true;
         }
-        $sql = 'SELECT * FROM backpackers WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
+        if (!$getTotal)
+        {
+            $sql = 'SELECT * FROM backpackers WHERE ' . implode($conditionColumns, ' AND ') . ' ORDER BY ' . $sortBy . ' LIMIT ?,?';
+        }
+        else
+        {
+            $sql = 'SELECT count(*) as total FROM backpackers WHERE ' . implode($conditionColumns, ' AND ');
+        }
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

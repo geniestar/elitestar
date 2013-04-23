@@ -47,7 +47,10 @@ YUI.add("houseobject", function(Y)
                     thisObject.initedGoogleMap = true;
                 }
             });
-            result.one('.listing-save_favorite').on('click', this._saveFavorite);
+            
+            if (result.one('.listing-save_favorite')) {
+                result.one('.listing-save_favorite').on('click', this._saveFavorite);
+            }
         },
         
         _saveFavorite: function(e) {

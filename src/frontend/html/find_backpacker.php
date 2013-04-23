@@ -99,7 +99,7 @@ if (isset($_GET['rent']) && '' !== $_GET['rent'])
 }
 /* query */
 $results = BackPackers::getInstance()->findBackPackers($state, $city, $start, $count, $sort, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $name);
-
+$total = BackPackers::getInstance()->findBackPackers($state, $city, $start, $count, $sort, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, $name, null, null, true);
 $backpackers = array();
 $ids = array();
 /* get user data*/
