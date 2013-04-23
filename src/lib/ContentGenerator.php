@@ -8,8 +8,8 @@ include_once ('EliteHelper.php');
  */
 class ContentGenerator extends MustacheRenderer
 {
-    const TEMPLATE_FILES_ROOT_PATH = '../templates';
-    const DATA_PROCESS_FILES_ROOT_PATH = '../dataProcess';
+    const TEMPLATE_FILES_ROOT_PATH = '/usr/share/pear/elitestar/templates';
+    const DATA_PROCESS_FILES_ROOT_PATH = '/usr/share/pear/elitestar/dataProcess';
 
     static private $instances = array();
 

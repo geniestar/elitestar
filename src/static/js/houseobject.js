@@ -62,9 +62,13 @@ YUI.add("houseobject", function(Y)
                 }
             };
             request = Y.io('/ajax/favorite.php', cfg);
-            Y.on('io:success', function(transactionid, response, arguments) {
-                console.log(response);
-            });
+            res = JSON.parse(request.responseText);
+            if ('SUCCESS' === res.status) {
+                Y.one('#favorites .favorites').append(res.data.html);
+                alert(res.data.message);
+            } else {
+                alert(res.message);
+            }
         },
 
         _initScrollView: function(resultId) {

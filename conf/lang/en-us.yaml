@@ -22,6 +22,7 @@ languages:
     COMMON_SEARCH_BEDS_D: 'D:'
     COMMON_SEARCH_ENTER_KEYWORD: 'Enter Keyword'
     COMMON_SEARCH_SEARCH_BTN: 'Search'
+    COMMON_SEARCH_MY_FAVORITE: 'My Favorite'
     SEARCH_RESULT_VIEW_AS: 'View as'
     SEARCH_RESULT_UPDATED_TIME: 'Updated Time'
     SEARCH_RESULT_RENT: 'Rent'
@@ -46,6 +47,8 @@ languages:
     SEARCH_RESULT_DURATION_LESS_THAN_MONTH: 'Less than 1 month'
     SEARCH_RESULT_AUD: 'AUD'
     SEARCH_RESULT_MAP_TITLE: 'The House Nearby...(km/walking distance)'
+    SEARCH_RESULT_DELETE_FAVORITE_SUCCESS: 'Successfully delete favorite.'
+    SEARCH_RESULT_ADD_FAVORITE_SUCCESS: 'Successfully add favorite.'
     LOGIN_USERID: 'Username'
     LOGIN_PW: 'Password'
     LOGIN_REMEMBERME: 'Remember Me'
@@ -164,4 +167,5 @@ languages:
     REG_MORE_DESCRIPTION_HOSPITAL_DESC: 'Hospital Name'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
+    FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
     FAVORIITE_ROLE_WRONG: 'Role wrong.'

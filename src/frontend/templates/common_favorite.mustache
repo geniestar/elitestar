@@ -1,12 +1,12 @@
 <div id="favorites">
     <div class="green-title">
         <div class="listing-sprite listing-favorite"></div>
-        <div class="title">{{i18n.COMMON_SEARCH_CONDITIONAL_SEARCH}}</div>
+        <div class="title">{{i18n.COMMON_SEARCH_MY_FAVORITE}}</div>
     </div>
     <div class="favorites">
     {{#favoritesInfo}}
         <div class="favorite-set">
-            <div class="listing-sprite listing-delete" data-id="{{id}}"></div>
+            <div class="listing-sprite listing-delete" data-id="{{id}}" data-role="{{role}}"></div>
             <div class="title" data-id="{{id}}"><a href="#">{{name}}</a></div>
             <div class="clean"></div>
         </div>

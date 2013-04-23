@@ -3,7 +3,7 @@ YUI({
         mapper: '/js/mapper.js',
         ecalendar: '/js/ecalendar.js'
     }
-}).use('node', 'mapper', 'ecalendar', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
         var select = Y.one(selector);
         var options = select.all('option');
@@ -45,4 +45,25 @@ YUI({
         id: 'cal-btn-end-cal',
         dateFormat: '%Y/%b/%d'
     });
+    var deleteFavorite = function(e) {
+        e.target.getAttribute('data-id');
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            data: {
+                id: e.target.getAttribute('data-id'),
+                role: e.target.getAttribute('data-role'),
+                action: 'delete'
+            }
+        };
+        request = Y.io('/ajax/favorite.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            alert(res.data.message);
+            e.target.get('parentNode').remove();
+        } else {
+            alert(res.message);
+        }
+    }
+    Y.delegate('click', deleteFavorite, Y.one('#favorites .favorites'), '.listing-delete');
 });

@@ -130,7 +130,8 @@ if ($user)
             $infos = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $key);
             $favoritesInfo[] = array(
                 'id' => $key,
-                'name' => $infos[0]['house_name']
+                'name' => $infos[0]['house_name'],
+                'role' => 0
             );
         }
     }
