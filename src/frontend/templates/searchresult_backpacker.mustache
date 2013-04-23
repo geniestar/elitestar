@@ -1,4 +1,4 @@
-<div class="search-result theme_{{class}}">
+<div class="search-result theme_{{class}}" id="result-{{backpacker.id}}">
     <div class="bar">
        <div class="left">
             <div class="theme-sprite theme-icon-packer"></div>
@@ -60,8 +60,8 @@
         <div class="clean"></div>
         {{#showActionBtns}}
             <div class="action-btns">
-                <div class="listing-send_message listing-sprite" data-id="{{houseObject.id}}"></div>
-                <div class="listing-save_favorite listing-sprite" data-id="{{houseObject.id}}"></div>
+                <div class="listing-send_message listing-sprite" data-id="{{backpacker.id}}"></div>
+                <div class="listing-save_favorite listing-sprite" data-id="{{backpacker.id}}"></div>
             </div>
         {{/showActionBtns}}
     </div>

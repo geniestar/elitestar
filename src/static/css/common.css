@@ -237,7 +237,7 @@
 body {
   font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
   margin: 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* line 17, ../scss/common.scss */
@@ -644,7 +644,7 @@ input[type="text"], input[type="password"] {
 #search-menu .green-title .title, #favorites .green-title .title {
   color: #232323;
   float: left;
-  vertival-align: middle;
+  vertical-align: middle;
 }
 /* line 359, ../scss/common.scss */
 #search-menu .favorite-set, #favorites .favorite-set {
@@ -670,7 +670,7 @@ input[type="text"], input[type="password"] {
 #search-menu .input-set, #favorites .input-set {
   clear: both;
   font-size: 10px;
-  padding: 2px 10px;
+  padding: 2px 9px;
   position: relative;
 }
 /* line 380, ../scss/common.scss */
@@ -831,7 +831,7 @@ input[type="text"], input[type="password"] {
 }
 /* line 512, ../scss/common.scss */
 .search-result .bar .left {
-  width: 523px;
+  width: 521px;
   height: 30px;
   border: 1px solid;
   border-bottom: 0;
@@ -858,7 +858,7 @@ input[type="text"], input[type="password"] {
 }
 /* line 535, ../scss/common.scss */
 .search-result .bar .left-house {
-  width: 424px;
+  width: 422px;
 }
 /* line 538, ../scss/common.scss */
 .search-result .bar .right-item {
@@ -927,98 +927,105 @@ input[type="text"], input[type="password"] {
 /* line 592, ../scss/common.scss */
 .search-result .content .right-content {
   float: left;
-  posiiton: relative;
+  position: relative;
+  margin-left: 5px;
 }
-/* line 595, ../scss/common.scss */
+/* line 596, ../scss/common.scss */
 .search-result .content .right-content .info-set {
   height: 25px;
   overflow: hidden;
 }
-/* line 598, ../scss/common.scss */
+/* line 599, ../scss/common.scss */
 .search-result .content .right-content .info-set .title {
-  width: 135px;
+  width: 145px;
   height: 17px;
   text-align: right;
   float: left;
 }
-/* line 604, ../scss/common.scss */
+/* line 605, ../scss/common.scss */
 .search-result .content .right-content .info-set .title.two-column {
-  width: 60px;
+  width: 65px;
 }
-/* line 607, ../scss/common.scss */
+/* line 608, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc {
-  width: 120px;
+  width: 100px;
   text-align: left;
   color: #232323;
   float: left;
   margin-left: 5px;
+  white-space: nowrap;
 }
-/* line 613, ../scss/common.scss */
+/* line 615, ../scss/common.scss */
 .search-result .content .right-content .info-set .desc .inline-desc {
   width: auto;
   padding: 2px 4px;
   margin: 0;
   float: left;
 }
-/* line 620, ../scss/common.scss */
+/* line 622, ../scss/common.scss */
+.search-result .content .right-content .info-set .desc.two-column {
+  width: 130px;
+}
+/* line 625, ../scss/common.scss */
 .search-result .content .right-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 624, ../scss/common.scss */
+/* line 629, ../scss/common.scss */
 .search-result .content .right-content .listing-icon {
   width: 20px;
   height: 21px;
   float: left;
   margin: 2px 3px;
 }
-/* line 631, ../scss/common.scss */
+/* line 636, ../scss/common.scss */
 .search-result .content .combined-content {
   float: left;
   width: 535px;
   height: 111px;
-  posiiton: relative;
+  positiion: relative;
 }
-/* line 637, ../scss/common.scss */
+/* line 642, ../scss/common.scss */
 .search-result .content .combined-content .info-set .title {
-  width: 70px;
-}
-/* line 640, ../scss/common.scss */
-.search-result .content .combined-content .info-set .title.two-column {
-  width: 60px;
-}
-/* line 643, ../scss/common.scss */
-.search-result .content .combined-content .info-set .desc {
-  width: 160px;
+  width: 75px;
 }
 /* line 645, ../scss/common.scss */
+.search-result .content .combined-content .info-set .title.two-column {
+  width: 65px;
+}
+/* line 648, ../scss/common.scss */
+.search-result .content .combined-content .info-set .desc {
+  width: 160px;
+  white-space: nowrap;
+}
+/* line 651, ../scss/common.scss */
 .search-result .content .combined-content .info-set .desc .inline-desc {
   width: auto;
 }
-/* line 649, ../scss/common.scss */
+/* line 655, ../scss/common.scss */
 .search-result .content .combined-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 654, ../scss/common.scss */
+/* line 660, ../scss/common.scss */
 .search-result .content .pic-content {
   float: left;
   width: 535px;
   height: 111px;
   position: relative;
 }
-/* line 659, ../scss/common.scss */
+/* line 665, ../scss/common.scss */
 .search-result .content .pic-content .arrow-area {
   float: left;
   width: 20px;
   height: 111px;
 }
-/* line 663, ../scss/common.scss */
+/* line 669, ../scss/common.scss */
 .search-result .content .pic-content .arrow-area .theme-arrow {
   cursor: pointer;
   width: 11px;
   height: 28px;
   margin: 40px 5px;
 }
-/* line 670, ../scss/common.scss */
+/* line 676, ../scss/common.scss */
 .search-result .content .pic-content .pics {
   float: left;
   overflow: hidden;
@@ -1027,13 +1034,13 @@ input[type="text"], input[type="password"] {
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 677, ../scss/common.scss */
+/* line 683, ../scss/common.scss */
 .search-result .content .pic-content .pics ul {
   padding: 0;
   margin: 0;
   height: 111px;
 }
-/* line 681, ../scss/common.scss */
+/* line 687, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li {
   display: inline-block;
   margin: 0px;
@@ -1042,62 +1049,62 @@ input[type="text"], input[type="password"] {
   height: 103px;
   white-space: nowrap;
 }
-/* line 688, ../scss/common.scss */
+/* line 694, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li img {
   width: 144px;
   height: 93px;
   border: 5px solid white;
   cursor: pointer;
 }
-/* line 694, ../scss/common.scss */
+/* line 700, ../scss/common.scss */
 .search-result .content .pic-content .pics ul li img.selected {
   border: 5px solid #B2B2B2;
 }
-/* line 701, ../scss/common.scss */
+/* line 707, ../scss/common.scss */
 .search-result .content .map-content {
   width: 535px;
   height: 111px;
 }
-/* line 704, ../scss/common.scss */
+/* line 710, ../scss/common.scss */
 .search-result .content .map-content .map {
   width: 142px;
   height: 90px;
   margin: 10px 5px;
   float: left;
 }
-/* line 710, ../scss/common.scss */
+/* line 716, ../scss/common.scss */
 .search-result .content .map-content .location-info {
   width: 370px;
   height: 111px;
   float: left;
   margin-left: 10px;
 }
-/* line 715, ../scss/common.scss */
+/* line 721, ../scss/common.scss */
 .search-result .content .map-content .location-info ul {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-image: none;
 }
-/* line 720, ../scss/common.scss */
+/* line 726, ../scss/common.scss */
 .search-result .content .map-content .location-info ul .desc {
   color: #232323;
   margin: 0;
 }
-/* line 727, ../scss/common.scss */
+/* line 733, ../scss/common.scss */
 .search-result .content .action-btns {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
-/* line 731, ../scss/common.scss */
+/* line 737, ../scss/common.scss */
 .search-result .content .action-btns .listing-save_favorite {
   width: 52px;
   height: 21px;
   margin: 5px;
   cursor: pointer;
 }
-/* line 737, ../scss/common.scss */
+/* line 743, ../scss/common.scss */
 .search-result .content .action-btns .listing-send_message {
   width: 52px;
   height: 21px;

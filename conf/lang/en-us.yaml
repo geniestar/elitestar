@@ -169,3 +169,4 @@ errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
     FAVORIITE_ROLE_WRONG: 'Role wrong.'
+    FAVORIITE_FALUT_TO_GET_DATA: 'Fail to get data.'

@@ -2,6 +2,7 @@
 include('/usr/share/pear/elitestar/lib/EliteHelper.php');
 include('/usr/share/pear/elitestar/lib/EliteUsers.php');
 include('/usr/share/pear/elitestar/lib/BackPackers.php');
+include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 $user = EliteUsers::getInstance()->getCurrentUser();
 //var_dump($user);
@@ -121,7 +122,25 @@ foreach ($results as $result)
 }*/
 
 //var_dump($backpackers);
-
+$favorites = array();
+$favoritesInfo = array();
+if ($user)
+{
+    $houseowner = LandLords::getInstance()->queryLandLord($user['id']);
+    $favorites = json_decode(json_decode($houseowner[0]['favorites']), true);
+    if (count($favorites) > 0)
+    {
+        foreach ($favorites as $key => $favorite)
+        {
+            $infos = BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $key);
+            $favoritesInfo[] = array(
+                'id' => $key,
+                'name' => $infos[0]['name'],
+                'role' => 1
+            );
+        }
+    }
+}
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
@@ -136,6 +155,7 @@ foreach ($states as $state)
 $tailData = array(
     'js' => array(
         array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_backpacker.js'),
     )
 );
 ?>
@@ -155,7 +175,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_searchmenu', array('action' => './find_backpacker.php'));?>
                 </div>
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_favorite', array());?>
+                    <?php echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));?>
                 </div>
             </div>
             <div class="col-right col">
@@ -163,6 +183,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_sortbar', array('sort' => $sort, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
                 <div class="row">
+                    <div id="favorite-container"></div>
                     <?php foreach ($backpackers as $backpacker):?>              
                         <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));?>
                     <?php endforeach?>

@@ -11,7 +11,7 @@
 body {
     font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 a {
@@ -353,7 +353,7 @@ background-color: #B2B2B2;
         .title {
             color: $black;
             float: left;
-            vertival-align: middle;
+            vertical-align: middle;
         }
     }
     .favorite-set {
@@ -375,7 +375,7 @@ background-color: #B2B2B2;
     .input-set {
         clear: both;
         font-size: 10px;
-        padding: 2px 10px;
+        padding: 2px 9px;
         position: relative;
         .listing-calendar {
             cursor: pointer;
@@ -510,7 +510,7 @@ background-color: #B2B2B2;
         line-height: 31px;
         border-bottom: 3px solid;
         .left {
-            width: 523px;
+            width: 521px;
             height: 30px;
             border: 1px solid;
             border-bottom: 0;
@@ -533,7 +533,7 @@ background-color: #B2B2B2;
             }
         }
         .left-house {
-            width: 424px;
+            width: 422px;
         }
         .right-item {
             margin-left: 1px;
@@ -591,31 +591,36 @@ background-color: #B2B2B2;
         }
         .right-content {
             float: left;
-            posiiton: relative;
+            position: relative;
+            margin-left: 5px;
             .info-set {
                 height: 25px;
                 overflow: hidden;
                 .title {
-                    width: 135px;
+                    width: 145px;
                     height: 17px;
                     text-align: right;
                     float: left;
                 }
                 .title.two-column {
-                    width: 60px;
+                    width: 65px;
                 }
                 .desc {
-                    width: 120px;
+                    width: 100px;
                     text-align: left;
                     color: $black;
                     float: left;
                     margin-left: 5px;
+                    white-space: nowrap;
                     .inline-desc {
                         width: auto;
                         padding: 2px 4px;
                         margin: 0;
                         float: left;
                     }
+                }
+                .desc.two-column {
+                    width: 130px;
                 }
                 .one-line-desc {
                     width: auto;
@@ -632,16 +637,17 @@ background-color: #B2B2B2;
             float: left;
             width: 535px;
             height: 111px;
-            posiiton: relative;
+            positiion: relative;
             .info-set {
                 .title {
-                    width: 70px;
+                    width: 75px;
                 }
                 .title.two-column {
-                    width: 60px;
+                    width: 65px;
                 }
                 .desc {
                     width: 160px;
+                    white-space: nowrap; 
                     .inline-desc {
                         width: auto;
                     }

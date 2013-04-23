@@ -1,9 +1,10 @@
 YUI({
     modules: {
         mapper: '/js/mapper.js',
-        ecalendar: '/js/ecalendar.js'
+        ecalendar: '/js/ecalendar.js',
+        houseobject: '/js/houseobject.js'
     }
-}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
         var select = Y.one(selector);
         var options = select.all('option');
@@ -65,5 +66,39 @@ YUI({
             alert(res.message);
         }
     }
+    var getFavorite = function(e) {
+        e.target.getAttribute('data-id');
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            data: {
+                id: e.target.getAttribute('data-id'),
+                role: e.target.getAttribute('data-role'),
+            }
+        };
+        request = Y.io('/ajax/search_result.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            var result = Y.one('#result-' + e.target.getAttribute('data-id')); 
+            if (result) {
+                result.remove(); //delete the node if result already exist
+            }
+            if (0 == e.target.getAttribute('data-role')) {
+                Y.one('#favorite-container').set('innerHTML', res.data.html);
+                var houseObject = new Y.EliteStar.houseObject({
+                    resultId: 'result-' + e.target.getAttribute('data-id') 
+                });
+            } else {
+                Y.one('#favorite-container').set('innerHTML', res.data.html);
+                var backpacker = new Y.EliteStar.backpacker({
+                    resultId: 'result-' + e.target.getAttribute('data-id') 
+                });
+            }
+        } else {
+            alert(res.message);
+        }
+    }
+
     Y.delegate('click', deleteFavorite, Y.one('#favorites .favorites'), '.listing-delete');
+    Y.delegate('click', getFavorite, Y.one('#favorites .favorites'), 'a');
 });

@@ -62,7 +62,7 @@ class LandLords
         return $r;
     }
 
-    public function updateLandLordInfo($userId, $additionalHelp = null, $favorites)
+    public function updateLandLordInfo($userId, $additionalHelp = null, $favorites = null)
     {
         $updateArray = array();
 

@@ -62,7 +62,7 @@ class BackPackers
         return $r;
     }
 
-    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $arrivalTime, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $name = null, $userId = null)
+    public function findBackPackers($state = null, $city = null, $start = 0, $count = 20, $sortBy = self::SORT_BY_TIME_DESC, $arrivalTime, $durationStart = null, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $name = null, $userId = null, $id)
     {
         $conditions = array();
         if (null !== $state)
@@ -109,6 +109,10 @@ class BackPackers
         if ($name)
         {
             $conditions['name'] = array('op' => ' like ', 'value' => '%' . $name . '%');
+        }
+        if ($id)
+        {
+            $conditions['id'] = array('op' => '=', 'value' => $id);
         }
         $conditionColumns = array();
         $inputParams = array();

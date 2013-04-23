@@ -183,6 +183,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_sortbar', array('sort' => $sort, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
                 <div class="row">
+                    <div id="favorite-container"></div>
                     <?php foreach ($houseObjects as $houseObject):?>              
                         <?php echo ContentGenerator::getContent('searchresult_houseobject', array('houseObject' => $houseObject, 'user' => $user));?>
                     <?php endforeach?>
