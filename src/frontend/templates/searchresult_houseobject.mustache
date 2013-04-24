@@ -74,6 +74,18 @@
                     <div class="listing-send_message listing-sprite" data-id="{{houseObject.id}}"></div>
                     <div class="listing-save_favorite listing-sprite" data-id="{{houseObject.id}}"></div>
                 </div>
+                <div class="message-panel">
+                    <form id="message-panel-{{houseObject.id}}">
+                        <input type="hidden" name="action" value="add"></input>
+                        <input type="hidden" name="id" value="{{user.id}}"></input>
+                        <div class="title"><a href="#">{{user.name}}</a></div>
+                        <div class="desc">{{i18n.SEARCH_RESULT_MESSAGE_SAID}}: ({{todayText}})</div>
+                        <div class="clean"></div>
+                        <textarea name="message" rows="4" placeholder="{{i18n.SEARCH_RESULT_MESSAGE_LEAVE_MESSAGE}}"></textarea>
+                        <div class="listing-delete listing-sprite"></div>
+                        <input type="submit" value="{{i18n.SEARCH_RESULT_MESSAGE_SEND}}" data-id="{{houseObject.id}}"></input>
+                    </form>
+                </div>
             {{/showActionBtns}}
         </div>
         <div class="clean"></div>

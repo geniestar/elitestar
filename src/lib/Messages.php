@@ -1,5 +1,4 @@
 <?php
-include ('MySqlDb.php');
 /**
  * messages
  */
@@ -81,10 +80,18 @@ class Messages
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
+    
+    public function deleteMessage($id)
+    {
+        $sql = 'DELETE FROM messages WHERE id=?';
+        $inputParams = array($id);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        return $r;
+    }
 }
 //    Messages::getInstance()->createMessage('user1', 'user2', 'hi');
 //    Messages::getInstance()->createReply(1, 'user2', 'user1', 'hello');
 // var_dump(Messages::getInstance()->queryMessagesOfReceiver('user1', false, 0, 2));
-var_dump(Messages::getInstance()->queryMessagesOfSender('user1', false, 0, 2));
+//var_dump(Messages::getInstance()->queryMessagesOfSender('user1', false, 0, 2));
 
 ?>

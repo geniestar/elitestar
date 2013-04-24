@@ -1,5 +1,6 @@
 <?php
 $data['updatedText'] = EliteHelper::getLangString('SEARCH_RESULT_UPDATED_TIME') . '-' . date('d/M/Y', $data['houseObject']['updated_time']);
+$data['todayText'] = date('d/M/Y', time());
 
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $data['class'] = $states[$data['houseObject']['state']]['class'];

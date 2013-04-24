@@ -748,4 +748,43 @@ background-color: #B2B2B2;
             }
         }
     }
+    .message-panel {
+        background-color: #E2E2E2;
+        width: 300px;
+        height: 100px;
+        padding: 10px;
+        color: $black;
+        position: absolute;
+        top: -25px;
+        left: 100px;
+        z-index: 10;
+        border: 1px solid $gray;
+        -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        .title{
+            display: inline;
+        }
+        .desc {
+            display: inline;
+        }
+        textarea {
+            margin: 5px 0;
+            width: 246px;
+            height: 73px;
+        }
+        .listing-delete {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+    }
 }
