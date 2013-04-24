@@ -54,22 +54,33 @@ YUI.add("houseobject", function(Y)
             
             if (result.one('.message-panel')) {
                 result.one('.message-panel input[type="submit"]').on('click', this._sendMessage);
+                result.one('.listing-send_message').on('click', function(){
+                    Y.one('#message-panel-board-' + cfg.resultId).removeClass('hidden');
+                });
+                result.one('.message-panel .listing-delete').on('click', function(){
+                    Y.one('#message-panel-board-' + cfg.resultId).addClass('hidden');
+                });
             }
         },
         
         _sendMessage: function(e) {
             e.preventDefault();
-            console.log(e.target.getAttribute('data-id'));
             var cfg = {
                 method: 'POST',
                 sync: true,
                 form: {
                     id: 'message-panel-' + e.target.getAttribute('data-id'),
-                    role: 0,
-                    action: 'add'
+                    useDisabled: true,
                 }
             };
             request = Y.io('/ajax/messages.php', cfg);
+            res = JSON.parse(request.responseText);
+            if ('SUCCESS' === res.status) {
+                Y.one('#message-panel-board-result-' + e.target.getAttribute('data-id')).addClass('hidden');
+                alert(res.data.message);
+            } else {
+                alert(res.message);
+            }
         },
 
         _saveFavorite: function(e) {
@@ -79,8 +90,8 @@ YUI.add("houseobject", function(Y)
                 sync: true,
                 data: {
                     id: e.target.getAttribute('data-id'),
-                    useDisabled: true,
-                    upload: true
+                    role: 0,
+                    action: 'add'
                 }
             };
             request = Y.io('/ajax/favorite.php', cfg);

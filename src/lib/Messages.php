@@ -81,10 +81,13 @@ class Messages
         return $r;
     }
     
-    public function deleteMessage($id)
+    public function deleteMessage($id, $userId)
     {
-        $sql = 'DELETE FROM messages WHERE id=?';
-        $inputParams = array($id);
+        $sql = 'DELETE FROM messages WHERE parent=? and (receiver=? or sender=?)';
+        $inputParams = array($id, $userId, $userId);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $sql = 'DELETE FROM messages WHERE id=? and (receiver=?)';
+        $inputParams = array($id, $userId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

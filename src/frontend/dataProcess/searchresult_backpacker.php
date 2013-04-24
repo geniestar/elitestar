@@ -1,5 +1,6 @@
 <?php
 $data['updatedText'] = EliteHelper::getLangString('SEARCH_RESULT_UPDATED_TIME') . '-' . date('d/M/Y', $data['backpacker']['updated_time']);
+$data['todayText'] = date('d/M/Y', time());
 if ($data['backpacker']['user'][0]['photo'])
 {
     $data['photoUrl'] = './ugc/' . $data['backpacker']['user'][0]['photo'];
