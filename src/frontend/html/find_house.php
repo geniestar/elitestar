@@ -145,6 +145,7 @@ $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
         array('url' => '/css/common.css'),
+        array('url' => '/css/search_common.css'),
     )
 );
 

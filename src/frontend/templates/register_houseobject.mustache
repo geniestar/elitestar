@@ -1,0 +1,213 @@
+    <div class="big-title">{{i18n.REG_DES_OF_HOUSE}}</div>
+    
+    <div class="input-set">
+        <div class="title">{{i18n.REG_STATE}}</div>
+        <select name="state">
+            {{#states}}
+                <option value="{{id}}">{{name}}</option>
+            {{/states}}
+        </select>
+    </div>
+    
+    <div class="input-set">
+        <div class="title">{{i18n.REG_CITY}}</div>
+        <select class="city-selection" name="city">
+            {{#cities}}
+                <option value="{{id}}">{{name}}</option>
+            {{/cities}}
+        </select>
+        <input name="address" placeholder="{{i18n.REG_ADDRESS_PLACEHOLDER}}" type="text" size="40">
+    </div>
+
+    <div class="input-set">
+        <div class="title">{{i18n.REG_HOUSENAME}}</div>
+        <input name="housename" placeholder="{{i18n.REG_HOUSENAME_PLACEHOLDER}}" type="text" size="40">
+    </div>
+
+    <div class="input-set">
+        <div class="title">{{i18n.REG_DURATION}}</div>
+        <input type="text" name="duration_start" size="16" placeholder="{{todayText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-house-start"></div>
+        <div class="title sec-title">{{i18n.REG_TO}}</div>
+        <input type="text" name="duration_end" size="16" placeholder="{{nextYearText}}"><div class="registerform-calendar registerform-icon" id="cal-btn-house-end"></div>
+    </div>
+
+    <div class="input-set graybg">
+        <div class="title padding-title-one">{{i18n.REG_ROOMS}}</div>
+        <div class="registerform-ua registerform-icon utility-icon"></div>
+        <select name="rooms">
+            {{#houseDimemsions.rooms}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.rooms}}
+        </select>
+        <div class="title padding-title-three">{{i18n.REG_BEDS}}</div>
+        <div class="registerform-ub registerform-icon utility-icon"></div>
+        <div class="title sec-title">{{i18n.REG_SINGLE}}</div>
+        <select name="bed_single">
+            {{#houseDimemsions.beds.single}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.beds.single}}
+        </select>
+        <div class="title sec-title">{{i18n.REG_DOUBLE}}</div>
+        <select name="bed_double">
+            {{#houseDimemsions.beds.double}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.beds.double}}
+        </select>
+    </div>
+
+    <div class="input-set">
+        <div class="title padding-title-one">{{i18n.REG_TOILETS}}</div>
+        <div class="registerform-uc registerform-icon utility-icon"></div>
+        <select name="toilets">
+            {{#houseDimemsions.toilets}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.toilets}}
+        </select>
+        <div class="title padding-title-two">{{i18n.REG_PARKING_SPACE}}</div>
+        <div class="registerform-ud registerform-icon utility-icon"></div>
+        <select name="parking_space">
+            {{#houseDimemsions.parking_spaces}}
+                <option value="{{.}}">{{.}}</option>
+            {{/houseDimemsions.parking_spaces}}
+        </select>
+    </div>
+
+    <div class="input-set graybg two-rows">
+        <div class="two-rows-left">
+            <div class="title padding-title-one">{{i18n.REG_BILLS}}</div>
+            <div class="registerform-ue registerform-icon utility-icon"></div>
+        </div>
+        <div class="two-rows-right">
+            <div class="row">
+                <div class="title padding-title-four">{{i18n.REG_WATER}}</div>
+                <input type="radio" name="uew" value="0" checked><div class="title sec-title small-text">{{i18n.REG_INCLUDED}}</div>
+                <input type="radio" name="uew" value="1" ><div class="title sec-title small-text">{{i18n.REG_CHARGE}}</div>
+                <input type="text" name="uew-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1">
+                <div class="title sec-title small-text">{{i18n.REG_AUD_PW}}</div>
+            </div>
+            <div class="row">
+                <div class="title padding-title-four">{{i18n.REG_ELECTRCITY}}</div>
+                <input type="radio" name="uee" value="0" checked><div class="title sec-title small-text">{{i18n.REG_INCLUDED}}</div>
+                <input type="radio" name="uee" value="1" ><div class="title sec-title small-text">{{i18n.REG_CHARGE}}</div>
+                <input type="text" name="uee-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1">
+                <div class="title sec-title small-text">{{i18n.REG_AUD_PW}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="big-title">{{i18n.REG_HOUSE_FACILITIES}}</div>
+
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_INTERNET}}</div>
+        <div class="registerform-fa registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fa" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fa" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_KITCHEN}}</div>
+        <div class="registerform-fb registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fb" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fb" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_TV}}</div>
+        <div class="registerform-fc registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fc" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fc" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_REFRIGERATOR}}</div>
+        <div class="registerform-fd registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fd" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fd" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_WASHER}}</div>
+        <div class="registerform-fe registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fe" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fe" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_HEATER}}</div>
+        <div class="registerform-ff registerform-icon facility-icon"></div>
+        <input type="radio" name="h-ff" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-ff" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_AC}}</div>
+        <div class="registerform-fg registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fg" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fg" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+    <div class="input-set">
+        <div class="title facility-title">{{i18n.REG_PARKING_SPACE}}</div>
+        <div class="registerform-ud registerform-icon facility-icon"></div>
+        <input type="radio" name="h-fh" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-fh" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+    </div>
+
+    <div class="big-title">{{i18n.REG_UPLOAD_PHOTOS}}</div>
+    {{#photos}}
+        <div class="input-set big-input-set">
+            <div class="title photo-title">{{i18n.REG_PHOTO}}{{.}}</div>
+            <input name="photo-{{.}}" type="file" size="40">
+        </div>
+    {{/photos}}
+
+    <div class="input-set big-input-set">
+        <span class="big-title">{{i18n.REG_RENT}}</span>
+        <input type="text" size="6" name="rent" placeholder="{{i18n.REG_RENT_PLACEHOLDER}}">
+        <div class="title sec-title">{{i18n.REG_AUD}}</div>
+    </div>
+
+    <div class="big-title">{{i18n.REG_MORE_DESCRIPTION}}</div>
+    <div id="more-description">
+    <div class="des-template input-set hidden">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
+        <select name="position-tmpl" onchange="YAHOO.EliteStar.onPositionChange(this);">
+            {{#positions}}
+                <option value="{{value}}">{{name}}</option>
+            {{/positions}}
+        </select>
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
+        <input type="text" size="1" name="km-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
+        <input type="text" size="1" name="mins-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
+        <div class="clean"></div>
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
+        <select name="vehicle-tmpl">
+            {{#vehicle}}
+                <option value="{{value}}">{{name}}</option>
+            {{/vehicle}}
+        </select>
+        <div id="more-des-tmpl-desc" class="hidden">
+            <div class="title sec-title"></div><input type="text" name="desc-tmpl">
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div id="more-des-0" class="input-set">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
+        <select name="position-0" onchange="YAHOO.EliteStar.onPositionChange(this);">
+            {{#positions}}
+                <option value="{{value}}">{{name}}</option>
+            {{/positions}}
+        </select>
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
+        <input type="text" size="1" name="km-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
+        <input type="text" size="1" name="mins-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
+        <div class="clean"></div>
+        <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
+        <select name="vehicle-0">
+            {{#vehicle}}
+                <option value="{{value}}">{{name}}</option>
+            {{/vehicle}}
+        </select>
+        <div id="more-des-0-desc" class="hidden">
+            <div class="title sec-title"></div><input type="text" name="desc-0">
+        </div>
+        <div class="clean"></div>
+    </div>
+    <div class="registerform-add"></div>
+    </div>

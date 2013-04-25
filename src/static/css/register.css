@@ -269,7 +269,7 @@
 /* line 158, ../scss/register.scss */
 .form .input-set .title {
   float: left;
-  width: 110px;
+  width: 130px;
   padding: 3px;
   _padding: 5px 3px 1px 3px;
   *padding: 5px 3px 1px 3px;
@@ -334,7 +334,7 @@
 /* line 211, ../scss/register.scss */
 .form .input-set .padding-title-one {
   text-align: left;
-  width: 65px;
+  width: 70px;
 }
 /* line 215, ../scss/register.scss */
 .form .input-set .padding-title-two {
@@ -367,7 +367,7 @@
 }
 /* line 239, ../scss/register.scss */
 .form .input-set .short-input {
-  width: 20px;
+  width: 30px;
 }
 /* line 243, ../scss/register.scss */
 .form .input-set.big-input-set {

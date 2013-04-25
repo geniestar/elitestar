@@ -145,17 +145,18 @@ $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/common.css'),
+        array('url' => '/css/common.css'),
+        array('url' => '/css/search_common.css'),
     )
 );
 foreach ($states as $state)
 {
-    $headData['css'][] = array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/css/theme_' . $state['class'] . '.css');
+    $headData['css'][] = array('url' => '/css/theme_' . $state['class'] . '.css');
 }
 $tailData = array(
     'js' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/search_common.js'),
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/find_backpacker.js'),
+        array('url' => '/js/search_common.js'),
+        array('url' => '/js/find_backpacker.js'),
     )
 );
 ?>

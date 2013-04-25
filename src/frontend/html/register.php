@@ -30,8 +30,23 @@ $tailData = array(
                 </div>
                 <?php echo ContentGenerator::getContent('register_role_switcher', array());?>
                 <div id="role-form">
-                    <?php echo ContentGenerator::getContent('register_backpacker', array());?>
-                    <?php echo ContentGenerator::getContent('register_houseowner', array());?>
+                    <div id="backpacker-form-all" class="hidden">
+                        <div id="backpacker-form" class="form">
+                            <input type="hidden" name="role" value="1">
+                            <?php echo ContentGenerator::getContent('register_backpacker', array());?>
+                            <?php echo ContentGenerator::getContent('register_contact', array());?>
+                        </div>
+                        <?php echo ContentGenerator::getContent('register_publish_btn', array('role' => 'b'));?>
+                    </div>
+                    <div id="houseowner-form-all" class="hidden"> 
+                        <div id="houseowner-form" class="form">
+                            <input type="hidden" name="role" value="0">
+                            <?php echo ContentGenerator::getContent('register_houseobject', array());?>
+                            <?php echo ContentGenerator::getContent('register_contact', array());?>
+                            <?php echo ContentGenerator::getContent('register_houseowner', array());?>
+                        </div>
+                        <?php echo ContentGenerator::getContent('register_publish_btn', array('role' => 'h'));?>
+                    </div>
                 </div>
             </form>
         </div>
