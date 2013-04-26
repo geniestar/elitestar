@@ -1,0 +1,177 @@
+/* line 130, admin/*.png */
+.admin-sprite, .admin-add_property, .admin-alteration, .admin-close, .admin-close_big, .admin-delete, .admin-equal, .admin-money1, .admin-money2, .admin-people, .admin-people_b, .admin-people_h, .admin-plus {
+  background: url('/img/admin-sfda5c4a791.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-add_property {
+  background-position: 0 -62px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-alteration {
+  background-position: 0 -38px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-close {
+  background-position: 0 -123px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-close_big {
+  background-position: 0 -104px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-delete {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-equal {
+  background-position: 0 -243px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-money1 {
+  background-position: 0 -228px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-money2 {
+  background-position: 0 -210px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-people {
+  background-position: 0 -193px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-people_b {
+  background-position: 0 -151px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-people_h {
+  background-position: 0 -172px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-plus {
+  background-position: 0 -137px;
+}
+
+/* line 5, ../scss/admin_common.scss */
+.main-container {
+  width: 720px;
+  margin: 0 auto;
+}
+
+/* line 9, ../scss/admin_common.scss */
+.col-combined {
+  width: 720px;
+}
+
+/* line 12, ../scss/admin_common.scss */
+.col-left-left-big {
+  width: 558px;
+}
+
+/* line 15, ../scss/admin_common.scss */
+.col-right-left-big {
+  width: 160px;
+  margin-left: 2px;
+}
+
+/* line 20, ../scss/admin_common.scss */
+#admin-menu {
+  margin: 10px 0;
+  position: relative;
+  height: 24px;
+}
+/* line 24, ../scss/admin_common.scss */
+#admin-menu div {
+  float: left;
+}
+/* line 27, ../scss/admin_common.scss */
+#admin-menu div:nth-child(2) {
+  margin-left: 110px;
+}
+/* line 30, ../scss/admin_common.scss */
+#admin-menu .admin-alteration {
+  width: 114px;
+  height: 24px;
+  position: absolute;
+  left: -20px;
+}
+/* line 36, ../scss/admin_common.scss */
+#admin-menu .seperator {
+  width: 1.3px;
+  height: 24px;
+  margin: 0 10px;
+  background-color: #666666;
+}
+/* line 42, ../scss/admin_common.scss */
+#admin-menu .title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+/* line 46, ../scss/admin_common.scss */
+#admin-menu .title a {
+  color: #666666;
+}
+
+/* line 52, ../scss/admin_common.scss */
+#admin-tabs {
+  width: 100%;
+  height: 41px;
+  border-bottom: 1px solid #232323;
+}
+/* line 56, ../scss/admin_common.scss */
+#admin-tabs .admin-tab {
+  position: relative;
+  bottom: -1px;
+  margin: 0 2px;
+  float: left;
+  height: 20px;
+  padding: 9px 25px;
+  -webkit-border-radius: 0px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-radius: 0px;
+  -moz-border-radius-top-right: 10px;
+  -moz-border-radius-top-left: 10px;
+  border-radius: 0px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-style: solid;
+  border-style: solid;
+  border-width: 1px;
+  color: #FFF;
+}
+
+/* line 82, ../scss/admin_common.scss */
+.houseowner #admin-menu .title a:hover {
+  color: #007AFA;
+}
+/* line 87, ../scss/admin_common.scss */
+.houseowner #admin-tabs {
+  border-bottom: 1px solid #007AFA;
+}
+/* line 89, ../scss/admin_common.scss */
+.houseowner #admin-tabs .admin-tab {
+  cursor: pointer;
+  border-color: #007AFA;
+  border-bottom-color: #FFF;
+  background-color: #54a6de;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjNTRhNmRlIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #54a6de), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+}

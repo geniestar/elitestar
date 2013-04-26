@@ -1,0 +1,98 @@
+@import "_common_define";
+@import "admin/*.png";
+@include all-admin-sprites;
+
+.main-container {
+    width: 720px;
+    margin: 0 auto;
+}
+.col-combined {
+    width: 720px;
+}
+.col-left-left-big {
+    width: 558px;
+}
+.col-right-left-big {
+    width: 160px;
+    margin-left: 2px;
+}
+
+#admin-menu {
+    margin: 10px 0;
+    position :relative;
+    height: 24px;
+    div {
+        float: left;
+    }
+    div:nth-child(2) {
+        margin-left: 110px;
+    }
+    .admin-alteration {
+        width: 114px;
+        height: 24px;
+        position: absolute;
+        left: -20px;
+    }
+    .seperator {
+        width: 1.3px;
+        height: 24px;
+        margin: 0 10px;
+        background-color: $gray;
+    }
+    .title {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 3px;
+        a {
+            color: $gray;
+        }
+    }
+}
+
+#admin-tabs {
+    width: 100%;
+    height: 41px;
+    border-bottom: 1px solid $black;
+    .admin-tab {
+        position :relative;
+        bottom: -1px;
+        margin: 0 2px;
+        float: left;
+        height: 20px;
+        padding: 9px 25px;
+        -webkit-border-radius: 0px;
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-top-left-radius: 10px;
+        -moz-border-radius: 0px;
+        -moz-border-radius-top-right: 10px;
+        -moz-border-radius-top-left: 10px;
+        border-radius: 0px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-style:solid;
+        border-style:solid;
+        border-width:1px;
+        color: #FFF;
+    }
+}
+
+.houseowner {
+    #admin-menu {
+        .title {
+            a:hover {
+                color: #007AFA;
+            }
+        }
+    }
+    #admin-tabs {
+        border-bottom: 1px solid #007AFA;
+        .admin-tab {
+            cursor: pointer;
+            border-color: #007AFA;
+            border-bottom-color: #FFF;
+            background-color: #54a6de; // Old browsers
+            $experimental-support-for-svg: true;
+            @include background-image(linear-gradient(top,  #ffffff 1%,#54a6de 51%,#ffffff 99%));
+        }
+    }
+}

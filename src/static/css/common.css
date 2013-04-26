@@ -538,7 +538,7 @@ input[type="text"], input[type="password"] {
 /* line 263, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
-  vertical-align: middle;
+  margin-top: 1px;
 }
 /* line 269, ../scss/common.scss */
 #menu-container #menu .btn-right {

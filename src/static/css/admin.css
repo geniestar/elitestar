@@ -1,0 +1,91 @@
+/* line 130, admin/*.png */
+.admin-sprite, .admin-add_property, .admin-alteration, .admin-close, .admin-close_big, .admin-delete, .admin-equal, .admin-money1, .admin-money2, .admin-people, .admin-people_b, .admin-people_h, .admin-plus {
+  background: url('/img/admin-sfda5c4a791.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-add_property {
+  background-position: 0 -62px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-alteration {
+  background-position: 0 -38px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-close {
+  background-position: 0 -123px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-close_big {
+  background-position: 0 -104px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-delete {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-equal {
+  background-position: 0 -243px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-money1 {
+  background-position: 0 -228px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-money2 {
+  background-position: 0 -210px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-people {
+  background-position: 0 -193px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-people_b {
+  background-position: 0 -151px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-people_h {
+  background-position: 0 -172px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-plus {
+  background-position: 0 -137px;
+}
+
+/* line 5, ../scss/admin.scss */
+.main-container {
+  width: 720px;
+  margin: 0 auto;
+}
+
+/* line 10, ../scss/admin.scss */
+.col-left-left-big {
+  width: 558px;
+}
+
+/* line 14, ../scss/admin.scss */
+.col-right-left-big {
+  width: 160px;
+  margin-left: 2px;
+}
+
+/* line 20, ../scss/admin.scss */
+#admin-menu .div {
+  float: left;
+}
+/* line 23, ../scss/admin.scss */
+#admin-menu .admin-alteration {
+  width: 114px;
+  height: 14px;
+}
