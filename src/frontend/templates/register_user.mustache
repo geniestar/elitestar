@@ -1,4 +1,5 @@
 <div class="form">
+    {{^user}}
     <div class="input-set"><div class="title">{{i18n.REG_USERNAME}}</div><input type="text" name="name" size="16" placeholder="{{i18n.REG_USERNAME_PLACEHOLDER}}"></div>
     <div class="input-set">
         <div class="title">{{i18n.REG_STATE}}</div>
@@ -19,4 +20,16 @@
         <div class="title">{{i18n.REG_PHOTO}}{{.}}</div>
         <input name="user-photo" type="file" size="40">
     </div>
+    {{/user}}
+    {{#user}}
+    <div class="input-set">
+        <div class="title long-title">{{& i18n.REG_ORIGINAL_PW}}</div><input type="password" name="original_password" size="30">
+    </div>
+    <div class="input-set">
+        <div class="title long-title">{{& i18n.REG_NEW_PW}}</div><input type="password" name="password" size="30" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
+    </div>
+    <div class="input-set">
+        <div class="title long-title">{{& i18n.REG_RETYPE_NEW_PW}}</div><input type="password" name="retype_password" size="30" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
+    </div>
+    {{/user}}
 </div>

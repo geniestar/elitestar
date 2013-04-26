@@ -148,24 +148,22 @@
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border-style: solid;
-  border-style: solid;
   border-width: 1px;
   color: #FFF;
 }
 
-/* line 82, ../scss/admin_common.scss */
+/* line 81, ../scss/admin_common.scss */
 .houseowner #admin-menu .title a:hover {
   color: #007AFA;
 }
-/* line 87, ../scss/admin_common.scss */
+/* line 86, ../scss/admin_common.scss */
 .houseowner #admin-tabs {
   border-bottom: 1px solid #007AFA;
 }
-/* line 89, ../scss/admin_common.scss */
+/* line 88, ../scss/admin_common.scss */
 .houseowner #admin-tabs .admin-tab {
   cursor: pointer;
   border-color: #007AFA;
-  border-bottom-color: #FFF;
   background-color: #54a6de;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjNTRhNmRlIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
   background-size: 100%;
@@ -174,4 +172,65 @@
   background-image: -moz-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
   background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+}
+/* line 95, ../scss/admin_common.scss */
+.houseowner #admin-tabs .admin-tab.selected {
+  border-bottom-color: #FFF;
+}
+
+/* line 102, ../scss/admin_common.scss */
+#houseobject-selector {
+  width: 547px;
+  background-color: #EFEFEF;
+  border: 1px solid #007AFA;
+  padding: 5px;
+  margin-top: 10px;
+}
+/* line 108, ../scss/admin_common.scss */
+#houseobject-selector .houseobject-selector-item {
+  width: 144px;
+  height: 150px;
+  padding: 5px;
+  float: left;
+  margin: 0 5px;
+  border: 5px solid #EFEFEF;
+  position: relative;
+}
+/* line 116, ../scss/admin_common.scss */
+#houseobject-selector .houseobject-selector-item a {
+  margin-top: 5px;
+}
+/* line 119, ../scss/admin_common.scss */
+#houseobject-selector .houseobject-selector-item .admin-close_big {
+  cursor: pointer;
+  width: 20px;
+  height: 19px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+/* line 128, ../scss/admin_common.scss */
+#houseobject-selector .selected {
+  border: 5px solid #CCC;
+}
+/* line 131, ../scss/admin_common.scss */
+#houseobject-selector #houseobject-add {
+  cursor: pointer;
+  background-color: #CCC;
+  width: 164px;
+  height: 170px;
+  float: left;
+  margin: 0 5px;
+}
+/* line 138, ../scss/admin_common.scss */
+#houseobject-selector #houseobject-add .admin-add_property {
+  width: 74px;
+  height: 42px;
+  margin: 44px 0 0 40px;
+}
+/* line 143, ../scss/admin_common.scss */
+#houseobject-selector #houseobject-add .title {
+  margin: 10px 0 0 35px;
+  color: white;
+  font-size: 16px;
 }

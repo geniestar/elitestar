@@ -78,6 +78,9 @@ languages:
     REG_PW: 'Password'
     REG_PW_PLACEHOLDER: 'At least 8 characters long'
     REG_RETYPE_PW: 'Retype Password'
+    REG_ORIGINAL_PW: 'Your <span style="color:red">original</span> password'
+    REG_NEW_PW: 'Type your <span style="color:red">new</span> password'
+    REG_RETYPE_NEW_PW: 'Retype your <span style="color:red">new</span> password'
     REG_IM: "I'm a ..."
     REG_BACKPACKER: 'backpacker'
     REG_HOUSEOWNER: 'house owner'
@@ -125,6 +128,7 @@ languages:
     REG_PHONE: 'Phone'
     REG_PHONE_PLACEHOLDER: '012345678'
     REG_PUBLISH_NOW: 'Publish Now'
+    REG_SAVE: 'Save'
     REG_VIEW_PP: 'We do not spam or sell email addresses, ever. Feel free to review our '
     REG_PP: 'Privacy Policy.'
     REG_DES_OF_HOUSE: 'The description of your house...'
@@ -172,6 +176,7 @@ languages:
     REG_MORE_DESCRIPTION_RESTAURANTS_DESC: 'Type'
     REG_MORE_DESCRIPTION_GYM_DESC: 'Gym Name'
     REG_MORE_DESCRIPTION_HOSPITAL_DESC: 'Hospital Name'
+    REG_ADD_PROPERTY: 'Add Property'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
