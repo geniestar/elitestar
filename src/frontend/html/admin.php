@@ -5,6 +5,7 @@ include('/usr/share/pear/elitestar/lib/BackPackers.php');
 include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
+include('/usr/share/pear/elitestar/lib/Messages.php');
 $user = EliteUsers::getInstance()->getCurrentUser();
 $formHtml = '';
 if (0 == $user['role'])
@@ -65,6 +66,8 @@ else if ('settings' == $_GET['action'])
 else if ('messages' == $_GET['action'])
 {
     $tabs = array(array('class' => 'messages', 'name' => EliteHelper::getLangString('COMMON_MENU_MESSAGES')));
+    $total = Messages::getInstance()->queryMessagesTotal($user['id']);
+    $messages = Messages::getInstance()->queryMessagesOfReceiver($user['id'], 0, 5);
 }
 else if ('profit' == $_GET['action'])
 {

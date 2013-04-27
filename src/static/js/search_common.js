@@ -2,9 +2,8 @@ YUI({
     modules: {
         mapper: '/js/mapper.js',
         ecalendar: '/js/ecalendar.js',
-        houseobject: '/js/houseobject.js'
     }
-}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
         var select = Y.one(selector);
         var options = select.all('option');

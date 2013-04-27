@@ -53,6 +53,13 @@ class Messages
         return $r;
     }
 
+    public function createSuggestion($sender, $message)
+    {
+        $receiver = 'superuser';
+        $r = Messages::getInstance()->createMessage($sender, $receiver, $message);
+        return $r;
+    }
+
     /**
      * create reply
      *
@@ -64,19 +71,42 @@ class Messages
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
+    
+    public function queryMessagesTotal($userId)
+    {
+        $sql = 'SELECT count(*) as count FROM messages WHERE receiver=?';
+        $inputParams = array($userId);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        return $r[0]['count'];
+    }
 
-    public function queryMessagesOfReceiver($userId, $isReply = 0, $start = 0, $count = 20)
+    public function queryMessagesOfReceiver($userId, $start = 0, $count = 20, $withReplies = true)
     {
         $sql = 'SELECT * FROM messages WHERE receiver=? ORDER BY created_time DESC LIMIT ?, ?';
+        $inputParams = array($userId, $start, $count);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $finalResult = array();
+        foreach ($r as $message)
+        {
+            $replies = Messages::getInstance()->queryReplies($message['id']);
+            $message['replies'] = $replies;
+            $finalResult[] = $message;
+        }
+        return $finalResult;
+    }
+
+    public function queryMessagesOfSender($userId, $start = 0, $count = 20)
+    {
+        $sql = 'SELECT * FROM messages WHERE sender=? ORDER BY created_time DESC LIMIT ?, ?';
         $inputParams = array($userId, $start, $count);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
 
-    public function queryMessagesOfSender($userId, $isReply = 0, $start = 0, $count = 20)
+    public function queryReplies($messageId)
     {
-        $sql = 'SELECT * FROM messages WHERE sender=? ORDER BY created_time DESC LIMIT ?, ?';
-        $inputParams = array($userId, $start, $count);
+        $sql = 'SELECT * FROM messages WHERE is_reply=1 AND parent=? ORDER BY created_time ASC';
+        $inputParams = array($messageId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
@@ -92,9 +122,11 @@ class Messages
         return $r;
     }
 }
+//var_dump(Messages::getInstance()->queryReplies(1));
 //    Messages::getInstance()->createMessage('user1', 'user2', 'hi');
 //    Messages::getInstance()->createReply(1, 'user2', 'user1', 'hello');
-// var_dump(Messages::getInstance()->queryMessagesOfReceiver('user1', false, 0, 2));
+//var_dump(Messages::getInstance()->queryMessagesOfReceiver('user2', 0, 5));
+//var_dump(Messages::getInstance()->queryMessagesTotal('user2', 0, 5));
 //var_dump(Messages::getInstance()->queryMessagesOfSender('user1', false, 0, 2));
 
 ?>
