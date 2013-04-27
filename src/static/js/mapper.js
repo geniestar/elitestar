@@ -16,8 +16,14 @@ YUI.add("mapper", function(Y)
         initializer: function(cfg) {
             var items = Y.one(cfg.selector).all(cfg.itemsSelector);
             var clickCallback = cfg.clickCallback;
+            var currentSelectrion = null;
             if (cfg.defaultSelected) {
-                var currentSelection = Y.one(cfg.itemsSelector);
+                states = Y.all(cfg.itemsSelector);
+                states.each(function(state) {
+                    if (!state.hasClass('unselected')) {
+                        currentSelection = state;
+                    }
+                });
             } else {
                 var currentSelection = null;
             }

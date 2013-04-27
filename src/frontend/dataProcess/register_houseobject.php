@@ -89,6 +89,7 @@ if ($houseobject)
             if ($description['position'] == $position['value'])
             {
                 $finalDescription['sub-positions'][$key]['selected'] = true;
+                $finalDescription['more_title'] = EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position['value']);
             }
         }
         foreach($data['vehicle'] as $key => $vehicle)
@@ -109,26 +110,6 @@ if ($houseobject)
             )
         );
     }
-  /*  $additionalHelp = json_decode(json_decode($houseobject['additional_help']), true);
-    $data['helpsCheck'] = array();
-    foreach ($additionalHelp as $help => $checked)
-    {
-        if ('1' === $checked)
-        {
-            $data['helpsCheck'][$help] = true;
-        }
-        else
-        {
-            $data['helpsCheck'][$help] = false;
-        }
-    }
-    foreach ($data['houseDimemsions']['times'] as $key => $time)
-    {
-        if ($additionalHelp['haa'] == $time['value'])
-        {
-            $data['houseDimemsions']['times'][$key]['selected'] = true;
-        }
-    }*/
 }
 else
 {

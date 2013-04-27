@@ -18,6 +18,7 @@ else
 EliteHelper::setParamsToJs('role', $role);
 if ('basic' == $_GET['action'])
 {
+    EliteHelper::setParamsToJs('type', 'basic');
     $tabs = array(array('class' => 'basic-info', 'name' => EliteHelper::getLangString('COMMON_MENU_BASIC_INFO')));
     $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
     $formHtml .= '<input type="hidden" name="edit" value="1">';
@@ -29,22 +30,22 @@ if ('basic' == $_GET['action'])
 }
 else if ('settings' == $_GET['action'])
 {
+    EliteHelper::setParamsToJs('type', 'settings');
     if (0 == $user['role'])
     {
         $tabs = array(
-            array('class' => 'settings', 'name' => EliteHelper::getLangString('COMMON_MENU_SETTINGS')),
-            array('class' => 'service', 'name' => EliteHelper::getLangString('COMMON_MENU_SERVICE'), 'unselected' => true),
+            array('class' => 'settings', 'name' => EliteHelper::getLangString('COMMON_MENU_SETTINGS'), 'containId' => 'ajax-role-form'),
+            array('class' => 'service', 'name' => EliteHelper::getLangString('COMMON_MENU_SERVICE'), 'unselected' => true, 'containId' => 'form-service'),
         );
         $houseowner = LandLords::getInstance()->queryLandLord($user['id']);
         $houseowner = $houseowner[0];
         $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id']);
-
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<input type="hidden" name="role" value="0">';
-        $formHtml .= '<div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
-        $formHtml .= '<div id="ajax-role-form"><div id="houseobject"></div></div></div>';
-        $formHtml .= '<div id="form-service" class="form">' . ContentGenerator::getContent('register_houseowner', array('houseowner' => $houseowner)) . '</div>';
+        $formHtml .= '<div id="ajax-role-form"><div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
+        $formHtml .= '<div id="houseobject"></div></div></div>';
+        $formHtml .= '<div id="form-service" class="hidden form">' . ContentGenerator::getContent('register_houseowner', array('houseowner' => $houseowner)) . '</div>';
         $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
         $formHtml .= '</form>';
     }
@@ -56,7 +57,7 @@ else if ('settings' == $_GET['action'])
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<input type="hidden" name="role" value="1">';
-        $formHtml .= '<div class="form">' . ContentGenerator::getContent('register_backpacker', array('backpacker' => $backpacker)) . '</div>';
+        $formHtml .= '<div id="backpacker-form" class="form">' . ContentGenerator::getContent('register_backpacker', array('backpacker' => $backpacker)) . '</div>';
         $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
         $formHtml .= '</form>';
     }

@@ -1,9 +1,9 @@
 {{#houseobjects}}
 <div class="houseobject-selector-item" data-id="{{id}}">
-<img src="/ugc/c_{{main_photo}}">
+<img src="/ugc/c_{{main_photo}}" data-id="{{id}}">
 <div class="clean"></div>
-<a href="#">{{house_name}}</a>
-<div class="admin-close_big"></div>
+<a href="#" data-id="{{id}}">{{house_name}}</a>
+<div class="admin-close_big" data-id="{{id}}"></div>
 </div>
 {{/houseobjects}}
 <div id="houseobject-add">
