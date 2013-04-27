@@ -60,7 +60,7 @@ class HouseObjects
         return $r;
     }
 
-    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $id = null, $getTotal)
+    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $id = null, $getTotal = false)
     {
         $conditions = array();
         if (null !== $state)
@@ -148,8 +148,7 @@ class HouseObjects
         return $r;
     }
     
-    public function updateHouseObjectInfo($ownerId, $state = null, $city = null, $address = null, $houseName = null, $durationStart = null, $durationEnd = null, $rooms = null, $bedsSingle = null, $bedsDouble = null, $toilets = null, $parkingSpace = null, $weCharge = null, $facilities = null, $rentLow = null, $rentHigh = null, $mainPhoto = null, $photos = null, $description = null)
-    
+    public function updateHouseObjectInfo($ownerId, $id, $state = null, $city = null, $address = null, $houseName = null, $durationStart = null, $durationEnd = null, $rooms = null, $bedsSingle = null, $bedsDouble = null, $toilets = null, $parkingSpace = null, $weCharge = null, $facilities = null, $rentLow = null, $rentHigh = null, $mainPhoto = null, $photos = null, $description = null)
     {
         $updateArray = array();
 
@@ -171,11 +170,11 @@ class HouseObjects
         }
         if ($durationStart)
         {
-            $updateArray['durationStart'] = $durationStart; 
+            $updateArray['duration_start'] = $durationStart; 
         }
         if ($durationEnd)
         {
-            $updateArray['durationEnd'] = $durationEnd; 
+            $updateArray['duration_end'] = $durationEnd; 
         }
         if ($rooms)
         {
@@ -225,7 +224,6 @@ class HouseObjects
         {
             $updateArray['description'] = $description;
         }
-        
         if (!$updateArray)
         {
             return;
@@ -243,9 +241,12 @@ class HouseObjects
             $inputParams[] = time();
 
             $inputParams[] = $ownerId;
-            $sql = 'UPDATE houseobjects set ' . implode($updateColumns, ', ') . ' WHERE owner_id=?';
-        }
+            $inputParams[] = $id;
 
+            $sql = 'UPDATE houseobjects set ' . implode($updateColumns, ', ') . ' WHERE owner_id=? AND id=?';
+        }
+var_dump($sql);
+var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

@@ -139,21 +139,26 @@ class BackPackers
         return $r;
     }
 
-    public function updateBackPackerInfo($userId, $city = null, $arrivalTime = null, $durationStart = null, $durationEnd = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $name, $favorites = null)
+    public function updateBackPackerInfo($userId, $state = null, $city = null, $rent = null, $arrivalTime = null, $durationStart = null, $durationEnd = null, $bedsSingle = null, $bedsDouble = null, $facilities = null, $additionalHelp = null, $name = null, $favorites = null)
     {
         $updateArray = array();
 
-        if ($state)
+        if (null !== $state)
         {
             $updateArray['state'] = $state;
         }
-        if ($city)
+        if (null !== $city)
         {
             $updateArray['city'] = $city;
         }
+        if ($rent)
+        {
+            $updateArray['rent_low'] = $rent;
+            $updateArray['rent_high'] = $rent;
+        }
         if ($arrivalTime)
         {
-            $updateArray['arrivalTime'] = $arrivalTime;
+            $updateArray['arrival_time'] = $arrivalTime;
         }
         if ($durationStart)
         {
@@ -207,7 +212,6 @@ class BackPackers
             $inputParams[] = $userId;
             $sql = 'UPDATE backpackers set ' . implode($updateColumns, ', ') . ' WHERE user_id=?';
         }
-
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

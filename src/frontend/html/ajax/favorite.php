@@ -44,7 +44,7 @@ if ($user)
                 }
                 $favorites = $tmp;
             }
-            BackPackers::getInstance()->updateBackPackerInfo($user['id'], null, null, null, null, null, null, null, null, null, json_encode($favorites));
+            BackPackers::getInstance()->updateBackPackerInfo($user['id'], null, null,  null, null, null, null, null, null, null, null, null, json_encode($favorites));
             if ('add' === $_POST['action']) 
             {
                 $infos = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $_POST['id']);

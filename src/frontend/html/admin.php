@@ -20,6 +20,7 @@ if ('basic' == $_GET['action'])
     $tabs = array(array('class' => 'basic-info', 'name' => EliteHelper::getLangString('COMMON_MENU_BASIC_INFO')));
     $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
     $formHtml .= '<input type="hidden" name="edit" value="1">';
+    $formHtml .= '<input type="hidden" name="basic-info" value="1">';
     $formHtml .= ContentGenerator::getContent('register_user', array('user' => $user));
     $formHtml .= '<div class="form">' . ContentGenerator::getContent('register_contact', array('user' => $user)) . '</div>';
     $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
@@ -39,7 +40,9 @@ else if ('settings' == $_GET['action'])
 
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
+        $formHtml .= '<input type="hidden" name="role" value="0">';
         $formHtml .= '<div id="form-houseobject" class="form">';
+        $formHtml .= '<input type="hidden" name="objectid" value="' . $houseobjects[0]['id'] . '">';
         $formHtml .= '<div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
         $formHtml .= '<div class="form">' . ContentGenerator::getContent('register_houseobject', array('houseobject' => $houseobjects[0])) . '</div>';
         $formHtml .= '<div id="houseobject"></div></div>';
@@ -54,6 +57,7 @@ else if ('settings' == $_GET['action'])
         $backpacker = $backpacker[0];
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
+        $formHtml .= '<input type="hidden" name="role" value="1">';
         $formHtml .= '<div class="form">' . ContentGenerator::getContent('register_backpacker', array('backpacker' => $backpacker)) . '</div>';
         $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
         $formHtml .= '</form>';

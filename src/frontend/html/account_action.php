@@ -7,6 +7,8 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 define('USER_PHOTO_PATH', '/var/www/html/elitestar/ugc/');
 define('USER_PHOTO_PREFIX', 'uphoto');
 define('OBJECT_PHOTO_PREFIX', 'ophoto');
+if (!isset($_POST['edit']))
+{
 if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))
 {
     /* user exist */
@@ -42,7 +44,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
         if(EliteHelper::checkEmpty(array('state', 'city', 'address', 'housename', 'duration_start', 'duration_end', 'rooms', 'bed_single', 'bed_double', 'toilets', 'parking_space', 'rent'), $_POST))
         {
             LandLords::getInstance()->createLandLord($_POST['id'], getServices($_POST, 'h'), null);
-            $photos = getHousePhotos($_POST);
+            $photos = getHousePhotos($_POST['id']);
             HouseObjects::getInstance()->createHouseObject($_POST['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'), getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
 
             var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
@@ -55,6 +57,59 @@ else
 {
     /* some filed empty*/
     exit;
+}
+}
+else
+{
+    $user = EliteUsers::getInstance()->getCurrentUser();
+    if (!$user)
+    {
+        echo 'user wrong';
+    }
+    if ($_POST['basic-info'])
+    {
+        if (isset($_POST['password']) && isset($_POST['original_password']))
+        {
+            if (EliteUsers::queryUser($user['id'], $_POST['original_password']))
+            {
+                EliteUsers::getInstance()->updateUserInfo($user['id'], $_POST['password'], null, $_POST['email'], $_POST['phone'], null, null, null);
+                setcookie('p', md5($_POST['password']), time()+60*60*24*365);
+            }
+            else
+            {
+                echo 'pw wrong';
+            }
+        }
+        else
+        {
+            EliteUsers::getInstance()->updateUserInfo($user['id'], null, null, $_POST['email'], $_POST['phone'], null, null, null);
+        }
+    }
+    else
+    {
+        if (0 == $_POST['role'])
+        {
+            LandLords::getInstance()->updateLandLordInfo($user['id'], getServices($_POST, 'h'), null); 
+            if ($_POST['objectid'])
+            {
+                $photos = getHousePhotos($user['id']);
+                if ($photos)
+                {
+                    $oldhouseobject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
+                    $ophotos = json_decode(json_decode($oldhouseobject[0]['photos']), true);
+                    if ($ophotos)
+                    {
+                        $photos = array_merge($ophotos, $photos);
+                    }
+                }
+                HouseObjects::getInstance()->updateHouseObjectInfo($user['id'], $_POST['objectid'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'),getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos[0], json_encode($photos), getDescription($_POST));
+            }
+        }
+        else
+        {
+            BackPackers::getInstance()->updateBackPackerInfo($user['id'], $_POST['state'], $_POST['city'], $_POST['rent'], EliteHelper::getTime($_POST['arrival_time']), EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), $_POST['name'], null);
+        }
+    }
 }
 
 function getWECharge($data, $prefix)
@@ -89,20 +144,31 @@ function getServices($data, $prefix)
 {
     $services = array();
     $services['ha'] = isset($data[$prefix . '-ha'])?$data[$prefix . '-ha']:0;
-    $haaArray = array();
-    $haa = '';
-    for ($i = 1; $i<=4; $i++)
+    if ('h' == $prefix)
     {
-        if (isset($data[$prefix . '-haa-' . $i]))
+        $haaArray = array();
+        $haa = '';
+        for ($i = 1; $i<=4; $i++)
         {
-            $haaArray[] = 'x' . $i . ':' . $data[$prefix . '-haa-' . $i] . 'AUD';
+            if (isset($data[$prefix . '-haa-' . $i]))
+            {
+                $haaArray[] = 'x' . $i . ':' . $data[$prefix . '-haa-' . $i] . 'AUD';
+            }
+        }
+        if (isset($data[$prefix . '-haa-o']))
+        {
+            $haaArray[] = $data[$prefix . '-haa-o'];
+        }
+        $haa = implode($haaArray, ',');
+    }
+    else
+    {
+        if ($data[$prefix . '-ha'])
+        {
+            $haa = $data[$prefix . '-haa'];
         }
     }
-    if (isset($data[$prefix . '-haa-o']))
-    {
-        $haaArray[] = $data[$prefix . '-haa-o'];
-    }
-    $haa = implode($haaArray, ',');
+
     $services['haa'] = $haa?$haa:'';
     $services['hb'] = isset($data[$prefix . '-hb'])?$data[$prefix . '-hb']:0;
     $services['hc'] = isset($data[$prefix . '-hc'])?$data[$prefix . '-hc']:0;
@@ -110,22 +176,18 @@ function getServices($data, $prefix)
     return json_encode($services);
 }
 
-function getHousePhotos()
+function getHousePhotos($id)
 {
     $photos = array();
     for ($i = 1; $i < 6; $i++)
     {
         if (isset($_FILES['photo-' . $i]) && $_FILES['photo-' . $i]['tmp_name'] && EliteHelper::checkIsImage($_FILES['photo-' . $i]['name']))
         {
-            $photoFilename = md5(OBJECT_PHOTO_PREFIX . $i . $_POST['email']) . '.' . EliteHelper::getExtensionName($_FILES['photo-' . $i]['name']);
+            $photoFilename = md5(OBJECT_PHOTO_PREFIX . $i . $id) . '.' . EliteHelper::getExtensionName($_FILES['photo-' . $i]['name']);
             system('cp ' . $_FILES['photo-' . $i]['tmp_name'] . ' ' . USER_PHOTO_PATH . $photoFilename);
             system('convert ' . USER_PHOTO_PATH . $photoFilename . ' -resize \'180x120\' -gravity Center -crop \'144x93+0+0\' -quality \'100%\' ' . USER_PHOTO_PATH . 'c_' . $photoFilename);
         $photos[] = $photoFilename;
         }
-    }
-    if (empty($photos))
-    {
-        $photos[] = '';
     }
     return $photos;
 }

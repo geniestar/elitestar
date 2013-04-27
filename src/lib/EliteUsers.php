@@ -124,7 +124,7 @@ class EliteUsers
 
         if ($password)
         {
-            $updateArray['password'] = $md5($password);
+            $updateArray['password'] = md5($password);
         }
         if ($name)
         {

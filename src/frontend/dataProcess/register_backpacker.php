@@ -8,7 +8,8 @@ foreach ($states[0]['suburbs'] as $key => $value)
 {
     $data['cities'][] = array(
         'id' => $key,
-        'name' => $value
+        'name' => $value,
+        'selected' => (isset($backpacker['city']) && $key==$backpacker['city'])?true:false,
     );
 }
 
@@ -23,7 +24,7 @@ foreach($states as $key => $state)
     $data['states'][] = array(
         'class' => $state['class'],
         'id' => $key,
-        'selected' => (isset($backpacker['city']) && $key==$backpacker['city'])?true:false,
+        'selected' => (isset($backpacker['state']) && $key==$backpacker['city'])?true:false,
     );
 }
 if (!$backpacker)
@@ -78,5 +79,4 @@ if ($backpacker)
         }
     }
 }
-
 ?>
