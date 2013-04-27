@@ -7,7 +7,6 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 define('USER_PHOTO_PATH', '/var/www/html/elitestar/ugc/');
 define('USER_PHOTO_PREFIX', 'uphoto');
 define('OBJECT_PHOTO_PREFIX', 'ophoto');
-
 if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))
 {
     /* user exist */
@@ -133,19 +132,21 @@ function getHousePhotos()
 
 function getDescription($data)
 {
-    $i = 0;
+    $i = 1;
     $descriptions = array();
-    while (isset($data['km-' . $i]) && $data['km-' . $i])
+    for ($i=1; $i<=10; $i++)
     {
-        $description = array(
-            'position' => $data['position-' . $i],
-            'km' => $data['km-' . $i],
-            'mins' => $data['mins-' . $i],
-            'vehicle' => $data['vehicle-' . $i],
-            'more' => $data['desc-' . $i]
-        );
-        $descriptions[] = $description;
-        $i++;
+        if (isset($data['km'][$i]) && $data['km'][$i] && isset($data['mins'][$i]) && $data['mins'][$i] && isset($data['position'][$i]) && $data['position'][$i] && isset($data['vehicle'][$i]) && $data['vehicle'][$i])
+        {
+            $description = array(
+                'position' => $data['position'][$i],
+                'km' => $data['km'][$i],
+                'mins' => $data['mins'][$i],
+                'vehicle' => $data['vehicle'][$i],
+                'more' => $data['desc'][$i]
+            );
+            $descriptions[] = $description;
+        }
     }
     return json_encode($descriptions);
 }

@@ -32,17 +32,17 @@ $positionDesc = array();
 foreach($data['houseDimemsions']['description_posiiton'] as $position)
 {
     $data['positions'][] = array(
-        'value' => $position,
-        'name' => EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position)
+        'value' => $position['value'],
+        'name' => EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position['value'])
     );
-    $positionDesc[$position] = EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position . '_DESC');
+    $positionDesc[$position['value']] = EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position['value'] . '_DESC');
 }
 $data['vehicle'] = array(array('value' => '', 'name' => ''));
 foreach($data['houseDimemsions']['description_vehicle'] as $vehicle)
 {
     $data['vehicle'][] = array(
-        'value' => $vehicle,
-        'name' => EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $vehicle)
+        'value' => $vehicle['value'],
+        'name' => EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $vehicle['value'])
     );
 }
 

@@ -87,30 +87,20 @@ YUI({
     });
 
     YAHOO.EliteStar.onPositionChange = function(e) {
+        var inputSet = e.parentNode;
+        var descNameSet = inputSet.getElementsByTagName('div')[6];
+        var descNameTitle = descNameSet.getElementsByTagName('div')[0];
         if (YAHOO.EliteStar.params['positionDesc'][e.value]) {
-            var inputSet = e.parentNode;
-            document.getElementById(inputSet.id + '-desc').setAttribute('class', '');
-            var moreDesc = document.getElementById(inputSet.id + '-desc');
-            var titleDiv = moreDesc.getElementsByTagName('div')[0];
-            titleDiv.innerHTML = YAHOO.EliteStar.params['positionDesc'][e.value];
+            descNameSet.setAttribute('class', '');
+            descNameTitle.innerHTML = YAHOO.EliteStar.params['positionDesc'][e.value];
         } else {
-            var inputSet = e.parentNode;
-            document.getElementById(inputSet.id + '-desc').setAttribute('class', 'hidden');
+            descNameSet.setAttribute('class', 'hidden');
         }
     }
-    var moreDescriptionCount = 1;
     Y.one('.registerform-add').on('click', function(e){
         var tmpNode = Y.one('.des-template').cloneNode(10);
-        Y.one('#more-description').append(tmpNode.set('id','more-des-' + moreDescriptionCount));
-        tmpNode = Y.one('#more-des-' + moreDescriptionCount);
-        tmpNode.one('select[name="position-tmpl"]').set('name', 'position-' + moreDescriptionCount);
-        tmpNode.one('select[name="vehicle-tmpl"]').set('name', 'vehicle-' + moreDescriptionCount);
-        tmpNode.one('input[name="km-tmpl"]').set('name', 'km-' + moreDescriptionCount);
-        tmpNode.one('input[name="mins-tmpl"]').set('name', 'mins-' + moreDescriptionCount);
-        tmpNode.one('input[name="desc-tmpl"]').set('name', 'desc-' + moreDescriptionCount);
-        tmpNode.one('#more-des-tmpl-desc').set('id', 'more-des-' + moreDescriptionCount + '-desc');
+        Y.one('#more-description').append(tmpNode);
         tmpNode.removeClass('hidden');
-        moreDescriptionCount++;
     });
 
     var houseownerSubmit = function() {

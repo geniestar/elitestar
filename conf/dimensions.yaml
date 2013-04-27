@@ -140,6 +140,29 @@ house_dimemsions:
             value: '04:00'
         9:
             value: '04:30'
-    description_posiiton: ['BUS_STOP', 'SCHOOL', 'LIBRARY', 'SHOPPING_MALL', 'RESTAURANTS', 'GYM', 'GAS_STATION', 'HOSPITAL']
-    description_vehicle: ['CAR', 'MOTOCYCLE', 'BIKE', 'WALKING']
-    
+    description_posiiton: 
+        0: 
+            value: BUS_STOP
+        1: 
+            value: SCHOOL
+        2: 
+            value: LIBRARY
+        3: 
+            value: SHOPPING_MALL
+        4: 
+            value: RESTAURANTS
+        5: 
+            value: GYM
+        6: 
+            value: GAS_STATION
+        7: 
+            value: HOSPITAL
+    description_vehicle:
+        0:
+            value: CAR
+        1:
+            value: MOTOCYCLE
+        2:
+            value: BIKE
+        3:
+            value: WALKING

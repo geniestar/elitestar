@@ -36,7 +36,7 @@
         <div class="registerform-ua registerform-icon utility-icon"></div>
         <select name="rooms">
             {{#houseDimemsions.rooms}}
-                <option value="{{.}}">{{.}}</option>
+                <option value="{{value}}">{{value}}</option>
             {{/houseDimemsions.rooms}}
         </select>
         <div class="title padding-title-three">{{i18n.REG_BEDS}}</div>
@@ -44,13 +44,13 @@
         <div class="title sec-title">{{i18n.REG_SINGLE}}</div>
         <select name="bed_single">
             {{#houseDimemsions.beds.single}}
-                <option value="{{.}}">{{.}}</option>
+                <option value="{{value}}">{{value}}</option>
             {{/houseDimemsions.beds.single}}
         </select>
         <div class="title sec-title">{{i18n.REG_DOUBLE}}</div>
         <select name="bed_double">
             {{#houseDimemsions.beds.double}}
-                <option value="{{.}}">{{.}}</option>
+                <option value="{{value}}">{{value}}</option>
             {{/houseDimemsions.beds.double}}
         </select>
     </div>
@@ -60,14 +60,14 @@
         <div class="registerform-uc registerform-icon utility-icon"></div>
         <select name="toilets">
             {{#houseDimemsions.toilets}}
-                <option value="{{.}}">{{.}}</option>
+                <option value="{{value}}">{{value}}</option>
             {{/houseDimemsions.toilets}}
         </select>
         <div class="title padding-title-two">{{i18n.REG_PARKING_SPACE}}</div>
         <div class="registerform-ud registerform-icon utility-icon"></div>
         <select name="parking_space">
             {{#houseDimemsions.parking_spaces}}
-                <option value="{{.}}">{{.}}</option>
+                <option value="{{value}}">{{value}}</option>
             {{/houseDimemsions.parking_spaces}}
         </select>
     </div>
@@ -163,49 +163,49 @@
     <div id="more-description">
     <div class="des-template input-set hidden">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
-        <select name="position-tmpl" onchange="YAHOO.EliteStar.onPositionChange(this);">
+        <select name="position[]" onchange="YAHOO.EliteStar.onPositionChange(this);">
             {{#positions}}
                 <option value="{{value}}">{{name}}</option>
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
+        <input type="text" size="1" name="km[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins-tmpl" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
+        <input type="text" size="1" name="mins[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
         <div class="clean"></div>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
-        <select name="vehicle-tmpl">
+        <select name="vehicle[]">
             {{#vehicle}}
                 <option value="{{value}}">{{name}}</option>
             {{/vehicle}}
         </select>
-        <div id="more-des-tmpl-desc" class="hidden">
-            <div class="title sec-title"></div><input type="text" name="desc-tmpl">
+        <div id="more-des-desc" class="hidden">
+            <div class="title sec-title"></div><input type="text" name="desc[]">
         </div>
         <div class="clean"></div>
     </div>
-    <div id="more-des-0" class="input-set">
+    <div class="input-set">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
-        <select name="position-0" onchange="YAHOO.EliteStar.onPositionChange(this);">
+        <select name="position[]" onchange="YAHOO.EliteStar.onPositionChange(this);">
             {{#positions}}
                 <option value="{{value}}">{{name}}</option>
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
+        <input type="text" size="1" name="km[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins-0" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
+        <input type="text" size="1" name="mins[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
         <div class="clean"></div>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
-        <select name="vehicle-0">
+        <select name="vehicle[]">
             {{#vehicle}}
                 <option value="{{value}}">{{name}}</option>
             {{/vehicle}}
         </select>
-        <div id="more-des-0-desc" class="hidden">
-            <div class="title sec-title"></div><input type="text" name="desc-0">
+        <div class="desc-name hidden">
+            <div class="title sec-title"></div><input type="text" name="desc[]">
         </div>
         <div class="clean"></div>
     </div>
