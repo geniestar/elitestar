@@ -149,6 +149,7 @@ languages:
     REG_RENT_PLACEHOLDER: '150'
     REG_UPLOAD_PHOTOS: 'Upload house photos..'
     REG_PHOTO: 'Photo'
+    REG_PHOTO_DELETE_SUCCESSFULLY: 'Deleted photo successfully.'
     REG_MORE_DESCRIPTION: 'More description'
     REG_MORE_DESCRIPTION_FROM: 'From my house to'
     REG_MORE_DESCRIPTION_ABOUT: 'is about'
