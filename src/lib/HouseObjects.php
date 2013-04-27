@@ -245,8 +245,6 @@ class HouseObjects
 
             $sql = 'UPDATE houseobjects set ' . implode($updateColumns, ', ') . ' WHERE owner_id=? AND id=?';
         }
-var_dump($sql);
-var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }

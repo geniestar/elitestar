@@ -104,6 +104,16 @@ else
                 }
                 HouseObjects::getInstance()->updateHouseObjectInfo($user['id'], $_POST['objectid'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'),getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos[0], json_encode($photos), getDescription($_POST));
             }
+            else
+            {
+                if(EliteHelper::checkEmpty(array('state', 'city', 'address', 'housename', 'duration_start', 'duration_end', 'rooms', 'bed_single', 'bed_double', 'toilets', 'parking_space', 'rent'), $_POST))
+                {
+                    LandLords::getInstance()->createLandLord($_POST['id'], getServices($_POST, 'h'), null);
+                    $photos = getHousePhotos($_POST['id']);
+                    HouseObjects::getInstance()->createHouseObject($_POST['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'), getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
+
+                }
+            }
         }
         else
         {
@@ -183,10 +193,10 @@ function getHousePhotos($id)
     {
         if (isset($_FILES['photo-' . $i]) && $_FILES['photo-' . $i]['tmp_name'] && EliteHelper::checkIsImage($_FILES['photo-' . $i]['name']))
         {
-            $photoFilename = md5(OBJECT_PHOTO_PREFIX . $i . $id) . '.' . EliteHelper::getExtensionName($_FILES['photo-' . $i]['name']);
+            $photoFilename = md5(OBJECT_PHOTO_PREFIX . $id . $_FILES['photo-' . $i]['name'] . time()) . '.' . EliteHelper::getExtensionName($_FILES['photo-' . $i]['name']);
             system('cp ' . $_FILES['photo-' . $i]['tmp_name'] . ' ' . USER_PHOTO_PATH . $photoFilename);
             system('convert ' . USER_PHOTO_PATH . $photoFilename . ' -resize \'180x120\' -gravity Center -crop \'144x93+0+0\' -quality \'100%\' ' . USER_PHOTO_PATH . 'c_' . $photoFilename);
-        $photos[] = $photoFilename;
+            $photos[] = $photoFilename;
         }
     }
     return $photos;
