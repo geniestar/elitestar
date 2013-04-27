@@ -35,7 +35,6 @@ else
     $data['states'][$backpacker['state']]['default'] = true;
 }
 
-
 EliteHelper::setParamsToJs('states', $states);
 
 if ($backpacker)

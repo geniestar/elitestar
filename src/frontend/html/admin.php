@@ -41,6 +41,7 @@ else if ('settings' == $_GET['action'])
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<div id="form-houseobject" class="form">';
         $formHtml .= '<div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
+        $formHtml .= '<div class="form">' . ContentGenerator::getContent('register_houseobject', array('houseobject' => $houseobjects[0])) . '</div>';
         $formHtml .= '<div id="houseobject"></div></div>';
         $formHtml .= '<div id="form-service" class="form">' . ContentGenerator::getContent('register_houseowner', array('houseowner' => $houseowner)) . '</div>';
         $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));

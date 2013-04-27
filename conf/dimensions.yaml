@@ -140,7 +140,7 @@ house_dimemsions:
             value: '04:00'
         9:
             value: '04:30'
-    description_posiiton: 
+    description_position: 
         0: 
             value: BUS_STOP
         1: 

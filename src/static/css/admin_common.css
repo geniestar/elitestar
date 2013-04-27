@@ -234,3 +234,19 @@
   color: white;
   font-size: 16px;
 }
+
+/* line 150, ../scss/admin_common.scss */
+.houseobject-photo-item {
+  float: left;
+  position: relative;
+  margin: 10px;
+}
+/* line 154, ../scss/admin_common.scss */
+.houseobject-photo-item .admin-close_big {
+  cursor: pointer;
+  width: 20px;
+  height: 19px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}

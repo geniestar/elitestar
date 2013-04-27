@@ -2,47 +2,47 @@
     <div class="big-title">{{i18n.REG_SERVICES}}</div>
     <div class="input-set" style="height:auto;">
         <div class="title help-title">{{i18n.REG_TAKE_YOU_FROM_AIRPORT}}</div>
-        <input type="radio" name="h-ha" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
-        <input type="radio" name="h-ha" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <input type="radio" name="h-ha" value="1" {{#helpsCheck.ha}}checked{{/helpsCheck.ha}}><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-ha" value="0" {{^helpsCheck.ha}}checked{{/helpsCheck.ha}}><div class="title sec-title">{{i18n.REG_NO}}</div>
         <div class="extra-info graybg">
             <div class="registerform-sprite registerform-people"></div>
             <div class="title sec-title">x1</div>
-            <input type="text" name="h-haa-1" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <input type="text" name="h-haa-1" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2" value="{{haa_x1}}">
             <div class="title sec-title">{{i18n.REG_AUD}}</div>
             <div class="title sec-title title-gray">{{i18n.REG_TAKE_YOU_FROM_AIRPORT_HINT}}</div>
             <div class="clean"></div>
             <div class="registerform-sprite registerform-people"></div>
             <div class="title sec-title">x2</div>
-            <input type="text" name="h-haa-2" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <input type="text" name="h-haa-2" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2" value="{{haa_x2}}">
             <div class="title sec-title">{{i18n.REG_AUD}}</div>
             <div class="clean"></div>
             <div class="registerform-sprite registerform-people"></div>
             <div class="title sec-title">x3</div>
-            <input type="text" name="h-haa-3" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <input type="text" name="h-haa-3" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2" value="{{haa_x3}}">
             <div class="title sec-title">{{i18n.REG_AUD}}</div>
             <div class="clean"></div>
             <div class="registerform-sprite registerform-people"></div>
             <div class="title sec-title">x4</div>
-            <input type="text" name="h-haa-4" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2">
+            <input type="text" name="h-haa-4" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_PLACEHOLDER}}" size="2" value="{{haa_x4}}">
             <div class="title sec-title">{{i18n.REG_AUD}}</div>
             <div class="clean"></div>
-            <input type="text" name="h-haa-o" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_OTHER}}" size="26">
+            <input type="text" name="h-haa-o" placeholder="{{i18n.REG_TAKE_YOU_FROM_AIRPORT_OTHER}}" size="26" value="{{haa_o}}">
             <div class="clean"></div>
         </div>
     </div>
     <div class="clean"></div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_OPEN_BANK_ACCOUNT}}</div>
-        <input type="radio" name="h-hb" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
-        <input type="radio" name="h-hb" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <input type="radio" name="h-hb" value="1" {{#helpsCheck.hb}}checked{{/helpsCheck.hb}}><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-hb" value="0" {{^helpsCheck.hb}}checked{{/helpsCheck.hb}}><div class="title sec-title">{{i18n.REG_NO}}</div>
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_APPLY_FOR_TFN}}</div>
-        <input type="radio" name="h-hc" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
-        <input type="radio" name="h-hc" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <input type="radio" name="h-hc" value="1" {{#helpsCheck.hc}}checked{{/helpsCheck.hc}}><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-hc" value="0" {{^helpsCheck.hc}}checked{{/helpsCheck.hc}}><div class="title sec-title">{{i18n.REG_NO}}</div>
     </div>
     <div class="input-set">
         <div class="title help-title">{{i18n.REG_APPLY_FOR_SIM_CARD}}</div>
-        <input type="radio" name="h-hd" value="1"><div class="title sec-title">{{i18n.REG_YES}}</div>
-        <input type="radio" name="h-hd" value="0" checked><div class="title sec-title">{{i18n.REG_NO}}</div>
+        <input type="radio" name="h-hd" value="1" {{#helpsCheck.hd}}checked{{/helpsCheck.hd}}><div class="title sec-title">{{i18n.REG_YES}}</div>
+        <input type="radio" name="h-hd" value="0" {{^helpsCheck.hd}}checked{{/helpsCheck.hd}}><div class="title sec-title">{{i18n.REG_NO}}</div>
     </div>
