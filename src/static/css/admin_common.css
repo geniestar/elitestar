@@ -266,11 +266,11 @@
 /* line 174, ../scss/admin_common.scss */
 .message {
   position: relative;
-  padding: 10px 0 0 0;
+  margin-bottom: 10px;
 }
 /* line 177, ../scss/admin_common.scss */
 .message .message-single {
-  padding: 0 10px;
+  padding: 10px 10px 0 10px;
   border-bottom: 1px solid #ccc;
 }
 /* line 181, ../scss/admin_common.scss */
@@ -288,28 +288,32 @@
   line-height: 16px;
 }
 /* line 193, ../scss/admin_common.scss */
+.message .reply {
+  padding: 10px 10px 0 20px;
+}
+/* line 196, ../scss/admin_common.scss */
 .message .reply-form {
   padding: 5px;
 }
-/* line 195, ../scss/admin_common.scss */
+/* line 198, ../scss/admin_common.scss */
 .message .reply-form input {
   float: left;
 }
-/* line 198, ../scss/admin_common.scss */
-.message .reply-form input[type="text"] {
-  width: 400px;
-}
 /* line 201, ../scss/admin_common.scss */
+.message .reply-form input[type="text"] {
+  width: 445px;
+}
+/* line 204, ../scss/admin_common.scss */
 .message .reply-form input[type="submit"] {
   margin: 3px 10px;
 }
 
-/* line 207, ../scss/admin_common.scss */
+/* line 210, ../scss/admin_common.scss */
 .message:nth-child(even) {
   background-color: #EEE;
 }
 
-/* line 211, ../scss/admin_common.scss */
+/* line 214, ../scss/admin_common.scss */
 #previous-messages-btn {
   margin: 10px 0;
 }

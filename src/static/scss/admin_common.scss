@@ -173,9 +173,9 @@
 
 .message {
     position: relative;
-    padding: 10px 0 0 0;
+    margin-bottom: 10px;
     .message-single {
-        padding: 0 10px;
+        padding: 10px 10px 0 10px;
         border-bottom: 1px solid #ccc;
     }
     .admin-close {
@@ -190,13 +190,16 @@
         margin: 10px 0;
         line-height: 16px;
     }
+    .reply {
+        padding: 10px 10px 0 20px;
+    }
     .reply-form {
         padding: 5px;
         input {
             float: left;
         } 
         input[type="text"] {
-            width: 400px;
+            width: 445px;
         }
         input[type="submit"] {
             margin: 3px 10px;

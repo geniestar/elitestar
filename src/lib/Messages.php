@@ -74,31 +74,42 @@ class Messages
     
     public function queryMessagesTotal($userId)
     {
-        $sql = 'SELECT count(*) as count FROM messages WHERE receiver=?';
-        $inputParams = array($userId);
+        $sql = 'SELECT count(*) as count FROM messages WHERE (receiver=? OR sender=?) AND is_reply=0';
+        $inputParams = array($userId, $userId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r[0]['count'];
     }
 
-    public function queryMessagesOfReceiver($userId, $start = 0, $count = 20, $withReplies = true, $currentUserId = null)
+    public function queryMessagesOfReceiver($userId, $start = 0, $count = 20, $withReplies = true)
     {
-        $sql = 'SELECT * FROM messages WHERE receiver=? ORDER BY created_time DESC LIMIT ?, ?';
-        $inputParams = array($userId, $start, $count);
+        $sql = 'SELECT * FROM messages WHERE (receiver=? OR sender=?) AND is_reply = 0 ORDER BY created_time DESC LIMIT ?, ?';
+        $inputParams = array($userId, $userId, $start, $count);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         $finalResult = array();
         foreach ($r as $message)
         {
             $info = EliteUsers::getInstance()->queryUser($message['sender'], null, null, true);
             $message['senderInfo'] = $info[0];
+            if ($message['sender'] === $userId)
+            {
+                $message['senderInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_I');
+            }
+            $info = EliteUsers::getInstance()->queryUser($message['receiver'], null, null, true);
+            $message['receiverInfo'] = $info[0];
+            if ($message['receiver'] === $userId)
+            {
+                $message['receiverInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_ME');
+                $message['canDelete'] = true;
+            }
             $replies = Messages::getInstance()->queryReplies($message['id']);
-            if ($currentUserId)
+            if ($userId)
             {
                 foreach($replies as $key => $reply)
                 {
                     $info = EliteUsers::getInstance()->queryUser($reply['sender'], null, null, true);
                     $replies[$key]['senderInfo'] = $info[0];
                     // change sender to I if sender is current user.
-                    if ($reply['sender'] === $currentUserId)
+                    if ($reply['sender'] === $userId)
                     {
                         $replies[$key]['senderInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_I');
                     }
@@ -128,11 +139,11 @@ class Messages
     
     public function deleteMessage($id, $userId)
     {
-        $sql = 'DELETE FROM messages WHERE parent=? and (receiver=? or sender=?)';
-        $inputParams = array($id, $userId, $userId);
-        $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $sql = 'DELETE FROM messages WHERE id=? and (receiver=?)';
+        $sql = 'DELETE FROM messages WHERE id=? and (receiver=?) AND is_reply=0';
         $inputParams = array($id, $userId);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $sql = 'DELETE FROM messages WHERE parent=? and (receiver=? or sender=?) AND is_reply=1';
+        $inputParams = array($id, $userId, $userId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
