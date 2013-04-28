@@ -1,0 +1,26 @@
+{{#messages}}
+<div id="message-{{id}}" class="message">
+    <div class="container">
+    <div class="message-single">
+        <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} To <span class="title">{{receiverInfo.name}}</span> ({{created_time}}):
+        <div class="message-body">{{message}}</div>
+    </div>
+    {{#replies}}
+        <div class="message-single reply">
+            <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} ({{created_time}}):
+            <div class="message-body">{{message}}</div>
+        </div>
+    {{/replies}}
+    </div>
+    <div class="reply-form">
+        <form action="ajax/admin_action.php" data-id={{id}} id="reply-form-{{id}}">
+            <input type="hidden" name="action" value="reply-messages"></input>
+            <input type="hidden" name="messageId" value="{{id}}"></input>
+            <input type="text" name="message" placeholder="{{i18n.ADMIN_LEAVE_MESSAGE}}"></input>
+            <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{id}}"></input>
+            <div class="clean"></div>
+        </form>
+    </div>
+    {{#canDelete}}<div class="admin-sprite admin-close" data-id="{{id}}"></div>{{/canDelete}}
+</div>
+{{/messages}}
