@@ -77,6 +77,7 @@ YUI.add("houseobject", function(Y)
             res = JSON.parse(request.responseText);
             if ('SUCCESS' === res.status) {
                 Y.one('#message-panel-board-result-' + e.target.getAttribute('data-id')).addClass('hidden');
+                Y.one('#message-panel-board-result-' + e.target.getAttribute('data-id') + ' textarea').set('value', '');
                 alert(res.data.message);
             } else {
                 alert(res.message);
