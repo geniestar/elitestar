@@ -265,34 +265,39 @@ input[type="text"], input[type="password"] {
 }
 
 /* line 37, ../scss/common.scss */
+input[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* line 41, ../scss/common.scss */
 .hidden {
   display: none;
 }
 
-/* line 41, ../scss/common.scss */
+/* line 45, ../scss/common.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 45, ../scss/common.scss */
+/* line 49, ../scss/common.scss */
 #map-all {
   width: 147px;
   height: 138px;
   margin: 0 auto;
   position: relative;
 }
-/* line 50, ../scss/common.scss */
+/* line 54, ../scss/common.scss */
 #map-all .map-item {
   cursor: pointer;
 }
-/* line 53, ../scss/common.scss */
+/* line 57, ../scss/common.scss */
 #map-all .map-map_wa {
   position: absolute;
   width: 58px;
   height: 89px;
   top: 16px;
 }
-/* line 59, ../scss/common.scss */
+/* line 63, ../scss/common.scss */
 #map-all .map-map_nt {
   position: absolute;
   width: 34px;
@@ -300,7 +305,7 @@ input[type="text"], input[type="password"] {
   top: 5px;
   left: 56px;
 }
-/* line 66, ../scss/common.scss */
+/* line 70, ../scss/common.scss */
 #map-all .map-map_sa {
   position: absolute;
   width: 44px;
@@ -308,7 +313,7 @@ input[type="text"], input[type="password"] {
   top: 65px;
   left: 56px;
 }
-/* line 73, ../scss/common.scss */
+/* line 77, ../scss/common.scss */
 #map-all .map-map_qld {
   position: absolute;
   width: 58px;
@@ -316,7 +321,7 @@ input[type="text"], input[type="password"] {
   top: 0;
   right: 0px;
 }
-/* line 80, ../scss/common.scss */
+/* line 84, ../scss/common.scss */
 #map-all .map-map_vic {
   position: absolute;
   width: 33px;
@@ -325,7 +330,7 @@ input[type="text"], input[type="password"] {
   right: 15px;
   z-index: 1;
 }
-/* line 88, ../scss/common.scss */
+/* line 92, ../scss/common.scss */
 #map-all .map-map_tas {
   position: absolute;
   width: 19px;
@@ -333,7 +338,7 @@ input[type="text"], input[type="password"] {
   top: 119px;
   right: 18px;
 }
-/* line 95, ../scss/common.scss */
+/* line 99, ../scss/common.scss */
 #map-all .map-map_nsw {
   position: absolute;
   width: 48px;
@@ -341,26 +346,26 @@ input[type="text"], input[type="password"] {
   top: 73px;
   right: 0px;
 }
-/* line 103, ../scss/common.scss */
+/* line 107, ../scss/common.scss */
 #map-all .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 108, ../scss/common.scss */
+/* line 112, ../scss/common.scss */
 #map-all.map_big-map_all_big {
   width: 181px;
   height: 169px;
   margin: 0 auto;
   position: relative;
 }
-/* line 113, ../scss/common.scss */
+/* line 117, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_wa_big {
   position: absolute;
   width: 70px;
   height: 110px;
   top: 19px;
 }
-/* line 119, ../scss/common.scss */
+/* line 123, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nt_big {
   position: absolute;
   width: 41px;
@@ -368,7 +373,7 @@ input[type="text"], input[type="password"] {
   top: 6px;
   left: 70px;
 }
-/* line 126, ../scss/common.scss */
+/* line 130, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_sa_big {
   position: absolute;
   width: 53px;
@@ -376,7 +381,7 @@ input[type="text"], input[type="password"] {
   top: 80px;
   left: 70px;
 }
-/* line 133, ../scss/common.scss */
+/* line 137, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_qld_big {
   position: absolute;
   width: 71px;
@@ -384,7 +389,7 @@ input[type="text"], input[type="password"] {
   top: 0;
   right: 1px;
 }
-/* line 140, ../scss/common.scss */
+/* line 144, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_vic_big {
   position: absolute;
   width: 41px;
@@ -393,7 +398,7 @@ input[type="text"], input[type="password"] {
   right: 18px;
   z-index: 1;
 }
-/* line 148, ../scss/common.scss */
+/* line 152, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_tas_big {
   position: absolute;
   width: 23px;
@@ -401,7 +406,7 @@ input[type="text"], input[type="password"] {
   top: 146px;
   right: 23px;
 }
-/* line 155, ../scss/common.scss */
+/* line 159, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nsw_big {
   position: absolute;
   width: 59px;
@@ -409,17 +414,17 @@ input[type="text"], input[type="password"] {
   top: 90px;
   right: 0px;
 }
-/* line 163, ../scss/common.scss */
+/* line 167, ../scss/common.scss */
 #map-all.map_big-map_all_big .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 168, ../scss/common.scss */
+/* line 172, ../scss/common.scss */
 .calendar {
   width: 220px;
 }
 
-/* line 172, ../scss/common.scss */
+/* line 176, ../scss/common.scss */
 .panel {
   z-index: 100;
   padding: 10px;
@@ -434,34 +439,34 @@ input[type="text"], input[type="password"] {
   position: absolute;
 }
 
-/* line 186, ../scss/common.scss */
+/* line 190, ../scss/common.scss */
 .main-container {
   width: 720px;
   margin: 0 auto;
 }
 
-/* line 191, ../scss/common.scss */
+/* line 195, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 195, ../scss/common.scss */
+/* line 199, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 199, ../scss/common.scss */
+/* line 203, ../scss/common.scss */
 .col-right {
   width: 558px;
   margin-left: 2px;
 }
 
-/* line 204, ../scss/common.scss */
+/* line 208, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
 }
-/* line 207, ../scss/common.scss */
+/* line 211, ../scss/common.scss */
 #banner .container {
   width: 720px;
   height: 110px;
@@ -469,14 +474,14 @@ input[type="text"], input[type="password"] {
   position: relative;
   overflow: hidden;
 }
-/* line 213, ../scss/common.scss */
+/* line 217, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 219, ../scss/common.scss */
+/* line 223, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -486,16 +491,16 @@ input[type="text"], input[type="password"] {
   bottom: 0px;
 }
 
-/* line 230, ../scss/common.scss */
+/* line 234, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 234, ../scss/common.scss */
+/* line 238, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
 }
-/* line 236, ../scss/common.scss */
+/* line 240, ../scss/common.scss */
 #menu-container #menu {
   width: 720px;
   margin: 0 auto;
@@ -512,7 +517,7 @@ input[type="text"], input[type="password"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 245, ../scss/common.scss */
+/* line 249, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -520,14 +525,14 @@ input[type="text"], input[type="password"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 251, ../scss/common.scss */
+/* line 255, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 256, ../scss/common.scss */
+/* line 260, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -535,21 +540,21 @@ input[type="text"], input[type="password"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 263, ../scss/common.scss */
+/* line 267, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   margin-top: 1px;
 }
-/* line 269, ../scss/common.scss */
+/* line 273, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 273, ../scss/common.scss */
+/* line 277, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 278, ../scss/common.scss */
+/* line 282, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -560,25 +565,25 @@ input[type="text"], input[type="password"] {
   right: 2px;
   text-align: left;
 }
-/* line 287, ../scss/common.scss */
+/* line 291, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 292, ../scss/common.scss */
+/* line 296, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 299, ../scss/common.scss */
+/* line 303, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 302, ../scss/common.scss */
+/* line 306, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }

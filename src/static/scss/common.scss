@@ -34,6 +34,10 @@ input[type="text"], input[type="password"] {
     border: 1px solid $gray;
 }
 
+input[type="submit"] {
+    -webkit-appearance: button;
+}
+
 .hidden {
     display: none;
 }

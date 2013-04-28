@@ -160,3 +160,54 @@
         top: 2px;
     }
 }
+
+.big-title {
+    color: #3b91d9;
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.title {
+    color: #3b91d9;
+}
+
+.message {
+    position: relative;
+    padding: 10px 0 0 0;
+    .message-single {
+        padding: 0 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .admin-close {
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        right: 5px;
+        top :5px;
+    }
+    .message-body {
+        margin: 10px 0;
+        line-height: 16px;
+    }
+    .reply-form {
+        padding: 5px;
+        input {
+            float: left;
+        } 
+        input[type="text"] {
+            width: 400px;
+        }
+        input[type="submit"] {
+            margin: 3px 10px;
+        }
+    }
+}
+
+.message:nth-child(even) {
+    background-color: #EEE;
+}
+
+#previous-messages-btn {
+    margin: 10px 0;
+}

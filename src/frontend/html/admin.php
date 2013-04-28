@@ -65,9 +65,18 @@ else if ('settings' == $_GET['action'])
 }
 else if ('messages' == $_GET['action'])
 {
+    EliteHelper::setParamsToJs('type', 'messages');
     $tabs = array(array('class' => 'messages', 'name' => EliteHelper::getLangString('COMMON_MENU_MESSAGES')));
     $total = Messages::getInstance()->queryMessagesTotal($user['id']);
-    $messages = Messages::getInstance()->queryMessagesOfReceiver($user['id'], 0, 5);
+    $messages = Messages::getInstance()->queryMessagesOfReceiver($user['id'], 0, 5, $user['id']);
+    $formHtml .= '<div class="big-title">' . sprintf(EliteHelper::getLangString('ADMIN_MESSAGES_TITLE'), $user['name'], $total) . '</div>';
+    $formHtml .= '<div id="messages">';
+    $formHtml .= ContentGenerator::getContent('admin_messages', array('messages' => $messages));
+    $formHtml .= '</div>';
+    if ($total > 0)
+    {
+        $formHtml .= '<div id="previous-messages-btn">(<a href="#">' . EliteHelper::getLangString('ADMIN_PREVIOUS_MESSAGES') . '</a>)</div>';
+    }
 }
 else if ('profit' == $_GET['action'])
 {

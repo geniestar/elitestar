@@ -178,6 +178,12 @@ languages:
     REG_MORE_DESCRIPTION_GYM_DESC: 'Gym Name'
     REG_MORE_DESCRIPTION_HOSPITAL_DESC: 'Hospital Name'
     REG_ADD_PROPERTY: 'Add Property'
+    ADMIN_MESSAGES_TITLE: 'Hi %s, You have total <span style="text-decoration:underline;">%d</span> messages.'
+    ADMIN_PREVIOUS_MESSAGES: 'Previous Messages...'
+    ADMIN_MESSAGES_I: 'I'
+    ADMIN_MESSAGES_SAID: 'Said'
+    ADMIN_MESSAGES_REPLY: 'Reply'
+    ADMIN_LEAVE_MESSAGE: 'Leave a message'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'

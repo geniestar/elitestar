@@ -80,7 +80,7 @@ class Messages
         return $r[0]['count'];
     }
 
-    public function queryMessagesOfReceiver($userId, $start = 0, $count = 20, $withReplies = true)
+    public function queryMessagesOfReceiver($userId, $start = 0, $count = 20, $withReplies = true, $currentUserId = null)
     {
         $sql = 'SELECT * FROM messages WHERE receiver=? ORDER BY created_time DESC LIMIT ?, ?';
         $inputParams = array($userId, $start, $count);
@@ -88,7 +88,22 @@ class Messages
         $finalResult = array();
         foreach ($r as $message)
         {
+            $info = EliteUsers::getInstance()->queryUser($message['sender'], null, null, true);
+            $message['senderInfo'] = $info[0];
             $replies = Messages::getInstance()->queryReplies($message['id']);
+            if ($currentUserId)
+            {
+                foreach($replies as $key => $reply)
+                {
+                    $info = EliteUsers::getInstance()->queryUser($reply['sender'], null, null, true);
+                    $replies[$key]['senderInfo'] = $info[0];
+                    // change sender to I if sender is current user.
+                    if ($reply['sender'] === $currentUserId)
+                    {
+                        $replies[$key]['senderInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_I');
+                    }
+                }
+            }
             $message['replies'] = $replies;
             $finalResult[] = $message;
         }

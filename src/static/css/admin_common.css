@@ -250,3 +250,66 @@
   right: 2px;
   top: 2px;
 }
+
+/* line 164, ../scss/admin_common.scss */
+.big-title {
+  color: #3b91d9;
+  font-size: 20px;
+  padding: 20px 0;
+}
+
+/* line 170, ../scss/admin_common.scss */
+.title {
+  color: #3b91d9;
+}
+
+/* line 174, ../scss/admin_common.scss */
+.message {
+  position: relative;
+  padding: 10px 0 0 0;
+}
+/* line 177, ../scss/admin_common.scss */
+.message .message-single {
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+/* line 181, ../scss/admin_common.scss */
+.message .admin-close {
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+/* line 189, ../scss/admin_common.scss */
+.message .message-body {
+  margin: 10px 0;
+  line-height: 16px;
+}
+/* line 193, ../scss/admin_common.scss */
+.message .reply-form {
+  padding: 5px;
+}
+/* line 195, ../scss/admin_common.scss */
+.message .reply-form input {
+  float: left;
+}
+/* line 198, ../scss/admin_common.scss */
+.message .reply-form input[type="text"] {
+  width: 400px;
+}
+/* line 201, ../scss/admin_common.scss */
+.message .reply-form input[type="submit"] {
+  margin: 3px 10px;
+}
+
+/* line 207, ../scss/admin_common.scss */
+.message:nth-child(even) {
+  background-color: #EEE;
+}
+
+/* line 211, ../scss/admin_common.scss */
+#previous-messages-btn {
+  margin: 10px 0;
+}
