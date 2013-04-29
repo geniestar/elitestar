@@ -1,0 +1,40 @@
+<div id="profits">
+    <div class="profit-title">{{i18n.ADMIN_PROFITS_TITLE}}</div>
+    <div class="desc-area">
+        <div class="admin-sprite admin-calendar"></div><div class="title">{{i18n.ADMIN_PROFITS_DURATION}}</div>
+        <div class="admin-sprite admin-plus"></div>
+        <div class="admin-sprite admin-people"></div><div class="title">{{i18n.ADMIN_PROFITS_TENANTS}}</div>
+        <div class="admin-sprite admin-plus"></div>
+        <div class="admin-sprite admin-money1"></div><div class="title">{{i18n.ADMIN_PROFITS_RENT}}</div>
+        <div class="admin-sprite admin-equal"></div>
+        <div class="admin-sprite admin-money1"></div><div class="title">{{i18n.ADMIN_PROFITS_AMOUNT}}</div>
+        <div class="clean"></div>
+    </div>
+{{#houseobjects}}
+    <div class="house-object">
+        <div class="house-desc-area">
+            <img src="/ugc/c_{{main_photo}}"></img>
+            <div class="title">{{house_name}}</div>
+        </div>
+        <div class="date-area">
+            <input type="text" name="duration_start" size="16" value="{{duration_start}}"></input><div class="admin-sprite admin-calendar"></div>
+            <div class="title">{{i18n.REG_TO}}</div>
+            <input type="text" name="duration_end" size="16" value="{{duration_end}}"></input><div class="admin-sprite admin-calendar"></div> 
+        </div>
+        <div class="people-area">
+            <div class="admin-sprite admin-plus"></div>
+            <input type="text" name="tanents" size="16" value="{{tenants}}"></input>
+        </div>
+        <div class="rent-area">
+            <div class="admin-sprite admin-plus"></div>
+            <div class="admin-sprite admin-money2"></div>
+            <input type="text" name="rent" size="16" value="{{rent}}"></input>
+        </div>
+        <div class="amount-area">
+            <div class="admin-sprite admin-equal"></div>
+            <div class="admin-sprite admin-money2"></div>
+            <input type="text" name="rent" size="16" value="{{rent}}"></input>
+        </div>
+    </div>
+{{/houseobjects}}
+</div>
