@@ -40,7 +40,7 @@ else if ('settings' == $_GET['action'])
         );
         $houseowner = LandLords::getInstance()->queryLandLord($user['id']);
         $houseowner = $houseowner[0];
-        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id']);
+        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 100, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id']);
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<input type="hidden" name="role" value="0">';
@@ -78,9 +78,12 @@ else if ('messages' == $_GET['action'])
         $formHtml .= '<div id="previous-messages-btn">(<a href="#">' . EliteHelper::getLangString('ADMIN_PREVIOUS_MESSAGES') . '</a>)</div>';
     }
 }
-else if ('profit' == $_GET['action'])
+else if ('profits' == $_GET['action'])
 {
+    EliteHelper::setParamsToJs('type', 'profits');
     $tabs = array(array('class' => 'profits', 'name' => EliteHelper::getLangString('COMMON_MENU_PROFITS')));
+    $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 100, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id']);
+    $formHtml = ContentGenerator::getContent('admin_profits', array('houseobjects' => $houseobjects));
 }
 else if ('suggestion' == $_GET['action'])
 {

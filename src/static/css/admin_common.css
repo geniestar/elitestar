@@ -1,6 +1,6 @@
-/* line 130, admin/*.png */
-.admin-sprite, .admin-add_property, .admin-alteration, .admin-close, .admin-close_big, .admin-delete, .admin-equal, .admin-money1, .admin-money2, .admin-people, .admin-people_b, .admin-people_h, .admin-plus {
-  background: url('/img/admin-sfda5c4a791.png') no-repeat;
+/* line 138, admin/*.png */
+.admin-sprite, .admin-add_property, .admin-alteration, .admin-calendar, .admin-close, .admin-close_big, .admin-delete, .admin-equal, .admin-money1, .admin-money2, .admin-people, .admin-people_b, .admin-people_h, .admin-plus {
+  background: url('/img/admin-s3bad23c710.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -11,6 +11,11 @@
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .admin-alteration {
   background-position: 0 -38px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.admin-calendar {
+  background-position: 0 -243px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -30,7 +35,7 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .admin-equal {
-  background-position: 0 -243px;
+  background-position: 0 -259px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -340,4 +345,160 @@
   position: relative;
   bottom: 0;
   margin: 140px 0 0 20px;
+}
+
+/* line 247, ../scss/admin_common.scss */
+#profits .admin-calendar {
+  float: left;
+  width: 17px;
+  height: 17px;
+  margin: 4px 3px;
+}
+/* line 253, ../scss/admin_common.scss */
+#profits .admin-people {
+  float: left;
+  width: 13px;
+  height: 17px;
+  margin: 4px 3px;
+}
+/* line 259, ../scss/admin_common.scss */
+#profits .admin-money1 {
+  float: left;
+  width: 9px;
+  height: 15px;
+  margin: 4px 3px;
+}
+/* line 265, ../scss/admin_common.scss */
+#profits .admin-money2 {
+  float: left;
+  width: 9px;
+  height: 13px;
+  margin: 5px 3px;
+}
+/* line 271, ../scss/admin_common.scss */
+#profits .admin-equal {
+  float: left;
+  width: 16px;
+  height: 11px;
+  margin: 6px 3px;
+}
+/* line 277, ../scss/admin_common.scss */
+#profits .admin-plus {
+  float: left;
+  width: 13px;
+  height: 14px;
+  margin: 5px 3px;
+}
+/* line 283, ../scss/admin_common.scss */
+#profits .profit-title {
+  font-size: 30px;
+  color: #CCC;
+  margin: 10px;
+}
+/* line 288, ../scss/admin_common.scss */
+#profits .desc-area {
+  overflow: hidden;
+  margin-left: 80px;
+}
+/* line 291, ../scss/admin_common.scss */
+#profits .desc-area div {
+  float: left;
+}
+/* line 294, ../scss/admin_common.scss */
+#profits .desc-area .title {
+  font-size: 16px;
+  margin: 3px 20px 0 0;
+}
+/* line 299, ../scss/admin_common.scss */
+#profits .house-object {
+  width: 500px;
+  height: 150px;
+  clear: both;
+}
+/* line 305, ../scss/admin_common.scss */
+#profits .house-object .house-desc-area {
+  float: left;
+  height: 150px;
+  width: 100px;
+}
+/* line 309, ../scss/admin_common.scss */
+#profits .house-object .house-desc-area img {
+  margin: 5px;
+  width: 90px;
+}
+/* line 313, ../scss/admin_common.scss */
+#profits .house-object .house-desc-area .title {
+  margin: 2px 5px;
+  color: #3b91d9;
+}
+/* line 318, ../scss/admin_common.scss */
+#profits .house-object .date-area {
+  float: left;
+  height: 150px;
+  width: 140px;
+}
+/* line 322, ../scss/admin_common.scss */
+#profits .house-object .date-area input {
+  width: 100px;
+  float: left;
+}
+/* line 326, ../scss/admin_common.scss */
+#profits .house-object .date-area .title {
+  margin: 10px 0;
+  clear: both;
+}
+/* line 330, ../scss/admin_common.scss */
+#profits .house-object .date-area .admin-calendar {
+  float: left;
+  width: 17px;
+  height: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* line 338, ../scss/admin_common.scss */
+#profits .house-object .people-area {
+  float: left;
+  height: 150px;
+  width: 60px;
+}
+/* line 342, ../scss/admin_common.scss */
+#profits .house-object .people-area input {
+  float: left;
+  width: 30px;
+  float: left;
+}
+/* line 348, ../scss/admin_common.scss */
+#profits .house-object .rent-area {
+  float: left;
+  height: 150px;
+  width: 100px;
+}
+/* line 352, ../scss/admin_common.scss */
+#profits .house-object .rent-area input {
+  float: left;
+  width: 45px;
+  float: left;
+}
+/* line 358, ../scss/admin_common.scss */
+#profits .house-object .amount-area {
+  float: left;
+  height: 150px;
+  width: 100px;
+}
+/* line 362, ../scss/admin_common.scss */
+#profits .house-object .amount-area input {
+  float: left;
+  width: 50px;
+  float: left;
+}
+/* line 368, ../scss/admin_common.scss */
+#profits .house-object input[type="text"] {
+  float: left;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 4px;
+  font-size: 12px;
+  color: #666666;
+  vertical-align: middle;
 }
