@@ -70,4 +70,9 @@ else if (isset($_POST['action']) && 'delete-messages' === $_POST['action'])
     Messages::deleteMessage($_POST['messageId'], $user['id']);
     EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('ADMIN_DELETED_MESSAGE')));
 }
+else if (isset($_POST['action']) && 'suggestions' === $_POST['action'])
+{
+    Messages::getInstance()->createMessage($user['id'], 'superuser', $_POST['message']); 
+    EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_MESSAGE_SUCCESSFULLY')));
+}
 ?>

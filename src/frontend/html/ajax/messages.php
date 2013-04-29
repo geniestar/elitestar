@@ -19,9 +19,5 @@ if ($user)
             EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_MESSAGE_SUCCESSFULLY')));
         }
     }
-    else if ('delete' === $_POST['action'])
-    {
-        Messages::getInstance()->deleteMessage($_POST['id'], $user['id']);
-    }
 }
 ?>

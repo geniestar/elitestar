@@ -84,7 +84,9 @@ else if ('profit' == $_GET['action'])
 }
 else if ('suggestion' == $_GET['action'])
 {
+    EliteHelper::setParamsToJs('type', 'suggestion');
     $tabs = array(array('class' => 'suggestion', 'name' => EliteHelper::getLangString('COMMON_MENU_SUGGESTION')));
+    $formHtml = ContentGenerator::getContent('admin_suggestion', array());
 }
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),

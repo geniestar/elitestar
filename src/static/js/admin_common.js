@@ -245,5 +245,27 @@ else if ('messages' === YAHOO.EliteStar.params.type)
     }
     Y.delegate('submit', sendReply, Y.one('#messages'), 'form');
     Y.delegate('click', deleteMessage, Y.one('#messages'), '.admin-close');
+} else if ('suggestion' === YAHOO.EliteStar.params.type) {
+    var sendSuggestion = function(e) {
+        e.preventDefault();
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            form: {
+                id: 'suggestion-form',
+                useDisabled: true,
+            }
+        };
+        request = Y.io('/ajax/admin_action.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            alert(res.data.message);
+            Y.one('#suggestion textarea').set('value', '');
+        } else {
+            alert(res.message);
+        }
+        return false;
+    }
+    Y.delegate('submit', sendSuggestion, Y.one('#suggestion'), 'form');
 }
 });

@@ -167,10 +167,12 @@
     padding: 20px 0;
 }
 
-.title {
-    color: #3b91d9;
-}
+#messages {
 
+    .title {
+        color: #3b91d9;
+    }
+}
 .message {
     position: relative;
     margin-bottom: 10px;
@@ -213,4 +215,29 @@
 
 #previous-messages-btn {
     margin: 10px 0;
+}
+
+#suggestion {
+    .big-title {
+        color: $black;
+    }
+
+    .desc {
+        color: $gray;
+        line-height: 20px;
+    }
+
+    textarea {
+        float: left;
+        height: 150px;
+        width: 400px;
+        margin-top: 10px;
+    }
+
+    input[type="submit"] {
+        float: left;
+        position: relative;
+        bottom: 0;
+        margin: 140px 0 0 20px;
+    }
 }

@@ -74,7 +74,7 @@ class Messages
     
     public function queryMessagesTotal($userId)
     {
-        $sql = 'SELECT count(*) as count FROM messages WHERE (receiver=? OR sender=?) AND is_reply=0';
+        $sql = 'SELECT count(*) as count FROM messages WHERE (receiver=? OR sender=?) AND is_reply=0 AND receiver != \'superuser\'';
         $inputParams = array($userId, $userId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r[0]['count'];
@@ -82,7 +82,7 @@ class Messages
 
     public function queryMessagesOfReceiver($userId, $start = 0, $count = 20, $withReplies = true)
     {
-        $sql = 'SELECT * FROM messages WHERE (receiver=? OR sender=?) AND is_reply = 0 ORDER BY created_time DESC LIMIT ?, ?';
+        $sql = 'SELECT * FROM messages WHERE (receiver=? OR sender=?) AND is_reply = 0 AND receiver != \'superuser\' ORDER BY created_time DESC LIMIT ?, ?';
         $inputParams = array($userId, $userId, $start, $count);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         $finalResult = array();
