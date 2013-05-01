@@ -652,6 +652,7 @@ class EliteHelper
         $tmp = explode('?', $url);
         $basePath = $tmp[0];
         $paramArray = array();
+        $isReplaced = false;
         if (isset($tmp[1]))
         {
             $paramArray[$index] = $index . '=' . $value;
@@ -666,8 +667,13 @@ class EliteHelper
                 else
                 {
                     $paramArray[$index] = $index . '=' . $value;
+                    $isReplaced = true;
                 }
             }
+        }
+        else
+        {
+            $paramArray[$index] = $index . '=' . $value;
         }
         return $basePath . '?' . implode('&', $paramArray);
     }

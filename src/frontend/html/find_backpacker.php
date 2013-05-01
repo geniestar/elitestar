@@ -31,9 +31,11 @@ if (isset($_GET['city']) && '' !== $_GET['city'])
     $city = intval($_GET['city']);
 }
 
-if (isset($_GET['start']) && '' !== $_GET['start'])
+if (isset($_GET['page']) && '' !== $_GET['page'] && intval($_GET['page']) - 1 > 0)
 {
-    $start = intval($_GET['start']);
+    $page = intval($_GET['page']) - 1;
+    $count = 20;
+    $start = $page*20;
 }
 
 if (isset($_GET['sort']) && '' !== $_GET['sort'])
@@ -169,7 +171,7 @@ $tailData = array(
     </head>
     <body>
         <?php echo ContentGenerator::getContent('common_banner', array('title' => EliteHelper::getLangString('COMMON_B_TITLE')));?>
-        <?php echo ContentGenerator::getContent('common_menu', array('user' => $user));?>
+        <?php echo ContentGenerator::getContent('common_menu', array('user' => $user, 'isBackpacker' => true));?>
         <div class="main-container">
             <div class="col-left col">
                 <div class="row">
@@ -188,7 +190,7 @@ $tailData = array(
                     <?php foreach ($backpackers as $backpacker):?>              
                         <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));?>
                     <?php endforeach?>
-                    <?php echo ContentGenerator::getContent('searchresult_pagenation', array('total' => $total, 'url' => $_SERVER['REQUEST_URI']));?>
+                    <?php echo ContentGenerator::getContent('searchresult_pagenation', array('total' => $total[0]['total'], 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
             </div>
         </div>

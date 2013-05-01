@@ -1,15 +1,19 @@
 <div id="menu-container">
     <div id="menu">
         <div class="btn">
-            <div class="btn-container">
-                <div class="menu-icon menu-sprite menu-find_houses"></div>
-                <div class="title">{{i18n.COMMON_MENU_FIND_HOUSES}}</div>
+            <div class="btn-container {{#isHouse}}selected{{/isHouse}}">
+                <a href="/find_house.php">
+                    <div class="menu-icon menu-sprite menu-find_houses"></div>
+                    <div class="title">{{i18n.COMMON_MENU_FIND_HOUSES}}</div>
+                </a>
             </div>
         </div>
         <div class="btn">
-            <div class="btn-container">
-                <div class="menu-icon menu-sprite menu-find_customers"></div>
-                <div class="title">{{i18n.COMMON_MENU_FIND_CUSTOMERS}}</div>
+            <div class="btn-container {{#isBackpacker}}selected{{/isBackpacker}}">
+                <a href="/find_backpacker.php">
+                    <div class="menu-icon menu-sprite menu-find_customers"></div>
+                    <div class="title">{{i18n.COMMON_MENU_FIND_CUSTOMERS}}</div>
+                </a>
             </div>
         </div>
         <div class="btn btn-right">
@@ -19,14 +23,14 @@
                     <div class="menu-icon menu-sprite menu-settings"></div>
                 </div>
                 <div class="extension-link hidden">
-                    <div class="extension-item"><a href="./admin?action=info">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>
-                    <div class="extension-item"><a href="./admin?action=role-info">{{i18n.COMMON_MENU_SETTINGS}}</a></div>
+                    <div class="extension-item"><a href="./admin.php?action=info">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>
+                    <div class="extension-item"><a href="./admin.php?action=settings">{{i18n.COMMON_MENU_SETTINGS}}</a></div>
                     {{#showProfit}}
-                    <div class="extension-item"><a href="./admin?action=profits">{{i18n.COMMON_MENU_PROFITS}}</a></div>
+                    <div class="extension-item"><a href="./admin.php?action=profits">{{i18n.COMMON_MENU_PROFITS}}</a></div>
                     {{/showProfit}}
-                    <div class="extension-item"><a href="./admin?action=messasges">{{i18n.COMMON_MENU_MESSAGES}}</a></div>
-                    <div class="extension-item"><a id="suggest-btn" href="#">{{i18n.COMMON_MENU_SUGGEST}}</a></div>
-                    <div class="extension-item"><a href="./admin?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
+                    <div class="extension-item"><a href="./admin.php?action=messages">{{i18n.COMMON_MENU_MESSAGES}}</a></div>
+                    <div class="extension-item"><a href="./admin.php?action=suggestion">{{i18n.COMMON_MENU_SUGGEST}}</a></div>
+                    <div class="extension-item"><a href="./admin.php?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
                 </div>
             {{/isLogin}}
             {{^isLogin}}

@@ -1,7 +1,12 @@
 <div class="pagenation">
     {{#pagenations}}
         {{^skip}}
-            <div class="page-item"><a href="{{url}}">{{name}}</a></div>
+            {{#url}}
+                <div class="page-item"><a href="{{url}}">{{name}}</a></div>
+            {{/url}}
+            {{^url}}
+                <div class="page-item">{{name}}</div>
+            {{/url}}
         {{/skip}}
         {{#skip}}
             <div class="page-item">...</div>

@@ -17,7 +17,7 @@ else
     $role = 'backpacker';
 }
 EliteHelper::setParamsToJs('role', $role);
-if ('basic' == $_GET['action'])
+if ('basic' == $_GET['action'] || !isset($_GET['action']))
 {
     EliteHelper::setParamsToJs('type', 'basic');
     $tabs = array(array('class' => 'basic-info', 'name' => EliteHelper::getLangString('COMMON_MENU_BASIC_INFO')));

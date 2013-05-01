@@ -271,13 +271,20 @@ background-color: #B2B2B2;
             .title {
                 float: left;
                 margin-top: 1px;
-            
             }
-            .title:hovor {
+            a {
+                color: $black;
+            }
+        }
+        .btn-container.selected {
+            a {
                 color: #22CFBD;
             }
-            .title.selected {
-                color: #22CFBD;
+            .menu-find_houses {
+                background-position: 0 -138px;
+            }
+            .menu-find_customers {
+                background-position: 0 -185px;
             }
         }
     }
