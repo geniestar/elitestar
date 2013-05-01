@@ -12,5 +12,8 @@ foreach($data['houseDimemsions']['description_position'] as $position)
     $positionDesc[$position['value']] = EliteHelper::getLangString('REG_MORE_DESCRIPTION_' . $position['value'] . '_DESC');
 }
 EliteHelper::setParamsToJs('positionDesc', $positionDesc);
-
+if (count($data['houseobjects']) > 2)
+{
+    $data['isScroll'] = true;
+}
 ?>

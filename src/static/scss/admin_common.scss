@@ -109,10 +109,11 @@
         width: 144px;
         height: 150px;
         padding: 5px;
-        float: left;
-        margin: 0 5px;
+        display: inline-block;
         border: 5px solid #EFEFEF;
         position: relative;
+        background-color: #DDD;
+        white-space: nowrap;
         a {
             margin-top: 5px;
         }
@@ -130,21 +131,44 @@
     }
     #houseobject-add {
         cursor: pointer;
+        width: 144px;
+        height: 151px;
+        padding: 5px;
+        display: inline-block;
         background-color: #CCC;
-        width: 164px;
-        height: 170px;
-        float: left;
-        margin: 0 5px;
+        border: 4px solid #CCC;
+
         .admin-add_property {
             width: 74px;
             height: 42px;
-            margin: 44px 0 0 40px;
+            margin: 44px 0 0 30px;
+            background-position: 0 -63px;
         }
         .title {
-            margin: 10px 0 0 35px;
+            margin: 10px 0 0 25px;
             color: $white;
             font-size: 16px;
         }
+    }
+    .admin-arrow {
+        width: 10px;
+        height: 27px;
+        margin: 70px 0 0 5px;
+        cursor: pointer;
+    }
+    .arrow-area {
+        width: 20px; 
+        float: left;
+        overflow: hidden;
+    }
+    .container {
+        white-space: nowrap;
+    }
+    #selector {
+        float: left;
+        width: 505px;
+        height: 180px;
+        overflow: hidden;
     }
 }
 .houseobject-photo-item {

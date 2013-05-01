@@ -3,7 +3,7 @@ YUI({
         mapper: '/js/mapper.js',
         ecalendar: '/js/ecalendar.js'
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', function(Y) {
 var selectedObjectBtn = null;
 var replaceAllSuburbs = function(selector, id) {
     var select = Y.one(selector);
@@ -19,6 +19,26 @@ var replaceAllSuburbs = function(selector, id) {
 }
 if ('settings' === YAHOO.EliteStar.params.type ) {
 if ('houseowner' === YAHOO.EliteStar.params.role) {
+    initScrollView =  function() {
+        if (Y.one('#houseobject-selector .container').hasClass('is-scroll')) {
+            var scrollView = new Y.ScrollView({
+                id: 'scrollview-selector',
+                srcNode : '#houseobject-selector .container',
+                width : 504,
+            }); 
+            scrollView.render();
+            Y.one('#houseobject-selector .admin-arrow-left').on('click', function(e){
+                var scrollX = scrollView.get('scrollX') - 200;
+                if (scrollX < 0) {
+                    scrollX = 0;
+                }
+                scrollView.scrollTo(scrollX, 0, 500, "ease-in");
+            });
+            Y.one('#houseobject-selector .admin-arrow-right').on('click', function(e){
+                scrollView.scrollTo(scrollView.get('scrollX') + 200, 0, 500, "ease-in");
+            });
+        }
+    };
     Y.one('.admin-tab-settings').on('click', function(e){
         var serviceTab = Y.one('.admin-tab-service');
         serviceTab.removeClass('selected');
@@ -139,6 +159,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
             setupForm();
         }
     });
+    initScrollView();
     Y.delegate('click', getForm, Y.one('#houseobject-selector'), '.houseobject-selector-item');
     Y.delegate('click', deletePhoto, Y.one('#ajax-role-form'), '.houseobject-photo-item .admin-close_big');
 

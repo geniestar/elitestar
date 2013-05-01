@@ -1,12 +1,30 @@
-{{#houseobjects}}
-<div class="houseobject-selector-item" data-id="{{id}}">
-<img src="/ugc/c_{{main_photo}}" data-id="{{id}}">
-<div class="clean"></div>
-<a href="#" data-id="{{id}}">{{house_name}}</a>
-<div class="admin-close_big" data-id="{{id}}"></div>
+
+<div class="arrow-area">
+    {{#isScroll}}
+        <div class="admin-sprite admin-arrow admin-arrow-left"></div>
+    {{/isScroll}}
 </div>
-{{/houseobjects}}
-<div id="houseobject-add">
-    <div class="admin-sprite admin-add_property"></div>
-    <div class="title">{{i18n.REG_ADD_PROPERTY}}</div>
+
+<div id="selector">
+<div class="container {{#isScroll}}is-scroll{{/isScroll}}">
+    {{#houseobjects}}
+        <div class="houseobject-selector-item" data-id="{{id}}">
+        <img src="/ugc/c_{{main_photo}}" data-id="{{id}}">
+        <div class="clean"></div>
+        <a href="#" data-id="{{id}}">{{house_name}}</a>
+        <div class="admin-close_big" data-id="{{id}}"></div>
+        </div>
+    {{/houseobjects}}
+    <div id="houseobject-add">
+        <div class="admin-sprite admin-add_property"></div>
+        <div class="title">{{i18n.REG_ADD_PROPERTY}}</div>
+    </div>
+    <div class="clean"></div>
+</div>
+</div>
+
+<div class="arrow-area">
+    {{#isScroll}}
+        <div class="admin-sprite admin-arrow admin-arrow-right"></div>
+    {{/isScroll}}
 </div>
