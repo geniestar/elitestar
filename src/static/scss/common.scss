@@ -265,9 +265,19 @@ background-color: #B2B2B2;
                 margin: 3px 3px 3px 0;
                 vertical-align: middle;
             }
+            .menu-find_houses {
+                background-position: 0 -162px;
+            }
             .title {
                 float: left;
                 margin-top: 1px;
+            
+            }
+            .title:hovor {
+                color: #22CFBD;
+            }
+            .title.selected {
+                color: #22CFBD;
             }
         }
     }
@@ -288,6 +298,8 @@ background-color: #B2B2B2;
         box-shadow:         1px 1px 5px rgba(50, 50, 50, 0.25);
         position: relative;
         right: 2px;
+        top: -1px;
+        z-index: 12;
         text-align: left;
         .extension-item {
             height: 26px;

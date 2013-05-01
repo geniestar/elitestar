@@ -100,4 +100,13 @@ YUI({
 
     Y.delegate('click', deleteFavorite, Y.one('#favorites .favorites'), '.listing-delete');
     Y.delegate('click', getFavorite, Y.one('#favorites .favorites'), 'a');
+    Y.one('#menu .btn-right').on('mouseover', function() {
+        Y.one('.extension-link').removeClass('hidden');
+    });
+    Y.one('#menu .btn-right').on('mouseout', function() {
+        Y.one('.extension-link').addClass('hidden');
+    });
+    Y.one('.extension-link').one('mouseout', function() {
+        Y.one('.extension-link').addClass('hidden');
+    });
 });
