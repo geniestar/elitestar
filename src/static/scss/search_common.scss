@@ -172,11 +172,24 @@
             margin-right: 15px;
             float: left;
         }
+        .listing-sort_d {
+            width: 16px;
+            height: 17px;
+            margin-right: 15px;
+            float: left;
+        }
         .desc {
             margin: 0 5px;    
             float: left;
             a {
                 color: $white;
+            }
+        }
+    }
+    .sort-item.selected {
+        .desc {
+            a {
+                text-decoration: underline;
             }
         }
     }
@@ -483,5 +496,24 @@
             right: 10px;
             bottom: 10px;
         }
+    }
+}
+
+.pagenation {
+    overflow: hidden;
+    padding: 20px 0 40px 0;
+    margin: 0 auto;
+    float: right;
+    div {
+        float: left;
+        margin: 0 2px;
+    }
+    div.selected {
+        background-color: #EEE;
+    }
+    
+    a {
+        font-size: 10px;
+        color: $gray;
     }
 }

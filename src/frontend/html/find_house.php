@@ -192,6 +192,7 @@ $tailData = array(
                     <?php foreach ($houseObjects as $houseObject):?>              
                         <?php echo ContentGenerator::getContent('searchresult_houseobject', array('houseObject' => $houseObject, 'user' => $user));?>
                     <?php endforeach?>
+                    <?php echo ContentGenerator::getContent('searchresult_pagenation', array('total' => $total, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
             </div>
         </div>

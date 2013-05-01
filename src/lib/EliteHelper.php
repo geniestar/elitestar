@@ -646,5 +646,30 @@ class EliteHelper
             'message' => EliteHelper::getErrorString($errorCode)
         ));
     }
+    static function replaceUrlParam($url, $index, $value)
+    {
+        
+        $tmp = explode('?', $url);
+        $basePath = $tmp[0];
+        $paramArray = array();
+        if (isset($tmp[1]))
+        {
+            $paramArray[$index] = $index . '=' . $value;
+            $tmp2 = explode('&', $tmp[1]);
+            foreach($tmp2 as $paramItem)
+            {
+                $tmp3 = explode('=', $paramItem);
+                if ($tmp3[0] !== $index)
+                {
+                    $paramArray[$tmp3[0]] = $paramItem;
+                }
+                else
+                {
+                    $paramArray[$index] = $index . '=' . $value;
+                }
+            }
+        }
+        return $basePath . '?' . implode('&', $paramArray);
+    }
 }
 ?>

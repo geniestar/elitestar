@@ -1,15 +1,15 @@
 <div id="sort-bar">
     <div class="title">{{i18n.SEARCH_RESULT_VIEW_AS}}</div>
-    <div class="sort-item">
-        <div class="desc"><a href='#'>{{i18n.SEARCH_RESULT_UPDATED_TIME}}</a></div>
-        <div class="listing-sort listing-sprite"></div>
+    <div class="sort-item {{#updatedTimeSelected}}selected{{/updatedTimeSelected}}">
+        <div class="desc"><a href='{{updatedTimeUrl}}'>{{i18n.SEARCH_RESULT_UPDATED_TIME}}</a></div>
+        <div class="listing-sort{{#updatedTimeD}}_d{{/updatedTimeD}} listing-sprite"></div>
     </div>
-    <div class="sort-item">
-        <div class="desc"><a href='#'>{{i18n.SEARCH_RESULT_RENT}}</a></div>
-        <div class="listing-sort listing-sprite"></div>
+    <div class="sort-item {{#priceSelected}}selected{{/priceSelected}}">
+        <div class="desc"><a href='{{priceUrl}}'>{{i18n.SEARCH_RESULT_RENT}}</a></div>
+        <div class="listing-sort{{#priceD}}_d{{/priceD}} listing-sprite"></div>
     </div>
-    <div class="sort-item">
-        <div class="desc"><a href='#'>{{i18n.SEARCH_RESULT_DURATION}}</a></div>
-        <div class="listing-sort listing-sprite"></div>
+    <div class="sort-item {{#durationSelected}}selected{{/durationSelected}}">
+        <div class="desc"><a href='{{durationUrl}}'>{{i18n.SEARCH_RESULT_DURATION}}</a></div>
+        <div class="listing-sort{{#durationD}}_d{{/durationD}} listing-sprite"></div>
     </div>
 </div>

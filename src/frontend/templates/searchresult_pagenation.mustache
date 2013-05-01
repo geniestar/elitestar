@@ -1,0 +1,16 @@
+<div class="pagenation">
+    {{#pagenations}}
+        {{^skip}}
+            <div class="page-item"><a href="{{url}}">{{name}}</a></div>
+        {{/skip}}
+        {{#skip}}
+            <div class="page-item">...</div>
+        {{/skip}}
+    {{/pagenations}}
+    {{#prevPageUrl}}
+        <div class="page-item"><a href="{{prevPageUrl}}">{{i18n.SEARCH_RESULT_PREV_PAGE}}</a></div>
+    {{/prevPageUrl}}
+    {{#nextPageUrl}}
+        <div class="page-item"><a href="{{nextPageUrl}}">{{i18n.SEARCH_RESULT_NEXT_PAGE}}</a></div>
+    {{/nextPageUrl}}
+</div>

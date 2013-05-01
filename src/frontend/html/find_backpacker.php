@@ -188,6 +188,7 @@ $tailData = array(
                     <?php foreach ($backpackers as $backpacker):?>              
                         <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));?>
                     <?php endforeach?>
+                    <?php echo ContentGenerator::getContent('searchresult_pagenation', array('total' => $total, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
             </div>
         </div>

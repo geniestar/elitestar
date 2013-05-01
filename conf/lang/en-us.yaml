@@ -56,6 +56,8 @@ languages:
     SEARCH_RESULT_MESSAGE_LEAVE_MESSAGE: 'Leave a message.'
     SEARCH_RESULT_MESSAGE_SEND_MESSAGE_SUCCESSFULLY: 'Message sent successfully.'
     SEARCH_RESULT_MESSAGE_SEND_REPLY_SUCCESSFULLY: 'Reply sent successfully.'
+    SEARCH_RESULT_PREV_PAGE: 'Prev'
+    SEARCH_RESULT_NEXT_PAGE: 'Next'
     LOGIN_USERID: 'Username'
     LOGIN_PW: 'Password'
     LOGIN_REMEMBERME: 'Remember Me'
