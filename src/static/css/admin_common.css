@@ -97,60 +97,61 @@
 /* line 12, ../scss/admin_common.scss */
 .col-left-left-big {
   width: 558px;
+  padding-bottom: 40px;
 }
 
-/* line 15, ../scss/admin_common.scss */
+/* line 16, ../scss/admin_common.scss */
 .col-right-left-big {
   width: 160px;
   margin-left: 2px;
 }
 
-/* line 20, ../scss/admin_common.scss */
+/* line 21, ../scss/admin_common.scss */
 #admin-menu {
   margin: 10px 0;
   position: relative;
   height: 24px;
 }
-/* line 24, ../scss/admin_common.scss */
+/* line 25, ../scss/admin_common.scss */
 #admin-menu div {
   float: left;
 }
-/* line 27, ../scss/admin_common.scss */
+/* line 28, ../scss/admin_common.scss */
 #admin-menu div:nth-child(2) {
   margin-left: 110px;
 }
-/* line 30, ../scss/admin_common.scss */
+/* line 31, ../scss/admin_common.scss */
 #admin-menu .admin-alteration {
   width: 114px;
   height: 24px;
   position: absolute;
   left: -20px;
 }
-/* line 36, ../scss/admin_common.scss */
+/* line 37, ../scss/admin_common.scss */
 #admin-menu .seperator {
   width: 1.3px;
   height: 24px;
   margin: 0 10px;
   background-color: #666666;
 }
-/* line 42, ../scss/admin_common.scss */
+/* line 43, ../scss/admin_common.scss */
 #admin-menu .title {
   font-size: 14px;
   font-weight: bold;
   margin-top: 3px;
 }
-/* line 46, ../scss/admin_common.scss */
+/* line 47, ../scss/admin_common.scss */
 #admin-menu .title a {
   color: #666666;
 }
 
-/* line 52, ../scss/admin_common.scss */
+/* line 53, ../scss/admin_common.scss */
 #admin-tabs {
   width: 100%;
   height: 41px;
   border-bottom: 1px solid #232323;
 }
-/* line 56, ../scss/admin_common.scss */
+/* line 57, ../scss/admin_common.scss */
 #admin-tabs .admin-tab {
   position: relative;
   bottom: -2px;
@@ -172,15 +173,15 @@
   color: #FFF;
 }
 
-/* line 81, ../scss/admin_common.scss */
+/* line 82, ../scss/admin_common.scss */
 .houseowner #admin-menu .title a:hover {
   color: #007AFA;
 }
-/* line 86, ../scss/admin_common.scss */
+/* line 87, ../scss/admin_common.scss */
 .houseowner #admin-tabs {
   border-bottom: 1px solid #007AFA;
 }
-/* line 88, ../scss/admin_common.scss */
+/* line 89, ../scss/admin_common.scss */
 .houseowner #admin-tabs .admin-tab {
   cursor: pointer;
   border-color: #007AFA;
@@ -193,12 +194,12 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
 }
-/* line 95, ../scss/admin_common.scss */
+/* line 96, ../scss/admin_common.scss */
 .houseowner #admin-tabs .admin-tab.selected {
   border-bottom-color: #FFF;
 }
 
-/* line 102, ../scss/admin_common.scss */
+/* line 103, ../scss/admin_common.scss */
 #houseobject-selector {
   width: 547px;
   background-color: #EFEFEF;
@@ -206,7 +207,7 @@
   padding: 5px;
   margin-top: 10px;
 }
-/* line 108, ../scss/admin_common.scss */
+/* line 109, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item {
   width: 144px;
   height: 150px;
@@ -216,12 +217,13 @@
   position: relative;
   background-color: #DDD;
   white-space: nowrap;
+  text-align: center;
 }
-/* line 117, ../scss/admin_common.scss */
+/* line 119, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item a {
   margin-top: 5px;
 }
-/* line 120, ../scss/admin_common.scss */
+/* line 122, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item .admin-close_big {
   cursor: pointer;
   width: 20px;
@@ -230,11 +232,11 @@
   right: 5px;
   top: 5px;
 }
-/* line 129, ../scss/admin_common.scss */
+/* line 131, ../scss/admin_common.scss */
 #houseobject-selector .selected {
   border: 5px solid #CCC;
 }
-/* line 132, ../scss/admin_common.scss */
+/* line 134, ../scss/admin_common.scss */
 #houseobject-selector #houseobject-add {
   cursor: pointer;
   width: 144px;
@@ -244,51 +246,124 @@
   background-color: #CCC;
   border: 4px solid #CCC;
 }
-/* line 141, ../scss/admin_common.scss */
+/* line 143, ../scss/admin_common.scss */
 #houseobject-selector #houseobject-add .admin-add_property {
   width: 74px;
   height: 42px;
   margin: 44px 0 0 30px;
   background-position: 0 -63px;
 }
-/* line 147, ../scss/admin_common.scss */
+/* line 149, ../scss/admin_common.scss */
 #houseobject-selector #houseobject-add .title {
   margin: 10px 0 0 25px;
   color: white;
   font-size: 16px;
 }
-/* line 153, ../scss/admin_common.scss */
+/* line 155, ../scss/admin_common.scss */
 #houseobject-selector .admin-arrow {
   width: 10px;
   height: 27px;
   margin: 70px 0 0 5px;
   cursor: pointer;
 }
-/* line 159, ../scss/admin_common.scss */
+/* line 161, ../scss/admin_common.scss */
 #houseobject-selector .arrow-area {
   width: 20px;
   float: left;
   overflow: hidden;
 }
-/* line 164, ../scss/admin_common.scss */
+/* line 166, ../scss/admin_common.scss */
 #houseobject-selector .container {
   white-space: nowrap;
 }
-/* line 167, ../scss/admin_common.scss */
+/* line 169, ../scss/admin_common.scss */
 #houseobject-selector #selector {
   float: left;
   width: 505px;
   height: 180px;
   overflow: hidden;
 }
+/* line 175, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog {
+  background-color: #E2E2E2;
+  width: 400px;
+  height: 125px;
+  padding: 10px;
+  color: #232323;
+  position: absolute;
+  top: 20px;
+  left: 70px;
+  z-index: 10;
+  border: 1px solid #666666;
+  -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+}
+/* line 189, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog .info {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  line-height: 25px;
+  overflow: hidden;
+}
+/* line 195, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog .info div {
+  float: left;
+}
+/* line 198, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog .info .admin-delete {
+  width: 27px;
+  height: 38px;
+  float: left;
+  margin: 0 10px;
+}
+/* line 205, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog .btn-area {
+  padding-left: 125px;
+}
+/* line 207, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog .btn-area .btn {
+  width: 73px;
+  height: 23px;
+  line-height: 23px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #232323;
+  color: #232323;
+  text-align: center;
+  background-color: #e5e5e5;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFD6D6D6');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iODclIiBzdG9wLWNvbG9yPSIjZTVlNWU1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZDZkNmQ2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(87%, #e5e5e5), color-stop(100%, #d6d6d6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
+  cursor: pointer;
+  float: left;
+  margin-right: 20px;
+}
+/* line 226, ../scss/admin_common.scss */
+#houseobject-selector .delete-dialog .admin-close_big {
+  cursor: pointer;
+  width: 20px;
+  height: 19px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
 
-/* line 174, ../scss/admin_common.scss */
+/* line 236, ../scss/admin_common.scss */
 .houseobject-photo-item {
   float: left;
   position: relative;
   margin: 10px;
 }
-/* line 178, ../scss/admin_common.scss */
+/* line 240, ../scss/admin_common.scss */
 .houseobject-photo-item .admin-close_big {
   cursor: pointer;
   width: 20px;
@@ -298,29 +373,29 @@
   top: 2px;
 }
 
-/* line 188, ../scss/admin_common.scss */
+/* line 250, ../scss/admin_common.scss */
 .big-title {
   color: #3b91d9;
   font-size: 20px;
   padding: 20px 0;
 }
 
-/* line 196, ../scss/admin_common.scss */
+/* line 258, ../scss/admin_common.scss */
 #messages .title {
   color: #3b91d9;
 }
 
-/* line 200, ../scss/admin_common.scss */
+/* line 262, ../scss/admin_common.scss */
 .message {
   position: relative;
   margin-bottom: 10px;
 }
-/* line 203, ../scss/admin_common.scss */
+/* line 265, ../scss/admin_common.scss */
 .message .message-single {
   padding: 10px 10px 0 10px;
   border-bottom: 1px solid #ccc;
 }
-/* line 207, ../scss/admin_common.scss */
+/* line 269, ../scss/admin_common.scss */
 .message .admin-close {
   cursor: pointer;
   width: 14px;
@@ -329,59 +404,64 @@
   right: 5px;
   top: 5px;
 }
-/* line 215, ../scss/admin_common.scss */
+/* line 277, ../scss/admin_common.scss */
 .message .message-body {
   margin: 10px 0;
   line-height: 16px;
 }
-/* line 219, ../scss/admin_common.scss */
+/* line 281, ../scss/admin_common.scss */
 .message .reply {
   padding: 10px 10px 0 20px;
 }
-/* line 222, ../scss/admin_common.scss */
+/* line 284, ../scss/admin_common.scss */
 .message .reply-form {
   padding: 5px;
 }
-/* line 224, ../scss/admin_common.scss */
+/* line 286, ../scss/admin_common.scss */
 .message .reply-form input {
   float: left;
 }
-/* line 227, ../scss/admin_common.scss */
+/* line 289, ../scss/admin_common.scss */
 .message .reply-form input[type="text"] {
   width: 445px;
 }
-/* line 230, ../scss/admin_common.scss */
+/* line 292, ../scss/admin_common.scss */
 .message .reply-form input[type="submit"] {
   margin: 3px 10px;
 }
 
-/* line 236, ../scss/admin_common.scss */
+/* line 298, ../scss/admin_common.scss */
+#form-submit {
+  margin-top: 10px;
+}
+
+/* line 302, ../scss/admin_common.scss */
 .message:nth-child(even) {
   background-color: #EEE;
 }
 
-/* line 240, ../scss/admin_common.scss */
+/* line 306, ../scss/admin_common.scss */
 #previous-messages-btn {
   margin: 10px 0;
 }
 
-/* line 245, ../scss/admin_common.scss */
+/* line 311, ../scss/admin_common.scss */
 #suggestion .big-title {
   color: #232323;
 }
-/* line 249, ../scss/admin_common.scss */
+/* line 315, ../scss/admin_common.scss */
 #suggestion .desc {
   color: #666666;
   line-height: 20px;
 }
-/* line 254, ../scss/admin_common.scss */
+/* line 320, ../scss/admin_common.scss */
 #suggestion textarea {
   float: left;
   height: 150px;
   width: 400px;
   margin-top: 10px;
 }
-/* line 261, ../scss/admin_common.scss */
+/* line 327, ../scss/admin_common.scss */
 #suggestion input[type="submit"] {
   float: left;
   position: relative;
@@ -389,72 +469,79 @@
   margin: 140px 0 0 20px;
 }
 
-/* line 271, ../scss/admin_common.scss */
+/* line 337, ../scss/admin_common.scss */
 #profits .admin-calendar {
   float: left;
   width: 17px;
-  height: 17px;
+  height: 16px;
   margin: 4px 3px;
 }
-/* line 277, ../scss/admin_common.scss */
+/* line 343, ../scss/admin_common.scss */
+#profits .admin-calendar_big {
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+/* line 350, ../scss/admin_common.scss */
 #profits .admin-people {
   float: left;
   width: 13px;
   height: 17px;
   margin: 4px 3px;
-  background-position: 0 -194px;
 }
-/* line 284, ../scss/admin_common.scss */
+/* line 356, ../scss/admin_common.scss */
 #profits .admin-money1 {
   float: left;
   width: 9px;
   height: 15px;
   margin: 4px 3px;
 }
-/* line 290, ../scss/admin_common.scss */
+/* line 362, ../scss/admin_common.scss */
 #profits .admin-money2 {
   float: left;
   width: 9px;
   height: 13px;
   margin: 8px 3px;
-  background-position: 0 -213px;
+  background-position: 0 -240px;
 }
-/* line 297, ../scss/admin_common.scss */
+/* line 369, ../scss/admin_common.scss */
 #profits .admin-equal {
   float: left;
   width: 16px;
   height: 11px;
   margin: 6px 3px;
 }
-/* line 303, ../scss/admin_common.scss */
+/* line 375, ../scss/admin_common.scss */
 #profits .admin-plus {
   float: left;
   width: 13px;
   height: 14px;
   margin: 5px 3px;
 }
-/* line 309, ../scss/admin_common.scss */
+/* line 381, ../scss/admin_common.scss */
 #profits .profit-title {
   font-size: 30px;
   color: #CCC;
   margin: 10px;
 }
-/* line 314, ../scss/admin_common.scss */
+/* line 386, ../scss/admin_common.scss */
 #profits .desc-area {
   overflow: hidden;
   margin-left: 80px;
   margin-bottom: 10px;
 }
-/* line 318, ../scss/admin_common.scss */
+/* line 390, ../scss/admin_common.scss */
 #profits .desc-area div {
   float: left;
 }
-/* line 321, ../scss/admin_common.scss */
+/* line 393, ../scss/admin_common.scss */
 #profits .desc-area .title {
   font-size: 16px;
   margin: 2px 20px 0 0;
 }
-/* line 326, ../scss/admin_common.scss */
+/* line 398, ../scss/admin_common.scss */
 #profits .house-object {
   width: 550px;
   height: 100px;
@@ -462,94 +549,86 @@
   padding: 10px 0;
   border-bottom: 1px solid #1B1464;
 }
-/* line 332, ../scss/admin_common.scss */
+/* line 404, ../scss/admin_common.scss */
 #profits .house-object .admin-plus {
   margin: 8px 3px;
 }
-/* line 335, ../scss/admin_common.scss */
+/* line 407, ../scss/admin_common.scss */
 #profits .house-object .admin-equal {
   margin: 9px 3px;
 }
-/* line 340, ../scss/admin_common.scss */
+/* line 412, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area {
   float: left;
   height: 100px;
   width: 110px;
 }
-/* line 344, ../scss/admin_common.scss */
+/* line 416, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area img {
   margin: 5px;
   width: 90px;
 }
-/* line 348, ../scss/admin_common.scss */
+/* line 420, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area .title {
   margin: 2px 5px;
   color: #3b91d9;
 }
-/* line 353, ../scss/admin_common.scss */
+/* line 425, ../scss/admin_common.scss */
 #profits .house-object .date-area {
   float: left;
   height: 100px;
   width: 140px;
 }
-/* line 357, ../scss/admin_common.scss */
+/* line 429, ../scss/admin_common.scss */
 #profits .house-object .date-area input {
   width: 100px;
   float: left;
 }
-/* line 361, ../scss/admin_common.scss */
+/* line 433, ../scss/admin_common.scss */
 #profits .house-object .date-area .title {
   margin: 10px 0;
   clear: both;
 }
-/* line 365, ../scss/admin_common.scss */
-#profits .house-object .date-area .admin-calendar {
-  float: left;
-  width: 17px;
-  height: 17px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-/* line 373, ../scss/admin_common.scss */
+/* line 438, ../scss/admin_common.scss */
 #profits .house-object .people-area {
   float: left;
   height: 100px;
   width: 60px;
   padding: 33px 0 0 0;
 }
-/* line 378, ../scss/admin_common.scss */
+/* line 443, ../scss/admin_common.scss */
 #profits .house-object .people-area input {
   float: left;
   width: 30px;
   float: left;
 }
-/* line 384, ../scss/admin_common.scss */
+/* line 449, ../scss/admin_common.scss */
 #profits .house-object .rent-area {
   float: left;
   height: 100px;
   width: 100px;
   padding: 33px 0 0 0;
 }
-/* line 389, ../scss/admin_common.scss */
+/* line 454, ../scss/admin_common.scss */
 #profits .house-object .rent-area input {
   float: left;
   width: 45px;
   float: left;
 }
-/* line 395, ../scss/admin_common.scss */
+/* line 460, ../scss/admin_common.scss */
 #profits .house-object .amount-area {
   float: left;
   height: 100px;
   width: 140px;
   padding: 33px 0 0 0;
 }
-/* line 400, ../scss/admin_common.scss */
+/* line 465, ../scss/admin_common.scss */
 #profits .house-object .amount-area input {
   float: left;
   width: 90px;
   float: left;
 }
-/* line 406, ../scss/admin_common.scss */
+/* line 471, ../scss/admin_common.scss */
 #profits .house-object input[type="text"] {
   float: left;
   -webkit-border-radius: 0;
@@ -560,21 +639,21 @@
   color: #666666;
   vertical-align: middle;
 }
-/* line 417, ../scss/admin_common.scss */
+/* line 482, ../scss/admin_common.scss */
 #profits .total-area {
   padding-right: 10px;
 }
-/* line 419, ../scss/admin_common.scss */
+/* line 484, ../scss/admin_common.scss */
 #profits .total-area div {
   float: right;
 }
-/* line 422, ../scss/admin_common.scss */
+/* line 487, ../scss/admin_common.scss */
 #profits .total-area .title {
   margin: 4px 3px;
   color: #666666;
   font-size: 14px;
 }
-/* line 427, ../scss/admin_common.scss */
+/* line 492, ../scss/admin_common.scss */
 #profits .total-area input[type="text"] {
   float: right;
   -webkit-border-radius: 0;

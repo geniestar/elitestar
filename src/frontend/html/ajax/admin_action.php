@@ -75,4 +75,9 @@ else if (isset($_POST['action']) && 'suggestions' === $_POST['action'])
     Messages::getInstance()->createMessage($user['id'], 'superuser', $_POST['message']); 
     EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_MESSAGE_SUCCESSFULLY')));
 }
+else if (isset($_POST['action']) && 'delete-object' === $_POST['action'])
+{
+    HouseObjects::getInstance()->deleteHouseObject($user['id'], $_POST['objectid']); 
+    EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('ADMIN_DELETED_OBJECT')));
+}
 ?>

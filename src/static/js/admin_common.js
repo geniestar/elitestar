@@ -46,6 +46,9 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         var settingsTab = Y.one('.admin-tab-settings');
         settingsTab.addClass('selected');
         Y.one('#' + settingsTab.getAttribute('data-id')).removeClass('hidden');
+        if ('' === Y.one('#houseobject').get('innerHTML')) {
+            Y.one('#form-submit').addClass('hidden');
+        }
     });
     Y.one('.admin-tab-service').on('click', function(e){
         var settingsTab = Y.one('.admin-tab-settings');
@@ -54,6 +57,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         var serviceTab = Y.one('.admin-tab-service');
         serviceTab.addClass('selected');
         Y.one('#' + serviceTab.getAttribute('data-id')).removeClass('hidden');
+        Y.one('#form-submit').removeClass('hidden');
     });
     
     var setupForm = function() {
@@ -83,7 +87,12 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         });
     };
 
+    var objectIdToBeDeleted = null;
+    var currentSelectedId = null;
     var getForm = function(e) {
+        if (e.target.hasClass('admin-close_big')) {
+            return;
+        }
         e.preventDefault(); 
         if (selectedObjectBtn) {
             selectedObjectBtn.removeClass('selected');
@@ -106,11 +115,37 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         request = Y.io('/ajax/admin_action.php', cfg);
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
+            currentSelectedId = e.target.getAttribute('data-id');
             Y.one('#houseobject').set('innerHTML', res.data.html);
+            Y.one('#form-submit').removeClass('hidden');
             setupForm();
         }
     }
     
+    var deleteObject = function (e) {
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            data: {
+                action: 'delete-object',
+                objectid: objectIdToBeDeleted,
+            }
+        };
+        request = Y.io('/ajax/admin_action.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            alert(res.data.message);
+            Y.one('#houseobject-selector-' + objectIdToBeDeleted).remove();
+            Y.one('.delete-dialog').addClass('hidden');
+            if (currentSelectedId == objectIdToBeDeleted) {
+                Y.one('#houseobject').set('innerHTML', '');
+                Y.one('#form-submit').addClass('hidden');
+            }
+        }else {
+            alert(res.data.message);
+        }
+    }
+
     var deletePhoto = function (e) {
         var cfg = {
             method: 'POST',
@@ -144,7 +179,6 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
     }
 
     Y.one('#houseobject-add').on('click', function(e){
-        
         var cfg = {
             method: 'POST',
             sync: true,
@@ -161,7 +195,18 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
     });
     initScrollView();
     Y.delegate('click', getForm, Y.one('#houseobject-selector'), '.houseobject-selector-item');
+    Y.delegate('click', function(e) {
+        Y.one('.delete-dialog').removeClass('hidden');
+        objectIdToBeDeleted = e.target.getAttribute('data-id');
+    }, Y.one('#houseobject-selector'), '.houseobject-selector-item .admin-close_big');
     Y.delegate('click', deletePhoto, Y.one('#ajax-role-form'), '.houseobject-photo-item .admin-close_big');
+    Y.one('#houseobject-selector .btn-area .btn-cancel').on('click', function() {
+        Y.one('.delete-dialog').addClass('hidden');
+    });
+    Y.one('#close-delete-dialog-btn').on('click', function() {
+        Y.one('.delete-dialog').addClass('hidden');
+    });
+    Y.one('#houseobject-selector .btn-area .btn-delete').on('click', deleteObject);
 
 } else {
     var mapper = new Y.EliteStar.Mapper({

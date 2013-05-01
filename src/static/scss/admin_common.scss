@@ -11,6 +11,7 @@
 }
 .col-left-left-big {
     width: 558px;
+    padding-bottom: 40px;
 }
 .col-right-left-big {
     width: 160px;
@@ -114,6 +115,7 @@
         position: relative;
         background-color: #DDD;
         white-space: nowrap;
+        text-align: center;
         a {
             margin-top: 5px;
         }
@@ -169,6 +171,66 @@
         width: 505px;
         height: 180px;
         overflow: hidden;
+    }
+    .delete-dialog {
+        background-color: #E2E2E2;
+        width: 400px;
+        height: 125px;
+        padding: 10px;
+        color: $black;
+        position: absolute;
+        top: 20px;
+        left: 70px;
+        z-index: 10;
+        border: 1px solid $gray;
+        -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        .info {
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            line-height: 25px;
+            overflow: hidden;
+            div {
+                float: left;
+            }
+            .admin-delete {
+                width: 27px;
+                height: 38px;
+                float: left;
+                margin: 0 10px;
+            }
+        }
+        .btn-area {
+            padding-left: 125px;
+            .btn {
+                width: 73px;
+                height: 23px;
+                line-height: 23px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                border: 1px solid $black;
+                color: $black;
+                text-align: center;
+                background-color: #e5e5e5;
+                @include filter-gradient(#ffffff, #d6d6d6, vertical);
+                $experimental-support-for-svg: true;
+                @include background-image(linear-gradient(top,  #ffffff 0%,#e5e5e5 87%,#d6d6d6 100%));
+                cursor: pointer;
+                float: left;
+                margin-right: 20px;
+            }
+        }
+        .admin-close_big {
+            cursor: pointer;
+            width: 20px;
+            height: 19px;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+        }
     }
 }
 .houseobject-photo-item {
@@ -233,6 +295,10 @@
     }
 }
 
+#form-submit {
+    margin-top:10px;
+}
+
 .message:nth-child(even) {
     background-color: #EEE;
 }
@@ -271,15 +337,21 @@
     .admin-calendar {
         float: left;
         width: 17px;
-        height: 17px;
+        height: 16px;
         margin: 4px 3px;
+    }
+    .admin-calendar_big {
+        float: left;
+        width: 18px;
+        height: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
     }
     .admin-people {
         float: left;
         width: 13px;
         height: 17px;
         margin: 4px 3px;
-        background-position: 0 -194px;
     }
     .admin-money1 {
         float: left;
@@ -292,7 +364,7 @@
         width: 9px;
         height: 13px;
         margin: 8px 3px;
-        background-position: 0 -213px;
+        background-position: 0 -240px;
     }
     .admin-equal {
         float: left;
@@ -361,13 +433,6 @@
             .title {
                 margin: 10px 0;
                 clear: both;
-            }
-            .admin-calendar {
-                float: left;
-                width: 17px;
-                height: 17px;
-                margin: 4px 2px;
-                cursor: pointer;
             }
         }
         .people-area {

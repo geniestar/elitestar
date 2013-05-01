@@ -248,7 +248,14 @@ class HouseObjects
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
-
+    public function deleteHouseObject($userId, $objectId)
+    {
+        $sql = 'DELETE FROM houseobjects WHERE owner_id=? AND id=?';
+        $inputParams = array();
+        $inputParams = array($userId, $objectId);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        return $r;
+    }
 }
 
 //var_dump(HouseObjects::getInstance()->createHouseObject('testaccount1', 1, 3, 'address', 'house name','2013-05-03 12:00:00', 1, 2, 2, 1, 2, array('bbb'=>'aaa'), 180, 200, 'no photo', array(), 'des'));

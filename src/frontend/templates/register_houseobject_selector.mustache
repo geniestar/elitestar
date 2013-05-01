@@ -1,14 +1,12 @@
-
 <div class="arrow-area">
     {{#isScroll}}
         <div class="admin-sprite admin-arrow admin-arrow-left"></div>
     {{/isScroll}}
 </div>
-
 <div id="selector">
 <div class="container {{#isScroll}}is-scroll{{/isScroll}}">
     {{#houseobjects}}
-        <div class="houseobject-selector-item" data-id="{{id}}">
+        <div class="houseobject-selector-item" data-id="{{id}}" id="houseobject-selector-{{id}}">
         <img src="/ugc/c_{{main_photo}}" data-id="{{id}}">
         <div class="clean"></div>
         <a href="#" data-id="{{id}}">{{house_name}}</a>
@@ -27,4 +25,18 @@
     {{#isScroll}}
         <div class="admin-sprite admin-arrow admin-arrow-right"></div>
     {{/isScroll}}
+</div>
+
+<div class="delete-dialog hidden">
+    <div class="info">
+        <div class="admin-delete admin-sprite"></div>
+        <div>{{& i18n.ADMIN_ARE_YOU_SURE}}</div>
+        <div class="clean"></div>
+    </div>
+    <div class="btn-area">
+        <div class="btn btn-delete">{{i18n.ADMIN_DELETE}}</div>
+        <div class="btn btn-cancel">{{i18n.ADMIN_CANCEL}}</div>
+        <div class="clean"></div>
+    </div>
+    <div class="admin-close_big admin-sprite" id="close-delete-dialog-btn"></div>
 </div>
