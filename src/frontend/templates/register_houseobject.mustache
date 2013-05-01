@@ -168,6 +168,7 @@
     </div>
 
     <div class="big-title">{{i18n.REG_MORE_DESCRIPTION}}</div>
+    <div class="clean"></div>
     <div id="more-description">
     <div class="des-template input-set hidden">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_FROM}}</div>
@@ -191,6 +192,7 @@
         <div id="more-des-desc" class="hidden">
             <div class="title sec-title"></div><input type="text" name="desc[]">
         </div>
+        <div class="registerform-close" onclick="YAHOO.EliteStar.onDeleteClick(this);"></div>
         <div class="clean"></div>
     </div>
     {{#description}}
@@ -216,6 +218,7 @@
         <div class="desc-name {{^more}}hidden{{/more}}">
             <div class="title sec-title">{{more_title}}</div><input type="text" name="desc[]" value="{{more}}">
         </div>
+        <div class="registerform-close" onclick="YAHOO.EliteStar.onDeleteClick(this);"></div>
         <div class="clean"></div>
     </div>
     {{/description}}

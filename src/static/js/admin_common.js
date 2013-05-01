@@ -178,6 +178,9 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         }
     }
 
+    YAHOO.EliteStar.onDeleteClick = function(e) {
+       e.parentNode.remove(); 
+    }
     Y.one('#houseobject-add').on('click', function(e){
         var cfg = {
             method: 'POST',

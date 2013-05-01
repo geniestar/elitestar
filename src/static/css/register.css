@@ -1,6 +1,6 @@
-/* line 162, registerform/*.png */
-.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-people, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud, .registerform-ue {
-  background: url('/img/registerform-s5c8e28ee41.png') no-repeat;
+/* line 170, registerform/*.png */
+.registerform-sprite, .registerform-add, .registerform-calendar, .registerform-close, .registerform-fa, .registerform-fb, .registerform-fc, .registerform-fd, .registerform-fe, .registerform-ff, .registerform-fg, .registerform-login, .registerform-people, .registerform-ua, .registerform-ub, .registerform-uc, .registerform-ud, .registerform-ue {
+  background: url('/img/registerform-s05ff7b7432.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -10,7 +10,12 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-calendar {
-  background-position: 0 -360px;
+  background-position: 0 -374px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.registerform-close {
+  background-position: 0 -240px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -25,12 +30,12 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fc {
-  background-position: 0 -330px;
+  background-position: 0 -344px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fd {
-  background-position: 0 -390px;
+  background-position: 0 -404px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -45,7 +50,7 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-fg {
-  background-position: 0 -240px;
+  background-position: 0 -254px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -55,27 +60,27 @@
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-people {
-  background-position: 0 -450px;
+  background-position: 0 -464px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ua {
-  background-position: 0 -474px;
+  background-position: 0 -488px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ub {
-  background-position: 0 -420px;
+  background-position: 0 -434px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-uc {
-  background-position: 0 -300px;
+  background-position: 0 -314px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .registerform-ud {
-  background-position: 0 -270px;
+  background-position: 0 -284px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -417,8 +422,9 @@
 /* line 281, ../scss/register.scss */
 .form #more-description {
   position: relative;
+  padding-left: 15px;
 }
-/* line 283, ../scss/register.scss */
+/* line 284, ../scss/register.scss */
 .form #more-description .registerform-add {
   cursor: pointer;
   width: 26px;
@@ -426,59 +432,70 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: 10;
 }
-/* line 291, ../scss/register.scss */
+/* line 293, ../scss/register.scss */
 .form #more-description .input-set {
+  position: relative;
   height: auto;
 }
+/* line 297, ../scss/register.scss */
+.form #more-description .registerform-close {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  top: 11px;
+  left: -12px;
+  position: absolute;
+}
 
-/* line 298, ../scss/register.scss */
+/* line 309, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 302, ../scss/register.scss */
+/* line 313, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 307, ../scss/register.scss */
+/* line 318, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 312, ../scss/register.scss */
+/* line 323, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 317, ../scss/register.scss */
+/* line 328, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 322, ../scss/register.scss */
+/* line 333, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
 
-/* line 330, ../scss/register.scss */
+/* line 341, ../scss/register.scss */
 #ajax-role-form {
   position: relative;
 }
-/* line 332, ../scss/register.scss */
+/* line 343, ../scss/register.scss */
 #ajax-role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
 
-/* line 337, ../scss/register.scss */
+/* line 348, ../scss/register.scss */
 input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;

@@ -97,6 +97,9 @@ YUI({
             descNameSet.setAttribute('class', 'hidden');
         }
     }
+    YAHOO.EliteStar.onDeleteClick = function(e) {
+       e.parentNode.remove(); 
+    }
     Y.one('.registerform-add').on('click', function(e){
         var tmpNode = Y.one('.des-template').cloneNode(10);
         Y.one('#more-description').append(tmpNode);
