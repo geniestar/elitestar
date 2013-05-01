@@ -18,23 +18,29 @@
         </div>
         <div class="date-area">
             <input type="text" name="duration_start" size="16" value="{{duration_start}}"></input><div class="admin-sprite admin-calendar"></div>
+            <div class="clean"></div>
             <div class="title">{{i18n.REG_TO}}</div>
             <input type="text" name="duration_end" size="16" value="{{duration_end}}"></input><div class="admin-sprite admin-calendar"></div> 
         </div>
         <div class="people-area">
             <div class="admin-sprite admin-plus"></div>
-            <input type="text" name="tanents" size="16" value="{{tenants}}"></input>
+            <input type="text" name="tenants" size="16" value="{{tenants}}"></input>
         </div>
         <div class="rent-area">
             <div class="admin-sprite admin-plus"></div>
             <div class="admin-sprite admin-money2"></div>
-            <input type="text" name="rent" size="16" value="{{rent}}"></input>
+            <input type="text" name="rent" size="16" value="{{rent_low}}"></input>
         </div>
         <div class="amount-area">
             <div class="admin-sprite admin-equal"></div>
             <div class="admin-sprite admin-money2"></div>
-            <input type="text" name="rent" size="16" value="{{rent}}"></input>
+            <input type="text" name="amount" size="16"></input>
         </div>
     </div>
 {{/houseobjects}}
+<div class="total-area">
+    <input type="text" name="rent" size="16" value="{{rent}}"></input>
+    <div class="admin-sprite admin-money2"></div>
+    <div class="title">{{i18n.ADMIN_PROFITS_TOTAL}}</div>
+</div>
 </div>

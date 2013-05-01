@@ -55,7 +55,7 @@
     border-bottom: 1px solid $black;
     .admin-tab {
         position :relative;
-        bottom: -1px;
+        bottom: -2px;
         margin: 0 2px;
         float: left;
         height: 20px;
@@ -255,6 +255,7 @@
         width: 13px;
         height: 17px;
         margin: 4px 3px;
+        background-position: 0 -194px;
     }
     .admin-money1 {
         float: left;
@@ -266,7 +267,8 @@
         float: left;
         width: 9px;
         height: 13px;
-        margin: 5px 3px;
+        margin: 8px 3px;
+        background-position: 0 -213px;
     }
     .admin-equal {
         float: left;
@@ -288,24 +290,33 @@
     .desc-area {
         overflow: hidden;
         margin-left: 80px;
+        margin-bottom: 10px;
         div {
             float: left;
         }
         .title {
             font-size: 16px;
-            margin: 3px 20px 0 0;
+            margin: 2px 20px 0 0;
         }
     }
     .house-object {
-        width: 500px;
-        height: 150px;
+        width: 550px;
+        height: 100px;
         clear: both;
+        padding: 10px 0;
+        border-bottom: 1px solid #1B1464;
+        .admin-plus {
+            margin: 8px 3px;
+        }
+        .admin-equal {
+            margin: 9px 3px;
+        }
         div {
         }
         .house-desc-area {
             float: left;
-            height: 150px;
-            width: 100px;
+            height: 100px;
+            width: 110px;
             img {
                 margin: 5px;
                 width: 90px;
@@ -317,7 +328,7 @@
         }
         .date-area {
             float: left;
-            height: 150px;
+            height: 100px;
             width: 140px;
             input {
                 width: 100px;
@@ -337,8 +348,9 @@
         }
         .people-area {
             float: left;
-            height: 150px;
+            height: 100px;
             width: 60px;
+            padding: 33px 0 0 0;
             input {
                 float: left;
                 width: 30px;
@@ -347,8 +359,9 @@
         }
         .rent-area {
             float: left;
-            height: 150px;
+            height: 100px;
             width: 100px;
+            padding: 33px 0 0 0;
             input {
                 float: left;
                 width: 45px;
@@ -357,11 +370,12 @@
         }
         .amount-area {
             float: left;
-            height: 150px;
-            width: 100px;
+            height: 100px;
+            width: 140px;
+            padding: 33px 0 0 0;
             input {
                 float: left;
-                width: 50px;
+                width: 90px;
                 float: left;
             }
         }
@@ -374,6 +388,28 @@
             font-size: 12px;
             color: #666666;
             vertical-align: middle;
+        }
+    }
+    .total-area {
+        padding-right: 10px;
+        div {
+            float: right;
+        }
+        .title {
+            margin: 4px 3px;
+            color: $gray;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            float: right;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            padding: 4px;
+            font-size: 12px;
+            color: #666666;
+            vertical-align: middle;
+            width: 90px;
         }
     }
 }

@@ -193,6 +193,7 @@ languages:
     ADMIN_PROFITS_TENANTS: 'tenant(s)'
     ADMIN_PROFITS_RENT: 'Rent(p/w)'
     ADMIN_PROFITS_AMOUNT: 'Amount'
+    ADMIN_PROFITS_TOTAL: 'Total'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
