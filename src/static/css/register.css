@@ -477,38 +477,8 @@
   margin: 20px auto;
   text-align: center;
 }
-/* line 336, ../scss/register.scss */
-#ajax-role-form #cal-btn-arrival-cal {
-  right: 22px;
-  font-size: 10px;
-  line-height: 15px;
-}
-/* line 341, ../scss/register.scss */
-#ajax-role-form #cal-btn-start-cal {
-  right: 22px;
-  font-size: 10px;
-  line-height: 15px;
-}
-/* line 346, ../scss/register.scss */
-#ajax-role-form #cal-btn-end-cal {
-  right: -150px;
-  font-size: 10px;
-  line-height: 15px;
-}
-/* line 351, ../scss/register.scss */
-#ajax-role-form #cal-btn-house-start-cal {
-  right: 22px;
-  font-size: 10px;
-  line-height: 15px;
-}
-/* line 356, ../scss/register.scss */
-#ajax-role-form #cal-btn-house-end-cal {
-  right: -150px;
-  font-size: 10px;
-  line-height: 15px;
-}
 
-/* line 362, ../scss/register.scss */
+/* line 337, ../scss/register.scss */
 input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;

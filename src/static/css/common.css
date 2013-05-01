@@ -422,9 +422,10 @@ input[type="submit"] {
 /* line 172, ../scss/common.scss */
 .calendar {
   width: 220px;
+  line-height: 15px;
 }
 
-/* line 176, ../scss/common.scss */
+/* line 177, ../scss/common.scss */
 .panel {
   z-index: 100;
   padding: 10px;
@@ -439,34 +440,34 @@ input[type="submit"] {
   position: absolute;
 }
 
-/* line 190, ../scss/common.scss */
+/* line 191, ../scss/common.scss */
 .main-container {
   width: 720px;
   margin: 0 auto;
 }
 
-/* line 195, ../scss/common.scss */
+/* line 196, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 199, ../scss/common.scss */
+/* line 200, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 203, ../scss/common.scss */
+/* line 204, ../scss/common.scss */
 .col-right {
   width: 558px;
   margin-left: 2px;
 }
 
-/* line 208, ../scss/common.scss */
+/* line 209, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
 }
-/* line 211, ../scss/common.scss */
+/* line 212, ../scss/common.scss */
 #banner .container {
   width: 720px;
   height: 110px;
@@ -474,14 +475,14 @@ input[type="submit"] {
   position: relative;
   overflow: hidden;
 }
-/* line 217, ../scss/common.scss */
+/* line 218, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 223, ../scss/common.scss */
+/* line 224, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -491,16 +492,16 @@ input[type="submit"] {
   bottom: 0px;
 }
 
-/* line 234, ../scss/common.scss */
+/* line 235, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 238, ../scss/common.scss */
+/* line 239, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
 }
-/* line 240, ../scss/common.scss */
+/* line 241, ../scss/common.scss */
 #menu-container #menu {
   width: 720px;
   margin: 0 auto;
@@ -517,7 +518,7 @@ input[type="submit"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 249, ../scss/common.scss */
+/* line 250, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -525,14 +526,14 @@ input[type="submit"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 255, ../scss/common.scss */
+/* line 256, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 260, ../scss/common.scss */
+/* line 261, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -540,21 +541,21 @@ input[type="submit"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 267, ../scss/common.scss */
+/* line 268, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   margin-top: 1px;
 }
-/* line 273, ../scss/common.scss */
+/* line 274, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 277, ../scss/common.scss */
+/* line 278, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 282, ../scss/common.scss */
+/* line 283, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -565,25 +566,25 @@ input[type="submit"] {
   right: 2px;
   text-align: left;
 }
-/* line 291, ../scss/common.scss */
+/* line 292, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 296, ../scss/common.scss */
+/* line 297, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 303, ../scss/common.scss */
+/* line 304, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 306, ../scss/common.scss */
+/* line 307, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }

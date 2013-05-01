@@ -11,16 +11,16 @@
         <div class="clean"></div>
     </div>
 {{#houseobjects}}
-    <div class="house-object">
+    <div class="house-object" id="houseobject-{{id}}" data-id="{{id}}">
         <div class="house-desc-area">
             <img src="/ugc/c_{{main_photo}}"></img>
             <div class="title">{{house_name}}</div>
         </div>
         <div class="date-area">
-            <input type="text" name="duration_start" size="16" value="{{duration_start}}"></input><div class="admin-sprite admin-calendar"></div>
+            <input type="text" name="duration_start" size="16" value="{{duration_start}}"></input><div class="admin-sprite admin-calendar calendar-start-btn"></div>
             <div class="clean"></div>
             <div class="title">{{i18n.REG_TO}}</div>
-            <input type="text" name="duration_end" size="16" value="{{duration_end}}"></input><div class="admin-sprite admin-calendar"></div> 
+            <input type="text" name="duration_end" size="16" value="{{duration_end}}"></input><div class="admin-sprite admin-calendar calendar-end-btn"></div> 
         </div>
         <div class="people-area">
             <div class="admin-sprite admin-plus"></div>

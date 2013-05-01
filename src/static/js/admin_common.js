@@ -288,7 +288,26 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         });
         Y.one('.total-area input').set('value', total);
     }
+    function initHouseObjects() {
+        var houseobjects = Y.all('.house-object');
+        houseobjects.each(function(houseobject) {
+            var hStartCalendar = new Y.EliteStar.ECalendar({
+                selector: '#houseobject-' + houseobject.getAttribute('data-id') + ' .calendar-start-btn',
+                textSelector: '#houseobject-' + houseobject.getAttribute('data-id') + ' input[name="duration_start"]',
+                id: 'houseobject-cal-start-' + houseobject.getAttribute('data-id'),
+                dateFormat: '%Y/%b/%d'
+            });
+    
+            var hEndCalendar = new Y.EliteStar.ECalendar({
+                selector: '#houseobject-' + houseobject.getAttribute('data-id') + ' .calendar-end-btn',
+                textSelector: '#houseobject-' + houseobject.getAttribute('data-id') + ' input[name="duration_end"]',
+                id: 'houseobject-cal-end-' + houseobject.getAttribute('data-id'),
+                dateFormat: '%Y/%b/%d'
+            });
+        });
+    }
     caculateProfits();
+    initHouseObjects();
     Y.delegate('change', caculateProfits, Y.one('#profits'), 'input');
 }
 });

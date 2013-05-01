@@ -21,10 +21,11 @@ YUI.add("ecalendar", function(Y)
             var dateFormat = cfg.dateFormat;
             var dtdate = Y.DataType.Date;
             var calendarNode = null;
-            Y.one(selector).on('click', function() {
+            var onChangeId = cfg.onChangeId;
+            Y.one(selector).on('click', function(e) {
                 if (!ecalendar) {
                     calendarNode = Y.Node.create('<div id="' + id + '" class="calendar yui3-skin-sam panel"></div>');
-                    Y.one(selector).get('parentNode').append(calendarNode);
+                    Y.one('body').append(calendarNode);
                     ecalendar = new Y.Calendar({
                         contentBox: '#' + id,
                         width:'200px',
@@ -32,13 +33,18 @@ YUI.add("ecalendar", function(Y)
                         showNextMonth: true,
                         date: new Date()
                     }).render();
-                    
+                    calendarNode.setStyle('left', (e.pageX + 10) + 'px');   
+                    calendarNode.setStyle('top', (e.pageY) + 'px');   
+                    calendarNode.setStyle('z-index', 10);   
                     ecalendar.on("selectionChange", function (ev) {
                         var newDate = ev.newSelection[0];
                         Y.one(textSelector).set('value', dtdate.format(newDate, {format:dateFormat}));
+                        Y.one(textSelector).simulate('change');
                         calendarNode.addClass('hidden');
                     });  
                 } else {
+                    calendarNode.setStyle('left', (e.pageX + 10) + 'px');   
+                    calendarNode.setStyle('top', (e.pageY) + 'px');   
                     if (calendarNode.hasClass('hidden')) {
                         calendarNode.removeClass('hidden');
                     } else {
@@ -52,4 +58,4 @@ YUI.add("ecalendar", function(Y)
     Y.namespace("EliteStar");
     Y.EliteStar.ECalendar = ECalendar;
 
-}, '0.0.1', {requires: ['base', 'node', 'calendar', 'datatype-date']});
+}, '0.0.1', {requires: ['base', 'node', 'calendar', 'datatype-date', 'node-event-simulate']});
