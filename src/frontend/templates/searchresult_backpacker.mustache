@@ -6,8 +6,8 @@
             <img src="/img/flags/{{countryFlag}}.jpg">
             <div class="updated-time">{{updatedText}}</div>
        </div> 
-       <div class="right-item">
-           <div class="theme-sprite theme-icon-contact"></div> 
+       <div class="right-item hint" data-hint="{{backpacker.user.name}}</br>{{backpacker.user.phone}}</br>{{backpacker.user.mail}}">
+           <div class="theme-sprite theme-icon-contact hint" data-hint="{{backpacker.user.name}}</br>{{backpacker.user.phone}}</br>{{backpacker.user.mail}}"></div> 
            <div class="white-bar"></div>
        </div>
     </div>
@@ -38,7 +38,7 @@
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_EXPECTABLE}}</div>
                 <div class="desc one-line-desc">
                     {{#additionalHelpArray}} 
-                        <div class="listing-sprite listing-icon listing-{{class}}" data-additional="{{additional}}"></div>
+                        <div class="listing-sprite listing-icon listing-{{class}} {{#additional}}hint{{/additional}}" data-hint="{{additional}}"></div>
                     {{/additionalHelpArray}}
                     {{^additionalHelpArray}}
                         {{i18n.SEARCH_RESULT_NONE}}

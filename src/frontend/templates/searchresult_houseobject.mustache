@@ -17,8 +17,8 @@
            <div class="theme-sprite theme-icon-map"></div> 
            <div class="white-bar"></div>
        </div>
-       <div class="right-item">
-           <div class="theme-sprite theme-icon-contact"></div> 
+       <div class="right-item hint" data-hint="{{houseObject.user.name}}</br>{{houseObject.user.phone}}</br>{{houseObject.user.mail}}">
+           <div class="theme-sprite theme-icon-contact hint" data-hint="{{houseObject.user.name}}</br>{{houseObject.user.phone}}</br>{{houseObject.user.mail}}"></div> 
            <div class="white-bar"></div>
        </div>
     </div>
@@ -49,7 +49,7 @@
                 <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_SERVICE}}</div>
                 <div class="desc">
                     {{#additionalHelpArray}} 
-                        <div class="listing-sprite listing-icon listing-{{class}}" data-additional="{{additional}}"></div>
+                        <div class="listing-sprite listing-icon listing-{{class}} {{#additional}}hint{{/additional}}" data-hint="{{additional}}"></div>
                     {{/additionalHelpArray}}
                     {{^additionalHelpArray}}
                         {{i18n.SEARCH_RESULT_NONE}}

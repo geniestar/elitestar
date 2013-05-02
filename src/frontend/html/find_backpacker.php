@@ -109,7 +109,7 @@ foreach ($results as $result)
 {
     //$ids[] = "'" . $result['user_id'] . "'";
     $userInfo = EliteUsers::getInstance()->queryUser($result['user_id'], null, null, true);
-    $result['user'] = $userInfo;
+    $result['user'] = $userInfo[0];
     $backpackers[] = $result;
 }
 

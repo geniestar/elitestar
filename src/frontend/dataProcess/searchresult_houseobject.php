@@ -17,7 +17,7 @@ foreach ($checkArray as $checkIndex)
     {
         $additionalHelpArray[] = array(
             'class' => $checkIndex,
-            'additional' => isset($additionalHelps[$checkIndex . 'a'])?$additionalHelps[$checkIndex . 'a']:''
+            'additional' => isset($additionalHelps[$checkIndex . 'a'])?str_replace(',', '</br>', $additionalHelps[$checkIndex . 'a']):''
         );
     }
 }

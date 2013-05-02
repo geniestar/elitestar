@@ -113,11 +113,10 @@ foreach ($results as $result)
     //$ids[] = "'" . $result['user_id'] . "'";
     $userInfo = EliteUsers::getInstance()->queryUser($result['owner_id'], null, null, true);
     $ownerInfo = LandLords::getInstance()->queryLandLord($result['owner_id']);
-    $result['user'] = $userInfo;
+    $result['user'] = $userInfo[0];
     $result['owner'] = $ownerInfo;
     $houseObjects[] = $result;
 }
-
 $favorites = array();
 //var_dump($houseObjects);
 if ($user)
