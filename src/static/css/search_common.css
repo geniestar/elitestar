@@ -815,22 +815,65 @@
 }
 
 /* line 502, ../scss/search_common.scss */
+#img-panel {
+  background-color: #E2E2E2;
+  width: 600px;
+  height: 400px;
+  padding: 30px;
+  color: #232323;
+  position: fixed;
+  top: 50%;
+  margin-top: -230px;
+  left: 50%;
+  margin-left: -330px;
+  z-index: 10;
+  border: 1px solid #666666;
+  -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+}
+/* line 518, ../scss/search_common.scss */
+#img-panel .listing-delete {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+/* line 526, ../scss/search_common.scss */
+#img-panel .content-field {
+  width: 100%;
+  height: 100%;
+}
+/* line 529, ../scss/search_common.scss */
+#img-panel .content-field #big-map {
+  width: 600px;
+  height: 400px;
+}
+/* line 533, ../scss/search_common.scss */
+#img-panel .content-field img.big-pic {
+  max-width: 600px;
+  max-height: 400px;
+}
+
+/* line 540, ../scss/search_common.scss */
 .pagenation {
   overflow: hidden;
   padding: 20px 0 40px 0;
   margin: 0 auto;
   float: right;
 }
-/* line 507, ../scss/search_common.scss */
+/* line 545, ../scss/search_common.scss */
 .pagenation div {
   float: left;
   margin: 0 2px;
 }
-/* line 511, ../scss/search_common.scss */
+/* line 549, ../scss/search_common.scss */
 .pagenation div.selected {
   background-color: #EEE;
 }
-/* line 515, ../scss/search_common.scss */
+/* line 553, ../scss/search_common.scss */
 .pagenation a {
   font-size: 10px;
   color: #666666;

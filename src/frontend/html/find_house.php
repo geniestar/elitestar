@@ -171,6 +171,13 @@ $tailData = array(
         <?php echo ContentGenerator::getContent('head', $headData);?>
     </head>
     <body>
+        <div id="img-panel" class="hidden">
+            <div class="content-field">
+                <div id="big-map" class="hidden"></div>
+                <img class="big-pic hidden"></img>
+            </div>
+            <div class="listing-delete"></div>
+        </div>
         <?php echo ContentGenerator::getContent('common_banner', array('title' => EliteHelper::getLangString('COMMON_B_TITLE')));?>
         <?php echo ContentGenerator::getContent('common_menu', array('user' => $user, 'isHouse' => true));?>
         <div class="main-container">

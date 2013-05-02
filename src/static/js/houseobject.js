@@ -61,6 +61,7 @@ YUI.add("houseobject", function(Y)
                     Y.one('#message-panel-board-' + cfg.resultId).addClass('hidden');
                 });
             }
+            Y.delegate('click', this.showBigPic, Y.one('#' + cfg.resultId), '.pic-content ul li img');
         },
         
         _sendMessage: function(e) {
@@ -126,11 +127,43 @@ YUI.add("houseobject", function(Y)
             }
         },
 
+        _initBigGoogleMap: function (resultId, address) {
+            var geocoder;
+            var map;
+            var mapDomObject = Y.one('#big-map');
+            function initialize() {
+                geocoder = new google.maps.Geocoder();
+                var myOptions = {
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                }
+                map = new google.maps.Map(document.getElementById('big-map'), myOptions);
+                codeAddress();
+            }
+            function codeAddress() {
+                if (geocoder) {
+                    geocoder.geocode({ 'address': address }, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            map.setCenter(results[0].geometry.location);
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: results[0].geometry.location
+                            });
+                        } else {
+                            alert("Geocode was not successful for the following reason: " + status);
+                        }
+                    });
+                }
+            }
+            initialize();
+        },
+
         _initGoogleMap: function(resultId) {
             var geocoder;
             var map;
             var mapDomObject = Y.one('#' + resultId + '-map');
             var address = mapDomObject.getAttribute('data-address');
+            var self = this;
             function initialize() {
                 geocoder = new google.maps.Geocoder();
                 var myOptions = {
@@ -157,9 +190,25 @@ YUI.add("houseobject", function(Y)
                 }
             }
             initialize();
+            initBigMap = function() {
+                var panel = Y.one('#img-panel');
+                panel.removeClass('hidden');
+                panel.one('#big-map').removeClass('hidden');
+                panel.one('img').addClass('hidden');
+                self._initBigGoogleMap(resultId, address);
+            }
+            Y.one('#' + resultId + '-map').on('click', initBigMap);
+        },
+
+        showBigPic: function (e) {
+            var panel = Y.one('#img-panel');
+            panel.removeClass('hidden');
+            panel.one('#big-map').addClass('hidden');
+            panel.one('img.big-pic').removeClass('hidden');
+            panel.one('img.big-pic').set('src', '/ugc/' + e.target.getAttribute('data-src'));
         }
     });
-    
+   
     Y.namespace("EliteStar");
     Y.EliteStar.houseObject = houseObject;
 

@@ -200,8 +200,13 @@ languages:
     ADMIN_PROFITS_RENT: 'Rent(p/w)'
     ADMIN_PROFITS_AMOUNT: 'Amount'
     ADMIN_PROFITS_TOTAL: 'Total'
+    ERROR: 'Error!'
+    ERROR_PREV_PAGE: 'Prev Page'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
     FAVORIITE_ROLE_WRONG: 'Role wrong.'
     FAVORIITE_FALUT_TO_GET_DATA: 'Fail to get data.'
+    USER_ID_OR_PASSWORD_ERROR: 'User Id or password error.'
+    INTERNAL_SERVER_ERROR: 'Internal server error.'
+    USER_ID_INVALID: 'User Id invalied, please try another user Id'

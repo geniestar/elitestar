@@ -15,7 +15,7 @@ if ($user)
 }
 else 
 {
-    header('Location: error.php');         
+    header('Location: error.php?error=USER_ID_OR_PASSWORD_ERROR'); 
 }
 
 ?>

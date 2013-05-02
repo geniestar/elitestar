@@ -109,4 +109,17 @@ YUI({
     Y.one('.extension-link').one('mouseout', function() {
         Y.one('.extension-link').addClass('hidden');
     });
+    Y.one('.extension-link').one('mouseover', function() {
+        Y.one('.extension-link').removeClass('hidden');
+    });
+
+    var menuBtns = Y.all('#menu .btn-container ');
+    menuBtns.each(function(btn){
+        btn.on('mouseover', function() {
+            btn.addClass('mouseover');
+        });
+        btn.on('mouseout', function() {
+            btn.removeClass('mouseover');
+        });
+    });
 });

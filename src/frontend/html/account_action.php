@@ -14,7 +14,8 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
     /* user exist */
     if (is_array(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password'], false, true)))
     {
-         exit;
+        header('Location: error.php?error=USER_ID_INVALID');
+        exit;
     }
     $photoFilename = '';
     if (isset($_FILES['user-photo']) && $_FILES['user-photo']['tmp_name'] && EliteHelper::checkIsImage($_FILES['user-photo']['name']))

@@ -10,5 +10,8 @@ YUI({
             resultId: result.get('id')
         });
     result});
+    Y.one('#img-panel .listing-delete').on('click', function(){
+        Y.one('#img-panel').addClass('hidden');
+    });
 
 });
