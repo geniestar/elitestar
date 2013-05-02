@@ -8,26 +8,28 @@ if (!$currentPage)
 $totalPage = floor($data['total']/$pageCount) + 1;
 
 $data['pagenations'] = array();
-for ($i=0; $i < $totalPage ;$i++)
+if ($data['total'] > 0)
 {
-    $isSelected = ($i === $page)?true:false;
-    if ($i+1 != $currentPage)
-    {
-        $data['pagenations'][] = array('name' => $i + 1, 'url' => EliteHelper::replaceUrlParam($data['url'], 'page', $i + 1), 'selected' => $isSelected);
-    }
-    else
-    {
-        $data['pagenations'][] = array('name' => $i + 1, 'url' => '', 'selected' => $isSelected);
-    }
-}
+        for ($i=0; $i < $totalPage ;$i++)
+        {
+            $isSelected = ($i === $page)?true:false;
+            if ($i+1 != $currentPage)
+            {
+                $data['pagenations'][] = array('name' => $i + 1, 'url' => EliteHelper::replaceUrlParam($data['url'], 'page', $i + 1), 'selected' => $isSelected);
+            }
+            else
+            {
+                $data['pagenations'][] = array('name' => $i + 1, 'url' => '', 'selected' => $isSelected);
+            }
+        }
 
-if ($currentPage != 1)
-{
-    $data['prevPageUrl'] = EliteHelper::replaceUrlParam($data['url'], 'page', $currentPage - 1);
+        if ($currentPage != 1)
+        {
+            $data['prevPageUrl'] = EliteHelper::replaceUrlParam($data['url'], 'page', $currentPage - 1);
+        }
+        if ($currentPage != $totalPage)
+        {
+            $data['nextPageUrl'] = EliteHelper::replaceUrlParam($data['url'], 'page', $currentPage + 1);
+        }
 }
-if ($currentPage != $totalPage)
-{
-    $data['nextPageUrl'] = EliteHelper::replaceUrlParam($data['url'], 'page', $currentPage + 1);
-}
-
 ?>

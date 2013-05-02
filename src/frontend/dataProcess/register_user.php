@@ -10,4 +10,11 @@ foreach ($countries as $key => $value)
         'name' => $value
     );
 }
+
+
+EliteHelper::setStringToJs('REG_FILED_EMPTY');
+EliteHelper::setStringToJs('REG_PW_NOT_MATCH');
+EliteHelper::setStringToJs('REG_READ_TOS');
+EliteHelper::setStringToJs('REG_PW_LENGTH');
+EliteHelper::setStringToJs('REG_ID_EMAIL');
 ?>

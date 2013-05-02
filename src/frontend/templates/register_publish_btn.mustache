@@ -5,5 +5,5 @@
 <input id="{{role}}-submit" type="submit" value="{{i18n.REG_PUBLISH_NOW}}">
 {{/updateBtn}}
 {{#updateBtn}}
-<div id="form-submit" class="hidden"><input type="submit" value="{{i18n.REG_SAVE}}"></div>
+<div id="form-submit" class="{{^showBtn}}hidden{{/showBtn}}"><input type="submit" value="{{i18n.REG_SAVE}}"></div>
 {{/updateBtn}}

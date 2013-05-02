@@ -128,14 +128,63 @@ YUI({
             select.remove();
         });
     };
-
+    var checkInput = function(formId, checkArray) {
+        for (var key in checkArray) {
+            var checkItem = checkArray[key];
+            console.log(checkItem);
+            if ('' === Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value')) {
+                return false;
+            }
+        }
+        return true;
+    }
     var btns = Y.all('#register-form form input[type=submit]')
     btns.each(function(btn) {
         btn.on('click', function(e)  {
             e.preventDefault();
             if ('b-submit' === e.target.get('id')) {
+                if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
+                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
+                    return false;
+                }
+                if (!checkInput('backpacker-form', ['arrival_time', 'duration_start', 'duration_end', 'rent', 'email', 'phone'])) {
+                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
+                    return false;
+                }
+                if (Y.one('#user-form input[name="password"]').get('value') !== Y.one('#user-form input[name="retype_password"]').get('value')) {
+                    alert(YAHOO.EliteStar.lang.REG_PW_NOT_MATCH);
+                    return false;
+                }
+                if (Y.one('#user-form input[name="password"]').get('value').length < 8) {
+                    alert(YAHOO.EliteStar.lang.REG_PW_LENGTH);
+                    return false;
+                }
+                if (!Y.one('#backpacker-form-all input[name="agree"]').get('checked')) {
+                    alert(YAHOO.EliteStar.lang.REG_READ_TOS);
+                    return false;
+                }
                 backpackerSubmit();
             } else {
+                if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
+                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
+                    return false;
+                }
+                if (!checkInput('houseowner-form', ['address', 'housename', 'duration_start', 'duration_end', 'rent', 'email', 'phone'])) {
+                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
+                    return false;
+                }
+                if (Y.one('#user-form input[name="password"]').get('value') !== Y.one('#user-form input[name="retype_password"]').get('value')) {
+                    alert(YAHOO.EliteStar.lang.REG_PW_NOT_MATCH);
+                    return false;
+                }
+                if (Y.one('#user-form input[name="password"]').get('value').length < 8) {
+                    alert(YAHOO.EliteStar.lang.REG_PW_LENGTH);
+                    return false;
+                }
+                if (!Y.one('#houseowner-form-all input[name="agree"]').get('checked')) {
+                    alert(YAHOO.EliteStar.lang.REG_READ_TOS);
+                    return false;
+                }
                 houseownerSubmit();
             }
             e.target.get('form').submit();

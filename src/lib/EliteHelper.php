@@ -494,7 +494,7 @@ class EliteHelper
         {
             if (!isset($data[$checkIndex]) || '' === $data[$checkIndex])
             {
-                echo $checkIndex . ' is empty';
+                //echo $checkIndex . ' is empty';
                 return false;
             }
         }

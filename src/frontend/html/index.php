@@ -1,5 +1,20 @@
 <?php
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
+include('/usr/share/pear/elitestar/lib/EliteUsers.php');
+$user = EliteUsers::getInstance()->getCurrentUser();
+if ($user)
+{
+    if ($user['role'] === EliteUsers::ROLE_LANDLORD)
+    {
+        header('Location: find_backpacker.php');
+        exit;
+    }
+    else
+    {
+        header('Location: find_house.php');
+        exit;
+    }
+}
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_TITLE'),
     'css' => array(

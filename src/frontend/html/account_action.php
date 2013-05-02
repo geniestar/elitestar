@@ -37,6 +37,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
         }
         else
         {
+            header('Location: error.php?error=FIELDS_EMPTY');
             exit;
         }
     }
@@ -52,11 +53,17 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
             var_dump(LandLords::getInstance()->queryLandLord($_POST['id']));  
             var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
         }
+        else
+        {
+            header('Location: error.php?error=USER_ID_INVALID');
+            exit;
+        }
     }
 }
 else
 {
     /* some filed empty*/
+    header('Location: error.php?error=USER_ID_INVALID');
     exit;
 }
 }
@@ -65,7 +72,8 @@ else
     $user = EliteUsers::getInstance()->getCurrentUser();
     if (!$user)
     {
-        echo 'user wrong';
+        header('Location: error.php?error=NEED_LOGIN');
+        exit;
     }
     if ($_POST['basic-info'])
     {
@@ -78,7 +86,8 @@ else
             }
             else
             {
-                echo 'pw wrong';
+                header('Location: error.php?error=ORIGINAL_PW_WRONG');
+                exit;
             }
         }
         else
@@ -116,6 +125,19 @@ else
         {
             BackPackers::getInstance()->updateBackPackerInfo($user['id'], $_POST['state'], $_POST['city'], $_POST['rent'], EliteHelper::getTime($_POST['arrival_time']), EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), $_POST['name'], null);
         }
+    }
+}
+
+$user = EliteUsers::getInstance()->login($_POST['id'], $_POST['password'], false);
+if ($user)
+{
+    if ($user['role'] === EliteUsers::ROLE_LANDLORD)
+    {
+        header('Location: find_backpacker.php');
+    }
+    else
+    {
+        header('Location: find_house.php');
     }
 }
 
@@ -157,7 +179,7 @@ function getServices($data, $prefix)
         $haa = '';
         for ($i = 1; $i<=4; $i++)
         {
-            if (isset($data[$prefix . '-haa-' . $i]))
+            if (isset($data[$prefix . '-haa-' . $i]) && $data[$prefix . '-haa-' . $i] !== '')
             {
                 $haaArray[] = 'x' . $i . ':' . $data[$prefix . '-haa-' . $i] . 'AUD';
             }

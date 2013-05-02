@@ -102,15 +102,19 @@ YUI({
     Y.delegate('click', getFavorite, Y.one('#favorites .favorites'), 'a');
     Y.one('#menu .btn-right').on('mouseover', function() {
         Y.one('.extension-link').removeClass('hidden');
+        Y.one('#menu .btn-right .btn-container').addClass('mouseover');
     });
     Y.one('#menu .btn-right').on('mouseout', function() {
         Y.one('.extension-link').addClass('hidden');
+        Y.one('#menu .btn-right .btn-container').removeClass('mouseover');
     });
     Y.one('.extension-link').one('mouseout', function() {
         Y.one('.extension-link').addClass('hidden');
+        Y.one('#menu .btn-right .btn-container').removeClass('mouseover');
     });
     Y.one('.extension-link').one('mouseover', function() {
         Y.one('.extension-link').removeClass('hidden');
+        Y.one('#menu .btn-right .btn-container').addClass('mouseover');
     });
 
     var menuBtns = Y.all('#menu .btn-container ');

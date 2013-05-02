@@ -7,6 +7,11 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 include('/usr/share/pear/elitestar/lib/Messages.php');
 $user = EliteUsers::getInstance()->getCurrentUser();
+if (!$user)
+{
+    header('Location: error.php?error=NO_LOGIN');
+    exit;
+}
 $formHtml = '';
 if (0 == $user['role'])
 {
@@ -26,7 +31,7 @@ if ('basic' == $_GET['action'] || !isset($_GET['action']))
     $formHtml .= '<input type="hidden" name="basic-info" value="1">';
     $formHtml .= ContentGenerator::getContent('register_user', array('user' => $user));
     $formHtml .= '<div class="form">' . ContentGenerator::getContent('register_contact', array('user' => $user)) . '</div>';
-    $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
+    $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true, 'showBtn' => true));
     $formHtml .= '</form>';
 }
 else if ('settings' == $_GET['action'])
@@ -91,6 +96,13 @@ else if ('suggestion' == $_GET['action'])
     $tabs = array(array('class' => 'suggestion', 'name' => EliteHelper::getLangString('COMMON_MENU_SUGGESTION')));
     $formHtml = ContentGenerator::getContent('admin_suggestion', array());
 }
+else if ('logout' == $_GET['action'])
+{
+    setcookie('u', '');
+    setcookie('p', '');
+    header('Location: /');
+    exit;
+}
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(
@@ -118,7 +130,7 @@ $tailData = array(
         <div class="main-container">
             <div class="col-combined col">
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_adminmenu', array());?>
+                    <?php echo ContentGenerator::getContent('common_adminmenu', array('user' => $user));?>
                 </div>
             </div>
             <div class="col-left-left-big col">
