@@ -342,3 +342,15 @@ background-color: #B2B2B2;
     }
 }}
 
+#hint-panel {
+    position: absolute;
+    background-color: #FFF6D5;
+    padding: 2px;
+    color: $black;
+    position: absolute;
+    z-index: 10;
+    border: 1px solid $gray;
+    -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+    box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+}

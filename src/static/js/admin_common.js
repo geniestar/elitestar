@@ -1,9 +1,10 @@
 YUI({
     modules: {
         mapper: '/js/mapper.js',
-        ecalendar: '/js/ecalendar.js'
+        ecalendar: '/js/ecalendar.js',
+        hintpanel: '/js/hint_panel.js',
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', function(Y) {
 var selectedObjectBtn = null;
 var replaceAllSuburbs = function(selector, id) {
     var select = Y.one(selector);

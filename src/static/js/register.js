@@ -1,9 +1,10 @@
 YUI({
     modules: {
         mapper: '/js/mapper.js',
-        ecalendar: '/js/ecalendar.js'
+        ecalendar: '/js/ecalendar.js',
+        hintpanel: '/js/hint_panel.js',
     }
-}).use('node', 'mapper', 'ecalendar', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'hintpanel', function(Y) {
     var switchRole = function (role){
         var backpackerForm = Y.one('#backpacker-form-all');
         var houseownerForm = Y.one('#houseowner-form-all');

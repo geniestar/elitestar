@@ -1,8 +1,9 @@
 YUI({
     modules: {
         backpacker: '/js/backpacker.js',
+        hintpanel: '/js/hint_panel.js',
     }
-}).use('node', 'backpacker', function(Y) {
+}).use('node', 'backpacker', 'hintpanel', function(Y) {
 
     var results = Y.all('.search-result');
     results.each(function(result) {

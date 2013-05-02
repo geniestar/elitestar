@@ -1,8 +1,9 @@
 YUI({
     modules: {
         houseobject: '/js/houseobject.js',
+        hintpanel: '/js/hint_panel.js',
     }
-}).use('node', 'houseobject', function(Y) {
+}).use('node', 'houseobject', 'hintpanel', function(Y) {
 
     var results = Y.all('.search-result');
     results.each(function(result) {

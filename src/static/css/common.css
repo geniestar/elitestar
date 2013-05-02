@@ -627,3 +627,17 @@ input[type="submit"] {
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }
+
+/* line 345, ../scss/common.scss */
+#hint-panel {
+  position: absolute;
+  background-color: #FFF6D5;
+  padding: 2px;
+  color: #232323;
+  position: absolute;
+  z-index: 10;
+  border: 1px solid #666666;
+  -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+}

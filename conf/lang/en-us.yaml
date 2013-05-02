@@ -189,7 +189,7 @@ languages:
     ADMIN_LEAVE_MESSAGE: 'Leave a message'
     ADMIN_DELETED_MESSAGE: 'Message had been deleted successfully.'
     ADMIN_DELETED_OBJECT: 'Object had been deleted successfully.'
-    ADMIN_ARE_YOU_SURE: 'Are you sure to delete the property information?</br>It will not be saved once delete it.'
+    ADMIN_ARE_YOU_SURE: 'Are you sure to delete the property information?</br>It won''t be saved once delete it.'
     ADMIN_DELETE: 'Delete'
     ADMIN_CANCEL: 'Cancel'
     ADMIN_SUGGESTION_TITLE: 'Thank you for suggesting us any advice!'
