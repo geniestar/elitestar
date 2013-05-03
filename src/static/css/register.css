@@ -98,36 +98,36 @@
 
 /* line 13, ../scss/register.scss */
 #header {
-  height: 48px;
-  line-height: 48px;
+  height: 30px;
+  line-height: 30px;
   border-top: 2px solid #0071BC;
   border-bottom: 2px solid #0071BC;
-  background-color: #3685ff;
+  background-color: #CCC;
   *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF3685FF', endColorstr='#FF59A3F7');
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxNiUiIHN0b3AtY29sb3I9IiMzNjg1ZmYiLz48c3RvcCBvZmZzZXQ9Ijc2JSIgc3RvcC1jb2xvcj0iIzU5YTNmNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFCCCCCC');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNDIlIiBzdG9wLWNvbG9yPSIjZmNmY2ZjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(16%, #3685ff), color-stop(76%, #59a3f7));
-  background-image: -webkit-linear-gradient(top, #3685ff 16%, #59a3f7 76%);
-  background-image: -moz-linear-gradient(top, #3685ff 16%, #59a3f7 76%);
-  background-image: -o-linear-gradient(top, #3685ff 16%, #59a3f7 76%);
-  background-image: linear-gradient(top, #3685ff 16%, #59a3f7 76%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(42%, #fcfcfc), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #fcfcfc 42%, #cccccc 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #fcfcfc 42%, #cccccc 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #fcfcfc 42%, #cccccc 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #fcfcfc 42%, #cccccc 100%);
 }
-/* line 23, ../scss/register.scss */
+/* line 22, ../scss/register.scss */
 #header .header-container {
   width: 1024px;
   margin: 0 auto;
   position: relative;
 }
-/* line 28, ../scss/register.scss */
+/* line 27, ../scss/register.scss */
 #header .header-container div.desc {
   position: absolute;
-  right: 160px;
-  color: white;
+  right: 210px;
+  color: #232323;
   vertical-align: middle;
   font-size: 14px;
 }
-/* line 35, ../scss/register.scss */
+/* line 34, ../scss/register.scss */
 #header .header-container .registerform-login {
   cursor: pointer;
   width: 87px;
@@ -140,11 +140,11 @@
   text-align: center;
   vertical-align: middle;
   position: absolute;
-  top: -10px;
-  right: 50px;
+  top: -20px;
+  right: 110px;
 }
 
-/* line 53, ../scss/register.scss */
+/* line 52, ../scss/register.scss */
 .login-panel {
   background-color: #E2E2E2;
   width: 226px;
@@ -152,17 +152,16 @@
   padding: 20px;
   color: #232323;
   position: fixed;
-  top: 50%;
-  margin-top: -133px;
+  top: 100px;
   left: 60%;
-  margin-left: -125px;
+  margin-left: -145px;
   z-index: 10;
   border: 1px solid #666666;
   -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
-/* line 69, ../scss/register.scss */
+/* line 67, ../scss/register.scss */
 .login-panel .egisterform-close {
   width: 14px;
   height: 14px;
@@ -171,39 +170,39 @@
   top: 5px;
   cursor: pointer;
 }
-/* line 78, ../scss/register.scss */
+/* line 76, ../scss/register.scss */
 .login-panel form {
   position: absolute;
 }
-/* line 80, ../scss/register.scss */
+/* line 78, ../scss/register.scss */
 .login-panel form .option-set {
   margin: 5px 0;
 }
-/* line 82, ../scss/register.scss */
+/* line 80, ../scss/register.scss */
 .login-panel form .option-set .title {
   margin: 0 5px 5px 5px;
   font-weight: bold;
   color: #232323;
 }
-/* line 87, ../scss/register.scss */
+/* line 85, ../scss/register.scss */
 .login-panel form .option-set .sub-title {
   font-size: 12px;
   color: #232323;
 }
-/* line 91, ../scss/register.scss */
+/* line 89, ../scss/register.scss */
 .login-panel form .option-set input {
   color: #666666;
 }
-/* line 94, ../scss/register.scss */
+/* line 92, ../scss/register.scss */
 .login-panel form .option-set input[type=text], .login-panel form .option-set input[type=password] {
   border: 1px solid #232323;
   width: 200px;
 }
-/* line 98, ../scss/register.scss */
+/* line 96, ../scss/register.scss */
 .login-panel form .option-set input[type=checkbox] {
   vertical-align: middle;
 }
-/* line 101, ../scss/register.scss */
+/* line 99, ../scss/register.scss */
 .login-panel form .option-set input[type=submit] {
   color: white;
   font-weight: bold;
@@ -224,7 +223,7 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 116, ../scss/register.scss */
+/* line 114, ../scss/register.scss */
 .login-panel form .option-set input[type=submit]:active {
   background-color: #eba028;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -235,11 +234,11 @@
   background-image: -o-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
   background-image: linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
 }
-/* line 122, ../scss/register.scss */
+/* line 120, ../scss/register.scss */
 .login-panel form .option-set:nth-child(2) {
   margin-top: 10px;
 }
-/* line 126, ../scss/register.scss */
+/* line 124, ../scss/register.scss */
 .login-panel .registerform-close {
   width: 14px;
   height: 14px;
@@ -249,12 +248,12 @@
   position: absolute;
 }
 
-/* line 136, ../scss/register.scss */
+/* line 134, ../scss/register.scss */
 #register-form {
   padding: 50px 10px;
   background-color: #EFEFEF;
 }
-/* line 140, ../scss/register.scss */
+/* line 138, ../scss/register.scss */
 #register-form #user-form, #register-form #backpacker-form, #register-form #houseowner-form {
   width: 560px;
   padding: 15px;
@@ -265,28 +264,28 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 150, ../scss/register.scss */
+/* line 148, ../scss/register.scss */
 #register-form #backpacker-form, #register-form #houseowner-form {
   margin: 10px auto;
 }
-/* line 153, ../scss/register.scss */
+/* line 151, ../scss/register.scss */
 #register-form #role-switcher {
   width: 562px;
   margin: 0 auto;
   font-size: 20px;
   overflow: hidden;
 }
-/* line 158, ../scss/register.scss */
+/* line 156, ../scss/register.scss */
 #register-form #role-switcher .container {
   float: right;
   height: 48px;
   line-height: 48px;
 }
-/* line 163, ../scss/register.scss */
+/* line 161, ../scss/register.scss */
 #register-form #role-switcher .title {
   display: inline;
 }
-/* line 166, ../scss/register.scss */
+/* line 164, ../scss/register.scss */
 #register-form #role-switcher .switcher-btn {
   padding: 5px 20px;
   _padding: 7px 20px 3px 20px;
@@ -301,46 +300,50 @@
   border-width: 1px;
   cursor: pointer;
 }
-/* line 180, ../scss/register.scss */
+/* line 178, ../scss/register.scss */
 #register-form #role-switcher #backpacker-btn {
-  border-color: #1B6336;
+  border-color: #006837;
   background-color: #33c3b8;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjMzNjM2I4Ii8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFB8DEE0', endColorstr='#FFB8DEE0');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2I4ZGVlMCIvPjxzdG9wIG9mZnNldD0iNyUiIHN0b3AtY29sb3I9IiMzM2MzYjgiLz48c3RvcCBvZmZzZXQ9Ijg5JSIgc3RvcC1jb2xvcj0iIzMzYzNiOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2I4ZGVlMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #33c3b8), color-stop(99%, #ffffff));
-  background-image: -webkit-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
-  background-image: -moz-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
-  background-image: -o-linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
-  background-image: linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b8dee0), color-stop(7%, #33c3b8), color-stop(89%, #33c3b8), color-stop(100%, #b8dee0));
+  background-image: -webkit-linear-gradient(top, #b8dee0 0%, #33c3b8 7%, #33c3b8 89%, #b8dee0 100%);
+  background-image: -moz-linear-gradient(top, #b8dee0 0%, #33c3b8 7%, #33c3b8 89%, #b8dee0 100%);
+  background-image: -o-linear-gradient(top, #b8dee0 0%, #33c3b8 7%, #33c3b8 89%, #b8dee0 100%);
+  background-image: linear-gradient(top, #b8dee0 0%, #33c3b8 7%, #33c3b8 89%, #b8dee0 100%);
   margin: 0 10px;
 }
-/* line 187, ../scss/register.scss */
+/* line 186, ../scss/register.scss */
 #register-form #role-switcher #backpacker-btn:hover {
-  color: #1B6336;
+  color: #FFFF00;
 }
-/* line 190, ../scss/register.scss */
+/* line 189, ../scss/register.scss */
 #register-form #role-switcher #backpacker-btn.selected {
-  color: #1B6336;
+  color: #FFFF00;
 }
-/* line 193, ../scss/register.scss */
+/* line 192, ../scss/register.scss */
 #register-form #role-switcher #houseowner-btn {
-  border-color: #1B1464;
+  border-color: #2E3192;
   background-color: #54a6de;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjNTRhNmRlIi8+PHN0b3Agb2Zmc2V0PSI5OSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFC7ECF9', endColorstr='#FFC7ECF9');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M3ZWNmOSIvPjxzdG9wIG9mZnNldD0iNyUiIHN0b3AtY29sb3I9IiM1NGE2ZGUiLz48c3RvcCBvZmZzZXQ9IjkxJSIgc3RvcC1jb2xvcj0iIzU0YTZkZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M3ZWNmOSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
   background-size: 100%;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #ffffff), color-stop(51%, #54a6de), color-stop(99%, #ffffff));
-  background-image: -webkit-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
-  background-image: -moz-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
-  background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
-  background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c7ecf9), color-stop(7%, #54a6de), color-stop(91%, #54a6de), color-stop(100%, #c7ecf9));
+  background-image: -webkit-linear-gradient(top, #c7ecf9 0%, #54a6de 7%, #54a6de 91%, #c7ecf9 100%);
+  background-image: -moz-linear-gradient(top, #c7ecf9 0%, #54a6de 7%, #54a6de 91%, #c7ecf9 100%);
+  background-image: -o-linear-gradient(top, #c7ecf9 0%, #54a6de 7%, #54a6de 91%, #c7ecf9 100%);
+  background-image: linear-gradient(top, #c7ecf9 0%, #54a6de 7%, #54a6de 91%, #c7ecf9 100%);
 }
 /* line 199, ../scss/register.scss */
 #register-form #role-switcher #houseowner-btn:hover {
-  color: #1B1464;
+  color: #FFFF00;
 }
 /* line 202, ../scss/register.scss */
 #register-form #role-switcher #houseowner-btn.selected {
-  color: #1B1464;
+  color: #FFFF00;
 }
 /* line 207, ../scss/register.scss */
 #register-form #backpacker-form {
@@ -364,7 +367,7 @@
 
 /* line 224, ../scss/register.scss */
 #register-form.backpacker {
-  background-color: #CFED3F;
+  background-color: #BFF2DE;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
@@ -553,54 +556,63 @@
   position: relative;
   height: auto;
 }
+/* line 387, ../scss/register.scss */
+.form #more-description .registerform-close {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 26px;
+  left: -15px;
+  cursor: pointer;
+}
 
-/* line 391, ../scss/register.scss */
+/* line 399, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 395, ../scss/register.scss */
+/* line 403, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 400, ../scss/register.scss */
+/* line 408, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 405, ../scss/register.scss */
+/* line 413, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 410, ../scss/register.scss */
+/* line 418, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 415, ../scss/register.scss */
+/* line 423, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
 
-/* line 423, ../scss/register.scss */
+/* line 431, ../scss/register.scss */
 #ajax-role-form {
   position: relative;
 }
-/* line 425, ../scss/register.scss */
+/* line 433, ../scss/register.scss */
 #ajax-role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
 
-/* line 430, ../scss/register.scss */
+/* line 438, ../scss/register.scss */
 input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;

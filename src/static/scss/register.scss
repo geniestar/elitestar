@@ -11,15 +11,14 @@
 }
 
 #header {
-    height: 48px;
-    line-height: 48px;
+    height: 30px;
+    line-height: 30px;
     border-top: 2px solid #0071BC;
     border-bottom: 2px solid #0071BC;
-    background-color: #3685ff;
-    @include filter-gradient(#3685ff, #59a3f7, vertical);
+    background-color: #CCC;
+    @include filter-gradient(#ffffff, #cccccc, vertical);
     $experimental-support-for-svg: true;
-    @include background-image(linear-gradient(top,  #3685ff 16%,#59a3f7 76%));
-
+    @include background-image(linear-gradient(top,  #ffffff 0%,#fcfcfc 42%,#cccccc 100%));
     .header-container {
         width: 1024px;
         margin: 0 auto;
@@ -27,8 +26,8 @@
 
         div.desc {
             position: absolute;
-            right: 160px;
-            color: $white;
+            right: 210px;
+            color: $black;
             vertical-align: middle;
             font-size: 14px;
         }
@@ -44,8 +43,8 @@
             text-align: center;
             vertical-align: middle;
             position: absolute;
-            top: -10px;
-            right: 50px;
+            top: -20px;
+            right: 110px;
         }
     }
 }
@@ -57,10 +56,9 @@
         padding: 20px;
         color: $black;
         position: fixed;
-        top: 50%;
-        margin-top: -133px;
+        top: 100px;
         left: 60%;
-        margin-left: -125px;
+        margin-left: -145px;
         z-index: 10;
         border: 1px solid $gray;
         -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
@@ -178,29 +176,31 @@
             cursor: pointer;
         }
         #backpacker-btn {
-            border-color: #1B6336;
-            background-color: #33c3b8; // Old browsers
+            border-color: #006837;
+            background-color: #33c3b8;
+            @include filter-gradient(#b8dee0, #b8dee0, vertical);
             $experimental-support-for-svg: true;
-            @include background-image(linear-gradient(top,  #ffffff 1%,#33c3b8 51%,#ffffff 99%));
+            @include background-image(linear-gradient(top,  #b8dee0 0%,#33c3b8 7%,#33c3b8 89%,#b8dee0 100%));
             margin: 0 10px;
         }
         #backpacker-btn:hover {
-            color: #1B6336;
+            color: #FFFF00;
         }
         #backpacker-btn.selected {
-            color: #1B6336;
+            color: #FFFF00;
         }
         #houseowner-btn {
-            border-color: #1B1464;
-            background-color: #54a6de; // Old browsers
+            border-color: #2E3192;
+            background-color: #54a6de;
+            @include filter-gradient(#c7ecf9, #c7ecf9, vertical);
             $experimental-support-for-svg: true;
-            @include background-image(linear-gradient(top,  #ffffff 1%,#54a6de 51%,#ffffff 99%));
+            @include background-image(linear-gradient(top,  #c7ecf9 0%,#54a6de 7%,#54a6de 91%,#c7ecf9 100%));
         }
         #houseowner-btn:hover {
-            color: #1B1464;
+            color: #FFFF00;
         }
         #houseowner-btn.selected {
-            color: #1B1464;
+            color: #FFFF00;
         }
     }
     
@@ -222,7 +222,7 @@
 }
 
 #register-form.backpacker {
-    background-color: #CFED3F;
+    background-color: #BFF2DE;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -383,6 +383,14 @@
         .input-set {
             position: relative;
             height: auto;
+        }
+        .registerform-close {
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 26px;
+            left: -15px;
+            cursor: pointer;
         }
     }
 }

@@ -50,6 +50,20 @@ input[type="submit"] {
     padding: 20px;
 }
 
+.yui3-skin-sam .yui3-calendar-weekday {
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #06c;
+    text-align: center;
+    color: #FFF;
+}
+
+.yui3-skin-sam .yui3-calendar-day {
+    font-weight: bold;
+    background-color: #FFF1E3;
+}
+
 #map-all {
     width: 147px;
     height: 138px;
@@ -188,7 +202,10 @@ input[type="submit"] {
     -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
     box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
-    background-color: $white;
+    background-color: #EFEFEF;
+    @include filter-gradient(#ffffff, #efefef, vertical);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top, #ffffff 0%,#efefef 96%));
     position: absolute;
 }
 
@@ -312,6 +329,9 @@ background-color: #B2B2B2;
             .menu-icon {
                  margin: 3px 0 3px 3px;
             }
+        }
+        a {
+            color: $black;
         }
     }
     .extension-link {

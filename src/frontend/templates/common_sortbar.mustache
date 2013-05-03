@@ -2,14 +2,14 @@
     <div class="title">{{i18n.SEARCH_RESULT_VIEW_AS}}</div>
     <div class="sort-item {{#updatedTimeSelected}}selected{{/updatedTimeSelected}}">
         <div class="desc"><a href='{{updatedTimeUrl}}'>{{i18n.SEARCH_RESULT_UPDATED_TIME}}</a></div>
-        <div class="listing-sort{{#updatedTimeD}}_d{{/updatedTimeD}} listing-sprite"></div>
+        <a href='{{updatedTimeUrl}}'><div class="listing-sort{{#updatedTimeD}}_d{{/updatedTimeD}} listing-sprite"></div></a>
     </div>
     <div class="sort-item {{#priceSelected}}selected{{/priceSelected}}">
         <div class="desc"><a href='{{priceUrl}}'>{{i18n.SEARCH_RESULT_RENT}}</a></div>
-        <div class="listing-sort{{#priceD}}_d{{/priceD}} listing-sprite"></div>
+        <a href='{{priceUrl}}'><div class="listing-sort{{#priceD}}_d{{/priceD}} listing-sprite"></div></a>
     </div>
     <div class="sort-item {{#durationSelected}}selected{{/durationSelected}}">
         <div class="desc"><a href='{{durationUrl}}'>{{i18n.SEARCH_RESULT_DURATION}}</a></div>
-        <div class="listing-sort{{#durationD}}_d{{/durationD}} listing-sprite"></div>
+        <a href='{{durationUrl}}'><div class="listing-sort{{#durationD}}_d{{/durationD}} listing-sprite"></div></a>
     </div>
 </div>

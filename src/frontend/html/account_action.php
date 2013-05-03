@@ -156,9 +156,17 @@ function getWECharge($data, $prefix)
     {
         $charge['w'] = $data['uew-c'];
     }
+    else
+    {
+        $charge['w'] = '';
+    }
     if ($data['uee'])
     {
         $charge['e'] = $data['uee-c'];
+    }
+    else
+    {
+        $charge['e'] = '';
     }
     return json_encode($charge);
 }

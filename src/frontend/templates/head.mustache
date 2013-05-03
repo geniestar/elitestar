@@ -1,5 +1,13 @@
     <title>{{title}}</title>
+    <meta name="description" content="{{i18n.COMMON_DESCRIPTION}}">
+    <meta name="keywords" content="{{i18n.COMMON_KEYWORD}}">
+    <meta name="author" content="EliteStar">
     <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
     {{#css}}
         <link rel=stylesheet type="text/css" href="{{hostname}}{{url}}">
     {{/css}}
+    <meta property="og:title" content="{{title}}"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://elitestar.com"/>
+    <meta property="og:site_name" content="{{i18n.COMMON_TITLE}}"/>
+    <meta property="og:description" content="{{i18n.COMMON_DESCRIPTION}}"/>

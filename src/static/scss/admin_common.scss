@@ -25,8 +25,9 @@
     div {
         float: left;
     }
-    div:nth-child(2) {
-        margin-left: 110px;
+    .margin-left-area {
+        width: 125px;
+        height: 10px;
     }
     .admin-alteration {
         width: 114px;
@@ -72,7 +73,35 @@
         border-top-left-radius: 10px;
         border-style:solid;
         border-width:1px;
-        color: #FFF;
+    }
+}
+
+.backpacker {
+    #admin-menu {
+        .title {
+            a:hover {
+                color: #00A99D;
+            }
+        }
+        .title.selected {
+            a {
+                color: #00A99D;
+            }
+        }
+    }
+    #admin-tabs {
+        color: #007063;
+        border-bottom: 1px solid #007063;
+        .admin-tab {
+            cursor: pointer;
+            background-color: #ffffff;
+            @include filter-gradient(#ffffff, #ffffff, vertical);
+            $experimental-support-for-svg: true;
+            @include background-image(linear-gradient(top,  #ffffff 1%,#00a99d 32%,#00a99d 66%,#ffffff 100%));
+        }
+        .admin-tab.selected {
+            border-bottom-color: #FFF;
+        }
     }
 }
 
@@ -83,13 +112,19 @@
                 color: #007AFA;
             }
         }
+        .title.selected {
+            a {
+                color: #007AFA;
+            }
+        }
     }
     #admin-tabs {
-        border-bottom: 1px solid #007AFA;
+        color: #2E3192;
+        border-bottom: 1px solid #2E3192;
         .admin-tab {
             cursor: pointer;
-            border-color: #007AFA;
-            background-color: #54a6de; // Old browsers
+            border-color: #2E3192;
+            background-color: #FFFFFF; // Old browsers
             $experimental-support-for-svg: true;
             @include background-image(linear-gradient(top,  #ffffff 1%,#54a6de 51%,#ffffff 99%));
         }
@@ -98,12 +133,11 @@
         }
     }
 }
-
 #houseobject-selector
 {
     width: 547px;
     background-color: #EFEFEF;
-    border: 1px solid #007AFA;
+    border: 1px solid #2E3192;
     padding: 5px;
     margin-top: 10px;
     .houseobject-selector-item {
@@ -126,6 +160,10 @@
             position: absolute;
             right: 5px;
             top :5px;
+        }
+        img {
+            width: 144px;
+            height: 93px;
         }
     }
     .selected {

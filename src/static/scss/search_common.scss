@@ -152,6 +152,17 @@
     }      
 }
 
+#favorite-container {
+    -webkit-transition: height .6s;
+    -moz-transition: height .6s;
+    transition: height .6s;
+    height: 0px;
+}
+
+#favorite-container.contain {
+    min-height: 170px;
+}
+
 #sort-bar {
     height: 16px;
     line-height: 16px;
@@ -167,17 +178,18 @@
     .sort-item {
         vertical-align: middle;
         float: left;
+        a {
+            float: left;
+        }
         .listing-sort {
             width: 16px;
             height: 17px;
             margin-right: 15px;
-            float: left;
         }
         .listing-sort_d {
             width: 16px;
             height: 17px;
             margin-right: 15px;
-            float: left;
         }
         .desc {
             margin: 0 5px;    

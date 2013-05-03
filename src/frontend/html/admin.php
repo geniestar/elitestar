@@ -130,7 +130,7 @@ $tailData = array(
         <div class="main-container">
             <div class="col-combined col">
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_adminmenu', array('user' => $user));?>
+                    <?php echo ContentGenerator::getContent('common_adminmenu', array('user' => $user, 'action' => $_GET['action']));?>
                 </div>
             </div>
             <div class="col-left-left-big col">

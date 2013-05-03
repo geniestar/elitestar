@@ -45,7 +45,7 @@ $weChargeArray = array();
 $weChargeRaw = json_decode($data['houseObject']['wecharge'], true);
 if ($weChargeRaw)
 {
-    if (isset($weChargeRaw['w']))
+    if (isset($weChargeRaw['w']) && $weChargeRaw['w'])
     {
         $weChargeArray[] = EliteHelper::getLangString('SEARCH_RESULT_CHARGE_W') . $weChargeRaw['w'] . EliteHelper::getLangString('SEARCH_RESULT_AUD');
     }
@@ -53,7 +53,7 @@ if ($weChargeRaw)
     {
         $weChargeArray[] = EliteHelper::getLangString('SEARCH_RESULT_CHARGE_W') . EliteHelper::getLangString('SEARCH_RESULT_CHARGE_INCLUDED');
     }
-    if (isset($weChargeRaw['e']))
+    if (isset($weChargeRaw['e']) && $weChargeRaw['e'])
     {
         $weChargeArray[] = EliteHelper::getLangString('SEARCH_RESULT_CHARGE_E') . $weChargeRaw['e'] . EliteHelper::getLangString('SEARCH_RESULT_AUD');
     }

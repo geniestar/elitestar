@@ -21,11 +21,15 @@ YUI({
         switchRole('b');
         Y.one('#register-form').removeClass('houseowner');
         Y.one('#register-form').addClass('backpacker');
+        Y.one('#backpacker-btn').addClass('selected');
+        Y.one('#houseowner-btn').removeClass('selected');
     }
     var switchToHouseowner = function() {
         switchRole('h')
         Y.one('#register-form').addClass('houseowner');
         Y.one('#register-form').removeClass('backpacker');
+        Y.one('#backpacker-btn').removeClass('selected');
+        Y.one('#houseowner-btn').addClass('selected');
     }
 
     var replaceAllSuburbs = function(selector, id) {

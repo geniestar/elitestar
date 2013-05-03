@@ -1,6 +1,6 @@
 <?php
 include_once ('ConfigReader.php');
-date_default_timezone_set('UTC');
+date_default_timezone_set('Asia/Taipei');
 /**
  * EliteHelper
  *

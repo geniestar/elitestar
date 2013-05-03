@@ -2,8 +2,10 @@ YUI({
     modules: {
         mapper: '/js/mapper.js',
         ecalendar: '/js/ecalendar.js',
+        houseobject: '/js/houseobject.js',
+        backpacker: '/js/backpacker.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
         var select = Y.one(selector);
         var options = select.all('option');
@@ -100,22 +102,24 @@ YUI({
 
     Y.delegate('click', deleteFavorite, Y.one('#favorites .favorites'), '.listing-delete');
     Y.delegate('click', getFavorite, Y.one('#favorites .favorites'), 'a');
-    Y.one('#menu .btn-right').on('mouseover', function() {
-        Y.one('.extension-link').removeClass('hidden');
-        Y.one('#menu .btn-right .btn-container').addClass('mouseover');
-    });
-    Y.one('#menu .btn-right').on('mouseout', function() {
-        Y.one('.extension-link').addClass('hidden');
-        Y.one('#menu .btn-right .btn-container').removeClass('mouseover');
-    });
-    Y.one('.extension-link').one('mouseout', function() {
-        Y.one('.extension-link').addClass('hidden');
-        Y.one('#menu .btn-right .btn-container').removeClass('mouseover');
-    });
-    Y.one('.extension-link').one('mouseover', function() {
-        Y.one('.extension-link').removeClass('hidden');
-        Y.one('#menu .btn-right .btn-container').addClass('mouseover');
-    });
+    if (Y.one('.extension-link')) {
+        Y.one('#menu .btn-right').on('mouseover', function() {
+            Y.one('.extension-link').removeClass('hidden');
+            Y.one('#menu .btn-right .btn-container').addClass('mouseover');
+        });
+        Y.one('#menu .btn-right').on('mouseout', function() {
+            Y.one('.extension-link').addClass('hidden');
+            Y.one('#menu .btn-right .btn-container').removeClass('mouseover');
+        });
+        Y.one('.extension-link').one('mouseout', function() {
+            Y.one('.extension-link').addClass('hidden');
+            Y.one('#menu .btn-right .btn-container').removeClass('mouseover');
+        });
+        Y.one('.extension-link').one('mouseover', function() {
+            Y.one('.extension-link').removeClass('hidden');
+            Y.one('#menu .btn-right .btn-container').addClass('mouseover');
+        });
+    }
 
     var menuBtns = Y.all('#menu .btn-container ');
     menuBtns.each(function(btn){
