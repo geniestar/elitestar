@@ -278,6 +278,10 @@ background-color: #B2B2B2;
             .title {
                 float: left;
                 margin-top: 1px;
+                max-width: 110px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
             a {
                 color: $black;

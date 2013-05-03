@@ -32,8 +32,8 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
         if(EliteHelper::checkEmpty(array('state', 'city', 'arrival_time', 'duration_start', 'duration_end', 'bed_single', 'bed_double', 'rent', 'name'), $_POST))
         {
             BackPackers::getInstance()->createBackPacker($_POST['id'], $_POST['state'], $_POST['city'], EliteHelper::getTime($_POST['arrival_time']), EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rent'], $_POST['rent'], $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), $_POST['name'], null);
-            var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
-            var_dump(BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
+            //var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
+            //var_dump(BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
         }
         else
         {
@@ -49,14 +49,29 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
             $photos = getHousePhotos($_POST['id']);
             HouseObjects::getInstance()->createHouseObject($_POST['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'), getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
 
-            var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
-            var_dump(LandLords::getInstance()->queryLandLord($_POST['id']));  
-            var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
+            //var_dump(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password']));
+            //var_dump(LandLords::getInstance()->queryLandLord($_POST['id']));  
+            //var_dump(HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $_POST['id']));
         }
         else
         {
             header('Location: error.php?error=USER_ID_INVALID');
             exit;
+        }
+    }
+
+    sendEmail($_POST['email']);
+    $user = EliteUsers::getInstance()->login($_POST['id'], $_POST['password'], false);
+
+    if ($user)
+    {
+        if ($user['role'] === EliteUsers::ROLE_LANDLORD)
+        {
+            header('Location: find_backpacker.php');
+        }
+        else
+        {
+            header('Location: find_house.php');
         }
     }
 }
@@ -77,9 +92,9 @@ else
     }
     if ($_POST['basic-info'])
     {
-        if (isset($_POST['password']) && isset($_POST['original_password']))
+        if (isset($_POST['password']) && isset($_POST['original_password']) && isset($_POST['retype_password']))
         {
-            if (EliteUsers::queryUser($user['id'], $_POST['original_password']))
+            if (EliteUsers::queryUser($user['id'], $_POST['original_password']) && ($_POST['password'] === $_POST['retype_password']))
             {
                 EliteUsers::getInstance()->updateUserInfo($user['id'], $_POST['password'], null, $_POST['email'], $_POST['phone'], null, null, null);
                 setcookie('p', md5($_POST['password']), time()+60*60*24*365);
@@ -119,6 +134,11 @@ else
                     HouseObjects::getInstance()->createHouseObject($user['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'), getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
 
                 }
+                else
+                {
+                    header('Location: error.php?error=FIELDS_EMPTY');
+                    exit;
+                }
             }
         }
         else
@@ -126,19 +146,7 @@ else
             BackPackers::getInstance()->updateBackPackerInfo($user['id'], $_POST['state'], $_POST['city'], $_POST['rent'], EliteHelper::getTime($_POST['arrival_time']), EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), $_POST['name'], null);
         }
     }
-}
-
-$user = EliteUsers::getInstance()->login($_POST['id'], $_POST['password'], false);
-if ($user)
-{
-    if ($user['role'] === EliteUsers::ROLE_LANDLORD)
-    {
-        header('Location: find_backpacker.php');
-    }
-    else
-    {
-        header('Location: find_house.php');
-    }
+    header('Location: admin.php');
 }
 
 function getWECharge($data, $prefix)
@@ -240,5 +248,14 @@ function getDescription($data)
         }
     }
     return json_encode($descriptions);
+}
+
+function sendEmail($email)
+{
+    $to      = $email;
+    $subject = 'Welcome to Backpacker!';
+    $message = 'hello!!';
+    $headers = 'From: geniepotato@gmail.com' . "\r\n";
+    mail($to, $subject, $message, $headers);
 }
 ?>

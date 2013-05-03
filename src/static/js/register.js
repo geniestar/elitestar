@@ -19,9 +19,13 @@ YUI({
 
     var switchToBackpacker = function() {
         switchRole('b');
+        Y.one('#register-form').removeClass('houseowner');
+        Y.one('#register-form').addClass('backpacker');
     }
     var switchToHouseowner = function() {
         switchRole('h')
+        Y.one('#register-form').addClass('houseowner');
+        Y.one('#register-form').removeClass('backpacker');
     }
 
     var replaceAllSuburbs = function(selector, id) {
@@ -36,7 +40,12 @@ YUI({
             select.append(newOption);
         }
     }
-
+    Y.one('.registerform-login').on('click', function(){
+        Y.one('.login-panel').removeClass('hidden');
+    });
+    Y.one('.login-panel .registerform-close').on('click', function(){
+        Y.one('.login-panel').addClass('hidden');
+    });
     Y.one('#backpacker-btn').on('click', switchToBackpacker);
     Y.one('#houseowner-btn').on('click', switchToHouseowner);
     var mapper = new Y.EliteStar.Mapper({
@@ -131,13 +140,26 @@ YUI({
     var checkInput = function(formId, checkArray) {
         for (var key in checkArray) {
             var checkItem = checkArray[key];
-            console.log(checkItem);
             if ('' === Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value')) {
                 return false;
             }
         }
         return true;
     }
+
+    var checkEmailFormat = function(formId, checkArray) {
+        for (var key in checkArray) {
+            var checkItem = checkArray[key];
+            var value = Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value');
+            var pattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/
+            var matchArray = pattern.exec(value);
+            if (!matchArray) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     var btns = Y.all('#register-form form input[type=submit]')
     btns.each(function(btn) {
         btn.on('click', function(e)  {
@@ -163,6 +185,14 @@ YUI({
                     alert(YAHOO.EliteStar.lang.REG_READ_TOS);
                     return false;
                 }
+                if (!checkEmailFormat('user-form', ['id'])) {
+                    alert(YAHOO.EliteStar.lang.REG_ID_EMAIL);
+                    return false;
+                }
+                if (!checkEmailFormat('backpacker-form-all', ['email'])) {
+                    alert(YAHOO.EliteStar.lang.REG_EMAIL_FORMAT);
+                    return false;
+                }
                 backpackerSubmit();
             } else {
                 if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
@@ -183,6 +213,14 @@ YUI({
                 }
                 if (!Y.one('#houseowner-form-all input[name="agree"]').get('checked')) {
                     alert(YAHOO.EliteStar.lang.REG_READ_TOS);
+                    return false;
+                }
+                if (!checkEmailFormat('user-form', ['id'])) {
+                    alert(YAHOO.EliteStar.lang.REG_ID_EMAIL);
+                    return false;
+                }
+                if (!checkEmailFormat('houseowner-form-all', ['email'])) {
+                    alert(YAHOO.EliteStar.lang.REG_EMAIL_FORMAT);
                     return false;
                 }
                 houseownerSubmit();

@@ -185,6 +185,7 @@ languages:
     REG_READ_TOS: 'Please read privacy policy first.'
     REG_PW_LENGTH: 'Password must be at least 8 characters long.'
     REG_ID_EMAIL: 'Id must be email.'
+    REG_EMAIL_FORMAT: 'Email format wrong.'
     ADMIN_MESSAGES_TITLE: 'Hi %s, You have total <span style="text-decoration:underline;">%d</span> messages.'
     ADMIN_PREVIOUS_MESSAGES: 'Previous Messages...'
     ADMIN_MESSAGES_I: 'I'
@@ -207,6 +208,8 @@ languages:
     ADMIN_PROFITS_TOTAL: 'Total'
     ERROR: 'Error!'
     ERROR_PREV_PAGE: 'Prev Page'
+    ERROR_PREV_PAGE: 'Welcome'
+    TOS: 'Yahoo! Inc. ("Yahoo!") welcomes you. Yahoo! provides the Yahoo! Services (defined below) to you subject to the following Terms of Service ("TOS"), which may be updated by us from time to time without notice to you. You can review the most current version of the TOS at any time at: http://info.yahoo.com/legal/us/yahoo/utos/terms/. By accessing and using the Yahoo! Services, you accept and agree to be bound by the terms and provision of the TOS. In addition, when using particular Yahoo! owned or operated services, you and Yahoo! shall be subject to any posted guidelines or rules applicable to such services, which may be posted and modified from time to time. All such guidelines or rules (including but not limited to our Spam Policy) are hereby incorporated by reference into the TOS. Yahoo! may also offer other services that are governed by different Terms of Service. In such cases the other terms of service will be posted on the relevant service to which they apply.'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
@@ -217,5 +220,5 @@ errors:
     USER_ID_INVALID: 'User Id invalied, please try another user Id'
     FIELDS_EMPTY: 'There is some fields empty.'
     NEED_LOGIN: 'Please Login to take action.'
-    ORIGINAL_PW_WRONG: 'Your original password was wrong.'
+    ORIGINAL_PW_WRONG: 'Original password was wrong or retype password didn''t match your new password.'
     NO_LOGIN: 'Please Login'

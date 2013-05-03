@@ -178,7 +178,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_searchmenu', array('action' => './find_backpacker.php'));?>
                 </div>
                 <div class="row">
-                    <?php echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));?>
+                    <?php if($user && 0 == $user['role']) {echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));}?>
                 </div>
             </div>
             <div class="col-right col">

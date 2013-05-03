@@ -195,6 +195,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         if ('SUCCESS' === res.status) {
             Y.one('#houseobject').set('innerHTML', res.data.html);
             setupForm();
+            Y.one('#form-submit').removeClass('hidden');
         }
     });
     initScrollView();

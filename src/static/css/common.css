@@ -558,41 +558,45 @@ input[type="submit"] {
 #menu-container #menu .btn .btn-container .title {
   float: left;
   margin-top: 1px;
+  max-width: 110px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
-/* line 282, ../scss/common.scss */
+/* line 286, ../scss/common.scss */
 #menu-container #menu .btn .btn-container a {
   color: #232323;
 }
-/* line 287, ../scss/common.scss */
+/* line 291, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected a, #menu-container #menu .btn .btn-container.mouseover a {
   color: #22CFBD;
 }
-/* line 290, ../scss/common.scss */
+/* line 294, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .title, #menu-container #menu .btn .btn-container.mouseover .title {
   color: #22CFBD;
 }
-/* line 293, ../scss/common.scss */
+/* line 297, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_houses, #menu-container #menu .btn .btn-container.mouseover .menu-find_houses {
   background-position: 0 -138px;
 }
-/* line 296, ../scss/common.scss */
+/* line 300, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_customers, #menu-container #menu .btn .btn-container.mouseover .menu-find_customers {
   background-position: 0 -184px;
 }
-/* line 299, ../scss/common.scss */
+/* line 303, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-settings, #menu-container #menu .btn .btn-container.mouseover .menu-settings {
   background-position: 0 -46px;
 }
-/* line 304, ../scss/common.scss */
+/* line 308, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 308, ../scss/common.scss */
+/* line 312, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 313, ../scss/common.scss */
+/* line 317, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -605,30 +609,30 @@ input[type="submit"] {
   z-index: 12;
   text-align: left;
 }
-/* line 324, ../scss/common.scss */
+/* line 328, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 329, ../scss/common.scss */
+/* line 333, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 336, ../scss/common.scss */
+/* line 340, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 339, ../scss/common.scss */
+/* line 343, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }
 
-/* line 345, ../scss/common.scss */
+/* line 349, ../scss/common.scss */
 #hint-panel {
   position: absolute;
   background-color: #FFF6D5;

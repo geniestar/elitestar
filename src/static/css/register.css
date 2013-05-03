@@ -145,11 +145,116 @@
 }
 
 /* line 53, ../scss/register.scss */
+.login-panel {
+  background-color: #E2E2E2;
+  width: 226px;
+  height: 188px;
+  padding: 20px;
+  color: #232323;
+  position: fixed;
+  top: 50%;
+  margin-top: -133px;
+  left: 60%;
+  margin-left: -125px;
+  z-index: 10;
+  border: 1px solid #666666;
+  -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+}
+/* line 69, ../scss/register.scss */
+.login-panel .egisterform-close {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+/* line 78, ../scss/register.scss */
+.login-panel form {
+  position: absolute;
+}
+/* line 80, ../scss/register.scss */
+.login-panel form .option-set {
+  margin: 5px 0;
+}
+/* line 82, ../scss/register.scss */
+.login-panel form .option-set .title {
+  margin: 0 5px 5px 5px;
+  font-weight: bold;
+  color: #232323;
+}
+/* line 87, ../scss/register.scss */
+.login-panel form .option-set .sub-title {
+  font-size: 12px;
+  color: #232323;
+}
+/* line 91, ../scss/register.scss */
+.login-panel form .option-set input {
+  color: #666666;
+}
+/* line 94, ../scss/register.scss */
+.login-panel form .option-set input[type=text], .login-panel form .option-set input[type=password] {
+  border: 1px solid #232323;
+  width: 200px;
+}
+/* line 98, ../scss/register.scss */
+.login-panel form .option-set input[type=checkbox] {
+  vertical-align: middle;
+}
+/* line 101, ../scss/register.scss */
+.login-panel form .option-set input[type=submit] {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px 15px;
+  margin: 0;
+  border: 1px solid #232323;
+  background-color: #eba028;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMyUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjQlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(3%, #ffffff), color-stop(4%, #eba028), color-stop(100%, #eba028));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #ffffff 3%, #eba028 4%, #eba028 100%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 116, ../scss/register.scss */
+.login-panel form .option-set input[type=submit]:active {
+  background-color: #eba028;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eba028), color-stop(95%, #eba028), color-stop(96%, #ffffff), color-stop(99%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+  background-image: -moz-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+  background-image: -o-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+  background-image: linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
+}
+/* line 122, ../scss/register.scss */
+.login-panel form .option-set:nth-child(2) {
+  margin-top: 10px;
+}
+/* line 126, ../scss/register.scss */
+.login-panel .registerform-close {
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+/* line 136, ../scss/register.scss */
 #register-form {
   padding: 50px 10px;
-  background-color: #DBF0FF;
+  background-color: #EFEFEF;
 }
-/* line 57, ../scss/register.scss */
+/* line 140, ../scss/register.scss */
 #register-form #user-form, #register-form #backpacker-form, #register-form #houseowner-form {
   width: 560px;
   padding: 15px;
@@ -160,28 +265,28 @@
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 67, ../scss/register.scss */
+/* line 150, ../scss/register.scss */
 #register-form #backpacker-form, #register-form #houseowner-form {
   margin: 10px auto;
 }
-/* line 70, ../scss/register.scss */
+/* line 153, ../scss/register.scss */
 #register-form #role-switcher {
   width: 562px;
   margin: 0 auto;
   font-size: 20px;
   overflow: hidden;
 }
-/* line 75, ../scss/register.scss */
+/* line 158, ../scss/register.scss */
 #register-form #role-switcher .container {
   float: right;
   height: 48px;
   line-height: 48px;
 }
-/* line 80, ../scss/register.scss */
+/* line 163, ../scss/register.scss */
 #register-form #role-switcher .title {
   display: inline;
 }
-/* line 83, ../scss/register.scss */
+/* line 166, ../scss/register.scss */
 #register-form #role-switcher .switcher-btn {
   padding: 5px 20px;
   _padding: 7px 20px 3px 20px;
@@ -196,7 +301,7 @@
   border-width: 1px;
   cursor: pointer;
 }
-/* line 97, ../scss/register.scss */
+/* line 180, ../scss/register.scss */
 #register-form #role-switcher #backpacker-btn {
   border-color: #1B6336;
   background-color: #33c3b8;
@@ -209,15 +314,15 @@
   background-image: linear-gradient(top, #ffffff 1%, #33c3b8 51%, #ffffff 99%);
   margin: 0 10px;
 }
-/* line 104, ../scss/register.scss */
+/* line 187, ../scss/register.scss */
 #register-form #role-switcher #backpacker-btn:hover {
   color: #1B6336;
 }
-/* line 107, ../scss/register.scss */
+/* line 190, ../scss/register.scss */
 #register-form #role-switcher #backpacker-btn.selected {
   color: #1B6336;
 }
-/* line 110, ../scss/register.scss */
+/* line 193, ../scss/register.scss */
 #register-form #role-switcher #houseowner-btn {
   border-color: #1B1464;
   background-color: #54a6de;
@@ -229,48 +334,58 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
 }
-/* line 116, ../scss/register.scss */
+/* line 199, ../scss/register.scss */
 #register-form #role-switcher #houseowner-btn:hover {
   color: #1B1464;
 }
-/* line 119, ../scss/register.scss */
+/* line 202, ../scss/register.scss */
 #register-form #role-switcher #houseowner-btn.selected {
   color: #1B1464;
 }
-/* line 124, ../scss/register.scss */
+/* line 207, ../scss/register.scss */
 #register-form #backpacker-form {
   position: relative;
 }
-/* line 126, ../scss/register.scss */
+/* line 209, ../scss/register.scss */
 #register-form #backpacker-form #go-to-title {
   position: absolute;
   top: 80px;
   left: 30px;
 }
-/* line 132, ../scss/register.scss */
+/* line 215, ../scss/register.scss */
 #register-form #houseowner-form {
   position: relative;
 }
 
+/* line 220, ../scss/register.scss */
+#register-form.houseowner {
+  background-color: #DBF0FF;
+}
+
+/* line 224, ../scss/register.scss */
+#register-form.backpacker {
+  background-color: #CFED3F;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 140, ../scss/register.scss */
+  /* line 231, ../scss/register.scss */
   .form .input-set input {
     border: 1px solid #666;
   }
 }
-/* line 148, ../scss/register.scss */
+/* line 239, ../scss/register.scss */
 .form .big-title {
   color: #3b91d9;
   font-size: 20px;
 }
-/* line 152, ../scss/register.scss */
+/* line 243, ../scss/register.scss */
 .form .input-set {
   clear: both;
   padding: 5px 5px;
   line-height: 30px;
   height: 30px;
 }
-/* line 157, ../scss/register.scss */
+/* line 248, ../scss/register.scss */
 .form .input-set .title {
   float: left;
   width: 130px;
@@ -281,21 +396,21 @@
   vertical-align: middle;
   line-height: 20px;
 }
-/* line 167, ../scss/register.scss */
+/* line 258, ../scss/register.scss */
 .form .input-set .title.long-title {
   width: 240px;
   text-align: right;
 }
-/* line 171, ../scss/register.scss */
+/* line 262, ../scss/register.scss */
 .form .input-set .title.sec-title {
   display: inline;
   width: auto;
 }
-/* line 175, ../scss/register.scss */
+/* line 266, ../scss/register.scss */
 .form .input-set .title-gray {
   color: #666666;
 }
-/* line 178, ../scss/register.scss */
+/* line 269, ../scss/register.scss */
 .form .input-set input {
   float: left;
   -webkit-border-radius: 0;
@@ -306,124 +421,124 @@
   color: #666666;
   vertical-align: middle;
 }
-/* line 188, ../scss/register.scss */
+/* line 279, ../scss/register.scss */
 .form .input-set input[type="radio"] {
   margin-top: 7px;
   float: left;
 }
-/* line 192, ../scss/register.scss */
+/* line 283, ../scss/register.scss */
 .form .input-set select {
   padding: 3px;
   float: left;
 }
-/* line 196, ../scss/register.scss */
+/* line 287, ../scss/register.scss */
 .form .input-set .registerform-calendar {
   cursor: pointer;
 }
-/* line 199, ../scss/register.scss */
+/* line 290, ../scss/register.scss */
 .form .input-set .facility-title, .form .input-set .help-title, .form .input-set .contact-title, .form .input-set .photo-title {
   text-align: right;
 }
-/* line 202, ../scss/register.scss */
+/* line 293, ../scss/register.scss */
 .form .input-set .help-title {
   width: 182px;
 }
-/* line 205, ../scss/register.scss */
+/* line 296, ../scss/register.scss */
 .form .input-set .cotact-title {
   width: 100px;
 }
-/* line 208, ../scss/register.scss */
+/* line 299, ../scss/register.scss */
 .form .input-set .facility-icon {
   margin: 0 20px;
 }
-/* line 211, ../scss/register.scss */
+/* line 302, ../scss/register.scss */
 .form .input-set .utility-icon {
   margin: 0 5px;
 }
-/* line 214, ../scss/register.scss */
+/* line 305, ../scss/register.scss */
 .form .input-set .padding-title-one {
   text-align: left;
   width: 70px;
 }
-/* line 218, ../scss/register.scss */
+/* line 309, ../scss/register.scss */
 .form .input-set .padding-title-two {
   text-align: right;
   width: 100px;
 }
-/* line 222, ../scss/register.scss */
+/* line 313, ../scss/register.scss */
 .form .input-set .padding-title-three {
   text-align: right;
   width: 58px;
 }
-/* line 226, ../scss/register.scss */
+/* line 317, ../scss/register.scss */
 .form .input-set .padding-title-four {
   text-align: right;
   width: 63px;
 }
-/* line 230, ../scss/register.scss */
+/* line 321, ../scss/register.scss */
 .form .input-set .extra-info {
   display: block;
   clear: both;
   margin: 5px 0 0 200px;
   padding: 10px;
 }
-/* line 235, ../scss/register.scss */
+/* line 326, ../scss/register.scss */
 .form .input-set .extra-info .registerform-people {
   margin-bottom: 10px;
   float: left;
   width: 9px;
   height: 24px;
 }
-/* line 242, ../scss/register.scss */
+/* line 333, ../scss/register.scss */
 .form .input-set .short-input {
   width: 30px;
 }
-/* line 246, ../scss/register.scss */
+/* line 337, ../scss/register.scss */
 .form .input-set.big-input-set {
   margin: 10px 0;
 }
-/* line 248, ../scss/register.scss */
+/* line 339, ../scss/register.scss */
 .form .input-set.big-input-set .big-title {
   padding: 0 20px 0 0;
 }
-/* line 252, ../scss/register.scss */
+/* line 343, ../scss/register.scss */
 .form .input-set.input-set-two-line {
   line-height: 60px;
   height: 60px;
 }
-/* line 256, ../scss/register.scss */
+/* line 347, ../scss/register.scss */
 .form .graybg {
   background-color: #F2F2F2;
 }
-/* line 259, ../scss/register.scss */
+/* line 350, ../scss/register.scss */
 .form .input-set.two-rows {
   height: 60px;
 }
-/* line 261, ../scss/register.scss */
+/* line 352, ../scss/register.scss */
 .form .input-set.two-rows .small-text {
   font-size: 10px;
 }
-/* line 264, ../scss/register.scss */
+/* line 355, ../scss/register.scss */
 .form .input-set.two-rows .two-rows-left {
   float: left;
   width: 120px;
   padding-top: 18px;
 }
-/* line 270, ../scss/register.scss */
+/* line 361, ../scss/register.scss */
 .form .input-set.two-rows .two-rows-right .row {
   height: 30px;
 }
-/* line 276, ../scss/register.scss */
+/* line 367, ../scss/register.scss */
 .form .big-title {
   padding: 20px 0;
   float: left;
 }
-/* line 280, ../scss/register.scss */
+/* line 371, ../scss/register.scss */
 .form #more-description {
   position: relative;
   padding-left: 15px;
 }
-/* line 283, ../scss/register.scss */
+/* line 374, ../scss/register.scss */
 .form #more-description .registerform-add {
   cursor: pointer;
   width: 26px;
@@ -433,68 +548,59 @@
   bottom: 0;
   z-index: 10;
 }
-/* line 292, ../scss/register.scss */
+/* line 383, ../scss/register.scss */
 .form #more-description .input-set {
   position: relative;
   height: auto;
 }
-/* line 296, ../scss/register.scss */
-.form #more-description .registerform-close {
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
-  top: 11px;
-  left: -12px;
-  position: absolute;
-}
 
-/* line 308, ../scss/register.scss */
+/* line 391, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 312, ../scss/register.scss */
+/* line 395, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 317, ../scss/register.scss */
+/* line 400, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 322, ../scss/register.scss */
+/* line 405, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 327, ../scss/register.scss */
+/* line 410, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 332, ../scss/register.scss */
+/* line 415, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
 
-/* line 340, ../scss/register.scss */
+/* line 423, ../scss/register.scss */
 #ajax-role-form {
   position: relative;
 }
-/* line 342, ../scss/register.scss */
+/* line 425, ../scss/register.scss */
 #ajax-role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
 
-/* line 347, ../scss/register.scss */
+/* line 430, ../scss/register.scss */
 input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;
