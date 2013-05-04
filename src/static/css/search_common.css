@@ -866,35 +866,38 @@
 #img-panel .content-field {
   width: 100%;
   height: 100%;
+  line-height: 400px;
+  text-align: center;
 }
-/* line 546, ../scss/search_common.scss */
+/* line 548, ../scss/search_common.scss */
 #img-panel .content-field #big-map {
   width: 600px;
   height: 400px;
 }
-/* line 550, ../scss/search_common.scss */
+/* line 552, ../scss/search_common.scss */
 #img-panel .content-field img.big-pic {
   max-width: 600px;
   max-height: 400px;
+  vertical-align: middle;
 }
 
-/* line 557, ../scss/search_common.scss */
+/* line 560, ../scss/search_common.scss */
 .pagenation {
   overflow: hidden;
   padding: 20px 0 40px 0;
   margin: 0 auto;
   float: right;
 }
-/* line 562, ../scss/search_common.scss */
+/* line 565, ../scss/search_common.scss */
 .pagenation div {
   float: left;
   margin: 0 2px;
 }
-/* line 566, ../scss/search_common.scss */
+/* line 569, ../scss/search_common.scss */
 .pagenation div.selected {
   background-color: #EEE;
 }
-/* line 570, ../scss/search_common.scss */
+/* line 573, ../scss/search_common.scss */
 .pagenation a {
   font-size: 10px;
   color: #666666;
