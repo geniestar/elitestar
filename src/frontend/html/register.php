@@ -10,7 +10,8 @@ $headData = array(
 
 $tailData = array(
     'js' => array(
-        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/register.js')
+        array('url' => 'http://' . $_SERVER['SERVER_NAME'] . '/js/register.js'),
+        array('url' => 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOI345UTosGvgRwlz2xGXS3yc-HtSwCq4&sensor=false'),
     )
 );
 

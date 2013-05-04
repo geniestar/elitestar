@@ -156,7 +156,7 @@ YUI.add("houseobject", function(Y)
                                 position: results[0].geometry.location
                             });
                         } else {
-                            console.log(Y.EliteStar.lang.SEARCH_RESULT_MAP_FAILURE + status);
+                            console.log(YAHOO.EliteStar.lang.SEARCH_RESULT_MAP_FAILURE + status);
                         }
                     });
                 }
@@ -190,7 +190,7 @@ YUI.add("houseobject", function(Y)
                                 position: results[0].geometry.location
                             });
                         } else {
-                            alert("Geocode was not successful for the following reason: " + status);
+                               console.log(YAHOO.EliteStar.lang.SEARCH_RESULT_MAP_FAILURE + status);
                         }
                     });
                 }

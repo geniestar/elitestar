@@ -201,8 +201,27 @@ YUI({
         return checkOK;
     }
 
+    var checkAddress = function(cb) {
+        var address = Y.one('#houseowner-form input[name="address"]').get('value');
+        var state = Y.one('#houseowner-form select[name="state"]').get('value');
+        var city = Y.one('#houseowner-form select[name="city"]').get('value');
+        var stateName = YAHOO.EliteStar.params.states[state].name;
+        var cityName = YAHOO.EliteStar.params.states[state].suburbs[city];
+        var geocoder = new google.maps.Geocoder();
+        if (geocoder) {
+            geocoder.geocode({ 'address': stateName + ',' + cityName + ',' + address }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    markFieldAsValid('houseowner-form', 'address');
+                    cb(true);
+                } else {
+                    markFieldAsInvalid('houseowner-form', 'address');
+                    cb(false);
+                }
+            });
+        }
+        return true; //unable to check, just pass that;
+    }
     var markFieldAsValid = function(formId, name) {
-    console.log('valid???' + name);
         var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
         if (parentNode.hasClass('input-set')) {
             parentNode.removeClass('invalid');
@@ -222,6 +241,7 @@ YUI({
                 parentNode.one('.title').set('innerHTML', '*' + parentNode.one('.title').get('innerHTML'));
             } else {
                 parentNode.one('.sec-title').set('innerHTML', '*' + parentNode.one('.sec-title').get('innerHTML'));
+                parentNode.one('.sec-title').set('innerHTML', parentNode.one('.sec-title').get('innerHTML').replace('**', '*'));//prevent double *
             }
         }
     }
@@ -275,6 +295,7 @@ YUI({
                     return false;
                 }
                 backpackerSubmit();
+                e.target.get('form').submit();
             } else {
                 if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
@@ -312,14 +333,20 @@ YUI({
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_READ_TOS;
                     checkOK = false;
                 }
-                if (!checkOK)
-                {
-                    alert(alertMessage);
-                    return false;
-                }
-                houseownerSubmit();
+                checkAddress(function(addressOK){
+                    if (!addressOK) {
+                        alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_ADDRESS_WRONG;
+                        checkOK = false;
+                    }
+                    if (!checkOK)
+                    {
+                        alert(alertMessage);
+                        return false;
+                    }
+                    houseownerSubmit();
+                    e.target.get('form').submit();
+                });
             }
-            e.target.get('form').submit();
             return false;
         });
     });

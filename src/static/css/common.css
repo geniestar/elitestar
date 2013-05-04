@@ -235,7 +235,7 @@
 
 /* line 11, ../scss/common.scss */
 body {
-  font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif,"微軟正黑體";
   margin: 0;
   font-size: 12px;
 }
@@ -644,14 +644,9 @@ input[type="submit"] {
   color: #232323;
 }
 /* line 352, ../scss/common.scss */
-#menu-container #menu a {
-  vertical-align: middle;
-  color: #7F7F7F;
-  text-decoration: none;
-}
-/* line 357, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
+  border-bottom: 0px;
   width: 100%;
   -webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.25);
   -moz-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.25);
@@ -662,24 +657,26 @@ input[type="submit"] {
   z-index: 12;
   text-align: left;
 }
+/* line 364, ../scss/common.scss */
+#menu-container #menu .extension-link a {
+  vertical-align: middle;
+  color: #7F7F7F;
+  text-decoration: none;
+}
 /* line 368, ../scss/common.scss */
-#menu-container #menu .extension-link .extension-item {
+#menu-container #menu .extension-link a .extension-item {
   padding-left: 20px;
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 375, ../scss/common.scss */
+/* line 376, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 378, ../scss/common.scss */
-#menu-container #menu .extension-link .extension-item:last-child {
-  border-bottom: 0px;
-}
 
-/* line 384, ../scss/common.scss */
+/* line 382, ../scss/common.scss */
 #hint-panel {
   position: absolute;
   background-color: #FFF6D5;
@@ -693,7 +690,7 @@ input[type="submit"] {
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
 
-/* line 397, ../scss/common.scss */
+/* line 395, ../scss/common.scss */
 .login-panel {
   background-color: #E2E2E2;
   width: 226px;
@@ -710,7 +707,7 @@ input[type="submit"] {
   -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
-/* line 412, ../scss/common.scss */
+/* line 410, ../scss/common.scss */
 .login-panel .egisterform-close {
   width: 14px;
   height: 14px;
@@ -719,39 +716,39 @@ input[type="submit"] {
   top: 5px;
   cursor: pointer;
 }
-/* line 421, ../scss/common.scss */
+/* line 419, ../scss/common.scss */
 .login-panel form {
   position: absolute;
 }
-/* line 423, ../scss/common.scss */
+/* line 421, ../scss/common.scss */
 .login-panel form .option-set {
   margin: 5px 0;
 }
-/* line 425, ../scss/common.scss */
+/* line 423, ../scss/common.scss */
 .login-panel form .option-set .title {
   margin: 0 5px 5px 5px;
   font-weight: bold;
   color: #232323;
 }
-/* line 430, ../scss/common.scss */
+/* line 428, ../scss/common.scss */
 .login-panel form .option-set .sub-title {
   font-size: 12px;
   color: #232323;
 }
-/* line 434, ../scss/common.scss */
+/* line 432, ../scss/common.scss */
 .login-panel form .option-set input {
   color: #666666;
 }
-/* line 437, ../scss/common.scss */
+/* line 435, ../scss/common.scss */
 .login-panel form .option-set input[type=text], .login-panel form .option-set input[type=password] {
   border: 1px solid #232323;
   width: 200px;
 }
-/* line 441, ../scss/common.scss */
+/* line 439, ../scss/common.scss */
 .login-panel form .option-set input[type=checkbox] {
   vertical-align: middle;
 }
-/* line 444, ../scss/common.scss */
+/* line 442, ../scss/common.scss */
 .login-panel form .option-set input[type=submit] {
   float: left;
   color: white;
@@ -773,7 +770,7 @@ input[type="submit"] {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 460, ../scss/common.scss */
+/* line 458, ../scss/common.scss */
 .login-panel form .option-set input[type=submit]:active {
   background-color: #eba028;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -784,11 +781,11 @@ input[type="submit"] {
   background-image: -o-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
   background-image: linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
 }
-/* line 466, ../scss/common.scss */
+/* line 464, ../scss/common.scss */
 .login-panel form .option-set:nth-child(2) {
   margin-top: 10px;
 }
-/* line 470, ../scss/common.scss */
+/* line 468, ../scss/common.scss */
 .login-panel .registerform-close {
   width: 14px;
   height: 14px;
@@ -797,7 +794,7 @@ input[type="submit"] {
   right: 5px;
   position: absolute;
 }
-/* line 478, ../scss/common.scss */
+/* line 476, ../scss/common.scss */
 .login-panel .register-now-main-btn {
   width: auto;
   position: static;
@@ -805,7 +802,7 @@ input[type="submit"] {
   margin-left: 20px;
 }
 
-/* line 486, ../scss/common.scss */
+/* line 484, ../scss/common.scss */
 .register-now-main-btn {
   width: 100px;
   text-align: center;
@@ -831,7 +828,7 @@ input[type="submit"] {
   border-radius: 5px;
 }
 
-/* line 505, ../scss/common.scss */
+/* line 503, ../scss/common.scss */
 .register-now-main-btn:active {
   background-color: #eba028;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');

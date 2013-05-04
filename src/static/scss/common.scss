@@ -9,7 +9,7 @@
 @include all-listing-sprites;
 
 body {
-    font-family: Myriad Pro,Lucida Grande,Helvetica,Arial,Verdana,sans-serif,"Microsoft JhengHei","微軟正黑體";
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif,"微軟正黑體";
     margin: 0; 
     font-size: 12px;
 }
@@ -349,13 +349,9 @@ background-color: #B2B2B2;
             color: $black;
         }
     }
-    a {
-        vertical-align: middle;
-        color: #7F7F7F;
-        text-decoration: none;
-    }
     .extension-link {
         border: 1px solid #E5E5E5;
+        border-bottom: 0px;
         width: 100%;
         -webkit-box-shadow: 1px 1px 5px rgba(50, 50, 50, 0.25);
         -moz-box-shadow:    1px 1px 5px rgba(50, 50, 50, 0.25);
@@ -365,18 +361,20 @@ background-color: #B2B2B2;
         top: -1px;
         z-index: 12;
         text-align: left;
-        .extension-item {
-            padding-left: 20px;
-            height: 26px;
-            line-height: 26px;
-            background-color: $white;
-            border-bottom: 1px solid #E5E5E5;
+        a {
+            vertical-align: middle;
+            color: #7F7F7F;
+            text-decoration: none;
+            .extension-item {
+                padding-left: 20px;
+                height: 26px;
+                line-height: 26px;
+                background-color: $white;
+                border-bottom: 1px solid #E5E5E5;
+            }
         }
         .extension-item:hover {
             background-color: #E5E5E5;    
-        }
-        .extension-item:last-child {
-            border-bottom: 0px;
         }
     }
 }}

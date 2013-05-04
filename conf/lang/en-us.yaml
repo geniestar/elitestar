@@ -193,6 +193,7 @@ languages:
     REG_PW_LENGTH: 'Password must be at least 8 characters long.'
     REG_ID_EMAIL: 'Id must be email.'
     REG_EMAIL_FORMAT: 'Email format wrong.'
+    REG_ADDRESS_WRONG: 'Not a valid address'
     ADMIN_MESSAGES_TITLE: 'Hi %s, You have total <span style="text-decoration:underline;">%d</span> messages.'
     ADMIN_PREVIOUS_MESSAGES: 'Previous Messages...'
     ADMIN_MESSAGES_I: 'I'
