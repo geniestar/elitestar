@@ -1,6 +1,21 @@
 countries:
-    0: Taiwan
-    1: US
+    0: Austria
+    1: Britain
+    2: Canada
+    3: China
+    4: Denmark
+    5: France
+    6: Germany
+    7: HK
+    8: India
+    9: Indonesia
+    10: Japan
+    11: Malaysua
+    12: South-Korea
+    13: Stitzerland
+    14: Taiwan
+    15: Thailand
+    16: US
 states: 
     0:
         id: 0

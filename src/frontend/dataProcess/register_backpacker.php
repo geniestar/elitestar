@@ -4,7 +4,12 @@ $backpacker = isset($data['backpacker'])?$data['backpacker']:null;
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 
 // just defult value;
-foreach ($states[0]['suburbs'] as $key => $value)
+$state = 0;
+if (isset($backpacker))
+{
+    $state = $backpacker['state'];
+}
+foreach ($states[$state]['suburbs'] as $key => $value)
 {
     $data['cities'][] = array(
         'id' => $key,

@@ -12,8 +12,13 @@ foreach($states as $key => $state)
     );
 }
 
+$state = 0;
+if (isset($houseobject))
+{
+    $state = $houseobject['state'];
+}
 // just defult value;
-foreach ($states[0]['suburbs'] as $key => $value)
+foreach ($states[$state]['suburbs'] as $key => $value)
 {
     $data['cities'][] = array(
         'id' => $key,

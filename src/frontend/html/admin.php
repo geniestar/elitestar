@@ -64,7 +64,7 @@ else if ('settings' == $_GET['action'])
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<input type="hidden" name="role" value="1">';
         $formHtml .= '<div id="backpacker-form" class="form">' . ContentGenerator::getContent('register_backpacker', array('backpacker' => $backpacker)) . '</div>';
-        $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
+        $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true, 'showBtn' => true));
         $formHtml .= '</form>';
     }
 }
