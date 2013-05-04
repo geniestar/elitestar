@@ -60,6 +60,7 @@ languages:
     SEARCH_RESULT_MESSAGE_SEND_REPLY_SUCCESSFULLY: 'Reply sent successfully.'
     SEARCH_RESULT_PREV_PAGE: 'Prev'
     SEARCH_RESULT_NEXT_PAGE: 'Next'
+    SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE: 'Sign in to see the information'
     LOGIN_USERID: 'Username'
     LOGIN_PW: 'Password'
     LOGIN_REMEMBERME: 'Remember Me'

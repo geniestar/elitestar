@@ -78,27 +78,27 @@ class HouseObjects
                 'house_name' => array('op' => ' like ', 'value' => '%' . $houseName . '%'),
             );
         }
-        if ($durationStart)
+        if (null !== $durationStart)
         {
             $conditions['duration_start'] = array('op' => '>=', 'value' => $durationStart);
         }
-        if ($durationEnd)
+        if (null !== $durationEnd)
         {
             $conditions['duration_end'] = array('op' => '<=', 'value' => $durationEnd);
         }
-        if ($rentLow)
+        if (null !== $rentLow)
         {
             $conditions['rent_low'] = array('op' => '>=', 'value' => $rentLow);
         }
-        if ($rentHigh)
+        if (null !== $rentHigh)
         {
             $conditions['rent_high'] = array('op' => '<=', 'value' => $rentHigh);
         }
-        if ($bedsSingle)
+        if (null !== $bedsSingle)
         {
             $conditions['beds_single'] = array('op' => '=', 'value' => $bedsSingle);
         }
-        if ($bedsDouble)
+        if (null !== $bedsDouble)
         {
             $conditions['beds_double'] = array('op' => '=', 'value' => $bedsDouble);
         }

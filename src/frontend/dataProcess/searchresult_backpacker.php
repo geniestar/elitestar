@@ -76,10 +76,14 @@ foreach ($checkArray as $checkIndex)
         );
     }
 }
-
+$data['showContact'] = false;
 $data['facilitiesArray'] = $facilitiesArray;
 if ($data['user'] && 0 === $data['user']['role'])
 {
     $data['showActionBtns'] = true;
+}
+if ($data['user'] && isset($data['user']['id']))
+{
+    $data['showContact'] = true;
 }
 ?>

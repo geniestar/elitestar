@@ -88,4 +88,8 @@ if ($data['user'] && 1 === $data['user']['role'])
 {
     $data['showActionBtns'] = true;
 }
+if ($data['user'] && isset($data['user']['id']))
+{
+    $data['showContact'] = true;
+}
 ?>

@@ -5,9 +5,9 @@
             <div class="title">{{backpacker.name}}</div>
             <img src="/img/flags/{{countryFlag}}.jpg">
             <div class="updated-time">{{updatedText}}</div>
-       </div> 
-       <div class="right-item hint" data-hint="{{backpacker.user.name}}</br>{{backpacker.user.phone}}</br>{{backpacker.user.mail}}">
-           <div class="theme-sprite theme-icon-contact hint" data-hint="{{backpacker.user.name}}</br>{{backpacker.user.phone}}</br>{{backpacker.user.mail}}"></div> 
+       </div>
+       <div class="right-item hint" data-hint="{{#showContact}}{{backpacker.user.name}}</br>{{backpacker.user.phone}}</br>{{backpacker.user.mail}}{{/showContact}}{{^showContact}}{{i18n.SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE}}{{/showContact}}">
+           <div class="theme-sprite theme-icon-contact hint" data-hint="{{#showContact}}{{backpacker.user.name}}</br>{{backpacker.user.phone}}</br>{{backpacker.user.mail}}{{/showContact}}{{^showContact}}{{i18n.SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE}}{{/showContact}}"></div> 
            <div class="white-bar"></div>
        </div>
     </div>
