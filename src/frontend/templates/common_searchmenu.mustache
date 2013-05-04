@@ -45,14 +45,14 @@
             <select name="bs" class="short">
                 <option value=""></option>
                 {{#houseDimemsions.beds.single}}
-                    <option value="{{.}}">{{.}}</option>
+                    <option value="{{value}}">{{value}}</option>
                 {{/houseDimemsions.beds.single}}
             </select>
             <div class="title sec-title">{{i18n.COMMON_SEARCH_BEDS_D}}</div>
             <select name="bd" class="short">
                 <option value=""></option>
                 {{#houseDimemsions.beds.double}}
-                    <option value="{{.}}">{{.}}</option>
+                    <option value="{{value}}">{{value}}</option>
                 {{/houseDimemsions.beds.double}}
             </select>
         </div>
