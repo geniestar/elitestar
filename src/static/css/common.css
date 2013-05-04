@@ -644,6 +644,12 @@ input[type="submit"] {
   color: #232323;
 }
 /* line 352, ../scss/common.scss */
+#menu-container #menu a {
+  vertical-align: middle;
+  color: #7F7F7F;
+  text-decoration: none;
+}
+/* line 357, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -656,19 +662,13 @@ input[type="submit"] {
   z-index: 12;
   text-align: left;
 }
-/* line 363, ../scss/common.scss */
+/* line 368, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
+  padding-left: 20px;
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
-}
-/* line 368, ../scss/common.scss */
-#menu-container #menu .extension-link .extension-item a {
-  margin-left: 20px;
-  vertical-align: middle;
-  color: #7F7F7F;
-  text-decoration: none;
 }
 /* line 375, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {

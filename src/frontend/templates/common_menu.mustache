@@ -24,18 +24,18 @@
                 </div>
                 <div class="extension-link hidden">
                     {{#isSuperUser}}
-                        <div class="extension-item"><a href="./superadmin.php">{{i18n.SUPER_ADMIN_COMMON_MENU}}</a></div>
-                        <div class="extension-item"><a href="./admin.php?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
+                        <a href="./superadmin.php"><div class="extension-item">{{i18n.SUPER_ADMIN_COMMON_MENU}}</div></a>
+                        <a href="./admin.php?action=logout"><div class="extension-item">{{i18n.COMMON_MENU_LOGOUT}}</div></a>
                     {{/isSuperUser}}
                     {{^isSuperUser}}
-                        <div class="extension-item"><a href="./admin.php?action=info">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>
-                        <div class="extension-item"><a href="./admin.php?action=settings">{{i18n.COMMON_MENU_SETTINGS}}</a></div>
+                        <a href="./admin.php?action=info"><div class="extension-item">{{i18n.COMMON_MENU_BASIC_INFO}}</div></a>
+                        <a href="./admin.php?action=settings"><div class="extension-item">{{i18n.COMMON_MENU_SETTINGS}}</div></a>
                         {{#showProfit}}
-                            <div class="extension-item"><a href="./admin.php?action=profits">{{i18n.COMMON_MENU_PROFITS}}</a></div>
+                            <a href="./admin.php?action=profits"><div class="extension-item">{{i18n.COMMON_MENU_PROFITS}}</div></a>
                         {{/showProfit}}
-                        <div class="extension-item"><a href="./admin.php?action=messages">{{i18n.COMMON_MENU_MESSAGES}}</a></div>
-                        <div class="extension-item"><a href="./admin.php?action=suggestion">{{i18n.COMMON_MENU_SUGGEST}}</a></div>
-                        <div class="extension-item"><a href="./admin.php?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
+                        <a href="./admin.php?action=messages"><div class="extension-item">{{i18n.COMMON_MENU_MESSAGES}}</div></a>
+                        <a href="./admin.php?action=suggestion"><div class="extension-item">{{i18n.COMMON_MENU_SUGGEST}}</div></a>
+                        <a href="./admin.php?action=logout"><div class="extension-item">{{i18n.COMMON_MENU_LOGOUT}}</div></a>
                     {{/isSuperUser}}
                 </div>
             {{/isLogin}}

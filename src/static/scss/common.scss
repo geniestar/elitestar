@@ -349,6 +349,11 @@ background-color: #B2B2B2;
             color: $black;
         }
     }
+    a {
+        vertical-align: middle;
+        color: #7F7F7F;
+        text-decoration: none;
+    }
     .extension-link {
         border: 1px solid #E5E5E5;
         width: 100%;
@@ -361,16 +366,11 @@ background-color: #B2B2B2;
         z-index: 12;
         text-align: left;
         .extension-item {
+            padding-left: 20px;
             height: 26px;
             line-height: 26px;
             background-color: $white;
             border-bottom: 1px solid #E5E5E5;
-            a {
-                margin-left: 20px;
-                vertical-align: middle;
-                color: #7F7F7F;
-                text-decoration: none;
-            }
         }
         .extension-item:hover {
             background-color: #E5E5E5;    
