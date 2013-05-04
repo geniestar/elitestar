@@ -7,6 +7,12 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 define('USER_PHOTO_PATH', '/var/www/html/elitestar/ugc/');
 define('USER_PHOTO_PREFIX', 'uphoto');
 define('OBJECT_PHOTO_PREFIX', 'ophoto');
+if (isset($_POST['action']) && 'forget_pw' == $_POST['action'] && isset($_POST['id']))
+{
+    sendPassword($_POST['id']);
+    header('Location: /');
+    exit;
+}
 if (!isset($_POST['edit']))
 {
 if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))
@@ -261,9 +267,31 @@ function getDescription($data)
 function sendEmail($email)
 {
     $to      = $email;
-    $subject = 'Welcome to Backpacker!';
-    $message = 'hello!!';
-    $headers = 'From: geniepotato@gmail.com' . "\r\n";
+    $subject = EliteHelper::getLangString('WELCOME_MAIL_TITLE');
+    $message = EliteHelper::getLangString('WELCOME_MAIL_DESC');
+    $headers = 'From: elitestar@gmail.com' . "\r\n";
     mail($to, $subject, $message, $headers);
+}
+
+function sendPassword($id)
+{
+    $user = EliteUsers::getInstance()->queryUser($id, null, false, true);
+    $userInfo = EliteUsers::getInstance()->queryUser($id, null, null, true);
+    if ($user && $userInfo) 
+    {
+        $seed = str_split('abcdefghijklmnopqrstuvwxyz'.'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.'0123456789!@#$%^&*()');
+        shuffle($seed);
+        $newPw = implode('', array_slice($seed, 0, 8));
+        EliteUsers::getInstance()->updateUserInfo($id, $newPw, null, null, null, null, null, null);
+        $to      = $userInfo[0]['mail'];
+        $subject = EliteHelper::getLangString('FORGOT_PASSWORD_MAIL');
+        $message = EliteHelper::getLangString('FORGOT_PASSWORD_DESC1');
+        $message .= '<br><br><b>' . $newPw . '</b><br>';
+        $message .= EliteHelper::getLangString('FORGOT_PASSWORD_DESC2');
+        $headers = "MIME-Version: 1.0\r\n" .
+                   "Content-type: text/html; charset=$sCharset\r\n" .
+                   "From: elitestar@gmail.com" . "\r\n";
+        mail($to, $subject, $message, $headers);
+    }
 }
 ?>

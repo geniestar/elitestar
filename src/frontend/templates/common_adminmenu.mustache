@@ -1,17 +1,17 @@
 <div id="admin-menu">
     <div class="admin-alteration"></div>
     <div class="margin-left-area"></div>
-    <div class="title"><a href="./admin.php?action=basic">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>
+    <div class="title {{#s_basic}}selected{{/s_basic}}"><a href="./admin.php?action=basic">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>
     <div class="seperator"></div>
-    <div class="title"><a href="./admin.php?action=settings">{{i18n.COMMON_MENU_SETTINGS}}</a></div>
+    <div class="title {{#s_settings}}selected{{/s_settings}}"><a href="./admin.php?action=settings">{{i18n.COMMON_MENU_SETTINGS}}</a></div>
     <div class="seperator"></div>
     {{#showProfit}}
-        <div class="title"><a href="./admin.php?action=profits">{{i18n.COMMON_MENU_PROFITS}}</a></div>
+        <div class="title {{#s_profits}}selected{{/s_profits}}"><a href="./admin.php?action=profits">{{i18n.COMMON_MENU_PROFITS}}</a></div>
         <div class="seperator"></div>
     {{/showProfit}}
-    <div class="title"><a href="./admin.php?action=messages">{{i18n.COMMON_MENU_MESSAGES}}</a></div>
+    <div class="title {{#s_messages}}selected{{/s_messages}}"><a href="./admin.php?action=messages">{{i18n.COMMON_MENU_MESSAGES}}</a></div>
     <div class="seperator"></div>
-    <div class="title"><a id="suggest-btn" href="./admin.php?action=suggestion">{{i18n.COMMON_MENU_SUGGESTION}}</a></div>
+    <div class="title {{#s_suggestion}}selected{{/s_suggestion}}"><a id="suggest-btn" href="./admin.php?action=suggestion">{{i18n.COMMON_MENU_SUGGESTION}}</a></div>
     <div class="seperator"></div>
     <div class="title"><a href="./admin.php?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
     <div class="clean"></div>

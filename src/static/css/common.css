@@ -282,9 +282,10 @@ input[type="submit"] {
 /* line 49, ../scss/common.scss */
 .error-area {
   padding: 20px;
+  line-height: 20px;
 }
 
-/* line 53, ../scss/common.scss */
+/* line 54, ../scss/common.scss */
 .yui3-skin-sam .yui3-calendar-weekday {
   font-weight: bold;
   padding: 5px;
@@ -294,31 +295,31 @@ input[type="submit"] {
   color: #FFF;
 }
 
-/* line 62, ../scss/common.scss */
+/* line 63, ../scss/common.scss */
 .yui3-skin-sam .yui3-calendar-day {
   font-weight: bold;
   background-color: #FFF1E3;
 }
 
-/* line 67, ../scss/common.scss */
+/* line 68, ../scss/common.scss */
 #map-all {
   width: 147px;
   height: 138px;
   margin: 0 auto;
   position: relative;
 }
-/* line 72, ../scss/common.scss */
+/* line 73, ../scss/common.scss */
 #map-all .map-item {
   cursor: pointer;
 }
-/* line 75, ../scss/common.scss */
+/* line 76, ../scss/common.scss */
 #map-all .map-map_wa {
   position: absolute;
   width: 58px;
   height: 89px;
   top: 16px;
 }
-/* line 81, ../scss/common.scss */
+/* line 82, ../scss/common.scss */
 #map-all .map-map_nt {
   position: absolute;
   width: 34px;
@@ -326,7 +327,7 @@ input[type="submit"] {
   top: 5px;
   left: 56px;
 }
-/* line 88, ../scss/common.scss */
+/* line 89, ../scss/common.scss */
 #map-all .map-map_sa {
   position: absolute;
   width: 44px;
@@ -334,7 +335,7 @@ input[type="submit"] {
   top: 65px;
   left: 56px;
 }
-/* line 95, ../scss/common.scss */
+/* line 96, ../scss/common.scss */
 #map-all .map-map_qld {
   position: absolute;
   width: 58px;
@@ -342,7 +343,7 @@ input[type="submit"] {
   top: 0;
   right: 0px;
 }
-/* line 102, ../scss/common.scss */
+/* line 103, ../scss/common.scss */
 #map-all .map-map_vic {
   position: absolute;
   width: 33px;
@@ -351,7 +352,7 @@ input[type="submit"] {
   right: 15px;
   z-index: 1;
 }
-/* line 110, ../scss/common.scss */
+/* line 111, ../scss/common.scss */
 #map-all .map-map_tas {
   position: absolute;
   width: 19px;
@@ -359,7 +360,7 @@ input[type="submit"] {
   top: 119px;
   right: 18px;
 }
-/* line 117, ../scss/common.scss */
+/* line 118, ../scss/common.scss */
 #map-all .map-map_nsw {
   position: absolute;
   width: 48px;
@@ -367,26 +368,26 @@ input[type="submit"] {
   top: 73px;
   right: 0px;
 }
-/* line 125, ../scss/common.scss */
+/* line 126, ../scss/common.scss */
 #map-all .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 130, ../scss/common.scss */
+/* line 131, ../scss/common.scss */
 #map-all.map_big-map_all_big {
   width: 181px;
   height: 169px;
   margin: 0 auto;
   position: relative;
 }
-/* line 135, ../scss/common.scss */
+/* line 136, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_wa_big {
   position: absolute;
   width: 70px;
   height: 110px;
   top: 19px;
 }
-/* line 141, ../scss/common.scss */
+/* line 142, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nt_big {
   position: absolute;
   width: 41px;
@@ -394,7 +395,7 @@ input[type="submit"] {
   top: 6px;
   left: 70px;
 }
-/* line 148, ../scss/common.scss */
+/* line 149, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_sa_big {
   position: absolute;
   width: 53px;
@@ -402,7 +403,7 @@ input[type="submit"] {
   top: 80px;
   left: 70px;
 }
-/* line 155, ../scss/common.scss */
+/* line 156, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_qld_big {
   position: absolute;
   width: 71px;
@@ -410,7 +411,7 @@ input[type="submit"] {
   top: 0;
   right: 1px;
 }
-/* line 162, ../scss/common.scss */
+/* line 163, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_vic_big {
   position: absolute;
   width: 41px;
@@ -419,7 +420,7 @@ input[type="submit"] {
   right: 18px;
   z-index: 1;
 }
-/* line 170, ../scss/common.scss */
+/* line 171, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_tas_big {
   position: absolute;
   width: 23px;
@@ -427,7 +428,7 @@ input[type="submit"] {
   top: 146px;
   right: 23px;
 }
-/* line 177, ../scss/common.scss */
+/* line 178, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nsw_big {
   position: absolute;
   width: 59px;
@@ -435,18 +436,18 @@ input[type="submit"] {
   top: 90px;
   right: 0px;
 }
-/* line 185, ../scss/common.scss */
+/* line 186, ../scss/common.scss */
 #map-all.map_big-map_all_big .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 190, ../scss/common.scss */
+/* line 191, ../scss/common.scss */
 .calendar {
   width: 220px;
   line-height: 15px;
 }
 
-/* line 195, ../scss/common.scss */
+/* line 196, ../scss/common.scss */
 .panel {
   z-index: 100;
   padding: 10px;
@@ -470,34 +471,34 @@ input[type="submit"] {
   position: absolute;
 }
 
-/* line 212, ../scss/common.scss */
+/* line 213, ../scss/common.scss */
 .main-container {
   width: 720px;
   margin: 0 auto;
 }
 
-/* line 217, ../scss/common.scss */
+/* line 218, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 221, ../scss/common.scss */
+/* line 222, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 225, ../scss/common.scss */
+/* line 226, ../scss/common.scss */
 .col-right {
   width: 558px;
   margin-left: 2px;
 }
 
-/* line 230, ../scss/common.scss */
+/* line 231, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
 }
-/* line 233, ../scss/common.scss */
+/* line 234, ../scss/common.scss */
 #banner .container {
   width: 720px;
   height: 110px;
@@ -505,14 +506,14 @@ input[type="submit"] {
   position: relative;
   overflow: hidden;
 }
-/* line 239, ../scss/common.scss */
+/* line 240, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 245, ../scss/common.scss */
+/* line 246, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -522,16 +523,16 @@ input[type="submit"] {
   bottom: 0px;
 }
 
-/* line 256, ../scss/common.scss */
+/* line 257, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 260, ../scss/common.scss */
+/* line 261, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
 }
-/* line 262, ../scss/common.scss */
+/* line 263, ../scss/common.scss */
 #menu-container #menu {
   width: 720px;
   margin: 0 auto;
@@ -548,7 +549,7 @@ input[type="submit"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 271, ../scss/common.scss */
+/* line 272, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -556,14 +557,14 @@ input[type="submit"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 277, ../scss/common.scss */
+/* line 278, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 282, ../scss/common.scss */
+/* line 283, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -571,15 +572,15 @@ input[type="submit"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 289, ../scss/common.scss */
+/* line 290, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-find_houses {
   background-position: 0 -162px;
 }
-/* line 292, ../scss/common.scss */
+/* line 293, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-find_customers {
   background-position: 0 -207px;
 }
-/* line 295, ../scss/common.scss */
+/* line 296, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   margin-top: 1px;
@@ -588,44 +589,44 @@ input[type="submit"] {
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 303, ../scss/common.scss */
+/* line 304, ../scss/common.scss */
 #menu-container #menu .btn .btn-container a {
   color: #232323;
 }
-/* line 308, ../scss/common.scss */
+/* line 309, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected a, #menu-container #menu .btn .btn-container.mouseover a {
   color: #22CFBD;
 }
-/* line 311, ../scss/common.scss */
+/* line 312, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .title, #menu-container #menu .btn .btn-container.mouseover .title {
   color: #22CFBD;
 }
-/* line 314, ../scss/common.scss */
+/* line 315, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_houses, #menu-container #menu .btn .btn-container.mouseover .menu-find_houses {
   background-position: 0 -138px;
 }
-/* line 317, ../scss/common.scss */
+/* line 318, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_customers, #menu-container #menu .btn .btn-container.mouseover .menu-find_customers {
   background-position: 0 -184px;
 }
-/* line 320, ../scss/common.scss */
+/* line 321, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-settings, #menu-container #menu .btn .btn-container.mouseover .menu-settings {
   background-position: 0 -46px;
 }
-/* line 325, ../scss/common.scss */
+/* line 326, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 329, ../scss/common.scss */
+/* line 330, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 333, ../scss/common.scss */
+/* line 334, ../scss/common.scss */
 #menu-container #menu .btn-right a {
   color: #232323;
 }
-/* line 337, ../scss/common.scss */
+/* line 338, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -638,30 +639,30 @@ input[type="submit"] {
   z-index: 12;
   text-align: left;
 }
-/* line 348, ../scss/common.scss */
+/* line 349, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 353, ../scss/common.scss */
+/* line 354, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 360, ../scss/common.scss */
+/* line 361, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 363, ../scss/common.scss */
+/* line 364, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }
 
-/* line 369, ../scss/common.scss */
+/* line 370, ../scss/common.scss */
 #hint-panel {
   position: absolute;
   background-color: #FFF6D5;
