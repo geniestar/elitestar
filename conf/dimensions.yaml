@@ -140,6 +140,82 @@ house_dimemsions:
             value: '04:00'
         9:
             value: '04:30'
+        10:
+            value: '05:00'
+        11:
+            value: '05:30'
+        12:
+            value: '06:00'
+        13:
+            value: '06:30'
+        14:
+            value: '07:00'
+        15:
+            value: '07:30'
+        16:
+            value: '08:00'
+        17:
+            value: '08:30'
+        18:
+            value: '09:00'
+        19:
+            value: '09:30'
+        20:
+            value: '10:00'
+        21:
+            value: '10:30'
+        22:
+            value: '11:00'
+        23:
+            value: '11:30'
+        24:
+            value: '12:00'
+        25:
+            value: '12:30'
+        26:
+            value: '13:00'
+        27:
+            value: '13:30'
+        28:
+            value: '14:00'
+        29:
+            value: '14:30'
+        30:
+            value: '15:00'
+        31:
+            value: '15:30'
+        32:
+            value: '16:00'
+        33:
+            value: '16:30'
+        34:
+            value: '17:00'
+        35:
+            value: '17:30'
+        36:
+            value: '18:00'
+        37:
+            value: '18:30'
+        38:
+            value: '19:00'
+        39:
+            value: '19:30'
+        40:
+            value: '20:00'
+        41:
+            value: '20:30'
+        42:
+            value: '21:00'
+        43:
+            value: '21:30'
+        44:
+            value: '22:00'
+        45:
+            value: '22:30'
+        46:
+            value: '23:00'
+        47:
+            value: '23:30'
     description_position: 
         0: 
             value: BUS_STOP
