@@ -2,7 +2,7 @@
 <div id="message-{{id}}" class="message">
     <div class="container">
     <div class="message-single">
-        <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} To <span class="title">{{receiverInfo.name}}</span> ({{created_time}}):
+        <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
         <div class="message-body">{{message}}</div>
     </div>
     {{#replies}}
@@ -12,6 +12,7 @@
         </div>
     {{/replies}}
     </div>
+    {{^isSuggestion}}
     <div class="reply-form">
         <form action="ajax/admin_action.php" data-id={{id}} id="reply-form-{{id}}">
             <input type="hidden" name="action" value="reply-messages"></input>
@@ -21,6 +22,7 @@
             <div class="clean"></div>
         </form>
     </div>
+    {{/isSuggestion}}
     {{#canDelete}}<div class="admin-sprite admin-close" data-id="{{id}}"></div>{{/canDelete}}
 </div>
 {{/messages}}

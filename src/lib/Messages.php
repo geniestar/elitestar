@@ -71,12 +71,35 @@ class Messages
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
-    
+  
+    public function querySuggestionsTotal()
+    {
+        $sql = 'SELECT count(*) as count FROM messages WHERE receiver=\'superuser\'';
+        $inputParams = array($userId, $userId);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        return $r[0]['count'];
+    }
+
+    public function querySuggestions()
+    {
+        $inputParams = array('superuser');
+        $sql = 'SELECT * FROM messages WHERE receiver=? AND is_reply = 0 ORDER BY created_time DESC';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        foreach ($r as $message)
+        {
+            $info = EliteUsers::getInstance()->queryUser($message['sender'], null, null, true);
+            $message['senderInfo'] = $info[0];
+            $finalResult[] = $message;
+        } 
+        return $finalResult;
+    }
+
     public function queryMessagesTotal($userId)
     {
         $sql = 'SELECT count(*) as count FROM messages WHERE (receiver=? OR sender=?) AND is_reply=0 AND receiver != \'superuser\'';
         $inputParams = array($userId, $userId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $finalResult = array();
         return $r[0]['count'];
     }
 

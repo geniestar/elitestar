@@ -707,3 +707,27 @@
   vertical-align: middle;
   width: 90px;
 }
+
+/* line 545, ../scss/admin_common.scss */
+.reports {
+  margin-top: 40px;
+  width: 100%;
+  ling-height: 25px;
+  background-color: #EFEFEF;
+  font-size: 16px;
+}
+/* line 551, ../scss/admin_common.scss */
+.reports tr:first-child {
+  background-color: #009999;
+  color: #fff;
+}
+/* line 556, ../scss/admin_common.scss */
+.reports tr td {
+  padding: 10px;
+}
+
+/* line 562, ../scss/admin_common.scss */
+.traffic-link {
+  margin: 10px;
+  font-size: 16px;
+}

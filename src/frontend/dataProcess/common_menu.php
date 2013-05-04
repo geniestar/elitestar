@@ -17,4 +17,9 @@ else
     $data['settingsText'] = EliteHelper::getLangString('COMMON_MENU_SETTINGS_LOGIN');
     $data['isLogin'] = false;
 }
+
+if (is_array($data['user']) && 'superuser' === $data['user']['id'])
+{
+    $data['isSuperUser'] = true;
+}
 ?>

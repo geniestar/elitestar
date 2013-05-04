@@ -20,6 +20,8 @@ $duration = strtotime($data['backpacker']['duration_end']) - strtotime($data['ba
 $durationText = '';
 $month = floor($duration/(60*60*24*30));
 
+$year = 0;
+
 if ($month > 12)
 {
     $year = floor($month/12);
