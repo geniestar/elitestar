@@ -187,9 +187,13 @@ $tailData = array(
                 </div>
                 <div class="row">
                     <div id="favorite-container"></div>
-                    <?php foreach ($backpackers as $backpacker):?>              
-                        <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));?>
-                    <?php endforeach?>
+                    <?php if($backpackers && count($backpackers) > 0):?>
+                        <?php foreach ($backpackers as $backpacker):?>              
+                            <?php echo ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));?>
+                        <?php endforeach?>
+                    <?php else:?>
+                        <center style="margin: 120px 0;"><?php echo EliteHelper::getLangString('SEARCH_RESULT_NO_RESULT');?></center>
+                    <?php endif?>
                     <?php echo ContentGenerator::getContent('searchresult_pagenation', array('total' => $total[0]['total'], 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
             </div>
