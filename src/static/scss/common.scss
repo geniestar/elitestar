@@ -32,6 +32,7 @@ input {
 
 input[type="text"], input[type="password"] {
     border: 1px solid $gray;
+    color: $black;
 }
 
 input[type="submit"] {
@@ -47,8 +48,20 @@ input[type="submit"] {
 }
 
 .error-area {
-    padding: 20px;
-    line-height: 20px;
+    padding: 40px 20px;
+    line-height: 25px;
+    input {
+        padding: 5px;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+    input[type="text"] {
+        width: 200px;
+    }
+    form {
+        margin-top: 5px;
+    }
 }
 
 .yui3-skin-sam .yui3-calendar-weekday {

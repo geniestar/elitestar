@@ -25,6 +25,7 @@
                 <div class="extension-link hidden">
                     {{#isSuperUser}}
                         <div class="extension-item"><a href="./superadmin.php">{{i18n.SUPER_ADMIN_COMMON_MENU}}</a></div>
+                        <div class="extension-item"><a href="./admin.php?action=logout">{{i18n.COMMON_MENU_LOGOUT}}</a></div>
                     {{/isSuperUser}}
                     {{^isSuperUser}}
                         <div class="extension-item"><a href="./admin.php?action=info">{{i18n.COMMON_MENU_BASIC_INFO}}</a></div>

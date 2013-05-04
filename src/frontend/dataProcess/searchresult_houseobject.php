@@ -92,4 +92,5 @@ if ($data['user'] && isset($data['user']['id']))
 {
     $data['showContact'] = true;
 }
+EliteHelper::setStringToJs('SEARCH_RESULT_MAP_FAILURE');
 ?>

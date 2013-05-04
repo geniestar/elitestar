@@ -150,7 +150,7 @@ YUI.add("houseobject", function(Y)
                                 position: results[0].geometry.location
                             });
                         } else {
-                            alert("Geocode was not successful for the following reason: " + status);
+                            alert(Y.EliteStar.lang.SEARCH_RESULT_MAP_FAILURE + status);
                         }
                     });
                 }

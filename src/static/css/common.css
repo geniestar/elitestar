@@ -262,30 +262,46 @@ input {
 /* line 33, ../scss/common.scss */
 input[type="text"], input[type="password"] {
   border: 1px solid #666666;
+  color: #232323;
 }
 
-/* line 37, ../scss/common.scss */
+/* line 38, ../scss/common.scss */
 input[type="submit"] {
   -webkit-appearance: button;
 }
 
-/* line 41, ../scss/common.scss */
+/* line 42, ../scss/common.scss */
 .hidden {
   display: none;
 }
 
-/* line 45, ../scss/common.scss */
+/* line 46, ../scss/common.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 49, ../scss/common.scss */
+/* line 50, ../scss/common.scss */
 .error-area {
-  padding: 20px;
-  line-height: 20px;
+  padding: 40px 20px;
+  line-height: 25px;
+}
+/* line 53, ../scss/common.scss */
+.error-area input {
+  padding: 5px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+/* line 59, ../scss/common.scss */
+.error-area input[type="text"] {
+  width: 200px;
+}
+/* line 62, ../scss/common.scss */
+.error-area form {
+  margin-top: 5px;
 }
 
-/* line 54, ../scss/common.scss */
+/* line 67, ../scss/common.scss */
 .yui3-skin-sam .yui3-calendar-weekday {
   font-weight: bold;
   padding: 5px;
@@ -295,31 +311,31 @@ input[type="submit"] {
   color: #FFF;
 }
 
-/* line 63, ../scss/common.scss */
+/* line 76, ../scss/common.scss */
 .yui3-skin-sam .yui3-calendar-day {
   font-weight: bold;
   background-color: #FFF1E3;
 }
 
-/* line 68, ../scss/common.scss */
+/* line 81, ../scss/common.scss */
 #map-all {
   width: 147px;
   height: 138px;
   margin: 0 auto;
   position: relative;
 }
-/* line 73, ../scss/common.scss */
+/* line 86, ../scss/common.scss */
 #map-all .map-item {
   cursor: pointer;
 }
-/* line 76, ../scss/common.scss */
+/* line 89, ../scss/common.scss */
 #map-all .map-map_wa {
   position: absolute;
   width: 58px;
   height: 89px;
   top: 16px;
 }
-/* line 82, ../scss/common.scss */
+/* line 95, ../scss/common.scss */
 #map-all .map-map_nt {
   position: absolute;
   width: 34px;
@@ -327,7 +343,7 @@ input[type="submit"] {
   top: 5px;
   left: 56px;
 }
-/* line 89, ../scss/common.scss */
+/* line 102, ../scss/common.scss */
 #map-all .map-map_sa {
   position: absolute;
   width: 44px;
@@ -335,7 +351,7 @@ input[type="submit"] {
   top: 65px;
   left: 56px;
 }
-/* line 96, ../scss/common.scss */
+/* line 109, ../scss/common.scss */
 #map-all .map-map_qld {
   position: absolute;
   width: 58px;
@@ -343,7 +359,7 @@ input[type="submit"] {
   top: 0;
   right: 0px;
 }
-/* line 103, ../scss/common.scss */
+/* line 116, ../scss/common.scss */
 #map-all .map-map_vic {
   position: absolute;
   width: 33px;
@@ -352,7 +368,7 @@ input[type="submit"] {
   right: 15px;
   z-index: 1;
 }
-/* line 111, ../scss/common.scss */
+/* line 124, ../scss/common.scss */
 #map-all .map-map_tas {
   position: absolute;
   width: 19px;
@@ -360,7 +376,7 @@ input[type="submit"] {
   top: 119px;
   right: 18px;
 }
-/* line 118, ../scss/common.scss */
+/* line 131, ../scss/common.scss */
 #map-all .map-map_nsw {
   position: absolute;
   width: 48px;
@@ -368,26 +384,26 @@ input[type="submit"] {
   top: 73px;
   right: 0px;
 }
-/* line 126, ../scss/common.scss */
+/* line 139, ../scss/common.scss */
 #map-all .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 131, ../scss/common.scss */
+/* line 144, ../scss/common.scss */
 #map-all.map_big-map_all_big {
   width: 181px;
   height: 169px;
   margin: 0 auto;
   position: relative;
 }
-/* line 136, ../scss/common.scss */
+/* line 149, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_wa_big {
   position: absolute;
   width: 70px;
   height: 110px;
   top: 19px;
 }
-/* line 142, ../scss/common.scss */
+/* line 155, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nt_big {
   position: absolute;
   width: 41px;
@@ -395,7 +411,7 @@ input[type="submit"] {
   top: 6px;
   left: 70px;
 }
-/* line 149, ../scss/common.scss */
+/* line 162, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_sa_big {
   position: absolute;
   width: 53px;
@@ -403,7 +419,7 @@ input[type="submit"] {
   top: 80px;
   left: 70px;
 }
-/* line 156, ../scss/common.scss */
+/* line 169, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_qld_big {
   position: absolute;
   width: 71px;
@@ -411,7 +427,7 @@ input[type="submit"] {
   top: 0;
   right: 1px;
 }
-/* line 163, ../scss/common.scss */
+/* line 176, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_vic_big {
   position: absolute;
   width: 41px;
@@ -420,7 +436,7 @@ input[type="submit"] {
   right: 18px;
   z-index: 1;
 }
-/* line 171, ../scss/common.scss */
+/* line 184, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_tas_big {
   position: absolute;
   width: 23px;
@@ -428,7 +444,7 @@ input[type="submit"] {
   top: 146px;
   right: 23px;
 }
-/* line 178, ../scss/common.scss */
+/* line 191, ../scss/common.scss */
 #map-all.map_big-map_all_big .map_big-map_nsw_big {
   position: absolute;
   width: 59px;
@@ -436,18 +452,18 @@ input[type="submit"] {
   top: 90px;
   right: 0px;
 }
-/* line 186, ../scss/common.scss */
+/* line 199, ../scss/common.scss */
 #map-all.map_big-map_all_big .unselected {
   background: url("/img/transparent.png");
 }
 
-/* line 191, ../scss/common.scss */
+/* line 204, ../scss/common.scss */
 .calendar {
   width: 220px;
   line-height: 15px;
 }
 
-/* line 196, ../scss/common.scss */
+/* line 209, ../scss/common.scss */
 .panel {
   z-index: 100;
   padding: 10px;
@@ -471,34 +487,34 @@ input[type="submit"] {
   position: absolute;
 }
 
-/* line 213, ../scss/common.scss */
+/* line 226, ../scss/common.scss */
 .main-container {
   width: 720px;
   margin: 0 auto;
 }
 
-/* line 218, ../scss/common.scss */
+/* line 231, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 222, ../scss/common.scss */
+/* line 235, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 226, ../scss/common.scss */
+/* line 239, ../scss/common.scss */
 .col-right {
   width: 558px;
   margin-left: 2px;
 }
 
-/* line 231, ../scss/common.scss */
+/* line 244, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
 }
-/* line 234, ../scss/common.scss */
+/* line 247, ../scss/common.scss */
 #banner .container {
   width: 720px;
   height: 110px;
@@ -506,14 +522,14 @@ input[type="submit"] {
   position: relative;
   overflow: hidden;
 }
-/* line 240, ../scss/common.scss */
+/* line 253, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 246, ../scss/common.scss */
+/* line 259, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -523,16 +539,16 @@ input[type="submit"] {
   bottom: 0px;
 }
 
-/* line 257, ../scss/common.scss */
+/* line 270, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 261, ../scss/common.scss */
+/* line 274, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
 }
-/* line 263, ../scss/common.scss */
+/* line 276, ../scss/common.scss */
 #menu-container #menu {
   width: 720px;
   margin: 0 auto;
@@ -549,7 +565,7 @@ input[type="submit"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 272, ../scss/common.scss */
+/* line 285, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -557,14 +573,14 @@ input[type="submit"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 278, ../scss/common.scss */
+/* line 291, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 283, ../scss/common.scss */
+/* line 296, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -572,15 +588,15 @@ input[type="submit"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 290, ../scss/common.scss */
+/* line 303, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-find_houses {
   background-position: 0 -162px;
 }
-/* line 293, ../scss/common.scss */
+/* line 306, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-find_customers {
   background-position: 0 -207px;
 }
-/* line 296, ../scss/common.scss */
+/* line 309, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   margin-top: 1px;
@@ -589,44 +605,44 @@ input[type="submit"] {
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 304, ../scss/common.scss */
+/* line 317, ../scss/common.scss */
 #menu-container #menu .btn .btn-container a {
   color: #232323;
 }
-/* line 309, ../scss/common.scss */
+/* line 322, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected a, #menu-container #menu .btn .btn-container.mouseover a {
   color: #22CFBD;
 }
-/* line 312, ../scss/common.scss */
+/* line 325, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .title, #menu-container #menu .btn .btn-container.mouseover .title {
   color: #22CFBD;
 }
-/* line 315, ../scss/common.scss */
+/* line 328, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_houses, #menu-container #menu .btn .btn-container.mouseover .menu-find_houses {
   background-position: 0 -138px;
 }
-/* line 318, ../scss/common.scss */
+/* line 331, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_customers, #menu-container #menu .btn .btn-container.mouseover .menu-find_customers {
   background-position: 0 -184px;
 }
-/* line 321, ../scss/common.scss */
+/* line 334, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-settings, #menu-container #menu .btn .btn-container.mouseover .menu-settings {
   background-position: 0 -46px;
 }
-/* line 326, ../scss/common.scss */
+/* line 339, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 330, ../scss/common.scss */
+/* line 343, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 334, ../scss/common.scss */
+/* line 347, ../scss/common.scss */
 #menu-container #menu .btn-right a {
   color: #232323;
 }
-/* line 338, ../scss/common.scss */
+/* line 351, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   width: 100%;
@@ -639,30 +655,30 @@ input[type="submit"] {
   z-index: 12;
   text-align: left;
 }
-/* line 349, ../scss/common.scss */
+/* line 362, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item {
   height: 26px;
   line-height: 26px;
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 354, ../scss/common.scss */
+/* line 367, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item a {
   margin-left: 20px;
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 361, ../scss/common.scss */
+/* line 374, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
-/* line 364, ../scss/common.scss */
+/* line 377, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:last-child {
   border-bottom: 0px;
 }
 
-/* line 370, ../scss/common.scss */
+/* line 383, ../scss/common.scss */
 #hint-panel {
   position: absolute;
   background-color: #FFF6D5;
