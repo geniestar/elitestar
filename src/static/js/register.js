@@ -3,8 +3,9 @@ YUI({
         mapper: '/js/mapper.js',
         ecalendar: '/js/ecalendar.js',
         hintpanel: '/js/hint_panel.js',
+        loginpanel: '/js/login_panel.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'hintpanel', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', function(Y) {
     var switchRole = function (role){
         var backpackerForm = Y.one('#backpacker-form-all');
         var houseownerForm = Y.one('#houseowner-form-all');
@@ -120,6 +121,34 @@ YUI({
         tmpNode.removeClass('hidden');
     });
 
+    var oldValue = '';
+    Y.one('#user-form input[name="id"]').on('change', function(){
+        var value = Y.one('#user-form input[name="id"]').get('value');
+        var b = Y.one('#backpacker-form input[name="email"]');
+        var h = Y.one('#houseowner-form input[name="email"]');
+        if (!b.get('value') || b.get('value') === oldValue) {
+            b.set('value', value);
+        }
+        if (!h.get('value') || h.get('value') === oldValue) {
+            h.set('value', value);
+        }
+        oldValue = value;
+    });
+
+    Y.one('#backpacker-form input[name="email"]').on('change', function(){
+        var b = Y.one('#backpacker-form input[name="email"]');
+        if (!b.get('value')) {
+            b.set('value', Y.one('#user-form input[name="id"]').get('value'));
+        }
+    });
+
+    Y.one('#houseowner-form input[name="email"]').on('change', function(){
+        var b = Y.one('#houseowner-form input[name="email"]');
+        if (!b.get('value')) {
+            b.set('value', Y.one('#user-form input[name="id"]').get('value'));
+        }
+    });
+
     var houseownerSubmit = function() {
         var inputs = Y.one('#backpacker-form').all('input');
         inputs.each(function(input) {
@@ -142,89 +171,150 @@ YUI({
         });
     };
     var checkInput = function(formId, checkArray) {
+        var checkOK = true;
         for (var key in checkArray) {
             var checkItem = checkArray[key];
             if ('' === Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value')) {
-                return false;
+                markFieldAsInvalid(formId, checkItem);
+                checkOK = false;
+            } else {
+                markFieldAsValid(formId, checkItem);
             }
         }
-        return true;
+        return checkOK;
     }
 
     var checkEmailFormat = function(formId, checkArray) {
+        var checkOK = true;
         for (var key in checkArray) {
             var checkItem = checkArray[key];
             var value = Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value');
             var pattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/
             var matchArray = pattern.exec(value);
-            if (!matchArray) {
-                return false;
+            if (!value || !matchArray) {
+                markFieldAsInvalid(formId, checkItem);
+                checkOK = false;
+            } else {
+                markFieldAsValid(formId, checkItem);
             }
         }
-        return true;
+        return checkOK;
+    }
+
+    var markFieldAsValid = function(formId, name) {
+    console.log('valid???' + name);
+        var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
+        if (parentNode.hasClass('input-set')) {
+            parentNode.removeClass('invalid');
+            if ('duration_end' !== name) {
+                parentNode.one('.title').set('innerHTML', parentNode.one('.title').get('innerHTML').replace('*', ''));
+            } else {
+                parentNode.one('.sec-title').set('innerHTML', parentNode.one('.sec-title').get('innerHTML').replace('*', ''));
+            }
+        }
+    }
+
+    var markFieldAsInvalid = function(formId, name) {
+        var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
+        if ((parentNode.hasClass('input-set') && !parentNode.hasClass('invalid')) || 'duration_end' === name) {
+            parentNode.addClass('invalid');
+            if ('duration_end' !== name) {
+                parentNode.one('.title').set('innerHTML', '*' + parentNode.one('.title').get('innerHTML'));
+            } else {
+                parentNode.one('.sec-title').set('innerHTML', '*' + parentNode.one('.sec-title').get('innerHTML'));
+            }
+        }
     }
 
     var btns = Y.all('#register-form form input[type=submit]')
     btns.each(function(btn) {
         btn.on('click', function(e)  {
             e.preventDefault();
+            var alertMessage = '';
+            var checkOK = true;
             if ('b-submit' === e.target.get('id')) {
                 if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
-                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
-                    return false;
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
                 }
                 if (!checkInput('backpacker-form', ['arrival_time', 'duration_start', 'duration_end', 'rent', 'email', 'phone'])) {
-                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
-                    return false;
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
                 }
-                if (Y.one('#user-form input[name="password"]').get('value') !== Y.one('#user-form input[name="retype_password"]').get('value')) {
-                    alert(YAHOO.EliteStar.lang.REG_PW_NOT_MATCH);
-                    return false;
+                if (!Y.one('#user-form input[name="password"]').get('value') || !Y.one('#user-form input[name="password"]').get('value') || (Y.one('#user-form input[name="password"]').get('value') !== Y.one('#user-form input[name="retype_password"]').get('value'))) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_PW_NOT_MATCH;
+                    markFieldAsInvalid('user-form', 'password');
+                    markFieldAsInvalid('user-form', 'retype_password');
+                    checkOK = false;
+                } else {
+                    markFieldAsValid('user-form', 'password');
+                    markFieldAsValid('user-form', 'retype_password');
                 }
                 if (Y.one('#user-form input[name="password"]').get('value').length < 8) {
-                    alert(YAHOO.EliteStar.lang.REG_PW_LENGTH);
-                    return false;
-                }
-                if (!Y.one('#backpacker-form-all input[name="agree"]').get('checked')) {
-                    alert(YAHOO.EliteStar.lang.REG_READ_TOS);
-                    return false;
+                    markFieldAsInvalid('user-form', 'password');
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_PW_LENGTH;
+                    checkOK = false;
+                } else {
+                    markFieldAsValid('user-form', 'password');
                 }
                 if (!checkEmailFormat('user-form', ['id'])) {
-                    alert(YAHOO.EliteStar.lang.REG_ID_EMAIL);
-                    return false;
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_ID_EMAIL;
+                    checkOK = false;
                 }
                 if (!checkEmailFormat('backpacker-form-all', ['email'])) {
-                    alert(YAHOO.EliteStar.lang.REG_EMAIL_FORMAT);
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_EMAIL_FORMAT;
+                    checkOK = false;
+                }
+                if (!Y.one('#backpacker-form-all input[name="agree"]').get('checked')) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_READ_TOS;
+                    checkOK = false;
+                }
+                if (!checkOK)
+                {
+                    alert(alertMessage);
                     return false;
                 }
                 backpackerSubmit();
             } else {
                 if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
-                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
-                    return false;
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
                 }
                 if (!checkInput('houseowner-form', ['address', 'housename', 'duration_start', 'duration_end', 'rent', 'email', 'phone'])) {
-                    alert(YAHOO.EliteStar.lang.REG_FILED_EMPTY);
-                    return false;
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
                 }
-                if (Y.one('#user-form input[name="password"]').get('value') !== Y.one('#user-form input[name="retype_password"]').get('value')) {
-                    alert(YAHOO.EliteStar.lang.REG_PW_NOT_MATCH);
-                    return false;
+                if (!Y.one('#user-form input[name="password"]').get('value') || !Y.one('#user-form input[name="password"]').get('value') || (Y.one('#user-form input[name="password"]').get('value') !== Y.one('#user-form input[name="retype_password"]').get('value'))) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_PW_NOT_MATCH;
+                    markFieldAsInvalid('user-form', 'password');
+                    markFieldAsInvalid('user-form', 'retype_password');
+                    checkOK = false;
+                } else {
+                    markFieldAsValid('user-form', 'password');
+                    markFieldAsValid('user-form', 'retype_password');
                 }
                 if (Y.one('#user-form input[name="password"]').get('value').length < 8) {
-                    alert(YAHOO.EliteStar.lang.REG_PW_LENGTH);
-                    return false;
-                }
-                if (!Y.one('#houseowner-form-all input[name="agree"]').get('checked')) {
-                    alert(YAHOO.EliteStar.lang.REG_READ_TOS);
-                    return false;
+                    markFieldAsInvalid('user-form', 'password');
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_PW_LENGTH;
+                    checkOK = false;
+                } else {
+                    markFieldAsValid('user-form', 'password');
                 }
                 if (!checkEmailFormat('user-form', ['id'])) {
-                    alert(YAHOO.EliteStar.lang.REG_ID_EMAIL);
-                    return false;
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_ID_EMAIL;
+                    checkOK = false;
                 }
                 if (!checkEmailFormat('houseowner-form-all', ['email'])) {
-                    alert(YAHOO.EliteStar.lang.REG_EMAIL_FORMAT);
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_EMAIL_FORMAT;
+                    checkOK = false;
+                }
+                if (!Y.one('#houseowner-form-all input[name="agree"]').get('checked')) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_READ_TOS;
+                    checkOK = false;
+                }
+                if (!checkOK)
+                {
+                    alert(alertMessage);
                     return false;
                 }
                 houseownerSubmit();

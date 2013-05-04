@@ -28,6 +28,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
                 width : 504,
             }); 
             scrollView.render();
+            var liCount = Y.all('#houseobject-selector .container .houseobject-selector-item').size();
             Y.one('#houseobject-selector .admin-arrow-left').on('click', function(e){
                 var scrollX = scrollView.get('scrollX') - 200;
                 if (scrollX < 0) {
@@ -36,7 +37,11 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
                 scrollView.scrollTo(scrollX, 0, 500, "ease-in");
             });
             Y.one('#houseobject-selector .admin-arrow-right').on('click', function(e){
-                scrollView.scrollTo(scrollView.get('scrollX') + 200, 0, 500, "ease-in");
+                var scrollX = scrollView.get('scrollX') + 200;
+                if (scrollX > 165*liCount + 165 - 504) {
+                    scrollX = 165*liCount + 165 - 504;
+                }
+                scrollView.scrollTo(scrollX, 0, 500, "ease-in");
             });
         }
     };

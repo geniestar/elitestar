@@ -155,6 +155,7 @@ $headData = array(
     'css' => array(
         array('url' => '/css/common.css'),
         array('url' => '/css/search_common.css'),
+        array('url' => '/css/register.css'),
     )
 );
 
@@ -190,6 +191,7 @@ $tailData = array(
         </div>
         <?php echo ContentGenerator::getContent('common_banner', array('title' => EliteHelper::getLangString('COMMON_B_TITLE')));?>
         <?php echo ContentGenerator::getContent('common_menu', array('user' => $user, 'isHouse' => true));?>
+        <?php echo ContentGenerator::getContent('common_login_panel', array('showSignUp' => true));?>
         <div class="main-container">
             <div class="col-left col">
                 <div class="row">

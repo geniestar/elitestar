@@ -49,88 +49,6 @@
     }
 }
 
-.login-panel {
-        background-color: #E2E2E2;
-        width: 226px;
-        height: 188px;
-        padding: 20px;
-        color: $black;
-        position: fixed;
-        top: 100px;
-        left: 60%;
-        margin-left: -145px;
-        z-index: 10;
-        border: 1px solid $gray;
-        -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
-        box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
-        .egisterform-close {
-            width: 14px;
-            height: 14px;
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            cursor: pointer;
-        }
-
-        form {
-            position: absolute;
-            .option-set {
-                margin: 5px 0;
-                .title {
-                    margin: 0 5px 5px 5px;
-                    font-weight: bold;
-                    color: $black;
-                }
-                .sub-title {
-                    font-size: 12px;
-                    color: $black;
-                }
-                input {
-                    color: $gray;
-                }
-                input[type=text], input[type=password] {
-                    border: 1px solid $black;
-                    width: 200px;
-                }
-                input[type=checkbox] {
-                    vertical-align: middle; 
-                }
-                input[type=submit] {
-                    color: $white;
-                    font-weight: bold;
-                    font-size: 14px;
-                    cursor: pointer;
-                    padding: 5px 15px;
-                    margin: 0;
-                    border: 1px solid $black;
-                    background-color: #eba028; // Old browsers
-                    $experimental-support-for-svg: true;
-                    @include background-image(linear-gradient(top,  #ffffff 0%,#ffffff 3%,#eba028 4%,#eba028 100%));
-                    -webkit-border-radius: 5px;
-                    -moz-border-radius: 5px;
-                    border-radius: 5px;
-                }
-                input[type=submit]:active {
-                    background-color: #eba028; // Old browsers
-                    $experimental-support-for-svg: true;
-                    @include background-image(linear-gradient(top,  #eba028 0%,#eba028 95%,#ffffff 96%,#ffffff 99%));
-                }
-            }
-            .option-set:nth-child(2) {
-                margin-top:10px;
-            }
-        }
-        .registerform-close {
-            width: 14px;
-            height: 14px;
-            cursor: pointer;
-            top: 5px;
-            right: 5px;
-            position: absolute;
-        }
-}
-
 #register-form {
     padding: 50px 10px;
     background-color: #EFEFEF; 
@@ -333,6 +251,9 @@
         .short-input {
             width: 30px;
         }
+    }
+    .input-set.invalid {
+        color: red;
     }
     .input-set.big-input-set {
         margin: 10px 0;

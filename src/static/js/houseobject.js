@@ -113,7 +113,9 @@ YUI.add("houseobject", function(Y)
                     srcNode : '#' + resultId + ' .pics ul',
                     width : 492,
                 }); 
+                
                 scrollView.render();
+                var liCount = Y.all('#' + resultId + ' .pic-content ul li').size();
                 Y.one('#' + resultId + ' .theme-icon-arrow_left').on('click', function(e){
                     var scrollX = scrollView.get('scrollX') - 200;
                     if (scrollX < 0) {
@@ -122,7 +124,11 @@ YUI.add("houseobject", function(Y)
                     scrollView.scrollTo(scrollX, 0, 500, "ease-in");
                 });
                 Y.one('#' + resultId + ' .theme-icon-arrow_right').on('click', function(e){
-                    scrollView.scrollTo(scrollView.get('scrollX') + 200, 0, 500, "ease-in");
+                    var scrollX = scrollView.get('scrollX') + 200;
+                    if (scrollX > 155*liCount - 492) {
+                        scrollX = 155*liCount - 492;
+                    }
+                    scrollView.scrollTo(scrollX, 0, 500, "ease-in");
                 });
             }
         },
@@ -150,7 +156,7 @@ YUI.add("houseobject", function(Y)
                                 position: results[0].geometry.location
                             });
                         } else {
-                            alert(Y.EliteStar.lang.SEARCH_RESULT_MAP_FAILURE + status);
+                            console.log(Y.EliteStar.lang.SEARCH_RESULT_MAP_FAILURE + status);
                         }
                     });
                 }

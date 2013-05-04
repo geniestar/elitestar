@@ -24,6 +24,7 @@ $tailData = array(
     <body>
         <?php echo ContentGenerator::getContent('common_banner', array('title' => EliteHelper::getLangString('COMMON_B_TITLE')));?>
         <?php echo ContentGenerator::getContent('register_header', array());?>
+        <?php echo ContentGenerator::getContent('common_login_panel', array());?>
         <div id="register-form" class="main-container">
             <form action="account_action.php" method="POST" enctype="multipart/form-data">
                 <div id="user-form">
