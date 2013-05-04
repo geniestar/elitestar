@@ -159,8 +159,12 @@
     height: 0px;
 }
 
-#favorite-container.contain {
-    min-height: 170px;
+#favorite-container.contain-h {
+    height: 155px;
+}
+
+#favorite-container.contain-b {
+    height: 170px;
 }
 
 #sort-bar {

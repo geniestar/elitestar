@@ -15,7 +15,7 @@ if (1 == $_POST['role'])
     {
         $backpacker = $backpacker[0];
         $userInfo = EliteUsers::getInstance()->queryUser($backpacker['user_id'], null, null, true);
-        $backpacker['user'] = $userInfo;
+        $backpacker['user'] = $userInfo[0];
         $html = ContentGenerator::getContent('searchresult_backpacker', array('backpacker' => $backpacker, 'user' => $user));
         EliteHelper::ajaxReturnSuccess(array('html' => $html));
     }
@@ -34,7 +34,7 @@ else
         $houseObject = $houseObject[0];
         $userInfo = EliteUsers::getInstance()->queryUser($houseObject['owner_id'], null, null, true);
         $ownerInfo = LandLords::getInstance()->queryLandLord($houseObject['owner_id']);
-        $houseObject['user'] = $userInfo;
+        $houseObject['user'] = $userInfo[0];
         $houseObject['owner'] = $ownerInfo;
         $html = ContentGenerator::getContent('searchresult_houseobject', array('houseObject' => $houseObject, 'user' => $user));
         EliteHelper::ajaxReturnSuccess(array('html' => $html)); 

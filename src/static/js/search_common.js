@@ -89,11 +89,13 @@ YUI({
                 var houseObject = new Y.EliteStar.houseObject({
                     resultId: 'result-' + e.target.getAttribute('data-id') 
                 });
+                Y.one('#favorite-container').set('className', 'contain-h')
             } else {
                 Y.one('#favorite-container').set('innerHTML', res.data.html);
                 var backpacker = new Y.EliteStar.backpacker({
                     resultId: 'result-' + e.target.getAttribute('data-id') 
                 });
+                Y.one('#favorite-container').set('className', 'contain-b')
             }
         } else {
             alert(res.message);
