@@ -181,6 +181,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
 
     YAHOO.EliteStar.onDeleteClick = function(e) {
        e.parentNode.remove(); 
+       e.parentNode.parentNode.removeChild(e.parentNode);
     }
     Y.one('#houseobject-add').on('click', function(e){
         var cfg = {
@@ -379,7 +380,11 @@ else if ('messages' === YAHOO.EliteStar.params.type)
     }
     caculateProfits();
     initHouseObjects();
-    Y.delegate('change', caculateProfits, Y.one('#profits'), 'input');
+    //Y.delegate('change', caculateProfits, Y.one('#profits'), 'input');
+    var inputs = Y.all('#profits input');
+    inputs.each(function(input) {
+        input.on('change', caculateProfits)
+    });
 }
 
     Y.one('#menu .btn-right').on('mouseover', function() {

@@ -112,7 +112,7 @@ YUI({
         }
     }
     YAHOO.EliteStar.onDeleteClick = function(e) {
-       e.parentNode.remove(); 
+       e.parentNode.parentNode.removeChild(e.parentNode);
     }
     Y.one('.registerform-add').on('click', function(e){
         var tmpNode = Y.one('.des-template').cloneNode(10);
