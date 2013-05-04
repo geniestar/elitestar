@@ -78,7 +78,7 @@ else if ('messages' == $_GET['action'])
     $formHtml .= '<div id="messages">';
     $formHtml .= ContentGenerator::getContent('admin_messages', array('messages' => $messages));
     $formHtml .= '</div>';
-    if ($total > 0)
+    if ($total > 5)
     {
         $formHtml .= '<div id="previous-messages-btn">(<a href="#">' . EliteHelper::getLangString('ADMIN_PREVIOUS_MESSAGES') . '</a>)</div>';
     }

@@ -60,6 +60,8 @@ languages:
     SEARCH_RESULT_MESSAGE_SEND_REPLY_SUCCESSFULLY: 'Reply sent successfully.'
     SEARCH_RESULT_PREV_PAGE: 'Prev'
     SEARCH_RESULT_NEXT_PAGE: 'Next'
+    SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE: 'Sign in to see the information'
+    SEARCH_RESULT_NO_RESULT: 'No search results'
     LOGIN_USERID: '使用者名稱'
     LOGIN_PW: '密碼'
     LOGIN_REMEMBERME: '記住登入資訊'

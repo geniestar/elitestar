@@ -60,7 +60,7 @@ else if (isset($_POST['action']) && 'reply-messages' === $_POST['action'])
     Messages::createReply($_POST['messageId'], $user['id'], null, $_POST['message']);
     $html = '';
     $html .= '<div class="message-single reply">';
-    $html .= '<span class="title">' . EliteHelper::getLangString('ADMIN_MESSAGES_I') . '</span>' . ' ' . EliteHelper::getLangString('ADMIN_MESSAGES_SAID') . ' (' . date('Y/M/d h:m:s', time()) . '):';
+    $html .= '<span class="title">' . EliteHelper::getLangString('ADMIN_MESSAGES_I') . '</span>' . ' ' . EliteHelper::getLangString('ADMIN_MESSAGES_SAID') . ' (' . date('Y/M/d h:i:s', time()) . '):';
     $html .= '<div class="message-body">' . $_POST['message'] . '</div>';
     $html .= '</div>';
     EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_REPLY_SUCCESSFULLY'), 'html' => $html));
