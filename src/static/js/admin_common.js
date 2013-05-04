@@ -343,14 +343,33 @@ else if ('messages' === YAHOO.EliteStar.params.type)
     function caculateProfits() {
         var total = 0;
         var houseobjects = Y.all('.house-object');
+        var monthMapping = {
+            'Jan': '01',
+            'Feb': '02',
+            'Mar': '03',
+            'Apr': '04',
+            'May': '05',
+            'Jun': '06',
+            'Jul': '07',
+            'Aug': '08',
+            'Sep': '09',
+            'Oct': '10',
+            'Nov': '11',
+            'Dec': '12'
+        }
+        function parseDate(dateString) {
+            dateArray = dateString.split('/');
+            dateArray[1] = monthMapping[dateArray[1]];
+            return dateArray.join('-')
+        }
         houseobjects.each(function(houseobject) {
             var durationStart = houseobject.one('input[name="duration_start"]').get('value');
             var durationEnd = houseobject.one('input[name="duration_end"]').get('value');
             var tenants = parseInt(houseobject.one('input[name="tenants"]').get('value'), 10);
             var rent = parseInt(houseobject.one('input[name="rent"]').get('value'), 10);
             if (durationStart && durationEnd && tenants && rent) {
-                var durationStartTime = (new Date(durationStart)).getTime()/1000;
-                var durationEndTime = (new Date(durationEnd)).getTime()/1000;
+                var durationStartTime = (new Date(parseDate(durationStart))).getTime()/1000;
+                var durationEndTime = (new Date(parseDate(durationEnd))).getTime()/1000;
                 var oneMinRent = rent/(7*24*60);
                 var durationMins = (durationEndTime - durationStartTime)/60;
                 var subTotal = Math.floor(durationMins * tenants * oneMinRent);
