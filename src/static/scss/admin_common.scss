@@ -541,6 +541,13 @@
     }
 }
 
+#admin-menu {
+    .selected {
+        a {
+            color: #009999;
+         }
+    }
+}
 
 .reports {
     margin-top: 40px;
@@ -548,6 +555,7 @@
     ling-height: 25px;
     background-color: #EFEFEF;
     font-size: 16px;
+    text-align: center;
     tr:first-child {
         background-color: #009999;
         color: #fff;

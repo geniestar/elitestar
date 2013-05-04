@@ -223,7 +223,8 @@ languages:
     SUPER_ADMIN_MESSAGES_TITLE: 'Hi Admin, You have total <span style="text-decoration:underline;">%d</span> suggestions.'
     SUPER_ADMIN_COMMON_MENU: 'Dashboard'
     SUPER_ADMIN_COMMON_MENU_SUGGESTIONS: 'Suggestions'
-    SUPER_ADMIN_COMMON_MENU_REPORTS: 'Reports'
+    SUPER_ADMIN_COMMON_MENU_REPORTS_DAILY: 'Daily Reports'
+    SUPER_ADMIN_COMMON_MENU_REPORTS_MONTHLY: 'Monthly Reports'
 errors:
     FAVORITE_LIST_FULL: 'Add Failed, the favorite list is full, please remove farovite items first.'
     FAVORITE_LIST_EXIST: 'Add Failed, the item was already in the list.'
