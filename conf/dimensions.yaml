@@ -9,6 +9,12 @@ states:
         suburbs: 
             0: 'Abba River'
             1: 'Abbey'
+            2: 'Acton Park'
+            3: 'Adamsvale'
+            4: 'Ajana'
+            5: 'Albany - Greater Region; Aldersyde'
+            6: 'Alexander Heights'
+            7: 'Alexandra Bridge'
     1:
         id: 1
         class: 'nt'
