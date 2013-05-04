@@ -314,7 +314,7 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         startMessage = 5; //get 2nd page
         previousBtn.on('click', getMessages);
     }
-    Y.delegate('submit', sendReply, Y.one('#messages'), 'form');
+    Y.delegate('click', sendReply, Y.one('#messages'), 'form input[type="submit"]');
     Y.delegate('click', deleteMessage, Y.one('#messages'), '.admin-close');
 } else if ('suggestion' === YAHOO.EliteStar.params.type) {
     var sendSuggestion = function(e) {
