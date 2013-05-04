@@ -8,7 +8,7 @@ class ConfigReader
     const CONFIG_ROOT_PATH = '/usr/share/pear/elitestar/conf/';
     private static $_instance;
     private $_configs = array();
-    private $_env = 'stage';
+    private $_env = 'dev';
 
     /**
      * __construct 

@@ -138,6 +138,17 @@ if ($user)
         }
     }
 }
+
+/* ad */
+$adConfig = ConfigReader::getInstance()->readConfig('ad', 'ad');
+shuffle($adConfig['random_positions']);
+shuffle($adConfig['sources']);
+$adCount = 0;
+$currentPosition = 0;
+
+$adPositions = array_slice($adConfig['random_positions'], 0, $adConfig['number_of_ads']);
+$adSources = array_slice($adConfig['sources'], 0, $adConfig['number_of_ads']);
+
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
@@ -185,7 +196,7 @@ $tailData = array(
                     <?php echo ContentGenerator::getContent('common_searchmenu', array('action' => './find_house.php'));?>
                 </div>
                 <div class="row">
-                    <?php if($user && 1 == $user['role']) {echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));}?>
+                    <?php if($user && 1 === $user['role']) {echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));}?>
                 </div>
             </div>
             <div class="col-right col">
@@ -196,6 +207,13 @@ $tailData = array(
                     <div id="favorite-container"></div>
                     <?php if($houseObjects && count($houseObjects) > 0):?>
                         <?php foreach ($houseObjects as $houseObject):?>              
+                            <?php 
+                                if (in_array($currentPosition, $adPositions)) {
+                                    echo $adSources[$adCount];
+                                    $adCount++;
+                                }
+                                $currentPosition++;
+                            ?>
                             <?php echo ContentGenerator::getContent('searchresult_houseobject', array('houseObject' => $houseObject, 'user' => $user));?>
                         <?php endforeach?>
                     <?php else:?>
