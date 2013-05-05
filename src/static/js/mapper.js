@@ -17,7 +17,7 @@ YUI.add("mapper", function(Y)
             var items = Y.one(cfg.selector).all(cfg.itemsSelector);
             var clickCallback = cfg.clickCallback;
             var currentSelectrion = null;
-            if (cfg.defaultSelected) {
+            if (true || cfg.defaultSelected) {
                 states = Y.all(cfg.itemsSelector);
                 states.each(function(state) {
                     if (!state.hasClass('unselected')) {
@@ -36,6 +36,16 @@ YUI.add("mapper", function(Y)
                         }
                         currentSelection = this;
                         clickCallback(this.getAttribute('data-id'));
+                    }
+                });
+                item.on('mouseover', function(){
+                    if (this !== currentSelection) {
+                        this.removeClass('unselected');
+                    }
+                });
+                item.on('mouseout', function(){
+                    if (this !== currentSelection) {
+                        this.addClass('unselected');
                     }
                 });
             });

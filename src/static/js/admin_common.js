@@ -4,7 +4,7 @@ YUI({
         ecalendar: '/js/ecalendar.js',
         hintpanel: '/js/hint_panel.js',
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', function(Y) {
 var selectedObjectBtn = null;
 var replaceAllSuburbs = function(selector, id) {
     var select = Y.one(selector);
@@ -17,6 +17,11 @@ var replaceAllSuburbs = function(selector, id) {
         var newOption = Y.Node.create('<option value=' + i + '>' + stateInfo.suburbs[i] + '</option>');
         select.append(newOption);
     }
+}
+var showDialog = Y.Cookie.get("a", Number);
+if (showDialog) {
+    alert(YAHOO.EliteStar.lang.ADMIN_SAVED_IMFORMATION);
+    Y.Cookie.set("a", 0);
 }
 if ('settings' === YAHOO.EliteStar.params.type ) {
 if ('houseowner' === YAHOO.EliteStar.params.role) {

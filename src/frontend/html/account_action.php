@@ -98,7 +98,7 @@ else
     }
     if ($_POST['basic-info'])
     {
-        if (isset($_POST['password']) && isset($_POST['original_password']) && isset($_POST['retype_password']))
+        if (isset($_POST['password']) && isset($_POST['original_password']) && isset($_POST['retype_password']) && $_POST['password'] && $_POST['original_password'] && $_POST['retype_password'])
         {
             if (EliteUsers::queryUser($user['id'], $_POST['original_password']) && ($_POST['password'] === $_POST['retype_password']))
             {
@@ -115,6 +115,9 @@ else
         {
             EliteUsers::getInstance()->updateUserInfo($user['id'], null, null, $_POST['email'], $_POST['phone'], null, null, null);
         }
+        setcookie('a', 1, time() + 3600);
+        header('Location: admin.php?action=basic');
+        exit;
     }
     else
     {
@@ -151,8 +154,10 @@ else
         {
             BackPackers::getInstance()->updateBackPackerInfo($user['id'], $_POST['state'], $_POST['city'], $_POST['rent'], EliteHelper::getTime($_POST['arrival_time']), EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['bed_single'], $_POST['bed_double'], getFacilities($_POST, 'b'), getServices($_POST, 'b'), $_POST['name'], null);
         }
+        setcookie('a', 1, time() + 3600);
+        header('Location: admin.php?action=settings');
+        exit;
     }
-    header('Location: admin.php');
 }
 
 function getWECharge($data, $prefix)

@@ -4,7 +4,7 @@
         <div class="title">{{i18n.COMMON_SEARCH_CONDITIONAL_SEARCH}}</div>
     </div>
     <form action="{{action}}" method="GET" id="search-form">
-        <input type="hidden" name="state" value="">
+        <input type="hidden" name="state" value="{{selectedState}}">
         <div id="map-all" class="map-map_all">
             {{#states}}
                 <div class="map-map_{{class}} map-item {{^default}}unselected{{/default}}" data-id="{{id}}"></div>
@@ -13,28 +13,28 @@
         <div class="input-set">
             <div class="title">{{i18n.COMMON_SEARCH_SUBERBS_REGION}}</div>
             <select class="city-selection" name="city">
-                <option value=""></option>
+                <option value="">{{i18n.COMMON_CHOOSE_A_SUBURB}}</option>
                 {{#cities}}
-                    <option value="{{id}}">{{name}}</option>
+                    <option value="{{id}}" {{#selected}}selected{{/selected}}>{{name}}</option>
                 {{/cities}}
             </select>
         </div>
         <div class="input-set">
             <div class="title">{{i18n.COMMON_SEARCH_DURATION}}</div>
-            <input type="text" name="ds" size="16" placeholder="{{todayText}}"><div class="listing-sprite listing-calendar" id="cal-btn-start"></div>
+            <input type="text" name="ds" size="16" placeholder="{{todayText}}" value="{{get.ds}}"><div class="listing-sprite listing-calendar" id="cal-btn-start"></div>
             <div class="clean"></div>
             <div class="title">{{i18n.COMMON_SEARCH_TO}}</div>
-            <input type="text" name="de" size="16" placeholder="{{nextYearText}}"><div class="listing-sprite listing-calendar" id="cal-btn-end"></div>
+            <input type="text" name="de" size="16" placeholder="{{nextYearText}}" value="{{get.de}}"><div class="listing-sprite listing-calendar" id="cal-btn-end"></div>
             <div class="clean"></div>
         </div>
         </br>
         <div class="input-set">
             <div class="title">{{i18n.COMMON_SEARCH_RENT}}</div>
             <select class="rent-selection" name="rent">
-                <option value=""></option>
-                {{#houseDimemsions.acceptable_rent}}
-                    <option value="{{.}}">{{.}}</option>
-                {{/houseDimemsions.acceptable_rent}}
+                <option value="">{{i18n.COMMON_CHOOSE_ACCEPTABLE_RANGE}}</option>
+                {{#acceptableRents}}
+                    <option value="{{name}}" {{#selected}}selected{{/selected}}>{{name}}</option>
+                {{/acceptableRents}}
             </select>
         </div>
         <div class="input-set">
@@ -45,19 +45,19 @@
             <select name="bs" class="short">
                 <option value=""></option>
                 {{#houseDimemsions.beds.single}}
-                    <option value="{{value}}">{{value}}</option>
+                    <option value="{{value}}" {{#selected}}selected{{/selected}}>{{value}}</option>
                 {{/houseDimemsions.beds.single}}
             </select>
             <div class="title sec-title">{{i18n.COMMON_SEARCH_BEDS_D}}</div>
             <select name="bd" class="short">
                 <option value=""></option>
                 {{#houseDimemsions.beds.double}}
-                    <option value="{{value}}">{{value}}</option>
+                    <option value="{{value}}" {{#selected}}selected{{/selected}}>{{value}}</option>
                 {{/houseDimemsions.beds.double}}
             </select>
         </div>
         <div class="input-set">
-            <input type="text" name="keyword" size="20" placeholder="{{i18n.COMMON_SEARCH_ENTER_KEYWORD}}">
+            <input type="text" name="keyword" size="20" value="{{get.keyword}}" placeholder="{{i18n.COMMON_SEARCH_ENTER_KEYWORD}}">
             <div class="clean"></div>
         </div>
         <div class="input-set">

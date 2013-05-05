@@ -173,6 +173,7 @@ $tailData = array(
         array('url' => 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOI345UTosGvgRwlz2xGXS3yc-HtSwCq4&sensor=false'),
     )
 );
+EliteHelper::setStringToJs('COMMON_CHOOSE_A_SUBURB');
 
 ?>
 <!DOCTYPE html>

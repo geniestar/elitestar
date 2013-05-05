@@ -44,7 +44,7 @@ if (!$durationText)
 
 $data['durationText'] = $durationText;
 
-$bedText = EliteHelper::getLangString('COMMON_SEARCH_BEDS_S') . $data['backpacker']['beds_single'] . ' ' . EliteHelper::getLangString('COMMON_SEARCH_BEDS_D') . $data['backpacker']['beds_double'];
+$bedText = EliteHelper::getLangString('COMMON_SEARCH_BEDS_SINGLE') . $data['backpacker']['beds_single'] . ' ' . EliteHelper::getLangString('COMMON_SEARCH_BEDS_DOUBLE') . $data['backpacker']['beds_double'];
 $data['bedText'] = $bedText;
 
 $additionalHelpArray = array();

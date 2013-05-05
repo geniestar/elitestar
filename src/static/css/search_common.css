@@ -880,24 +880,28 @@
   max-height: 400px;
   vertical-align: middle;
 }
+/* line 557, ../scss/search_common.scss */
+#img-panel .content-field #big-map {
+  line-height: 20px;
+}
 
-/* line 560, ../scss/search_common.scss */
+/* line 563, ../scss/search_common.scss */
 .pagenation {
   overflow: hidden;
   padding: 20px 0 40px 0;
   margin: 0 auto;
   float: right;
 }
-/* line 565, ../scss/search_common.scss */
+/* line 568, ../scss/search_common.scss */
 .pagenation div {
   float: left;
   margin: 0 2px;
 }
-/* line 569, ../scss/search_common.scss */
+/* line 572, ../scss/search_common.scss */
 .pagenation div.selected {
   background-color: #EEE;
 }
-/* line 573, ../scss/search_common.scss */
+/* line 576, ../scss/search_common.scss */
 .pagenation a {
   font-size: 10px;
   color: #666666;

@@ -173,6 +173,7 @@ $tailData = array(
         array('url' => '/js/find_backpacker.js'),
     )
 );
+EliteHelper::setStringToJs('COMMON_CHOOSE_A_SUBURB');
 ?>
 
 <!DOCTYPE html>

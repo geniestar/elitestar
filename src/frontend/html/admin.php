@@ -117,6 +117,7 @@ $tailData = array(
         array('url' => '/js/admin_common.js'),
     )
 );
+EliteHelper::setStringToJs('ADMIN_SAVED_IMFORMATION');
 ?>
 <!DOCTYPE html>
 <html>
