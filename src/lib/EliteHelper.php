@@ -1,5 +1,6 @@
 <?php
 include_once ('ConfigReader.php');
+include ('MySqlDb.php');
 date_default_timezone_set('Asia/Taipei');
 /**
  * EliteHelper
@@ -678,5 +679,66 @@ class EliteHelper
         }
         return $basePath . '?' . implode('&', $paramArray);
     }
+
+    static function updateBrowsingCounter()
+    {
+        $temp = apc_fetch('ADMIN_COUNTER_TEMP');
+        $counter = apc_fetch('ADMIN_COUNTER');
+        if (!$counter)
+        {
+            $r = MySqlDb::getInstance()->query('SELECT value FROM admin WHERE type=\'counter\'', array());
+            $counter = intval($r['value']);
+            apc_store('ADMIN_COUNTER', $counter);
+
+        }
+        if (!$temp)
+        {
+            $temp = 0;
+        }
+        $temp++;
+        if ($temp >= 20)
+        {
+            $r = MySqlDb::getInstance()->query('UPDATE admin SET value=? WHERE type=\'counter\'', array($temp+$counter));
+            $counter = $temp+$counter;
+            apc_store('ADMIN_COUNTER', $counter);
+            $temp = 0;
+        }
+        apc_store('ADMIN_COUNTER_TEMP', $temp);
+        return $temp + $counter;
+    }
+
+    static function getBrowsingCounter()
+    {
+        $temp = apc_fetch('ADMIN_COUNTER_TEMP');
+        $counter = apc_fetch('ADMIN_COUNTER');
+        if (!$counter)
+        {
+            $r = MySqlDb::getInstance()->query('SELECT value FROM admin WHERE type=\'counter\'', array());
+            $counter = intval($r['value']);
+            apc_store('ADMIN_COUNTER', $counter);
+
+        }
+        if (!$temp)
+        {
+            $temp = 0;
+        }
+        return $temp + $counter;
+    }
+
+    static function getTotalUsers()
+    {
+        $totalUser = apc_fetch('ADMIN_TOTAL_USER');
+        if (!$totalUser)
+        {
+            $r = MySqlDb::getInstance()->query('SELECT count(*) as count from users', array());
+            $totalUser = intval($r[0]['count']);
+            apc_store('ADMIN_TOTAL_USER', $totalUser);
+
+        }
+        return $totalUser;
+    }
 }
+EliteHelper::updateBrowsingCounter();
+//var_dump(EliteHelper::getBrowsingCounter());
+//var_dump(EliteHelper::getTotalUsers());
 ?>

@@ -1,5 +1,4 @@
 <?php
-include ('MySqlDb.php');
 
 /**
  * elite users
@@ -61,6 +60,7 @@ class EliteUsers
         $sql = 'INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         $inputParams = array($id, md5($password), $name, $mail, $phone, $role, $country, $photo, time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        apc_store('ADMIN_TOTAL_USER', ''); //clear cache
         return $r;
     }
 
