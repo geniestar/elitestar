@@ -92,5 +92,26 @@ if ($data['user'] && isset($data['user']['id']))
 {
     $data['showContact'] = true;
 }
+
+$mail = json_decode($data['houseObject']['user']['mail'], true);
+$phone = json_decode($data['houseObject']['user']['phone'], true);
+
+if (is_array($mail) && $mail['publish']==1)
+{
+    $data['houseObject']['user']['mail'] = $mail['value'];
+}
+else
+{
+    $data['houseObject']['user']['mail'] = '';
+}
+if (is_array($phone) && $phone['publish']==1)
+{
+    $data['houseObject']['user']['phone'] = $phone['value'];
+}
+else
+{   
+    $data['houseObject']['user']['phone'] = '';
+}
+
 EliteHelper::setStringToJs('SEARCH_RESULT_MAP_FAILURE');
 ?>

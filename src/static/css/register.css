@@ -392,56 +392,60 @@
 .form .input-set .short-input {
   width: 30px;
 }
-/* line 255, ../scss/register.scss */
+/* line 254, ../scss/register.scss */
+.form .input-set input[type="checkbox"] {
+  margin: 10px 5px 10px 10px;
+}
+/* line 258, ../scss/register.scss */
 .form .input-set.invalid {
   color: red;
 }
-/* line 258, ../scss/register.scss */
+/* line 261, ../scss/register.scss */
 .form .input-set.big-input-set {
   margin: 10px 0;
 }
-/* line 260, ../scss/register.scss */
+/* line 263, ../scss/register.scss */
 .form .input-set.big-input-set .big-title {
   padding: 0 20px 0 0;
 }
-/* line 264, ../scss/register.scss */
+/* line 267, ../scss/register.scss */
 .form .input-set.input-set-two-line {
   line-height: 60px;
   height: 60px;
 }
-/* line 268, ../scss/register.scss */
+/* line 271, ../scss/register.scss */
 .form .graybg {
   background-color: #F2F2F2;
 }
-/* line 271, ../scss/register.scss */
+/* line 274, ../scss/register.scss */
 .form .input-set.two-rows {
   height: 60px;
 }
-/* line 273, ../scss/register.scss */
+/* line 276, ../scss/register.scss */
 .form .input-set.two-rows .small-text {
   font-size: 10px;
 }
-/* line 276, ../scss/register.scss */
+/* line 279, ../scss/register.scss */
 .form .input-set.two-rows .two-rows-left {
   float: left;
   width: 120px;
   padding-top: 18px;
 }
-/* line 282, ../scss/register.scss */
+/* line 285, ../scss/register.scss */
 .form .input-set.two-rows .two-rows-right .row {
   height: 30px;
 }
-/* line 288, ../scss/register.scss */
+/* line 291, ../scss/register.scss */
 .form .big-title {
   padding: 20px 0;
   float: left;
 }
-/* line 292, ../scss/register.scss */
+/* line 295, ../scss/register.scss */
 .form #more-description {
   position: relative;
   padding-left: 15px;
 }
-/* line 295, ../scss/register.scss */
+/* line 298, ../scss/register.scss */
 .form #more-description .registerform-add {
   cursor: pointer;
   width: 26px;
@@ -451,12 +455,12 @@
   bottom: 0;
   z-index: 10;
 }
-/* line 304, ../scss/register.scss */
+/* line 307, ../scss/register.scss */
 .form #more-description .input-set {
   position: relative;
   height: auto;
 }
-/* line 308, ../scss/register.scss */
+/* line 311, ../scss/register.scss */
 .form #more-description .registerform-close {
   width: 14px;
   height: 14px;
@@ -466,53 +470,53 @@
   cursor: pointer;
 }
 
-/* line 320, ../scss/register.scss */
+/* line 323, ../scss/register.scss */
 #role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
-/* line 324, ../scss/register.scss */
+/* line 327, ../scss/register.scss */
 #role-form #cal-btn-arrival-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 329, ../scss/register.scss */
+/* line 332, ../scss/register.scss */
 #role-form #cal-btn-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 334, ../scss/register.scss */
+/* line 337, ../scss/register.scss */
 #role-form #cal-btn-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 339, ../scss/register.scss */
+/* line 342, ../scss/register.scss */
 #role-form #cal-btn-house-start-cal {
   right: 57px;
   font-size: 10px;
   line-height: 15px;
 }
-/* line 344, ../scss/register.scss */
+/* line 347, ../scss/register.scss */
 #role-form #cal-btn-house-end-cal {
   right: -115px;
   font-size: 10px;
   line-height: 15px;
 }
 
-/* line 352, ../scss/register.scss */
+/* line 355, ../scss/register.scss */
 #ajax-role-form {
   position: relative;
 }
-/* line 354, ../scss/register.scss */
+/* line 357, ../scss/register.scss */
 #ajax-role-form .pp-field {
   margin: 20px auto;
   text-align: center;
 }
 
-/* line 359, ../scss/register.scss */
+/* line 362, ../scss/register.scss */
 input[type=submit] {
   display: block;
   margin: 0 auto 10px auto;

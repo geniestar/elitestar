@@ -17,8 +17,8 @@
            <div class="theme-sprite theme-icon-map"></div> 
            <div class="white-bar"></div>
        </div>
-       <div class="right-item hint {{^showContact}}need-sign-in-btn{{/showContact}}" data-hint="{{#showContact}}{{houseObject.user.name}}</br>{{houseObject.user.phone}}</br>{{houseObject.user.mail}}{{/showContact}}{{^showContact}}{{i18n.SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE}}{{/showContact}}">
-           <div class="theme-sprite theme-icon-contact hint" data-hint="{{#showContact}}{{houseObject.user.name}}</br>{{houseObject.user.phone}}</br>{{houseObject.user.mail}}{{/showContact}}{{^showContact}}{{i18n.SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE}}{{/showContact}}"></div> 
+       <div class="right-item hint {{^showContact}}need-sign-in-btn{{/showContact}}" data-hint="{{#showContact}}{{houseObject.user.name}}{{#houseObject.user.phone}}</br>{{houseObject.user.phone}}{{/houseObject.user.phone}}{{#houseObject.user.mail}}</br>{{houseObject.user.mail}}{{/houseObject.user.mail}}{{/showContact}}{{^showContact}}{{i18n.SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE}}{{/showContact}}">
+           <div class="theme-sprite theme-icon-contact hint" data-hint="{{#showContact}}{{houseObject.user.name}}{{#houseObject.user.phone}}</br>{{houseObject.user.phone}}{{/houseObject.user.phone}}{{#houseObject.user.mail}}</br>{{houseObject.user.mail}}{{/houseObject.user.mail}}{{/showContact}}{{^showContact}}{{i18n.SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE}}{{/showContact}}"></div> 
            <div class="white-bar"></div>
        </div>
     </div>

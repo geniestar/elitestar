@@ -208,10 +208,23 @@ YUI.add("houseobject", function(Y)
 
         showBigPic: function (e) {
             var panel = Y.one('#img-panel');
-            panel.removeClass('hidden');
+            /*panel.setStyle('height', '');
+            panel.setStyle('width', '');
+            panel.setStyle('margin-left', '');
+            panel.setStyle('margin-top', '');
+            panel.one('.content-field').setStyle('line-height', '');*/
             panel.one('#big-map').addClass('hidden');
             panel.one('img.big-pic').removeClass('hidden');
             panel.one('img.big-pic').set('src', '/ugc/' + e.target.getAttribute('data-src'));
+            /*
+            panel.one('img.big-pic').on('load', function() {
+                panel.setStyle('height', panel.one('img.big-pic').get('offsetHeight'));
+                panel.setStyle('width', panel.one('img.big-pic').get('offsetWidth'));
+                panel.setStyle('margin-left', '-' + panel.one('img.big-pic').get('offsetWidth')/2 + 'px');
+                panel.setStyle('margin-top', '-' + panel.one('img.big-pic').get('offsetHeight')/2 + 'px');
+                panel.one('.content-field').setStyle('line-height', panel.one('img.big-pic').get('offsetHeight'));
+            });*/
+            panel.removeClass('hidden');
         }
     });
    

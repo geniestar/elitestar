@@ -18,5 +18,6 @@ EliteHelper::setStringToJs('REG_PW_LENGTH');
 EliteHelper::setStringToJs('REG_ID_EMAIL');
 EliteHelper::setStringToJs('REG_EMAIL_FORMAT');
 EliteHelper::setStringToJs('REG_ADDRESS_WRONG');
+EliteHelper::setStringToJs('REG_USER_ID_INVALID');
 
 ?>

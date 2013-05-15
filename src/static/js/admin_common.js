@@ -293,8 +293,8 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
             Y.one('#message-' + e.target.getAttribute('data-id') + ' .container').append(res.data.html);
-            alert(res.data.message);
-            Y.one('#message-' + e.target.getAttribute('data-id') + ' input[type=text]').set('value', '');
+            //alert(res.data.message);
+            Y.one('#message-' + e.target.getAttribute('data-id') + ' textarea').set('value', '');
         } else {
             alert(res.message);
         }

@@ -189,7 +189,7 @@ class EliteUsers
             }
             else
             {
-                /* expire when iser close broswer*/
+                /* expire when user close broswer*/
                 setcookie('u', $id, false);
                 setcookie('p', md5($password), false);
             }

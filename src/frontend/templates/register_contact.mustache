@@ -7,9 +7,9 @@
     -->
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_EMAIL}}</div>
-        <input type="text" size="45" name="email" placeholder="{{i18n.REG_EMAIL_PLACEHOLDER}}" value="{{user.mail}}">
+        <input type="text" size="45" name="email" placeholder="{{i18n.REG_EMAIL_PLACEHOLDER}}" value="{{user.mail}}"> <input type="checkbox" name="email_p" value="1" {{#user.mail_p}}checked{{/user.mail_p}}><span class="sub-title">{{i18n.REG_PUBLISH}}</span>
     </div>
     <div class="input-set">
         <div class="title contact-title">{{i18n.REG_PHONE}}</div>
-        <input type="text" size="45" name="phone" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}" value="{{user.phone}}">
+        <input type="text" size="45" name="phone" placeholder="{{i18n.REG_PHONE_PLACEHOLDER}}" value="{{user.phone}}"> <input type="checkbox" name="phone_p" value="1" {{#user.phone_p}}checked{{/user.phone_p}}><span class="sub-title">{{i18n.REG_PUBLISH}}</span>
     </div>

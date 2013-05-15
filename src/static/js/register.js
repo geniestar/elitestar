@@ -5,7 +5,7 @@ YUI({
         hintpanel: '/js/hint_panel.js',
         loginpanel: '/js/login_panel.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', 'io-base', function(Y) {
     var switchRole = function (role){
         var backpackerForm = Y.one('#backpacker-form-all');
         var houseownerForm = Y.one('#houseowner-form-all');
@@ -170,6 +170,7 @@ YUI({
             select.remove();
         });
     };
+
     var checkInput = function(formId, checkArray) {
         var checkOK = true;
         for (var key in checkArray) {
@@ -182,6 +183,24 @@ YUI({
             }
         }
         return checkOK;
+    }
+
+    var checkUserId = function() {
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            data: {
+                action: 'check-user',
+                id: Y.one('#user-form input[name="id"]').get('value'),
+            }
+        };
+        request = Y.io('/ajax/admin_action.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     var checkEmailFormat = function(formId, checkArray) {
@@ -221,6 +240,7 @@ YUI({
         }
         return true; //unable to check, just pass that;
     }
+
     var markFieldAsValid = function(formId, name) {
         var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
         if (parentNode.hasClass('input-set')) {
@@ -255,6 +275,10 @@ YUI({
             if ('b-submit' === e.target.get('id')) {
                 if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
+                }
+                if (!checkUserId()) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_USER_ID_INVALID;
                     checkOK = false;
                 }
                 if (!checkInput('backpacker-form', ['arrival_time', 'duration_start', 'duration_end', 'rent', 'email', 'phone'])) {
@@ -299,6 +323,10 @@ YUI({
             } else {
                 if (!checkInput('user-form', ['name', 'id', 'password', 'retype_password'])) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
+                }
+                if (!checkUserId()) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_USER_ID_INVALID;
                     checkOK = false;
                 }
                 if (!checkInput('houseowner-form', ['address', 'housename', 'duration_start', 'duration_end', 'rent', 'email', 'phone'])) {

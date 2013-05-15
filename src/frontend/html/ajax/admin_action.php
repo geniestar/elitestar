@@ -6,6 +6,21 @@ include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 include('/usr/share/pear/elitestar/lib/Messages.php');
+/* no login needed action*/
+if (isset($_POST['action']) && 'check-user' === $_POST['action'])
+{
+    if (is_array(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password'], false, true)))
+    {
+        EliteHelper::ajaxReturnFailure(array('message' => EliteHelper::getErrorString('USER_ID_INVALID')));
+        exit;
+    }
+    else
+    {
+        EliteHelper::ajaxReturnSuccess(array('message' => ''));
+        exit;
+    }
+}
+
 $user = EliteUsers::getInstance()->getCurrentUser();
 if (!$user)
 {
@@ -61,7 +76,7 @@ else if (isset($_POST['action']) && 'reply-messages' === $_POST['action'])
     $html = '';
     $html .= '<div class="message-single reply">';
     $html .= '<span class="title">' . EliteHelper::getLangString('ADMIN_MESSAGES_I') . '</span>' . ' ' . EliteHelper::getLangString('ADMIN_MESSAGES_SAID') . ' (' . date('Y/M/d h:i:s', time()) . '):';
-    $html .= '<div class="message-body">' . $_POST['message'] . '</div>';
+    $html .= '<div class="message-body">' . str_replace("\n", '<br>', $_POST['message']) . '</div>';
     $html .= '</div>';
     EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_REPLY_SUCCESSFULLY'), 'html' => $html));
 }

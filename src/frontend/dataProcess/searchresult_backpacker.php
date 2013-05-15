@@ -88,4 +88,23 @@ if ($data['user'] && isset($data['user']['id']))
 {
     $data['showContact'] = true;
 }
+
+$mail = json_decode($data['backpacker']['user']['mail'], true);
+$phone = json_decode($data['backpacker']['user']['phone'], true);
+if (is_array($mail) && $mail['publish']==1)
+{
+    $data['backpacker']['user']['mail'] = $mail['value'];
+}
+else
+{
+    $data['backpacker']['user']['mail'] = '';
+}
+if (is_array($phone) && $phone['publish']==1)
+{
+    $data['backpacker']['user']['phone'] = $phone['value'];
+}
+else
+{   
+    $data['backpacker']['user']['phone'] = '';
+}
 ?>

@@ -18,7 +18,7 @@ if (!isset($_POST['edit']))
 if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))
 {
     /* user exist */
-    if (is_array(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password'], false, true)))
+    if (is_array(EliteUsers::getInstance()->queryUser($_POST['id'], null, false, true)))
     {
         header('Location: error.php?error=USER_ID_INVALID');
         exit;
@@ -30,7 +30,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
         system('cp ' . $_FILES['user-photo']['tmp_name'] . ' ' . USER_PHOTO_PATH . $photoFilename);
         system('convert ' . USER_PHOTO_PATH . $photoFilename . ' -resize \'134x160\' -gravity Center -crop \'76x93+0+0\' -quality \'100%\' ' . USER_PHOTO_PATH . $photoFilename);
     }
-    EliteUsers::getInstance()->createUser($_POST['id'], $_POST['password'], $_POST['name'], $_POST['email'], $_POST['phone'], $_POST['role'], $_POST['country'], $photoFilename);
+    EliteUsers::getInstance()->createUser($_POST['id'], $_POST['password'], $_POST['name'], json_encode(array('value' => $_POST['email'], 'publish' => $_POST['email_p'])), json_encode(array('value'=> $_POST['phone'], 'publish' => $_POST['phone_p'])), $_POST['role'], $_POST['country'], $photoFilename);
 
     /* start to update role table*/
     if (1 == $_POST['role'])
@@ -61,7 +61,7 @@ if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'r
         }
         else
         {
-            header('Location: error.php?error=USER_ID_INVALID');
+            header('Location: error.php?error=FIELDS_EMPTY');
             exit;
         }
     }
@@ -102,7 +102,7 @@ else
         {
             if (EliteUsers::queryUser($user['id'], $_POST['original_password']) && ($_POST['password'] === $_POST['retype_password']))
             {
-                EliteUsers::getInstance()->updateUserInfo($user['id'], $_POST['password'], null, $_POST['email'], $_POST['phone'], null, null, null);
+                EliteUsers::getInstance()->updateUserInfo($user['id'], $_POST['password'], null, json_encode(array('value' => $_POST['email'], 'publish' => $_POST['email_p'])), json_encode(array('value'=> $_POST['phone'], 'publish' => $_POST['phone_p'])), null, null, null);
                 setcookie('p', md5($_POST['password']), time()+60*60*24*365);
             }
             else
@@ -113,7 +113,7 @@ else
         }
         else
         {
-            EliteUsers::getInstance()->updateUserInfo($user['id'], null, null, $_POST['email'], $_POST['phone'], null, null, null);
+            EliteUsers::getInstance()->updateUserInfo($user['id'], null, null, json_encode(array('value' => $_POST['email'], 'publish' => $_POST['email_p'])), json_encode(array('value'=> $_POST['phone'], 'publish' => $_POST['phone_p'])), null, null, null);
         }
         setcookie('a', 1, time() + 3600);
         header('Location: admin.php?action=basic');
