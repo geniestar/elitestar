@@ -194,6 +194,9 @@ EliteHelper::setStringToJs('COMMON_CHOOSE_A_SUBURB');
                 <div class="row">
                     <?php if($user && 0 === $user['role']) {echo ContentGenerator::getContent('common_favorite', array('favoritesInfo' => $favoritesInfo));}?>
                 </div>
+                <div class="row">
+                    <?php echo ContentGenerator::getContent('common_counter', array());?>
+                </div>
             </div>
             <div class="col-right col">
                 <div class="row">

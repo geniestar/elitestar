@@ -1,4 +1,5 @@
 <?php
+include('/usr/share/pear/elitestar/lib/EliteHelper.php');
 include('/usr/share/pear/elitestar/lib/EliteUsers.php');
 $user = EliteUsers::getInstance()->login($_POST['id'], $_POST['password'], $_POST['isremember']);
 

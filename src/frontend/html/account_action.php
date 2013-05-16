@@ -149,6 +149,16 @@ else
                     exit;
                 }
             }
+            if (isset($_POST['objectid']) && '' !== $_POST['objectid'])
+            {
+                header('Location: admin.php?action=settings&tab=settings&objectId=' . $_POST['objectid']);
+                exit;
+            }
+            else
+            {
+                header('Location: admin.php?action=settings&tab=service');
+                exit;
+            }
         }
         else
         {

@@ -4,7 +4,16 @@ YUI({
         ecalendar: '/js/ecalendar.js',
         hintpanel: '/js/hint_panel.js',
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', function(Y) {
+var action;
+var tab;
+var objectId;
+if (location.search) {
+    var params = Y.QueryString.parse(location.search.substr(1)); //cut the ?
+    action = params.action;
+    tab = params.tab;
+    objectId = params.objectId;
+}
 var selectedObjectBtn = null;
 var replaceAllSuburbs = function(selector, id) {
     var select = Y.one(selector);
@@ -61,6 +70,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
             Y.one('#form-submit').addClass('hidden');
         }
     });
+
     Y.one('.admin-tab-service').on('click', function(e){
         var settingsTab = Y.one('.admin-tab-settings');
         settingsTab.removeClass('selected');
@@ -223,6 +233,31 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         Y.one('.delete-dialog').addClass('hidden');
     });
     Y.one('#houseobject-selector .btn-area .btn-delete').on('click', deleteObject);
+
+    /* swith to the tab*/
+    if (tab) {
+        var settingsTab = Y.one('.admin-tab-settings');
+        var serviceTab = Y.one('.admin-tab-service');
+        if (tab === 'settings') {
+            /*no need to switch, just get ajax form*/
+            /*settingsTab.addClass('selected');
+            serviceTab.removeClass('selected');
+            Y.one('#ajax-role-form').removeClass('hidden');
+            Y.one('#form-service').addClass('hidden');*/
+            if (objectId) {
+                var houseObject = Y.one('#houseobject-selector-' + objectId);
+                if (houseObject) {
+                    houseObject.simulate('click');
+                }
+            }
+        } else {
+            settingsTab.removeClass('selected');
+            serviceTab.addClass('selected');
+            Y.one('#ajax-role-form').addClass('hidden');
+            Y.one('#form-service').removeClass('hidden');
+        }
+        Y.one('#form-submit').removeClass('hidden');
+    }
 
 } else {
     var mapper = new Y.EliteStar.Mapper({
