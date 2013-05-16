@@ -8,7 +8,7 @@
 @import "listing/*.png";
 @include all-listing-sprites;
 
-#search-menu, #favorites {
+#search-menu, #favorites{ 
     padding-bottom: 10px;
     background-color: #e1f7f2;
     @include filter-gradient(#e1f7f2, #e1f7f2, vertical);
@@ -151,7 +151,19 @@
         }
     }      
 }
-
+#counter{
+    padding-bottom: 10px;
+    background-color: #e1f7f2;
+    @include filter-gradient(#e1f7f2, #e1f7f2, vertical);
+    $experimental-support-for-svg: true;
+    @include background-image(linear-gradient(top,  #e1f7f2 0%,#ffffff 31%,#ffffff 87%,#e1f7f2 100%));
+    border-radius: 0px;
+    border: 1px solid $black;
+    margin-top: 1px;
+    height: 50px;
+    font-size: 10px;
+    padding: 5px 3px;
+}
 #favorite-container {
     -webkit-transition: height .6s;
     -moz-transition: height .6s;
@@ -381,6 +393,13 @@
                 }
                 .one-line-desc {
                     width: auto;
+                }
+                .addr-desc {
+                    width: 450px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                    overflow: hidden;
                 }
             }
         }

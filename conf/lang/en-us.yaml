@@ -67,6 +67,8 @@ languages:
     SEARCH_RESULT_SIGN_IN_TO_SEE_CONTACE: 'Log in to see more information '
     SEARCH_RESULT_NO_RESULT: 'No search results'
     SEARCH_RESULT_MAP_FAILURE: 'Geocode was not successful for the following reason: '
+    SEARCH_RESULT_BROWSING_NUMBER: 'Browsing Number: '
+    SEARCH_RESULT_TOTAL_USER: 'Total User: '
     LOGIN_SIGN_UP: 'Sign Up'
     LOGIN_REMEMBERME: 'Remember Me'
     LOGIN_USERID: 'Username'
