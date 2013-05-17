@@ -123,40 +123,40 @@ else
     {
         if (0 == $_POST['role'])
         {
-            LandLords::getInstance()->updateLandLordInfo($user['id'], getServices($_POST, 'h'), null); 
-            if ($_POST['objectid'])
+            if ('service' === $_POST['tab'])
             {
-                $photos = getHousePhotos($user['id']);
-                $oldhouseobject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
-                $ophotos = json_decode(json_decode($oldhouseobject[0]['photos']), true);
-                if ($ophotos)
-                {
-                    $photos = array_merge($ophotos, $photos);
-                }
-                HouseObjects::getInstance()->updateHouseObjectInfo($user['id'], $_POST['objectid'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'),getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos[0], json_encode($photos), getDescription($_POST));
-            }
-            else
-            {
-                if(EliteHelper::checkEmpty(array('state', 'city', 'address', 'housename', 'duration_start', 'duration_end', 'rooms', 'bed_single', 'bed_double', 'toilets', 'parking_space', 'rent'), $_POST))
-                {
-                    $photos = getHousePhotos($_POST['id']);
-                    HouseObjects::getInstance()->createHouseObject($user['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'), getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
-
-                }
-                else
-                {
-                    header('Location: error.php?error=FIELDS_EMPTY');
-                    exit;
-                }
-            }
-            if (isset($_POST['objectid']) && '' !== $_POST['objectid'])
-            {
-                header('Location: admin.php?action=settings&tab=settings&objectId=' . $_POST['objectid']);
+                LandLords::getInstance()->updateLandLordInfo($user['id'], getServices($_POST, 'h'), null); 
+                header('Location: admin.php?action=settings&tab=service');
                 exit;
             }
             else
             {
-                header('Location: admin.php?action=settings&tab=service');
+                if ($_POST['objectid'])
+                {
+                    $photos = getHousePhotos($user['id']);
+                    $oldhouseobject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
+                    $ophotos = json_decode(json_decode($oldhouseobject[0]['photos']), true);
+                    if ($ophotos)
+                    {
+                        $photos = array_merge($ophotos, $photos);
+                    }
+                    HouseObjects::getInstance()->updateHouseObjectInfo($user['id'], $_POST['objectid'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'),getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos[0], json_encode($photos), getDescription($_POST));
+                }
+                else
+                {
+                    if(EliteHelper::checkEmpty(array('state', 'city', 'address', 'housename', 'duration_start', 'duration_end', 'rooms', 'bed_single', 'bed_double', 'toilets', 'parking_space', 'rent'), $_POST))
+                    {
+                        $photos = getHousePhotos($_POST['id']);
+                        HouseObjects::getInstance()->createHouseObject($user['id'], $_POST['state'], $_POST['city'], $_POST['address'], $_POST['housename'], EliteHelper::getTime($_POST['duration_start']), EliteHelper::getTime($_POST['duration_end']), $_POST['rooms'], $_POST['bed_single'], $_POST['bed_double'], $_POST['toilets'], $_POST['parking_space'], getWECharge($_POST, 'h'), getFacilities($_POST, 'h'), $_POST['rent'], $_POST['rent'], $photos['0'], json_encode($photos), getDescription($_POST));
+
+                    }
+                    else
+                    {
+                        header('Location: error.php?error=FIELDS_EMPTY');
+                        exit;
+                    }
+                }
+                header('Location: admin.php?action=settings&tab=settings&objectId=' . $_POST['objectid']);
                 exit;
             }
         }

@@ -39,9 +39,13 @@ else if ('settings' == $_GET['action'])
     EliteHelper::setParamsToJs('type', 'settings');
     if (0 == $user['role'])
     {
+        $roleFormTabUnselected = ($_GET['tab'] === 'settings')?false:true;
+        $serviceFormTabUnselected = ($_GET['tab'] === 'service')?false:true;
+        $roleFormClass = ($_GET['tab'] === 'settings')?'':'hidden';
+        $serviceFormClass = ($_GET['tab'] === 'service')?'':'hidden';
         $tabs = array(
-            array('class' => 'settings', 'name' => EliteHelper::getLangString('COMMON_MENU_SETTINGS'), 'containId' => 'ajax-role-form'),
-            array('class' => 'service', 'name' => EliteHelper::getLangString('COMMON_MENU_SERVICE'), 'unselected' => true, 'containId' => 'form-service'),
+            array('class' => 'settings', 'name' => EliteHelper::getLangString('COMMON_MENU_SETTINGS'), 'unselected' =>$roleFormTabUnselected, 'containId' => 'ajax-role-form'),
+            array('class' => 'service', 'name' => EliteHelper::getLangString('COMMON_MENU_SERVICE'), 'unselected' => $serviceFormTabUnselected, 'containId' => 'form-service'),
         );
         $houseowner = LandLords::getInstance()->queryLandLord($user['id']);
         $houseowner = $houseowner[0];
@@ -49,9 +53,10 @@ else if ('settings' == $_GET['action'])
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<input type="hidden" name="role" value="0">';
-        $formHtml .= '<div id="ajax-role-form"><div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
+        $formHtml .= '<input type="hidden" name="tab" value="settings">';
+        $formHtml .= '<div id="ajax-role-form" class="' . $roleFormClass . '"><div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
         $formHtml .= '<div id="houseobject"></div></div></div>';
-        $formHtml .= '<div id="form-service" class="hidden form">' . ContentGenerator::getContent('register_houseowner', array('houseowner' => $houseowner)) . '</div>';
+        $formHtml .= '<div id="form-service" class="' . $serviceFormClass . ' form">' . ContentGenerator::getContent('register_houseowner', array('houseowner' => $houseowner)) . '</div>';
         $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
         $formHtml .= '</form>';
     }

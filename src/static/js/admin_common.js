@@ -69,6 +69,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         if ('' === Y.one('#houseobject').get('innerHTML')) {
             Y.one('#form-submit').addClass('hidden');
         }
+        Y.one('input[name="tab"]').set('value', 'settings');
     });
 
     Y.one('.admin-tab-service').on('click', function(e){
@@ -79,6 +80,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         serviceTab.addClass('selected');
         Y.one('#' + serviceTab.getAttribute('data-id')).removeClass('hidden');
         Y.one('#form-submit').removeClass('hidden');
+        Y.one('input[name="tab"]').set('value', 'service');
     });
     
     var setupForm = function() {
@@ -217,6 +219,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
             Y.one('#houseobject').set('innerHTML', res.data.html);
             setupForm();
             Y.one('#form-submit').removeClass('hidden');
+            Y.one('.houseobject-selector-item.selected').removeClass('selected')
         }
     });
     initScrollView();
@@ -238,23 +241,29 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
     if (tab) {
         var settingsTab = Y.one('.admin-tab-settings');
         var serviceTab = Y.one('.admin-tab-service');
-        if (tab === 'settings') {
+        if (tab === 'service') {
+            settingsTab.removeClass('selected');
+            serviceTab.addClass('selected');
+            Y.one('#ajax-role-form').addClass('hidden');
+            Y.one('#form-service').removeClass('hidden');
+            Y.one('input[name="tab"]').set('value', 'service');
+        } else {
             /*no need to switch, just get ajax form*/
-            /*settingsTab.addClass('selected');
+            settingsTab.addClass('selected');
             serviceTab.removeClass('selected');
             Y.one('#ajax-role-form').removeClass('hidden');
-            Y.one('#form-service').addClass('hidden');*/
+            Y.one('#form-service').addClass('hidden');
             if (objectId) {
                 var houseObject = Y.one('#houseobject-selector-' + objectId);
                 if (houseObject) {
                     houseObject.simulate('click');
                 }
+            } else if (objectId === '') {
+                if (Y.one('.houseobject-selector-item')) {
+                    Y.one('.houseobject-selector-item').simulate('click');
+                }
             }
-        } else {
-            settingsTab.removeClass('selected');
-            serviceTab.addClass('selected');
-            Y.one('#ajax-role-form').addClass('hidden');
-            Y.one('#form-service').removeClass('hidden');
+            Y.one('input[name="tab"]').set('value', 'settings');
         }
         Y.one('#form-submit').removeClass('hidden');
     }
