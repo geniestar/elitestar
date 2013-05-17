@@ -1,0 +1,11 @@
+{{#show}}
+    <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_HOUSEOWNER_YOU_MAY_INTEREST}}</div>
+    <div class="recommend-items-area">
+        {{#results}}
+            <div class="item" class="{{#hidden}} hidden {{/hidden}}">
+                <div class="title">{{user.name}}</div>
+                <div class="admin-close"></div>
+            </div>
+        {{/results}}
+    </div>
+{{/show}}
