@@ -778,11 +778,30 @@
   background-color: #EFEFEF;
   padding: 5px;
 }
-/* line 615, ../scss/admin_common.scss */
+/* line 614, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item {
   position: relative;
+  border-bottom: 1px solid #666666;
 }
 /* line 617, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item .title {
   color: #3b91d9;
+}
+/* line 620, ../scss/admin_common.scss */
+#recommend-area .recommend-items-area .item textarea {
+  height: 20px;
+  width: 180px;
+  margin: 7px 0 0 0;
+}
+/* line 625, ../scss/admin_common.scss */
+#recommend-area .recommend-items-area .item input[type=submit] {
+  margin: 10px auto;
+}
+/* line 629, ../scss/admin_common.scss */
+#recommend-area .recommend-items-area .item:last-child {
+  border-bottom: none;
+}
+/* line 632, ../scss/admin_common.scss */
+#recommend-area .recommend-items-area .item-no-bottom-line {
+  border-bottom: none;
 }

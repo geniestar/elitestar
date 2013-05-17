@@ -611,12 +611,26 @@
         border: 1px solid $black;
         background-color: #EFEFEF;
         padding: 5px;
-
         .item {
             position: relative;
+            border-bottom: 1px solid $gray;
             .title {
                 color: #3b91d9;
             }
+            textarea {
+                height: 20px;
+                width: 180px;
+                margin: 7px 0 0 0;
+            }
+            input[type=submit] {
+                margin: 10px auto;
+            }
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item-no-bottom-line {
+            border-bottom: none;
         }
     }
 }

@@ -2,9 +2,16 @@
     <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_HOUSEOWNER_YOU_MAY_INTEREST}}</div>
     <div class="recommend-items-area">
         {{#results}}
-            <div class="item" class="{{#hidden}} hidden {{/hidden}}">
-                <div class="title">{{user.name}}</div>
-                <div class="admin-close"></div>
+            <div id="recommend-item-{{id}}" class="item {{#hidden}} hidden {{/hidden}} {{#item-no-bottom-line}}item-no-bottom-line{{/item-no-bottom-line}}" data-id="{{id}}">
+                <form id="message-panel-{{id}}">
+                    <input type="hidden" name="action" value="add"></input>
+                    <input type="hidden" name="type" value="message"></input>
+                    <input type="hidden" name="id" value="{{houseObject.owner_id}}"></input>
+                    <div class="title">{{user.name}}</div>
+                    <div class="admin-close"></div>
+                    <textarea placeholder="{{i18n.ADMIN_WRITE_WHAT_YOU_WANT_TO_SAY}}"></textarea>
+                    <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{id}}"></input>
+                    <div class="clean"></div>
             </div>
         {{/results}}
     </div>

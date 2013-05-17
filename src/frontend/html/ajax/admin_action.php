@@ -138,9 +138,13 @@ else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
     $count = 0;
     foreach ($finalResults as $result)
     {
-        if ($count > 5)
+        if ($count > 4)
         {
             $result['hidden'] = true;
+        }
+        if ($count === 4)
+        {
+            $result['item-no-bottom-line'] = true;
         }
         $finalResultsNoIndex[] = $result;
         $count++;
