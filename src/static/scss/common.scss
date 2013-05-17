@@ -224,8 +224,11 @@ input[type="submit"] {
 }
 
 .main-container {
-    width: 720px;
+    width: 760px;
     margin: 0 auto;
+    overflow: hidden;
+    padding-top: 143px;
+    min-height: 800px;
 }
 
 .col {
@@ -237,16 +240,18 @@ input[type="submit"] {
 }
 
 .col-right {
-    width: 558px;
+    width: 598px;
     margin-left: 2px;
 }
 
 #banner {
     width: 100%;
     background-color: #CFED3F;
+    position: fixed;
+    z-index: 10;
     .container {
         color: $black;
-        width: 720px;
+        width: 760px;
         height: 110px;
         margin: 0 auto;
         position: relative;
@@ -274,8 +279,13 @@ input[type="submit"] {
 
 #menu-container {
 background-color: #B2B2B2;
+position: fixed;
+left: 50%;
+top: 110px;
+margin-left: -380px;
+z-index: 11;
 #menu {
-    width: 720px;
+    width: 760px;
     margin: 0 auto;
     font-size: 14px;
     border: 1px solid #7F7F7F;

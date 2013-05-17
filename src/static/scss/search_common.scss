@@ -67,6 +67,10 @@
             a {
                 color: $black;
             }
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 125px;
         }
         .listing-delete {
             width: 14px;
@@ -249,7 +253,7 @@
         line-height: 31px;
         border-bottom: 3px solid;
         .left {
-            width: 521px;
+            width: 561px;
             height: 30px;
             border: 1px solid;
             border-bottom: 0;
@@ -272,7 +276,7 @@
             }
         }
         .left-house {
-            width: 422px;
+            width: 462px;
         }
         .right-item {
             margin-left: 1px;
@@ -374,7 +378,7 @@
         }
         .combined-content {
             float: left;
-            width: 535px;
+            width: 575px;
             height: 111px;
             positiion: relative;
             .info-set {
@@ -405,7 +409,7 @@
         }
         .pic-content {
             float: left;
-            width: 535px;
+            width: 575px;
             height: 111px;
             position: relative;
             .arrow-area {
@@ -423,7 +427,7 @@
                 float: left;
                 overflow: hidden;
                 height: 111px;
-                width: 492px;
+                width: 532px;
                 overflow: hidden;
                 white-space: nowrap;
                 ul {
@@ -451,7 +455,7 @@
             }
         }
         .map-content {
-            width: 535px;
+            width: 575px;
             height: 111px;
             .map {
                 width: 142px;

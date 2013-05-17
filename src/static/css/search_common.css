@@ -304,12 +304,16 @@
 /* line 65, ../scss/search_common.scss */
 #search-menu .favorite-set .title, #favorites .favorite-set .title {
   float: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 125px;
 }
 /* line 67, ../scss/search_common.scss */
 #search-menu .favorite-set .title a, #favorites .favorite-set .title a {
   color: #232323;
 }
-/* line 71, ../scss/search_common.scss */
+/* line 75, ../scss/search_common.scss */
 #search-menu .favorite-set .listing-delete, #favorites .favorite-set .listing-delete {
   width: 14px;
   height: 14px;
@@ -317,14 +321,14 @@
   margin: 2px 5px;
   cursor: pointer;
 }
-/* line 79, ../scss/search_common.scss */
+/* line 83, ../scss/search_common.scss */
 #search-menu .input-set, #favorites .input-set {
   clear: both;
   font-size: 10px;
   padding: 2px 9px;
   position: relative;
 }
-/* line 84, ../scss/search_common.scss */
+/* line 88, ../scss/search_common.scss */
 #search-menu .input-set .listing-calendar, #favorites .input-set .listing-calendar {
   cursor: pointer;
   width: 17px;
@@ -332,7 +336,7 @@
   float: left;
   margin: 4px 2px;
 }
-/* line 91, ../scss/search_common.scss */
+/* line 95, ../scss/search_common.scss */
 #search-menu .input-set .title, #favorites .input-set .title {
   padding: 1px;
   _padding: 3px 1px 0px 1px;
@@ -340,17 +344,17 @@
   padding: 3px 1px 0px 1px\9;
   vertical-align: middle;
 }
-/* line 98, ../scss/search_common.scss */
+/* line 102, ../scss/search_common.scss */
 #search-menu .input-set .title.sec-title, #favorites .input-set .title.sec-title {
   display: inline;
   width: auto;
 }
-/* line 102, ../scss/search_common.scss */
+/* line 106, ../scss/search_common.scss */
 #search-menu .input-set .desc, #favorites .input-set .desc {
   color: #666666;
   font-size: 9px;
 }
-/* line 106, ../scss/search_common.scss */
+/* line 110, ../scss/search_common.scss */
 #search-menu .input-set input, #favorites .input-set input {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -361,17 +365,17 @@
   vertical-align: middle;
   float: left;
 }
-/* line 116, ../scss/search_common.scss */
+/* line 120, ../scss/search_common.scss */
 #search-menu .input-set select, #favorites .input-set select {
   font-size: 10px;
   padding: 1px;
   width: 140px;
 }
-/* line 121, ../scss/search_common.scss */
+/* line 125, ../scss/search_common.scss */
 #search-menu .input-set select.short, #favorites .input-set select.short {
   width: 40px;
 }
-/* line 125, ../scss/search_common.scss */
+/* line 129, ../scss/search_common.scss */
 #search-menu #search-btn, #favorites #search-btn {
   width: 73px;
   height: 23px;
@@ -394,7 +398,7 @@
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   cursor: pointer;
 }
-/* line 141, ../scss/search_common.scss */
+/* line 145, ../scss/search_common.scss */
 #search-menu #search-btn .listing-search_btn, #favorites #search-btn .listing-search_btn {
   width: 14px;
   height: 14px;
@@ -402,13 +406,13 @@
   vertical-align: middle;
   margin: 5px 3px 0 5px;
 }
-/* line 148, ../scss/search_common.scss */
+/* line 152, ../scss/search_common.scss */
 #search-menu #search-btn .title, #favorites #search-btn .title {
   float: left;
   vertical-align: middle;
 }
 
-/* line 154, ../scss/search_common.scss */
+/* line 158, ../scss/search_common.scss */
 #counter {
   padding-bottom: 10px;
   background-color: #e1f7f2;
@@ -429,7 +433,7 @@
   padding: 5px 3px;
 }
 
-/* line 167, ../scss/search_common.scss */
+/* line 171, ../scss/search_common.scss */
 #favorite-container {
   -webkit-transition: height .6s;
   -moz-transition: height .6s;
@@ -437,17 +441,17 @@
   height: 0px;
 }
 
-/* line 174, ../scss/search_common.scss */
+/* line 178, ../scss/search_common.scss */
 #favorite-container.contain-h {
   height: 155px;
 }
 
-/* line 178, ../scss/search_common.scss */
+/* line 182, ../scss/search_common.scss */
 #favorite-container.contain-b {
   height: 170px;
 }
 
-/* line 182, ../scss/search_common.scss */
+/* line 186, ../scss/search_common.scss */
 #sort-bar {
   height: 16px;
   line-height: 16px;
@@ -457,109 +461,109 @@
   padding: 10px;
   margin: 2px 0;
 }
-/* line 190, ../scss/search_common.scss */
+/* line 194, ../scss/search_common.scss */
 #sort-bar .title {
   margin-right: 10px;
   float: left;
 }
-/* line 194, ../scss/search_common.scss */
+/* line 198, ../scss/search_common.scss */
 #sort-bar .sort-item {
   vertical-align: middle;
   float: left;
 }
-/* line 197, ../scss/search_common.scss */
+/* line 201, ../scss/search_common.scss */
 #sort-bar .sort-item a {
   float: left;
 }
-/* line 200, ../scss/search_common.scss */
+/* line 204, ../scss/search_common.scss */
 #sort-bar .sort-item .listing-sort {
   width: 16px;
   height: 17px;
   margin-right: 15px;
 }
-/* line 205, ../scss/search_common.scss */
+/* line 209, ../scss/search_common.scss */
 #sort-bar .sort-item .listing-sort_d {
   width: 16px;
   height: 17px;
   margin-right: 15px;
 }
-/* line 210, ../scss/search_common.scss */
+/* line 214, ../scss/search_common.scss */
 #sort-bar .sort-item .desc {
   margin: 0 5px;
   float: left;
 }
-/* line 213, ../scss/search_common.scss */
+/* line 217, ../scss/search_common.scss */
 #sort-bar .sort-item .desc a {
   color: white;
 }
-/* line 220, ../scss/search_common.scss */
+/* line 224, ../scss/search_common.scss */
 #sort-bar .sort-item.selected .desc a {
   text-decoration: underline;
 }
 
-/* line 227, ../scss/search_common.scss */
+/* line 231, ../scss/search_common.scss */
 .search-result {
   background-color: white;
 }
-/* line 229, ../scss/search_common.scss */
+/* line 233, ../scss/search_common.scss */
 .search-result .listing-icon {
   width: 19px;
   height: 22px;
   margin: 3px 5px;
   float: left;
 }
-/* line 235, ../scss/search_common.scss */
+/* line 239, ../scss/search_common.scss */
 .search-result .theme-icon-house {
   width: 19px;
   height: 22px;
   margin: 3px 5px;
   float: left;
 }
-/* line 241, ../scss/search_common.scss */
+/* line 245, ../scss/search_common.scss */
 .search-result .theme-icon-packer {
   width: 21px;
   height: 21px;
   margin: 3px 5px;
   float: left;
 }
-/* line 247, ../scss/search_common.scss */
+/* line 251, ../scss/search_common.scss */
 .search-result .bar {
   height: 31px;
   line-height: 31px;
   border-bottom: 3px solid;
 }
-/* line 251, ../scss/search_common.scss */
+/* line 255, ../scss/search_common.scss */
 .search-result .bar .left {
-  width: 521px;
+  width: 561px;
   height: 30px;
   border: 1px solid;
   border-bottom: 0;
   float: left;
 }
-/* line 257, ../scss/search_common.scss */
+/* line 261, ../scss/search_common.scss */
 .search-result .bar .left .title {
   color: #232323;
   font-size: 16px;
   float: left;
 }
-/* line 262, ../scss/search_common.scss */
+/* line 266, ../scss/search_common.scss */
 .search-result .bar .left img {
   width: 22px;
   height: 15px;
   float: left;
   margin: 8px 10px;
 }
-/* line 268, ../scss/search_common.scss */
+/* line 272, ../scss/search_common.scss */
 .search-result .bar .left .updated-time {
   font-size: 10px;
   float: right;
   margin-right: 15px;
 }
-/* line 274, ../scss/search_common.scss */
+/* line 278, ../scss/search_common.scss */
 .search-result .bar .left-house {
-  width: 422px;
+  width: 462px;
 }
-/* line 277, ../scss/search_common.scss */
+/* line 281, ../scss/search_common.scss */
 .search-result .bar .right-item {
   margin-left: 1px;
   height: 30px;
@@ -570,42 +574,42 @@
   cursor: pointer;
   position: relative;
 }
-/* line 286, ../scss/search_common.scss */
+/* line 290, ../scss/search_common.scss */
 .search-result .bar .right-item .theme-icon-detail {
   width: 18px;
   height: 18px;
   margin: 6px 6px;
 }
-/* line 291, ../scss/search_common.scss */
+/* line 295, ../scss/search_common.scss */
 .search-result .bar .right-item .theme-icon-pic {
   width: 20px;
   height: 16px;
   margin: 7px 5px;
 }
-/* line 296, ../scss/search_common.scss */
+/* line 300, ../scss/search_common.scss */
 .search-result .bar .right-item .theme-icon-map {
   width: 12px;
   height: 18px;
   margin: 6px 9px;
 }
-/* line 301, ../scss/search_common.scss */
+/* line 305, ../scss/search_common.scss */
 .search-result .bar .right-item .theme-icon-contact {
   width: 15px;
   height: 18px;
   margin: 6px 7px;
 }
-/* line 307, ../scss/search_common.scss */
+/* line 311, ../scss/search_common.scss */
 .search-result .bar .right-item.selected {
   background-color: white;
 }
-/* line 309, ../scss/search_common.scss */
+/* line 313, ../scss/search_common.scss */
 .search-result .bar .right-item.selected .white-bar {
   position: absolute;
   height: 3px;
   width: 100%;
   background-color: white;
 }
-/* line 317, ../scss/search_common.scss */
+/* line 321, ../scss/search_common.scss */
 .search-result .content {
   padding: 5px 10px;
   border: 1px solid;
@@ -613,39 +617,39 @@
   margin-bottom: 2px;
   position: relative;
 }
-/* line 323, ../scss/search_common.scss */
+/* line 327, ../scss/search_common.scss */
 .search-result .content .left-content {
   float: left;
 }
-/* line 325, ../scss/search_common.scss */
+/* line 329, ../scss/search_common.scss */
 .search-result .content .left-content img {
   width: 76px;
   height: 93px;
   margin-top: 15px;
 }
-/* line 331, ../scss/search_common.scss */
+/* line 335, ../scss/search_common.scss */
 .search-result .content .right-content {
   float: left;
   position: relative;
   margin-left: 5px;
 }
-/* line 335, ../scss/search_common.scss */
+/* line 339, ../scss/search_common.scss */
 .search-result .content .right-content .info-set {
   height: 25px;
   overflow: hidden;
 }
-/* line 338, ../scss/search_common.scss */
+/* line 342, ../scss/search_common.scss */
 .search-result .content .right-content .info-set .title {
   width: 145px;
   height: 17px;
   text-align: right;
   float: left;
 }
-/* line 344, ../scss/search_common.scss */
+/* line 348, ../scss/search_common.scss */
 .search-result .content .right-content .info-set .title.two-column {
   width: 65px;
 }
-/* line 347, ../scss/search_common.scss */
+/* line 351, ../scss/search_common.scss */
 .search-result .content .right-content .info-set .desc {
   width: 100px;
   text-align: left;
@@ -654,57 +658,57 @@
   margin-left: 5px;
   white-space: nowrap;
 }
-/* line 354, ../scss/search_common.scss */
+/* line 358, ../scss/search_common.scss */
 .search-result .content .right-content .info-set .desc .inline-desc {
   width: auto;
   padding: 2px 4px;
   margin: 0;
   float: left;
 }
-/* line 361, ../scss/search_common.scss */
+/* line 365, ../scss/search_common.scss */
 .search-result .content .right-content .info-set .desc.two-column {
   width: 130px;
 }
-/* line 364, ../scss/search_common.scss */
+/* line 368, ../scss/search_common.scss */
 .search-result .content .right-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 368, ../scss/search_common.scss */
+/* line 372, ../scss/search_common.scss */
 .search-result .content .right-content .listing-icon {
   width: 20px;
   height: 21px;
   float: left;
   margin: 2px 3px;
 }
-/* line 375, ../scss/search_common.scss */
+/* line 379, ../scss/search_common.scss */
 .search-result .content .combined-content {
   float: left;
-  width: 535px;
+  width: 575px;
   height: 111px;
   positiion: relative;
 }
-/* line 381, ../scss/search_common.scss */
+/* line 385, ../scss/search_common.scss */
 .search-result .content .combined-content .info-set .title {
   width: 75px;
 }
-/* line 384, ../scss/search_common.scss */
+/* line 388, ../scss/search_common.scss */
 .search-result .content .combined-content .info-set .title.two-column {
   width: 65px;
 }
-/* line 387, ../scss/search_common.scss */
+/* line 391, ../scss/search_common.scss */
 .search-result .content .combined-content .info-set .desc {
   width: 160px;
   white-space: nowrap;
 }
-/* line 390, ../scss/search_common.scss */
+/* line 394, ../scss/search_common.scss */
 .search-result .content .combined-content .info-set .desc .inline-desc {
   width: auto;
 }
-/* line 394, ../scss/search_common.scss */
+/* line 398, ../scss/search_common.scss */
 .search-result .content .combined-content .info-set .one-line-desc {
   width: auto;
 }
-/* line 397, ../scss/search_common.scss */
+/* line 401, ../scss/search_common.scss */
 .search-result .content .combined-content .info-set .addr-desc {
   width: 450px;
   text-overflow: ellipsis;
@@ -712,42 +716,42 @@
   display: block;
   overflow: hidden;
 }
-/* line 406, ../scss/search_common.scss */
+/* line 410, ../scss/search_common.scss */
 .search-result .content .pic-content {
   float: left;
-  width: 535px;
+  width: 575px;
   height: 111px;
   position: relative;
 }
-/* line 411, ../scss/search_common.scss */
+/* line 415, ../scss/search_common.scss */
 .search-result .content .pic-content .arrow-area {
   float: left;
   width: 20px;
   height: 111px;
 }
-/* line 415, ../scss/search_common.scss */
+/* line 419, ../scss/search_common.scss */
 .search-result .content .pic-content .arrow-area .theme-arrow {
   cursor: pointer;
   width: 11px;
   height: 28px;
   margin: 40px 5px;
 }
-/* line 422, ../scss/search_common.scss */
+/* line 426, ../scss/search_common.scss */
 .search-result .content .pic-content .pics {
   float: left;
   overflow: hidden;
   height: 111px;
-  width: 492px;
+  width: 532px;
   overflow: hidden;
   white-space: nowrap;
 }
-/* line 429, ../scss/search_common.scss */
+/* line 433, ../scss/search_common.scss */
 .search-result .content .pic-content .pics ul {
   padding: 0;
   margin: 0;
   height: 111px;
 }
-/* line 433, ../scss/search_common.scss */
+/* line 437, ../scss/search_common.scss */
 .search-result .content .pic-content .pics ul li {
   display: inline-block;
   margin: 0px;
@@ -756,69 +760,69 @@
   height: 103px;
   white-space: nowrap;
 }
-/* line 440, ../scss/search_common.scss */
+/* line 444, ../scss/search_common.scss */
 .search-result .content .pic-content .pics ul li img {
   width: 144px;
   height: 93px;
   border: 5px solid white;
   cursor: pointer;
 }
-/* line 446, ../scss/search_common.scss */
+/* line 450, ../scss/search_common.scss */
 .search-result .content .pic-content .pics ul li img.selected {
   border: 5px solid #B2B2B2;
 }
-/* line 453, ../scss/search_common.scss */
+/* line 457, ../scss/search_common.scss */
 .search-result .content .map-content {
-  width: 535px;
+  width: 575px;
   height: 111px;
 }
-/* line 456, ../scss/search_common.scss */
+/* line 460, ../scss/search_common.scss */
 .search-result .content .map-content .map {
   width: 142px;
   height: 90px;
   margin: 10px 5px;
   float: left;
 }
-/* line 462, ../scss/search_common.scss */
+/* line 466, ../scss/search_common.scss */
 .search-result .content .map-content .location-info {
   width: 370px;
   height: 111px;
   float: left;
   margin-left: 10px;
 }
-/* line 467, ../scss/search_common.scss */
+/* line 471, ../scss/search_common.scss */
 .search-result .content .map-content .location-info ul {
   margin: 0;
   padding: 0;
   list-style: none;
   list-style-image: none;
 }
-/* line 472, ../scss/search_common.scss */
+/* line 476, ../scss/search_common.scss */
 .search-result .content .map-content .location-info ul .desc {
   color: #232323;
   margin: 0;
 }
-/* line 479, ../scss/search_common.scss */
+/* line 483, ../scss/search_common.scss */
 .search-result .content .action-btns {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
-/* line 483, ../scss/search_common.scss */
+/* line 487, ../scss/search_common.scss */
 .search-result .content .action-btns .listing-save_favorite {
   width: 52px;
   height: 21px;
   margin: 5px;
   cursor: pointer;
 }
-/* line 489, ../scss/search_common.scss */
+/* line 493, ../scss/search_common.scss */
 .search-result .content .action-btns .listing-send_message {
   width: 52px;
   height: 21px;
   margin: 5px;
   cursor: pointer;
 }
-/* line 497, ../scss/search_common.scss */
+/* line 501, ../scss/search_common.scss */
 .search-result .message-panel {
   background-color: #E2E2E2;
   width: 320px;
@@ -834,21 +838,21 @@
   -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
-/* line 511, ../scss/search_common.scss */
+/* line 515, ../scss/search_common.scss */
 .search-result .message-panel .title {
   display: inline;
 }
-/* line 514, ../scss/search_common.scss */
+/* line 518, ../scss/search_common.scss */
 .search-result .message-panel .desc {
   display: inline;
 }
-/* line 517, ../scss/search_common.scss */
+/* line 521, ../scss/search_common.scss */
 .search-result .message-panel textarea {
   margin: 5px 0;
   width: 243px;
   height: 73px;
 }
-/* line 522, ../scss/search_common.scss */
+/* line 526, ../scss/search_common.scss */
 .search-result .message-panel .listing-delete {
   width: 14px;
   height: 14px;
@@ -857,14 +861,14 @@
   top: 5px;
   cursor: pointer;
 }
-/* line 530, ../scss/search_common.scss */
+/* line 534, ../scss/search_common.scss */
 .search-result .message-panel input[type="submit"] {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
 
-/* line 538, ../scss/search_common.scss */
+/* line 542, ../scss/search_common.scss */
 #img-panel {
   background-color: #E2E2E2;
   width: 600px;
@@ -882,7 +886,7 @@
   -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
-/* line 554, ../scss/search_common.scss */
+/* line 558, ../scss/search_common.scss */
 #img-panel .listing-delete {
   width: 14px;
   height: 14px;
@@ -891,46 +895,46 @@
   top: 5px;
   cursor: pointer;
 }
-/* line 562, ../scss/search_common.scss */
+/* line 566, ../scss/search_common.scss */
 #img-panel .content-field {
   width: 100%;
   height: 100%;
   line-height: 400px;
   text-align: center;
 }
-/* line 567, ../scss/search_common.scss */
+/* line 571, ../scss/search_common.scss */
 #img-panel .content-field #big-map {
   width: 600px;
   height: 400px;
 }
-/* line 571, ../scss/search_common.scss */
+/* line 575, ../scss/search_common.scss */
 #img-panel .content-field img.big-pic {
   max-width: 600px;
   max-height: 400px;
   vertical-align: middle;
 }
-/* line 576, ../scss/search_common.scss */
+/* line 580, ../scss/search_common.scss */
 #img-panel .content-field #big-map {
   line-height: 20px;
 }
 
-/* line 582, ../scss/search_common.scss */
+/* line 586, ../scss/search_common.scss */
 .pagenation {
   overflow: hidden;
   padding: 20px 0 40px 0;
   margin: 0 auto;
   float: right;
 }
-/* line 587, ../scss/search_common.scss */
+/* line 591, ../scss/search_common.scss */
 .pagenation div {
   float: left;
   margin: 0 2px;
 }
-/* line 591, ../scss/search_common.scss */
+/* line 595, ../scss/search_common.scss */
 .pagenation div.selected {
   background-color: #EEE;
 }
-/* line 595, ../scss/search_common.scss */
+/* line 599, ../scss/search_common.scss */
 .pagenation a {
   font-size: 10px;
   color: #666666;

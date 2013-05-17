@@ -489,48 +489,53 @@ input[type="submit"] {
 
 /* line 226, ../scss/common.scss */
 .main-container {
-  width: 720px;
+  width: 760px;
   margin: 0 auto;
+  overflow: hidden;
+  padding-top: 143px;
+  min-height: 800px;
 }
 
-/* line 231, ../scss/common.scss */
+/* line 234, ../scss/common.scss */
 .col {
   float: left;
 }
 
-/* line 235, ../scss/common.scss */
+/* line 238, ../scss/common.scss */
 .col-left {
   width: 160px;
 }
 
-/* line 239, ../scss/common.scss */
+/* line 242, ../scss/common.scss */
 .col-right {
-  width: 558px;
+  width: 598px;
   margin-left: 2px;
 }
 
-/* line 244, ../scss/common.scss */
+/* line 247, ../scss/common.scss */
 #banner {
   width: 100%;
   background-color: #CFED3F;
+  position: fixed;
+  z-index: 10;
 }
-/* line 247, ../scss/common.scss */
+/* line 252, ../scss/common.scss */
 #banner .container {
   color: #232323;
-  width: 720px;
+  width: 760px;
   height: 110px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
-/* line 254, ../scss/common.scss */
+/* line 259, ../scss/common.scss */
 #banner .container .title {
   font-size: 36px;
   position: absolute;
   left: 100px;
   bottom: 10px;
 }
-/* line 260, ../scss/common.scss */
+/* line 265, ../scss/common.scss */
 #banner .container .banner-pic {
   background: url(../img/banner_pic.png);
   width: 173px;
@@ -540,18 +545,23 @@ input[type="submit"] {
   bottom: 0px;
 }
 
-/* line 271, ../scss/common.scss */
+/* line 276, ../scss/common.scss */
 .clean {
   clear: both;
 }
 
-/* line 275, ../scss/common.scss */
+/* line 280, ../scss/common.scss */
 #menu-container {
   background-color: #B2B2B2;
+  position: fixed;
+  left: 50%;
+  top: 110px;
+  margin-left: -380px;
+  z-index: 11;
 }
-/* line 277, ../scss/common.scss */
+/* line 287, ../scss/common.scss */
 #menu-container #menu {
-  width: 720px;
+  width: 760px;
   margin: 0 auto;
   font-size: 14px;
   border: 1px solid #7F7F7F;
@@ -566,7 +576,7 @@ input[type="submit"] {
   background-image: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
   background-image: linear-gradient(top, #ffffff 0%, #e5e5e5 87%, #d6d6d6 100%);
 }
-/* line 286, ../scss/common.scss */
+/* line 296, ../scss/common.scss */
 #menu-container #menu .btn {
   float: left;
   width: 20%;
@@ -574,14 +584,14 @@ input[type="submit"] {
   text-align: center;
   cursor: pointer;
 }
-/* line 292, ../scss/common.scss */
+/* line 302, ../scss/common.scss */
 #menu-container #menu .btn .btn-container {
   display: inline-block;
   imargin: 0 auto;
   height: 31px;
   line-height: 31px;
 }
-/* line 297, ../scss/common.scss */
+/* line 307, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-icon {
   width: 23px;
   height: 23px;
@@ -589,15 +599,15 @@ input[type="submit"] {
   margin: 3px 3px 3px 0;
   vertical-align: middle;
 }
-/* line 304, ../scss/common.scss */
+/* line 314, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-find_houses {
   background-position: 0 -162px;
 }
-/* line 307, ../scss/common.scss */
+/* line 317, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .menu-find_customers {
   background-position: 0 -207px;
 }
-/* line 310, ../scss/common.scss */
+/* line 320, ../scss/common.scss */
 #menu-container #menu .btn .btn-container .title {
   float: left;
   margin-top: 1px;
@@ -606,44 +616,44 @@ input[type="submit"] {
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 318, ../scss/common.scss */
+/* line 328, ../scss/common.scss */
 #menu-container #menu .btn .btn-container a {
   color: #232323;
 }
-/* line 323, ../scss/common.scss */
+/* line 333, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected a, #menu-container #menu .btn .btn-container.mouseover a {
   color: #22CFBD;
 }
-/* line 326, ../scss/common.scss */
+/* line 336, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .title, #menu-container #menu .btn .btn-container.mouseover .title {
   color: #22CFBD;
 }
-/* line 329, ../scss/common.scss */
+/* line 339, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_houses, #menu-container #menu .btn .btn-container.mouseover .menu-find_houses {
   background-position: 0 -138px;
 }
-/* line 332, ../scss/common.scss */
+/* line 342, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-find_customers, #menu-container #menu .btn .btn-container.mouseover .menu-find_customers {
   background-position: 0 -184px;
 }
-/* line 335, ../scss/common.scss */
+/* line 345, ../scss/common.scss */
 #menu-container #menu .btn .btn-container.selected .menu-settings, #menu-container #menu .btn .btn-container.mouseover .menu-settings {
   background-position: 0 -46px;
 }
-/* line 340, ../scss/common.scss */
+/* line 350, ../scss/common.scss */
 #menu-container #menu .btn-right {
   float: right;
   position: relative;
 }
-/* line 344, ../scss/common.scss */
+/* line 354, ../scss/common.scss */
 #menu-container #menu .btn-right .btn-container .menu-icon {
   margin: 3px 0 3px 3px;
 }
-/* line 348, ../scss/common.scss */
+/* line 358, ../scss/common.scss */
 #menu-container #menu .btn-right a {
   color: #232323;
 }
-/* line 352, ../scss/common.scss */
+/* line 362, ../scss/common.scss */
 #menu-container #menu .extension-link {
   border: 1px solid #E5E5E5;
   border-bottom: 0px;
@@ -657,13 +667,13 @@ input[type="submit"] {
   z-index: 12;
   text-align: left;
 }
-/* line 364, ../scss/common.scss */
+/* line 374, ../scss/common.scss */
 #menu-container #menu .extension-link a {
   vertical-align: middle;
   color: #7F7F7F;
   text-decoration: none;
 }
-/* line 368, ../scss/common.scss */
+/* line 378, ../scss/common.scss */
 #menu-container #menu .extension-link a .extension-item {
   padding-left: 20px;
   height: 26px;
@@ -671,12 +681,12 @@ input[type="submit"] {
   background-color: white;
   border-bottom: 1px solid #E5E5E5;
 }
-/* line 376, ../scss/common.scss */
+/* line 386, ../scss/common.scss */
 #menu-container #menu .extension-link .extension-item:hover {
   background-color: #E5E5E5;
 }
 
-/* line 382, ../scss/common.scss */
+/* line 392, ../scss/common.scss */
 #hint-panel {
   position: absolute;
   background-color: #FFF6D5;
@@ -690,7 +700,7 @@ input[type="submit"] {
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
 
-/* line 395, ../scss/common.scss */
+/* line 405, ../scss/common.scss */
 .login-panel {
   background-color: #E2E2E2;
   width: 226px;
@@ -707,7 +717,7 @@ input[type="submit"] {
   -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
-/* line 410, ../scss/common.scss */
+/* line 420, ../scss/common.scss */
 .login-panel .egisterform-close {
   width: 14px;
   height: 14px;
@@ -716,39 +726,39 @@ input[type="submit"] {
   top: 5px;
   cursor: pointer;
 }
-/* line 419, ../scss/common.scss */
+/* line 429, ../scss/common.scss */
 .login-panel form {
   position: absolute;
 }
-/* line 421, ../scss/common.scss */
+/* line 431, ../scss/common.scss */
 .login-panel form .option-set {
   margin: 5px 0;
 }
-/* line 423, ../scss/common.scss */
+/* line 433, ../scss/common.scss */
 .login-panel form .option-set .title {
   margin: 0 5px 5px 5px;
   font-weight: bold;
   color: #232323;
 }
-/* line 428, ../scss/common.scss */
+/* line 438, ../scss/common.scss */
 .login-panel form .option-set .sub-title {
   font-size: 12px;
   color: #232323;
 }
-/* line 432, ../scss/common.scss */
+/* line 442, ../scss/common.scss */
 .login-panel form .option-set input {
   color: #666666;
 }
-/* line 435, ../scss/common.scss */
+/* line 445, ../scss/common.scss */
 .login-panel form .option-set input[type=text], .login-panel form .option-set input[type=password] {
   border: 1px solid #232323;
   width: 200px;
 }
-/* line 439, ../scss/common.scss */
+/* line 449, ../scss/common.scss */
 .login-panel form .option-set input[type=checkbox] {
   vertical-align: middle;
 }
-/* line 442, ../scss/common.scss */
+/* line 452, ../scss/common.scss */
 .login-panel form .option-set input[type=submit] {
   float: left;
   color: white;
@@ -770,7 +780,7 @@ input[type="submit"] {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 458, ../scss/common.scss */
+/* line 468, ../scss/common.scss */
 .login-panel form .option-set input[type=submit]:active {
   background-color: #eba028;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
@@ -781,11 +791,11 @@ input[type="submit"] {
   background-image: -o-linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
   background-image: linear-gradient(top, #eba028 0%, #eba028 95%, #ffffff 96%, #ffffff 99%);
 }
-/* line 464, ../scss/common.scss */
+/* line 474, ../scss/common.scss */
 .login-panel form .option-set:nth-child(2) {
   margin-top: 10px;
 }
-/* line 468, ../scss/common.scss */
+/* line 478, ../scss/common.scss */
 .login-panel .registerform-close {
   width: 14px;
   height: 14px;
@@ -794,7 +804,7 @@ input[type="submit"] {
   right: 5px;
   position: absolute;
 }
-/* line 476, ../scss/common.scss */
+/* line 486, ../scss/common.scss */
 .login-panel .register-now-main-btn {
   width: auto;
   position: static;
@@ -802,7 +812,7 @@ input[type="submit"] {
   margin-left: 20px;
 }
 
-/* line 484, ../scss/common.scss */
+/* line 494, ../scss/common.scss */
 .register-now-main-btn {
   width: 100px;
   text-align: center;
@@ -828,7 +838,7 @@ input[type="submit"] {
   border-radius: 5px;
 }
 
-/* line 503, ../scss/common.scss */
+/* line 513, ../scss/common.scss */
 .register-now-main-btn:active {
   background-color: #eba028;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViYTAyOCIvPjxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjZWJhMDI4Ii8+PHN0b3Agb2Zmc2V0PSI5NiUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');

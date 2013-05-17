@@ -55,7 +55,7 @@ else if ('settings' == $_GET['action'])
         $formHtml .= '<input type="hidden" name="role" value="0">';
         $formHtml .= '<input type="hidden" name="tab" value="settings">';
         $formHtml .= '<div id="ajax-role-form" class="' . $roleFormClass . '"><div id="houseobject-selector">' . ContentGenerator::getContent('register_houseobject_selector', array('houseobjects' => $houseobjects)) . '<div class="clean"></div></div>';
-        $formHtml .= '<div id="houseobject"></div></div></div>';
+        $formHtml .= '<div id="houseobject"></div></div>';
         $formHtml .= '<div id="form-service" class="' . $serviceFormClass . ' form">' . ContentGenerator::getContent('register_houseowner', array('houseowner' => $houseowner)) . '</div>';
         $formHtml .= ContentGenerator::getContent('register_publish_btn', array('updateBtn' => true));
         $formHtml .= '</form>';
@@ -143,12 +143,12 @@ EliteHelper::setStringToJs('ADMIN_SAVED_IMFORMATION');
                 <div class="row">
                     <?php echo ContentGenerator::getContent('common_admintab', array('tabs' => $tabs));?>
                 </div>
-                <div class="row">
+                <div class="row form-area">
                     <?php echo $formHtml;?>
                 </div>
             </div>
             <div class="col-right-left-big col">
-                <div class="row">
+                <div class="row" id="recommend-area">
                 </div>
             </div>
         </div>

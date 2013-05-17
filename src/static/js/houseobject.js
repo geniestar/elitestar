@@ -111,7 +111,7 @@ YUI.add("houseobject", function(Y)
                 var scrollView = new Y.ScrollView({
                     id: 'scrollview-' + resultId,
                     srcNode : '#' + resultId + ' .pics ul',
-                    width : 492,
+                    width : 532,
                 }); 
                 
                 scrollView.render();
@@ -125,8 +125,8 @@ YUI.add("houseobject", function(Y)
                 });
                 Y.one('#' + resultId + ' .theme-icon-arrow_right').on('click', function(e){
                     var scrollX = scrollView.get('scrollX') + 200;
-                    if (scrollX > 155*liCount - 492) {
-                        scrollX = 155*liCount - 492;
+                    if (scrollX > 155*liCount - 532) {
+                        scrollX = 155*liCount - 532;
                     }
                     scrollView.scrollTo(scrollX, 0, 500, "ease-in");
                 });

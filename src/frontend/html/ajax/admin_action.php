@@ -94,5 +94,58 @@ else if (isset($_POST['action']) && 'delete-object' === $_POST['action'])
 {
     HouseObjects::getInstance()->deleteHouseObject($user['id'], $_POST['objectid']); 
     EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('ADMIN_DELETED_OBJECT')));
+} 
+else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
+{
+    $finalResults = array();
+    $user = EliteUsers::getInstance()->getCurrentUser();
+    if (0 === $user['role'])
+    {
+        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
+        foreach($houseobjects as $houseobject)
+        {
+            if (isset($_POST['objectid']) && '' !== $_POST['objectid'])
+            {
+                $results = BackPackers::getInstance()->findBackPackers($houseobject['state'], $houseobject['city'], 0, 99, BackPackers::SORT_BY_TIME, null, $houseobject['duration_start'], $houseobject['duration_end'], null, null, null, null, null);
+            }
+            else
+            {
+                $results = BackPackers::getInstance()->findBackPackers($houseobject['state'], $houseobject['city'], 0, 99, BackPackers::SORT_BY_TIME, null, null, null, null, null, null, null, null);
+            }
+
+            foreach ($results as $result)
+            {
+                $userInfo = EliteUsers::getInstance()->queryUser($result['user_id'], null, null, true);
+                $result['user'] = $userInfo[0];
+                $finalResults[$result['id']] = $result;
+            }
+        }
+    }
+    else
+    {
+        $backpackers = BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_TIME, null, null, null, null, null, null, null, null, $user['id']);
+        $backpacker = $backpackers[0];
+        $results = HouseObjects::getInstance()->findHouseObjects($backpacker['state'], $backpacker['city'], 0, 99, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null);
+        foreach ($results as $result)
+        {
+            $userInfo = EliteUsers::getInstance()->queryUser($result['user_id'], null, null, true);
+            $result['user'] = $userInfo[0];
+            $finalResults[$result['id']] = $result;
+        }
+    }
+    shuffle($finalResults);
+    $finalResultsNoIndex = array();
+    $count = 0;
+    foreach ($finalResults as $result)
+    {
+        if ($count > 5)
+        {
+            $result['hidden'] = true;
+        }
+        $finalResultsNoIndex[] = $result;
+        $count++;
+    }
+    $html = ContentGenerator::getContent('admin_recommend', array('results' => $finalResultsNoIndex, 'role' => $user['role'], 'type' => $_POST['type']));
+    EliteHelper::ajaxReturnSuccess(array('html' => $html));
 }
 ?>

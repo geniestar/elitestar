@@ -2,26 +2,29 @@
 @import "admin/*.png";
 @include all-admin-sprites;
 
-.main-container {
-    width: 720px;
-    margin: 0 auto;
-}
 .col-combined {
-    width: 720px;
+    width: 760px;
 }
 .col-left-left-big {
     width: 558px;
     padding-bottom: 40px;
 }
+
 .col-right-left-big {
-    width: 160px;
+    width: 200px;
     margin-left: 2px;
+    position: fixed;
+    top: 200px;
+    margin-left: 569px;
 }
 
 #admin-menu {
-    margin: 10px 0;
-    position :relative;
+    padding: 10px 0;
+    position :fixed;
     height: 24px;
+    top: 143px;
+    z-index: 10;
+    background-color: $white;
     div {
         float: left;
     }
@@ -52,9 +55,13 @@
 }
 
 #admin-tabs {
-    width: 100%;
+    width: 560px;
     height: 41px;
     border-bottom: 1px solid $black;
+    position: fixed;
+    top: 187px;
+    z-index: 10;
+    background-color: $white;
     .admin-tab {
         position :relative;
         bottom: -2px;
@@ -74,6 +81,10 @@
         border-style:solid;
         border-width:1px;
     }
+}
+
+.form-area {
+    margin-top: 100px;
 }
 
 .backpacker {
@@ -297,20 +308,21 @@
         color: #3b91d9;
     }
 }
+
+.admin-close {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 5px;
+    top :5px;
+}
 .message {
     position: relative;
     margin-bottom: 10px;
     .message-single {
         padding: 10px 10px 0 10px;
         border-bottom: 1px solid #ccc;
-    }
-    .admin-close {
-        cursor: pointer;
-        width: 14px;
-        height: 14px;
-        position: absolute;
-        right: 5px;
-        top :5px;
     }
     .message-body {
         margin: 10px 0;
@@ -578,4 +590,38 @@
 .traffic-link {
     margin: 10px;
     font-size: 16px;
+}
+
+#recommend-area {
+    .admin-people_b {
+        width: 16px;
+        height: 21px;
+        float: left;
+        margin-right: 5px;
+    }
+    .title {
+        color: green;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .recommend-items-area {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 1px solid $black;
+        background-color: #EFEFEF;
+        padding: 5px;
+
+        .item {
+            position: relative;
+            .title {
+                color: #3b91d9;
+            }
+        }
+    }
+}
+
+
+#recommend-desc {
+    
 }

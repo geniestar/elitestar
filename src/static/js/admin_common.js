@@ -3,8 +3,9 @@ YUI({
         mapper: '/js/mapper.js',
         ecalendar: '/js/ecalendar.js',
         hintpanel: '/js/hint_panel.js',
+        recommend: '/js/recommend.js',
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', 'recommend', function(Y) {
 var action;
 var tab;
 var objectId;
@@ -81,6 +82,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         Y.one('#' + serviceTab.getAttribute('data-id')).removeClass('hidden');
         Y.one('#form-submit').removeClass('hidden');
         Y.one('input[name="tab"]').set('value', 'service');
+        YAHOO.EliteStar.getRecommend('service');
     });
     
     var setupForm = function() {
@@ -142,6 +144,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
             Y.one('#houseobject').set('innerHTML', res.data.html);
             Y.one('#form-submit').removeClass('hidden');
             setupForm();
+            YAHOO.EliteStar.getRecommend('settings', e.target.getAttribute('data-id'))
         }
     }
     
@@ -247,8 +250,8 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
             Y.one('#ajax-role-form').addClass('hidden');
             Y.one('#form-service').removeClass('hidden');
             Y.one('input[name="tab"]').set('value', 'service');
+            YAHOO.EliteStar.getRecommend('service');
         } else {
-            /*no need to switch, just get ajax form*/
             settingsTab.addClass('selected');
             serviceTab.removeClass('selected');
             Y.one('#ajax-role-form').removeClass('hidden');
@@ -264,8 +267,11 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
                 }
             }
             Y.one('input[name="tab"]').set('value', 'settings');
+            YAHOO.EliteStar.getRecommend('settings', objectId);
         }
         Y.one('#form-submit').removeClass('hidden');
+    } else {
+        //YAHOO.EliteStar.getRecommend('settings');
     }
 
 } else {
