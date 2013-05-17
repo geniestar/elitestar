@@ -126,6 +126,7 @@ else
             if ('service' === $_POST['tab'])
             {
                 LandLords::getInstance()->updateLandLordInfo($user['id'], getServices($_POST, 'h'), null); 
+                setcookie('a', 1, time() + 3600);
                 header('Location: admin.php?action=settings&tab=service');
                 exit;
             }
@@ -156,6 +157,7 @@ else
                         exit;
                     }
                 }
+                setcookie('a', 1, time() + 3600);
                 header('Location: admin.php?action=settings&tab=settings&objectId=' . $_POST['objectid']);
                 exit;
             }

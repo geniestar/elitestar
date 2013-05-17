@@ -39,9 +39,9 @@ else if ('settings' == $_GET['action'])
     EliteHelper::setParamsToJs('type', 'settings');
     if (0 == $user['role'])
     {
-        $roleFormTabUnselected = ($_GET['tab'] === 'settings')?false:true;
+        $roleFormTabUnselected = (!isset($_GET['tab']) || $_GET['tab'] === 'settings')?false:true;
         $serviceFormTabUnselected = ($_GET['tab'] === 'service')?false:true;
-        $roleFormClass = ($_GET['tab'] === 'settings')?'':'hidden';
+        $roleFormClass = (!isset($_GET['tab']) || $_GET['tab'] === 'settings')?'':'hidden';
         $serviceFormClass = ($_GET['tab'] === 'service')?'':'hidden';
         $tabs = array(
             array('class' => 'settings', 'name' => EliteHelper::getLangString('COMMON_MENU_SETTINGS'), 'unselected' =>$roleFormTabUnselected, 'containId' => 'ajax-role-form'),
