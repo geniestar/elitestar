@@ -5,8 +5,9 @@ YUI({
         houseobject: '/js/houseobject.js',
         backpacker: '/js/backpacker.js',
         loginpanel: '/js/login_panel.js',
+        alertdialog: '/js/alert_dialog.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', 'loginpanel', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', 'loginpanel', 'alertdialog', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
         var select = Y.one(selector);
         var options = select.all('option');

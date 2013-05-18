@@ -888,23 +888,27 @@
 /* line 625, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item .title {
   color: #3b91d9;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 165px;
 }
-/* line 628, ../scss/admin_common.scss */
+/* line 632, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item textarea {
   height: 20px;
   width: 180px;
   margin: 7px 0 0 0;
 }
-/* line 633, ../scss/admin_common.scss */
+/* line 637, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item input[type=submit] {
   margin: 10px auto;
 }
-/* line 637, ../scss/admin_common.scss */
+/* line 641, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item:first-child {
   border-top: none;
 }
 
-/* line 643, ../scss/admin_common.scss */
+/* line 647, ../scss/admin_common.scss */
 .recommend-desc-content {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -918,29 +922,29 @@
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   overflow: hidden;
 }
-/* line 655, ../scss/admin_common.scss */
+/* line 659, ../scss/admin_common.scss */
 .recommend-desc-content .seperator {
   border-top: 1px solid #FFAC55;
   height: 1px;
   margin: 5px 0;
 }
-/* line 660, ../scss/admin_common.scss */
+/* line 664, ../scss/admin_common.scss */
 .recommend-desc-content .listing-icon {
   width: 19px;
   height: 22px;
   margin: 3px 5px 3px 0;
   float: left;
 }
-/* line 666, ../scss/admin_common.scss */
+/* line 670, ../scss/admin_common.scss */
 .recommend-desc-content .desc-set {
   overflow: hidden;
 }
-/* line 668, ../scss/admin_common.scss */
+/* line 672, ../scss/admin_common.scss */
 .recommend-desc-content .desc-set .title {
   margin: 5px 0;
 }
 
-/* line 674, ../scss/admin_common.scss */
+/* line 678, ../scss/admin_common.scss */
 #recommend-desc-panel {
   position: fixed;
   top: 0;

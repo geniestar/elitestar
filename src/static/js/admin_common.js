@@ -4,8 +4,9 @@ YUI({
         ecalendar: '/js/ecalendar.js',
         hintpanel: '/js/hint_panel.js',
         recommend: '/js/recommend.js',
+        alertdialog: '/js/alert_dialog.js',
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', 'recommend', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', 'recommend', 'alertdialog', function(Y) {
 var action;
 var tab;
 var objectId;

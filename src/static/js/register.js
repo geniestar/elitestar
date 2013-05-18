@@ -4,8 +4,9 @@ YUI({
         ecalendar: '/js/ecalendar.js',
         hintpanel: '/js/hint_panel.js',
         loginpanel: '/js/login_panel.js',
+        alertdialog: '/js/alert_dialog.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', 'io-base', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', 'io-base', 'alertdialog', function(Y) {
     var switchRole = function (role){
         var backpackerForm = Y.one('#backpacker-form-all');
         var houseownerForm = Y.one('#houseowner-form-all');
@@ -242,7 +243,7 @@ YUI({
     }
 
     var markFieldAsValid = function(formId, name) {
-        var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
+        /*var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
         if (parentNode.hasClass('input-set')) {
             parentNode.removeClass('invalid');
             if ('duration_end' !== name) {
@@ -250,10 +251,12 @@ YUI({
             } else {
                 parentNode.one('.sec-title').set('innerHTML', parentNode.one('.sec-title').get('innerHTML').replace('*', ''));
             }
-        }
+        }*/
+        Y.one('#' + formId + ' input[name="' + name + '"]').removeClass('invalid-input');
     }
 
     var markFieldAsInvalid = function(formId, name) {
+        /*
         var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
         if ((parentNode.hasClass('input-set') && !parentNode.hasClass('invalid')) || 'duration_end' === name) {
             parentNode.addClass('invalid');
@@ -263,7 +266,8 @@ YUI({
                 parentNode.one('.sec-title').set('innerHTML', '*' + parentNode.one('.sec-title').get('innerHTML'));
                 parentNode.one('.sec-title').set('innerHTML', parentNode.one('.sec-title').get('innerHTML').replace('**', '*'));//prevent double *
             }
-        }
+        }*/
+        Y.one('#' + formId + ' input[name="' + name + '"]').addClass('invalid-input');
     }
 
     var btns = Y.all('#register-form form input[type=submit]')

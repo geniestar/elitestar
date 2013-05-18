@@ -31,6 +31,7 @@ languages:
     COMMON_SEARCH_MY_FAVORITE: 'My Favorite'
     COMMON_CHOOSE_A_SUBURB: 'Choose a suburb'
     COMMON_CHOOSE_ACCEPTABLE_RANGE: 'Your acceptable range'
+    COMMON_OK: 'OK'
     SEARCH_RESULT_VIEW_AS: 'View as'
     SEARCH_RESULT_UPDATED_TIME: 'Updated Time'
     SEARCH_RESULT_RENT: 'Rent'

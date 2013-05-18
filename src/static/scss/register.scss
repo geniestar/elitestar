@@ -264,6 +264,10 @@
             margin: 10px 5px 10px 10px;
         }
     }
+    .input-set .invalid-input {
+        background-color: #FFCECD;
+        border: 1px solid #FF9291;
+    }
     .input-set.invalid {
         color: red;
     }

@@ -624,6 +624,10 @@
             padding-top: 5px;
             .title {
                 color: #3b91d9;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                width: 165px;
             }
             textarea {
                 height: 20px;

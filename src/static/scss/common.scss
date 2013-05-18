@@ -285,7 +285,7 @@ top: 110px;
 margin-left: -380px;
 z-index: 11;
 #menu {
-    width: 760px;
+    width: 757px;
     margin: 0 auto;
     font-size: 14px;
     border: 1px solid #7F7F7F;
@@ -515,4 +515,53 @@ z-index: 11;
     $experimental-support-for-svg: true;
     @include background-image(linear-gradient(top,  #eba028 0%,#eba028 95%,#ffffff 96%,#ffffff 99%));
 
+}
+
+#alert-dialog {
+        background-color: #E2E2E2;
+        width: 300px;
+        padding: 10px;
+        color: $black;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+        z-index: 20;
+        border: 1px solid $gray;
+        -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        .listing-delete {
+            width: 14px;
+            height: 14px;
+            float: left;
+            position: absolute;
+            right: 5px;
+            top : 5px;
+            cursor: pointer;
+        }
+        .message {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn-area {
+            .btn {
+                margin: 0 auto;
+                width: 73px;
+                height: 23px;
+                line-height: 23px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                border: 1px solid $black;
+                color: $black;
+                text-align: center;
+                background-color: #e5e5e5;
+                @include filter-gradient(#ffffff, #d6d6d6, vertical);
+                $experimental-support-for-svg: true;
+                @include background-image(linear-gradient(top,  #ffffff 0%,#e5e5e5 87%,#d6d6d6 100%));
+                cursor: pointer;
+            }
+        }
 }
