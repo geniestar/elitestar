@@ -1,13 +1,13 @@
 <div class="form">
     {{^user}}
-    <div class="input-set"><div class="title">{{i18n.REG_ID_ACCOUNT}}</div><input type="text" name="id" size="40" placeholder="{{i18n.REG_ID_ACCOUNT_PLACEHOLDER}}"></div>
+    <div class="input-set"><div class="title">{{i18n.REG_ID_ACCOUNT}}</div><input type="text" MAXLENGTH=30 name="id" size="40" placeholder="{{i18n.REG_ID_ACCOUNT_PLACEHOLDER}}"></div>
     <div class="input-set">
-        <div class="title">{{i18n.REG_PW}}</div><input type="password" name="password" size="30" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
+        <div class="title">{{i18n.REG_PW}}</div><input type="password" name="password" size="30" MAXLENGTH=12 placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
     </div>
     <div class="input-set">
-        <div class="title">{{i18n.REG_RETYPE_PW}}</div><input type="password" name="retype_password" size="30" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
+        <div class="title">{{i18n.REG_RETYPE_PW}}</div><input type="password" name="retype_password" MAXLENGTH=12 size="30" placeholder="{{i18n.REG_PW_PLACEHOLDER}}">
     </div>
-    <div class="input-set"><div class="title">{{i18n.REG_USERNAME}}</div><input type="text" name="name" size="16" placeholder="{{i18n.REG_USERNAME_PLACEHOLDER}}"></div>
+    <div class="input-set"><div class="title">{{i18n.REG_USERNAME}}</div><input type="text" name="name" size="16" MAXLENGTH=20 placeholder="{{i18n.REG_USERNAME_PLACEHOLDER}}"></div>
     <div class="input-set">
         <div class="title">{{i18n.REG_STATE}}</div>
         <select name="country">

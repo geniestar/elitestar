@@ -49,7 +49,7 @@ else if ('settings' == $_GET['action'])
         );
         $houseowner = LandLords::getInstance()->queryLandLord($user['id']);
         $houseowner = $houseowner[0];
-        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 100, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id']);
+        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 100, HouseObjects::SORT_BY_TIME_DESC, null, null, null, null, null, null, null, null, $user['id']);
         $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
         $formHtml .= '<input type="hidden" name="edit" value="1">';
         $formHtml .= '<input type="hidden" name="role" value="0">';

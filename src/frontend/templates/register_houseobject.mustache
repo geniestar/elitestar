@@ -16,12 +16,12 @@
                 <option value="{{id}}" {{#selected}}selected{{/selected}}>{{name}}</option>
             {{/cities}}
         </select>
-        <input name="address" placeholder="{{i18n.REG_ADDRESS_PLACEHOLDER}}" type="text" size="40" value="{{houseobject.address}}">
+        <input name="address" placeholder="{{i18n.REG_ADDRESS_PLACEHOLDER}}" type="text" MAXLENGTH=40 size="40" value="{{houseobject.address}}">
     </div>
 
     <div class="input-set">
         <div class="title">{{i18n.REG_HOUSENAME}}</div>
-        <input name="housename" placeholder="{{i18n.REG_HOUSENAME_PLACEHOLDER}}" type="text" size="40" value="{{houseobject.house_name}}">
+        <input name="housename" placeholder="{{i18n.REG_HOUSENAME_PLACEHOLDER}}" type="text" MAXLENGTH=30 size="40" value="{{houseobject.house_name}}">
     </div>
 
     <div class="input-set">
@@ -82,14 +82,14 @@
                 <div class="title padding-title-four">{{i18n.REG_WATER}}</div>
                 <input type="radio" name="uew" value="0" {{^houseobject.wecharge.w}}checked{{/houseobject.wecharge.w}}><div class="title sec-title small-text">{{i18n.REG_INCLUDED}}</div>
                 <input type="radio" name="uew" value="1" {{#houseobject.wecharge.w}}checked{{/houseobject.wecharge.w}}><div class="title sec-title small-text">{{i18n.REG_CHARGE}}</div>
-                <input type="text" name="uew-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1" value="{{houseobject.wecharge.w}}">
+                <input type="text" MAXLENGTH=3 name="uew-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1" value="{{houseobject.wecharge.w}}">
                 <div class="title sec-title small-text">{{i18n.REG_AUD_PW}}</div>
             </div>
             <div class="row">
                 <div class="title padding-title-four">{{i18n.REG_ELECTRCITY}}</div>
                 <input type="radio" name="uee" value="0" {{^houseobject.wecharge.e}}checked{{/houseobject.wecharge.e}}><div class="title sec-title small-text">{{i18n.REG_INCLUDED}}</div>
                 <input type="radio" name="uee" value="1" {{#houseobject.wecharge.e}}checked{{/houseobject.wecharge.e}}><div class="title sec-title small-text">{{i18n.REG_CHARGE}}</div>
-                <input type="text" name="uee-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1" value="{{houseobject.wecharge.e}}">
+                <input type="text" MAXLENGTH=3 name="uee-c" placeholder="{{i18n.REG_AUD_PW_PLACEHOLDER}}" size="1" value="{{houseobject.wecharge.e}}">
                 <div class="title sec-title small-text">{{i18n.REG_AUD_PW}}</div>
             </div>
         </div>
@@ -163,7 +163,7 @@
 
     <div class="input-set big-input-set">
         <span class="big-title">{{i18n.REG_RENT}}</span>
-        <input type="text" size="6" name="rent" placeholder="{{i18n.REG_RENT_PLACEHOLDER}}" value="{{houseobject.rent_low}}">
+        <input type="text" MAXLENGTH=5 size="6" name="rent" placeholder="{{i18n.REG_RENT_PLACEHOLDER}}" value="{{houseobject.rent_low}}">
         <div class="title sec-title">{{i18n.REG_AUD}}</div>
     </div>
 
@@ -178,9 +178,9 @@
             {{/positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
+        <input type="text" MAXLENGTH=3 size="1" name="km[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
+        <input type="text" MAXLENGTH=3 size="1" name="mins[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
         <div class="clean"></div>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
@@ -204,9 +204,9 @@
             {{/sub-positions}}
         </select>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_ABOUT}}</div>
-        <input type="text" size="1" name="km[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input" value="{{km}}">
+        <input type="text" MAXLENGTH=3 size="1" name="km[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_KM_PLACEHOLDER}}" class="short-input" value="{{km}}">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_KM}}</div>
-        <input type="text" size="1" name="mins[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input" value="{{mins}}">
+        <input type="text" MAXLENGTH=3 size="1" name="mins[]" placeholder="{{i18n.REG_MORE_DESCRIPTION_MINS_PLACEHOLDER}}" class="short-input" value="{{mins}}">
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_MINS}}</div>
         <div class="clean"></div>
         <div class="title sec-title">{{i18n.REG_MORE_DESCRIPTION_BY}}</div>
@@ -216,7 +216,7 @@
             {{/sub-vehicle}}
         </select>
         <div class="desc-name {{^more}}hidden{{/more}}">
-            <div class="title sec-title">{{more_title}}</div><input type="text" name="desc[]" value="{{more}}">
+            <div class="title sec-title">{{more_title}}</div><input type="text" MAXLENGTH=30 name="desc[]" value="{{more}}">
         </div>
         <div class="registerform-close" onclick="YAHOO.EliteStar.onDeleteClick(this);"></div>
         <div class="clean"></div>
