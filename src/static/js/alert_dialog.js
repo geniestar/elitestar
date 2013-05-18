@@ -4,7 +4,7 @@ Y.one('body').append('<div id="alert-dialog" class="hidden"><div class="message"
 function alert(message) {
     var dialog = Y.one('#alert-dialog');
     dialog.one('.message').set('innerHTML', message);
-    dialog.setStyle('margin-top', '-' + dialog.get('offsetHeight')/2 + 'px');
+    //dialog.setStyle('margin-top', '-' + dialog.get('offsetHeight')/2 + 'px');
     dialog.removeClass('hidden');
 }
 
