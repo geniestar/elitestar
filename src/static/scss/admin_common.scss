@@ -1,6 +1,8 @@
 @import "_common_define";
 @import "admin/*.png";
 @include all-admin-sprites;
+@import "listing/*.png";
+@include all-listing-sprites;
 
 .col-combined {
     width: 760px;
@@ -613,7 +615,7 @@
         padding: 5px;
         .item {
             position: relative;
-            border-bottom: 1px solid $gray;
+            border-top: 1px solid $gray;
             .title {
                 color: #3b91d9;
             }
@@ -626,16 +628,46 @@
                 margin: 10px auto;
             }
         }
-        .item:last-child {
-            border-bottom: none;
-        }
-        .item-no-bottom-line {
-            border-bottom: none;
+        .item:first-child {
+            border-top: none;
         }
     }
 }
 
+.recommend-desc-content {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid $black;
+    background-color: #FFE7CD;
+    padding: 5px;
+    min-width: 200px;
+    -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+    box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+    overflow:hidden;
+    .seperator {
+        border-top: 1px solid #FFAC55;
+        height: 1px;
+        margin: 5px 0;
+    }
+    .listing-icon {
+        width: 19px;
+        height: 22px;
+        margin: 3px 5px 3px 0;
+        float: left;
+    }
+    .desc-set {
+        overflow: hidden;
+        .title {
+            margin: 5px 0;
+        }
+    }
+}
 
-#recommend-desc {
-    
+#recommend-desc-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
 }

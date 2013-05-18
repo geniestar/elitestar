@@ -1,17 +1,44 @@
 {{#show}}
-    <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_HOUSEOWNER_YOU_MAY_INTEREST}}</div>
+    {{#showHouse}}
+        <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_HOUSEOWNER_YOU_MAY_INTEREST}}</div>
+    {{/showHouse}}
+    {{^showHouse}}
+        <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_BACKPACKER_YOU_MAY_INTEREST}}</div>
+    {{/showHouse}}
     <div class="recommend-items-area">
         {{#results}}
-            <div id="recommend-item-{{id}}" class="item {{#hidden}} hidden {{/hidden}} {{#item-no-bottom-line}}item-no-bottom-line{{/item-no-bottom-line}}" data-id="{{id}}">
+            <div id="recommend-item-{{id}}" class="item {{#hidden}} hidden {{/hidden}}" data-id="{{id}}">
                 <form id="message-panel-{{id}}">
                     <input type="hidden" name="action" value="add"></input>
                     <input type="hidden" name="type" value="message"></input>
-                    <input type="hidden" name="id" value="{{houseObject.owner_id}}"></input>
-                    <div class="title">{{user.name}}</div>
+                    <input type="hidden" name="id" value="{{user.id}}"></input>
+                    <a href='#' class="name-detail"><div class="title">{{user.name}}</div></a>
                     <div class="admin-close"></div>
-                    <textarea placeholder="{{i18n.ADMIN_WRITE_WHAT_YOU_WANT_TO_SAY}}"></textarea>
+                    <textarea name="message" placeholder="{{i18n.ADMIN_WRITE_WHAT_YOU_WANT_TO_SAY}}"></textarea>
                     <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{id}}"></input>
                     <div class="clean"></div>
+                </form>
+                <div class="recommend-desc hidden">
+                    <div class="recommend-desc-content">
+                        <div class="admin-close"></div>
+                        <div class="title">{{user.name}}</div>
+                        {{#user.mail}}<div class="title">{{user.mail}}</div>{{/user.mail}}
+                        {{#user.phone}}<div class="title">{{user.phone}}</div>{{/user.phone}}
+                        <div class="seperator"></div>
+                        {{^showHouse}}
+                        {{/showHouse}}
+                        {{#showHouse}}
+                            <div class="desc-set"><div class="title">{{i18n.SEARCH_RESULT_TITLE_RENT}} {{rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div></div>
+                            <div class="desc-set"><div class="title">{{i18n.SEARCH_RESULT_TITLE_DURATION}} {{durationText}}</div></div>
+
+                            <div class="desc-set"><div class="listing-icon listing-rooms listing-sprite"></div><div class="title">{{rooms}}</div></div>
+                            <div class="desc-set"><div class="listing-icon listing-beds listing-sprite"></div><div class="title">{{i18n.COMMON_SEARCH_BEDS_SINGLE}}{{beds_single}} / {{i18n.COMMON_SEARCH_BEDS_DOUBLE}}{{beds_double}}</div></div>
+                            <div class="desc-set"><div class="listing-icon listing-toilet listing-sprite"></div><div class="title">{{toilets}}</div></div>
+                            <div class="desc-set"><div class="listing-icon listing-parking listing-sprite"></div><div class="title">{{parking_space}}</div></div>
+                            <div class="desc-set"><div class="listing-icon listing-wecharge listing-sprite"></div><div class="title">{{weChargeText}}</div></div>
+                        {{/showHouse}}
+                    </div>
+                </div>
             </div>
         {{/results}}
     </div>

@@ -83,18 +83,113 @@
   background-position: 0 -137px;
 }
 
-/* line 5, ../scss/admin_common.scss */
+/* line 178, listing/*.png */
+.listing-sprite, .listing-beds, .listing-calendar, .listing-delete, .listing-favorite, .listing-ha, .listing-hb, .listing-hc, .listing-hd, .listing-parking, .listing-rooms, .listing-save_favorite, .listing-search, .listing-search_btn, .listing-send_message, .listing-sort, .listing-sort_d, .listing-toilet, .listing-wecharge {
+  background: url('/img/listing-s6a12cbba77.png') no-repeat;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-beds {
+  background-position: 0 -301px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-calendar {
+  background-position: 0 -485px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-delete {
+  background-position: 0 -267px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-favorite {
+  background-position: 0 -469px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-ha {
+  background-position: 0 -118px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hb {
+  background-position: 0 -80px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hc {
+  background-position: 0 -156px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-hd {
+  background-position: 0 -378px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-parking {
+  background-position: 0 -340px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-rooms {
+  background-position: 0 -430px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-save_favorite {
+  background-position: 0 -21px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-search {
+  background-position: 0 -281px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-search_btn {
+  background-position: 0 -416px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-send_message {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-sort {
+  background-position: 0 -250px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-sort_d {
+  background-position: 0 -194px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-toilet {
+  background-position: 0 -211px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.listing-wecharge {
+  background-position: 0 -42px;
+}
+
+/* line 7, ../scss/admin_common.scss */
 .col-combined {
   width: 760px;
 }
 
-/* line 8, ../scss/admin_common.scss */
+/* line 10, ../scss/admin_common.scss */
 .col-left-left-big {
   width: 558px;
   padding-bottom: 40px;
 }
 
-/* line 13, ../scss/admin_common.scss */
+/* line 15, ../scss/admin_common.scss */
 .col-right-left-big {
   width: 200px;
   margin-left: 2px;
@@ -103,7 +198,7 @@
   margin-left: 569px;
 }
 
-/* line 21, ../scss/admin_common.scss */
+/* line 23, ../scss/admin_common.scss */
 #admin-menu {
   padding: 10px 0;
   position: fixed;
@@ -112,41 +207,41 @@
   z-index: 10;
   background-color: white;
 }
-/* line 28, ../scss/admin_common.scss */
+/* line 30, ../scss/admin_common.scss */
 #admin-menu div {
   float: left;
 }
-/* line 31, ../scss/admin_common.scss */
+/* line 33, ../scss/admin_common.scss */
 #admin-menu .margin-left-area {
   width: 125px;
   height: 10px;
 }
-/* line 35, ../scss/admin_common.scss */
+/* line 37, ../scss/admin_common.scss */
 #admin-menu .admin-alteration {
   width: 114px;
   height: 24px;
   position: absolute;
   left: -20px;
 }
-/* line 41, ../scss/admin_common.scss */
+/* line 43, ../scss/admin_common.scss */
 #admin-menu .seperator {
   width: 1.3px;
   height: 24px;
   margin: 0 10px;
   background-color: #666666;
 }
-/* line 47, ../scss/admin_common.scss */
+/* line 49, ../scss/admin_common.scss */
 #admin-menu .title {
   font-size: 14px;
   font-weight: bold;
   margin-top: 3px;
 }
-/* line 51, ../scss/admin_common.scss */
+/* line 53, ../scss/admin_common.scss */
 #admin-menu .title a {
   color: #666666;
 }
 
-/* line 57, ../scss/admin_common.scss */
+/* line 59, ../scss/admin_common.scss */
 #admin-tabs {
   width: 560px;
   height: 41px;
@@ -156,7 +251,7 @@
   z-index: 10;
   background-color: white;
 }
-/* line 65, ../scss/admin_common.scss */
+/* line 67, ../scss/admin_common.scss */
 #admin-tabs .admin-tab {
   position: relative;
   bottom: -2px;
@@ -177,25 +272,25 @@
   border-width: 1px;
 }
 
-/* line 86, ../scss/admin_common.scss */
+/* line 88, ../scss/admin_common.scss */
 .form-area {
   margin-top: 100px;
 }
 
-/* line 93, ../scss/admin_common.scss */
+/* line 95, ../scss/admin_common.scss */
 .backpacker #admin-menu .title a:hover {
   color: #00A99D;
 }
-/* line 98, ../scss/admin_common.scss */
+/* line 100, ../scss/admin_common.scss */
 .backpacker #admin-menu .title.selected a {
   color: #00A99D;
 }
-/* line 103, ../scss/admin_common.scss */
+/* line 105, ../scss/admin_common.scss */
 .backpacker #admin-tabs {
   color: #007063;
   border-bottom: 1px solid #007063;
 }
-/* line 106, ../scss/admin_common.scss */
+/* line 108, ../scss/admin_common.scss */
 .backpacker #admin-tabs .admin-tab {
   cursor: pointer;
   background-color: #ffffff;
@@ -209,25 +304,25 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #00a99d 32%, #00a99d 66%, #ffffff 100%);
   background-image: linear-gradient(top, #ffffff 1%, #00a99d 32%, #00a99d 66%, #ffffff 100%);
 }
-/* line 113, ../scss/admin_common.scss */
+/* line 115, ../scss/admin_common.scss */
 .backpacker #admin-tabs .admin-tab.selected {
   border-bottom-color: #FFF;
 }
 
-/* line 122, ../scss/admin_common.scss */
+/* line 124, ../scss/admin_common.scss */
 .houseowner #admin-menu .title a:hover {
   color: #007AFA;
 }
-/* line 127, ../scss/admin_common.scss */
+/* line 129, ../scss/admin_common.scss */
 .houseowner #admin-menu .title.selected a {
   color: #007AFA;
 }
-/* line 132, ../scss/admin_common.scss */
+/* line 134, ../scss/admin_common.scss */
 .houseowner #admin-tabs {
   color: #2E3192;
   border-bottom: 1px solid #2E3192;
 }
-/* line 135, ../scss/admin_common.scss */
+/* line 137, ../scss/admin_common.scss */
 .houseowner #admin-tabs .admin-tab {
   cursor: pointer;
   border-color: #2E3192;
@@ -240,12 +335,12 @@
   background-image: -o-linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
   background-image: linear-gradient(top, #ffffff 1%, #54a6de 51%, #ffffff 99%);
 }
-/* line 142, ../scss/admin_common.scss */
+/* line 144, ../scss/admin_common.scss */
 .houseowner #admin-tabs .admin-tab.selected {
   border-bottom-color: #FFF;
 }
 
-/* line 148, ../scss/admin_common.scss */
+/* line 150, ../scss/admin_common.scss */
 #houseobject-selector {
   width: 547px;
   background-color: #EFEFEF;
@@ -253,7 +348,7 @@
   padding: 5px;
   margin-top: 10px;
 }
-/* line 154, ../scss/admin_common.scss */
+/* line 156, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item {
   width: 144px;
   height: 150px;
@@ -265,11 +360,11 @@
   white-space: nowrap;
   text-align: center;
 }
-/* line 164, ../scss/admin_common.scss */
+/* line 166, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item a {
   margin-top: 5px;
 }
-/* line 167, ../scss/admin_common.scss */
+/* line 169, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item .admin-close_big {
   cursor: pointer;
   width: 20px;
@@ -278,16 +373,16 @@
   right: 5px;
   top: 5px;
 }
-/* line 175, ../scss/admin_common.scss */
+/* line 177, ../scss/admin_common.scss */
 #houseobject-selector .houseobject-selector-item img {
   width: 144px;
   height: 93px;
 }
-/* line 180, ../scss/admin_common.scss */
+/* line 182, ../scss/admin_common.scss */
 #houseobject-selector .selected {
   border: 5px solid #CCC;
 }
-/* line 183, ../scss/admin_common.scss */
+/* line 185, ../scss/admin_common.scss */
 #houseobject-selector #houseobject-add {
   cursor: pointer;
   width: 144px;
@@ -297,44 +392,44 @@
   background-color: #CCC;
   border: 4px solid #CCC;
 }
-/* line 192, ../scss/admin_common.scss */
+/* line 194, ../scss/admin_common.scss */
 #houseobject-selector #houseobject-add .admin-add_property {
   width: 74px;
   height: 42px;
   margin: 44px 0 0 30px;
   background-position: 0 -63px;
 }
-/* line 198, ../scss/admin_common.scss */
+/* line 200, ../scss/admin_common.scss */
 #houseobject-selector #houseobject-add .title {
   margin: 10px 0 0 25px;
   color: white;
   font-size: 16px;
 }
-/* line 204, ../scss/admin_common.scss */
+/* line 206, ../scss/admin_common.scss */
 #houseobject-selector .admin-arrow {
   width: 10px;
   height: 27px;
   margin: 70px 0 0 5px;
   cursor: pointer;
 }
-/* line 210, ../scss/admin_common.scss */
+/* line 212, ../scss/admin_common.scss */
 #houseobject-selector .arrow-area {
   width: 20px;
   float: left;
   overflow: hidden;
 }
-/* line 215, ../scss/admin_common.scss */
+/* line 217, ../scss/admin_common.scss */
 #houseobject-selector .container {
   white-space: nowrap;
 }
-/* line 218, ../scss/admin_common.scss */
+/* line 220, ../scss/admin_common.scss */
 #houseobject-selector #selector {
   float: left;
   width: 505px;
   height: 180px;
   overflow: hidden;
 }
-/* line 224, ../scss/admin_common.scss */
+/* line 226, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog {
   background-color: #E2E2E2;
   width: 400px;
@@ -350,7 +445,7 @@
   -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
 }
-/* line 238, ../scss/admin_common.scss */
+/* line 240, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog .info {
   padding: 20px;
   width: 100%;
@@ -358,22 +453,22 @@
   line-height: 25px;
   overflow: hidden;
 }
-/* line 244, ../scss/admin_common.scss */
+/* line 246, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog .info div {
   float: left;
 }
-/* line 247, ../scss/admin_common.scss */
+/* line 249, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog .info .admin-delete {
   width: 27px;
   height: 38px;
   float: left;
   margin: 0 10px;
 }
-/* line 254, ../scss/admin_common.scss */
+/* line 256, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog .btn-area {
   padding-left: 125px;
 }
-/* line 256, ../scss/admin_common.scss */
+/* line 258, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog .btn-area .btn {
   width: 73px;
   height: 23px;
@@ -398,7 +493,7 @@
   float: left;
   margin-right: 20px;
 }
-/* line 275, ../scss/admin_common.scss */
+/* line 277, ../scss/admin_common.scss */
 #houseobject-selector .delete-dialog .admin-close_big {
   cursor: pointer;
   width: 20px;
@@ -408,13 +503,13 @@
   top: 2px;
 }
 
-/* line 285, ../scss/admin_common.scss */
+/* line 287, ../scss/admin_common.scss */
 .houseobject-photo-item {
   float: left;
   position: relative;
   margin: 10px;
 }
-/* line 289, ../scss/admin_common.scss */
+/* line 291, ../scss/admin_common.scss */
 .houseobject-photo-item .admin-close_big {
   cursor: pointer;
   width: 20px;
@@ -424,19 +519,19 @@
   top: 2px;
 }
 
-/* line 299, ../scss/admin_common.scss */
+/* line 301, ../scss/admin_common.scss */
 .big-title {
   color: #3b91d9;
   font-size: 20px;
   padding: 20px 0;
 }
 
-/* line 307, ../scss/admin_common.scss */
+/* line 309, ../scss/admin_common.scss */
 #messages .title {
   color: #3b91d9;
 }
 
-/* line 312, ../scss/admin_common.scss */
+/* line 314, ../scss/admin_common.scss */
 .admin-close {
   cursor: pointer;
   width: 14px;
@@ -446,17 +541,17 @@
   top: 5px;
 }
 
-/* line 320, ../scss/admin_common.scss */
+/* line 322, ../scss/admin_common.scss */
 .message {
   position: relative;
   margin-bottom: 10px;
 }
-/* line 323, ../scss/admin_common.scss */
+/* line 325, ../scss/admin_common.scss */
 .message .message-single {
   padding: 10px 10px 0 10px;
   border-bottom: 1px solid #ccc;
 }
-/* line 327, ../scss/admin_common.scss */
+/* line 329, ../scss/admin_common.scss */
 .message .message-body {
   margin: 10px 0;
   line-height: 16px;
@@ -467,61 +562,61 @@
   overflow: hidden;
   word-break: break-all;
 }
-/* line 337, ../scss/admin_common.scss */
+/* line 339, ../scss/admin_common.scss */
 .message .reply {
   padding: 10px 10px 0 20px;
 }
-/* line 340, ../scss/admin_common.scss */
+/* line 342, ../scss/admin_common.scss */
 .message .reply-form {
   padding: 5px;
 }
-/* line 342, ../scss/admin_common.scss */
+/* line 344, ../scss/admin_common.scss */
 .message .reply-form input {
   float: left;
 }
-/* line 345, ../scss/admin_common.scss */
+/* line 347, ../scss/admin_common.scss */
 .message .reply-form textarea {
   width: 445px;
   height: 25px;
   float: left;
 }
-/* line 350, ../scss/admin_common.scss */
+/* line 352, ../scss/admin_common.scss */
 .message .reply-form input[type="submit"] {
   margin: 3px 10px;
 }
 
-/* line 356, ../scss/admin_common.scss */
+/* line 358, ../scss/admin_common.scss */
 #form-submit {
   margin-top: 10px;
 }
 
-/* line 360, ../scss/admin_common.scss */
+/* line 362, ../scss/admin_common.scss */
 .message:nth-child(even) {
   background-color: #EEE;
 }
 
-/* line 364, ../scss/admin_common.scss */
+/* line 366, ../scss/admin_common.scss */
 #previous-messages-btn {
   margin: 10px 0;
 }
 
-/* line 369, ../scss/admin_common.scss */
+/* line 371, ../scss/admin_common.scss */
 #suggestion .big-title {
   color: #232323;
 }
-/* line 373, ../scss/admin_common.scss */
+/* line 375, ../scss/admin_common.scss */
 #suggestion .desc {
   color: #666666;
   line-height: 20px;
 }
-/* line 378, ../scss/admin_common.scss */
+/* line 380, ../scss/admin_common.scss */
 #suggestion textarea {
   float: left;
   height: 150px;
   width: 400px;
   margin-top: 10px;
 }
-/* line 385, ../scss/admin_common.scss */
+/* line 387, ../scss/admin_common.scss */
 #suggestion input[type="submit"] {
   float: left;
   position: relative;
@@ -529,14 +624,14 @@
   margin: 140px 0 0 20px;
 }
 
-/* line 395, ../scss/admin_common.scss */
+/* line 397, ../scss/admin_common.scss */
 #profits .admin-calendar {
   float: left;
   width: 17px;
   height: 16px;
   margin: 4px 3px;
 }
-/* line 401, ../scss/admin_common.scss */
+/* line 403, ../scss/admin_common.scss */
 #profits .admin-calendar_big {
   float: left;
   width: 18px;
@@ -544,21 +639,21 @@
   margin: 4px 2px;
   cursor: pointer;
 }
-/* line 408, ../scss/admin_common.scss */
+/* line 410, ../scss/admin_common.scss */
 #profits .admin-people {
   float: left;
   width: 13px;
   height: 17px;
   margin: 4px 3px;
 }
-/* line 414, ../scss/admin_common.scss */
+/* line 416, ../scss/admin_common.scss */
 #profits .admin-money1 {
   float: left;
   width: 9px;
   height: 15px;
   margin: 4px 3px;
 }
-/* line 420, ../scss/admin_common.scss */
+/* line 422, ../scss/admin_common.scss */
 #profits .admin-money2 {
   float: left;
   width: 9px;
@@ -566,42 +661,42 @@
   margin: 8px 3px;
   background-position: 0 -240px;
 }
-/* line 427, ../scss/admin_common.scss */
+/* line 429, ../scss/admin_common.scss */
 #profits .admin-equal {
   float: left;
   width: 16px;
   height: 11px;
   margin: 6px 3px;
 }
-/* line 433, ../scss/admin_common.scss */
+/* line 435, ../scss/admin_common.scss */
 #profits .admin-plus {
   float: left;
   width: 13px;
   height: 14px;
   margin: 5px 3px;
 }
-/* line 439, ../scss/admin_common.scss */
+/* line 441, ../scss/admin_common.scss */
 #profits .profit-title {
   font-size: 30px;
   color: #CCC;
   margin: 10px;
 }
-/* line 444, ../scss/admin_common.scss */
+/* line 446, ../scss/admin_common.scss */
 #profits .desc-area {
   overflow: hidden;
   margin-left: 50px;
   margin-bottom: 10px;
 }
-/* line 448, ../scss/admin_common.scss */
+/* line 450, ../scss/admin_common.scss */
 #profits .desc-area div {
   float: left;
 }
-/* line 451, ../scss/admin_common.scss */
+/* line 453, ../scss/admin_common.scss */
 #profits .desc-area .title {
   font-size: 16px;
   margin: 2px 20px 0 0;
 }
-/* line 456, ../scss/admin_common.scss */
+/* line 458, ../scss/admin_common.scss */
 #profits .house-object {
   width: 550px;
   height: 100px;
@@ -609,86 +704,86 @@
   padding: 10px 0;
   border-bottom: 1px solid #1B1464;
 }
-/* line 462, ../scss/admin_common.scss */
+/* line 464, ../scss/admin_common.scss */
 #profits .house-object .admin-plus {
   margin: 8px 3px;
 }
-/* line 465, ../scss/admin_common.scss */
+/* line 467, ../scss/admin_common.scss */
 #profits .house-object .admin-equal {
   margin: 9px 3px;
 }
-/* line 470, ../scss/admin_common.scss */
+/* line 472, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area {
   float: left;
   height: 100px;
   width: 110px;
 }
-/* line 474, ../scss/admin_common.scss */
+/* line 476, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area img {
   margin: 5px;
   width: 90px;
 }
-/* line 478, ../scss/admin_common.scss */
+/* line 480, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area .title {
   margin: 2px 5px;
   color: #3b91d9;
 }
-/* line 483, ../scss/admin_common.scss */
+/* line 485, ../scss/admin_common.scss */
 #profits .house-object .date-area {
   float: left;
   height: 100px;
   width: 140px;
 }
-/* line 487, ../scss/admin_common.scss */
+/* line 489, ../scss/admin_common.scss */
 #profits .house-object .date-area input {
   width: 100px;
   float: left;
 }
-/* line 491, ../scss/admin_common.scss */
+/* line 493, ../scss/admin_common.scss */
 #profits .house-object .date-area .title {
   margin: 10px 0;
   clear: both;
 }
-/* line 496, ../scss/admin_common.scss */
+/* line 498, ../scss/admin_common.scss */
 #profits .house-object .people-area {
   float: left;
   height: 100px;
   width: 60px;
   padding: 33px 0 0 0;
 }
-/* line 501, ../scss/admin_common.scss */
+/* line 503, ../scss/admin_common.scss */
 #profits .house-object .people-area input {
   float: left;
   width: 30px;
   float: left;
 }
-/* line 507, ../scss/admin_common.scss */
+/* line 509, ../scss/admin_common.scss */
 #profits .house-object .rent-area {
   float: left;
   height: 100px;
   width: 100px;
   padding: 33px 0 0 0;
 }
-/* line 512, ../scss/admin_common.scss */
+/* line 514, ../scss/admin_common.scss */
 #profits .house-object .rent-area input {
   float: left;
   width: 45px;
   float: left;
 }
-/* line 518, ../scss/admin_common.scss */
+/* line 520, ../scss/admin_common.scss */
 #profits .house-object .amount-area {
   float: left;
   height: 100px;
   width: 140px;
   padding: 33px 0 0 0;
 }
-/* line 523, ../scss/admin_common.scss */
+/* line 525, ../scss/admin_common.scss */
 #profits .house-object .amount-area input {
   float: left;
   width: 90px;
   float: left;
 }
-/* line 529, ../scss/admin_common.scss */
+/* line 531, ../scss/admin_common.scss */
 #profits .house-object input[type="text"] {
   float: left;
   -webkit-border-radius: 0;
@@ -699,21 +794,21 @@
   color: #666666;
   vertical-align: middle;
 }
-/* line 540, ../scss/admin_common.scss */
+/* line 542, ../scss/admin_common.scss */
 #profits .total-area {
   padding-right: 10px;
 }
-/* line 542, ../scss/admin_common.scss */
+/* line 544, ../scss/admin_common.scss */
 #profits .total-area div {
   float: right;
 }
-/* line 545, ../scss/admin_common.scss */
+/* line 547, ../scss/admin_common.scss */
 #profits .total-area .title {
   margin: 4px 3px;
   color: #666666;
   font-size: 14px;
 }
-/* line 550, ../scss/admin_common.scss */
+/* line 552, ../scss/admin_common.scss */
 #profits .total-area input[type="text"] {
   float: right;
   -webkit-border-radius: 0;
@@ -726,12 +821,12 @@
   width: 90px;
 }
 
-/* line 566, ../scss/admin_common.scss */
+/* line 568, ../scss/admin_common.scss */
 #admin-menu .selected a {
   color: #009999;
 }
 
-/* line 572, ../scss/admin_common.scss */
+/* line 574, ../scss/admin_common.scss */
 .reports {
   margin-top: 40px;
   width: 100%;
@@ -740,36 +835,36 @@
   font-size: 16px;
   text-align: center;
 }
-/* line 579, ../scss/admin_common.scss */
+/* line 581, ../scss/admin_common.scss */
 .reports tr:first-child {
   background-color: #009999;
   color: #fff;
 }
-/* line 584, ../scss/admin_common.scss */
+/* line 586, ../scss/admin_common.scss */
 .reports tr td {
   padding: 10px;
 }
 
-/* line 590, ../scss/admin_common.scss */
+/* line 592, ../scss/admin_common.scss */
 .traffic-link {
   margin: 10px;
   font-size: 16px;
 }
 
-/* line 596, ../scss/admin_common.scss */
+/* line 598, ../scss/admin_common.scss */
 #recommend-area .admin-people_b {
   width: 16px;
   height: 21px;
   float: left;
   margin-right: 5px;
 }
-/* line 602, ../scss/admin_common.scss */
+/* line 604, ../scss/admin_common.scss */
 #recommend-area .title {
   color: green;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 607, ../scss/admin_common.scss */
+/* line 609, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -778,30 +873,70 @@
   background-color: #EFEFEF;
   padding: 5px;
 }
-/* line 614, ../scss/admin_common.scss */
+/* line 616, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item {
   position: relative;
-  border-bottom: 1px solid #666666;
+  border-top: 1px solid #666666;
 }
-/* line 617, ../scss/admin_common.scss */
+/* line 619, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item .title {
   color: #3b91d9;
 }
-/* line 620, ../scss/admin_common.scss */
+/* line 622, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item textarea {
   height: 20px;
   width: 180px;
   margin: 7px 0 0 0;
 }
-/* line 625, ../scss/admin_common.scss */
+/* line 627, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item input[type=submit] {
   margin: 10px auto;
 }
-/* line 629, ../scss/admin_common.scss */
-#recommend-area .recommend-items-area .item:last-child {
-  border-bottom: none;
+/* line 631, ../scss/admin_common.scss */
+#recommend-area .recommend-items-area .item:first-child {
+  border-top: none;
 }
-/* line 632, ../scss/admin_common.scss */
-#recommend-area .recommend-items-area .item-no-bottom-line {
-  border-bottom: none;
+
+/* line 637, ../scss/admin_common.scss */
+.recommend-desc-content {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #232323;
+  background-color: #FFE7CD;
+  padding: 5px;
+  min-width: 200px;
+  -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+  overflow: hidden;
+}
+/* line 649, ../scss/admin_common.scss */
+.recommend-desc-content .seperator {
+  border-top: 1px solid #FFAC55;
+  height: 1px;
+  margin: 5px 0;
+}
+/* line 654, ../scss/admin_common.scss */
+.recommend-desc-content .listing-icon {
+  width: 19px;
+  height: 22px;
+  margin: 3px 5px 3px 0;
+  float: left;
+}
+/* line 660, ../scss/admin_common.scss */
+.recommend-desc-content .desc-set {
+  overflow: hidden;
+}
+/* line 662, ../scss/admin_common.scss */
+.recommend-desc-content .desc-set .title {
+  margin: 5px 0;
+}
+
+/* line 668, ../scss/admin_common.scss */
+#recommend-desc-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
 }

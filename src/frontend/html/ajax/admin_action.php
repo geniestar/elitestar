@@ -128,7 +128,14 @@ else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
         $results = HouseObjects::getInstance()->findHouseObjects($backpacker['state'], $backpacker['city'], 0, 99, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null);
         foreach ($results as $result)
         {
-            $userInfo = EliteUsers::getInstance()->queryUser($result['user_id'], null, null, true);
+            if ($user['role'] == 1)
+            {
+                $userInfo = EliteUsers::getInstance()->queryUser($result['owner_id'], null, null, true);
+            }
+            else
+            {
+                $userInfo = EliteUsers::getInstance()->queryUser($result['user_id'], null, null, true);
+            }
             $result['user'] = $userInfo[0];
             $finalResults[$result['id']] = $result;
         }
@@ -141,10 +148,6 @@ else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
         if ($count > 4)
         {
             $result['hidden'] = true;
-        }
-        if ($count === 4)
-        {
-            $result['item-no-bottom-line'] = true;
         }
         $finalResultsNoIndex[] = $result;
         $count++;
