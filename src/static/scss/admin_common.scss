@@ -595,14 +595,19 @@
 }
 
 #recommend-area {
-    .admin-people_b {
+    .admin-people_b, .admin-people_h {
         width: 16px;
         height: 21px;
         float: left;
         margin-right: 5px;
     }
-    .title {
-        color: green;
+    .title_b {
+        color: #00A99D;
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .title_h {
+        color: #3b91d9;
         font-size: 14px;
         line-height: 24px;
     }
@@ -616,6 +621,7 @@
         .item {
             position: relative;
             border-top: 1px solid $gray;
+            padding-top: 5px;
             .title {
                 color: #3b91d9;
             }
@@ -666,7 +672,7 @@
 }
 
 #recommend-desc-panel {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 15;

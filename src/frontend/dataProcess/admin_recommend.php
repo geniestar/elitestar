@@ -62,10 +62,62 @@ else
     if ($data['type'] === 'service')
     {
         $data['showService'] = true;
+        foreach($data['results'] as $key => $result)
+        {
+            $checkArray = array('ha', 'hb', 'hc', 'hd');
+            $additionalHelpArray = array();
+            $additionalHelps = json_decode(json_decode($result['additional_help']), true);
+            $additionalHelps['haa'] = isset($additionalHelps['haa'])? date('d/M/Y', strtotime($result['arrival_time'])). ' ' .$additionalHelps['haa']:'';
+            foreach ($checkArray as $checkIndex)
+            {
+                if ($additionalHelps[$checkIndex])
+                {
+                    $additionalHelpArray[] = array(
+                        'class' => $checkIndex,
+                        'additional' => isset($additionalHelps[$checkIndex . 'a'])?$additionalHelps[$checkIndex . 'a']:''
+                    );
+                }
+            }
+            $data['results'][$key]['additionalHelpArray'] = $additionalHelpArray;
+        }
     }
     else
     {
         $data['showSettings'] = true;
+        foreach($data['results'] as $key => $result)
+        {
+            $data['results'][$key]['arrivalTime'] = date('d/M/Y', strtotime($result['arrival_time']));
+            $data['results'][$key]['durationStart'] = date('d/M/Y', strtotime($result['duration_start']));
+            $data['results'][$key]['durationEnd'] = date('d/M/Y', strtotime($result['duration_end']));
+            $duration = strtotime($data['backpacker']['duration_end']) - strtotime($data['backpacker']['duration_start']);
+            $durationText = '';
+            $month = floor($duration/(60*60*24*30));
+
+            $year = 0;
+
+            if ($month > 12)
+            {
+                $year = floor($month/12);
+                $month = $month - $year*12;
+            }
+
+            if ($year)
+            {
+                $durationText .= sprintf(EliteHelper::getLangString('SEARCH_RESULT_DURATION_YEAR'), $year);
+            }
+
+            if ($month)
+            {
+                $durationText .= sprintf(EliteHelper::getLangString('SEARCH_RESULT_DURATION_MONTH'), $month);
+            }
+            if (!$durationText)
+            {
+                $durationText = EliteHelper::getLangString('SEARCH_RESULT_DURATION_LESS_THAN_MONTH');
+            }
+            $data['results'][$key]['durationText'] = $durationText;
+            $bedText = EliteHelper::getLangString('COMMON_SEARCH_BEDS_SINGLE') . $result['beds_single'] . ' ' . EliteHelper::getLangString('COMMON_SEARCH_BEDS_DOUBLE') . $result['beds_double'];
+            $data['results'][$key]['bedText'] = $bedText;
+        }
     }
 }
 ?>

@@ -145,7 +145,7 @@ else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
     $count = 0;
     foreach ($finalResults as $result)
     {
-        if ($count > 4)
+        if ($count > 3)
         {
             $result['hidden'] = true;
         }

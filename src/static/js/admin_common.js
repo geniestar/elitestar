@@ -71,6 +71,11 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
             Y.one('#form-submit').addClass('hidden');
         }
         Y.one('input[name="tab"]').set('value', 'settings');
+        Y.one('#recommend-area').set('innerHTML', '');
+        Y.one('#recommend-desc-panel').addClass('hidden');
+        if (Y.one('.houseobject-selector-item.selected')) {
+              YAHOO.EliteStar.getRecommend('settings', Y.one('.houseobject-selector-item.selected').getAttribute('data-id'))
+        }
     });
 
     Y.one('.admin-tab-service').on('click', function(e){
@@ -83,6 +88,8 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         Y.one('#form-submit').removeClass('hidden');
         Y.one('input[name="tab"]').set('value', 'service');
         YAHOO.EliteStar.getRecommend('service');
+        Y.one('#recommend-area').set('innerHTML', '');
+        Y.one('#recommend-desc-panel').addClass('hidden');
     });
     
     var setupForm = function() {

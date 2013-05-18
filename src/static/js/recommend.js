@@ -9,6 +9,7 @@ YUI.add("recommend", function(Y)
         if (!type)
         {
             type = '';
+            YAHOO.EliteStar.getRecommend('service');
         }
         var cfg = {
             method: 'POST',
@@ -37,7 +38,7 @@ YUI.add("recommend", function(Y)
         var tmpNode = e.target.get('parentNode').get('parentNode').get('parentNode').one('.recommend-desc');
         var panel = Y.one('#recommend-desc-panel');
         panel.set('innerHTML', tmpNode.get('innerHTML'));
-        panel.setStyle('top', (e.pageY - 50) + 'px');
+        panel.setStyle('top', (e.pageY - window.scrollY - 50) + 'px');
         panel.setStyle('left', (e.pageX - 250) + 'px');
         panel.removeClass('hidden');
     };

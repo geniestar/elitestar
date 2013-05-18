@@ -852,19 +852,25 @@
 }
 
 /* line 598, ../scss/admin_common.scss */
-#recommend-area .admin-people_b {
+#recommend-area .admin-people_b, #recommend-area .admin-people_h {
   width: 16px;
   height: 21px;
   float: left;
   margin-right: 5px;
 }
 /* line 604, ../scss/admin_common.scss */
-#recommend-area .title {
-  color: green;
+#recommend-area .title_b {
+  color: #00A99D;
   font-size: 14px;
   line-height: 24px;
 }
 /* line 609, ../scss/admin_common.scss */
+#recommend-area .title_h {
+  color: #3b91d9;
+  font-size: 14px;
+  line-height: 24px;
+}
+/* line 614, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -873,31 +879,32 @@
   background-color: #EFEFEF;
   padding: 5px;
 }
-/* line 616, ../scss/admin_common.scss */
+/* line 621, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item {
   position: relative;
   border-top: 1px solid #666666;
+  padding-top: 5px;
 }
-/* line 619, ../scss/admin_common.scss */
+/* line 625, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item .title {
   color: #3b91d9;
 }
-/* line 622, ../scss/admin_common.scss */
+/* line 628, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item textarea {
   height: 20px;
   width: 180px;
   margin: 7px 0 0 0;
 }
-/* line 627, ../scss/admin_common.scss */
+/* line 633, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item input[type=submit] {
   margin: 10px auto;
 }
-/* line 631, ../scss/admin_common.scss */
+/* line 637, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item:first-child {
   border-top: none;
 }
 
-/* line 637, ../scss/admin_common.scss */
+/* line 643, ../scss/admin_common.scss */
 .recommend-desc-content {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -911,31 +918,31 @@
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   overflow: hidden;
 }
-/* line 649, ../scss/admin_common.scss */
+/* line 655, ../scss/admin_common.scss */
 .recommend-desc-content .seperator {
   border-top: 1px solid #FFAC55;
   height: 1px;
   margin: 5px 0;
 }
-/* line 654, ../scss/admin_common.scss */
+/* line 660, ../scss/admin_common.scss */
 .recommend-desc-content .listing-icon {
   width: 19px;
   height: 22px;
   margin: 3px 5px 3px 0;
   float: left;
 }
-/* line 660, ../scss/admin_common.scss */
+/* line 666, ../scss/admin_common.scss */
 .recommend-desc-content .desc-set {
   overflow: hidden;
 }
-/* line 662, ../scss/admin_common.scss */
+/* line 668, ../scss/admin_common.scss */
 .recommend-desc-content .desc-set .title {
   margin: 5px 0;
 }
 
-/* line 668, ../scss/admin_common.scss */
+/* line 674, ../scss/admin_common.scss */
 #recommend-desc-panel {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 15;

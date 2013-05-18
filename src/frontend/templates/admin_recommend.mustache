@@ -1,9 +1,9 @@
 {{#show}}
     {{#showHouse}}
-        <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_HOUSEOWNER_YOU_MAY_INTEREST}}</div>
+        <div class="admin-people_b"></div><div class="title_b">{{i18n.ADMIN_SOME_HOUSEOWNER_YOU_MAY_INTEREST}}</div>
     {{/showHouse}}
     {{^showHouse}}
-        <div class="admin-people_b"></div><div class="title">{{i18n.ADMIN_SOME_BACKPACKER_YOU_MAY_INTEREST}}</div>
+        <div class="admin-people_h"></div><div class="title_h">{{i18n.ADMIN_SOME_BACKPACKER_YOU_MAY_INTEREST}}</div>
     {{/showHouse}}
     <div class="recommend-items-area">
         {{#results}}
@@ -15,7 +15,7 @@
                     <a href='#' class="name-detail"><div class="title">{{user.name}}</div></a>
                     <div class="admin-close"></div>
                     <textarea name="message" placeholder="{{i18n.ADMIN_WRITE_WHAT_YOU_WANT_TO_SAY}}"></textarea>
-                    <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{id}}"></input>
+                    <input type="submit" value="{{i18n.SEARCH_RESULT_MESSAGE_SEND}}" data-id="{{id}}"></input>
                     <div class="clean"></div>
                 </form>
                 <div class="recommend-desc hidden">
@@ -26,10 +26,22 @@
                         {{#user.phone}}<div class="title">{{user.phone}}</div>{{/user.phone}}
                         <div class="seperator"></div>
                         {{^showHouse}}
+                            {{#showService}}
+                                {{#additionalHelpArray}} 
+                                    <div class="desc-set"><div class="listing-sprite listing-icon listing-{{class}}"></div><div class="title">{{additional}}</div></div>
+                                {{/additionalHelpArray}}
+                            {{/showService}}
+                            {{#showSettings}}
+                                <div class="title">{{i18n.SEARCH_RESULT_TITLE_ARRIVAL}} {{arrivalTime}}</div>
+                                <div class="title">{{i18n.SEARCH_RESULT_TITLE_DURATION}} {{durationText}}</div>
+                                <div class="title"><span class="invisible">{{i18n.SEARCH_RESULT_TITLE_DURATION}}</span> {{durationStart}}-{{durationEnd}}</div>
+                                <div class="title">{{i18n.SEARCH_RESULT_TITLE_ACCEPTABLE_RENT}} {{rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div>
+                                <div class="title">{{i18n.SEARCH_RESULT_TITLE_BED}} {{bedText}}</div>
+                            {{/showSettings}}
                         {{/showHouse}}
                         {{#showHouse}}
-                            <div class="desc-set"><div class="title">{{i18n.SEARCH_RESULT_TITLE_RENT}} {{rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div></div>
-                            <div class="desc-set"><div class="title">{{i18n.SEARCH_RESULT_TITLE_DURATION}} {{durationText}}</div></div>
+                            <div class="title">{{i18n.SEARCH_RESULT_TITLE_RENT}} {{rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div>
+                            <div class="title">{{i18n.SEARCH_RESULT_TITLE_DURATION}} {{durationText}}</div>
 
                             <div class="desc-set"><div class="listing-icon listing-rooms listing-sprite"></div><div class="title">{{rooms}}</div></div>
                             <div class="desc-set"><div class="listing-icon listing-beds listing-sprite"></div><div class="title">{{i18n.COMMON_SEARCH_BEDS_SINGLE}}{{beds_single}} / {{i18n.COMMON_SEARCH_BEDS_DOUBLE}}{{beds_double}}</div></div>
