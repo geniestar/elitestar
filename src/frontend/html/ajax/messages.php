@@ -6,6 +6,11 @@ include('/usr/share/pear/elitestar/lib/Messages.php');
 $user = EliteUsers::getInstance()->getCurrentUser();
 if ($user)
 {
+    if (!isset($_POST['message']) || '' === $_POST['message'])
+    {
+        EliteHelper::ajaxReturnFailure('MESSAGE_IS_EMPTY');
+        exit;
+    }
     if ('add' === $_POST['action'])
     {
         if ('message' === $_POST['type'])

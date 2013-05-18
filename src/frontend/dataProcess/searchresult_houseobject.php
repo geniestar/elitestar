@@ -92,6 +92,10 @@ if ($data['user'] && isset($data['user']['id']))
 {
     $data['showContact'] = true;
 }
+if ($data['user']['isSuper'])
+{
+    $data['showId'] = true;
+}
 
 $mail = json_decode($data['houseObject']['user']['mail'], true);
 $phone = json_decode($data['houseObject']['user']['phone'], true);

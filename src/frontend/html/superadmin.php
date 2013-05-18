@@ -7,12 +7,11 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 include('/usr/share/pear/elitestar/lib/Messages.php');
 $user = EliteUsers::getInstance()->getCurrentUser();
-if (!$user || 'superuser' !== $user['id'])
+if (!$user || !isset($user['isSuper']))
 {
     header('Location: /');
     exit;
 }
-
 
 if ('messages' == $_GET['action'])
 {
@@ -23,6 +22,7 @@ if ('messages' == $_GET['action'])
     $html .= ContentGenerator::getContent('admin_messages', array('messages' => $messages));
     $html .= '</div>';
 }
+
 else if ('dreports' == $_GET['action'])
 {
     /* get reports for each month*/
@@ -150,7 +150,24 @@ else if ('mreports' == $_GET['action'])
     $html = ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
     $html .= '<div class="traffic-link"> Traffics report please go to <a href="http://www.google.com/analytics/">Google Analytics</a></div>';
 }
-
+else if ('simulator' == $_GET['action'])
+{
+    $html = '<center style="margin-top: 20px;"><div class="title">please enter the user id</div>';
+    $html .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
+    $html .= '<input type="hidden" name="action" value="simulator">';
+    $html .= '<input style="margin: 10px 0;width:150px;" type="text" name="id" placeholder="userid">';
+    $html .= '<input type="submit"></input>';
+    $html .= '</from></center>';
+}
+else if ('delete' == $_GET['action'])
+{
+    $html = '<center style="margin-top: 20px;"><div class="title">please enter the user id to delete</div>';
+    $html .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
+    $html .= '<input type="hidden" name="action" value="delete">';
+    $html .= '<input style="margin: 10px 0;width:150px;" type="text" name="id" placeholder="userid">';
+    $html .= '<input type="submit"></input>';
+    $html .= '</from></center>';
+}
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(

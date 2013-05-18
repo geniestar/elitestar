@@ -193,6 +193,13 @@ class EliteUsers
                 setcookie('u', $id, false);
                 setcookie('p', md5($password), false);
             }
+            if ('superuser' === $user['id'])
+            {
+                /* set another cookie for superuser, original cookie might replaced by user cookie*/
+                setcookie('su', $id, false);
+                setcookie('sp', md5($password), false);
+                $user['isSuper'] = true;
+            }
             return $user;
         }
         else
@@ -209,6 +216,14 @@ class EliteUsers
         }
         if ($user && $user[0])
         {
+            if (isset($_COOKIE['su']) && isset($_COOKIE['sp']))
+            {
+                $superuser = $this->queryUser($_COOKIE['su'], $_COOKIE['sp'], true);
+                if ($superuser && $superuser[0] && 'superuser' && $superuser[0]['id'])
+                {
+                    $user[0]['isSuper'] = true;
+                }
+            }
             return $user[0];
         }
         else

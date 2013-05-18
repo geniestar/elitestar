@@ -7,12 +7,70 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 define('USER_PHOTO_PATH', '/var/www/html/elitestar/ugc/');
 define('USER_PHOTO_PREFIX', 'uphoto');
 define('OBJECT_PHOTO_PREFIX', 'ophoto');
+
+/*forget pw*/
 if (isset($_POST['action']) && 'forget_pw' == $_POST['action'] && isset($_POST['id']))
 {
     sendPassword($_POST['id']);
     header('Location: /');
     exit;
 }
+/*user simulator*/
+if (isset($_POST['action']) && 'simulator' == $_POST['action'] && isset($_POST['id']))
+{
+    $currentUser = EliteUsers::getInstance()->getCurrentUser();
+    if (!$currentUser['isSuper'])
+    {
+        header('Location: admin.php?action=basic');
+        exit;
+    }
+
+    $user = EliteUsers::queryUser($_POST['id'], null, null, true);
+    if (!$user || !isset($user[0]))
+    {
+        header('Location: error.php?error=USER_ID_WRONG');
+        exit;
+    }
+    else
+    {
+        setcookie('u', $user[0]['id'], false);
+        setcookie('p', $user[0]['password'], false);
+    }
+    header('Location: admin.php?action=basic');
+    exit;
+}
+
+/*user delete*/
+if (isset($_POST['action']) && 'delete' == $_POST['action'] && isset($_POST['id']))
+{
+    $currentUser = EliteUsers::getInstance()->getCurrentUser();
+    if (!$currentUser['isSuper'])
+    {
+        header('Location: admin.php?action=basic');
+        exit;
+    }
+
+    $user = EliteUsers::queryUser($_POST['id'], null, null, true);
+    if (!$user || !isset($user[0]))
+    {
+        header('Location: error.php?error=USER_ID_WRONG');
+        exit;
+    }
+    else
+    {
+        $sql = 'DELETE FROM users WHERE id=\'' . $user[0]['id'] . '\'';
+        $r = MySqlDb::getInstance()->query($sql, array());
+        $sql = 'DELETE FROM backpackers WHERE user_id=\'' . $user[0]['id'] . '\'';
+        $r = MySqlDb::getInstance()->query($sql, array());
+        $sql = 'DELETE FROM landlords WHERE user_id=\'' . $user[0]['id'] . '\'';
+        $r = MySqlDb::getInstance()->query($sql, array());
+        $sql = 'DELETE FROM houseobjects WHERE owner_id=\'' . $user[0]['id'] . '\'';
+        $r = MySqlDb::getInstance()->query($sql, array());
+    }
+    header('Location: superadmin.php?action=delete');
+    exit;
+}
+
 if (!isset($_POST['edit']))
 {
 if (EliteHelper::checkEmpty(array('id', 'password', 'name', 'email', 'phone', 'role', 'country'), $_POST))

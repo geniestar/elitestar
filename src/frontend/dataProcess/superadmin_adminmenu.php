@@ -11,4 +11,12 @@
     {
         $data['s_mreports'] = true;
     }
+    else if ('simulator'==$data['action'])
+    {
+        $data['s_simulator'] = true;
+    }
+    else if ('delete'==$data['action'])
+    {
+        $data['s_delete'] = true;
+    }
 ?>

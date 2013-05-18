@@ -105,6 +105,8 @@ else if ('logout' == $_GET['action'])
 {
     setcookie('u', '');
     setcookie('p', '');
+    setcookie('su', '');
+    setcookie('sp', '');
     header('Location: /');
     exit;
 }

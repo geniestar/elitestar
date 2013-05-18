@@ -35,6 +35,9 @@
                         {{/showProfit}}
                         <a href="./admin.php?action=messages"><div class="extension-item">{{i18n.COMMON_MENU_MESSAGES}}</div></a>
                         <a href="./admin.php?action=suggestion"><div class="extension-item">{{i18n.COMMON_MENU_SUGGEST}}</div></a>
+                        {{#user.isSuper}}
+                            <a href="./superadmin.php"><div class="extension-item">{{i18n.SUPER_ADMIN_COMMON_MENU}}</div></a>
+                        {{/user.isSuper}}
                         <a href="./admin.php?action=logout"><div class="extension-item">{{i18n.COMMON_MENU_LOGOUT}}</div></a>
                     {{/isSuperUser}}
                 </div>

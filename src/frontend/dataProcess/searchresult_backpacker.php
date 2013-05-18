@@ -88,6 +88,10 @@ if ($data['user'] && isset($data['user']['id']))
 {
     $data['showContact'] = true;
 }
+if ($data['user']['isSuper'])
+{
+    $data['showId'] = true;
+}
 
 $mail = json_decode($data['backpacker']['user']['mail'], true);
 $phone = json_decode($data['backpacker']['user']['phone'], true);

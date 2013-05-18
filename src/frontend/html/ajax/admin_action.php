@@ -11,7 +11,7 @@ if (isset($_POST['action']) && 'check-user' === $_POST['action'])
 {
     if (is_array(EliteUsers::getInstance()->queryUser($_POST['id'], $_POST['password'], false, true)))
     {
-        EliteHelper::ajaxReturnFailure(array('message' => EliteHelper::getErrorString('USER_ID_INVALID')));
+        EliteHelper::ajaxReturnFailure('USER_ID_INVALID');
         exit;
     }
     else
@@ -72,6 +72,11 @@ else if (isset($_POST['action']) && 'get-messages' === $_POST['action'])
 }
 else if (isset($_POST['action']) && 'reply-messages' === $_POST['action'])
 {
+    if (!isset($_POST['message']) || '' === $_POST['message'])
+    {
+        EliteHelper::ajaxReturnFailure('MESSAGE_IS_EMPTY');
+        exit;
+    }
     Messages::createReply($_POST['messageId'], $user['id'], null, $_POST['message']);
     $html = '';
     $html .= '<div class="message-single reply">';
@@ -87,6 +92,11 @@ else if (isset($_POST['action']) && 'delete-messages' === $_POST['action'])
 }
 else if (isset($_POST['action']) && 'suggestions' === $_POST['action'])
 {
+    if (!isset($_POST['message']) || '' === $_POST['message'])
+    {
+        EliteHelper::ajaxReturnFailure('MESSAGE_IS_EMPTY');
+        exit;
+    }
     Messages::getInstance()->createMessage($user['id'], 'superuser', $_POST['message']); 
     EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_MESSAGE_SUCCESSFULLY')));
 }

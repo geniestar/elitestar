@@ -601,3 +601,13 @@
         color: $gray;
     }
 }
+
+.id-field {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px;
+    font-size: 10px;
+}

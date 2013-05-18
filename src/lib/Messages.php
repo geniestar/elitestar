@@ -1,6 +1,6 @@
 <?php
 /**
- * messages
+ * messages  NOTICE!!!!, Message class now only used for suggestion, message function please refer to LiveMessage
  */
 class Messages
 {

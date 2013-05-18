@@ -616,10 +616,11 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         Y.one('#' + formId + ' input[name="' + name + '"]').addClass('invalid-input');
     }
     var btn = Y.one('input[type=submit]');
+    if (btn) {
     btn.on('click', function(e){
-        e.preventDefault();
         var checkOK = true;
         if ('settings' === YAHOO.EliteStar.params.type ) {
+            e.preventDefault();
             var alertMessage = '';
             var role = Y.one('input[name="role"]').get('value');
             if (role == 0) {
@@ -657,6 +658,7 @@ else if ('messages' === YAHOO.EliteStar.params.type)
             }
             return false;
         } else if ('basic' === YAHOO.EliteStar.params.type) {
+            e.preventDefault();
                 if (!checkInput('user-form', ['email', 'phone'])) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
                     checkOK = false;
@@ -687,4 +689,5 @@ else if ('messages' === YAHOO.EliteStar.params.type)
                 e.target.get('form').submit();
         }
     });
+    }
 });
