@@ -26,7 +26,7 @@ if ('basic' == $_GET['action'] || !isset($_GET['action']))
 {
     EliteHelper::setParamsToJs('type', 'basic');
     $tabs = array(array('class' => 'basic-info', 'name' => EliteHelper::getLangString('COMMON_MENU_BASIC_INFO')));
-    $formHtml .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
+    $formHtml .= '<form id="user-form" action="account_action.php" method="POST" enctype="multipart/form-data">';
     $formHtml .= '<input type="hidden" name="edit" value="1">';
     $formHtml .= '<input type="hidden" name="basic-info" value="1">';
     $formHtml .= ContentGenerator::getContent('register_user', array('user' => $user));
@@ -120,9 +120,18 @@ $headData = array(
 $tailData = array(
     'js' => array(
         array('url' => '/js/admin_common.js'),
+        array('url' => 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBOI345UTosGvgRwlz2xGXS3yc-HtSwCq4&sensor=false'),
     )
 );
 EliteHelper::setStringToJs('ADMIN_SAVED_IMFORMATION');
+EliteHelper::setStringToJs('REG_FILED_EMPTY');
+EliteHelper::setStringToJs('REG_PW_NOT_MATCH');
+EliteHelper::setStringToJs('REG_READ_TOS');
+EliteHelper::setStringToJs('REG_PW_LENGTH');
+EliteHelper::setStringToJs('REG_ID_EMAIL');
+EliteHelper::setStringToJs('REG_EMAIL_FORMAT');
+EliteHelper::setStringToJs('REG_ADDRESS_WRONG');
+EliteHelper::setStringToJs('REG_USER_ID_INVALID');
 ?>
 <!DOCTYPE html>
 <html>

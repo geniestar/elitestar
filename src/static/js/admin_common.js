@@ -515,4 +515,176 @@ else if ('messages' === YAHOO.EliteStar.params.type)
             btn.removeClass('mouseover');
         });
     });
+    
+    /* checker part*/
+    
+    var checkInput = function(formId, checkArray) {
+        var checkOK = true;
+        for (var key in checkArray) {
+            var checkItem = checkArray[key];
+            if ('' === Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value')) {
+                markFieldAsInvalid(formId, checkItem);
+                checkOK = false;
+            } else {
+                markFieldAsValid(formId, checkItem);
+            }
+        }
+        return checkOK;
+    }
+
+    var checkUserId = function() {
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            data: {
+                action: 'check-user',
+                id: Y.one('#user-form input[name="id"]').get('value'),
+            }
+        };
+        request = Y.io('/ajax/admin_action.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    var checkEmailFormat = function(formId, checkArray) {
+        var checkOK = true;
+        for (var key in checkArray) {
+            var checkItem = checkArray[key];
+            var value = Y.one('#' + formId + ' input[name="' + checkItem + '"]').get('value');
+            var pattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/
+            var matchArray = pattern.exec(value);
+            if (!value || !matchArray) {
+                markFieldAsInvalid(formId, checkItem);
+                checkOK = false;
+            } else {
+                markFieldAsValid(formId, checkItem);
+            }
+        }
+        return checkOK;
+    }
+
+    var checkAddress = function(cb) {
+        var address = Y.one('#houseowner-form input[name="address"]').get('value');
+        var state = Y.one('#houseowner-form select[name="state"]').get('value');
+        var city = Y.one('#houseowner-form select[name="city"]').get('value');
+        var stateName = YAHOO.EliteStar.params.states[state].name;
+        var cityName = YAHOO.EliteStar.params.states[state].suburbs[city];
+        var geocoder = new google.maps.Geocoder();
+        if (geocoder) {
+            geocoder.geocode({ 'address': stateName + ',' + cityName + ',' + address }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    markFieldAsValid('houseowner-form', 'address');
+                    cb(true);
+                } else {
+                    markFieldAsInvalid('houseowner-form', 'address');
+                    cb(false);
+                }
+            });
+        }
+        return true; //unable to check, just pass that;
+    }
+
+    var markFieldAsValid = function(formId, name) {
+        /*var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
+        if (parentNode.hasClass('input-set')) {
+            parentNode.removeClass('invalid');
+            if ('duration_end' !== name) {
+                parentNode.one('.title').set('innerHTML', parentNode.one('.title').get('innerHTML').replace('*', ''));
+            } else {
+                parentNode.one('.sec-title').set('innerHTML', parentNode.one('.sec-title').get('innerHTML').replace('*', ''));
+            }
+        }*/
+        Y.one('#' + formId + ' input[name="' + name + '"]').removeClass('invalid-input');
+    }
+
+    var markFieldAsInvalid = function(formId, name) {
+        /*
+        var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
+        if ((parentNode.hasClass('input-set') && !parentNode.hasClass('invalid')) || 'duration_end' === name) {
+            parentNode.addClass('invalid');
+            if ('duration_end' !== name) {
+                parentNode.one('.title').set('innerHTML', '*' + parentNode.one('.title').get('innerHTML'));
+            } else {
+                parentNode.one('.sec-title').set('innerHTML', '*' + parentNode.one('.sec-title').get('innerHTML'));
+                parentNode.one('.sec-title').set('innerHTML', parentNode.one('.sec-title').get('innerHTML').replace('**', '*'));//prevent double *
+            }
+        }*/
+        Y.one('#' + formId + ' input[name="' + name + '"]').addClass('invalid-input');
+    }
+    var btn = Y.one('input[type=submit]');
+    btn.on('click', function(e){
+        e.preventDefault();
+        var checkOK = true;
+        if ('settings' === YAHOO.EliteStar.params.type ) {
+            var alertMessage = '';
+            var role = Y.one('input[name="role"]').get('value');
+            if (role == 0) {
+                if (Y.one('.admin-tab.selected').getAttribute('data-id') === 'ajax-role-form') {
+                    if (!checkInput('houseowner-form', ['address', 'housename', 'duration_start', 'duration_end', 'rent'])) {
+                        alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                        checkOK = false;
+                    }
+                    checkAddress(function(addressOK){
+                        if (!addressOK) {
+                            alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_ADDRESS_WRONG;
+                            checkOK = false;
+                        }
+                        if (!checkOK)
+                        {
+                            alert(alertMessage);
+                            return false;
+                        }
+                        e.target.get('form').submit();
+                    });
+                } else {
+                    e.target.get('form').submit();
+                }
+            } else {
+                if (!checkInput('backpacker-form', ['arrival_time', 'duration_start', 'duration_end', 'rent'])) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
+                }
+                if (!checkOK)
+                {
+                    alert(alertMessage);
+                    return false;
+                }
+                e.target.get('form').submit();
+            }
+            return false;
+        } else if ('basic' === YAHOO.EliteStar.params.type) {
+                if (!checkInput('user-form', ['email', 'phone'])) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
+                }
+                if (Y.one('input[name="password"]').get('value') && Y.one('input[name="retype_password"]').get('value') && (Y.one('input[name="password"]').get('value') !== Y.one('input[name="retype_password"]').get('value'))) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_PW_NOT_MATCH;
+                    markFieldAsInvalid('user-form', 'password');
+                    markFieldAsInvalid('user-form', 'retype_password');
+                    checkOK = false;
+                } else {
+                    if (Y.one('#user-form input[name="password"]').get('value') && Y.one('#user-form input[name="password"]').get('value').length < 8) {
+                        markFieldAsInvalid('user-form', 'password');
+                        alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_PW_LENGTH;
+                        checkOK = false;
+                    } else {
+                        markFieldAsValid('user-form', 'password');
+                    }
+                }
+                if (!checkEmailFormat('user-form', ['email'])) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_EMAIL_FORMAT;
+                    checkOK = false;
+                }
+                if (!checkOK)
+                {
+                    alert(alertMessage);
+                    return false;
+                }
+                e.target.get('form').submit();
+        }
+    });
 });
