@@ -1,16 +1,14 @@
 <?php
-foreach($data['messages'] as $key => $message)
+foreach($data['messagesSets'] as $talker => $messages)
 {
-    $data['messages'][$key]['created_time'] = date('Y/M/d h:i:s', $message['created_time']);
-    $data['messages'][$key]['message'] = str_replace("\n", '<br>', $data['messages'][$key]['message']);
-    foreach($message['replies'] as $key2 => $reply)
+    foreach($messages['messages'] as $key2 => $message)
     {
-        $data['messages'][$key]['replies'][$key2]['created_time'] = date('Y/M/d h:i:s', $reply['created_time']);
-        $data['messages'][$key]['replies'][$key2]['message'] = str_replace("\n", '<br>', $data['messages'][$key]['replies'][$key2]['message']);
+        $data['messagesSets'][$talker]['messages'][$key2]['created_time'] = date('Y/M/d h:i:s', $message['created_time']);
+        $data['messagesSets'][$talker]['messages'][$key2]['message'] = str_replace("\n", '<br>', $message['message']);
     }
-    if ('superuser' === $message['receiver'])
+    if ($messages['count'] > 5)
     {
-        $data['messages'][$key]['isSuggestion'] = true;
+        $data['messagesSets'][$talker]['previous'] = true;
     }
 }
 ?>

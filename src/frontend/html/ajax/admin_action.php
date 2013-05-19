@@ -6,6 +6,7 @@ include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 include('/usr/share/pear/elitestar/lib/Messages.php');
+include('/usr/share/pear/elitestar/lib/LiveMessages.php');
 /* no login needed action*/
 if (isset($_POST['action']) && 'check-user' === $_POST['action'])
 {
@@ -63,32 +64,6 @@ else if (isset($_POST['action']) && 'get-form' === $_POST['action'])
         
         EliteHelper::ajaxReturnSuccess(array('html' => $formHtml));
     }
-}
-else if (isset($_POST['action']) && 'get-messages' === $_POST['action'])
-{
-    $messages = Messages::getInstance()->queryMessagesOfReceiver($user['id'], $_POST['start'], 5, $user['id']);
-    $html .= ContentGenerator::getContent('admin_messages', array('messages' => $messages));
-    EliteHelper::ajaxReturnSuccess(array('html' => $html, 'count' => count($messages)));
-}
-else if (isset($_POST['action']) && 'reply-messages' === $_POST['action'])
-{
-    if (!isset($_POST['message']) || '' === $_POST['message'])
-    {
-        EliteHelper::ajaxReturnFailure('MESSAGE_IS_EMPTY');
-        exit;
-    }
-    Messages::createReply($_POST['messageId'], $user['id'], null, $_POST['message']);
-    $html = '';
-    $html .= '<div class="message-single reply">';
-    $html .= '<span class="title">' . EliteHelper::getLangString('ADMIN_MESSAGES_I') . '</span>' . ' ' . EliteHelper::getLangString('ADMIN_MESSAGES_SAID') . ' (' . date('Y/M/d h:i:s', time()) . '):';
-    $html .= '<div class="message-body">' . str_replace("\n", '<br>', $_POST['message']) . '</div>';
-    $html .= '</div>';
-    EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('SEARCH_RESULT_MESSAGE_SEND_REPLY_SUCCESSFULLY'), 'html' => $html));
-}
-else if (isset($_POST['action']) && 'delete-messages' === $_POST['action'])
-{
-    Messages::deleteMessage($_POST['messageId'], $user['id']);
-    EliteHelper::ajaxReturnSuccess(array('message' => EliteHelper::getLangString('ADMIN_DELETED_MESSAGE')));
 }
 else if (isset($_POST['action']) && 'suggestions' === $_POST['action'])
 {

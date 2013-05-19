@@ -78,16 +78,12 @@ else if ('messages' == $_GET['action'])
 {
     EliteHelper::setParamsToJs('type', 'messages');
     $tabs = array(array('class' => 'messages', 'name' => EliteHelper::getLangString('COMMON_MENU_MESSAGES')));
-    $total = Messages::getInstance()->queryMessagesTotal($user['id']);
-    $messages = Messages::getInstance()->queryMessagesOfReceiver($user['id'], 0, 5, $user['id']);
+    $total = LiveMessages::getInstance()->checkUnreadMessages($user['id']);
+    $messages = LiveMessages::getInstance()->getOverallMessages($user['id'], 0, 5);
     $formHtml .= '<div class="big-title">' . sprintf(EliteHelper::getLangString('ADMIN_MESSAGES_TITLE'), $user['name'], $total) . '</div>';
     $formHtml .= '<div id="messages">';
-    $formHtml .= ContentGenerator::getContent('admin_messages', array('messages' => $messages));
+    $formHtml .= ContentGenerator::getContent('admin_messages', array('messagesSets' => $messages));
     $formHtml .= '</div>';
-    if ($total > 5)
-    {
-        $formHtml .= '<div id="previous-messages-btn">(<a href="#">' . EliteHelper::getLangString('ADMIN_PREVIOUS_MESSAGES') . '</a>)</div>';
-    }
 }
 else if ('profits' == $_GET['action'])
 {

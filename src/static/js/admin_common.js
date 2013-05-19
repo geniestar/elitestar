@@ -337,37 +337,42 @@ else if ('messages' === YAHOO.EliteStar.params.type)
             sync: true,
             data: {
                 action: 'get-messages',
-                start: startMessage,
+                start: startMessage[e.target.getAttribute('data-id')],
+                talker: e.target.getAttribute('data-id')
             }
         };
-        request = Y.io('/ajax/admin_action.php', cfg);
+        request = Y.io('/ajax/messages.php', cfg);
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
-            Y.one('#messages').append(res.data.html);
-            startMessage += res.data.count;
+            var container = e.target.get('parentNode').get('parentNode').one('.container');
+            var oHtml = container.get('innerHTML');
+            container.set('innerHTML', res.data.html + oHtml);
+            startMessage[e.target.getAttribute('data-id')] += res.data.count;
+            
             if (res.data.count < 5) {
+                var previousBtn = container.get('parentNode').one('#previous-messages-btn');
                 previousBtn.addClass('hidden');
             }
         }
         
     }
     
-    var sendReply = function(e) {
+    var sendMessage = function(e) {
         e.preventDefault();
         var cfg = {
             method: 'POST',
             sync: true,
             form: {
-                id: 'reply-form-' + e.target.getAttribute('data-id'),
+                id: 'message-form-' + e.target.getAttribute('data-id'),
                 useDisabled: true,
             }
         };
-        request = Y.io('/ajax/admin_action.php', cfg);
+        request = Y.io('/ajax/messages.php', cfg);
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
-            Y.one('#message-' + e.target.getAttribute('data-id') + ' .container').append(res.data.html);
+            e.target.get('parentNode').get('parentNode').get('parentNode').one('.container').append(res.data.html);
             //alert(res.data.message);
-            Y.one('#message-' + e.target.getAttribute('data-id') + ' textarea').set('value', '');
+            e.target.get('parentNode').one('textarea').set('value', '');
         } else {
             alert(res.message);
         }
@@ -380,25 +385,45 @@ else if ('messages' === YAHOO.EliteStar.params.type)
             method: 'POST',
             sync: true,
             data: {
-                messageId: e.target.getAttribute('data-id'),
+                talker: e.target.getAttribute('data-id'),
                 action: 'delete-messages',
             }
         };
-        request = Y.io('/ajax/admin_action.php', cfg);
+        request = Y.io('/ajax/messages.php', cfg);
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
             alert(res.data.message);
-            Y.one('#message-' + e.target.getAttribute('data-id')).remove();
+            e.target.get('parentNode').remove();
         }
     }
 
-    var startMessage = 0; //default;
-    var previousBtn = Y.one('#previous-messages-btn');
-    if (previousBtn) {
-        startMessage = 5; //get 2nd page
-        previousBtn.on('click', getMessages);
+    var getUnreadMessage = function() {
+        var cfg = {
+            method: 'POST',
+            sync: true,
+            data: {
+                action: 'get-unread-messages',
+            }
+        };
+        request = Y.io('/ajax/messages.php', cfg);
+        res = JSON.parse(request.responseText);
+        if ('SUCCESS' === res.status) {
+            for(var key in res.data.unreads) {
+                Y.one('.container[data-id="' + key +'"]').append(res.data.unreads[key]);
+            }
+        }
     }
-    Y.delegate('click', sendReply, Y.one('#messages'), 'form input[type="submit"]');
+    setInterval(getUnreadMessage, 3000);
+    var startMessage = []; //default;
+    var messages = Y.all('.message');
+    messages.each(function(message) {
+        if (message.getAttribute('data-count') > 5) {
+            startMessage[message.getAttribute('data-id')] = 5;
+            var previousBtn = message.one('#previous-messages-btn');
+            previousBtn.on('click', getMessages);
+        }
+    });
+    Y.delegate('click', sendMessage, Y.one('#messages'), 'form input[type="submit"]');
     Y.delegate('click', deleteMessage, Y.one('#messages'), '.admin-close');
 } else if ('suggestion' === YAHOO.EliteStar.params.type) {
     var sendSuggestion = function(e) {

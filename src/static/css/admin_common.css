@@ -564,60 +564,56 @@
   word-break: break-all;
 }
 /* line 340, ../scss/admin_common.scss */
-.message .reply {
-  padding: 10px 10px 0 20px;
-}
-/* line 343, ../scss/admin_common.scss */
-.message .reply-form {
+.message .messages-form {
   padding: 5px;
 }
-/* line 345, ../scss/admin_common.scss */
-.message .reply-form input {
+/* line 342, ../scss/admin_common.scss */
+.message .messages-form input {
   float: left;
 }
-/* line 348, ../scss/admin_common.scss */
-.message .reply-form textarea {
+/* line 345, ../scss/admin_common.scss */
+.message .messages-form textarea {
   width: 445px;
   height: 25px;
   float: left;
 }
-/* line 353, ../scss/admin_common.scss */
-.message .reply-form input[type="submit"] {
+/* line 350, ../scss/admin_common.scss */
+.message .messages-form input[type="submit"] {
   margin: 3px 10px;
 }
 
-/* line 359, ../scss/admin_common.scss */
+/* line 356, ../scss/admin_common.scss */
 #form-submit {
   margin-top: 10px;
 }
 
-/* line 363, ../scss/admin_common.scss */
+/* line 360, ../scss/admin_common.scss */
 .message:nth-child(even) {
   background-color: #EEE;
 }
 
-/* line 367, ../scss/admin_common.scss */
+/* line 364, ../scss/admin_common.scss */
 #previous-messages-btn {
   margin: 10px 0;
 }
 
-/* line 372, ../scss/admin_common.scss */
+/* line 369, ../scss/admin_common.scss */
 #suggestion .big-title {
   color: #232323;
 }
-/* line 376, ../scss/admin_common.scss */
+/* line 373, ../scss/admin_common.scss */
 #suggestion .desc {
   color: #666666;
   line-height: 20px;
 }
-/* line 381, ../scss/admin_common.scss */
+/* line 378, ../scss/admin_common.scss */
 #suggestion textarea {
   float: left;
   height: 150px;
   width: 400px;
   margin-top: 10px;
 }
-/* line 388, ../scss/admin_common.scss */
+/* line 385, ../scss/admin_common.scss */
 #suggestion input[type="submit"] {
   float: left;
   position: relative;
@@ -625,14 +621,14 @@
   margin: 140px 0 0 20px;
 }
 
-/* line 398, ../scss/admin_common.scss */
+/* line 395, ../scss/admin_common.scss */
 #profits .admin-calendar {
   float: left;
   width: 17px;
   height: 16px;
   margin: 4px 3px;
 }
-/* line 404, ../scss/admin_common.scss */
+/* line 401, ../scss/admin_common.scss */
 #profits .admin-calendar_big {
   float: left;
   width: 18px;
@@ -640,21 +636,21 @@
   margin: 4px 2px;
   cursor: pointer;
 }
-/* line 411, ../scss/admin_common.scss */
+/* line 408, ../scss/admin_common.scss */
 #profits .admin-people {
   float: left;
   width: 13px;
   height: 17px;
   margin: 4px 3px;
 }
-/* line 417, ../scss/admin_common.scss */
+/* line 414, ../scss/admin_common.scss */
 #profits .admin-money1 {
   float: left;
   width: 9px;
   height: 15px;
   margin: 4px 3px;
 }
-/* line 423, ../scss/admin_common.scss */
+/* line 420, ../scss/admin_common.scss */
 #profits .admin-money2 {
   float: left;
   width: 9px;
@@ -662,42 +658,42 @@
   margin: 8px 3px;
   background-position: 0 -240px;
 }
-/* line 430, ../scss/admin_common.scss */
+/* line 427, ../scss/admin_common.scss */
 #profits .admin-equal {
   float: left;
   width: 16px;
   height: 11px;
   margin: 6px 3px;
 }
-/* line 436, ../scss/admin_common.scss */
+/* line 433, ../scss/admin_common.scss */
 #profits .admin-plus {
   float: left;
   width: 13px;
   height: 14px;
   margin: 5px 3px;
 }
-/* line 442, ../scss/admin_common.scss */
+/* line 439, ../scss/admin_common.scss */
 #profits .profit-title {
   font-size: 30px;
   color: #CCC;
   margin: 10px;
 }
-/* line 447, ../scss/admin_common.scss */
+/* line 444, ../scss/admin_common.scss */
 #profits .desc-area {
   overflow: hidden;
   margin-left: 50px;
   margin-bottom: 10px;
 }
-/* line 451, ../scss/admin_common.scss */
+/* line 448, ../scss/admin_common.scss */
 #profits .desc-area div {
   float: left;
 }
-/* line 454, ../scss/admin_common.scss */
+/* line 451, ../scss/admin_common.scss */
 #profits .desc-area .title {
   font-size: 16px;
   margin: 2px 20px 0 0;
 }
-/* line 459, ../scss/admin_common.scss */
+/* line 456, ../scss/admin_common.scss */
 #profits .house-object {
   width: 550px;
   height: 100px;
@@ -705,86 +701,86 @@
   padding: 10px 0;
   border-bottom: 1px solid #1B1464;
 }
-/* line 465, ../scss/admin_common.scss */
+/* line 462, ../scss/admin_common.scss */
 #profits .house-object .admin-plus {
   margin: 8px 3px;
 }
-/* line 468, ../scss/admin_common.scss */
+/* line 465, ../scss/admin_common.scss */
 #profits .house-object .admin-equal {
   margin: 9px 3px;
 }
-/* line 473, ../scss/admin_common.scss */
+/* line 470, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area {
   float: left;
   height: 100px;
   width: 110px;
 }
-/* line 477, ../scss/admin_common.scss */
+/* line 474, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area img {
   margin: 5px;
   width: 90px;
 }
-/* line 481, ../scss/admin_common.scss */
+/* line 478, ../scss/admin_common.scss */
 #profits .house-object .house-desc-area .title {
   margin: 2px 5px;
   color: #3b91d9;
 }
-/* line 486, ../scss/admin_common.scss */
+/* line 483, ../scss/admin_common.scss */
 #profits .house-object .date-area {
   float: left;
   height: 100px;
   width: 140px;
 }
-/* line 490, ../scss/admin_common.scss */
+/* line 487, ../scss/admin_common.scss */
 #profits .house-object .date-area input {
   width: 100px;
   float: left;
 }
-/* line 494, ../scss/admin_common.scss */
+/* line 491, ../scss/admin_common.scss */
 #profits .house-object .date-area .title {
   margin: 10px 0;
   clear: both;
 }
-/* line 499, ../scss/admin_common.scss */
+/* line 496, ../scss/admin_common.scss */
 #profits .house-object .people-area {
   float: left;
   height: 100px;
   width: 60px;
   padding: 33px 0 0 0;
 }
-/* line 504, ../scss/admin_common.scss */
+/* line 501, ../scss/admin_common.scss */
 #profits .house-object .people-area input {
   float: left;
   width: 30px;
   float: left;
 }
-/* line 510, ../scss/admin_common.scss */
+/* line 507, ../scss/admin_common.scss */
 #profits .house-object .rent-area {
   float: left;
   height: 100px;
   width: 100px;
   padding: 33px 0 0 0;
 }
-/* line 515, ../scss/admin_common.scss */
+/* line 512, ../scss/admin_common.scss */
 #profits .house-object .rent-area input {
   float: left;
   width: 45px;
   float: left;
 }
-/* line 521, ../scss/admin_common.scss */
+/* line 518, ../scss/admin_common.scss */
 #profits .house-object .amount-area {
   float: left;
   height: 100px;
   width: 140px;
   padding: 33px 0 0 0;
 }
-/* line 526, ../scss/admin_common.scss */
+/* line 523, ../scss/admin_common.scss */
 #profits .house-object .amount-area input {
   float: left;
   width: 90px;
   float: left;
 }
-/* line 532, ../scss/admin_common.scss */
+/* line 529, ../scss/admin_common.scss */
 #profits .house-object input[type="text"] {
   float: left;
   -webkit-border-radius: 0;
@@ -795,21 +791,21 @@
   color: #666666;
   vertical-align: middle;
 }
-/* line 543, ../scss/admin_common.scss */
+/* line 540, ../scss/admin_common.scss */
 #profits .total-area {
   padding-right: 10px;
 }
-/* line 545, ../scss/admin_common.scss */
+/* line 542, ../scss/admin_common.scss */
 #profits .total-area div {
   float: right;
 }
-/* line 548, ../scss/admin_common.scss */
+/* line 545, ../scss/admin_common.scss */
 #profits .total-area .title {
   margin: 4px 3px;
   color: #666666;
   font-size: 14px;
 }
-/* line 553, ../scss/admin_common.scss */
+/* line 550, ../scss/admin_common.scss */
 #profits .total-area input[type="text"] {
   float: right;
   -webkit-border-radius: 0;
@@ -822,12 +818,12 @@
   width: 90px;
 }
 
-/* line 569, ../scss/admin_common.scss */
+/* line 566, ../scss/admin_common.scss */
 #admin-menu .selected a {
   color: #009999;
 }
 
-/* line 575, ../scss/admin_common.scss */
+/* line 572, ../scss/admin_common.scss */
 .reports {
   margin-top: 40px;
   width: 100%;
@@ -836,42 +832,42 @@
   font-size: 16px;
   text-align: center;
 }
-/* line 582, ../scss/admin_common.scss */
+/* line 579, ../scss/admin_common.scss */
 .reports tr:first-child {
   background-color: #009999;
   color: #fff;
 }
-/* line 587, ../scss/admin_common.scss */
+/* line 584, ../scss/admin_common.scss */
 .reports tr td {
   padding: 10px;
 }
 
-/* line 593, ../scss/admin_common.scss */
+/* line 590, ../scss/admin_common.scss */
 .traffic-link {
   margin: 10px;
   font-size: 16px;
 }
 
-/* line 599, ../scss/admin_common.scss */
+/* line 596, ../scss/admin_common.scss */
 #recommend-area .admin-people_b, #recommend-area .admin-people_h {
   width: 16px;
   height: 21px;
   float: left;
   margin-right: 5px;
 }
-/* line 605, ../scss/admin_common.scss */
+/* line 602, ../scss/admin_common.scss */
 #recommend-area .title_b {
   color: #00A99D;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 610, ../scss/admin_common.scss */
+/* line 607, ../scss/admin_common.scss */
 #recommend-area .title_h {
   color: #3b91d9;
   font-size: 14px;
   line-height: 24px;
 }
-/* line 615, ../scss/admin_common.scss */
+/* line 612, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -880,13 +876,13 @@
   background-color: #EFEFEF;
   padding: 5px;
 }
-/* line 622, ../scss/admin_common.scss */
+/* line 619, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item {
   position: relative;
   border-top: 1px solid #666666;
   padding-top: 5px;
 }
-/* line 626, ../scss/admin_common.scss */
+/* line 623, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item .title {
   color: #3b91d9;
   text-overflow: ellipsis;
@@ -894,22 +890,22 @@
   overflow: hidden;
   width: 165px;
 }
-/* line 633, ../scss/admin_common.scss */
+/* line 630, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item textarea {
   height: 20px;
   width: 180px;
   margin: 7px 0 0 0;
 }
-/* line 638, ../scss/admin_common.scss */
+/* line 635, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item input[type=submit] {
   margin: 10px auto;
 }
-/* line 642, ../scss/admin_common.scss */
+/* line 639, ../scss/admin_common.scss */
 #recommend-area .recommend-items-area .item:first-child {
   border-top: none;
 }
 
-/* line 648, ../scss/admin_common.scss */
+/* line 645, ../scss/admin_common.scss */
 .recommend-desc-content {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -923,29 +919,29 @@
   box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
   overflow: hidden;
 }
-/* line 660, ../scss/admin_common.scss */
+/* line 657, ../scss/admin_common.scss */
 .recommend-desc-content .seperator {
   border-top: 1px solid #FFAC55;
   height: 1px;
   margin: 5px 0;
 }
-/* line 665, ../scss/admin_common.scss */
+/* line 662, ../scss/admin_common.scss */
 .recommend-desc-content .listing-icon {
   width: 19px;
   height: 22px;
   margin: 3px 5px 3px 0;
   float: left;
 }
-/* line 671, ../scss/admin_common.scss */
+/* line 668, ../scss/admin_common.scss */
 .recommend-desc-content .desc-set {
   overflow: hidden;
 }
-/* line 673, ../scss/admin_common.scss */
+/* line 670, ../scss/admin_common.scss */
 .recommend-desc-content .desc-set .title {
   margin: 5px 0;
 }
 
-/* line 679, ../scss/admin_common.scss */
+/* line 676, ../scss/admin_common.scss */
 #recommend-desc-panel {
   position: fixed;
   top: 0;

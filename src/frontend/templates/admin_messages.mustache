@@ -1,28 +1,36 @@
-{{#messages}}
-<div id="message-{{id}}" class="message">
-    <div class="container">
+{{^singleMessage}}
+{{#messagesSets}}
+<div id="message-{{talker}}" class="message" data-id="{{talker}}" data-count="{{count}}">
+    {{#previous}}<div id="previous-messages-btn">(<a href="#" data-id="{{talker}}">{{i18n.ADMIN_PREVIOUS_MESSAGES}}</a>)</div>{{/previous}}
+    <div class="container" data-id="{{talker}}">
+    {{#messages}}
     <div class="message-single">
         <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
         <div class="message-body">{{&message}}</div>
     </div>
-    {{#replies}}
-        <div class="message-single reply">
-            <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} ({{created_time}}):
-            <div class="message-body">{{&message}}</div>
-        </div>
-    {{/replies}}
+    {{/messages}}
     </div>
-    {{^isSuggestion}}
-    <div class="reply-form">
-        <form action="ajax/admin_action.php" data-id={{id}} id="reply-form-{{id}}">
-            <input type="hidden" name="action" value="reply-messages"></input>
-            <input type="hidden" name="messageId" value="{{id}}"></input>
+    <div class="messages-form">
+        <form action="ajax/messages.php" data-id={{talker}} id="message-form-{{talker}}">
+            <input type="hidden" name="action" value="add"></input>
+            <input type="hidden" name="id" value="{{talker}}"></input>
             <textarea type="text" name="message" placeholder="{{i18n.ADMIN_LEAVE_MESSAGE}}"></textarea>
-            <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{id}}"></input>
+            <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{talker}}"></input>
             <div class="clean"></div>
         </form>
     </div>
-    {{/isSuggestion}}
-    {{#canDelete}}<div class="admin-sprite admin-close" data-id="{{id}}"></div>{{/canDelete}}
+    <div class="admin-sprite admin-close" data-id="{{talker}}"></div>
 </div>
-{{/messages}}
+{{/messagesSets}}
+{{/singleMessage}}
+{{#singleMessage}}
+    {{talker}}
+{{#messagesSets}}
+    {{#messages}}
+    <div class="message-single">
+        <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
+        <div class="message-body">{{&message}}</div>
+    </div>
+    {{/messages}}
+{{/messagesSets}}
+{{/singleMessage}}

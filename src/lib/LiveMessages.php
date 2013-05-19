@@ -63,6 +63,21 @@ class LiveMessages
              $sql = 'INSERT INTO messagelog (viewer, talker, updated_time) VALUES(?, ?, ?)';
              $inputParams = array($sender, $receiver, time());
              $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        }
+        else
+        {
+            $sql = 'UPDATE messagelog SET updated_time=? WHERE viewer=? AND talker=?';
+            $inputParams = array(time(), $sender, $receiver);
+            $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        }
+
+        $sql = 'SELECT * from messagelog WHERE viewer=? AND talker=?';
+        $inputParams = array($receiver, $sender);
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+
+        if (!$r)
+        {
+             $sql = 'INSERT INTO messagelog (viewer, talker, updated_time) VALUES(?, ?, ?)';
              $inputParams = array($receiver, $sender, time());
              $r = MySqlDb::getInstance()->query($sql, $inputParams);
         }
@@ -70,8 +85,6 @@ class LiveMessages
         {
             $sql = 'UPDATE messagelog SET updated_time=? WHERE viewer=? AND talker=?';
             $inputParams = array(time(), $receiver, $sender);
-            $r = MySqlDb::getInstance()->query($sql, $inputParams);
-            $inputParams = array(time(), $sender, $receiver);
             $r = MySqlDb::getInstance()->query($sql, $inputParams);
         }
         $unreadStatus = apc_fetch($this->getUserCacheKey($receiver));
@@ -120,15 +133,42 @@ class LiveMessages
             $singleTalkermessages['count'] = $r[0]['count'];
             $messages[] = $singleTalkermessages;
         }
+        $this->markAsRead($id);
         return $messages;
     }
 
     public function getTalkerMessages($id, $talker, $start, $count)
     {
+        $queryCache = array();
         $sql = 'SELECT * FROM livemessages WHERE viewer=? AND ((sender=? AND receiver=?) OR (sender=? AND receiver=?)) ORDER BY created_time DESC LIMIT ?,?';
         $inputParams = array($id, $id, $talker, $talker, $id, $start, $count);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        return $r;
+        foreach ($r as $key => $message)
+        {
+            if (!isset($queryCache[$message['sender']]))
+            {
+                $info = EliteUsers::getInstance()->queryUser($message['sender'], null, null, true);
+                $queryCache[$message['sender']] = $info[0];
+            }
+            if (!isset($queryCache[$message['receiver']]))
+            {
+                $info = EliteUsers::getInstance()->queryUser($message['receiver'], null, null, true);
+                $queryCache[$message['receiver']] = $info[0];
+            }
+            $info = $queryCache[$message['sender']];
+            $r[$key]['senderInfo'] = $info;
+            if ($message['sender'] === $id)
+            {
+                $r[$key]['senderInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_I');
+            }
+            $info = $queryCache[$message['receiver']];
+            $r[$key]['receiverInfo'] = $info;
+            if ($message['receiver'] === $id)
+            {
+                $r[$key]['receiverInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_ME');
+            }
+        }
+        return array_reverse($r); //latest at the bottom
     }
     
     public function deleteMessage($id, $talker)
@@ -146,7 +186,6 @@ class LiveMessages
     {
         $unreadCount = 0;
         $unreadStatus = apc_fetch($this->getUserCacheKey($id));
-        var_dump($unreadStatus);
         if ($unreadStatus)
         {
             foreach($unreadStatus as $unreadTalker => $count)
@@ -165,9 +204,11 @@ class LiveMessages
         {
             foreach($unreadStatus as $unreadTalker => $count)
             {
-                $unreadMessages[$unreadTalker] = LiveMessages::getInstance()->getTalkerMessages($id, $unreadTalker, 0, $count);
+                $unreadMessages[$unreadTalker] = array();
+                $unreadMessages[$unreadTalker]['messages'] = LiveMessages::getInstance()->getTalkerMessages($id, $unreadTalker, 0, $count);
             }
         }
+        $this->markAsRead($id);
         return $unreadMessages;
     }
 

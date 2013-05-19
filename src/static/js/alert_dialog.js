@@ -1,14 +1,14 @@
 YUI.add("alertdialog", function(Y) {
 
 Y.one('body').append('<div id="alert-dialog" class="hidden"><div class="message"></div><div class="btn-area"><div class="btn">' + YAHOO.EliteStar.lang.COMMON_OK + '</div></div><div class="listing-delete listing-sprite"></div></div>');
-function alert(message) {
+function tmpAlert(message) {
     var dialog = Y.one('#alert-dialog');
     dialog.one('.message').set('innerHTML', message);
     //dialog.setStyle('margin-top', '-' + dialog.get('offsetHeight')/2 + 'px');
     dialog.removeClass('hidden');
 }
 
-window.alert = alert; // wrap the alert function to show the same style of dialog
+alert = tmpAlert; // wrap the alert function to show the same style of dialog
 
 Y.one('#alert-dialog').one('.listing-delete').on('click', function(){
     Y.one('#alert-dialog').addClass('hidden'); 
