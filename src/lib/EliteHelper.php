@@ -738,7 +738,6 @@ class EliteHelper
         return $totalUser;
     }
 }
-EliteHelper::updateBrowsingCounter();
 EliteHelper::setStringToJs('COMMON_OK');
 //var_dump(EliteHelper::getBrowsingCounter());
 //var_dump(EliteHelper::getTotalUsers());

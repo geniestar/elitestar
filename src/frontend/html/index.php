@@ -1,6 +1,7 @@
 <?php
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 include('/usr/share/pear/elitestar/lib/EliteUsers.php');
+EliteHelper::updateBrowsingCounter();
 $user = EliteUsers::getInstance()->getCurrentUser();
 /*if ($user)
 {

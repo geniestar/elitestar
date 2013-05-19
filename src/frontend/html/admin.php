@@ -7,6 +7,7 @@ include('/usr/share/pear/elitestar/lib/HouseObjects.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 include('/usr/share/pear/elitestar/lib/Messages.php');
 include('/usr/share/pear/elitestar/lib/LiveMessages.php');
+EliteHelper::updateBrowsingCounter();
 $user = EliteUsers::getInstance()->getCurrentUser();
 if (!$user)
 {

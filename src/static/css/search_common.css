@@ -88,9 +88,9 @@
   background-position: 0 -169px;
 }
 
-/* line 114, menu/*.png */
-.menu-sprite, .menu-find_customers, .menu-find_houses, .menu-find_partner, .menu-settings, .menu-travel_together {
-  background: url('/img/menu-s51d58a325c.png') no-repeat;
+/* line 130, menu/*.png */
+.menu-sprite, .menu-find_customers, .menu-find_houses, .menu-find_partner, .menu-message-alert, .menu-message, .menu-settings, .menu-travel_together {
+  background: url('/img/menu-sbf53d4ad78.png') no-repeat;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
@@ -118,6 +118,16 @@
 /* line 43, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
 .menu-find_partner:active, .menu-find_partner.find_partner_active, .menu-find_partner.find_partner-active {
   background-position: 0 -69px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.menu-message-alert {
+  background-position: 0 -230px;
+}
+
+/* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.menu-message {
+  background-position: 0 -249px;
 }
 
 /* line 60, ../../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */

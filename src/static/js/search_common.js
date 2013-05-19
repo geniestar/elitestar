@@ -149,11 +149,12 @@ YUI({
                 res = JSON.parse(o.responseText);
                 if ('SUCCESS' === res.status) {
                     if (res.data.unreadCount > 0) {
-                        unreadAlert.set('innerHTML', res.data.unreadCount);
+                        unreadAlert.addClass('alert-open');
                     }
                 }
             }
         });
     }
+    checkUnreadMessage();
     setInterval(checkUnreadMessage, 3000);
 });

@@ -359,6 +359,27 @@ z-index: 11;
             color: $black;
         }
     }
+
+    #message-alert-area {
+        #unread-alert {
+            .menu-message {
+                float: right;
+                width: 20px;
+                height: 13px;
+                margin: 10px 2px;
+            }
+        }
+        #unread-alert.alert-open {
+            .menu-message {
+                background-position: 0 -229px;
+                float: right;
+                width: 19px;
+                height: 19px;
+                margin: 6px 2px;
+            }
+        }
+    }
+
     .extension-link {
         border: 1px solid #E5E5E5;
         border-bottom: 0px;

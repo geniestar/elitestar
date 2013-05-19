@@ -1,5 +1,6 @@
 <?php
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
+EliteHelper::updateBrowsingCounter();
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_TITLE'),
     'css' => array(

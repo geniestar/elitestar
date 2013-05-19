@@ -412,7 +412,7 @@ else if ('messages' === YAHOO.EliteStar.params.type)
                     for(var key in res.data.unreads) {
                         var container = Y.one('.container[data-id="' + key +'"]');
                         if (!container) {
-                            window.location.reload(); //just reload the page
+                            window.location.reload(); //just reload the page if message area not exist
                             return;
                         }
                         container.append(res.data.unreads[key]);

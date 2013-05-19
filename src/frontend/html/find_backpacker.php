@@ -4,6 +4,7 @@ include('/usr/share/pear/elitestar/lib/EliteUsers.php');
 include('/usr/share/pear/elitestar/lib/BackPackers.php');
 include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
+EliteHelper::updateBrowsingCounter();
 $user = EliteUsers::getInstance()->getCurrentUser();
 //var_dump($user);
 
