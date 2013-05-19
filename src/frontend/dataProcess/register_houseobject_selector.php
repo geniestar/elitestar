@@ -1,7 +1,6 @@
 <?php
 $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
 $data['houseDimemsions'] = ConfigReader::getInstance()->readConfig('dimensions', 'house_dimemsions');
-EliteHelper::setParamsToJs('states', $states);
 $positionDesc = array();
 foreach($data['houseDimemsions']['description_position'] as $position)
 {

@@ -5,8 +5,9 @@ YUI({
         hintpanel: '/js/hint_panel.js',
         loginpanel: '/js/login_panel.js',
         alertdialog: '/js/alert_dialog.js',
+        state: '/js/state.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', 'io-base', 'alertdialog', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'hintpanel', 'loginpanel', 'io-base', 'alertdialog', 'state', function(Y) {
     var switchRole = function (role){
         var backpackerForm = Y.one('#backpacker-form-all');
         var houseownerForm = Y.one('#houseowner-form-all');
@@ -40,7 +41,7 @@ YUI({
         options.each(function(option) {
             option.remove();
         });
-        var stateInfo = YAHOO.EliteStar.params.states[id];
+        var stateInfo = YAHOO.EliteStar.params.states(id);
         for (var i in stateInfo.suburbs) {
             var newOption = Y.Node.create('<option value=' + i + '>' + stateInfo.suburbs[i] + '</option>');
             select.append(newOption);
@@ -58,7 +59,7 @@ YUI({
         selector: '#map-all',
         itemsSelector: '.map-item',
         clickCallback: function(id) {
-            var stateInfo = YAHOO.EliteStar.params.states[id];
+            var stateInfo = YAHOO.EliteStar.params.states(id);
             Y.one('#backpacker-form input[name="state"]').set('value', stateInfo.id);
             replaceAllSuburbs('#backpacker-form .city-selection', id);
         },
@@ -225,8 +226,8 @@ YUI({
         var address = Y.one('#houseowner-form input[name="address"]').get('value');
         var state = Y.one('#houseowner-form select[name="state"]').get('value');
         var city = Y.one('#houseowner-form select[name="city"]').get('value');
-        var stateName = YAHOO.EliteStar.params.states[state].name;
-        var cityName = YAHOO.EliteStar.params.states[state].suburbs[city];
+        var stateName = YAHOO.EliteStar.params.states(state).name;
+        var cityName = YAHOO.EliteStar.params.states(state).suburbs[city];
         var geocoder = new google.maps.Geocoder();
         if (geocoder) {
             geocoder.geocode({ 'address': stateName + ',' + cityName + ',' + address }, function(results, status) {

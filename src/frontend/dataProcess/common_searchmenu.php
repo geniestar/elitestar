@@ -48,7 +48,6 @@ if (isset($_GET['bd']) && isset($data['houseDimemsions']['beds']['double'][$_GET
 {
     $data['houseDimemsions']['beds']['double'][$_GET['bd']]['selected'] = true;
 }
-EliteHelper::setParamsToJs('states', $states);
 $data['todayText'] = date('Y/M/d');
 $data['nextYearText'] = date('Y/M/d', time() + 60*60*24*365);
 $data['get'] = $_GET;

@@ -6,15 +6,17 @@ YUI({
         backpacker: '/js/backpacker.js',
         loginpanel: '/js/login_panel.js',
         alertdialog: '/js/alert_dialog.js',
+        alertdialog: '/js/state.js',
     }
-}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', 'loginpanel', 'alertdialog', function(Y) {
+}).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', 'loginpanel', 'alertdialog','state', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
         var select = Y.one(selector);
         var options = select.all('option');
         options.each(function(option) {
             option.remove();
         });
-        var stateInfo = YAHOO.EliteStar.params.states[id];
+
+        var stateInfo = YAHOO.EliteStar.params.states(id);
         /*default*/
         var newOption = Y.Node.create('<option value="">' + YAHOO.EliteStar.lang.COMMON_CHOOSE_A_SUBURB + '</option>');
         select.append(newOption);
@@ -27,7 +29,7 @@ YUI({
         selector: '#map-all',
         itemsSelector: '.map-item',
         clickCallback: function(id) {
-            var stateInfo = YAHOO.EliteStar.params.states[id];
+            var stateInfo = YAHOO.EliteStar.params.states(id);
             Y.one('#search-menu input[name="state"]').set('value', stateInfo.id);
             replaceAllSuburbs('#search-menu .city-selection', id);
         }

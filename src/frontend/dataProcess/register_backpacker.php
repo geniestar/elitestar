@@ -41,8 +41,6 @@ else
     $data['states'][$backpacker['state']]['default'] = true;
 }
 
-EliteHelper::setParamsToJs('states', $states);
-
 if ($backpacker)
 {
     $data['backpacker']['arrival_time'] = date("Y/M/d", strtotime($backpacker['arrival_time']));

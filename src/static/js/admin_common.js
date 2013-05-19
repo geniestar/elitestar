@@ -5,8 +5,9 @@ YUI({
         hintpanel: '/js/hint_panel.js',
         recommend: '/js/recommend.js',
         alertdialog: '/js/alert_dialog.js',
+        state: '/js/state.js',
     }
-}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', 'recommend', 'alertdialog', function(Y) {
+}).use('node', 'event', 'io', 'io-form', 'mapper', 'ecalendar', 'scrollview', 'hintpanel', 'cookie', 'querystring', 'node-event-simulate', 'recommend', 'alertdialog', 'state', function(Y) {
 var action;
 var tab;
 var objectId;
@@ -23,7 +24,7 @@ var replaceAllSuburbs = function(selector, id) {
     options.each(function(option) {
         option.remove();
     });
-    var stateInfo = YAHOO.EliteStar.params.states[id];
+    var stateInfo = YAHOO.EliteStar.params.states(id);
     for (var i in stateInfo.suburbs) {
         var newOption = Y.Node.create('<option value=' + i + '>' + stateInfo.suburbs[i] + '</option>');
         select.append(newOption);
@@ -300,7 +301,7 @@ if ('houseowner' === YAHOO.EliteStar.params.role) {
         selector: '#map-all',
         itemsSelector: '.map-item',
         clickCallback: function(id) {
-            var stateInfo = YAHOO.EliteStar.params.states[id];
+            var stateInfo = YAHOO.EliteStar.params.states(id);
             Y.one('#backpacker-form input[name="state"]').set('value', stateInfo.id);
             replaceAllSuburbs('#backpacker-form .city-selection', id);
         },
@@ -604,8 +605,8 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         var address = Y.one('#houseowner-form input[name="address"]').get('value');
         var state = Y.one('#houseowner-form select[name="state"]').get('value');
         var city = Y.one('#houseowner-form select[name="city"]').get('value');
-        var stateName = YAHOO.EliteStar.params.states[state].name;
-        var cityName = YAHOO.EliteStar.params.states[state].suburbs[city];
+        var stateName = YAHOO.EliteStar.params.states(state).name;
+        var cityName = YAHOO.EliteStar.params.states(state).suburbs[city];
         var geocoder = new google.maps.Geocoder();
         if (geocoder) {
             geocoder.geocode({ 'address': stateName + ',' + cityName + ',' + address }, function(results, status) {
