@@ -134,4 +134,26 @@ YUI({
             btn.removeClass('mouseover');
         });
     });
+    
+    var unreadAlert = Y.one('#unread-alert');
+    var checkUnreadMessage = function() {
+        var cfg = {
+            method: 'POST',
+            data: {
+                action: 'check-unread-messages',
+            }
+        };
+        var request = Y.io('/ajax/messages.php', cfg);
+        Y.on('io:complete', function(id, o, args){
+            if (id === request.id) {
+                res = JSON.parse(o.responseText);
+                if ('SUCCESS' === res.status) {
+                    if (res.data.unreadCount > 0) {
+                        unreadAlert.set('innerHTML', res.data.unreadCount);
+                    }
+                }
+            }
+        });
+    }
+    setInterval(checkUnreadMessage, 3000);
 });

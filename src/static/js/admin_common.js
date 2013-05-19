@@ -400,18 +400,21 @@ else if ('messages' === YAHOO.EliteStar.params.type)
     var getUnreadMessage = function() {
         var cfg = {
             method: 'POST',
-            sync: true,
             data: {
                 action: 'get-unread-messages',
             }
         };
-        request = Y.io('/ajax/messages.php', cfg);
-        res = JSON.parse(request.responseText);
-        if ('SUCCESS' === res.status) {
-            for(var key in res.data.unreads) {
-                Y.one('.container[data-id="' + key +'"]').append(res.data.unreads[key]);
+        var request = Y.io('/ajax/messages.php', cfg);
+        Y.on('io:complete', function(id, o, args){
+            if (id === request.id) {
+                res = JSON.parse(o.responseText);
+                if ('SUCCESS' === res.status) {
+                    for(var key in res.data.unreads) {
+                        Y.one('.container[data-id="' + key +'"]').append(res.data.unreads[key]);
+                    }
+                }
             }
-        }
+        });
     }
     setInterval(getUnreadMessage, 3000);
     var startMessage = []; //default;
