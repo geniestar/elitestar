@@ -410,7 +410,12 @@ else if ('messages' === YAHOO.EliteStar.params.type)
                 res = JSON.parse(o.responseText);
                 if ('SUCCESS' === res.status) {
                     for(var key in res.data.unreads) {
-                        Y.one('.container[data-id="' + key +'"]').append(res.data.unreads[key]);
+                        var container = Y.one('.container[data-id="' + key +'"]');
+                        if (!container) {
+                            window.location.reload(); //just reload the page
+                            return;
+                        }
+                        container.append(res.data.unreads[key]);
                     }
                 }
             }

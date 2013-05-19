@@ -320,12 +320,13 @@
     right: 5px;
     top :5px;
 }
-.message {
+#messages .message {
     position: relative;
     margin-bottom: 10px;
+    border-bottom: 2px solid $gray;
     .message-single {
         padding: 10px 10px 0 10px;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #EEE;
     }
     .message-body {
         margin: 10px 0;
@@ -358,11 +359,11 @@
 }
 
 .message:nth-child(even) {
-    background-color: #EEE;
+    //background-color: #EEE;
 }
 
 #previous-messages-btn {
-    margin: 10px 0;
+    padding: 10px;
 }
 
 #suggestion {
