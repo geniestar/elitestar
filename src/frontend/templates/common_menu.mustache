@@ -49,6 +49,7 @@
                 </div>
             {{/isLogin}}
         </div>
+        {{#isLogin}}
         <div class="btn btn-right" id="message-alert-area">
             <div id="unread-alert">
                 <a href="./admin.php?action=messages">
@@ -56,6 +57,7 @@
                 </a>
             </div>
         </div>
+        {{/isLogin}}
 
         <div class="clean"></div>
     </div>

@@ -262,6 +262,10 @@
                 color: $black;
                 font-size: 16px;
                 float: left;
+                max-width: 220px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
             }
             img {
                 width: 22px;
