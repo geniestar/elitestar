@@ -138,6 +138,7 @@ YUI({
     });
     
     var unreadAlert = Y.one('#unread-alert');
+    var unreadInterval;
     var checkUnreadMessage = function() {
         var cfg = {
             method: 'POST',
@@ -148,6 +149,10 @@ YUI({
         var request = Y.io('/ajax/messages.php', cfg);
         Y.on('io:complete', function(id, o, args){
             if (id === request.id) {
+                if (!o.responseText) {
+                    clearInterval(unreadInterval);
+                    return;
+                }
                 res = JSON.parse(o.responseText);
                 if ('SUCCESS' === res.status) {
                     if (res.data.unreadCount > 0) {
@@ -158,5 +163,5 @@ YUI({
         });
     }
     checkUnreadMessage();
-    setInterval(checkUnreadMessage, 3000);
+    unreadInterval = setInterval(checkUnreadMessage, 3000);
 });

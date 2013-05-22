@@ -347,7 +347,7 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         if ('SUCCESS' === res.status) {
             var container = e.target.get('parentNode').get('parentNode').one('.container');
             var oHtml = container.get('innerHTML');
-            container.set('innerHTML', res.data.html + oHtml);
+            container.set('innerHTML', oHtml + res.data.html);
             startMessage[e.target.getAttribute('data-id')] += res.data.count;
             
             if (res.data.count < 5) {
@@ -368,10 +368,12 @@ else if ('messages' === YAHOO.EliteStar.params.type)
                 useDisabled: true,
             }
         };
-        request = Y.io('/ajax/messages.php', cfg);
+        var request = Y.io('/ajax/messages.php', cfg);
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
-            e.target.get('parentNode').get('parentNode').get('parentNode').one('.container').append(res.data.html);
+            var container = e.target.get('parentNode').get('parentNode').get('parentNode').one('.container');
+            var oHtml = container.get('innerHTML');
+            container.set('innerHTML', res.data.html+ oHtml);
             //alert(res.data.message);
             e.target.get('parentNode').one('textarea').set('value', '');
         } else {
@@ -416,7 +418,9 @@ else if ('messages' === YAHOO.EliteStar.params.type)
                             window.location.reload(); //just reload the page if message area not exist
                             return;
                         }
-                        container.append(res.data.unreads[key]);
+                        var oHtml = container.get('innerHTML');
+                        container.set('innerHTML', res.data.unreads[key] + oHtml);
+                        //container.append(res.data.unreads[key]);
                     }
                 }
             }

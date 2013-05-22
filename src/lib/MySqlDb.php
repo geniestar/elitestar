@@ -20,7 +20,7 @@ class MySqlDb
      */
     public function __construct()
     {
-        $this->_mysqli = new mysqli(self::MYSQL_HOST, 'root', 'elitestar', self::MYSQL_DBNAME);
+        $this->_mysqli = new mysqli(self::MYSQL_HOST, 'root', 'backpacker', self::MYSQL_DBNAME);
         $this->_copy = create_function('$a', 'return $a;');
     }  
 

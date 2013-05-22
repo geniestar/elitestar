@@ -17,7 +17,8 @@ foreach ($checkArray as $checkIndex)
     {
         $additionalHelpArray[] = array(
             'class' => $checkIndex,
-            'additional' => isset($additionalHelps[$checkIndex . 'a'])?str_replace(',', '</br>', $additionalHelps[$checkIndex . 'a']):''
+            'additional' => isset($additionalHelps[$checkIndex . 'a'])?str_replace(',', '</br>', $additionalHelps[$checkIndex . 'a']):'',
+            'hint' => EliteHelper::getLangString('SEARCH_RESULT_' . strtoupper($checkIndex))
         );
     }
 }
@@ -34,7 +35,8 @@ foreach ($checkArray as $checkIndex)
     {
         $facilitiesArray[] = array(
             'class' => $checkIndex,
-            'additional' => isset($facilities[$checkIndex . 'a'])?$facilities[$checkIndex . 'a']:''
+            'additional' => isset($facilities[$checkIndex . 'a'])?$facilities[$checkIndex . 'a']:'',
+            'hint' => EliteHelper::getLangString('SEARCH_RESULT_' . strtoupper($checkIndex))
         );
     }
 }

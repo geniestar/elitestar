@@ -1,7 +1,8 @@
 {{^singleMessage}}
 {{#messagesSets}}
 <div id="message-{{talker}}" class="message" data-id="{{talker}}" data-count="{{count}}">
-    {{#previous}}<div id="previous-messages-btn">(<a href="#" data-id="{{talker}}">{{i18n.ADMIN_PREVIOUS_MESSAGES}}</a>)</div>{{/previous}}
+<div class="talker-title">{{i18n.ADMIN_TALKING_WITH}} <span>{{talkerName}}</span>:</div>
+<!--    {{#previous}}<div id="previous-messages-btn">(<a href="#" data-id="{{talker}}">{{i18n.ADMIN_PREVIOUS_MESSAGES}}</a>)</div>{{/previous}}
     <div class="container" data-id="{{talker}}">
     {{#messages}}
     <div class="message-single">
@@ -19,6 +20,25 @@
             <div class="clean"></div>
         </form>
     </div>
+-->
+    <div class="messages-form">
+        <form action="ajax/messages.php" data-id={{talker}} id="message-form-{{talker}}">
+            <input type="hidden" name="action" value="add"></input>
+            <input type="hidden" name="id" value="{{talker}}"></input>
+            <textarea type="text" name="message" placeholder="{{i18n.ADMIN_LEAVE_MESSAGE}}"></textarea>
+            <input type="submit" value="{{i18n.ADMIN_MESSAGES_REPLY}}" data-id="{{talker}}"></input>
+            <div class="clean"></div>
+        </form>
+    </div>
+    <div class="container" data-id="{{talker}}">
+    {{#messages}}
+    <div class="message-single">
+        <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
+        <div class="message-body">{{&message}}</div>
+    </div>
+    {{/messages}}
+    </div>
+    {{#previous}}<div id="previous-messages-btn">(<a href="#" data-id="{{talker}}">{{i18n.ADMIN_PREVIOUS_MESSAGES}}</a>)</div>{{/previous}}
     <div class="admin-sprite admin-close" data-id="{{talker}}"></div>
 </div>
 {{/messagesSets}}

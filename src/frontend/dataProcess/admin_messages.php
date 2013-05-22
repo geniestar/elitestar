@@ -5,6 +5,9 @@ foreach($data['messagesSets'] as $talker => $messages)
     {
         $data['messagesSets'][$talker]['messages'][$key2]['created_time'] = date('Y/M/d h:i:s', $message['created_time']);
         $data['messagesSets'][$talker]['messages'][$key2]['message'] = str_replace("\n", '<br>', $message['message']);
+        $talkerInfo = EliteUsers::queryUser($data['messagesSets'][$talker]['talker'], null, null, true);
+        $data['messagesSets'][$talker]['talkerName'] = $talkerInfo[0]['name'];
+
     }
     if ($messages['count'] > 5)
     {

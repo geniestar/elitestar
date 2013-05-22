@@ -56,9 +56,9 @@ class BackPackers
     {
         $sql = 'INSERT INTO backpackers (user_id, state, city, arrival_time, duration_start, duration_end, rent_low, rent_high, beds_single, beds_double, facilities, additional_help, name, favorites, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         $inputParams = array($userId, $state, $city, $arrivalTime, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, json_encode($facilities), json_encode($additionalHelp), $name, json_encode($favorites), time(), time());
-        var_dump($inputParams);
+        //var_dump($inputParams);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        var_dump($r);
+        //var_dump($r);
         return $r;
     }
 

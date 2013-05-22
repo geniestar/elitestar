@@ -2,7 +2,7 @@
     <div class="bar">
        <div class="left">
             <div class="theme-sprite theme-icon-packer"></div>
-            <div class="title">{{backpacker.name}}</div>
+            <div class="title hint" data-hint="{{backpacker.name}}">{{backpacker.name}}</div>
             <img src="/img/flags/{{countryFlag}}.jpg">
             <div class="updated-time">{{updatedText}}</div>
        </div>
@@ -18,7 +18,7 @@
         <div class="right-content">
             <div class="info-set">
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_WANTED_SPACE}}</div>
-                <div class="desc one-line-desc">{{place}}</div>
+                <div class="desc one-line-desc addr-desc hint" data-hint="{{place}}">{{place}}</div>
             </div>
             <div class="clean"></div>
             <div class="info-set">
@@ -38,7 +38,7 @@
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_EXPECTABLE}}</div>
                 <div class="desc one-line-desc">
                     {{#additionalHelpArray}} 
-                        <div class="listing-sprite listing-icon listing-{{class}} {{#additional}}hint{{/additional}}" data-hint="{{additional}}"></div>
+                        <div class="listing-sprite listing-icon listing-{{class}} hint" data-hint="{{hint}}{{#additional}}</br>{{additional}}{{/additional}}"></div>
                     {{/additionalHelpArray}}
                     {{^additionalHelpArray}}
                         {{i18n.SEARCH_RESULT_NONE}}
@@ -49,7 +49,7 @@
                 <div class="title"> </div>
                 <div class="desc one-line-desc">
                     {{#facilitiesArray}} 
-                        <div class="theme-sprite listing-icon theme-icon-{{class}}" data-additional="{{additional}}"></div>
+                        <div class="theme-sprite listing-icon theme-icon-{{class}} hint" data-hint="{{hint}}" data-additional="{{additional}}"></div>
                     {{/facilitiesArray}}
                     {{^facilitiesArray}}
                         {{i18n.SEARCH_RESULT_NONE}}

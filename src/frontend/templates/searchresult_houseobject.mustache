@@ -2,7 +2,7 @@
     <div class="bar">
        <div class="left left-house">
             <div class="theme-sprite theme-icon-house"></div>
-            <div class="title">{{houseObject.house_name}}</div>
+            <div class="title hint" data-hint="{{houseObject.house_name}}">{{houseObject.house_name}}</div>
             <div class="updated-time">{{updatedText}}</div>
        </div> 
        <div class="right-item selected detail-btn">
@@ -26,7 +26,7 @@
         <div class="right-content combined-content">
             <div class="info-set">
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_LOCATION}}</div>
-                <div class="desc one-line-desc addr-desc">{{place}}</div>
+                <div class="desc one-line-desc addr-desc hint" data-hint="{{place}}">{{place}}</div>
             </div>
             <div class="clean"></div>
             <div class="info-set">
@@ -40,7 +40,7 @@
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_DEVICE}}</div>
                 <div class="desc">
                     {{#facilitiesArray}} 
-                        <div class="theme-sprite listing-icon theme-icon-{{class}}" data-additional="{{additional}}"></div>
+                        <div class="theme-sprite listing-icon theme-icon-{{class}} hint" data-hint="{{hint}}" data-additional="{{additional}}"></div>
                     {{/facilitiesArray}}
                     {{^facilitiesArray}}
                         {{i18n.SEARCH_RESULT_NONE}}
@@ -49,7 +49,7 @@
                 <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_SERVICE}}</div>
                 <div class="desc">
                     {{#additionalHelpArray}} 
-                        <div class="listing-sprite listing-icon listing-{{class}} {{#additional}}hint{{/additional}}" data-hint="{{additional}}"></div>
+                        <div class="listing-sprite listing-icon listing-{{class}} hint" data-hint="{{hint}}{{#additional}}</br>{{additional}}{{/additional}}"></div>
                     {{/additionalHelpArray}}
                     {{^additionalHelpArray}}
                         {{i18n.SEARCH_RESULT_NONE}}
@@ -60,19 +60,20 @@
             <div class="info-set">
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_HOUSE}}</div>
                 <div class="desc one-line-desc">
-                    <div class="listing-icon listing-rooms listing-sprite"></div><div class="inline-desc">{{houseObject.rooms}}</div>
-                    <div class="listing-icon listing-beds listing-sprite hint" data-hint="{{i18n.COMMON_SEARCH_BEDS_SINGLE}}{{houseObject.beds_single}} / {{i18n.COMMON_SEARCH_BEDS_DOUBLE}}{{houseObject.beds_double}}"></div><div class="inline-desc">
+                    <div class="listing-icon listing-rooms listing-sprite hint" data-hint="{{i18n.SEARCH_RESULT_ROOMS}}"></div><div class="inline-desc">{{houseObject.rooms}}</div>
+                    <div class="listing-icon listing-beds listing-sprite hint" data-hint="{{i18n.SEARCH_RESULT_BEDS}}</br>{{i18n.COMMON_SEARCH_BEDS_SINGLE}}{{houseObject.beds_single}} / {{i18n.COMMON_SEARCH_BEDS_DOUBLE}}{{houseObject.beds_double}}"></div><div class="inline-desc">
                         {{i18n.COMMON_SEARCH_BEDS_S}}{{houseObject.beds_single}} / {{i18n.COMMON_SEARCH_BEDS_D}}{{houseObject.beds_double}}
                     </div>
-                    <div class="listing-icon listing-toilet listing-sprite"></div><div class="inline-desc">{{houseObject.toilets}}</div>
-                    <div class="listing-icon listing-parking listing-sprite"></div><div class="inline-desc">{{houseObject.parking_space}}</div>
-                    <div class="listing-icon listing-wecharge listing-sprite"></div><div class="inline-desc">{{weChargeText}}</div>
+                    <div class="listing-icon listing-toilet listing-sprite hint" data-hint="{{i18n.SEARCH_RESULT_TOILETS}}"></div><div class="inline-desc">{{houseObject.toilets}}</div>
+                    <div class="listing-icon listing-parking listing-sprite hint" data-hint="{{i18n.SEARCH_RESULT_PARKING}}"></div><div class="inline-desc">{{houseObject.parking_space}}</div>
+                    <div class="listing-icon listing-wecharge listing-sprite hint" data-hint="{{i18n.SEARCH_RESULT_UTILITY_BILLS}}"></div><div class="inline-desc">{{weChargeText}}</div>
                 </div>
             </div>
-            {{#showActionBtns}}
                 <div class="action-btns">
                     <div class="listing-send_message listing-sprite" data-id="{{houseObject.id}}"></div>
+                    {{#showActionBtns}}
                     <div class="listing-save_favorite listing-sprite" data-id="{{houseObject.id}}"></div>
+                    {{/showActionBtns}}
                 </div>
                 <div class="message-panel hidden" id="message-panel-board-result-{{houseObject.id}}">
                     <form id="message-panel-{{houseObject.id}}">
@@ -87,7 +88,6 @@
                         <input type="submit" value="{{i18n.SEARCH_RESULT_MESSAGE_SEND}}" data-id="{{houseObject.id}}"></input>
                     </form>
                 </div>
-            {{/showActionBtns}}
         </div>
         <div class="clean"></div>
         <div class="pic-content {{#isScroll}}is-scroll{{/isScroll}} hidden">

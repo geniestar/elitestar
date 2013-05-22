@@ -82,7 +82,7 @@
     }
     .input-set {
         clear: both;
-        font-size: 10px;
+        font-size: 14px;
         padding: 2px 9px;
         position: relative;
         .listing-calendar {
@@ -165,7 +165,7 @@
     border: 1px solid $black;
     margin-top: 2px;
     height: 35px;
-    font-size: 10px;
+    font-size: 14px;
     padding: 5px 3px;
 }
 #favorite-container {
@@ -187,7 +187,7 @@
     height: 16px;
     line-height: 16px;
     background-color: #656565;
-    font-size: 12px;
+    font-size: 14px;
     color: $white;
     padding: 10px;
     margin: 2px 0;
@@ -344,7 +344,7 @@
                 height: 25px;
                 overflow: hidden;
                 .title {
-                    width: 145px;
+                    width: 155px;
                     height: 17px;
                     text-align: right;
                     float: left;
@@ -359,6 +359,12 @@
                     float: left;
                     margin-left: 5px;
                     white-space: nowrap;
+                    display: block;
+                    max-width: 320px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                    overflow: hidden;
                     .inline-desc {
                         width: auto;
                         padding: 2px 4px;
@@ -486,8 +492,8 @@
         }
         .action-btns {
             position: absolute;
-            right: 10px;
-            bottom: 10px;
+            right: 5px;
+            bottom: 5px;
             .listing-save_favorite {
                 width: 52px;
                 height: 21px;

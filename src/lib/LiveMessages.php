@@ -168,7 +168,8 @@ class LiveMessages
                 $r[$key]['receiverInfo']['name'] = EliteHelper::getLangString('ADMIN_MESSAGES_ME');
             }
         }
-        return array_reverse($r); //latest at the bottom
+        //return array_reverse($r); //latest at the bottom
+        return $r;
     }
     
     public function deleteMessage($id, $talker)
