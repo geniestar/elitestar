@@ -6,7 +6,7 @@ YUI({
         backpacker: '/js/backpacker.js',
         loginpanel: '/js/login_panel.js',
         alertdialog: '/js/alert_dialog.js',
-        alertdialog: '/js/state.js',
+        state: '/js/state.js',
     }
 }).use('node', 'mapper', 'ecalendar', 'event-delegate', 'io-base', 'houseobject', 'backpacker', 'loginpanel', 'alertdialog','state', function(Y) {
     var replaceAllSuburbs = function(selector, id) {
@@ -37,6 +37,10 @@ YUI({
 
     Y.one('#search-btn').on('click', function(e) {
         Y.one('#search-form').submit();
+    });
+
+    Y.one('#search-btn-sortbar').on('click', function(e) {
+        Y.one('#search-form-sortbar').submit();
     });
 
     var startCalendar = new Y.EliteStar.ECalendar({

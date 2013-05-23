@@ -147,6 +147,7 @@ if ($user)
 
 /* ad */
 $adConfig = ConfigReader::getInstance()->readConfig('ad', 'ad');
+$adConfig['sources'] = $adConfig['sources_backpacker'];
 shuffle($adConfig['random_positions']);
 shuffle($adConfig['sources']);
 $adCount = 0;
@@ -200,10 +201,10 @@ EliteHelper::setStringToJs('COMMON_CHOOSE_A_SUBURB');
                 </div>
             </div>
             <div class="col-right col">
-                <div class="row">
+                <div class="row" id="sortbar">
                     <?php echo ContentGenerator::getContent('common_sortbar', array('sort' => $sort, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
-                <div class="row">
+                <div class="row" id="result-area">
                     <div id="favorite-container"></div>
                     <?php if($backpackers && count($backpackers) > 0):?>
                         <?php foreach ($backpackers as $backpacker):?>              

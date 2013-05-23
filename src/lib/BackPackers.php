@@ -151,7 +151,7 @@ class BackPackers
         {
             $updateArray['city'] = $city;
         }
-        if ($rent)
+        if (null !== $rent)
         {
             $updateArray['rent_low'] = $rent;
             $updateArray['rent_high'] = $rent;
@@ -168,11 +168,11 @@ class BackPackers
         {
             $updateArray['duration_end'] = $durationEnd; 
         }
-        if ($bedsSingle)
+        if (null !== $bedsSingle)
         {
             $updateArray['beds_single'] = $bedsSingle;
         }
-        if ($bedsDouble)
+        if (null !== $bedsDouble)
         {
             $updateArray['beds_double'] = $bedsDouble;
         }

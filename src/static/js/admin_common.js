@@ -626,6 +626,38 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         return true; //unable to check, just pass that;
     }
 
+    var checkDate = function(formId) {
+        var monthMapping = {
+            'Jan': '01',
+            'Feb': '02',
+            'Mar': '03',
+            'Apr': '04',
+            'May': '05',
+            'Jun': '06',
+            'Jul': '07',
+            'Aug': '08',
+            'Sep': '09',
+            'Oct': '10',
+            'Nov': '11',
+            'Dec': '12'
+        }
+        function parseDate(dateString) {
+            dateArray = dateString.split('/');
+            dateArray[1] = monthMapping[dateArray[1]];
+            return dateArray.join('-')
+        }
+        var startDate = Y.one('#' + formId + ' input[name="duration_start"]').get('value');
+        var endDate = Y.one('#' + formId + ' input[name="duration_end"]').get('value');
+        var durationStartTime = (new Date(parseDate(startDate))).getTime()/1000;
+        var durationEndTime = (new Date(parseDate(endDate))).getTime()/1000;
+        if (durationStartTime > durationEndTime) {
+            markFieldAsInvalid(formId, 'duration_start');
+            markFieldAsInvalid(formId, 'duration_end');
+            return false;
+        } else {
+            return true;
+        }
+    }
     var markFieldAsValid = function(formId, name) {
         /*var parentNode = Y.one('#' + formId + ' input[name="' + name + '"]').get('parentNode');
         if (parentNode.hasClass('input-set')) {
@@ -667,6 +699,10 @@ else if ('messages' === YAHOO.EliteStar.params.type)
                         alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
                         checkOK = false;
                     }
+                    if (!checkDate('houseowner-form')) {
+                        alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_INVALID_DATE;
+                        checkOK = false;
+                    }
                     checkAddress(function(addressOK){
                         if (!addressOK) {
                             alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_ADDRESS_WRONG;
@@ -685,6 +721,10 @@ else if ('messages' === YAHOO.EliteStar.params.type)
             } else {
                 if (!checkInput('backpacker-form', ['arrival_time', 'duration_start', 'duration_end', 'rent'])) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_FILED_EMPTY;
+                    checkOK = false;
+                }
+                if (!checkDate('backpacker-form')) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_INVALID_DATE;
                     checkOK = false;
                 }
                 if (!checkOK)

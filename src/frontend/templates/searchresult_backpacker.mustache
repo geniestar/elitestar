@@ -58,11 +58,15 @@
             </div>
         </div>
         <div class="clean"></div>
-        {{#showActionBtns}}
             <div class="action-btns">
-                <div class="listing-send_message listing-sprite" data-id="{{backpacker.id}}"></div>
-                <div class="listing-save_favorite listing-sprite" data-id="{{backpacker.id}}"></div>
+                {{#user}}
+                    <div class="listing-send_message listing-sprite" data-id="{{backpacker.id}}"></div>
+                {{/user}}
+                {{#showActionBtns}}
+                    <div class="listing-save_favorite listing-sprite" data-id="{{backpacker.id}}"></div>
+                {{/showActionBtns}}
             </div>
+                {{#user}}
                 <div class="message-panel hidden" id="message-panel-board-result-{{backpacker.id}}">
                     <form id="message-panel-{{backpacker.id}}">
                         <input type="hidden" name="action" value="add"></input>
@@ -76,7 +80,7 @@
                         <input type="submit" value="{{i18n.SEARCH_RESULT_MESSAGE_SEND}}" data-id="{{backpacker.id}}"></input>
                     </form>
                 </div>
-        {{/showActionBtns}}
+                {{/user}}
         {{#showId}}
             <div class="id-field">
                 User ID: {{backpacker.user_id}}</br>

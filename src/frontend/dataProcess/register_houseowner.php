@@ -28,7 +28,7 @@ if ($houseowner)
             }
             else
             {
-                $data['haa_o'] = $tmp[0];
+                $data['haa_o'] = str_replace('<br>', "\n", $tmp[0]);
             }
         }
     }

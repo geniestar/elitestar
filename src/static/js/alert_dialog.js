@@ -9,7 +9,6 @@ function tmpAlert(message) {
 }
 
 alert = tmpAlert; // wrap the alert function to show the same style of dialog
-
 Y.one('#alert-dialog').one('.listing-delete').on('click', function(){
     Y.one('#alert-dialog').addClass('hidden'); 
 });
@@ -18,4 +17,11 @@ Y.one('#alert-dialog').one('.btn').on('click', function(){
     Y.one('#alert-dialog').addClass('hidden'); 
 });
 
-}, '0.0.1', {requires: ['base', 'node']});
+Y.one('html').on('key', function(e) {
+    var dialog = Y.one('#alert-dialog');
+    if (!dialog.hasClass('hidden')) {
+        dialog.addClass('hidden');
+    }
+}, 'enter');
+
+}, '0.0.1', {requires: ['base', 'node', 'event-key']});

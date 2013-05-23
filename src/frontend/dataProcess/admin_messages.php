@@ -7,7 +7,15 @@ foreach($data['messagesSets'] as $talker => $messages)
         $data['messagesSets'][$talker]['messages'][$key2]['message'] = str_replace("\n", '<br>', $message['message']);
         $talkerInfo = EliteUsers::queryUser($data['messagesSets'][$talker]['talker'], null, null, true);
         $data['messagesSets'][$talker]['talkerName'] = $talkerInfo[0]['name'];
-
+        if ($talkerInfo[0]['photo'])
+        {
+            $photoUrl = './ugc/' . $talkerInfo[0]['photo'];
+        }
+        else
+        {
+            $photoUrl = './img/default_pic.jpg'; 
+        }
+        $data['messagesSets'][$talker]['photoUrl'] = $photoUrl;
     }
     if ($messages['count'] > 5)
     {
@@ -29,6 +37,8 @@ foreach($data['messages'] as $key => $message)
     {
         $data['messages'][$key]['isSuggestion'] = true;
     }
+    $mailInfo = json_decode($message['senderInfo']['mail'], true);
+    $data['messages'][$key]['senderInfo']['mail'] = $mailInfo['value'];
 }
 }
 ?>

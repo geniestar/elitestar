@@ -142,6 +142,7 @@ if ($user)
 
 /* ad */
 $adConfig = ConfigReader::getInstance()->readConfig('ad', 'ad');
+$adConfig['sources'] = $adConfig['sources_houseobject'];
 shuffle($adConfig['random_positions']);
 shuffle($adConfig['sources']);
 $adCount = 0;
@@ -208,10 +209,10 @@ EliteHelper::setStringToJs('COMMON_CHOOSE_A_SUBURB');
 
             </div>
             <div class="col-right col">
-                <div class="row">
+                <div class="row" id="sortbar">
                     <?php echo ContentGenerator::getContent('common_sortbar', array('sort' => $sort, 'url' => $_SERVER['REQUEST_URI']));?>
                 </div>
-                <div class="row">
+                <div class="row" id="result-area">
                     <div id="favorite-container"></div>
                     <?php if($houseObjects && count($houseObjects) > 0):?>
                         <?php foreach ($houseObjects as $houseObject):?>              

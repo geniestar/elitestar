@@ -34,4 +34,6 @@
     {
         $data['durationSelected'] = true;
     }
+
+    $data['get'] = $_GET;
 ?>

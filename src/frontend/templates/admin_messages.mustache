@@ -1,7 +1,7 @@
 {{^singleMessage}}
 {{#messagesSets}}
 <div id="message-{{talker}}" class="message" data-id="{{talker}}" data-count="{{count}}">
-<div class="talker-title">{{i18n.ADMIN_TALKING_WITH}} <span>{{talkerName}}</span>:</div>
+<img class="talker-photo" src="{{photoUrl}}"><div class="talker-title">{{i18n.ADMIN_TALKING_WITH}} <span>{{talkerName}}</span>:</div>
 <!--    {{#previous}}<div id="previous-messages-btn">(<a href="#" data-id="{{talker}}">{{i18n.ADMIN_PREVIOUS_MESSAGES}}</a>)</div>{{/previous}}
     <div class="container" data-id="{{talker}}">
     {{#messages}}
@@ -58,7 +58,7 @@
 <div id="message-{{id}}" class="message">
     <div class="container">
     <div class="message-single">
-        <span class="title">{{senderInfo.name}}</span> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
+        <a href="mailto:{{senderInfo.mail}}"><span class="title">{{senderInfo.name}}</span></a> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
         <div class="message-body">{{&message}}</div>
     </div>
     {{#replies}}

@@ -33,7 +33,7 @@
                 <div class="title">{{i18n.SEARCH_RESULT_TITLE_RENT}}</div>
                 <div class="desc">{{houseObject.rent_low}} {{i18n.SEARCH_RESULT_AUD}}</div>
                 <div class="title two-column">{{i18n.SEARCH_RESULT_TITLE_DURATION}}</div>
-                <div class="desc two-column">{{durationText}}</div>
+                <div class="desc two-column date-desc" style="width: auto">{{durationText}}</div>
             </div>
             <div class="clean"></div>
             <div class="info-set">
@@ -70,11 +70,14 @@
                 </div>
             </div>
                 <div class="action-btns">
-                    <div class="listing-send_message listing-sprite" data-id="{{houseObject.id}}"></div>
+                    {{#user}}
+                        <div class="listing-send_message listing-sprite" data-id="{{houseObject.id}}"></div>
+                    {{/user}}
                     {{#showActionBtns}}
                     <div class="listing-save_favorite listing-sprite" data-id="{{houseObject.id}}"></div>
                     {{/showActionBtns}}
                 </div>
+                {{#user}}
                 <div class="message-panel hidden" id="message-panel-board-result-{{houseObject.id}}">
                     <form id="message-panel-{{houseObject.id}}">
                         <input type="hidden" name="action" value="add"></input>
@@ -88,6 +91,7 @@
                         <input type="submit" value="{{i18n.SEARCH_RESULT_MESSAGE_SEND}}" data-id="{{houseObject.id}}"></input>
                     </form>
                 </div>
+                {{/user}}
         </div>
         <div class="clean"></div>
         <div class="pic-content {{#isScroll}}is-scroll{{/isScroll}} hidden">

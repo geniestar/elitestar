@@ -58,8 +58,8 @@ if (isset($_POST['action']) && 'delete' == $_POST['action'] && isset($_POST['id'
     }
     else
     {
-        $sql = 'DELETE FROM users WHERE id=\'' . $user[0]['id'] . '\'';
-        $r = MySqlDb::getInstance()->query($sql, array());
+        /*$sql = 'DELETE FROM users WHERE id=\'' . $user[0]['id'] . '\'';
+        $r = MySqlDb::getInstance()->query($sql, array());*/ // for request, don't delete user so that user cannot apply with same id again
         $sql = 'DELETE FROM backpackers WHERE user_id=\'' . $user[0]['id'] . '\'';
         $r = MySqlDb::getInstance()->query($sql, array());
         $sql = 'DELETE FROM landlords WHERE user_id=\'' . $user[0]['id'] . '\'';
@@ -283,7 +283,7 @@ function getServices($data, $prefix)
         }
         if (isset($data[$prefix . '-haa-o']))
         {
-            $haaArray[] = $data[$prefix . '-haa-o'];
+            $haaArray[] = str_replace("\n", '<br>', $data[$prefix . '-haa-o']);
         }
         $haa = implode($haaArray, ',');
     }

@@ -12,4 +12,13 @@
         <div class="desc"><a href='{{durationUrl}}'>{{i18n.SEARCH_RESULT_DURATION}}</a></div>
         <a href='{{durationUrl}}'><div class="listing-sort{{#durationD}}_d{{/durationD}} listing-sprite"></div></a>
     </div>
+    <form action="{{action}}" method="GET" id="search-form-sortbar">
+        <div class="input-set">
+            <div id="search-btn-sortbar">
+                <div class="listing-sprite listing-search_btn"></div>
+            </div>
+            <input type="text" name="keyword" size="20" value="{{get.keyword}}" placeholder="{{i18n.COMMON_SEARCH_ENTER_KEYWORD}}">
+        </div>
+        <input type="submit" style="height: 0px; width: 0px; border: none; padding: 0px;" hidefocus="true" />
+    </form>
 </div>

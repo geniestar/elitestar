@@ -222,6 +222,39 @@ YUI({
         return checkOK;
     }
 
+    var checkDate = function(formId) {
+        var monthMapping = {
+            'Jan': '01',
+            'Feb': '02',
+            'Mar': '03',
+            'Apr': '04',
+            'May': '05',
+            'Jun': '06',
+            'Jul': '07',
+            'Aug': '08',
+            'Sep': '09',
+            'Oct': '10',
+            'Nov': '11',
+            'Dec': '12'
+        }
+        function parseDate(dateString) {
+            dateArray = dateString.split('/');
+            dateArray[1] = monthMapping[dateArray[1]];
+            return dateArray.join('-')
+        }
+        var startDate = Y.one('#' + formId + ' input[name="duration_start"]').get('value');
+        var endDate = Y.one('#' + formId + ' input[name="duration_end"]').get('value');
+        var durationStartTime = (new Date(parseDate(startDate))).getTime()/1000;
+        var durationEndTime = (new Date(parseDate(endDate))).getTime()/1000;
+        if (durationStartTime > durationEndTime) {
+            markFieldAsInvalid(formId, 'duration_start');
+            markFieldAsInvalid(formId, 'duration_end');
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     var checkAddress = function(cb) {
         var address = Y.one('#houseowner-form input[name="address"]').get('value');
         var state = Y.one('#houseowner-form select[name="state"]').get('value');
@@ -314,6 +347,10 @@ YUI({
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_EMAIL_FORMAT;
                     checkOK = false;
                 }
+                if (!checkDate('backpacker-form')) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_INVALID_DATE;
+                    checkOK = false;
+                }
                 if (!Y.one('#backpacker-form-all input[name="agree"]').get('checked')) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_READ_TOS;
                     checkOK = false;
@@ -360,6 +397,10 @@ YUI({
                 }
                 if (!checkEmailFormat('houseowner-form-all', ['email'])) {
                     alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_EMAIL_FORMAT;
+                    checkOK = false;
+                }
+                if (!checkDate('houseowner-form')) {
+                    alertMessage = alertMessage || YAHOO.EliteStar.lang.REG_INVALID_DATE;
                     checkOK = false;
                 }
                 if (!Y.one('#houseowner-form-all input[name="agree"]').get('checked')) {

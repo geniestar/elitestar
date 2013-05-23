@@ -152,11 +152,11 @@ class HouseObjects
     {
         $updateArray = array();
 
-        if ($state)
+        if (null!== $state)
         {
             $updateArray['state'] = $state;
         }
-        if ($city)
+        if (null !== $city)
         {
             $updateArray['city'] = $city;
         }
@@ -176,23 +176,23 @@ class HouseObjects
         {
             $updateArray['duration_end'] = $durationEnd; 
         }
-        if ($rooms)
+        if (null!== $rooms)
         {
             $updateArray['rooms'] = $rooms;
         }
-        if ($bedsSingle)
+        if (null !== $bedsSingle)
         {
             $updateArray['beds_single'] = $bedsSingle;
         }
-        if ($bedsDouble)
+        if (null !== $bedsDouble)
         {
             $updateArray['beds_double'] = $bedsDouble;
         }
-        if ($toilets)
+        if (null !== $toilets)
         {
             $updateArray['toilets'] = $toilets;
         }
-        if ($parkingSpace)
+        if (null !== $parkingSpace)
         {
             $updateArray['parking_space'] = $parkingSpace;
         }
@@ -204,11 +204,11 @@ class HouseObjects
         {
             $updateArray['facilities'] = json_encode($facilities);
         }
-        if ($rentLow)
+        if (null !== $rentLow)
         {
             $updateArray['rent_low'] = $rentLow;
         }
-        if ($rentHigh)
+        if (null !== $rentHigh)
         {
             $updateArray['rent_high'] = $rentHigh;
         }
