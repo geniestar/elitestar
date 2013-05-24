@@ -52,15 +52,15 @@ class HouseObjects
      * create houseobject
      *
      */
-    public function createHouseObject($ownerId, $state, $city, $address, $houseName, $durationStart, $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $weCharge, $facilities, $rentLow, $rentHigh, $mainPhoto, $photos, $description)
+    public function createHouseObject($ownerId, $state, $city, $address, $houseName, $durationStart, $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $weCharge, $facilities, $rentLow, $rentHigh, $mainPhoto, $photos, $description, $ownerName)
     {
-        $sql = 'INSERT INTO houseobjects (owner_id, state, city, address, house_name, duration_start, duration_end, rooms, beds_single, beds_double, toilets, parking_space, wecharge, facilities, rent_low, rent_high, main_photo, photos, description, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        $inputParams = array($ownerId, $state, $city, $address, $houseName, $durationStart,  $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $weCharge, json_encode($facilities), $rentLow, $rentHigh, $mainPhoto, json_encode($photos), $description, time(), time());
+        $sql = 'INSERT INTO houseobjects (owner_id, state, city, address, house_name, duration_start, duration_end, rooms, beds_single, beds_double, toilets, parking_space, wecharge, facilities, rent_low, rent_high, main_photo, photos, owner_name, description, created_time, updated_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        $inputParams = array($ownerId, $state, $city, $address, $houseName, $durationStart,  $durationEnd, $rooms, $bedsSingle, $bedsDouble, $toilets, $parkingSpace, $weCharge, json_encode($facilities), $rentLow, $rentHigh, $mainPhoto, json_encode($photos), $ownerName, $description, time(), time());
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
 
-    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $id = null, $getTotal = false)
+    public function findHouseObjects($state, $city, $start = 0, $count = 20, $sortBy = self::SORT_BY_PRICE_DESC, $address = null, $houseName = null, $durationStart, $durationEnd = null, $rentLow = null, $rentHigh = null, $bedsSingle = null, $bedsDouble = null, $userId = null, $ownerName = null, $id = null, $getTotal = false)
     {
         $conditions = array();
         if (null !== $state)
@@ -71,11 +71,12 @@ class HouseObjects
         {
             $conditions['city'] = array('op' => '=', 'value' => $city);
         }
-        if ($address && $houseName)
+        if ($address && $houseName && $ownerName)
         {
             $conditions['keyword_search'] = array(
                 'address' => array('op' => ' like ', 'value' => '%' . $address . '%'),
                 'house_name' => array('op' => ' like ', 'value' => '%' . $houseName . '%'),
+                'owner_name' => array('op' => ' like ', 'value' => '%' . $ownerName . '%'),
             );
         }
         if (null !== $durationStart)
@@ -148,7 +149,7 @@ class HouseObjects
         return $r;
     }
     
-    public function updateHouseObjectInfo($ownerId, $id, $state = null, $city = null, $address = null, $houseName = null, $durationStart = null, $durationEnd = null, $rooms = null, $bedsSingle = null, $bedsDouble = null, $toilets = null, $parkingSpace = null, $weCharge = null, $facilities = null, $rentLow = null, $rentHigh = null, $mainPhoto = null, $photos = null, $description = null)
+    public function updateHouseObjectInfo($ownerId, $id, $state = null, $city = null, $address = null, $houseName = null, $durationStart = null, $durationEnd = null, $rooms = null, $bedsSingle = null, $bedsDouble = null, $toilets = null, $parkingSpace = null, $weCharge = null, $facilities = null, $rentLow = null, $rentHigh = null, $mainPhoto = null, $photos = null, $description = null, $ownerName = null)
     {
         $updateArray = array();
 
@@ -223,6 +224,10 @@ class HouseObjects
         if ($description)
         {
             $updateArray['description'] = $description;
+        }
+        if ($ownerName)
+        {
+            $updateArray['ownerName'] = $ownerName;
         }
         if (!$updateArray)
         {

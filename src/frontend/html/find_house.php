@@ -104,8 +104,8 @@ if (isset($_GET['rent']) && '' !== $_GET['rent'])
 }
 $user = EliteUsers::getInstance()->getCurrentUser();
 
-$results = HouseObjects::getInstance()->findHouseObjects($state, $city, $start, $count, $sort, $keyword, $keyword, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble);
-$total = HouseObjects::getInstance()->findHouseObjects($state, $city, $start, $count, $sort, $keyword, $keyword, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, null, null, true);
+$results = HouseObjects::getInstance()->findHouseObjects($state, $city, $start, $count, $sort, $keyword, $keyword, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, null, $keyword);
+$total = HouseObjects::getInstance()->findHouseObjects($state, $city, $start, $count, $sort, $keyword, $keyword, $durationStart, $durationEnd, $rentLow, $rentHigh, $bedsSingle, $bedsDouble, null, null, null, true);
 $backpackers = array();
 $ids = array();
 /* get user data*/

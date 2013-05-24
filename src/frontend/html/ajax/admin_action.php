@@ -31,7 +31,7 @@ if (!$user)
 if (isset($_POST['action']) && 'delete-photo' === $_POST['action'])
 {
       
-    $oldhouseobject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
+    $oldhouseobject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
     $ophotos = json_decode(json_decode($oldhouseobject[0]['photos']), true);
     $photos = array();
     foreach($ophotos as $photo)
@@ -48,7 +48,7 @@ else if (isset($_POST['action']) && 'get-form' === $_POST['action'])
 {
     if (isset($_POST['objectid']))
     {
-        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
+        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
         $formHtml ='';
         $formHtml .= '<div id="houseowner-form" class="form">';
         $formHtml .= '<input type="hidden" name="objectid" value="' . $houseobjects[0]['id'] . '">';
@@ -86,7 +86,7 @@ else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
     $user = EliteUsers::getInstance()->getCurrentUser();
     if (0 === $user['role'])
     {
-        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
+        $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $user['id'], $_POST['objectid']);
         foreach($houseobjects as $houseobject)
         {
             if (isset($_POST['objectid']) && '' !== $_POST['objectid'])
@@ -110,7 +110,7 @@ else if (isset($_POST['action']) && 'recommend' === $_POST['action'])
     {
         $backpackers = BackPackers::getInstance()->findBackPackers(null, null, 0, 20, BackPackers::SORT_BY_TIME, null, null, null, null, null, null, null, null, $user['id']);
         $backpacker = $backpackers[0];
-        $results = HouseObjects::getInstance()->findHouseObjects($backpacker['state'], $backpacker['city'], 0, 99, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null);
+        $results = HouseObjects::getInstance()->findHouseObjects($backpacker['state'], $backpacker['city'], 0, 99, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null);
         foreach ($results as $result)
         {
             if ($user['role'] == 1)

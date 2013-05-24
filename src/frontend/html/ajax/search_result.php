@@ -28,7 +28,7 @@ if (1 == $_POST['role'])
 }
 else
 {
-    $houseObject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, $_POST['id']);
+    $houseObject = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 20, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, null, $_POST['id']);
     if ($houseObject)
     {
         $houseObject = $houseObject[0];
