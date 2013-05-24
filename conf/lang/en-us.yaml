@@ -87,6 +87,8 @@ languages:
     SEARCH_RESULT_HB: 'Open Bank Account'
     SEARCH_RESULT_HC: 'Apply for FTN'
     SEARCH_RESULT_HD: 'Apply for SIM Card'
+    SEARCH_NO_PHOTOS: 'No photos'
+    SEARCH_NO_FAVS: 'No items'
     LOGIN_SIGN_UP: 'Sign Up'
     LOGIN_REMEMBERME: 'Remember Me'
     LOGIN_USERID: 'Username'

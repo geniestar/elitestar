@@ -71,6 +71,10 @@ YUI({
         if ('SUCCESS' === res.status) {
             alert(res.data.message);
             e.target.get('parentNode').remove();
+            var favs = Y.all('.favorite-set .title');
+            if (!favs.size()) {
+                Y.one('.no-favs').removeClass('hidden');
+            }
         } else {
             alert(res.message);
         }

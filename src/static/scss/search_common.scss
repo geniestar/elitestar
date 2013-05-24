@@ -26,6 +26,11 @@
     border: 1px solid $black;
     margin-top: 2px;
     min-height: 100px;
+    .no-favs {
+        color: $black;
+        text-align: center;
+        margin-top:15px;
+    }
     .green-title {
         height: 25px;
         line-height: 25px;
@@ -473,6 +478,11 @@
             }
         }
         .pic-content {
+            .no-photos {
+                color: $black;
+                text-align: center;
+                margin-top:45px;
+            }
             float: left;
             width: 575px;
             height: 111px;
@@ -572,7 +582,7 @@
         position: absolute;
         top: -25px;
         left: 100px;
-        z-index: 10;
+        z-index: 5;
         border: 1px solid $gray;
         -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
         -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);

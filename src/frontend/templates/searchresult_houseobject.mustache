@@ -105,6 +105,9 @@
                     {{#photos}}
                         <li><img src="/ugc/c_{{.}}" data-src="{{.}}"></li>
                     {{/photos}}
+                    {{^photo}}
+                        <div class="no-photos">{{i18n.SEARCH_NO_PHOTOS}}</div>
+                    {{/photo}}
                 </ul>
             </div>
             <div class="arrow-area">

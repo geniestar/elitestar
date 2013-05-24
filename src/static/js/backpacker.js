@@ -63,6 +63,7 @@ YUI.add("backpacker", function(Y)
             res = JSON.parse(request.responseText);
             if ('SUCCESS' === res.status) {
                 Y.one('#favorites .favorites').append(res.data.html);
+                Y.one('.no-favs').addClass('hidden');
                 alert(res.data.message);
             } else {
                 alert(res.message);
