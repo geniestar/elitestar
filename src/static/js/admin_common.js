@@ -382,13 +382,12 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         return false;
     }
     
-    var deleteMessage = function(e) {
-        e.preventDefault();
+    var deleteMessage = function(id) {
         var cfg = {
             method: 'POST',
             sync: true,
             data: {
-                talker: e.target.getAttribute('data-id'),
+                talker: id,
                 action: 'delete-messages',
             }
         };
@@ -396,7 +395,8 @@ else if ('messages' === YAHOO.EliteStar.params.type)
         res = JSON.parse(request.responseText);
         if ('SUCCESS' === res.status) {
             alert(res.data.message);
-            e.target.get('parentNode').remove();
+            messageDeleteEvent.get('parentNode').remove();
+            Y.one('.delete-dialog').addClass('hidden');
         }
     }
 
@@ -436,8 +436,23 @@ else if ('messages' === YAHOO.EliteStar.params.type)
             previousBtn.on('click', getMessages);
         }
     });
+    var messageIdToBeDeleted = null;
+    var messageDeleteEvent = null;
     Y.delegate('click', sendMessage, Y.one('#messages'), 'form input[type="submit"]');
-    Y.delegate('click', deleteMessage, Y.one('#messages'), '.admin-close');
+    Y.delegate('click', function(e) {
+        messageIdToBeDeleted = e.target.getAttribute('data-id');
+        Y.one('.delete-dialog').removeClass('hidden');
+        messageDeleteEvent = e;
+    }, Y.one('#messages'), '.admin-close');
+    Y.one('.delete-dialog .btn-area .btn').on('click', function(){
+        deleteMessage(messageIdToBeDeleted);
+    });
+    Y.one('.delete-dialog .btn-cancel').on('click', function() {
+        Y.one('.delete-dialog').addClass('hidden');
+    });
+    Y.one('#close-delete-dialog-btn').on('click', function() {
+        Y.one('.delete-dialog').addClass('hidden');
+    });
 } else if ('suggestion' === YAHOO.EliteStar.params.type) {
     var sendSuggestion = function(e) {
         e.preventDefault();

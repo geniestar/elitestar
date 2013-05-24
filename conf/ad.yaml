@@ -13,3 +13,7 @@ ad:
         '<center style="margin: 15px;"><img src="http://l.yimg.com/f/i/tw/auction/ecm/c87281014.jpg" width="100" height="75"></center>',
         '<center style="margin: 15px;"><img src="http://l.yimg.com/f/i/tw/auction/ecm/e77200666.jpg" width="100" height="75"></center>'
     ]
+    sources_left: [
+        '<center style="margin: 15px;"><img src="http://ads.yimg.com/ja/a/tw/ivychang/14578061_et6_home_130413_1.jpg"></img></center>',
+        '<center style="margin: 15px;"><img src="http://ads.yldmgrimg.net/apex/mediastore/1503bbad-bd88-45c0-b485-db6d9f16b496" width="100" height="65"></center>',
+    ]

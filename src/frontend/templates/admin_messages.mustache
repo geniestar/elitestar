@@ -1,4 +1,17 @@
 {{^singleMessage}}
+<div class="delete-dialog hidden">
+    <div class="info">
+        <div class="admin-delete admin-sprite"></div>
+        <div>{{& i18n.ADMIN_ARE_YOU_SURE_MESSAGE}}</div>
+        <div class="clean"></div>
+    </div>
+    <div class="btn-area">
+        <div class="btn btn-delete">{{i18n.ADMIN_DELETE}}</div>
+        <div class="btn btn-cancel">{{i18n.ADMIN_CANCEL}}</div>
+        <div class="clean"></div>
+    </div>
+    <div class="admin-close_big admin-sprite" id="close-delete-dialog-btn"></div>
+</div>
 {{#messagesSets}}
 <div id="message-{{talker}}" class="message" data-id="{{talker}}" data-count="{{count}}">
 <img class="talker-photo" src="{{photoUrl}}"><div class="talker-title">{{i18n.ADMIN_TALKING_WITH}} <span>{{talkerName}}</span>:</div>

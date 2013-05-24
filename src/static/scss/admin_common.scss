@@ -154,6 +154,7 @@
     border: 1px solid #2E3192;
     padding: 5px;
     margin-top: 10px;
+    position: relative;
     .houseobject-selector-item {
         width: 144px;
         height: 150px;
@@ -224,6 +225,7 @@
         height: 180px;
         overflow: hidden;
     }
+}
     .delete-dialog {
         background-color: #E2E2E2;
         width: 400px;
@@ -231,13 +233,15 @@
         padding: 10px;
         color: $black;
         position: absolute;
-        top: 20px;
-        left: 70px;
-        z-index: 10;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -72px;
         border: 1px solid $gray;
         -webkit-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
         -moz-box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
         box-shadow: 1px 1px 4px rgba(50, 50, 50, 0.75);
+        z-index: 11;
         .info {
             padding: 20px;
             width: 100%;
@@ -246,6 +250,8 @@
             overflow: hidden;
             div {
                 float: left;
+                width: 330px;
+                text-align: center;
             }
             .admin-delete {
                 width: 27px;
@@ -284,7 +290,6 @@
             top: 2px;
         }
     }
-}
 .houseobject-photo-item {
     float: left;
     position: relative;

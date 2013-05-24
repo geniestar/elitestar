@@ -206,6 +206,11 @@ EliteHelper::setStringToJs('COMMON_CHOOSE_A_SUBURB');
                 <div class="row">
                     <?php echo ContentGenerator::getContent('common_counter', array());?>
                 </div>
+                <?php foreach ($adConfig['sources_left'] as $ad):?>
+                <div class="row">
+                    <?php echo $ad;?>
+                </div>
+                <?php endforeach;?>
 
             </div>
             <div class="col-right col">
