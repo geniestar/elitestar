@@ -90,7 +90,7 @@ else if ('profits' == $_GET['action'])
 {
     EliteHelper::setParamsToJs('type', 'profits');
     $tabs = array(array('class' => 'profits', 'name' => EliteHelper::getLangString('COMMON_MENU_PROFITS')));
-    $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 100, HouseObjects::SORT_BY_PRICE_DESC, null, null, null, null, null, null, null, null, null, null, $user['id']);
+    $houseobjects = HouseObjects::getInstance()->findHouseObjects(null, null, 0, 100, HouseObjects::SORT_BY_TIME_DESC, null, null, null, null, null, null, null, null, $user['id']);
     $formHtml = ContentGenerator::getContent('admin_profits', array('houseobjects' => $houseobjects));
 }
 else if ('suggestion' == $_GET['action'])
