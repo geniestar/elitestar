@@ -10,7 +10,7 @@ if ($user)
     $landlord = MySqlDb::getInstance()->query($sql, $inputParams);
     $sql = 'SELECT * FROM backpackers WHERE user_id=\'' . $user['id'] . '\'';
     $backpacker = MySqlDb::getInstance()->query($sql, $inputParams);
-    if (!$landlord && !$backpacker)
+    if (!$landlord && !$backpacker && $user['id']!=='superuser')
     {
         header('Location: error.php?error=ACCOUNT_ERROR_OR_ALREADY_BEEN_DISABLED'); 
         exit;

@@ -716,12 +716,12 @@ class EliteHelper
             $r = MySqlDb::getInstance()->query('SELECT value FROM admin WHERE type=\'counter\'', array());
             $counter = intval($r['value']);
             apc_store('ADMIN_COUNTER', $counter);
-
         }
         if (!$temp)
         {
             $temp = 0;
         }
+        //var_dump($temp  .' '.  $counter);
         return $temp + $counter;
     }
 
