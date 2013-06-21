@@ -687,7 +687,7 @@ class EliteHelper
         if (!$counter)
         {
             $r = MySqlDb::getInstance()->query('SELECT value FROM admin WHERE type=\'counter\'', array());
-            $counter = intval($r['value']);
+            $counter = intval($r[0]['value']);
             apc_store('ADMIN_COUNTER', $counter);
 
         }
@@ -714,7 +714,7 @@ class EliteHelper
         if (!$counter)
         {
             $r = MySqlDb::getInstance()->query('SELECT value FROM admin WHERE type=\'counter\'', array());
-            $counter = intval($r['value']);
+            $counter = intval($r[0]['value']);
             apc_store('ADMIN_COUNTER', $counter);
         }
         if (!$temp)
