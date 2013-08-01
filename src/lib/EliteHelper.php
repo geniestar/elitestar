@@ -730,7 +730,7 @@ class EliteHelper
         $totalUser = apc_fetch('ADMIN_TOTAL_USER');
         if (!$totalUser)
         {
-            $r = MySqlDb::getInstance()->query('SELECT count(*) as count from users', array());
+            $r = MySqlDb::getInstance()->query('SELECT count(*) as count from users where role != 99', array());
             $totalUser = intval($r[0]['count']);
             apc_store('ADMIN_TOTAL_USER', $totalUser);
 

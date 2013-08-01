@@ -60,12 +60,15 @@ if (isset($_POST['action']) && 'delete' == $_POST['action'] && isset($_POST['id'
     {
         /*$sql = 'DELETE FROM users WHERE id=\'' . $user[0]['id'] . '\'';
         $r = MySqlDb::getInstance()->query($sql, array());*/ // for request, don't delete user so that user cannot apply with same id again
+        $sql = 'UPDATE users set role=99 WHERE id=\'' . $user[0]['id'] . '\'';
+        $r = MySqlDb::getInstance()->query($sql, array());// set 99 as deleted
         $sql = 'DELETE FROM backpackers WHERE user_id=\'' . $user[0]['id'] . '\'';
         $r = MySqlDb::getInstance()->query($sql, array());
         $sql = 'DELETE FROM landlords WHERE user_id=\'' . $user[0]['id'] . '\'';
         $r = MySqlDb::getInstance()->query($sql, array());
         $sql = 'DELETE FROM houseobjects WHERE owner_id=\'' . $user[0]['id'] . '\'';
         $r = MySqlDb::getInstance()->query($sql, array());
+        apc_store('ADMIN_TOTAL_USER', '');
     }
     header('Location: superadmin.php?action=delete');
     exit;

@@ -152,21 +152,51 @@ else if ('mreports' == $_GET['action'])
 }
 else if ('simulator' == $_GET['action'])
 {
+    $sql = 'SELECT * from users where role != 99 order by name';
+    $r = MySqlDb::getInstance()->query($sql, $inputParams);
+
     $html = '<center style="margin-top: 20px;"><div class="title">please enter the user id</div>';
     $html .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
     $html .= '<input type="hidden" name="action" value="simulator">';
     $html .= '<input style="margin: 10px 0;width:150px;" type="text" name="id" placeholder="userid">';
     $html .= '<input type="submit"></input>';
-    $html .= '</from></center>';
+    $html .= '</from>';
+    
+    $html .= '<table class="reports"><tr><td>Name</td><td>Action</td></tr>';
+    foreach ($r as $user)
+    {
+        $html .= '<tr><td>';
+        $html .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
+        $html .= '<input type="hidden" name="action" value="simulator">';
+        $html .= '<input type="hidden" name="id" value="' . $user['id'] . '">';
+        $html .= $user['name'] . '</td>';
+        $html .= '<td><input type="submit" value="simulate"></input></td>';
+        $html .= '</form></td></tr>';
+    }
+    $html .= '</table></center>';
 }
 else if ('delete' == $_GET['action'])
 {
+    $sql = 'SELECT * from users where role != 99 order by name';
+    $r = MySqlDb::getInstance()->query($sql, $inputParams);
     $html = '<center style="margin-top: 20px;"><div class="title">please enter the user id to delete</div>';
     $html .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
     $html .= '<input type="hidden" name="action" value="delete">';
     $html .= '<input style="margin: 10px 0;width:150px;" type="text" name="id" placeholder="userid">';
     $html .= '<input type="submit"></input>';
     $html .= '</from></center>';
+    $html .= '<table class="reports"><tr><td>Name</td><td>Action</td></tr>';
+    foreach ($r as $user)
+    {
+        $html .= '<tr><td>';
+        $html .= '<form action="account_action.php" method="POST" enctype="multipart/form-data">';
+        $html .= '<input type="hidden" name="action" value="delete">';
+        $html .= '<input type="hidden" name="id" value="' . $user['id'] . '">';
+        $html .= $user['name'] . '</td>';
+        $html .= '<td><input type="submit" value="delete"></input></td>';
+        $html .= '</form></td></tr>';
+    }
+    $html .= '</table></center>';
 }
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
