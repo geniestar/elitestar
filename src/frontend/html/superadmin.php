@@ -205,60 +205,285 @@ else if ('backpackers' == $_GET['action'])
     $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
     foreach ($states as $state)
     {
+        $fa = 0;
+        $fb = 0;
+        $fc = 0;
+        $fd = 0;
+        $fe = 0;
+        $ff = 0;
+        $fg = 0;
+        $fh = 0;
+        $ha = 0;
+        $hb = 0;
+        $hc = 0;
+        $hd = 0;
+
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'];
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['01. total'][$state['name']] = $r[0]['count'];
+        $reports['01. total'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low < 50';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['02. rent<50'][$state['name']] = $r[0]['count'];
+        $reports['02. rent<50'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 50 and rent_low < 100';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['03. 50<rent<100'][$state['name']] = $r[0]['count'];
+        $reports['03. 50<rent<100'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 100 and rent_low < 150';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['04. 100<rent<150'][$state['name']] = $r[0]['count'];
+        $reports['04. 100<rent<150'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 150 and rent_low < 200';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['05. 150<rent<200'][$state['name']] = $r[0]['count'];
+        $reports['05. 150<rent<200'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 200 and rent_low < 250';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['06. 200<rent<250'][$state['name']] = $r[0]['count'];
+        $reports['06. 200<rent<250'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 0';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['07. single0'][$state['name']] = $r[0]['count'];
+        $reports['07. single0'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 1';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['08. single1'][$state['name']] = $r[0]['count'];
+        $reports['08. single1'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 2';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['09. single2'][$state['name']] = $r[0]['count'];
+        $reports['09. single2'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 3';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['10. single3'][$state['name']] = $r[0]['count'];
+        $reports['10. single3'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 4';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['11. single4'][$state['name']] = $r[0]['count'];
+        $reports['11. single4'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 5';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['12. single5'][$state['name']] = $r[0]['count'];
+        $reports['12. single5'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 0';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['14. double0'][$state['name']] = $r[0]['count'];
+        $reports['14. double0'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 1';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['15. double1'][$state['name']] = $r[0]['count'];
+        $reports['15. double1'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 2';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['16. double2'][$state['name']] = $r[0]['count'];
+        $reports['16. double2'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 3';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['17. double3'][$state['name']] = $r[0]['count'];
+        $reports['17. double3'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 4';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['18. double4'][$state['name']] = $r[0]['count'];
+        $reports['18. double4'][$state['class']] = $r[0]['count'];
         $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 5';
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $reports['19. double5'][$state['name']] = $r[0]['count'];
+        $reports['19. double5'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT *from backpackers where state=' . $state['id'];
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        foreach($r as $b)
+        {
+            $facilities = json_decode(json_decode($b['facilities']), true);
+            if ($facilities['fa'] === '1') { $fa++; }
+            if ($facilities['fb'] === '1') { $fb++; }
+            if ($facilities['fc'] === '1') { $fc++; }
+            if ($facilities['fd'] === '1') { $fd++; }
+            if ($facilities['fe'] === '1') { $fe++; }
+            if ($facilities['ff'] === '1') { $ff++; }
+            if ($facilities['fg'] === '1') { $fg++; }
+            if ($facilities['fh'] === '1') { $fh++; }
+            $helps = json_decode(json_decode($b['additional_help']), true);
+            if ($helps['ha'] === '1') { $ha++; }
+            if ($helps['hb'] === '1') { $hb++; }
+            if ($helps['hc'] === '1') { $hc++; }
+            if ($helps['hd'] === '1') { $hd++; }
+        }
+        $reports['20. ' . EliteHelper::getLangString('SEARCH_RESULT_FA')][$state['class']] = $fa;
+        $reports['21. ' . EliteHelper::getLangString('SEARCH_RESULT_FB')][$state['class']] = $fb;
+        $reports['22. ' . EliteHelper::getLangString('SEARCH_RESULT_FC')][$state['class']] = $fc;
+        $reports['23. ' . EliteHelper::getLangString('SEARCH_RESULT_FD')][$state['class']] = $fd;
+        $reports['24. ' . EliteHelper::getLangString('SEARCH_RESULT_FE')][$state['class']] = $fe;
+        $reports['25. ' . EliteHelper::getLangString('SEARCH_RESULT_FF')][$state['class']] = $ff;
+        $reports['26. ' . EliteHelper::getLangString('SEARCH_RESULT_FG')][$state['class']] = $fg;
+        $reports['27. ' . EliteHelper::getLangString('SEARCH_RESULT_FH')][$state['class']] = $fh;
+        $reports['28. ' . EliteHelper::getLangString('SEARCH_RESULT_HA')][$state['class']] = $ha;
+        $reports['29. ' . EliteHelper::getLangString('SEARCH_RESULT_HB')][$state['class']] = $hb;
+        $reports['30. ' . EliteHelper::getLangString('SEARCH_RESULT_HC')][$state['class']] = $hc;
+        $reports['31. ' . EliteHelper::getLangString('SEARCH_RESULT_HD')][$state['class']] = $hd;
+    }
+    $html .= ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
+}
+else if ('houseowners' == $_GET['action'])
+{
+    $html = '';
+    $ha = 0;
+    $hb = 0;
+    $hc = 0;
+    $hd = 0;
+    $sql = 'SELECT count(*) as count from landlords';
+    $r = MySqlDb::getInstance()->query($sql, $inputParams);
+    $reports['01. total'][$state['class']] = $r[0]['count'];
+    $sql = 'SELECT * from landlords';
+    $r = MySqlDb::getInstance()->query($sql, $inputParams);
+    foreach($r as $h)
+    {
+        $helps = json_decode(json_decode($h['additional_help']), true);
+        if ($helps['ha'] === '1') { $ha++; }
+        if ($helps['hb'] === '1') { $hb++; }
+        if ($helps['hc'] === '1') { $hc++; }
+        if ($helps['hd'] === '1') { $hd++; }
+    }
+    $reports['02. ' . EliteHelper::getLangString('SEARCH_RESULT_HA')]['total number'] = $ha;
+    $reports['03. ' . EliteHelper::getLangString('SEARCH_RESULT_HB')]['total number'] = $hb;
+    $reports['04. ' . EliteHelper::getLangString('SEARCH_RESULT_HC')]['total number'] = $hc;
+    $reports['05. ' . EliteHelper::getLangString('SEARCH_RESULT_HD')]['total number'] = $hd;
+    $html .= ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
+}
+else if ('houseobjects' == $_GET['action'])
+{
+    $html = '';
+    $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
+    foreach ($states as $state)
+    {
+        $fa = 0;
+        $fb = 0;
+        $fc = 0;
+        $fd = 0;
+        $fe = 0;
+        $ff = 0;
+        $fg = 0;
+        $fh = 0;
+        $w = 0;
+        $e = 0;
+
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'];
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['01. total'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rent_low < 50';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['02. rent<50'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rent_low > 50 and rent_low < 100';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['03. 50<rent<100'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rent_low > 100 and rent_low < 150';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['04. 100<rent<150'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rent_low > 150 and rent_low < 200';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['05. 150<rent<200'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rent_low > 200 and rent_low < 250';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['06. 200<rent<250'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_single = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['07. single0'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_single = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['08. single1'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_single = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['09. single2'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_single = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['10. single3'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_single = 4';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['11. single4'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_single = 5';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['12. single5'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_double = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['14. double0'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_double = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['15. double1'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_double = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['16. double2'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_double = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['17. double3'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_double = 4';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['18. double4'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and beds_double = 5';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['19. double5'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT *from houseobjects where state=' . $state['id'];
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        foreach($r as $h)
+        {
+            $wecharge = json_decode(json_decode($h['wecharge']), true);
+            if ($wecharge['w'] === '1') { $w++; }
+            if ($wecharge['e'] === '1') { $e++; }
+            $facilities = json_decode(json_decode($h['facilities']), true);
+            if ($facilities['fa'] === '1') { $fa++; }
+            if ($facilities['fb'] === '1') { $fb++; }
+            if ($facilities['fc'] === '1') { $fc++; }
+            if ($facilities['fd'] === '1') { $fd++; }
+            if ($facilities['fe'] === '1') { $fe++; }
+            if ($facilities['ff'] === '1') { $ff++; }
+            if ($facilities['fg'] === '1') { $fg++; }
+            if ($facilities['fh'] === '1') { $fh++; }
+        }
+        $reports['20. ' . EliteHelper::getLangString('SEARCH_RESULT_FA')][$state['class']] = $fa;
+        $reports['21. ' . EliteHelper::getLangString('SEARCH_RESULT_FB')][$state['class']] = $fb;
+        $reports['22. ' . EliteHelper::getLangString('SEARCH_RESULT_FC')][$state['class']] = $fc;
+        $reports['23. ' . EliteHelper::getLangString('SEARCH_RESULT_FD')][$state['class']] = $fd;
+        $reports['24. ' . EliteHelper::getLangString('SEARCH_RESULT_FE')][$state['class']] = $fe;
+        $reports['25. ' . EliteHelper::getLangString('SEARCH_RESULT_FF')][$state['class']] = $ff;
+        $reports['26. ' . EliteHelper::getLangString('SEARCH_RESULT_FG')][$state['class']] = $fg;
+        $reports['27. ' . EliteHelper::getLangString('SEARCH_RESULT_FH')][$state['class']] = $fh;
+        $reports['28. ' . EliteHelper::getLangString('REG_WATER')][$state['class']] = $w;
+        $reports['29. ' . EliteHelper::getLangString('REG_ELECTRCITY')][$state['class']] = $e;
+
+
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rooms = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['30. rooms0'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rooms = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['31. rooms1'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rooms = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['32. rooms2'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rooms = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['33. rooms3'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rooms = 4';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['34. rooms4'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and rooms = 5';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['35. rooms5'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and toilets = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['35. toilets0'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and toilets = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['36. toilets1'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and toilets = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['37. toilets2'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and toilets = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['38. toilets3'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['39. parking_space0'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['40. parking_space1'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['41. parking_space2'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['42. parking_space3'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 4';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['43. parking_space4'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 5';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['44. parking_space5'][$state['class']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from houseobjects where state=' . $state['id'] . ' and parking_space = 6';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['45. parking_space6'][$state['class']] = $r[0]['count'];
+
     }
     $html .= ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
 }
