@@ -407,9 +407,9 @@ else if ('houseobjects' == $_GET['action'])
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         foreach($r as $h)
         {
-            $wecharge = json_decode(json_decode($h['wecharge']), true);
-            if ($wecharge['w'] === '1') { $w++; }
-            if ($wecharge['e'] === '1') { $e++; }
+            $wecharge = json_decode($h['wecharge'], true);
+            if ($wecharge['w'] !== '') { $w++; }
+            if ($wecharge['e'] !== '') { $e++; }
             $facilities = json_decode(json_decode($h['facilities']), true);
             if ($facilities['fa'] === '1') { $fa++; }
             if ($facilities['fb'] === '1') { $fb++; }
