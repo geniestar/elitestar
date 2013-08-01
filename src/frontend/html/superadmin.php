@@ -29,7 +29,7 @@ else if ('dreports' == $_GET['action'])
     $startPostfix = ' 00:00:00';
     $endPostfix = ' 23:59:59';
     $startYear = 2013;
-    $startMonth = 4;
+    $startMonth = 7;
     $startDay = 1;
     $year = $startYear;
     $month = $startMonth;
@@ -104,11 +104,12 @@ else if ('mreports' == $_GET['action'])
     $startPostfix = '-01 00:00:00';
     $endPostfix = '-30 23:59:59';
     $startYear = 2013;
-    $startMonth = 4;
+    $startMonth = 7;
     $year = $startYear;
     $month = $startMonth;
     $now = time();
     $reports = array();
+    $html = '';
     while (true)
     {
         $key = $year . '-' . (($month>9)?$month:'0'.$month);
@@ -147,7 +148,7 @@ else if ('mreports' == $_GET['action'])
             $year++;
         }
     }
-    $html = ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
+    $html .= ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
     $html .= '<div class="traffic-link"> Traffics report please go to <a href="http://www.google.com/analytics/">Google Analytics</a></div>';
 }
 else if ('simulator' == $_GET['action'])
@@ -197,6 +198,69 @@ else if ('delete' == $_GET['action'])
         $html .= '</form></td></tr>';
     }
     $html .= '</table></center>';
+}
+else if ('backpackers' == $_GET['action'])
+{
+    $html = '';
+    $states = ConfigReader::getInstance()->readConfig('dimensions', 'states');
+    foreach ($states as $state)
+    {
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'];
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['01. total'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low < 50';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['02. rent<50'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 50 and rent_low < 100';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['03. 50<rent<100'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 100 and rent_low < 150';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['04. 100<rent<150'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 150 and rent_low < 200';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['05. 150<rent<200'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and rent_low > 200 and rent_low < 250';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['06. 200<rent<250'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['07. single0'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['08. single1'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['09. single2'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['10. single3'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 4';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['11. single4'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_single = 5';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['12. single5'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 0';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['14. double0'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 1';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['15. double1'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 2';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['16. double2'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 3';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['17. double3'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 4';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['18. double4'][$state['name']] = $r[0]['count'];
+        $sql = 'SELECT count(*) as count from backpackers where state=' . $state['id'] . ' and beds_double = 5';
+        $r = MySqlDb::getInstance()->query($sql, $inputParams);
+        $reports['19. double5'][$state['name']] = $r[0]['count'];
+    }
+    $html .= ContentGenerator::getContent('superadmin_reports', array('reports' => $reports));
 }
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),

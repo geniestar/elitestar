@@ -19,4 +19,16 @@
     {
         $data['s_delete'] = true;
     }
+    else if ('backpackers'==$data['action'])
+    {
+        $data['s_backpackers'] = true;
+    }
+    else if ('houseowners'==$data['action'])
+    {
+        $data['s_houseowners'] = true;
+    }
+    else if ('houseobjects'==$data['action'])
+    {
+        $data['s_houseobjects'] = true;
+    }
 ?>
