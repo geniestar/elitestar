@@ -220,7 +220,7 @@ languages:
     REG_ID_EMAIL: 'Id must be email.'
     REG_EMAIL_FORMAT: 'Email format wrong.'
     REG_ADDRESS_WRONG: 'Not a valid address'
-    REG_PUBLISH: 'Publish'
+    REG_PUBLISH: 'Public'
     REG_USER_ID_INVALID: 'The user id already in used, please try another id'
     REG_INVALID_DATE: 'Inavlid start and end date'
     ADMIN_MESSAGES_TITLE: 'Hi %s, You have %d new messages.'

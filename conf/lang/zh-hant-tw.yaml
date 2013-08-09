@@ -220,7 +220,7 @@ languages:
     REG_ID_EMAIL: '帳號需要是e-mail信箱'
     REG_EMAIL_FORMAT: 'Email格式錯誤'
     REG_ADDRESS_WRONG: '不是有效地址'
-    REG_PUBLISH: '發送'
+    REG_PUBLISH: '公開'
     REG_USER_ID_INVALID: '使用者帳號已被使用,請使用另外帳號'
     REG_INVALID_DATE: '非正確日期'
     ADMIN_MESSAGES_TITLE: '你好 %s, 你有 %d 新訊息'
