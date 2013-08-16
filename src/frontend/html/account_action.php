@@ -4,6 +4,7 @@ include('/usr/share/pear/elitestar/lib/EliteHelper.php');
 include('/usr/share/pear/elitestar/lib/BackPackers.php');
 include('/usr/share/pear/elitestar/lib/LandLords.php');
 include('/usr/share/pear/elitestar/lib/HouseObjects.php');
+include('/usr/share/pear/elitestar/lib/Messages.php');
 define('USER_PHOTO_PATH', '/var/www/html/elitestar/ugc/');
 define('USER_PHOTO_PREFIX', 'uphoto');
 define('OBJECT_PHOTO_PREFIX', 'ophoto');
@@ -71,6 +72,13 @@ if (isset($_POST['action']) && 'delete' == $_POST['action'] && isset($_POST['id'
         apc_store('ADMIN_TOTAL_USER', '');
     }
     header('Location: superadmin.php?action=delete');
+    exit;
+}
+
+if (isset($_POST['action']) && 'delete-suggestion' === $_POST['action'] && $_POST['id'] && $_POST['userid'])
+{
+    Messages::getInstance()->deleteMessage($_POST['id'], $_POST['userid']);
+    header('Location: superadmin.php?action=messages');
     exit;
 }
 

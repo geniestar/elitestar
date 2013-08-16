@@ -2,6 +2,7 @@
 include('/usr/share/pear/elitestar/lib/EliteUsers.php');
 include('/usr/share/pear/elitestar/lib/EliteHelper.php');
 include('/usr/share/pear/elitestar/lib/LiveMessages.php');
+include('/usr/share/pear/elitestar/lib/Messages.php');
 include('/usr/share/pear/elitestar/lib/ContentGenerator.php');
 
 $user = EliteUsers::getInstance()->getCurrentUser();

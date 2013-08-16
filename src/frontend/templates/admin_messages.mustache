@@ -73,6 +73,12 @@
     <div class="message-single">
         <a href="mailto:{{senderInfo.mail}}"><span class="title">{{senderInfo.name}}</span></a> {{i18n.ADMIN_MESSAGES_SAID}} {{^isSuggestion}}To <span class="title">{{receiverInfo.name}}{{/isSuggestion}}</span> ({{created_time}}):
         <div class="message-body">{{&message}}</div>
+        <form action="account_action.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="delete-suggestion">
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="hidden" name="userid" value="{{sender}}">
+            <input type="submit" value="Delete"></input>
+        </from>
     </div>
     {{#replies}}
         <div class="message-single reply">

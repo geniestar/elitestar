@@ -91,7 +91,7 @@ languages:
     SEARCH_NO_FAVS: '無項目'
     LOGIN_SIGN_UP: '註冊'
     LOGIN_REMEMBERME: '記住我'
-    LOGIN_USERID: '使用者名稱'
+    LOGIN_USERID: '電子信箱'
     LOGIN_PW: '密碼'
     LOGIN_REMEMBERME: '記住我'
     LOGIN_FORGET_PW: '忘了密碼嗎？'

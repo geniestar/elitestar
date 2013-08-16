@@ -28,8 +28,8 @@ else if ('dreports' == $_GET['action'])
     /* get reports for each month*/
     $startPostfix = ' 00:00:00';
     $endPostfix = ' 23:59:59';
-    $startYear = 2013;
-    $startMonth = 7;
+    $startYear = date("y");
+    $startMonth = date("m");
     $startDay = 1;
     $year = $startYear;
     $month = $startMonth;
@@ -52,7 +52,7 @@ else if ('dreports' == $_GET['action'])
     $reports = array();
     while (true)
     {
-        $key = $year . '-' . (($month>9)?$month:'0'.$month) . '-' . (($day>9)?$day:'0'.$day);
+        $key = $year . '-' . $month . '-' . (($day>9)?$day:'0'.$day);
         $report[$key] = array();
         $startTime = strtotime($year . '-' . $month . '-'. $day . $startPostfix);
         $endTime = strtotime($year . '-' . $month . '-' . $day . $endPostfix);

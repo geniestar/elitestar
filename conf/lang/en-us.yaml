@@ -91,7 +91,7 @@ languages:
     SEARCH_NO_FAVS: 'No items'
     LOGIN_SIGN_UP: 'Sign Up'
     LOGIN_REMEMBERME: 'Remember Me'
-    LOGIN_USERID: 'Username'
+    LOGIN_USERID: 'Email'
     LOGIN_PW: 'Password'
     LOGIN_REMEMBERME: 'Remember Me'
     LOGIN_FORGET_PW: 'Forget Password?'

@@ -107,7 +107,8 @@ else if ('logout' == $_GET['action'])
     setcookie('sp', '');
     header('Location: /');
     exit;
-}
+} 
+
 $headData = array(
     'title' => EliteHelper::getLangString('COMMON_B_TITLE'),
     'css' => array(

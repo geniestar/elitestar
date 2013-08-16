@@ -162,11 +162,8 @@ class Messages
     
     public function deleteMessage($id, $userId)
     {
-        $sql = 'DELETE FROM messages WHERE id=? and (receiver=?) AND is_reply=0';
-        $inputParams = array($id, $userId);
-        $r = MySqlDb::getInstance()->query($sql, $inputParams);
-        $sql = 'DELETE FROM messages WHERE parent=? and (receiver=? or sender=?) AND is_reply=1';
-        $inputParams = array($id, $userId, $userId);
+        $sql = 'DELETE FROM messages WHERE id=? and (receiver=?) and sender=? AND is_reply=0';
+        $inputParams = array($id, 'superuser', $userId);
         $r = MySqlDb::getInstance()->query($sql, $inputParams);
         return $r;
     }
