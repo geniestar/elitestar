@@ -246,30 +246,17 @@ input[type="submit"] {
 
 #banner {
     width: 100%;
-    background-color: #CFED3F;
+    background-color: #4c6bc8;
     position: fixed;
     z-index: 9;
     .container {
+        background: url(../img/banner.jpg);
         color: $black;
-        width: 760px;
-        height: 110px;
+        width: 1024px;
+        height: 112px;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-        .title {
-            font-size: 36px;
-            position: absolute;
-            left: 100px;
-            bottom: 10px;
-        }
-        .banner-pic {
-            background: url(../img/banner_pic.png);
-            width: 173px;
-            height: 80px;
-            position: absolute;
-            right: 10px;
-            bottom: 0px;
-        }
     }
 }
 
