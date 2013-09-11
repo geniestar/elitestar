@@ -253,7 +253,7 @@ languages:
     ERROR_PREV_PAGE: 'Prev Page'
     TOS: '<div style="font-weight: bold;">Term of service</div>Term of service.'
     WELCOME_MAIL_TITLE: 'Welcome Elite Star'
-    WELCOME_MAIL_DESC: 'Welcome Elite Star'
+    WELCOME_MAIL_DESC: 'Welcome to :::Bepek.com:::</br></br>You can read "Bepek" as the sound "Backpack."</br></br>The founders were backpackers in Australia before, so that''s the reason why we set up the website. We want backpackers can enjoy their adventure, but also feel safety before they start the journey. Confirming an accommodation for backpackers, especially the beginners, is the most important priority.</br></br>On the other hand, the landlord/house owners can promote their properties and find suitable backpackers as their tenants, to create higher benefits.</br></br>Any way, thank you for being a member in Bepek. Hope you enjoy our website, and please feel free to tell us more useful suggestions.</br></br>Have a nice day! Oh...should be..have a nice trip!!</br></br></br>Bepek Group'
     FORGOT_PASSWORD: 'If you forgot your password, please enter your register id(email), </br>we will find the registerd data and send a new password to the contact email.'
     FORGOT_PASSWORD_SUBMIT: 'Submit'
     FORGOT_PASSWORD_MAIL: 'Welcome back from Elite Star'
